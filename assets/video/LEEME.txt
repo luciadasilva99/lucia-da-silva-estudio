@@ -1,0 +1,10 @@
+Esta carpeta es para el video del hero (portada principal).
+
+Cuando tengas el video listo:
+1. Que sea formato .mp4, sin audio (o con audio, pero se va a reproducir muteado).
+2. Idealmente corto y en loop (5-15 segundos), orientación horizontal.
+3. Guardalo acá con el nombre: hero.mp4
+4. Avisame en la conversación de Claude Code y lo conecto en la portada
+   reemplazando el placeholder actual, sin tocar el resto del diseño.
+
+No hace falta que hagas nada de código — solo pasame el archivo.

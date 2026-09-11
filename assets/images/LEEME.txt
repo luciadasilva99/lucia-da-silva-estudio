@@ -1,0 +1,11 @@
+Esta carpeta es donde van a ir tus fotos y renders reales.
+
+Por ahora el sitio usa "placeholders" (bloques con textura y una etiqueta como
+"Render 01 — Casa Confluencia") en cada lugar donde debería ir una imagen.
+
+Cuando tengas las fotos/renders listos, avisame en la conversación de Claude
+Code (podés simplemente decir "ya tengo las fotos, están en tal carpeta" o
+arrastrarlas directamente al chat) y las voy integrando reemplazando cada
+bloque placeholder por la imagen real, manteniendo el mismo diseño.
+
+No hace falta que vos edites el código a mano.

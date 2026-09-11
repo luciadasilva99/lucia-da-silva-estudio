@@ -57,15 +57,13 @@ button { font-family: inherit; }
 
 .eyebrow {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-clay);
 }
-.eyebrow::before { content: '[ '; }
-.eyebrow::after { content: ' ]'; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
@@ -178,12 +176,13 @@ p { margin: 0; }
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--color-ink-soft);
-  padding-top: clamp(1.5rem, 4vw, 2.5rem);
+  padding-top: clamp(0.75rem, 2vw, 1.25rem);
 }
 .studio-bar span { min-width: 0; overflow-wrap: anywhere; }
 .studio-bar span:nth-child(2) { text-align: center; }
@@ -372,7 +371,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 
 /* ---- Hero ---- */
 .hero {
-  padding-top: clamp(3rem, 8vw, 6rem);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
   padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 .hero-top {
@@ -638,6 +637,52 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .filter-btn:hover { border-color: var(--color-ink); }
 .filter-btn.is-active { background: var(--color-ink); color: var(--color-bg); border-color: var(--color-ink); }
 .project-grid .card[hidden] { display: none; }
+
+/* ---- Ficha técnica de proyecto (página individual) ---- */
+.project-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+  padding: 2rem 0;
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+.project-facts dt {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.35rem;
+}
+.project-facts dd {
+  margin: 0;
+  font-size: 1.02rem;
+}
+/* ---- Galería de un proyecto ---- */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem 1.5rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.project-gallery .ph-block:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 16/9;
+}
+.project-gallery .ph-block { aspect-ratio: 4/3; }
+.project-gallery figure { margin: 0; }
+.project-gallery figcaption {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+@media (max-width: 700px) {
+  .project-gallery { grid-template-columns: 1fr; }
+  .project-gallery .ph-block:first-child { aspect-ratio: 4/3; }
+}
 
 /* ---- Página interior: encabezado simple ---- */
 .page-hero {

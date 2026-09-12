@@ -66,6 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Rotar las fotos de un proyecto al pasar el mouse por su tarjeta
+  document.querySelectorAll('.card[data-gallery]').forEach(card => {
+    const images = card.dataset.gallery.split(',');
+    const img = card.querySelector('.ph-block img');
+    if (!img || images.length < 2) return;
+    let index = 0;
+    let timer = null;
+    card.addEventListener('mouseenter', () => {
+      timer = setInterval(() => {
+        index = (index + 1) % images.length;
+        img.src = images[index];
+      }, 1600);
+    });
+    card.addEventListener('mouseleave', () => {
+      clearInterval(timer);
+      index = 0;
+      img.src = images[0];
+    });
+  });
+
   // Año automático en el footer
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

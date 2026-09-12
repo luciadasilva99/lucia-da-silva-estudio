@@ -418,7 +418,17 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   background-image: radial-gradient(var(--color-clay) 1.8px, transparent 2px);
   background-size: 16px 16px;
   opacity: 0.55;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: default;
+  transform-origin: top right;
+  transition: transform .5s var(--ease), opacity .5s var(--ease);
+}
+.has-dotgrid::before:hover {
+  transform: scale(1.4);
+  opacity: 0.9;
+}
+@media (prefers-reduced-motion: reduce) {
+  .has-dotgrid::before { transition: none; }
 }
 @media (max-width: 700px) {
   .has-dotgrid::before { display: none; }

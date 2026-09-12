@@ -171,6 +171,19 @@ p { margin: 0; }
 }
 .nav-toggle span { width: 22px; height: 1.5px; background: var(--color-ink); }
 
+/* ---- Marca grande de cierre (estilo Kelly Wearstler) ---- */
+.brand-close {
+  text-align: center;
+  padding-top: clamp(3rem, 7vw, 6rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+.brand-close-logo {
+  width: clamp(240px, 32vw, 460px);
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
 /* ---- Ticker / marquee ---- */
 .marquee {
   overflow: hidden;
@@ -405,6 +418,26 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 @media (max-width: 700px) {
   .hero-strip-item { width: 108px; }
 }
+.hero-strip-swatch { border: 1px solid var(--color-line); }
+.hero-strip-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.hero-strip-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  border-bottom: 1px solid var(--color-line-strong);
+  padding-bottom: 0.2rem;
+  transition: color .3s ease, border-color .3s ease;
+}
+.hero-strip-cta a:hover { color: var(--color-clay); border-color: var(--color-clay); }
+.hero-strip-cta svg { width: 13px; height: 13px; }
 
 /* ---- Grilla de puntos decorativa (para zonas de solo texto/chrome, no fotos) ---- */
 .has-dotgrid { position: relative; }

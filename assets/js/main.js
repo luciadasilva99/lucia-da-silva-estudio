@@ -57,6 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Precompletar el servicio en el formulario de contacto según el link de origen
+  const servicioSelect = document.getElementById('servicio');
+  if (servicioSelect) {
+    const servicioParam = new URLSearchParams(window.location.search).get('servicio');
+    if (servicioParam && servicioSelect.querySelector(`option[value="${servicioParam}"]`)) {
+      servicioSelect.value = servicioParam;
+    }
+  }
+
   // Año automático en el footer
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

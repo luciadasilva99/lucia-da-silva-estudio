@@ -16,6 +16,8 @@
   --color-brass: #A9895E;
   --color-olive: #5C6B47;
   --color-olive-dark: #414D33;
+  --color-petrol: #2B4A52;
+  --color-petrol-dark: #1D3338;
   --color-line: rgba(33, 28, 22, 0.14);
   --color-line-strong: rgba(33, 28, 22, 0.28);
 
@@ -293,6 +295,14 @@ p { margin: 0; }
 .section-olive .eyebrow { background: var(--color-ink); color: var(--color-bg); padding: 0.3em 0.7em; }
 .section-olive .eyebrow::before, .section-olive .eyebrow::after { content: none; }
 .section-olive .lede { color: rgba(243,238,228,0.88); }
+
+.section-petrol {
+  background: var(--color-petrol);
+  color: var(--color-bg);
+}
+.section-petrol .eyebrow { background: var(--color-ink); color: var(--color-bg); padding: 0.3em 0.7em; }
+.section-petrol .eyebrow::before, .section-petrol .eyebrow::after { content: none; }
+.section-petrol .lede { color: rgba(243,238,228,0.88); }
 
 /* ---- Servicios ---- */
 .services-grid {

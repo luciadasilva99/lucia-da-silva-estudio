@@ -70,18 +70,4 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Reloj local del estudio (hora de Neuquén / Argentina)
-  const clockEl = document.getElementById('local-clock');
-  if (clockEl) {
-    const updateClock = () => {
-      const time = new Intl.DateTimeFormat('es-AR', {
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: 'America/Argentina/Buenos_Aires'
-      }).format(new Date());
-      clockEl.textContent = `Neuquén, ARG — ${time}`;
-    };
-    updateClock();
-    setInterval(updateClock, 30000);
-  }
 });

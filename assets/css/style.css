@@ -137,6 +137,7 @@ p { margin: 0; }
   letter-spacing: 0.03em;
 }
 .brand strong { font-weight: 600; }
+.brand img { display: block; height: 22px; width: auto; }
 
 .main-nav ul { display: flex; gap: 2.4rem; }
 .main-nav a {

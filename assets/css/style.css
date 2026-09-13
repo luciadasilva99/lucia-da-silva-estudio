@@ -1281,17 +1281,17 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 /* Celular acostado (horizontal): el alto de pantalla es chico, así que los tiles
    bajan de tamaño para que un render no ocupe toda la altura disponible.
    No toca ni el celular parado ni la computadora. */
-@media (orientation: landscape) and (max-height: 500px) {
+@media (orientation: landscape) and (max-height: 550px) {
   .canvas-world {
-    grid-template-columns: repeat(24, 28px);
-    grid-auto-rows: 26px;
-    gap: 6px;
-    padding: 16px;
+    grid-template-columns: repeat(36, 22px);
+    grid-auto-rows: 20px;
+    gap: 5px;
+    padding: 14px;
   }
-  .canvas-tile.is-photo.size-xl { grid-column: span 8; grid-row: span 8; }
-  .canvas-tile.is-photo.size-lg { grid-column: span 6; grid-row: span 7; }
-  .canvas-tile.size-sm { grid-column: span 4; grid-row: span 4; }
-  .canvas-tile.size-wide { grid-column: span 6; grid-row: span 3; }
+  .canvas-tile.is-photo.size-xl { grid-column: span 7; grid-row: span 7; }
+  .canvas-tile.is-photo.size-lg { grid-column: span 5; grid-row: span 6; }
+  .canvas-tile.size-sm { grid-column: span 3; grid-row: span 3; }
+  .canvas-tile.size-wide { grid-column: span 5; grid-row: span 2; }
   .canvas-tile { transform: none; }
 }
 

@@ -166,6 +166,11 @@ document.addEventListener('DOMContentLoaded', () => {
     canvasViewport.scrollTop = (canvasWorld.scrollHeight - canvasViewport.clientHeight) / 2;
   }
 
+  // Ocultar el aviso al primer toque, en cualquier dispositivo (esto no depende de si hay mouse)
+  if (canvasViewport && homeCanvas) {
+    canvasViewport.addEventListener('touchstart', () => homeCanvas.classList.add('has-interacted'), { once: true, passive: true });
+  }
+
   if (canvasViewport && homeCanvas && window.matchMedia('(pointer: fine)').matches) {
     const markInteracted = () => homeCanvas.classList.add('has-interacted');
     const deadZone = 0.14;   // zona muerta central: quieto si el cursor está cerca del medio
@@ -198,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
       panX = 0; panY = 0;
       if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
     });
-    canvasViewport.addEventListener('touchstart', markInteracted, { once: true, passive: true });
   }
 
   // Año automático en el footer

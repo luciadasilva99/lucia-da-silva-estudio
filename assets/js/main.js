@@ -100,7 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
       let idx = Math.floor(progress * seqImgs.length);
       if (idx >= seqImgs.length) idx = seqImgs.length - 1;
-      seqImgs.forEach((img, i) => img.classList.toggle('is-active', i === idx));
+      seqImgs.forEach((img, i) => {
+        img.classList.toggle('is-active', i === idx);
+        img.classList.toggle('is-passed', i < idx);
+      });
     };
     window.addEventListener('scroll', updateSequence, { passive: true });
     updateSequence();

@@ -40,21 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  // Filtros de proyectos (solo en proyectos.html)
+  // Filtros de proyectos (solo en proyectos.html): Residencial queda activo por defecto
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-grid .card');
   if (filterBtns.length && cards.length) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          const match = filter === 'todos' || card.dataset.category === filter;
-          card.style.display = match ? '' : 'none';
-        });
+    const applyFilter = (btn) => {
+      filterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const match = filter === 'todos' || card.dataset.category === filter;
+        card.style.display = match ? '' : 'none';
       });
+    };
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn));
     });
+    const defaultBtn = document.querySelector('.filter-btn[data-filter="residencial"]') || filterBtns[0];
+    applyFilter(defaultBtn);
   }
 
   // Precompletar el servicio en el formulario de contacto según el link de origen

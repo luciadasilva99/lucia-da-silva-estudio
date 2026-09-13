@@ -847,6 +847,130 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
+/* ---- Botón flotante de WhatsApp (contacto siempre a mano) ---- */
+.whatsapp-float {
+  position: fixed;
+  bottom: clamp(1.1rem, 3vw, 1.9rem);
+  right: clamp(1.1rem, 3vw, 1.9rem);
+  z-index: 200;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-olive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(33,28,22,0.28);
+  transition: transform .3s var(--ease), background .3s ease;
+}
+.whatsapp-float:hover { transform: scale(1.08); background: var(--color-olive-dark); }
+.whatsapp-float svg { width: 26px; height: 26px; fill: var(--color-bg); }
+@media (max-width: 560px) {
+  .whatsapp-float { width: 50px; height: 50px; }
+  .whatsapp-float svg { width: 23px; height: 23px; }
+}
+
+/* ---- Hero compacto (encabezado del Home, antes del lienzo) ---- */
+.hero--compact { padding-bottom: clamp(1.75rem, 3.5vw, 2.75rem); }
+
+/* ---- Lienzo libre del Home: navegación multidireccional ---- */
+.home-canvas { position: relative; border-bottom: 1px solid var(--color-line); background: var(--color-bg-soft); }
+.canvas-viewport {
+  position: relative;
+  height: 86vh;
+  min-height: 460px;
+  max-height: 780px;
+  overflow: auto;
+  cursor: grab;
+  touch-action: pan-x pan-y;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.canvas-viewport::-webkit-scrollbar { display: none; }
+.canvas-viewport.is-dragging { cursor: grabbing; user-select: none; }
+.canvas-world {
+  position: relative;
+  width: 250vw;
+  height: 220vh;
+}
+.canvas-tile {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(33,28,22,0.10);
+}
+.canvas-tile.size-sm { width: clamp(128px, 14vw, 210px); }
+.canvas-tile.size-md { width: clamp(168px, 18vw, 280px); }
+.canvas-tile.size-lg { width: clamp(215px, 23vw, 360px); }
+.canvas-tile.is-photo.size-sm,
+.canvas-tile.is-photo.size-md { aspect-ratio: 4/5; }
+.canvas-tile.is-photo.size-lg { aspect-ratio: 16/11; }
+.canvas-tile.is-color,
+.canvas-tile.is-texture { aspect-ratio: 1/1; }
+.canvas-tile.is-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .6s var(--ease);
+  pointer-events: none;
+}
+.canvas-tile.is-photo:hover img { transform: scale(1.06); }
+.canvas-tile-label {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.85rem;
+  right: 0.85rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: rgba(33,28,22,0.55);
+  padding: 0.35em 0.6em;
+  display: inline-block;
+  width: fit-content;
+  pointer-events: none;
+}
+.canvas-tile.is-color {
+  display: flex;
+  align-items: flex-end;
+  padding: 1.1rem;
+}
+.canvas-tile.is-color span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.3vw, 1.2rem);
+  color: var(--color-bg);
+  pointer-events: none;
+}
+.canvas-tile.is-color.tone-clay { background: var(--color-clay); }
+.canvas-tile.is-color.tone-olive { background: var(--color-olive); }
+.canvas-tile.is-color.tone-petrol { background: var(--color-petrol); }
+.canvas-tile.is-color.tone-brass { background: var(--color-brass); }
+.canvas-tile.is-color.tone-ink { background: var(--color-ink); }
+.canvas-hint {
+  position: absolute;
+  z-index: 5;
+  left: var(--pad);
+  bottom: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+.canvas-hint svg { width: 14px; height: 14px; }
+.home-canvas.has-interacted .canvas-hint { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .canvas-tile.is-photo img { transition: none; }
+}
+@media (max-width: 700px) {
+  .canvas-viewport { height: 72vh; }
+  .canvas-world { width: 240vw; height: 200vh; }
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
   .main-nav { display: none; }

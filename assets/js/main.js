@@ -118,6 +118,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Lienzo libre del Home: arrastrar con el mouse para explorar (desktop);
+  // en mobile/trackpad el scroll táctil nativo ya permite moverse en todas direcciones
+  const canvasViewport = document.querySelector('.canvas-viewport');
+  const homeCanvas = document.querySelector('.home-canvas');
+  if (canvasViewport && homeCanvas) {
+    let isDown = false;
+    let moved = false;
+    let startX = 0, startY = 0, startScrollLeft = 0, startScrollTop = 0;
+
+    const markInteracted = () => homeCanvas.classList.add('has-interacted');
+
+    canvasViewport.addEventListener('mousedown', (e) => {
+      isDown = true;
+      moved = false;
+      canvasViewport.classList.add('is-dragging');
+      startX = e.pageX;
+      startY = e.pageY;
+      startScrollLeft = canvasViewport.scrollLeft;
+      startScrollTop = canvasViewport.scrollTop;
+    });
+    window.addEventListener('mouseup', () => {
+      isDown = false;
+      canvasViewport.classList.remove('is-dragging');
+    });
+    canvasViewport.addEventListener('mouseleave', () => {
+      isDown = false;
+      canvasViewport.classList.remove('is-dragging');
+    });
+    canvasViewport.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const dx = e.pageX - startX;
+      const dy = e.pageY - startY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) { moved = true; markInteracted(); }
+      canvasViewport.scrollLeft = startScrollLeft - dx;
+      canvasViewport.scrollTop = startScrollTop - dy;
+    });
+    // Evita que soltar el arrastre justo sobre una tarjeta dispare la navegación sin querer
+    canvasViewport.querySelectorAll('a.canvas-tile').forEach(link => {
+      link.addEventListener('click', (e) => { if (moved) e.preventDefault(); });
+    });
+    canvasViewport.addEventListener('scroll', markInteracted, { once: true });
+    canvasViewport.addEventListener('touchstart', markInteracted, { once: true, passive: true });
+  }
+
   // Año automático en el footer
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

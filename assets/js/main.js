@@ -164,14 +164,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Arranca siempre en el mismo lugar del lienzo, no en un centro geométrico que
   // cambia según el tamaño exacto de cada pantalla. En computadora (mouse + pantalla
-  // ancha), centrado en Terraza; en cualquier celular/tablet (touch), centrado en VJ.
+  // ancha): a la izquierda se ven las tres camas completas de Hotel Land Express, y
+  // el encuadre vertical queda centrado en Terraza con un empujón hacia abajo para que
+  // asome apenas un poco del bar MUD. En cualquier celular/tablet (touch), centrado en VJ.
   if (canvasViewport && homeCanvas) {
     const canvasWorld = homeCanvas.querySelector('.canvas-world');
     const isDesktop = window.matchMedia('(pointer: fine) and (min-width: 900px)').matches;
-    const anchorHref = isDesktop ? 'proyecto-terraza.html' : 'proyecto-vj.html';
-    const anchor = canvasWorld.querySelector(`a[href="${anchorHref}"]`) || canvasWorld;
-    const targetLeft = anchor.offsetLeft + anchor.offsetWidth / 2 - canvasViewport.clientWidth / 2;
-    const targetTop = anchor.offsetTop + anchor.offsetHeight / 2 - canvasViewport.clientHeight / 2;
+    let targetLeft, targetTop;
+    if (isDesktop) {
+      const hotelLandExpress = canvasWorld.querySelector('a[href="proyecto-hotel-land-express.html"]');
+      const terraza = canvasWorld.querySelector('a[href="proyecto-terraza.html"]');
+      targetLeft = hotelLandExpress ? hotelLandExpress.offsetLeft - 20 : 0;
+      targetTop = terraza
+        ? terraza.offsetTop + terraza.offsetHeight / 2 - canvasViewport.clientHeight / 2 + 30
+        : 0;
+    } else {
+      const vj = canvasWorld.querySelector('a[href="proyecto-vj.html"]') || canvasWorld;
+      targetLeft = vj.offsetLeft + vj.offsetWidth / 2 - canvasViewport.clientWidth / 2;
+      targetTop = vj.offsetTop + vj.offsetHeight / 2 - canvasViewport.clientHeight / 2;
+    }
     canvasViewport.scrollLeft = Math.max(0, targetLeft);
     canvasViewport.scrollTop = Math.max(0, targetTop);
   }

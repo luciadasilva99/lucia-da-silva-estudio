@@ -10,12 +10,23 @@
 <body>
 
 <header class="site-header">
-  <a href="index.html" class="brand"><img src="assets/images/logo-header-transparent.png" alt="Lucía Da Silva"></a>
-  <nav class="main-nav">
+  <nav class="main-nav main-nav--left">
     <ul>
-      <li><a href="index.html" class="is-active">Inicio</a></li>
-      <li><a href="index.html#servicios">Servicios</a></li>
       <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="estudio.html">Estudio</a></li>
+    </ul>
+  </nav>
+  <a href="index.html" class="brand"><img src="assets/images/logo-header-transparent.png" alt="Lucía Da Silva"></a>
+  <nav class="main-nav main-nav--right">
+    <ul>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+  <nav class="main-nav main-nav--mobile">
+    <ul>
+      <li><a href="proyectos.html">Proyectos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
       <li><a href="estudio.html">Estudio</a></li>
       <li><a href="contacto.html">Contacto</a></li>
     </ul>
@@ -27,295 +38,99 @@
 
 <main>
 
-  <!-- HERO (compacto: H1, CTA y contacto siempre visibles, sin necesidad de explorar el lienzo) -->
-  <section class="hero hero--compact has-grain has-dotgrid">
-    <div class="container">
-      <div class="hero-top">
-        <div>
-          <span class="eyebrow">Estudio de Interiorismo — Argentina</span>
-          <h1>Espacios con carácter, diseñados sin fórmulas.</h1>
-        </div>
-        <div class="hero-side">
-          <p class="lede">Interiorismo residencial y comercial con una mirada creativa y personal, con base en la Patagonia argentina.</p>
-          <div class="hero-cta">
-            <a href="proyectos.html" class="btn btn-primary">Ver proyectos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a href="contacto.html" class="btn btn-outline">Contactar</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- H1 accesible para SEO/lectores de pantalla: el inicio es puramente el lienzo,
+       sin bloque de texto visible (formato Yabu Pushelberg), pero el contenido
+       principal sigue presente y rastreable para Google. -->
+  <h1 class="sr-only">Lucía Da Silva Estudio — Diseño de interiores en Neuquén y Buenos Aires</h1>
+  <p class="sr-only">Interiorismo residencial y comercial con una mirada creativa y personal, con base en la Patagonia argentina. Reformas integrales, asesoría de diseño y modelado 3D y renderizado.</p>
 
-  <!-- LIENZO LIBRE: navegación multidireccional que mezcla proyectos, color y materia -->
+  <!-- LIENZO LIBRE: navegación multidireccional que mezcla proyectos, color y materia.
+       Los renders son protagonistas a gran escala; color y material quedan chicos y dispersos entre medio. -->
   <section class="home-canvas" aria-label="Explorá el estudio: proyectos, color y materiales">
     <div class="canvas-viewport">
       <div class="canvas-world">
 
-        <a href="proyecto-alerces.html" class="canvas-tile is-photo size-lg" style="top:5%; left:3%;">
-          <img src="assets/images/proyectos/alerces/living.jpg" alt="Alerces — Villa La Angostura">
+        <a href="proyecto-alerces.html" class="canvas-tile is-photo size-xl" style="top:3%; left:2%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/alerces/living.jpg" alt="Alerces — Villa La Angostura"></span>
           <span class="canvas-tile-label">Alerces · Villa La Angostura</span>
         </a>
 
-        <div class="canvas-tile is-color tone-clay size-sm" style="top:2%; left:28%; transform:rotate(-3deg);" aria-hidden="true"><span>Terracota</span></div>
+        <div class="canvas-tile is-color tone-clay size-sm" style="top:2%; left:35%; transform:rotate(-3deg);" aria-hidden="true"><span>Terracota</span></div>
 
-        <a href="proyecto-vj.html" class="canvas-tile is-photo size-md" style="top:17%; left:39%;">
-          <img src="assets/images/proyectos/sofia-pauluzzi/comedor.jpg" alt="VJ — Quilmes, Buenos Aires">
+        <a href="proyecto-vj.html" class="canvas-tile is-photo size-lg" style="top:8%; left:45%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/sofia-pauluzzi/comedor.jpg" alt="VJ — Quilmes, Buenos Aires"></span>
           <span class="canvas-tile-label">VJ · Quilmes</span>
         </a>
 
-        <div class="canvas-tile is-texture swatch-olive size-sm" style="top:3%; left:59%;" aria-hidden="true"></div>
+        <div class="canvas-tile is-texture swatch-olive size-sm" style="top:4%; left:69%;" aria-hidden="true"></div>
 
-        <a href="proyecto-dentsply-sirona.html" class="canvas-tile is-photo size-md" style="top:10%; left:77%;">
-          <img src="assets/images/proyectos/dentsply-sirona/stand-occidental.png" alt="Stands Dentsply Sirona — Buenos Aires">
+        <a href="proyecto-dentsply-sirona.html" class="canvas-tile is-photo size-lg" style="top:6%; left:79%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/dentsply-sirona/stand-occidental.png" alt="Stands Dentsply Sirona — Buenos Aires"></span>
           <span class="canvas-tile-label">Dentsply Sirona</span>
         </a>
 
-        <div class="canvas-tile is-color tone-petrol size-sm" style="top:33%; left:1%; transform:rotate(2deg);" aria-hidden="true"><span>Petróleo</span></div>
+        <div class="canvas-tile is-color tone-petrol size-sm" style="top:34%; left:1%; transform:rotate(2deg);" aria-hidden="true"><span>Petróleo</span></div>
 
-        <a href="proyecto-3-de-febrero.html" class="canvas-tile is-photo size-lg" style="top:39%; left:15%;">
-          <img src="assets/images/proyectos/3-de-febrero/living.jpg" alt="3 de Febrero — San Isidro, Buenos Aires">
+        <a href="proyecto-3-de-febrero.html" class="canvas-tile is-photo size-xl" style="top:36%; left:14%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/3-de-febrero/living.jpg" alt="3 de Febrero — San Isidro, Buenos Aires"></span>
           <span class="canvas-tile-label">3 de Febrero · San Isidro</span>
         </a>
 
-        <div class="canvas-tile is-texture swatch-brass size-sm" style="top:29%; left:38%;" aria-hidden="true"></div>
+        <div class="canvas-tile is-texture swatch-brass size-sm" style="top:32%; left:47%;" aria-hidden="true"></div>
 
-        <a href="proyecto-terraza.html" class="canvas-tile is-photo size-lg" style="top:45%; left:53%;">
-          <img src="assets/images/proyectos/terraza/living-comedor.jpg" alt="Terraza — Neuquén Capital">
+        <a href="proyecto-terraza.html" class="canvas-tile is-photo size-lg" style="top:40%; left:55%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/terraza/living-comedor.jpg" alt="Terraza — Neuquén Capital"></span>
           <span class="canvas-tile-label">Terraza · Neuquén</span>
         </a>
 
-        <div class="canvas-tile is-color tone-olive size-sm" style="top:25%; left:74%; transform:rotate(-2deg);" aria-hidden="true"><span>Musgo</span></div>
+        <div class="canvas-tile is-color tone-olive size-sm" style="top:32%; left:81%; transform:rotate(-2deg);" aria-hidden="true"><span>Musgo</span></div>
 
-        <a href="proyecto-hotel-land-express.html" class="canvas-tile is-photo size-md" style="top:61%; left:1%;">
-          <img src="assets/images/proyectos/hotel-land-express/detalle.jpg" alt="Hotel Land Express — Neuquén">
+        <a href="proyecto-hotel-land-express.html" class="canvas-tile is-photo size-lg" style="top:60%; left:2%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/hotel-land-express/detalle.jpg" alt="Hotel Land Express — Neuquén"></span>
           <span class="canvas-tile-label">Hotel Land Express</span>
         </a>
 
-        <div class="canvas-tile is-texture swatch-clay size-sm" style="top:65%; left:22%;" aria-hidden="true"></div>
+        <div class="canvas-tile is-texture swatch-clay size-sm" style="top:62%; left:27%;" aria-hidden="true"></div>
 
-        <a href="proyecto-santa-ana.html" class="canvas-tile is-photo size-md" style="top:55%; left:35%;">
-          <img src="assets/images/proyectos/santa-ana/fachada-frontal.jpg" alt="Obra Santa Ana — Buenos Aires">
+        <a href="proyecto-santa-ana.html" class="canvas-tile is-photo size-xl" style="top:58%; left:37%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/santa-ana/fachada-frontal.jpg" alt="Obra Santa Ana — Buenos Aires"></span>
           <span class="canvas-tile-label">Obra Santa Ana</span>
         </a>
 
-        <div class="canvas-tile is-color tone-brass size-sm" style="top:69%; left:57%; transform:rotate(3deg);" aria-hidden="true"><span>Arena</span></div>
+        <div class="canvas-tile is-color tone-brass size-sm" style="top:62%; left:67%; transform:rotate(3deg);" aria-hidden="true"><span>Arena</span></div>
 
-        <a href="proyecto-mud.html" class="canvas-tile is-photo size-lg" style="top:59%; left:73%;">
-          <img src="assets/images/proyectos/mud/barra.jpg" alt="MUD by Mudrá — Madrid">
+        <a href="proyecto-mud.html" class="canvas-tile is-photo size-lg" style="top:60%; left:77%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/mud/barra.jpg" alt="MUD by Mudrá — Madrid"></span>
           <span class="canvas-tile-label">MUD · Madrid</span>
         </a>
 
-        <div class="canvas-tile is-texture swatch-olive size-sm" style="top:79%; left:9%;" aria-hidden="true"></div>
+        <div class="canvas-tile is-texture swatch-olive size-sm" style="top:86%; left:6%;" aria-hidden="true"></div>
 
-        <a href="proyecto-san-pablo.html" class="canvas-tile is-photo size-md" style="top:81%; left:27%;">
-          <img src="assets/images/proyectos/san-pablo/general.jpg" alt="San Pablo — Buenos Aires">
+        <a href="proyecto-san-pablo.html" class="canvas-tile is-photo size-lg" style="top:84%; left:19%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/san-pablo/general.jpg" alt="San Pablo — Buenos Aires"></span>
           <span class="canvas-tile-label">San Pablo</span>
         </a>
 
-        <div class="canvas-tile is-color tone-ink size-sm" style="top:77%; left:49%; transform:rotate(-2deg);" aria-hidden="true"><span>Carbón</span></div>
+        <div class="canvas-tile is-color tone-ink size-sm" style="top:88%; left:44%; transform:rotate(-2deg);" aria-hidden="true"><span>Carbón</span></div>
 
-        <a href="proyecto-bellini.html" class="canvas-tile is-photo size-md" style="top:83%; left:65%;">
-          <img src="assets/images/proyectos/bellini/comedor.jpg" alt="Bellini — Palermo, Buenos Aires">
+        <a href="proyecto-bellini.html" class="canvas-tile is-photo size-lg" style="top:84%; left:55%;">
+          <span class="canvas-tile-media"><img src="assets/images/proyectos/bellini/comedor.jpg" alt="Bellini — Palermo, Buenos Aires"></span>
           <span class="canvas-tile-label">Bellini · Palermo</span>
         </a>
 
-        <div class="canvas-tile is-color tone-clay size-sm" style="top:89%; left:85%; transform:rotate(2deg);" aria-hidden="true"><span>Arcilla</span></div>
+        <div class="canvas-tile is-color tone-clay size-sm" style="top:90%; left:80%; transform:rotate(2deg);" aria-hidden="true"><span>Arcilla</span></div>
 
       </div>
 
       <div class="canvas-hint">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6"/></svg>
-        Arrastrá para explorar el estudio
+        <span class="hint-mouse">Mové el mouse para explorar el estudio</span>
+        <span class="hint-touch">Deslizá para explorar el estudio</span>
       </div>
-    </div>
-  </section>
-
-  <!-- TICKER -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>Reformas integrales</span><span>Asesoría de diseño</span><span>Modelado 3D &amp; render</span><span>Buenos Aires</span><span>Patagonia Argentina</span><span>Reformas integrales</span><span>Asesoría de diseño</span><span>Modelado 3D &amp; render</span><span>Buenos Aires</span><span>Patagonia Argentina</span>
-    </div>
-  </div>
-
-  <!-- MANIFIESTO -->
-  <section class="section-clay">
-    <div class="container statement-row reveal">
-      <h2 class="statement">Diseño con <em>personalidad</em>, a tu medida.</h2>
-      <p class="lede">Proponemos espacios con color con intención, materiales que se sienten y composiciones con carácter propio — siempre partiendo de escuchar a quién va a habitar el espacio. Cada proyecto se adapta a lo que necesites, desde una impronta audaz hasta una propuesta más serena.</p>
-    </div>
-  </section>
-
-  <!-- PALABRA GIGANTE EN MOVIMIENTO -->
-  <div class="big-word-band">
-    <div class="big-word-track">
-      <span class="big-word">Materia</span><span class="big-word">Color</span><span class="big-word">Carácter</span><span class="big-word">Materia</span><span class="big-word">Color</span><span class="big-word">Carácter</span>
-    </div>
-  </div>
-
-  <!-- SERVICIOS -->
-  <section id="servicios">
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Qué ofrecemos</span>
-          <h2>Servicios</h2>
-        </div>
-      </div>
-      <div class="services-grid reveal">
-        <a href="contacto.html?servicio=reformas" class="service-card">
-          <div class="service-swatch swatch-clay"></div>
-          <span class="process-num">01</span>
-          <h3>Reformas integrales</h3>
-          <p>Diseño del espacio y dirección de obra de principio a fin, acompañando cada etapa del proyecto.</p>
-          <span class="service-cta">Consultar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a href="contacto.html?servicio=asesoria" class="service-card">
-          <div class="service-swatch swatch-olive"></div>
-          <span class="process-num">02</span>
-          <h3>Asesoría de diseño</h3>
-          <p>Propuestas de diseño e interiorismo, con o sin dirección de obra, adaptadas a lo que necesites.</p>
-          <span class="service-cta">Consultar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a href="contacto.html?servicio=modelado" class="service-card">
-          <div class="service-swatch swatch-brass"></div>
-          <span class="process-num">03</span>
-          <h3>Modelado 3D y renderizado</h3>
-          <p>Visualización realista de tu proyecto antes de construirlo, ideal para presentar o vender una idea.</p>
-          <span class="service-cta">Consultar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </div>
-      <p class="lede" style="margin-top:2.5rem;">¿Buscás otro servicio del rubro? <a href="contacto.html?servicio=otro" style="text-decoration:underline;">Cotizalo a medida</a>.</p>
-    </div>
-  </section>
-
-  <!-- PROYECTOS DESTACADOS -->
-  <section>
-    <div class="container">
-      <div class="section-head reveal">
-        <div>
-          <span class="eyebrow">Selección de trabajos</span>
-          <h2>Proyectos recientes</h2>
-        </div>
-        <a href="proyectos.html" class="btn btn-outline">Ver todos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-
-      <div class="project-grid is-asymmetric reveal">
-        <a href="proyecto-3-de-febrero.html" class="card" data-gallery="assets/images/proyectos/3-de-febrero/dormitorio-principal.jpg,assets/images/proyectos/3-de-febrero/living.jpg,assets/images/proyectos/3-de-febrero/cocina.jpg">
-          <div class="ph-block"><img src="assets/images/proyectos/3-de-febrero/dormitorio-principal.jpg" alt="Dormitorio principal"></div>
-          <h3 class="card-title">3 de Febrero</h3>
-          <div class="card-meta"><span>Residencial</span><span>San Isidro, Bs. As.</span></div>
-        </a>
-        <a href="proyecto-terraza.html" class="card" data-gallery="assets/images/proyectos/terraza/living-comedor.jpg,assets/images/proyectos/terraza/dormitorio-principal.jpg,assets/images/proyectos/terraza/dormitorio-huespedes.jpg">
-          <div class="ph-block"><img src="assets/images/proyectos/terraza/living-comedor.jpg" alt="Living comedor"></div>
-          <h3 class="card-title">Terraza</h3>
-          <div class="card-meta"><span>Residencial</span><span>Neuquén</span></div>
-        </a>
-        <a href="proyecto-hotel-land-express.html" class="card" data-gallery="assets/images/proyectos/hotel-land-express/despues.jpg,assets/images/proyectos/hotel-land-express/detalle.jpg,assets/images/proyectos/hotel-land-express/antes.jpg">
-          <div class="ph-block"><img src="assets/images/proyectos/hotel-land-express/despues.jpg" alt="Habitación remodelada"></div>
-          <h3 class="card-title">Hotel Land Express</h3>
-          <div class="card-meta"><span>Hospitality</span><span>Neuquén</span></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE EL ESTUDIO (teaser) -->
-  <section class="section-soft">
-    <div class="container split reveal">
-      <div class="ph-block ph-block--cut"><span class="ph-label">Foto — Lucía Da Silva</span></div>
-      <div>
-        <span class="quote-mark">“</span>
-        <h2>Con raíces en Buenos Aires, hoy en la Patagonia.</h2>
-        <p class="lede" style="margin-top:1.2rem;">Nací y crecí en Buenos Aires y hoy dirijo mi estudio desde Neuquén capital, en el corazón de la Patagonia argentina, con un vínculo activo con Buenos Aires. Cada proyecto parte de escuchar a quién va a habitar el espacio y se traduce en una propuesta con identidad propia.</p>
-        <a href="estudio.html" class="btn btn-outline" style="margin-top:2rem;">Conocé el estudio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- UBICACIÓN / ALCANCE -->
-  <section class="section-dark has-dotgrid">
-    <div class="container reveal">
-      <span class="eyebrow">Dónde trabajamos</span>
-      <h2 style="margin-top:1rem; max-width:26ch;">Dirección de obra en Neuquén y Buenos Aires. Asesoría, en cualquier punto del país.</h2>
-      <p class="lede" style="color:rgba(243,238,228,0.7); margin-top:1.2rem; max-width:56ch;">Un proyecto con dirección de obra necesita cercanía con proveedores y seguimiento en el día a día, por eso hoy lo concentramos en Neuquén y Buenos Aires (a consultar para obras de mayor escala en otras provincias). La asesoría de diseño y las propuestas de interiorismo, en cambio, viajan a cualquier parte de Argentina — vos coordinás la ejecución donde estés.</p>
-      <div class="locations-scope">
-        <div class="locations-group">
-          <span class="locations-label">Con dirección de obra</span>
-          <div class="locations">
-            <span class="is-current">Neuquén</span>
-            <span>Buenos Aires</span>
-          </div>
-        </div>
-        <div class="locations-group">
-          <span class="locations-label">Asesoría y diseño</span>
-          <div class="locations">
-            <span>Todo el país</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="section-petrol">
-    <div class="container cta-banner reveal">
-      <span class="eyebrow">¿Tenés un proyecto en mente?</span>
-      <h2 style="margin-top:1rem;">Convertimos tu espacio en algo memorable.</h2>
-      <p class="lede">Contanos sobre tu proyecto y coordinamos una primera consulta sin cargo.</p>
-      <div class="hero-cta">
-        <a href="contacto.html" class="btn btn-primary">Escribinos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MARCA GRANDE DE CIERRE -->
-  <section class="brand-close">
-    <div class="container">
-      <img src="assets/images/logo-header-transparent.png" alt="Lucía Da Silva Estudio" class="brand-close-logo">
     </div>
   </section>
 
 </main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div>
-        <span class="brand">Lucía Da Silva Estudio</span>
-        <p>Interiorismo con carácter, con base en la Patagonia argentina.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navegación</h4>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
-          <li><a href="proyectos.html">Proyectos</a></li>
-          <li><a href="estudio.html">Estudio</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="mailto:dasilvalucia.interiorismo@gmail.com">dasilvalucia.interiorismo@gmail.com</a></li>
-          <li><a href="https://wa.me/5491135659808?text=Hola%2C%20quisiera%20consultar%20sobre%20un%20proyecto." target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="https://www.instagram.com/luciadasilva.estudio/" target="_blank" rel="noopener">Instagram</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Ubicación</h4>
-        <ul>
-          <li>Neuquén Capital, Argentina</li>
-          <li>Asesoría de diseño, en todo el país</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span data-year></span> Lucía Da Silva Estudio</span>
-      <span>Diseño de interiores</span>
-    </div>
-  </div>
-</footer>
 
 <a href="https://wa.me/5491135659808?text=Hola%2C%20quisiera%20consultar%20sobre%20un%20proyecto." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.02 3C9.4 3 4 8.38 4 15c0 2.39.66 4.62 1.82 6.53L4 29l7.64-2c1.82.99 3.9 1.56 6.38 1.56 6.62 0 12-5.38 12-12S22.64 3 16.02 3zm7.02 17.15c-.3.84-1.5 1.56-2.42 1.75-.62.13-1.44.24-4.18-.9-3.5-1.45-5.76-4.98-5.94-5.21-.17-.24-1.42-1.89-1.42-3.6 0-1.72.9-2.56 1.22-2.91.3-.34.66-.42.88-.42.22 0 .44 0 .63.01.2.01.47-.08.74.56.28.66.94 2.29 1.02 2.46.08.17.14.37.03.6-.11.23-.16.37-.32.57-.16.2-.34.44-.48.59-.16.17-.33.35-.14.68.19.34.85 1.4 1.83 2.27 1.26 1.12 2.32 1.47 2.65 1.63.34.17.53.14.73-.08.2-.23.85-.99 1.08-1.33.23-.34.46-.28.77-.17.31.11 1.98.93 2.32 1.1.34.17.56.26.65.4.09.14.09.8-.21 1.64z"/></svg>

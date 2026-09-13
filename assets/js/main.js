@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.main-nav');
+  const nav = document.querySelector('.main-nav--mobile');
 
   // Header con sombra al hacer scroll
   const onScroll = () => {
@@ -118,48 +118,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Lienzo libre del Home: arrastrar con el mouse para explorar (desktop);
-  // en mobile/trackpad el scroll táctil nativo ya permite moverse en todas direcciones
+  // Lienzo libre del Home: apoyar el cursor hacia un lado para moverse hacia allá
+  // (sin clickear ni arrastrar), al estilo Yabu Pushelberg. En mobile, el dedo
+  // desliza de forma nativa en cualquier dirección.
   const canvasViewport = document.querySelector('.canvas-viewport');
   const homeCanvas = document.querySelector('.home-canvas');
-  if (canvasViewport && homeCanvas) {
-    let isDown = false;
-    let moved = false;
-    let startX = 0, startY = 0, startScrollLeft = 0, startScrollTop = 0;
-
+  if (canvasViewport && homeCanvas && window.matchMedia('(pointer: fine)').matches) {
     const markInteracted = () => homeCanvas.classList.add('has-interacted');
+    const deadZone = 0.14;   // zona muerta central: quieto si el cursor está cerca del medio
+    const maxSpeed = 15;     // px por frame cerca del borde
+    const ease = (v) => Math.sign(v) * Math.pow(Math.abs(v), 1.7);
 
-    canvasViewport.addEventListener('mousedown', (e) => {
-      isDown = true;
-      moved = false;
-      canvasViewport.classList.add('is-dragging');
-      startX = e.pageX;
-      startY = e.pageY;
-      startScrollLeft = canvasViewport.scrollLeft;
-      startScrollTop = canvasViewport.scrollTop;
-    });
-    window.addEventListener('mouseup', () => {
-      isDown = false;
-      canvasViewport.classList.remove('is-dragging');
-    });
-    canvasViewport.addEventListener('mouseleave', () => {
-      isDown = false;
-      canvasViewport.classList.remove('is-dragging');
+    let panX = 0, panY = 0;
+    let rafId = null;
+
+    const step = () => {
+      if (Math.abs(panX) > deadZone || Math.abs(panY) > deadZone) {
+        const vx = Math.abs(panX) > deadZone ? ease(panX) : 0;
+        const vy = Math.abs(panY) > deadZone ? ease(panY) : 0;
+        canvasViewport.scrollLeft += vx * maxSpeed;
+        canvasViewport.scrollTop += vy * maxSpeed;
+      }
+      rafId = requestAnimationFrame(step);
+    };
+
+    canvasViewport.addEventListener('mouseenter', () => {
+      if (!rafId) rafId = requestAnimationFrame(step);
     });
     canvasViewport.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const dx = e.pageX - startX;
-      const dy = e.pageY - startY;
-      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) { moved = true; markInteracted(); }
-      canvasViewport.scrollLeft = startScrollLeft - dx;
-      canvasViewport.scrollTop = startScrollTop - dy;
+      const rect = canvasViewport.getBoundingClientRect();
+      panX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      panY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      markInteracted();
     });
-    // Evita que soltar el arrastre justo sobre una tarjeta dispare la navegación sin querer
-    canvasViewport.querySelectorAll('a.canvas-tile').forEach(link => {
-      link.addEventListener('click', (e) => { if (moved) e.preventDefault(); });
+    canvasViewport.addEventListener('mouseleave', () => {
+      panX = 0; panY = 0;
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
     });
-    canvasViewport.addEventListener('scroll', markInteracted, { once: true });
     canvasViewport.addEventListener('touchstart', markInteracted, { once: true, passive: true });
   }
 

@@ -942,11 +942,11 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .ba-label {
   display: block;
   font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 500;
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-ink-soft);
+  color: var(--color-ink);
   margin-bottom: 0.8rem;
 }
 .before-after .ph-block { aspect-ratio: 4/3; }

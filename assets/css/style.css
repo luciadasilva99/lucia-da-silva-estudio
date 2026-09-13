@@ -594,7 +594,28 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 
 .card { display: block; }
 .card .ph-block { aspect-ratio: 4/5; margin-bottom: 1.1rem; }
-.card-title { font-family: var(--font-display); font-size: 1.15rem; }
+/* "Explorar" al pasar el mouse sobre un proyecto (referencia Yabu Pushelberg: EXPLORE) */
+.card-explore {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(33,28,22,0.38);
+  color: var(--color-bg);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity .4s var(--ease), transform .4s var(--ease);
+  pointer-events: none;
+}
+.card-explore svg { width: 15px; height: 15px; }
+.card:hover .card-explore { opacity: 1; transform: scale(1); }
+.card-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
 .card-meta {
   display: flex;
   justify-content: space-between;
@@ -834,6 +855,60 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .before-after .ph-block { aspect-ratio: 4/3; }
 @media (max-width: 700px) {
   .before-after { grid-template-columns: 1fr; }
+}
+
+/* ---- Metodología (formato Yabu Pushelberg: declaraciones grandes y secuenciales) ---- */
+.method-list { margin-top: 1rem; }
+.method-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1.5rem 2rem;
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  border-bottom: 1px solid var(--color-line);
+  align-items: start;
+}
+.method-item:first-child { border-top: 1px solid var(--color-line); }
+.method-statement {
+  grid-column: 2;
+  font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+  max-width: 20ch;
+}
+.method-item p.lede { grid-column: 2; margin-top: 0.9rem; }
+
+/* ---- Galería mixta: renders y materiales intercalados, con efecto de ampliar al entrar en vista ---- */
+.method-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  margin-top: clamp(1rem, 3vw, 2rem);
+}
+.method-gallery-item {
+  overflow: hidden;
+  border-radius: 2px;
+  box-shadow: 0 10px 30px rgba(33,28,22,0.08);
+}
+.method-gallery-item.is-lg { grid-column: span 3; aspect-ratio: 4/3; }
+.method-gallery-item.is-md { grid-column: span 2; aspect-ratio: 4/5; }
+.method-gallery-item.is-sm { grid-column: span 2; aspect-ratio: 1/1; }
+.method-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 700px) {
+  .method-gallery { grid-template-columns: repeat(2, 1fr); }
+  .method-gallery-item.is-lg,
+  .method-gallery-item.is-md,
+  .method-gallery-item.is-sm { grid-column: span 1; aspect-ratio: 4/5; }
+  .method-item { grid-template-columns: 1fr; }
+  .method-statement, .method-item p.lede { grid-column: 1; }
+}
+
+/* ---- Reveal con escala (imágenes que se "amplían" al entrar en vista) ---- */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.reveal-scale.is-visible { opacity: 1; transform: scale(1); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-scale { transition: none; }
 }
 
 /* ---- Video embebido dentro de un proyecto ---- */

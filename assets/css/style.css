@@ -830,16 +830,52 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .filter-btn.is-active { background: var(--color-ink); color: var(--color-bg); border-color: var(--color-ink); }
 .project-grid .card[hidden] { display: none; }
 
+/* ---- Portada de proyecto: rotación automática de las fotos del proyecto ---- */
+.project-cover {
+  position: relative;
+  width: 100%;
+  height: 62vh;
+  min-height: 340px;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+.project-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.project-cover img.is-active { opacity: 1; }
+@media (max-width: 700px) {
+  .project-cover { height: 48vh; }
+}
+
+/* ---- Intro de proyecto: título + storytelling a la izquierda, ficha a la derecha ---- */
+.project-intro { padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(4rem, 9vw, 7rem); }
+.project-intro-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: start;
+}
+.project-intro-main h1 { font-weight: 500; margin-top: 0.8rem; }
+.project-story { margin-top: 1.3rem; max-width: 56ch; }
+@media (max-width: 900px) {
+  .project-intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
 /* ---- Ficha técnica de proyecto (página individual) ---- */
 .project-facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 3rem;
-  padding: 2rem 0;
-  margin-top: 2.5rem;
-  border-top: 1px solid var(--color-line);
-  border-bottom: 1px solid var(--color-line);
+  padding-top: 0.4rem;
 }
+.project-facts > div {
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--color-line);
+}
+.project-facts > div:last-child { border-bottom: 1px solid var(--color-line); }
 .project-facts dt {
   font-family: var(--font-body);
   font-size: 0.72rem;
@@ -910,13 +946,29 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .method-gallery-item.is-md { grid-column: span 2; aspect-ratio: 4/5; }
 .method-gallery-item.is-sm { grid-column: span 2; aspect-ratio: 1/1; }
 .method-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Desalinea un poco cada item para que aparezca sin un orden estricto de grilla */
+.method-gallery-item:nth-child(2n) { margin-top: clamp(1rem, 4vw, 3rem); }
+.method-gallery-item:nth-child(3n) { margin-top: clamp(-0.5rem, -2vw, -1.5rem); }
 @media (max-width: 700px) {
   .method-gallery { grid-template-columns: repeat(2, 1fr); }
   .method-gallery-item.is-lg,
   .method-gallery-item.is-md,
   .method-gallery-item.is-sm { grid-column: span 1; aspect-ratio: 4/5; }
+  .method-gallery-item:nth-child(2n),
+  .method-gallery-item:nth-child(3n) { margin-top: 0; }
   .method-item { grid-template-columns: 1fr; }
   .method-statement, .method-item p.lede { grid-column: 1; }
+}
+
+/* ---- Secuencia de materia: solo imágenes a pantalla completa, sin texto (formato Approach de Yabu) ---- */
+.material-sequence-item {
+  width: 100%;
+  height: 92vh;
+  overflow: hidden;
+}
+.material-sequence-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 700px) {
+  .material-sequence-item { height: 70vh; }
 }
 
 /* ---- Reveal con escala (imágenes que se "amplían" al entrar en vista) ---- */

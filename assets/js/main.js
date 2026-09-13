@@ -86,6 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Portada de proyecto: rotación automática entre las fotos del proyecto
+  document.querySelectorAll('.project-cover').forEach(cover => {
+    const imgs = cover.querySelectorAll('img');
+    if (imgs.length < 2) return;
+    let i = 0;
+    setInterval(() => {
+      imgs[i].classList.remove('is-active');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('is-active');
+    }, 3200);
+  });
+
   // Envío del formulario de contacto sin recargar la página (Formspree)
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');

@@ -877,6 +877,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   height: 62vh;
   min-height: 340px;
   overflow: hidden;
+  margin-bottom: clamp(4rem, 9vw, 7rem);
   background-image: linear-gradient(rgba(243,238,228,0.89), rgba(243,238,228,0.89)), url('../images/materiales/lino.webp');
   background-size: 900px auto;
   background-repeat: repeat;

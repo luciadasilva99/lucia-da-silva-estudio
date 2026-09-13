@@ -2,7 +2,7 @@
    Lucía Da Silva Estudio — Hoja de estilos principal
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
   /* Paleta */
@@ -116,6 +116,37 @@ p { margin: 0; }
 .btn-outline:hover { border-color: var(--color-ink); background: rgba(33,28,22,0.05); }
 .btn svg { width: 14px; height: 14px; transition: transform .35s var(--ease); }
 .btn:hover svg { transform: translateX(4px); }
+
+/* ---- Preloader (pantalla de carga con el logo centrado, referencia Yabu Pushelberg) ---- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+  transition: opacity .6s var(--ease), visibility .6s var(--ease);
+}
+.preloader-logo {
+  width: clamp(150px, 18vw, 260px);
+  height: auto;
+  opacity: 0;
+  animation: preloaderFade 1.2s var(--ease) forwards;
+}
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+@keyframes preloaderFade {
+  0% { opacity: 0; transform: scale(0.94); }
+  55% { opacity: 1; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .preloader-logo { animation: none; opacity: 1; }
+}
 
 /* ---- Header (logo centrado, nav a los costados — referencia Yabu Pushelberg) ---- */
 .site-header {
@@ -901,8 +932,8 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .canvas-viewport::-webkit-scrollbar { display: none; }
 .canvas-world {
   position: relative;
-  width: 320vw;
-  height: 280vh;
+  width: 210vw;
+  height: 195vh;
 }
 .canvas-tile {
   position: absolute;
@@ -939,10 +970,11 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .canvas-tile-label {
   display: block;
   margin-top: 0.65rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-ink-soft);
+  color: var(--color-ink);
 }
 .canvas-tile.is-color {
   display: flex;

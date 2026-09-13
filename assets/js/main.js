@@ -118,11 +118,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Preloader del Home: pantalla de carga con el logo centrado (solo si existe en la página)
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    window.setTimeout(() => preloader.classList.add('is-hidden'), 1100);
+  }
+
   // Lienzo libre del Home: apoyar el cursor hacia un lado para moverse hacia allá
   // (sin clickear ni arrastrar), al estilo Yabu Pushelberg. En mobile, el dedo
   // desliza de forma nativa en cualquier dirección.
   const canvasViewport = document.querySelector('.canvas-viewport');
   const homeCanvas = document.querySelector('.home-canvas');
+
+  // Arranca centrado en el lienzo (no en la esquina superior izquierda)
+  if (canvasViewport && homeCanvas) {
+    const canvasWorld = homeCanvas.querySelector('.canvas-world');
+    canvasViewport.scrollLeft = (canvasWorld.scrollWidth - canvasViewport.clientWidth) / 2;
+    canvasViewport.scrollTop = (canvasWorld.scrollHeight - canvasViewport.clientHeight) / 2;
+  }
+
   if (canvasViewport && homeCanvas && window.matchMedia('(pointer: fine)').matches) {
     const markInteracted = () => homeCanvas.classList.add('has-interacted');
     const deadZone = 0.14;   // zona muerta central: quieto si el cursor está cerca del medio

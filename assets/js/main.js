@@ -159,11 +159,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvasViewport = document.querySelector('.canvas-viewport');
   const homeCanvas = document.querySelector('.home-canvas');
 
-  // Arranca centrado en el lienzo (no en la esquina superior izquierda)
+  // Arranca siempre centrado en el mismo lugar del lienzo (el proyecto VJ), no en un
+  // centro geométrico que cambia según el tamaño exacto de cada pantalla
   if (canvasViewport && homeCanvas) {
     const canvasWorld = homeCanvas.querySelector('.canvas-world');
-    canvasViewport.scrollLeft = (canvasWorld.scrollWidth - canvasViewport.clientWidth) / 2;
-    canvasViewport.scrollTop = (canvasWorld.scrollHeight - canvasViewport.clientHeight) / 2;
+    const anchor = canvasWorld.querySelector('a[href="proyecto-vj.html"]') || canvasWorld;
+    const targetLeft = anchor.offsetLeft + anchor.offsetWidth / 2 - canvasViewport.clientWidth / 2;
+    const targetTop = anchor.offsetTop + anchor.offsetHeight / 2 - canvasViewport.clientHeight / 2;
+    canvasViewport.scrollLeft = Math.max(0, targetLeft);
+    canvasViewport.scrollTop = Math.max(0, targetTop);
   }
 
   // Ocultar el aviso al primer toque, en cualquier dispositivo (esto no depende de si hay mouse)

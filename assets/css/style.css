@@ -743,10 +743,12 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: repeat(3, minmax(140px, 220px));
+  justify-content: center;
+  gap: 2.5rem 4.5rem;
   padding-bottom: 3rem;
   border-bottom: 1px solid rgba(243,238,228,0.14);
+  text-align: center;
 }
 .footer-top .brand { font-size: 1.4rem; }
 .footer-top p { color: rgba(243,238,228,0.6); margin-top: 1rem; max-width: 30ch; }
@@ -1232,20 +1234,20 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 @media (prefers-reduced-motion: reduce) {
   .canvas-tile.is-photo img { transition: none; }
 }
-/* Composición propia para mobile: tiles más chicos que la pantalla (se ven completos)
-   y con más columnas de las que entran de una, para poder navegar en las dos direcciones
-   igual que en desktop, no solo de arriba hacia abajo */
+/* Composición propia para mobile: cada tile entra completo en la pantalla (sin tener
+   que desplazarse para verlo entero), pero el mundo es bastante más ancho que la
+   pantalla para que desplazarse hacia los costados sea evidente, no solo hacia abajo */
 @media (max-width: 700px) {
   .canvas-world {
-    grid-template-columns: repeat(9, 42px);
-    grid-auto-rows: 42px;
+    grid-template-columns: repeat(20, 32px);
+    grid-auto-rows: 32px;
     gap: 8px;
     padding: 24px;
   }
-  .canvas-tile.is-photo.size-xl { grid-column: span 7; grid-row: span 7; }
-  .canvas-tile.is-photo.size-lg { grid-column: span 5; grid-row: span 6; }
-  .canvas-tile.size-sm { grid-column: span 3; grid-row: span 3; }
-  .canvas-tile.size-wide { grid-column: span 5; grid-row: span 2; }
+  .canvas-tile.is-photo.size-xl { grid-column: span 8; grid-row: span 8; }
+  .canvas-tile.is-photo.size-lg { grid-column: span 6; grid-row: span 7; }
+  .canvas-tile.size-sm { grid-column: span 4; grid-row: span 4; }
+  .canvas-tile.size-wide { grid-column: span 6; grid-row: span 3; }
   /* En mobile no hay hover real: los tiles se ven siempre a su tamaño completo */
   .canvas-tile { transform: none; }
 }
@@ -1281,14 +1283,14 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   .split.reverse .ph-block { order: 0; }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
   .project-grid.is-asymmetric .card:nth-child(3n+2) { margin-top: 0; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-top { grid-template-columns: repeat(3, minmax(0, 200px)); gap: 2rem; }
   .process-item { grid-template-columns: 50px 1fr; }
   .process-item p { grid-column: 2 / 3; }
   .services-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .project-grid { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 2.25rem; }
   .hero-cta, .btn { width: 100%; }
   .hero-cta .btn { justify-content: center; }
 }

@@ -1128,6 +1128,19 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   display: block;
   position: relative;
 }
+/* Efecto "acercarse": en mouse, cada tile arranca un poco más chico (como distante)
+   y crece a su tamaño real al pasar el cursor, como en Yabu Pushelberg */
+@media (pointer: fine) {
+  .canvas-tile {
+    transform: scale(0.86);
+    transition: transform .5s var(--ease);
+    will-change: transform;
+  }
+  .canvas-tile:hover {
+    transform: scale(1);
+    z-index: 3;
+  }
+}
 .canvas-tile.is-color,
 .canvas-tile.is-texture {
   overflow: hidden;
@@ -1210,18 +1223,22 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 @media (prefers-reduced-motion: reduce) {
   .canvas-tile.is-photo img { transition: none; }
 }
-/* Composición propia para mobile: menos columnas, tiles más chicos, ritmo más vertical */
+/* Composición propia para mobile: tiles más chicos que la pantalla (se ven completos)
+   y con más columnas de las que entran de una, para poder navegar en las dos direcciones
+   igual que en desktop, no solo de arriba hacia abajo */
 @media (max-width: 700px) {
   .canvas-world {
-    grid-template-columns: repeat(6, 62px);
-    grid-auto-rows: 62px;
-    gap: 10px;
-    padding: 30px;
+    grid-template-columns: repeat(9, 42px);
+    grid-auto-rows: 42px;
+    gap: 8px;
+    padding: 24px;
   }
-  .canvas-tile.is-photo.size-xl { grid-column: span 6; grid-row: span 4; }
-  .canvas-tile.is-photo.size-lg { grid-column: span 4; grid-row: span 5; }
+  .canvas-tile.is-photo.size-xl { grid-column: span 7; grid-row: span 7; }
+  .canvas-tile.is-photo.size-lg { grid-column: span 5; grid-row: span 6; }
   .canvas-tile.size-sm { grid-column: span 3; grid-row: span 3; }
-  .canvas-tile.size-wide { grid-column: span 4; grid-row: span 2; }
+  .canvas-tile.size-wide { grid-column: span 5; grid-row: span 2; }
+  /* En mobile no hay hover real: los tiles se ven siempre a su tamaño completo */
+  .canvas-tile { transform: none; }
 }
 
 /* ---- Mono grotesca para etiquetas, navegación y meta-texto (referencia Yabu Pushelberg) ---- */

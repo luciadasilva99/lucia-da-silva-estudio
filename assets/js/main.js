@@ -86,6 +86,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Envío del formulario de contacto sin recargar la página (Formspree)
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      formStatus.hidden = true;
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          contactForm.reset();
+          formStatus.textContent = '¡Gracias! Recibimos tu consulta y te vamos a responder a la brevedad.';
+          formStatus.className = 'form-status is-success';
+        } else {
+          formStatus.textContent = 'Hubo un problema al enviar el formulario. Probá de nuevo o escribinos directo por mail.';
+          formStatus.className = 'form-status is-error';
+        }
+      } catch (err) {
+        formStatus.textContent = 'Hubo un problema al enviar el formulario. Probá de nuevo o escribinos directo por mail.';
+        formStatus.className = 'form-status is-error';
+      }
+      formStatus.hidden = false;
+      submitBtn.disabled = false;
+    });
+  }
+
   // Año automático en el footer
   const yearEl = document.querySelector('[data-year]');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

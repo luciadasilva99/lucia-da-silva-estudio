@@ -716,6 +716,14 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .form-field select:focus,
 .form-field textarea:focus { border-color: var(--color-clay); }
 .form-field textarea { resize: vertical; min-height: 100px; }
+.form-status {
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 2px;
+}
+.form-status.is-success { background: rgba(92,107,71,0.14); color: var(--color-olive-dark); }
+.form-status.is-error { background: rgba(166,83,43,0.12); color: var(--color-clay-dark); }
 
 .contact-info-item { margin-bottom: 2.2rem; }
 .contact-info-item h4 {

@@ -40,7 +40,8 @@
     <div class="container contact-grid">
 
       <div class="reveal">
-        <form id="contact-form" action="#" method="POST">
+        <form id="contact-form" action="https://formspree.io/f/xkjnlbvg" method="POST">
+          <input type="hidden" name="_subject" value="Nueva consulta desde la web">
           <div class="form-field">
             <label for="nombre">Nombre y apellido</label>
             <input type="text" id="nombre" name="nombre" required>
@@ -90,6 +91,7 @@
             <textarea id="mensaje" name="mensaje" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Enviar consulta <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="form-status" id="form-status" hidden></p>
         </form>
       </div>
 

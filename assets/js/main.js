@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Preloader del Home: pantalla de carga con el logo centrado (solo si existe en la página)
   const preloader = document.getElementById('preloader');
   if (preloader) {
-    window.setTimeout(() => preloader.classList.add('is-hidden'), 1100);
+    window.setTimeout(() => preloader.classList.add('is-hidden'), 3000);
   }
 
   // Lienzo libre del Home: apoyar el cursor hacia un lado para moverse hacia allá

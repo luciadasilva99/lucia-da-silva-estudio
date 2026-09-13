@@ -162,11 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvasViewport = document.querySelector('.canvas-viewport');
   const homeCanvas = document.querySelector('.home-canvas');
 
-  // Arranca siempre centrado en el mismo lugar del lienzo (el proyecto VJ), no en un
-  // centro geométrico que cambia según el tamaño exacto de cada pantalla
+  // Arranca siempre centrado en el mismo lugar del lienzo, no en un centro geométrico
+  // que cambia según el tamaño exacto de cada pantalla. En computadora (mouse + pantalla
+  // ancha) ancla en Terraza; en cualquier celular/tablet (touch), en VJ.
   if (canvasViewport && homeCanvas) {
     const canvasWorld = homeCanvas.querySelector('.canvas-world');
-    const anchor = canvasWorld.querySelector('a[href="proyecto-vj.html"]') || canvasWorld;
+    const isDesktop = window.matchMedia('(pointer: fine) and (min-width: 900px)').matches;
+    const anchorHref = isDesktop ? 'proyecto-terraza.html' : 'proyecto-vj.html';
+    const anchor = canvasWorld.querySelector(`a[href="${anchorHref}"]`) || canvasWorld;
     const targetLeft = anchor.offsetLeft + anchor.offsetWidth / 2 - canvasViewport.clientWidth / 2;
     const targetTop = anchor.offsetTop + anchor.offsetHeight / 2 - canvasViewport.clientHeight / 2;
     canvasViewport.scrollLeft = Math.max(0, targetLeft);

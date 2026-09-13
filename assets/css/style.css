@@ -141,7 +141,9 @@ p { margin: 0; }
   -webkit-mask-size: 0% 100%;
   mask-size: 0% 100%;
   transform: scale(0.96);
-  animation: preloaderWipe 2.3s var(--ease) forwards;
+  animation:
+    preloaderWipe 1.3s var(--ease) forwards,
+    preloaderPulse 1.8s ease-in-out 1.3s infinite;
 }
 .preloader.is-hidden {
   opacity: 0;
@@ -151,6 +153,11 @@ p { margin: 0; }
 @keyframes preloaderWipe {
   0% { -webkit-mask-size: 0% 100%; mask-size: 0% 100%; transform: scale(0.96); }
   100% { -webkit-mask-size: 170% 100%; mask-size: 170% 100%; transform: scale(1); }
+}
+/* Sigue con vida mientras dura la carga, en vez de quedarse quieto */
+@keyframes preloaderPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.72; transform: scale(1.035); }
 }
 @media (prefers-reduced-motion: reduce) {
   .preloader-logo { animation: none; -webkit-mask-image: none; mask-image: none; transform: none; }
@@ -568,6 +575,8 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 /* ---- Manifiesto / declaración ---- */
 .statement {
   max-width: 20ch;
+  font-size: clamp(2.2rem, 4.6vw, 3.6rem);
+  font-weight: 300;
 }
 .statement-row {
   display: grid;

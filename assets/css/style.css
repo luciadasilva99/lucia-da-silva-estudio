@@ -11,8 +11,8 @@
   --color-card: #FBF8F1;
   --color-ink: #211C16;
   --color-ink-soft: #4A4137;
-  --color-clay: #A6532B;
-  --color-clay-dark: #7C3D1F;
+  --color-clay: #8B4A32;
+  --color-clay-dark: #6B3A26;
   --color-brass: #A9895E;
   --color-olive: #5C6B47;
   --color-olive-dark: #414D33;
@@ -43,8 +43,8 @@ body {
   font-weight: 400;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
-  /* Lienzo de lino real como fondo general de todo el sitio */
-  background-image: linear-gradient(rgba(243,238,228,0.78), rgba(243,238,228,0.78)), url('../images/materiales/lino.webp');
+  /* Lienzo de lino real como fondo general de todo el sitio, bien sutil para no restar lectura */
+  background-image: linear-gradient(rgba(243,238,228,0.89), rgba(243,238,228,0.89)), url('../images/materiales/lino.webp');
   background-size: 900px auto;
   background-repeat: repeat;
 }

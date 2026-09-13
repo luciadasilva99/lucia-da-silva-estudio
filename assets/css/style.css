@@ -963,16 +963,45 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   .method-statement, .method-item p.lede { grid-column: 1; }
 }
 
-/* ---- Secuencia de materia: solo imágenes a pantalla completa, sin texto (formato Approach de Yabu) ---- */
-.material-sequence-item {
-  width: 100%;
-  height: 92vh;
+/* ---- Secuencia de materia: las imágenes cambian con el scroll, fijas en pantalla mientras tanto
+   (formato Approach de Yabu Pushelberg) ---- */
+.material-sequence {
+  position: relative;
+  height: 400vh; /* 4 imágenes × 100vh de recorrido de scroll */
+}
+.material-sequence-frame {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   overflow: hidden;
 }
-.material-sequence-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (max-width: 700px) {
-  .material-sequence-item { height: 70vh; }
+.material-sequence-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .6s ease;
 }
+.material-sequence-frame img.is-active { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .material-sequence-frame img { transition: none; }
+}
+@media (max-width: 700px) {
+  .material-sequence { height: 300vh; }
+}
+
+/* ---- Momento de frase: declaración aislada, con espacio en blanco alrededor ---- */
+.statement-moment { padding: clamp(6rem, 14vw, 11rem) 0; text-align: center; }
+.statement-moment-text {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 18ch;
+  margin: 0 auto;
+}
+.statement-moment-text em { font-style: italic; color: var(--color-clay); }
 
 /* ---- Reveal con escala (imágenes que se "amplían" al entrar en vista) ---- */
 .reveal-scale {
@@ -1032,8 +1061,8 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-/* ---- Botón flotante de WhatsApp (contacto siempre a mano) ---- */
-.whatsapp-float {
+/* ---- Botón flotante de contacto (lleva a la página de contacto, con mail primero) ---- */
+.contact-float {
   position: fixed;
   bottom: clamp(1.1rem, 3vw, 1.9rem);
   right: clamp(1.1rem, 3vw, 1.9rem);
@@ -1041,18 +1070,18 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--color-olive);
+  background: var(--color-ink);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 22px rgba(33,28,22,0.28);
   transition: transform .3s var(--ease), background .3s ease;
 }
-.whatsapp-float:hover { transform: scale(1.08); background: var(--color-olive-dark); }
-.whatsapp-float svg { width: 26px; height: 26px; fill: var(--color-bg); }
+.contact-float:hover { transform: scale(1.08); background: var(--color-clay-dark); }
+.contact-float svg { width: 26px; height: 26px; color: var(--color-bg); }
 @media (max-width: 560px) {
-  .whatsapp-float { width: 50px; height: 50px; }
-  .whatsapp-float svg { width: 23px; height: 23px; }
+  .contact-float { width: 50px; height: 50px; }
+  .contact-float svg { width: 23px; height: 23px; }
 }
 
 /* ---- Texto accesible/SEO oculto visualmente (el inicio es puramente el lienzo) ---- */

@@ -86,6 +86,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Secuencia de materia (Estudio): las imágenes cambian según cuánto se scrolleó,
+  // fijas en pantalla mientras dura el recorrido (formato Approach de Yabu Pushelberg)
+  const materialSequence = document.querySelector('.material-sequence');
+  if (materialSequence) {
+    const seqImgs = materialSequence.querySelectorAll('img');
+    const updateSequence = () => {
+      const rect = materialSequence.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
+      let idx = Math.floor(progress * seqImgs.length);
+      if (idx >= seqImgs.length) idx = seqImgs.length - 1;
+      seqImgs.forEach((img, i) => img.classList.toggle('is-active', i === idx));
+    };
+    window.addEventListener('scroll', updateSequence, { passive: true });
+    updateSequence();
+  }
+
   // Portada de proyecto: rotación automática entre las fotos del proyecto
   document.querySelectorAll('.project-cover').forEach(cover => {
     const imgs = cover.querySelectorAll('img');

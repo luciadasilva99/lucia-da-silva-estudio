@@ -164,21 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Arranca siempre en el mismo lugar del lienzo, no en un centro geométrico que
   // cambia según el tamaño exacto de cada pantalla. En computadora (mouse + pantalla
-  // ancha), Hotel Land Express queda arriba a la izquierda (con Terraza y un poco de
-  // Santa Ana asomando); en cualquier celular/tablet (touch), centrado en VJ.
+  // ancha), centrado en Terraza; en cualquier celular/tablet (touch), centrado en VJ.
   if (canvasViewport && homeCanvas) {
     const canvasWorld = homeCanvas.querySelector('.canvas-world');
     const isDesktop = window.matchMedia('(pointer: fine) and (min-width: 900px)').matches;
-    let targetLeft, targetTop;
-    if (isDesktop) {
-      const anchor = canvasWorld.querySelector('a[href="proyecto-hotel-land-express.html"]') || canvasWorld;
-      targetLeft = anchor.offsetLeft - 20;
-      targetTop = anchor.offsetTop - 35;
-    } else {
-      const anchor = canvasWorld.querySelector('a[href="proyecto-vj.html"]') || canvasWorld;
-      targetLeft = anchor.offsetLeft + anchor.offsetWidth / 2 - canvasViewport.clientWidth / 2;
-      targetTop = anchor.offsetTop + anchor.offsetHeight / 2 - canvasViewport.clientHeight / 2;
-    }
+    const anchorHref = isDesktop ? 'proyecto-terraza.html' : 'proyecto-vj.html';
+    const anchor = canvasWorld.querySelector(`a[href="${anchorHref}"]`) || canvasWorld;
+    const targetLeft = anchor.offsetLeft + anchor.offsetWidth / 2 - canvasViewport.clientWidth / 2;
+    const targetTop = anchor.offsetTop + anchor.offsetHeight / 2 - canvasViewport.clientHeight / 2;
     canvasViewport.scrollLeft = Math.max(0, targetLeft);
     canvasViewport.scrollTop = Math.max(0, targetTop);
   }

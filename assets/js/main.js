@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const filter = btn.dataset.filter;
         cards.forEach(card => {
           const match = filter === 'todos' || card.dataset.category === filter;
-          card.hidden = !match;
+          card.style.display = match ? '' : 'none';
         });
       });
     });

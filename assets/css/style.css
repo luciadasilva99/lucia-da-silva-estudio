@@ -38,12 +38,15 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--color-bg);
   color: var(--color-ink);
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  /* Lienzo de lino real como fondo general de todo el sitio */
+  background-image: linear-gradient(rgba(243,238,228,0.78), rgba(243,238,228,0.78)), url('../images/materiales/lino.webp');
+  background-size: 900px auto;
+  background-repeat: repeat;
 }
 
 img { max-width: 100%; display: block; }
@@ -1074,20 +1077,27 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   touch-action: pan-x pan-y;
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
-.canvas-viewport::-webkit-scrollbar { display: none; }
-.canvas-world {
-  position: relative;
-  width: 250vw;
-  height: 225vh;
-  /* El moodboard se apoya sobre una tela de lino real, en el tono del logo */
+  /* El moodboard se apoya sobre una tela de lino real; se desplaza junto con el contenido */
   background-image: linear-gradient(rgba(243,238,228,0.72), rgba(243,238,228,0.72)), url('../images/materiales/lino.webp');
   background-size: 900px auto;
   background-repeat: repeat;
+  background-attachment: local;
+}
+.canvas-viewport::-webkit-scrollbar { display: none; }
+
+/* Mosaico real en grilla (no posiciones libres): todo alinea a una misma trama,
+   con tamaños y formas que varían pero siempre coherentes entre sí. */
+.canvas-world {
+  display: grid;
+  grid-template-columns: repeat(18, 100px);
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  gap: 14px;
+  padding: 60px;
 }
 .canvas-tile {
-  position: absolute;
   display: block;
+  position: relative;
 }
 .canvas-tile.is-color,
 .canvas-tile.is-texture {
@@ -1096,20 +1106,15 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   box-shadow: 0 10px 30px rgba(33,28,22,0.10);
 }
 /* Fotos de proyectos: protagonistas, a gran escala (referencia Yabu Pushelberg) */
-.canvas-tile.is-photo.size-xl { width: clamp(340px, 40vw, 620px); }
-.canvas-tile.is-photo.size-lg { width: clamp(250px, 29vw, 440px); }
-.canvas-tile-media {
-  display: block;
-  overflow: hidden;
-  border-radius: 2px;
-  box-shadow: 0 10px 30px rgba(33,28,22,0.10);
-}
-.canvas-tile.is-photo.size-xl .canvas-tile-media { aspect-ratio: 3/2; }
-.canvas-tile.is-photo.size-lg .canvas-tile-media { aspect-ratio: 4/5; }
-/* Color y material: pequeños, dispersos entre las fotos (referencia AGO Interiors) */
-.canvas-tile.size-sm { width: clamp(72px, 7.5vw, 132px); }
+.canvas-tile.is-photo { display: flex; flex-direction: column; height: 100%; }
+.canvas-tile.is-photo.size-xl { grid-column: span 6; grid-row: span 4; }
+.canvas-tile.is-photo.size-lg { grid-column: span 4; grid-row: span 5; }
+.canvas-tile-media { flex: 1; min-height: 0; overflow: hidden; border-radius: 2px; }
+/* Color y material: varían en tamaño y forma, pero siempre alineados a la misma trama */
+.canvas-tile.size-sm { grid-column: span 3; grid-row: span 3; }
+.canvas-tile.size-wide { grid-column: span 4; grid-row: span 2; }
 .canvas-tile.is-color,
-.canvas-tile.is-texture { aspect-ratio: 1/1; }
+.canvas-tile.is-texture { height: 100%; }
 .canvas-tile.is-texture img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
 .canvas-tile.is-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
@@ -1120,7 +1125,8 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 /* El nombre del proyecto va debajo del render, a una pequeña distancia (no superpuesto) */
 .canvas-tile-label {
   display: block;
-  margin-top: 0.65rem;
+  flex-shrink: 0;
+  padding-top: 0.6rem;
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -1135,7 +1141,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .canvas-tile.is-color span {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(0.62rem, 1vw, 0.82rem);
+  font-size: 0.85rem;
   line-height: 1.1;
   color: var(--color-bg);
   pointer-events: none;
@@ -1148,19 +1154,24 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .canvas-hint {
   position: absolute;
   z-index: 5;
-  left: var(--pad);
-  bottom: 1.3rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.55rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  gap: 0.7rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-ink-soft);
+  background: rgba(243,238,228,0.88);
+  padding: 1.4rem 1.8rem;
+  border-radius: 4px;
   pointer-events: none;
   transition: opacity .5s ease;
 }
-.canvas-hint svg { width: 14px; height: 14px; }
+.canvas-hint svg { width: 22px; height: 22px; }
 .canvas-hint .hint-touch { display: none; }
 .home-canvas.has-interacted .canvas-hint { opacity: 0; }
 @media (pointer: coarse) {
@@ -1170,11 +1181,18 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 @media (prefers-reduced-motion: reduce) {
   .canvas-tile.is-photo img { transition: none; }
 }
+/* Composición propia para mobile: menos columnas, tiles más chicos, ritmo más vertical */
 @media (max-width: 700px) {
-  .canvas-world { width: 280vw; height: 240vh; }
-  .canvas-tile.is-photo.size-xl { width: clamp(300px, 78vw, 460px); }
-  .canvas-tile.is-photo.size-lg { width: clamp(220px, 58vw, 340px); }
-  .canvas-tile.size-sm { width: clamp(84px, 20vw, 120px); }
+  .canvas-world {
+    grid-template-columns: repeat(6, 62px);
+    grid-auto-rows: 62px;
+    gap: 10px;
+    padding: 30px;
+  }
+  .canvas-tile.is-photo.size-xl { grid-column: span 6; grid-row: span 4; }
+  .canvas-tile.is-photo.size-lg { grid-column: span 4; grid-row: span 5; }
+  .canvas-tile.size-sm { grid-column: span 3; grid-row: span 3; }
+  .canvas-tile.size-wide { grid-column: span 4; grid-row: span 2; }
 }
 
 /* ---- Mono grotesca para etiquetas, navegación y meta-texto (referencia Yabu Pushelberg) ---- */

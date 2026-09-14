@@ -169,20 +169,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Arranca siempre en el mismo lugar del lienzo, no en un centro geométrico que
   // cambia según el tamaño exacto de cada pantalla. En computadora (mouse + pantalla
-  // ancha): a la izquierda se ven las tres camas completas de Hotel Land Express, y
-  // el encuadre vertical queda centrado en Terraza con un empujón hacia abajo para que
-  // asome apenas un poco del bar MUD. En cualquier celular/tablet (touch), centrado en VJ.
+  // ancha): SA queda arriba a la izquierda, con Arena y la madera al lado, Terraza
+  // asomando apenas arriba de todo y MUD como protagonista a la derecha. En cualquier
+  // celular/tablet (touch), centrado en VJ.
   if (canvasViewport && homeCanvas) {
     const canvasWorld = homeCanvas.querySelector('.canvas-world');
     const isDesktop = window.matchMedia('(pointer: fine) and (min-width: 900px)').matches;
     let targetLeft, targetTop;
     if (isDesktop) {
-      const hotelLandExpress = canvasWorld.querySelector('a[href="proyecto-hotel-land-express.html"]');
+      const santaAna = canvasWorld.querySelector('a[href="proyecto-santa-ana.html"]');
       const terraza = canvasWorld.querySelector('a[href="proyecto-terraza.html"]');
-      targetLeft = hotelLandExpress ? hotelLandExpress.offsetLeft - 20 : 0;
-      targetTop = terraza
-        ? terraza.offsetTop + terraza.offsetHeight / 2 - canvasViewport.clientHeight / 2 + 30
-        : 0;
+      targetLeft = santaAna ? santaAna.offsetLeft : 0;
+      targetTop = terraza ? terraza.offsetTop + terraza.offsetHeight - 100 : 0;
     } else {
       const vj = canvasWorld.querySelector('a[href="proyecto-vj.html"]') || canvasWorld;
       targetLeft = vj.offsetLeft + vj.offsetWidth / 2 - canvasViewport.clientWidth / 2;

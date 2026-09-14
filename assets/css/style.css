@@ -1336,11 +1336,11 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
    el lienzo (overlay descartado) — nunca queda del todo quieto. */
 @keyframes tileBreathe {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.16); }
+  50% { transform: scale(1.24); }
 }
 @keyframes tileBreatheSoft {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.035); }
+  50% { transform: scale(1.065); }
 }
 .canvas-tile-media img,
 .canvas-tile.is-texture img {

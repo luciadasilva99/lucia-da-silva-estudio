@@ -1290,15 +1290,15 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(243,238,228,0.5);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(243,238,228,0.28);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   transition: opacity .7s var(--ease), visibility .7s var(--ease);
+  pointer-events: none; /* deja pasar el mousemove para poder panear el lienzo de fondo */
 }
 .home-intro.is-hidden {
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
 }
 .home-intro-buttons {
   display: flex;
@@ -1306,6 +1306,7 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   flex-wrap: wrap;
   justify-content: center;
   padding: 0 1.5rem;
+  pointer-events: auto; /* los botones sí deben ser clickeables */
 }
 @media (max-width: 700px) {
   .home-intro-buttons { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }

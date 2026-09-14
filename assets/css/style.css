@@ -2,7 +2,7 @@
    Lucía Da Silva Estudio — Hoja de estilos principal
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 :root {
   /* Paleta */
@@ -22,8 +22,8 @@
   --color-line-strong: rgba(33, 28, 22, 0.28);
 
   /* Tipografía */
-  --font-display: 'Jost', 'Century Gothic', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Work Sans', sans-serif;
+  --font-body: 'Work Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
   /* Layout */
@@ -78,8 +78,15 @@ h1, h2, h3, h4 {
   letter-spacing: 0.01em;
 }
 
-h1 { font-size: clamp(2.9rem, 6.8vw, 5.8rem); font-weight: 300; }
+h1 { font-size: clamp(2.2rem, 6.8vw, 5.8rem); font-weight: 300; text-transform: uppercase; letter-spacing: 0.03em; overflow-wrap: break-word; }
 h2 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 300; }
+/* Los títulos cortos van en mayúscula (como el logo y como Longchamp trata sus
+   títulos de sección); las frases largas tipo manifiesto se quedan en formato
+   normal porque están pensadas para leerse como una oración, no como una etiqueta */
+.cta-banner h2, .section-head h2, .statement-moment-text {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
 h3 { font-size: clamp(1.4rem, 2.4vw, 1.85rem); }
 
 em, .italic { font-style: italic; }

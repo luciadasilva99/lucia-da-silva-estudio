@@ -197,6 +197,14 @@ document.addEventListener('DOMContentLoaded', () => {
     canvasViewport.addEventListener('touchstart', () => homeCanvas.classList.add('has-interacted'), { once: true, passive: true });
   }
 
+  // Overlay de bienvenida del Home: deja elegir entre explorar el lienzo o ir directo
+  // a Servicios, en vez de dejar a la persona sin un primer paso claro
+  const homeIntro = document.getElementById('homeIntro');
+  const homeIntroExplore = document.getElementById('homeIntroExplore');
+  if (homeIntro && homeIntroExplore) {
+    homeIntroExplore.addEventListener('click', () => homeIntro.classList.add('is-hidden'));
+  }
+
   if (canvasViewport && homeCanvas && window.matchMedia('(pointer: fine)').matches) {
     const markInteracted = () => homeCanvas.classList.add('has-interacted');
     const deadZone = 0.14;   // zona muerta central: quieto si el cursor está cerca del medio

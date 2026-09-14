@@ -180,8 +180,9 @@ p { margin: 0; }
   align-items: center;
   gap: 1.5rem;
   padding: 1.4rem var(--pad);
-  background: rgba(243, 238, 228, 0.86);
+  background: rgba(243, 238, 228, 0.6);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
   transition: border-color .3s ease;
 }
@@ -1281,6 +1282,34 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .canvas-hint svg { width: 22px; height: 22px; }
 .canvas-hint .hint-touch { display: none; }
 .home-canvas.has-interacted .canvas-hint { opacity: 0; }
+
+.home-intro {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(243,238,228,0.5);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: opacity .7s var(--ease), visibility .7s var(--ease);
+}
+.home-intro.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.home-intro-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+@media (max-width: 700px) {
+  .home-intro-buttons { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
+}
 @media (pointer: coarse) {
   .canvas-hint .hint-mouse { display: none; }
   .canvas-hint .hint-touch { display: inline; }

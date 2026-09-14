@@ -116,15 +116,117 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Portada de proyecto: rotación automática entre las fotos del proyecto
+  const ICON_CHEVRON_LEFT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+  const ICON_CHEVRON_RIGHT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+  const ICON_ZOOM = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>';
+  const ICON_CLOSE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+
+  // Portada de proyecto: rotación automática + navegación manual (flechas y puntos)
+  // + zoom para ver cada foto completa, sin recortar, en una capa superior
   document.querySelectorAll('.project-cover').forEach(cover => {
-    const imgs = cover.querySelectorAll('img');
+    const imgs = Array.from(cover.querySelectorAll('img'));
     if (imgs.length < 2) return;
-    let i = 0;
-    setInterval(() => {
-      imgs[i].classList.remove('is-active');
-      i = (i + 1) % imgs.length;
-      imgs[i].classList.add('is-active');
-    }, 3200);
+
+    let i = Math.max(0, imgs.findIndex(img => img.classList.contains('is-active')));
+    let timer = null;
+    let dots = [];
+
+    const render = () => {
+      imgs.forEach((img, idx) => img.classList.toggle('is-active', idx === i));
+      dots.forEach((dot, idx) => dot.classList.toggle('is-active', idx === i));
+    };
+    const goTo = (newIndex) => {
+      i = (newIndex + imgs.length) % imgs.length;
+      render();
+      if (lightbox.classList.contains('is-open')) lbImg.src = imgs[i].currentSrc || imgs[i].src;
+    };
+    const startAuto = () => {
+      stopAuto();
+      timer = setInterval(() => goTo(i + 1), 3200);
+    };
+    const stopAuto = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+    const prevBtn = document.createElement('button');
+    prevBtn.type = 'button';
+    prevBtn.className = 'cover-nav cover-prev';
+    prevBtn.setAttribute('aria-label', 'Imagen anterior');
+    prevBtn.innerHTML = ICON_CHEVRON_LEFT;
+    const nextBtn = document.createElement('button');
+    nextBtn.type = 'button';
+    nextBtn.className = 'cover-nav cover-next';
+    nextBtn.setAttribute('aria-label', 'Imagen siguiente');
+    nextBtn.innerHTML = ICON_CHEVRON_RIGHT;
+    prevBtn.addEventListener('click', () => { goTo(i - 1); startAuto(); });
+    nextBtn.addEventListener('click', () => { goTo(i + 1); startAuto(); });
+    cover.append(prevBtn, nextBtn);
+
+    const dotsWrap = document.createElement('div');
+    dotsWrap.className = 'cover-dots';
+    dots = imgs.map((_, idx) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Ver imagen ${idx + 1}`);
+      dot.addEventListener('click', () => { goTo(idx); startAuto(); });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+    cover.appendChild(dotsWrap);
+
+    // Lightbox compartido: se crea una vez por portada, se monta al final del body
+    // para que tape todo (header, botón flotante, etc.)
+    const lightbox = document.createElement('div');
+    lightbox.className = 'cover-lightbox';
+    const lbClose = document.createElement('button');
+    lbClose.type = 'button';
+    lbClose.className = 'lightbox-close';
+    lbClose.setAttribute('aria-label', 'Cerrar');
+    lbClose.innerHTML = ICON_CLOSE;
+    const lbPrev = document.createElement('button');
+    lbPrev.type = 'button';
+    lbPrev.className = 'cover-nav cover-prev';
+    lbPrev.setAttribute('aria-label', 'Imagen anterior');
+    lbPrev.innerHTML = ICON_CHEVRON_LEFT;
+    const lbNext = document.createElement('button');
+    lbNext.type = 'button';
+    lbNext.className = 'cover-nav cover-next';
+    lbNext.setAttribute('aria-label', 'Imagen siguiente');
+    lbNext.innerHTML = ICON_CHEVRON_RIGHT;
+    const lbImg = document.createElement('img');
+    lightbox.append(lbClose, lbPrev, lbImg, lbNext);
+    document.body.appendChild(lightbox);
+
+    const openLightbox = () => {
+      stopAuto();
+      lbImg.src = imgs[i].currentSrc || imgs[i].src;
+      lbImg.alt = imgs[i].alt || '';
+      lightbox.classList.add('is-open');
+    };
+    const closeLightbox = () => {
+      lightbox.classList.remove('is-open');
+      startAuto();
+    };
+    imgs.forEach(img => img.addEventListener('click', openLightbox));
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    lbPrev.addEventListener('click', () => goTo(i - 1));
+    lbNext.addEventListener('click', () => goTo(i + 1));
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') goTo(i - 1);
+      if (e.key === 'ArrowRight') goTo(i + 1);
+    });
+
+    const zoomBtn = document.createElement('button');
+    zoomBtn.type = 'button';
+    zoomBtn.className = 'cover-zoom';
+    zoomBtn.setAttribute('aria-label', 'Ver imagen en grande');
+    zoomBtn.innerHTML = ICON_ZOOM;
+    zoomBtn.addEventListener('click', openLightbox);
+    cover.appendChild(zoomBtn);
+
+    render();
+    startAuto();
   });
 
   // Envío del formulario de contacto sin recargar la página (Formspree)

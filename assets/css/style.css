@@ -910,8 +910,123 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
   transition: opacity 1.4s ease;
 }
 .project-cover img.is-active { opacity: 1; }
+.project-cover img { cursor: zoom-in; pointer-events: none; }
+.project-cover img.is-active { pointer-events: auto; }
 @media (max-width: 700px) {
   .project-cover { height: 48vh; }
+}
+
+/* ---- Controles manuales de la portada: flechas, puntos y zoom ---- */
+.cover-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20,16,12,0.4);
+  color: var(--color-bg);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity .25s ease, background .25s ease, transform .25s ease;
+}
+.cover-nav:hover { opacity: 1; background: rgba(20,16,12,0.65); }
+.cover-nav svg { width: 18px; height: 18px; }
+.cover-prev { left: clamp(0.8rem, 3vw, 1.6rem); }
+.cover-next { right: clamp(0.8rem, 3vw, 1.6rem); }
+.cover-zoom {
+  position: absolute;
+  top: clamp(0.8rem, 3vw, 1.6rem);
+  right: clamp(0.8rem, 3vw, 1.6rem);
+  z-index: 4;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20,16,12,0.4);
+  color: var(--color-bg);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity .25s ease, background .25s ease;
+}
+.cover-zoom:hover { opacity: 1; background: rgba(20,16,12,0.65); }
+.cover-zoom svg { width: 16px; height: 16px; }
+.cover-dots {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(0.9rem, 2.5vw, 1.4rem);
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(20,16,12,0.4);
+}
+.cover-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(243,238,228,0.55);
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease;
+}
+.cover-dots button.is-active { background: var(--color-bg); transform: scale(1.3); }
+
+/* ---- Lightbox: ver la foto de la portada completa y sin recortar ---- */
+.cover-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15,12,9,0.94);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+.cover-lightbox.is-open { opacity: 1; visibility: visible; }
+.cover-lightbox img {
+  max-width: min(92vw, 1400px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: default;
+}
+.lightbox-close {
+  position: absolute;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(243,238,228,0.12);
+  color: var(--color-bg);
+  cursor: pointer;
+}
+.lightbox-close:hover { background: rgba(243,238,228,0.22); }
+.lightbox-close svg { width: 18px; height: 18px; }
+.cover-lightbox .cover-nav { background: rgba(243,238,228,0.12); opacity: 1; }
+.cover-lightbox .cover-nav:hover { background: rgba(243,238,228,0.22); }
+@media (max-width: 700px) {
+  .cover-nav { width: 36px; height: 36px; }
+  .cover-zoom { display: none; }
 }
 
 /* ---- Intro de proyecto: título + storytelling a la izquierda, ficha a la derecha ---- */

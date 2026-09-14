@@ -198,10 +198,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Overlay de bienvenida del Home: deja elegir entre explorar el lienzo o ir directo
-  // a Servicios, en vez de dejar a la persona sin un primer paso claro
+  // a Servicios, en vez de dejar a la persona sin un primer paso claro. Un clic en
+  // cualquier parte del overlay que no sean los botones revela el lienzo (nunca navega
+  // a un proyecto sin querer, ya que el overlay intercepta ese clic antes de que llegue
+  // a los tiles de abajo).
   const homeIntro = document.getElementById('homeIntro');
   const homeIntroExplore = document.getElementById('homeIntroExplore');
   if (homeIntro && homeIntroExplore) {
+    homeIntro.addEventListener('click', (e) => {
+      if (!e.target.closest('.home-intro-buttons')) homeIntro.classList.add('is-hidden');
+    });
     homeIntroExplore.addEventListener('click', () => homeIntro.classList.add('is-hidden'));
   }
 
@@ -224,16 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
       rafId = requestAnimationFrame(step);
     };
 
-    canvasViewport.addEventListener('mouseenter', () => {
+    // Escuchado en homeCanvas (no solo canvasViewport) para que el paneo por mouse
+    // siga funcionando aunque el overlay de bienvenida todavía esté tapando el lienzo
+    homeCanvas.addEventListener('mouseenter', () => {
       if (!rafId) rafId = requestAnimationFrame(step);
     });
-    canvasViewport.addEventListener('mousemove', (e) => {
+    homeCanvas.addEventListener('mousemove', (e) => {
       const rect = canvasViewport.getBoundingClientRect();
       panX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
       panY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
       markInteracted();
     });
-    canvasViewport.addEventListener('mouseleave', () => {
+    homeCanvas.addEventListener('mouseleave', () => {
       panX = 0; panY = 0;
       if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
     });

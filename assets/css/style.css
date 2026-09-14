@@ -1006,7 +1006,12 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
 .method-gallery-item.is-lg { grid-column: span 3; aspect-ratio: 4/3; }
 .method-gallery-item.is-md { grid-column: span 2; aspect-ratio: 4/5; }
 .method-gallery-item.is-sm { grid-column: span 2; aspect-ratio: 1/1; }
-.method-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.method-gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  animation: tileBreatheSoft 10s ease-in-out infinite;
+}
+.method-gallery-item:nth-child(2n) img { animation-delay: -3.3s; }
+.method-gallery-item:nth-child(3n) img { animation-delay: -6.6s; }
 /* Desalinea un poco cada item para que aparezca sin un orden estricto de grilla */
 .method-gallery-item:nth-child(2n) { margin-top: clamp(1rem, 4vw, 3rem); }
 .method-gallery-item:nth-child(3n) { margin-top: clamp(-0.5rem, -2vw, -1.5rem); }
@@ -1040,12 +1045,8 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
   height: 100%;
   object-fit: cover;
   transform: translateY(100%);
-  transition: transform .6s ease;
-}
-.material-sequence-frame img.is-active { transform: translateY(0); }
-.material-sequence-frame img.is-passed { transform: translateY(-100%); }
-@media (prefers-reduced-motion: reduce) {
-  .material-sequence-frame img { transition: none; }
+  /* Sin transition: la posición la fija JS en cada evento de scroll, para que
+     acompañe 1 a 1 el dedo o la rueda del mouse en vez de animar por su cuenta */
 }
 @media (max-width: 700px) {
   .material-sequence { height: 300vh; }
@@ -1143,6 +1144,56 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
 /* ---- Reveal on scroll ---- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ---- Entrada elevada para declaraciones tipo manifiesto: la comilla, el título y
+   los párrafos entran en tres tiempos en vez de aparecer todos juntos de golpe ---- */
+.reveal-quote .quote-mark {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.4) rotate(-10deg);
+  transition: opacity .6s var(--ease), transform .7s var(--ease);
+}
+.reveal-quote.is-visible .quote-mark { opacity: 1; transform: scale(1) rotate(0deg); }
+.reveal-quote > h1,
+.reveal-quote > h2,
+.reveal-quote .statement {
+  opacity: 0;
+  transform: translateY(34px) scale(0.97);
+  transition: opacity .9s var(--ease) .18s, transform .9s var(--ease) .18s;
+}
+.reveal-quote.is-visible > h1,
+.reveal-quote.is-visible > h2,
+.reveal-quote.is-visible .statement { opacity: 1; transform: translateY(0) scale(1); }
+.reveal-quote p.lede {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.reveal-quote.is-visible p.lede { opacity: 1; transform: translateY(0); }
+.reveal-quote.is-visible p.lede:nth-of-type(1) { transition-delay: .5s; }
+.reveal-quote.is-visible p.lede:nth-of-type(2) { transition-delay: .62s; }
+.reveal-quote.is-visible p.lede:nth-of-type(3) { transition-delay: .74s; }
+
+/* ---- Números de proceso (Metodología y tarjetas de Servicios): aparecen con un
+   pequeño golpe de escala, un toque después del texto, escalonados entre sí ---- */
+.process-num {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
+}
+.method-item.is-visible .process-num,
+.services-grid.is-visible .process-num { opacity: 1; transform: scale(1); }
+.method-item:nth-child(1).is-visible .process-num { transition-delay: .12s; }
+.method-item:nth-child(2).is-visible .process-num { transition-delay: .2s; }
+.method-item:nth-child(3).is-visible .process-num { transition-delay: .28s; }
+.method-item:nth-child(4).is-visible .process-num { transition-delay: .36s; }
+.services-grid.is-visible .service-card:nth-child(1) .process-num { transition-delay: .1s; }
+.services-grid.is-visible .service-card:nth-child(2) .process-num { transition-delay: .22s; }
+.services-grid.is-visible .service-card:nth-child(3) .process-num { transition-delay: .34s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal-quote .quote-mark, .reveal-quote > h1, .reveal-quote > h2, .reveal-quote .statement, .reveal-quote p.lede, .process-num { transition: none; }
+}
 
 /* ---- Botón flotante de contacto (lleva a la página de contacto, con mail primero) ---- */
 .contact-float {

@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Animación de aparición al hacer scroll
-  const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale, .reveal-quote');
   if ('IntersectionObserver' in window && revealEls.length) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -99,12 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const rect = materialSequence.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
       const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
-      let idx = Math.floor(progress * seqImgs.length);
-      if (idx >= seqImgs.length) idx = seqImgs.length - 1;
+      // Posición continua (0 a n-1): cada imagen se desplaza en proporción exacta
+      // a lo que se scrolleó, sin animación propia, para que acompañe el dedo o
+      // la rueda del mouse en tiempo real en vez de "saltar" entre pasos.
+      const pos = progress * (seqImgs.length - 1);
       seqImgs.forEach((img, i) => {
-        img.classList.toggle('is-active', i === idx);
-        img.classList.toggle('is-passed', i < idx);
+        const offset = Math.max(-1, Math.min(1, pos - i));
+        img.style.transform = `translateY(${offset * 100}%)`;
       });
+      let idx = Math.round(pos);
+      if (idx >= seqImgs.length) idx = seqImgs.length - 1;
       seqDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
     };
     window.addEventListener('scroll', updateSequence, { passive: true });

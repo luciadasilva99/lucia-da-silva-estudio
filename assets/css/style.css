@@ -1164,6 +1164,13 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 /* ---- Lienzo libre del Home: el inicio ES el lienzo, sin scroll de página (formato Yabu) ---- */
 :root { --header-h: 72px; }
 .home-canvas { position: relative; padding: 0; }
+
+/* En el inicio el header flota sobre el lienzo (en vez de empujarlo hacia abajo) para que,
+   con la transparencia del header, se note el moodboard pasando por detrás al panear */
+.page-home .site-header { position: fixed; left: 0; right: 0; }
+.page-home .home-canvas { height: 100vh; }
+.page-home .canvas-viewport { height: 100vh; }
+
 .canvas-viewport {
   position: relative;
   height: calc(100vh - var(--header-h));

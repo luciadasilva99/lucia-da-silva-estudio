@@ -1322,6 +1322,27 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
   border-color: var(--color-ink);
   color: var(--color-bg);
 }
+
+/* En touch no hay "posar el mouse" para panear con el overlay puesto, así que el
+   moodboard de fondo respira solo (zoom sutil e intercalado) para que no se sienta
+   estático mientras se elige una de las dos opciones */
+@media (pointer: coarse) {
+  @keyframes tileBreathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+  .home-canvas.is-idle .canvas-tile-media img,
+  .home-canvas.is-idle .canvas-tile.is-texture img {
+    animation: tileBreathe 7s ease-in-out infinite;
+  }
+  .home-canvas.is-idle .canvas-tile:nth-child(3n) img { animation-delay: -2.3s; }
+  .home-canvas.is-idle .canvas-tile:nth-child(3n+1) img { animation-delay: -4.6s; }
+  .home-canvas.is-idle .canvas-tile.is-texture { overflow: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-canvas.is-idle .canvas-tile-media img,
+  .home-canvas.is-idle .canvas-tile.is-texture img { animation: none; }
+}
 @media (max-width: 700px) {
   .home-intro-buttons { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; }
 }

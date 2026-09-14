@@ -202,11 +202,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // a los tiles de abajo).
   const homeIntro = document.getElementById('homeIntro');
   const homeIntroExplore = document.getElementById('homeIntroExplore');
-  if (homeIntro && homeIntroExplore) {
+  if (homeIntro && homeIntroExplore && homeCanvas) {
+    // Mientras el overlay está puesto, el lienzo queda "is-idle": en touch (sin mouse
+    // para posarse y panear) las fotos respiran solas con un zoom sutil, para que no
+    // se sienta estático mientras se elige una opción
+    homeCanvas.classList.add('is-idle');
+    const revealCanvas = () => {
+      homeIntro.classList.add('is-hidden');
+      homeCanvas.classList.remove('is-idle');
+    };
     homeIntro.addEventListener('click', (e) => {
-      if (!e.target.closest('.home-intro-buttons')) homeIntro.classList.add('is-hidden');
+      if (!e.target.closest('.home-intro-buttons')) revealCanvas();
     });
-    homeIntroExplore.addEventListener('click', () => homeIntro.classList.add('is-hidden'));
+    homeIntroExplore.addEventListener('click', revealCanvas);
   }
 
   if (canvasViewport && homeCanvas && window.matchMedia('(pointer: fine)').matches) {

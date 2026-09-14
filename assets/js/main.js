@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const materialSequence = document.querySelector('.material-sequence');
   if (materialSequence) {
     const seqImgs = materialSequence.querySelectorAll('img');
+    const seqDots = materialSequence.querySelectorAll('.sequence-dots span');
     const updateSequence = () => {
       const rect = materialSequence.getBoundingClientRect();
       const total = rect.height - window.innerHeight;
@@ -104,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.classList.toggle('is-active', i === idx);
         img.classList.toggle('is-passed', i < idx);
       });
+      seqDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
     };
     window.addEventListener('scroll', updateSequence, { passive: true });
     updateSequence();

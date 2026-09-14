@@ -755,6 +755,11 @@ section { padding: clamp(4rem, 9vw, 8rem) 0; }
 .cta-banner .lede { margin: 1.4rem auto 2.2rem; text-align: center; }
 .cta-banner .hero-cta { justify-content: center; }
 
+/* El CTA final y el footer comparten el mismo fondo oscuro sin ningún corte visual
+   entre ambos, así que sus paddings no deben sumarse a lo tonto: se achica el de
+   abajo del CTA para que no sobre tanto espacio muerto antes del footer */
+section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
+
 /* ---- Footer ---- */
 .site-footer {
   background: var(--color-ink);

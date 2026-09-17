@@ -910,8 +910,9 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
   transition: opacity 1.4s ease;
 }
 .project-cover img.is-active { opacity: 1; }
-.project-cover img { cursor: zoom-in; pointer-events: none; }
+.project-cover img { cursor: grab; pointer-events: none; }
 .project-cover img.is-active { pointer-events: auto; }
+.project-cover:active img.is-active { cursor: grabbing; }
 @media (max-width: 700px) {
   .project-cover { height: 48vh; }
 }
@@ -1003,8 +1004,9 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
   width: auto;
   height: auto;
   object-fit: contain;
-  cursor: default;
+  cursor: grab;
 }
+.cover-lightbox:active img { cursor: grabbing; }
 .lightbox-close {
   position: absolute;
   top: clamp(1rem, 3vw, 2rem);

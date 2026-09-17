@@ -164,6 +164,47 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const stopAuto = () => { if (timer) { clearInterval(timer); timer = null; } };
 
+    // Arrastrar para deslizar entre fotos (mouse o dedo), al estilo Yabu Pushelberg:
+    // la foto acompaña el arrastre en tiempo real y, al soltar, completa el cambio
+    // si te moviste lo suficiente, o vuelve a su lugar si no.
+    // onTap: qué hacer cuando se suelta sin haber arrastrado (un clic/toque simple).
+    // No dependemos del evento "click" nativo del navegador porque setPointerCapture
+    // puede comerse el click posterior a un pointerdown/pointerup en algunos casos.
+    const addDragNav = (el, getMovingEl, onTap) => {
+      let startX = 0, dx = 0, dragging = false, moved = false;
+      el.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('.cover-nav, .cover-dots, .cover-zoom, .lightbox-close')) return;
+        dragging = true; moved = false; dx = 0;
+        startX = e.clientX;
+        stopAuto();
+        el.setPointerCapture(e.pointerId);
+      });
+      el.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        dx = e.clientX - startX;
+        if (Math.abs(dx) > 6) moved = true;
+        const target = getMovingEl();
+        if (target) target.style.transform = `translateX(${dx}px)`;
+      });
+      const onUp = () => {
+        if (!dragging) return;
+        dragging = false;
+        const target = getMovingEl();
+        if (target) target.style.transform = '';
+        if (moved) {
+          if (dx < -60) goTo(i + 1);
+          else if (dx > 60) goTo(i - 1);
+          startAuto();
+        } else if (onTap) {
+          onTap();
+        }
+        dx = 0;
+      };
+      el.addEventListener('pointerup', onUp);
+      el.addEventListener('pointercancel', onUp);
+      el.style.touchAction = 'pan-y';
+    };
+
     const prevBtn = document.createElement('button');
     prevBtn.type = 'button';
     prevBtn.className = 'cover-nav cover-prev';
@@ -223,11 +264,12 @@ document.addEventListener('DOMContentLoaded', () => {
       lightbox.classList.remove('is-open');
       startAuto();
     };
-    imgs.forEach(img => img.addEventListener('click', openLightbox));
     lbClose.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
     lbPrev.addEventListener('click', () => goTo(i - 1));
     lbNext.addEventListener('click', () => goTo(i + 1));
+    addDragNav(cover, () => imgs[i], openLightbox);
+    addDragNav(lightbox, () => lbImg, null);
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('is-open')) return;
       if (e.key === 'Escape') closeLightbox();

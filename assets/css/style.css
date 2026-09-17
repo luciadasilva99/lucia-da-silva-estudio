@@ -1256,6 +1256,22 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
 }
 .page-hero .lede { margin-top: 1.2rem; }
 
+/* ---- Carátula dinámica: título y detalle de puntitos reaccionan al scroll con un
+   leve paralaje/zoom en vez de quedar estáticos mientras se entra a la página
+   (JS fija --hero-progress de 0 a 1 a medida que la carátula se va de pantalla) ---- */
+.page-hero--dynamic { --hero-progress: 0; overflow: clip; }
+.page-hero--dynamic .container { will-change: transform, opacity; }
+.page-hero--dynamic.has-dotgrid::before {
+  transform:
+    translateY(calc(var(--hero-progress) * -40px))
+    scale(calc(1 + var(--hero-progress) * 0.9));
+  opacity: calc(0.55 - var(--hero-progress) * 0.5);
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-hero--dynamic .container { transform: none !important; opacity: 1 !important; }
+  .page-hero--dynamic.has-dotgrid::before { transform: none; }
+}
+
 /* ---- Reveal on scroll ---- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }

@@ -40,6 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
+  // Carátula dinámica (por ahora solo Estudio): a medida que se scrollea, el título
+  // se va yendo con un poco de zoom y desvanecimiento, y el detalle de puntitos se
+  // desplaza a otra velocidad, para que la entrada a la página no se sienta estática
+  const dynamicHero = document.querySelector('.page-hero--dynamic');
+  if (dynamicHero) {
+    const heroContainer = dynamicHero.querySelector('.container');
+    const updateHero = () => {
+      const rect = dynamicHero.getBoundingClientRect();
+      const progress = Math.min(1, Math.max(0, -rect.top / rect.height));
+      dynamicHero.style.setProperty('--hero-progress', progress);
+      heroContainer.style.transform = `translateY(${progress * -70}px) scale(${1 - progress * 0.14})`;
+      heroContainer.style.opacity = String(Math.max(0, 1 - progress * 1.3));
+    };
+    window.addEventListener('scroll', updateHero, { passive: true });
+    updateHero();
+  }
+
   // Filtros de proyectos (solo en proyectos.html): Residencial queda activo por defecto
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.project-grid .card');

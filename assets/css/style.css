@@ -1159,10 +1159,17 @@ section:has(> .container.cta-banner) { padding-bottom: clamp(2rem, 4vw, 3rem); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateY(100%);
-  /* Sin transition: la posición la fija JS en cada evento de scroll, para que
-     acompañe 1 a 1 el dedo o la rueda del mouse en vez de animar por su cuenta */
+  transform: translateY(0);
+  /* Todas las imágenes están apiladas, quietas, una encima de otra (como en la
+     página Approach de Yabu Pushelberg): la de arriba tapa a las demás por
+     z-index, y es la única que se mueve — se corre hacia arriba para "pelarse"
+     y revelar a la siguiente, que ya estaba ahí abajo esperando en su lugar.
+     Sin transition: la posición la fija JS en cada evento de scroll. */
 }
+.material-sequence-frame img:nth-child(1) { z-index: 4; }
+.material-sequence-frame img:nth-child(2) { z-index: 3; }
+.material-sequence-frame img:nth-child(3) { z-index: 2; }
+.material-sequence-frame img:nth-child(4) { z-index: 1; }
 @media (max-width: 700px) {
   .material-sequence { height: 300vh; }
 }

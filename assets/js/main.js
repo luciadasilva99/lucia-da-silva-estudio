@@ -118,10 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const progress = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
       // Posición continua (0 a n-1): cada imagen se desplaza en proporción exacta
       // a lo que se scrolleó, sin animación propia, para que acompañe el dedo o
-      // la rueda del mouse en tiempo real en vez de "saltar" entre pasos.
+      // la rueda del mouse en tiempo real en vez de "saltar" entre pasos. La imagen
+      // activa se va hacia arriba y sale por arriba de la pantalla; la siguiente
+      // entra desde abajo, siguiendo la misma dirección en la que se scrollea.
       const pos = progress * (seqImgs.length - 1);
       seqImgs.forEach((img, i) => {
-        const offset = Math.max(-1, Math.min(1, pos - i));
+        const offset = Math.max(-1, Math.min(1, i - pos));
         img.style.transform = `translateY(${offset * 100}%)`;
       });
       let idx = Math.round(pos);

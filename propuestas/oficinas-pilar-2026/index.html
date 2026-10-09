@@ -210,6 +210,16 @@
   .slide.on .trk { letter-spacing: var(--ls); opacity: 1; transition-delay: var(--d); }
   #portada .cs { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
 
+  /* cursor guía (computadora) */
+  #ghost { position: absolute; left: 0; top: 0; z-index: 35; pointer-events: none; opacity: 0; transition: left .8s cubic-bezier(.4,0,.2,1), top .8s cubic-bezier(.4,0,.2,1), opacity .45s ease; }
+  #ghost.show { opacity: .95; }
+  #ghost svg { display: block; filter: drop-shadow(0 2px 5px rgba(0,0,0,.25)); }
+  #ghost span { position: absolute; left: 24px; top: 28px; font: 500 9.5px "Montserrat", Arial; letter-spacing: .2em; color: #333; background: rgba(255,255,255,.72); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(17,17,17,.12); border-radius: 20px; padding: 5px 11px; white-space: nowrap; animation: bob 2.6s ease-in-out infinite; }
+  #ghost i { position: absolute; left: -9px; top: -9px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(160,88,58,.65); opacity: 0; }
+  #ghost.tap i { animation: ghosttap .55s ease-out; }
+  @keyframes ghosttap { from { opacity: 1; transform: scale(.4); } to { opacity: 0; transform: scale(1.7); } }
+  .ali.on { background: #f4e7b9; transform: translateY(-4px); }
+
   /* alianza */
   .ali { transition: background .3s, transform .3s; padding-left: 12px; padding-right: 12px; padding-bottom: 12px; }
   .ali:hover { background: #f4e7b9; transform: translateY(-4px); }
@@ -1143,7 +1153,7 @@
 </section>
 
 <!-- PROXIMOS PASOS -->
-<section class="slide">
+<section class="slide" id="proximos">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
   <div class="fr">Cliente · Oficinas Pilar</div>
   <div style="position:absolute; left:56px; right:56px; top:0; height:810px; display:flex; flex-direction:column; justify-content:center;">
@@ -1221,6 +1231,7 @@
     var secs = [].slice.call(document.querySelectorAll('#sec button')), act = -1;
     secs.forEach(function(b, k){ if (cur >= +b.dataset.to) act = k; });
     secs.forEach(function(b, k){ b.classList.toggle('on', k === act); });
+    startDemo();
   }
   document.querySelectorAll('#sec button').forEach(function(b){ b.onclick = function(){ go(+b.dataset.to); }; });
   document.getElementById('prev').onclick = function(){ go(cur - 1); };
@@ -1404,6 +1415,83 @@
     n.addEventListener('mouseenter', function(){ showPop(i); });
     n.addEventListener('mouseleave', function(){ showPop(-1); });
     n.addEventListener('click', function(e){ e.stopPropagation(); showPop(openP === i ? -1 : i); });
+  });
+
+  // ===== rueda del mouse / panel táctil: una lámina por gesto =====
+  var wAcc = 0, wPrev = 0, wUsed = false;
+  window.addEventListener('wheel', function(e){
+    if (document.documentElement.classList.contains('mobile')) return;
+    var now = Date.now();
+    if (now - wPrev > 260) { wUsed = false; wAcc = 0; }
+    wPrev = now;
+    if (wUsed) return;
+    wAcc += e.deltaY;
+    if (Math.abs(wAcc) > 40) { wUsed = true; go(cur + (wAcc > 0 ? 1 : -1)); }
+  }, { passive: true });
+
+  // ===== cursor guía: muestra solo lo que se puede explorar =====
+  var ghost = document.createElement('div');
+  ghost.id = 'ghost';
+  ghost.innerHTML = '<svg width="26" height="30" viewBox="0 0 26 30"><path d="M3 2 L3 24 L9 18.5 L13 27 L17 25 L13 16.5 L21 16.5 Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg><span>PASÁ EL MOUSE</span><i></i>';
+  stage.appendChild(ghost);
+  function hvOn(el){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); }
+  function hvOff(el){ el.classList.remove('on'); }
+  function enterEv(el){ el.dispatchEvent(new MouseEvent('mouseenter')); }
+  function leaveEv(el){ el.dispatchEvent(new MouseEvent('mouseleave')); }
+  var DEMO = {
+    propuesta: { sel: '.pgb', on: function(el){ pgTouched = true; pgSet(pgb.indexOf(el)); } },
+    niveles: { sel: '.lvltx', on: enterEv, off: leaveEv },
+    crecer: { sel: '.cb', on: enterEv },
+    mirada: { sel: '.qc', on: function(el){ hvOn(el); el.style.transform = 'perspective(800px) translateY(-10px) scale(1.03)'; el.style.boxShadow = '0 18px 36px rgba(160,88,58,.22)'; }, off: function(el){ hvOff(el); el.style.transform = ''; el.style.boxShadow = ''; } },
+    alcance: { sel: '.st', on: enterEv },
+    plazos: { sel: '.wk', on: function(el){ showPop(+el.dataset.p); }, off: function(){ showPop(-1); }, dwell: 3600 },
+    alianza: { sel: '.ali', on: hvOn, off: hvOff },
+    acomp: { sel: '.pil', on: hvOn, off: hvOff },
+    proximos: { sel: '.pstep', on: hvOn, off: hvOff }
+  };
+  var learned = {}, dT = null, dT2 = null, dPrev = null, dCfg = null, dId = null;
+  function moveGhost(el){
+    var sr = stage.getBoundingClientRect(), s = sr.width / 1440, r = el.getBoundingClientRect();
+    ghost.style.left = ((r.left + Math.min(r.width * .5, 160) - sr.left) / s) + 'px';
+    ghost.style.top = ((r.top + Math.min(r.height * .45, 60) - sr.top) / s) + 'px';
+  }
+  function stopDemo(keep){
+    clearTimeout(dT); clearTimeout(dT2);
+    if (!keep && dCfg && dCfg.off && dPrev) dCfg.off(dPrev);
+    dPrev = null; dCfg = null; dId = null;
+    ghost.classList.remove('show');
+  }
+  function startDemo(){
+    stopDemo();
+    if (document.documentElement.classList.contains('mobile')) return;
+    var id = slides[cur].id, cfg = DEMO[id];
+    if (!cfg || learned[id]) return;
+    var els = [].slice.call(slides[cur].querySelectorAll(cfg.sel));
+    if (!els.length) return;
+    dCfg = cfg; dId = id;
+    var i = 0;
+    function step(){
+      if (dCfg !== cfg) return;
+      var el = els[i % els.length];
+      if (dPrev && cfg.off && dPrev !== el) cfg.off(dPrev);
+      ghost.classList.add('show'); moveGhost(el);
+      dT2 = setTimeout(function(){
+        if (dCfg !== cfg) return;
+        ghost.classList.remove('tap'); void ghost.offsetWidth; ghost.classList.add('tap');
+        cfg.on(el);
+      }, 800);
+      dPrev = el; i++;
+      dT = setTimeout(step, cfg.dwell || 2800);
+    }
+    dT = setTimeout(step, 1600);
+  }
+  // cuando la persona usa su propio mouse, el cursor guía se retira
+  Object.keys(DEMO).forEach(function(id){
+    var sl = document.getElementById(id); if (!sl) return;
+    [].slice.call(sl.querySelectorAll(DEMO[id].sel)).forEach(function(el){
+      function mine(e){ if (e.isTrusted) { learned[id] = true; if (dId === id) stopDemo(true); } }
+      el.addEventListener('mouseenter', mine); el.addEventListener('click', mine);
+    });
   });
 
   var start = parseInt((location.hash || '').slice(1), 10);

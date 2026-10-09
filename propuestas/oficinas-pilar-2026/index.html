@@ -311,6 +311,26 @@
   .mbtn { margin-top: 10px; font: 500 10px "Montserrat", Arial; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(17,17,17,.3); padding: 8px 12px; color: #111; }
   .mbtn b { display: inline-block; margin-left: 6px; transition: transform .3s; }
   .mlvp.exp .mbtn b { transform: rotate(180deg); }
+  .mviz { position: relative; }
+  .mplan { display: none; position: relative; }
+  .mviz.exp .mbld { display: none; }
+  .mviz.exp .mplan { display: block; animation: fadeIn .5s ease; }
+  .mplanw { position: absolute; inset: 0; }
+  .mplanw .chip { opacity: 0; animation: chipin .5s ease forwards, bob 3.4s ease-in-out infinite; }
+  .mplanw .chip.need { font-size: 8px; padding: 4px 7px; letter-spacing: .14em; }
+  .mplanw .chip.feel { font-size: 13px; }
+  .mleg { display: flex; gap: 16px; margin-top: 10px; font-size: 10.5px; color: #444; align-items: center; }
+  .mleg .n { display: inline-block; background: #2f2a26; color: #fff; font-size: 8.5px; letter-spacing: .14em; padding: 3px 6px; margin-right: 6px; }
+  .mleg .f { font-style: italic; color: #a0583a; font-size: 13px; margin-right: 6px; }
+  /* mirada: invitar a tocar */
+  .mq4 { transition: transform .35s ease, box-shadow .35s ease, background .35s ease; }
+  .mq4.attn { transform: translateY(-4px); box-shadow: 0 0 0 2px rgba(160,88,58,.45), 0 14px 30px rgba(160,88,58,.2); }
+  .mq4.sel { background: #f6edd6; transform: translateY(-4px); }
+  .mq4.sel .mnumq { transform: scale(1.12); }
+  .mnumq { transition: transform .35s ease; transform-origin: left center; display: inline-block; }
+  .mq4 { padding-bottom: 26px !important; }
+  .mtapdot { position: absolute; right: 12px; bottom: 10px; width: 8px; height: 8px; border-radius: 50%; background: #a0583a; animation: pulse 1.6s infinite; }
+  .mq4.sel .mtapdot { display: none; }
   /* crecer */
   .mgrow { margin-top: 6px; }
   .mgrowbar { display: flex; align-items: center; gap: 6px; }
@@ -456,30 +476,43 @@
   <section class="ms" style="background:#d3e8df;">
     <h2 class="mrv">El edificio <span>en tres niveles</span></h2>
     <div class="msub mrv">≈ 900 m² de oficinas · De lo público a lo privado</div>
-    <div class="mrv" style="margin-top:10px;"><svg class="mslabs" viewBox="180 150 460 560">
+    <div class="mviz mrv" style="margin-top:10px;"><div class="mbld"><svg class="mslabs" viewBox="180 150 460 560">
   <g stroke="#8f877b" stroke-width="1" stroke-dasharray="4 5"><line x1="200" y1="271" x2="200" y2="405"/><line x1="430" y1="386" x2="430" y2="520"/><line x1="610" y1="296" x2="610" y2="430"/><line x1="200" y1="421" x2="200" y2="555"/><line x1="430" y1="536" x2="430" y2="670"/><line x1="610" y1="446" x2="610" y2="580"/></g>
   <g class="mlv" data-l="0"><polygon points="200,555 430,670 430,686 200,571" fill="#cfc3b2"/><polygon points="430,670 610,580 610,596 430,686" fill="#bfb19d"/><polygon points="380,465 610,580 430,670 200,555" fill="#ece5da" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="574" text-anchor="middle" font-size="22" letter-spacing="4" fill="#222">PB</text></g>
   <g class="mlv" data-l="1"><polygon points="200,405 430,520 430,536 200,421" fill="#9a8166"/><polygon points="430,520 610,430 610,446 430,536" fill="#866e55"/><polygon points="380,315 610,430 430,520 200,405" fill="#b49a7c" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="424" text-anchor="middle" font-size="22" letter-spacing="4" fill="#fff">1°</text></g>
   <g class="mlv" data-l="2"><polygon points="200,255 430,370 430,386 200,271" fill="#1d1a17"/><polygon points="430,370 610,280 610,296 430,386" fill="#141210"/><polygon points="380,165 610,280 430,370 200,255" fill="#2f2a26" stroke="#2f2a26" stroke-width="1.2"/><text x="405" y="274" text-anchor="middle" font-size="22" letter-spacing="4" fill="#fff">2°</text></g>
 </svg></div>
+      <div class="mplan">
+        <svg viewBox="200 160 820 440" width="100%" style="display:block;">
+          <polygon points="220,345 660,565 660,583 220,363" fill="#d9d1c4"/>
+          <polygon points="660,565 1000,395 1000,413 660,583" fill="#cbc1b2"/>
+          <polygon points="560,175 1000,395 660,565 220,345" fill="#fbfaf7" stroke="#6b5d4a" stroke-width="1.4"/>
+          <g transform="matrix(4.4 2.2 -5.6667 2.8333 560 175)" class="vx">
+            <g stroke="#a99d8a" stroke-width="1" stroke-dasharray="3 4"><line x1="10" y1="0" x2="10" y2="60"/><line x1="20" y1="0" x2="20" y2="60"/><line x1="30" y1="0" x2="30" y2="60"/><line x1="40" y1="0" x2="40" y2="60"/><line x1="50" y1="0" x2="50" y2="60"/><line x1="60" y1="0" x2="60" y2="60"/><line x1="70" y1="0" x2="70" y2="60"/><line x1="80" y1="0" x2="80" y2="60"/><line x1="90" y1="0" x2="90" y2="60"/><line x1="0" y1="10" x2="100" y2="10"/><line x1="0" y1="20" x2="100" y2="20"/><line x1="0" y1="30" x2="100" y2="30"/><line x1="0" y1="40" x2="100" y2="40"/><line x1="0" y1="50" x2="100" y2="50"/></g>
+            <rect x="-6" y="0" width="6" height="60" fill="#d3e8df" opacity=".9"><animate attributeName="x" from="-6" to="100" dur="3.2s" repeatCount="indefinite"/></rect>
+          </g>
+        </svg>
+        <div class="mplanw"></div>
+      </div>
+    </div>
     <div class="mtabs mrv"><button type="button" class="mtb on" data-i="0">2°</button><button type="button" class="mtb" data-i="1">1°</button><button type="button" class="mtb" data-i="2">PB</button></div>
     <div class="mpanel mrv">
       <div class="mlvp on" data-i="0">
         <div class="mk">Segundo piso · Privado</div>
         <div class="minfo"><p><b>Tres oficinas para los socios, gerencia y Recursos Humanos.</b> <span>Y la sala demo de degustación: el lugar donde la marca se prueba.</span></p></div>
-        <div class="mexp"><p class="mq">¿Cómo convertir una degustación en una experiencia que venda?</p><div class="mchips"><span class="chip need">OFICINAS DE SOCIOS</span><span class="chip feel">confianza</span><span class="chip need">GERENCIA Y RR. HH.</span><span class="chip feel">privacidad</span><span class="chip need">SALA DEMO</span><span class="chip feel">experiencia de marca</span></div></div>
+        <div class="mexp"><p class="mq">¿Cómo convertir una degustación en una experiencia que venda?</p><div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div></div>
         <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
       </div>
       <div class="mlvp" data-i="1">
         <div class="mk">Primer piso · Semipúblico</div>
         <div class="minfo"><p><b>Área de trabajo tipo cowork para unas 30 personas.</b> <span>Compras y equipos administrativos, mesas compartidas y zonas de pausa.</span></p></div>
-        <div class="mexp"><p class="mq">¿Cómo lograr que 30 personas trabajen cómodas, concentradas y conectadas?</p><div class="mchips"><span class="chip need">30 PUESTOS</span><span class="chip feel">colaboración</span><span class="chip need">COMPRAS</span><span class="chip feel">concentración</span><span class="chip need">OFFICE Y PAUSA</span><span class="chip feel">energía</span></div></div>
+        <div class="mexp"><p class="mq">¿Cómo lograr que 30 personas trabajen cómodas, concentradas y conectadas?</p><div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div></div>
         <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
       </div>
       <div class="mlvp" data-i="2">
         <div class="mk">Planta baja · Público</div>
         <div class="minfo"><p><b>Recepción y salas de reuniones.</b> <span>La primera impresión de la empresa para clientes, proveedores y visitas.</span></p></div>
-        <div class="mexp"><p class="mq">¿Cómo recibir a quien llega por primera vez para que se lleve la mejor impresión?</p><div class="mchips"><span class="chip need">RECEPCIÓN</span><span class="chip feel">primera impresión</span><span class="chip need">SALAS DE REUNIONES</span><span class="chip feel">identidad</span><span class="chip need">ESPERA</span><span class="chip feel">calidez</span></div></div>
+        <div class="mexp"><p class="mq">¿Cómo recibir a quien llega por primera vez para que se lleve la mejor impresión?</p><div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div></div>
         <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
       </div>
     </div>
@@ -507,17 +540,18 @@
     <div class="mnum">— 04 —</div>
   </section>
 
-  <section class="ms mphoto">
+  <section class="ms mphoto" id="m-mirada">
     <div class="mbg" style="background-image:url('img/mirada.jpg'); background-position:left top;"></div>
     <div class="mwhite"></div>
     <h2 class="mrv">Mirada <span>a futuro</span></h2>
     <p class="mrv mlead">Para que el diseño acompañe la evolución de la empresa, nos interesa conocer su visión a mediano y largo plazo.</p>
     <div class="mq4s">
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="30" cy="30" r="8"/><path pathLength="1" d="M16 64 q14 -26 28 0"/><circle pathLength="1" cx="56" cy="30" r="8"/><path pathLength="1" d="M42 64 q14 -26 28 0"/><line pathLength="1" x1="94" y1="24" x2="94" y2="50" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="81" y1="37" x2="107" y2="37" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">01</div><p>¿Cuántas personas prevén sumar en los próximos tres a cinco años?</p></div>
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" class="f" x="20" y="58" width="14" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="20" y="58" width="14" height="22"/><rect pathLength="1" x="42" y="46" width="14" height="34"/><rect pathLength="1" x="64" y="32" width="14" height="48"/><path pathLength="1" d="M18 36 L58 18 L94 10" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M84 4 L96 10 L88 20" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">02</div><p>¿Qué áreas de la empresa creen que van a crecer o cambiar?</p></div>
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="18" y="12" width="32" height="66"/><circle pathLength="1" cx="43" cy="46" r="2"/><line pathLength="1" x1="56" y1="46" x2="66" y2="46" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M62 41 L68 46 L62 51" stroke="#a0583a" stroke-width="2"/><circle pathLength="1" cx="88" cy="30" r="8"/><path pathLength="1" d="M74 76 q14 -32 28 0"/></svg><div class="mnumq">03</div><p>¿Esperan recibir más visitas de clientes, proveedores o inversores?</p></div>
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon pathLength="1" class="f" points="36,40 60,28 84,40 60,52" fill="#f4e7b9" stroke="none"/><path pathLength="1" d="M36 40 L60 28 L84 40 L60 52 Z"/><path pathLength="1" d="M36 40 V66 L60 78 V52"/><path pathLength="1" d="M84 40 V66 L60 78"/><line pathLength="1" x1="98" y1="6" x2="98" y2="26" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="88" y1="16" x2="108" y2="16" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">04</div><p>¿Proyectan nuevos productos o servicios que impacten en las oficinas?</p></div>
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="30" cy="30" r="8"/><path pathLength="1" d="M16 64 q14 -26 28 0"/><circle pathLength="1" cx="56" cy="30" r="8"/><path pathLength="1" d="M42 64 q14 -26 28 0"/><line pathLength="1" x1="94" y1="24" x2="94" y2="50" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="81" y1="37" x2="107" y2="37" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">01</div><p>¿Cuántas personas prevén sumar en los próximos tres a cinco años?</p></div>
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" class="f" x="20" y="58" width="14" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="20" y="58" width="14" height="22"/><rect pathLength="1" x="42" y="46" width="14" height="34"/><rect pathLength="1" x="64" y="32" width="14" height="48"/><path pathLength="1" d="M18 36 L58 18 L94 10" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M84 4 L96 10 L88 20" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">02</div><p>¿Qué áreas de la empresa creen que van a crecer o cambiar?</p></div>
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="18" y="12" width="32" height="66"/><circle pathLength="1" cx="43" cy="46" r="2"/><line pathLength="1" x1="56" y1="46" x2="66" y2="46" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M62 41 L68 46 L62 51" stroke="#a0583a" stroke-width="2"/><circle pathLength="1" cx="88" cy="30" r="8"/><path pathLength="1" d="M74 76 q14 -32 28 0"/></svg><div class="mnumq">03</div><p>¿Esperan recibir más visitas de clientes, proveedores o inversores?</p></div>
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon pathLength="1" class="f" points="36,40 60,28 84,40 60,52" fill="#f4e7b9" stroke="none"/><path pathLength="1" d="M36 40 L60 28 L84 40 L60 52 Z"/><path pathLength="1" d="M36 40 V66 L60 78 V52"/><path pathLength="1" d="M84 40 V66 L60 78"/><line pathLength="1" x1="98" y1="6" x2="98" y2="26" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="88" y1="16" x2="108" y2="16" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">04</div><p>¿Proyectan nuevos productos o servicios que impacten en las oficinas?</p></div>
     </div>
+    <div class="mtap mrv"><i></i>TOCÁ CADA PREGUNTA</div>
     <div class="mnum">— 05 —</div>
   </section>
 
@@ -665,7 +699,6 @@
       <p style="font-style:italic; margin-top:10px;">Quedamos a disposición</p>
       <p style="margin-top:12px;">Arquitecta<br><b>Clara Tacco Carulli</b><br><a class="mtel" href="tel:+5492995046147">+54 9 299 504-6147</a></p>
       <p style="margin-top:10px;">Diseñadora de interiores<br><b>Lucía Da Silva</b><br><a class="mtel" href="tel:+5491135659808">+54 9 11 3565-9808</a></p>
-      <p style="margin-top:14px; font-style:italic; font-size:12.5px;">Los invitamos a que conozcan algunos de nuestros trabajos</p>
       <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener" style="display:inline-block; margin-top:8px; color:#111; text-decoration:none; border:1px solid #111;">Conocé nuestros proyectos <b class="wa" style="display:inline-block; margin-left:6px;">→</b></a>
       <div style="margin-top:8px; font-size:11.5px; color:#555;">luciadasilvaestudio.com.ar</div>
     </div>
@@ -1124,7 +1157,7 @@
 <!-- GRACIAS -->
 <section class="slide">
   <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/gracias.jpg');"></div>
-  <div class="rv" style="--d:.3s; position:absolute; left:500px; top:130px; width:440px; height:550px; background:#fff; display:flex; justify-content:center;">
+  <div class="rv" style="--d:.3s; position:absolute; left:500px; top:160px; width:440px; height:490px; background:#fff; display:flex; justify-content:center;">
     <div style="padding:48px 40px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
       <div style="font-weight:700; letter-spacing:.2em; font-size:24px;">¡MUCHAS</div>
       <div style="font-weight:300; letter-spacing:.2em; font-size:24px;">GRACIAS!</div>
@@ -1132,7 +1165,6 @@
         <i>Quedamos a disposición</i><br><br>
         Arquitecta<br><b>Clara Tacco Carulli</b><br>+54 9 299 504-6147<br><br>
         Diseñadora de interiores<br><b>Lucía Da Silva</b><br>+54 9 11 3565-9808<br><br>
-        <span style="display:inline-block; margin-bottom:8px; font-size:12.5px; font-style:italic; color:#333;">Los invitamos a que conozcan algunos de nuestros trabajos</span><br>
         <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener" style="display:inline-block; margin-top:6px; color:#111; text-decoration:none; border:1px solid #111; padding:11px 18px; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;">Conocé nuestros proyectos <b class="wa" style="display:inline-block; margin-left:6px;">→</b></a><br>
         <span style="display:inline-block; margin-top:10px; font-size:12px; color:#555;">luciadasilvaestudio.com.ar</span>
       </div>
@@ -1376,19 +1408,44 @@
   // ===== versión celular =====
   (function(){
     if (!document.documentElement.classList.contains('mobile')) return;
-    var io = new IntersectionObserver(function(es){
+    var mSecs = [].slice.call(document.querySelectorAll('#m .ms'));
+    var sio = new IntersectionObserver(function(es){
       es.forEach(function(e){
-        if (!e.isIntersecting) return;
-        var t = e.target;
-        t.classList.add('in');
-        if (t.classList.contains('hv')) setTimeout(function(){ t.classList.add('on'); }, 300);
-        [].slice.call(t.querySelectorAll ? t.querySelectorAll('.hv') : []).forEach(function(x, k){ setTimeout(function(){ x.classList.add('on'); }, 300 + k * 180); });
-        if (t.querySelector && t.querySelector('#musd')) mCount();
-        if (t.classList.contains('mwkp')) playWeek();
-        io.unobserve(t);
+        if (e.intersectionRatio >= .55) mEnter(e.target);
+        else if (e.intersectionRatio < .15) mLeave(e.target);
       });
-    }, { threshold: .3 });
-    document.querySelectorAll('#m .mrv, #m .mcover').forEach(function(el){ io.observe(el); });
+    }, { threshold: [0, .15, .55, .85] });
+    mSecs.forEach(function(s){ sio.observe(s); });
+    function mCheck(){
+      var vh = window.innerHeight;
+      mSecs.forEach(function(s){
+        var r = s.getBoundingClientRect(), vis = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0)) / Math.min(r.height, vh);
+        if (vis >= .55) mEnter(s); else if (vis < .15) mLeave(s);
+      });
+    }
+    window.addEventListener("scroll", mCheck, { passive: true });
+    setInterval(mCheck, 350); setTimeout(mCheck, 100);
+    function mEnter(s){
+      if (s.classList.contains('act')) return;
+      s.classList.add('act', 'in');
+      [].slice.call(s.querySelectorAll('.mrv')).forEach(function(el, k){ setTimeout(function(){ el.classList.add('in'); }, 60 + k * 110); });
+      [].slice.call(s.querySelectorAll('.hv')).forEach(function(x, k){ setTimeout(function(){ x.classList.remove('on'); void x.offsetWidth; x.classList.add('on'); }, 450 + k * 220); });
+      if (s.querySelector('#musd')) setTimeout(mCount, 450);
+      if (s.querySelector('.mwkp')) setTimeout(playWeek, 450);
+      if (s.id === 'm-mirada') startAttn();
+      if (s.querySelector('.mgrow')) startGrow();
+    }
+    function mLeave(s){
+      if (!s.classList.contains('act')) return;
+      s.classList.remove('act');
+      if (s.classList.contains('mcover')) return;
+      [].slice.call(s.querySelectorAll('.mrv')).forEach(function(el){ el.classList.remove('in'); });
+      [].slice.call(s.querySelectorAll('.hv')).forEach(function(x){ x.classList.remove('on'); });
+      if (s.querySelector('.mwkp')) { clearInterval(wkT); [].slice.call(s.querySelectorAll('.pop')).forEach(function(p){ p.classList.remove('on'); }); }
+      if (s.querySelector('#musd')) { clearInterval(window.__mcT); document.getElementById('musd').textContent = '0'; document.getElementById('musdline').classList.remove('on'); }
+      if (s.id === 'm-mirada') stopAttn();
+      if (s.querySelector('.mgrow')) clearInterval(mgT);
+    }
 
     // menú fijo con la sección actual
     var links = [].slice.call(document.querySelectorAll('#mnav a'));
@@ -1410,26 +1467,46 @@
 
     // niveles
     var tbs = [].slice.call(document.querySelectorAll('.mtb')), lvps = [].slice.call(document.querySelectorAll('.mlvp'));
+    var mviz = document.querySelector('.mviz'), mplanw = document.querySelector('.mplanw'), exploring = false, curL = 0;
+    var LVD = [
+      { need: [['25.6%','29.5%','OFICINAS DE SOCIOS'],['68.3%','47.7%','GERENCIA Y RR. HH.'],['33%','65.9%','SALA DEMO']], feel: [['62.2%','29.5%','confianza'],['31.7%','47.7%','privacidad'],['72%','65.9%','experiencia de marca']] },
+      { need: [['25.6%','29.5%','30 PUESTOS'],['68.3%','47.7%','COMPRAS'],['37.8%','65.9%','OFFICE Y PAUSA']], feel: [['62.2%','29.5%','colaboración'],['31.7%','47.7%','concentración'],['69.5%','65.9%','energía']] },
+      { need: [['25.6%','29.5%','RECEPCIÓN'],['68.3%','47.7%','SALAS DE REUNIONES'],['37.8%','65.9%','ESPERA']], feel: [['62.2%','29.5%','primera impresión'],['31.7%','47.7%','identidad'],['69.5%','65.9%','calidez']] }
+    ];
+    function fillPlan(i){
+      var d = LVD[i], out = '', k = 0;
+      d.need.forEach(function(c){ out += '<span class="chip need" style="left:' + c[0] + '; top:' + c[1] + '; animation-delay:' + (0.2 + k++ * 0.12) + 's, ' + (k * 0.5) + 's">' + c[2] + '</span>'; });
+      d.feel.forEach(function(c){ out += '<span class="chip feel" style="left:' + c[0] + '; top:' + c[1] + '; animation-delay:' + (0.2 + k++ * 0.12) + 's, ' + (k * 0.5) + 's">' + c[2] + '</span>'; });
+      mplanw.innerHTML = out;
+    }
     function lev(i){
+      curL = i;
       tbs.forEach(function(b, k){ b.classList.toggle('on', k === i); });
-      lvps.forEach(function(p, k){ p.classList.toggle('on', k === i); p.classList.remove('exp'); });
+      lvps.forEach(function(p, k){ p.classList.toggle('on', k === i); p.classList.toggle('exp', exploring && k === i); });
+      if (exploring) fillPlan(i);
       var l = lvps[i] && ['2','1','0'][i];
       document.querySelectorAll('.mlv').forEach(function(g){ g.classList.toggle('hi', g.dataset.l === l); });
     }
     tbs.forEach(function(b, k){ b.addEventListener('click', function(){ lev(k); }); });
     document.querySelectorAll('.mlv').forEach(function(g){ g.addEventListener('click', function(){ lev(['2','1','0'].indexOf(g.dataset.l)); }); });
-    lvps.forEach(function(p){ p.querySelector('.mbtn').addEventListener('click', function(){ p.classList.toggle('exp'); }); });
+    lvps.forEach(function(p){ p.querySelector('.mbtn').addEventListener('click', function(){
+      exploring = !exploring;
+      mviz.classList.toggle('exp', exploring);
+      lvps.forEach(function(o, k){ o.classList.toggle('exp', exploring && k === curL); });
+      if (exploring) fillPlan(curL);
+    }); });
     lev(0);
 
     // crecer
     var mg = document.querySelector('.mgrow'), seats = document.querySelector('.mseats'), stx = document.querySelector('.mstratx');
     var SX = ["Distribuciones modulares, que puedan ampliarse sin grandes reformas.","Mobiliario adaptable, para sumar puestos o cambiar usos.","Instalaciones con margen, en electricidad, datos e iluminación.","Espacios flexibles, que puedan cambiar de función."];
     function mSet(f){ mg.classList.toggle('fut', !!f); seats.textContent = f ? 40 : 30; document.querySelectorAll('.mg').forEach(function(b){ b.classList.toggle('on', +b.dataset.g === f); }); }
-    var mgT = setInterval(function(){ mSet(mg.classList.contains('fut') ? 0 : 1); }, 3200);
-    document.querySelectorAll('.mg').forEach(function(b){ b.addEventListener('click', function(){ clearInterval(mgT); mSet(+b.dataset.g); }); });
+    var mgT = null, mgTouched = false;
+    function startGrow(){ clearInterval(mgT); if (mgTouched) return; mSet(0); mgT = setInterval(function(){ mSet(mg.classList.contains('fut') ? 0 : 1); }, 3000); }
+    document.querySelectorAll('.mg').forEach(function(b){ b.addEventListener('click', function(){ mgTouched = true; clearInterval(mgT); mSet(+b.dataset.g); }); });
     document.querySelectorAll('.msb').forEach(function(b){
       b.addEventListener('click', function(){
-        clearInterval(mgT); var c = +b.dataset.c;
+        mgTouched = true; clearInterval(mgT); var c = +b.dataset.c;
         document.querySelectorAll('.msb').forEach(function(o){ o.classList.toggle('on', o === b); });
         mg.classList.remove('h0','h1','h2','h3'); mg.classList.add('h' + c);
         if (c === 0 || c === 3) mSet(1);
@@ -1448,19 +1525,25 @@
       wbs.forEach(function(b, k){ b.classList.toggle('on', k === i); });
       wks.forEach(function(w, k){ w.classList.toggle('on', k === i); var p = w.querySelector('.pop'); p.classList.remove('on'); if (k === i) { void p.offsetWidth; p.classList.add('on'); } });
     }
-    function playWeek(){ week(0); wkT = setInterval(function(){ week((wkCur + 1) % wbs.length); }, 4200); }
+    function playWeek(){ clearInterval(wkT); week(0); wkT = setInterval(function(){ week((wkCur + 1) % wbs.length); }, 4200); }
     wbs.forEach(function(b, k){ b.addEventListener('click', function(){ clearInterval(wkT); week(k); }); });
 
     // honorarios
     function mCount(){
       var el = document.getElementById('musd'), line = document.getElementById('musdline'), t0 = Date.now(), dur = 2000;
-      el.textContent = '0';
-      var it = setInterval(function(){
+      el.textContent = '0'; line.classList.remove('on'); clearInterval(window.__mcT);
+      var it = window.__mcT = setInterval(function(){
         var p = Math.min(1, (Date.now() - t0) / dur); p = 1 - Math.pow(1 - p, 3);
         el.textContent = Math.round(11000 * p).toLocaleString('es-AR');
         if (p >= 1) { clearInterval(it); line.classList.add('on'); }
       }, 30);
     }
+    // mirada: una tarjeta a la vez llama la atención hasta que tocan alguna
+    var mq = [].slice.call(document.querySelectorAll('.mq4')), attnT = null, attnI = 0, mqTouched = false;
+    function startAttn(){ stopAttn(); if (mqTouched) return; attnT = setInterval(function(){ mq.forEach(function(c, k){ c.classList.toggle('attn', k === attnI); }); attnI = (attnI + 1) % mq.length; }, 1300); }
+    function stopAttn(){ clearInterval(attnT); mq.forEach(function(c){ c.classList.remove('attn'); }); }
+    mq.forEach(function(c){ c.addEventListener('click', function(){ mqTouched = true; stopAttn(); mq.forEach(function(o){ o.classList.toggle('sel', o === c); }); }); });
+
     // toques en dibujos
     document.querySelectorAll('#m .hv').forEach(function(el){
       el.addEventListener('click', function(){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); });

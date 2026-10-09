@@ -1,5 +1,6 @@
 // Copia una propuesta interactiva desde Dropbox a la web, agregando las etiquetas
-// para que no aparezca en Google y para la vista previa en WhatsApp.
+// para que no aparezca en Google, para la vista previa en WhatsApp y la medición
+// de visitas con Microsoft Clarity (proyecto "Propuestas Lucía Da Silva").
 // Uso: node propuestas/publicar.js "<carpeta de la propuesta en Dropbox>" <slug> "<titulo para WhatsApp>"
 const fs = require('fs');
 const path = require('path');
@@ -28,6 +29,14 @@ html = html.replace(anchor, `${anchor}
 <meta property="og:description" content="Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva · Lucía Da Silva Estudio">
 <meta property="og:image" content="${url}img/gracias.jpg">
 <meta property="og:url" content="${url}">
-<link rel="icon" type="image/png" href="/assets/images/favicon.png">`);
+<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "yv9lywlscl");
+  clarity("set", "propuesta", "${slug}");
+</script>`);
 fs.writeFileSync(path.join(dest, 'index.html'), html);
 console.log('Publicada en', url);

@@ -247,7 +247,7 @@
   #mnav::-webkit-scrollbar { display: none; }
   #mnav a { flex: 0 0 auto; font: 400 9.5px "Montserrat", Arial; letter-spacing: .16em; text-transform: uppercase; color: rgba(17,17,17,.6); text-decoration: none; padding: 6px 10px; border-radius: 20px; }
   #mnav a.on { color: #111; font-weight: 600; background: rgba(255,255,255,.75); }
-  .ms { position: relative; min-height: 100vh; min-height: 100svh; padding: 54px 22px 36px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
+  .ms { position: relative; min-height: 100vh; min-height: 100svh; min-height: 100dvh; padding: 54px 22px 36px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
   .ms > * { position: relative; }
   .mnum { position: absolute !important; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 10.5px; color: #555; }
   .ms h2 { font-weight: 700; font-size: 19px; letter-spacing: .17em; text-transform: uppercase; line-height: 1.3; }
@@ -261,7 +261,7 @@
   .mtap { margin-top: 10px; font-size: 9.5px; letter-spacing: .2em; color: rgba(107,93,74,.8); display: flex; align-items: center; justify-content: center; gap: 8px; }
   .mtap i { width: 6px; height: 6px; border-radius: 50%; background: rgba(107,93,74,.7); animation: pulse 1.6s infinite; }
   .mbg { position: absolute !important; inset: 0; background-size: cover; background-position: center; }
-  .mbgtop { position: absolute !important; left: 0; right: 0; top: 0; height: 34vh; background-size: cover; background-position: center; }
+  .mbgtop { position: relative !important; flex: 0 0 auto; height: 30vh; margin: 0 -22px; background-size: cover; background-position: center; }
   .mwhite { position: absolute !important; inset: 0; background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.85)); }
   .mcard { background: #fff; padding: 24px 20px; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
   .mcard p { margin-top: 10px; font-size: 13.5px; color: #333; }
@@ -363,13 +363,14 @@
   .mstp li { padding-left: 13px; position: relative; margin-top: 5px; line-height: 1.4; }
   .mstp li::before { content: "/"; position: absolute; left: 0; color: #111; }
   /* marca */
-  .mmarca { justify-content: flex-end; }
+  .mmarca { justify-content: center; }
+  .mmarca .mcard { margin: -46px 6px 0; }
   /* plazos */
   .mtline { position: relative; display: flex; justify-content: space-between; margin-top: 22px; }
-  .mtline::before { content: ""; position: absolute; left: 10px; right: 10px; top: 7px; height: 1px; background: #111; }
-  .mwb { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; font-size: 10px; letter-spacing: .14em; }
-  .mwb i { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 1.5px solid #111; transition: background .3s, transform .3s; }
-  .mwb.on i { background: #111; transform: scale(1.15); }
+  .mtline::before { content: ""; position: absolute; left: 14px; right: 14px; top: 13px; height: 1px; background: #111; }
+  .mwb { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; font: 600 10.5px "Montserrat", Arial; letter-spacing: .14em; color: #111; }
+  .mwb i { width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 2px solid #111; transition: background .3s, transform .3s, border-color .3s; animation: pulse 1.8s infinite; }
+  .mwb.on i { background: #a0583a; border-color: #a0583a; transform: scale(1.12); box-shadow: 0 0 0 6px rgba(160,88,58,.18); animation: none; }
   .mwb.on span { font-weight: 700; }
   .mwkp { background: none !important; padding: 12px 0 0 !important; }
   .mit { font-style: italic; font-size: 14px; margin-top: 2px; }
@@ -396,7 +397,8 @@
   .mpk { font-size: 9px; letter-spacing: .18em; color: #a0583a; margin-bottom: 3px; }
   .mpasos .mg2 .ic2 { width: 52px; height: 42px; }
   /* acompañamiento */
-  .macomp { justify-content: flex-end; padding-top: calc(34vh + 20px); }
+  .macomp { justify-content: center; }
+  .macomp .mbgtop { margin-bottom: 20px; }
   .mpils { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 16px; }
   .mpils .pil { border-top: 1px solid #111; padding-top: 10px; }
   .mpils .pil div { margin-top: 6px; font-size: 8.5px; letter-spacing: .06em; text-transform: uppercase; }
@@ -419,8 +421,8 @@
     .mcard p, .mhon p { font-size: 12px; }
     .mcol { margin-top: 10px; padding-top: 8px; }
     #m .pop { max-width: 220px; }
-    .mbgtop { height: 28vh; }
-    .macomp { padding-top: calc(28vh + 14px); }
+    .mbgtop { height: 24vh; }
+    .macomp .mbgtop { margin-bottom: 12px; }
     .mgrid2 { gap: 10px; margin-top: 10px; }
     .mg2, .mg2 b { font-size: 11.5px; }
     .mvenn svg { max-width: 190px; }
@@ -691,7 +693,7 @@
   <section class="ms">
     <h2 class="mrv">Próximos <span>pasos</span></h2>
     <div class="mgrid2 mpasos"><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 8 h48 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-28 l-12 10 v-10 h-8 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6 z"/><polyline pathLength="1" points="24,26 32,34 48,18" stroke="#a0583a" stroke-width="2.2"/></svg><div class="mpk">PASO 01</div><b>Confirmación de la propuesta</b><span>Por mail o WhatsApp, para reservar el inicio del proyecto.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" class="f" d="M36 6 a24 24 0 0 1 0 48 z" fill="#f4e7b9" stroke="none"/><circle pathLength="1" cx="36" cy="30" r="24"/><line pathLength="1" x1="36" y1="6" x2="36" y2="54" stroke="#a0583a" stroke-width="2"/></svg><div class="mpk">PASO 02</div><b>Pago del primer 50%</b><span>Con el pago inicial reservamos la agenda del estudio.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="8" y="10" width="56" height="42"/><line pathLength="1" x1="36" y1="10" x2="36" y2="34"/><line pathLength="1" x1="8" y1="34" x2="50" y2="34"/><line pathLength="1" x1="8" y1="4" x2="64" y2="4" stroke="#a0583a"/><line pathLength="1" x1="8" y1="1" x2="8" y2="7" stroke="#a0583a"/><line pathLength="1" x1="64" y1="1" x2="64" y2="7" stroke="#a0583a"/></svg><div class="mpk">PASO 03</div><b>Anteproyecto de arquitectura</b><span>Recibimos los planos y la documentación del edificio para comenzar el trabajo.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" class="f" cx="36" cy="32" rx="18" ry="9" fill="#f4e7b9" stroke="none"/><ellipse pathLength="1" cx="36" cy="32" rx="18" ry="9"/><circle pathLength="1" cx="36" cy="12" r="5"/><circle pathLength="1" cx="36" cy="52" r="5"/><circle pathLength="1" cx="8" cy="32" r="5" stroke="#a0583a"/><circle pathLength="1" cx="64" cy="32" r="5" stroke="#a0583a"/></svg><div class="mpk">PASO 04</div><b>Reunión de inicio</b><span>Encuentro con el Cliente y el equipo de arquitectura para definir necesidades y prioridades.</span></div></div>
-    <p class="mnote mrv" style="text-align:center;">Esta propuesta tiene una validez de 15 días a partir de su fecha de emisión.</p>
+    <p class="mnote mrv" style="text-align:center; margin-top:28px;">Esta propuesta tiene una validez de 15 días a partir de su fecha de emisión.</p>
     <div class="mnum">— 12 —</div>
   </section>
 
@@ -1450,6 +1452,13 @@
       if (s.querySelector('.mgrow')) clearInterval(mgT);
     }
 
+    function mGoTo(s){
+      if (!s) return;
+      var root = document.documentElement, top = s.getBoundingClientRect().top + window.pageYOffset;
+      root.style.scrollSnapType = 'none';
+      window.scrollTo(0, top);
+      setTimeout(function(){ window.scrollTo(0, top); root.style.scrollSnapType = ''; mark(); mCheck(); }, 80);
+    }
     // menú fijo con la sección actual
     var links = [].slice.call(document.querySelectorAll('#mnav a'));
     var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
@@ -1460,7 +1469,7 @@
     }
     window.addEventListener('scroll', mark, { passive: true }); mark();
     links.concat([].slice.call(document.querySelectorAll('.midx'))).forEach(function(a){
-      a.addEventListener('click', function(e){ e.preventDefault(); var s = document.querySelector(a.getAttribute('href')); window.scrollTo({ top: s.offsetTop, behavior: 'smooth' }); });
+      a.addEventListener('click', function(e){ e.preventDefault(); mGoTo(document.querySelector(a.getAttribute('href'))); });
     });
 
     // propuesta

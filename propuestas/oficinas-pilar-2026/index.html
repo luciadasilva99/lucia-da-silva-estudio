@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Propuesta de interiorismo para oficinas corporativas · Lucía Da Silva Estudio">
+<meta name="description" content="Propuesta de Interiorismo · Oficinas corporativas · Lucía Da Silva Estudio">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Propuesta de Interiorismo · Oficinas corporativas">
 <meta property="og:description" content="Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva · Lucía Da Silva Estudio">
@@ -236,139 +236,182 @@
 
   /* ===== versión celular ===== */
   #m { display: none; }
-  html.mobile, html.mobile body { overflow: auto; height: auto; background: #fff; }
+  html.mobile { overflow-y: auto; height: auto; scroll-snap-type: y mandatory; background: #fff; }
+  html.mobile body { overflow: visible; height: auto; background: #fff; }
   html.mobile #stage, html.mobile .side, html.mobile #nav, html.mobile #bar { display: none !important; }
-  html.mobile #m { display: block; font-size: 15px; line-height: 1.6; -webkit-text-size-adjust: 100%; }
-  #mnav { position: sticky; top: 0; z-index: 50; display: flex; gap: 4px; overflow-x: auto; padding: 10px 12px; background: rgba(255,255,255,.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,.05); scrollbar-width: none; }
+  html.mobile #m { display: block; font-size: 14px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+  #mnav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; gap: 2px; overflow-x: auto; padding: 8px 10px; background: rgba(255,255,255,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,.05); scrollbar-width: none; }
   #mnav::-webkit-scrollbar { display: none; }
-  #mnav a { flex: 0 0 auto; font: 400 10px "Montserrat", Arial; letter-spacing: .18em; text-transform: uppercase; color: rgba(17,17,17,.65); text-decoration: none; padding: 7px 11px; border-radius: 20px; }
-  #mnav a.on { color: #111; font-weight: 600; background: rgba(17,17,17,.06); }
-  .ms { position: relative; padding: 64px 24px; overflow: hidden; scroll-margin-top: 44px; }
-  .ms h2 { position: relative; font-weight: 700; font-size: 21px; letter-spacing: .18em; text-transform: uppercase; line-height: 1.3; }
+  #mnav a { flex: 0 0 auto; font: 400 9.5px "Montserrat", Arial; letter-spacing: .16em; text-transform: uppercase; color: rgba(17,17,17,.6); text-decoration: none; padding: 6px 10px; border-radius: 20px; }
+  #mnav a.on { color: #111; font-weight: 600; background: rgba(255,255,255,.75); }
+  .ms { position: relative; min-height: 100vh; min-height: 100svh; padding: 54px 22px 36px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
+  .ms > * { position: relative; }
+  .mnum { position: absolute !important; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 10.5px; color: #555; }
+  .ms h2 { font-weight: 700; font-size: 19px; letter-spacing: .17em; text-transform: uppercase; line-height: 1.3; }
   .ms h2 span { font-weight: 300; }
-  .msub { position: relative; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #555; margin-top: 8px; line-height: 1.7; }
-  .mlead { position: relative; margin-top: 20px; color: #222; text-wrap: pretty; }
-  .mk { font-weight: 300; letter-spacing: .24em; text-transform: uppercase; font-size: 10.5px; color: #555; }
-  .mnote { font-size: 12.5px; font-style: italic; color: #666; margin-top: 10px; text-wrap: pretty; }
-  .mrv { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .msub { font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: #555; margin-top: 6px; line-height: 1.6; }
+  .mlead { margin-top: 12px; color: #222; font-size: 13.5px; text-wrap: pretty; }
+  .mk { font-weight: 300; letter-spacing: .22em; text-transform: uppercase; font-size: 9.5px; color: #555; }
+  .mnote { font-size: 11px; font-style: italic; color: #666; margin-top: 10px; text-wrap: pretty; }
+  .mrv { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
   .mrv.in { opacity: 1; transform: none; }
-  .mtap { position: relative; margin: 18px 0 6px; font-size: 10px; letter-spacing: .2em; color: rgba(107,93,74,.8); display: flex; align-items: center; gap: 8px; }
-  .mtap i { width: 7px; height: 7px; border-radius: 50%; background: rgba(107,93,74,.7); animation: pulse 1.6s infinite; }
-  .mphoto { position: relative; }
-  .mbg { position: absolute; inset: 0; background-size: cover; background-position: center; }
-  .mbgtop { position: absolute; left: 0; right: 0; top: 0; height: 260px; background-size: cover; background-position: center; }
-  .mwhite { position: absolute; inset: 0; background: linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.85)); }
-  .mcard { position: relative; background: #fff; padding: 30px 24px; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
-  .mmarca { padding-top: 200px; }
-  .mcard p { margin-top: 12px; font-size: 14.5px; color: #333; }
+  .mtap { margin-top: 10px; font-size: 9.5px; letter-spacing: .2em; color: rgba(107,93,74,.8); display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .mtap i { width: 6px; height: 6px; border-radius: 50%; background: rgba(107,93,74,.7); animation: pulse 1.6s infinite; }
+  .mbg { position: absolute !important; inset: 0; background-size: cover; background-position: center; }
+  .mbgtop { position: absolute !important; left: 0; right: 0; top: 0; height: 34vh; background-size: cover; background-position: center; }
+  .mwhite { position: absolute !important; inset: 0; background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.85)); }
+  .mcard { background: #fff; padding: 24px 20px; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+  .mcard p { margin-top: 10px; font-size: 13.5px; color: #333; }
+  .mcard h2 { font-size: 18px; }
   .mhl { background: linear-gradient(transparent 55%, #f4e7b9 55%); }
   /* portada */
-  .mcover { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-top: 40px; }
-  .mcv { position: absolute; left: 50%; top: 50%; width: 125%; max-width: 560px; transform: translate(-50%, -54%); }
+  .mcover { align-items: center; text-align: center; }
+  .mcv { position: absolute !important; left: 50%; top: 50%; width: 125%; max-width: 560px; transform: translate(-50%, -54%); }
   .mdraw * { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2s ease; transition-delay: var(--d); }
   .mcover.in .mdraw * { stroke-dashoffset: 0; }
-  .mdate { position: absolute; top: 58px; right: 24px; font-size: 10.5px; letter-spacing: .1em; color: #555; }
-  .mtitle { position: relative; background: #fff; box-shadow: 0 0 40px 30px #fff; padding: 4px 6px; }
-  .mtitle .m1 { font-weight: 700; font-size: 30px; }
-  .mtitle .m2 { font-weight: 300; font-size: 16px; margin-top: 8px; }
+  .mdate { position: absolute !important; top: 52px; right: 22px; font-size: 10px; letter-spacing: .1em; color: #555; }
+  .mtitle { background: #fff; box-shadow: 0 0 40px 30px #fff; padding: 4px 6px; }
+  .mtitle .m1 { font-weight: 700; font-size: 28px; }
+  .mtitle .m2 { font-weight: 300; font-size: 15px; margin-top: 8px; }
   .mcover.in .trk { letter-spacing: var(--ls); opacity: 1; transition-delay: var(--d); }
-  .mnames { position: relative; margin-top: 70px; font-size: 12.5px; line-height: 1.9; }
-  .mscroll { position: absolute; bottom: 22px; left: 0; right: 0; font-size: 9.5px; letter-spacing: .24em; color: rgba(17,17,17,.5); display: flex; flex-direction: column; align-items: center; gap: 4px; }
-  .mscroll span { font-size: 16px; animation: bounce 1.6s ease-in-out infinite; }
-  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
-  /* índice */
-  .midx { display: block; color: inherit; text-decoration: none; margin-top: 16px; font-size: 14px; }
+  .mnames { margin-top: 56px; font-size: 12px; line-height: 1.9; }
+  .mscroll { position: absolute !important; bottom: 16px; left: 0; right: 0; font-size: 9px; letter-spacing: .22em; color: rgba(17,17,17,.5); display: flex; flex-direction: column-reverse; align-items: center; gap: 2px; }
+  .mscroll span { font-size: 15px; animation: bounce 1.6s ease-in-out infinite; }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .midx { display: block; color: inherit; text-decoration: none; margin-top: 12px; font-size: 13px; }
   .midx span { color: #555; }
-  .mcard h2 { font-size: 20px; }
   /* propuesta */
-  .mpg { display: flex; gap: 14px; align-items: flex-start; margin-top: 18px; padding: 10px 12px 10px 0; border-left: 3px solid transparent; transition: background .3s, border-color .3s, padding .3s; }
-  .mpg .ic2 { flex: 0 0 64px; width: 64px; height: 53px; }
-  .mpg p { font-size: 14.5px; }
-  .mpg.on { background: #f6edd6; border-left-color: #a0583a; padding-left: 10px; }
+  .mpgs { margin-top: 10px; }
+  .mpg { display: flex; gap: 12px; align-items: center; margin-top: 6px; padding: 6px 8px 6px 0; border-left: 3px solid transparent; transition: background .3s, border-color .3s, padding .3s; }
+  .mpg .ic2 { flex: 0 0 40px; width: 40px; height: 33px; }
+  .mpg p { font-size: 12.5px; line-height: 1.45; }
+  .mpg.on { background: #f6edd6; border-left-color: #a0583a; padding-left: 8px; }
   /* niveles */
+  .mslabs { display: block; width: 100%; max-width: 170px; margin: 0 auto; overflow: visible; }
   .mlv { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
-  .mlv.hi { transform: translateY(-14px); }
-  .mlevel { position: relative; background: rgba(255,255,255,.85); padding: 18px; margin-top: 14px; }
-  .mlevel p { margin-top: 6px; font-size: 14px; }
-  .mlevel p span { color: #444; }
-  .mbtn { margin-top: 12px; font: 500 10.5px "Montserrat", Arial; letter-spacing: .2em; text-transform: uppercase; background: rgba(255,255,255,.5); border: 1px solid rgba(17,17,17,.3); padding: 10px 14px; color: #111; }
-  .mbtn b { display: inline-block; margin-left: 6px; transition: transform .3s; }
-  .mlevel.open .mbtn b { transform: rotate(90deg); }
-  .mexp { max-height: 0; overflow: hidden; transition: max-height .6s ease; }
-  .mlevel.open .mexp { max-height: 900px; }
-  .mq { font-style: italic; font-size: 15px; margin-top: 16px !important; color: #222; }
-  .mchips { display: flex; flex-wrap: wrap; gap: 10px 12px; align-items: center; margin-top: 16px; }
+  .mlv.hi { transform: translateY(-16px); }
+  .mtabs { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+  .mtb, .mwb { font: 500 11px "Montserrat", Arial; letter-spacing: .14em; background: rgba(255,255,255,.55); border: 1px solid rgba(17,17,17,.25); padding: 8px 16px; color: #111; }
+  .mtb.on { background: #111; color: #fff; border-color: #111; }
+  .mpanel { margin-top: 12px; background: rgba(255,255,255,.88); padding: 16px; }
+  .mlvp, .mstp, .mwk { display: none; }
+  .mlvp.on, .mstp.on, .mwk.on { display: block; animation: fadeIn .45s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .minfo p { margin-top: 6px; font-size: 13px; }
+  .minfo span { color: #444; }
+  .mexp { display: none; }
+  .mlvp.exp .minfo { display: none; }
+  .mlvp.exp .mexp { display: block; animation: fadeIn .45s ease; }
+  .mq { font-style: italic; font-size: 13px; margin-top: 6px; color: #222; }
+  .mchips { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 10px; }
   .mchips .chip { position: static; translate: none; opacity: 1; animation: bob 3.4s ease-in-out infinite; }
+  .mchips .chip.need { font-size: 9px; padding: 5px 9px; }
+  .mchips .chip.feel { font-size: 15px; text-shadow: none; }
   .mchips .chip:nth-child(2n) { animation-delay: .8s; }
-  .mchips .chip.feel { font-size: 18px; text-shadow: none; }
-  .mleg { display: flex; gap: 18px; margin-top: 14px; font-size: 11px; color: #444; align-items: center; }
-  .mleg .n { display: inline-block; background: #2f2a26; color: #fff; font-size: 9px; letter-spacing: .16em; padding: 3px 7px; margin-right: 6px; }
-  .mleg .f { font-style: italic; color: #a0583a; font-size: 14px; margin-right: 6px; }
-  .mli { font-size: 14px !important; margin-top: 6px !important; }
+  .mbtn { margin-top: 10px; font: 500 10px "Montserrat", Arial; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(17,17,17,.3); padding: 8px 12px; color: #111; }
+  .mbtn b { display: inline-block; margin-left: 6px; transition: transform .3s; }
+  .mlvp.exp .mbtn b { transform: rotate(180deg); }
   /* crecer */
-  .mgrow { position: relative; margin-top: 18px; }
-  .mgrowbar { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
-  .mseats { font-weight: 300; font-size: 42px; line-height: 1; }
-  .mg { font: 500 10.5px "Montserrat", Arial; letter-spacing: .18em; background: none; border: 1px solid #111; padding: 8px 12px; color: #111; }
+  .mgrow { margin-top: 6px; }
+  .mgrowbar { display: flex; align-items: center; gap: 6px; }
+  .mseats { font-weight: 300; font-size: 34px; line-height: 1; }
+  .mg { font: 500 10px "Montserrat", Arial; letter-spacing: .16em; background: none; border: 1px solid #111; padding: 7px 10px; color: #111; }
   .mg.on { background: #111; color: #fff; }
-  #m .cb { margin-top: 8px; font-size: 14px; }
+  .mstrat { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+  .msb { font: 500 11px "Montserrat", Arial; text-align: left; background: #fff; border: 1px solid rgba(17,17,17,.2); border-left: 3px solid transparent; padding: 9px 10px; color: #111; line-height: 1.3; }
+  .msb.on { background: #f6edd6; border-left-color: #a0583a; }
+  .mstratx { font-size: 12px; font-style: italic; color: #555; margin-top: 10px; min-height: 2.8em; }
   /* mirada */
-  .mq4 { position: relative; background: #fff; padding: 20px 20px 22px; margin-top: 14px; box-shadow: 0 10px 28px rgba(0,0,0,.07); }
-  .mq4 .ic2 { position: absolute; right: 14px; top: 14px; width: 74px; height: 56px; }
-  .mnum { font-weight: 300; font-size: 32px; line-height: 1; color: #a0583a; }
-  .mq4 p { margin-top: 30px; font-size: 14.5px; padding-right: 10px; }
+  .mq4s { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .mq4 { position: relative; background: #fff; padding: 14px 12px 14px; box-shadow: 0 8px 22px rgba(0,0,0,.07); }
+  .mq4 .ic2 { position: absolute; right: 8px; top: 8px; width: 52px; height: 40px; }
+  .mnumq { font-weight: 300; font-size: 26px; line-height: 1; color: #a0583a; }
+  .mq4 p { margin-top: 22px; font-size: 12px; line-height: 1.4; }
   /* alcance */
-  .mst { border-top: 1px solid #111; margin-top: 16px; transition: background .4s; }
-  .mst.open { background: #f6edd6; }
-  .msth { position: relative; padding: 18px 18px 16px; }
-  .mstic { position: absolute; right: 18px; top: 18px; }
-  .mno { font-weight: 300; font-size: 32px; line-height: 1; }
-  .mti { font-weight: 700; letter-spacing: .18em; font-size: 13px; text-transform: uppercase; margin-top: 16px; }
-  .msu { font-style: italic; font-size: 13.5px; color: #444; margin-top: 4px; padding-right: 40px; }
-  .mplus { position: absolute; right: 22px; bottom: 16px; font-size: 22px; font-weight: 300; transition: transform .35s; }
-  .mst.open .mplus { transform: rotate(45deg); }
-  .mst ul { list-style: none; max-height: 0; overflow: hidden; padding: 0 18px; font-size: 14px; color: #333; transition: max-height .6s ease, padding .4s; }
-  .mst.open ul { max-height: 600px; padding: 0 18px 18px; }
-  .mst li { padding-left: 14px; position: relative; margin-top: 8px; }
-  .mst li::before { content: "/"; position: absolute; left: 0; color: #111; }
-  .mst.open .ic * { animation: redraw 1.4s ease; }
+  .mtabs3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-top: 14px; }
+  .mst3 { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; background: #fff; border: 0; border-top: 1px solid #111; padding: 10px 8px 10px; text-align: left; color: #111; }
+  .mst3.on { background: #f6edd6; animation: breathe 2.6s ease-in-out infinite; }
+  .mst3 .mno { font-weight: 300; font-size: 22px; line-height: 1; }
+  .mst3 .mti { font-weight: 700; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; line-height: 1.3; }
+  .mst3.on .ic * { animation: redraw 1.4s ease; }
+  #m-alcance .mpanel { background: #f6edd6; margin-top: 0; }
+  .msu { font-style: italic; font-size: 13px; color: #444; }
+  .mstp ul { list-style: none; margin-top: 6px; font-size: 12.5px; color: #333; }
+  .mstp li { padding-left: 13px; position: relative; margin-top: 5px; line-height: 1.4; }
+  .mstp li::before { content: "/"; position: absolute; left: 0; color: #111; }
+  /* marca */
+  .mmarca { justify-content: flex-end; }
   /* plazos */
-  .mtl { position: relative; margin-top: 26px; padding-left: 26px; border-left: 1px solid #111; }
-  .mwk { position: relative; padding-bottom: 30px; }
-  .mdot { position: absolute; left: -33px; top: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; border: 1.5px solid #111; }
-  .mwk:last-child .mdot { background: #111; }
-  .mit { font-style: italic; font-size: 15px; margin-top: 4px; }
-  .mwk p { font-size: 14px; color: #333; margin-top: 6px; }
-  #m .pop { position: relative; top: auto; left: auto; width: 100%; max-width: 320px; margin-top: 14px; opacity: 1; transform: none; box-shadow: none; border: 1px solid rgba(17,17,17,.2); pointer-events: auto; }
+  .mtline { position: relative; display: flex; justify-content: space-between; margin-top: 22px; }
+  .mtline::before { content: ""; position: absolute; left: 10px; right: 10px; top: 7px; height: 1px; background: #111; }
+  .mwb { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; font-size: 10px; letter-spacing: .14em; }
+  .mwb i { width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 1.5px solid #111; transition: background .3s, transform .3s; }
+  .mwb.on i { background: #111; transform: scale(1.15); }
+  .mwb.on span { font-weight: 700; }
+  .mwkp { background: none !important; padding: 12px 0 0 !important; }
+  .mit { font-style: italic; font-size: 14px; margin-top: 2px; }
+  .mwk p { font-size: 13px; color: #333; margin-top: 4px; }
+  #m .pop { position: relative; top: auto; left: auto; width: 100%; max-width: 280px; margin: 10px auto 0; opacity: 1; transform: none; box-shadow: none; border: 1px solid rgba(17,17,17,.15); pointer-events: auto; }
   #m .pop svg { width: 100%; height: auto; }
   /* honorarios */
-  .musd { font-weight: 300; font-size: 44px; line-height: 1.1; margin-top: 4px; }
-  #musdline { height: 2px; width: 0; background: #a0583a; margin-top: 6px; transition: width .9s cubic-bezier(.2,.7,.2,1); }
-  #musdline.on { width: 150px; }
-  .mcol { border-top: 1px solid #111; margin-top: 22px; padding-top: 14px; }
-  .mcol p { margin-top: 6px !important; font-size: 14px; }
-  /* alianza */
-  .mvenn svg { width: 100%; max-width: 320px; height: auto; }
-  .mali { margin-top: 16px; }
-  .mali .col { padding-top: 16px; }
-  /* acompañamiento */
-  .mpils { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 26px; }
-  .mpils .pil div { font-size: 9px !important; letter-spacing: .06em !important; }
+  .mhon p { font-size: 12.5px; }
+  .musd { font-weight: 300; font-size: 38px; line-height: 1.1; margin-top: 2px; }
+  #musdline { height: 2px; width: 0; background: #a0583a; margin-top: 4px; transition: width .9s cubic-bezier(.2,.7,.2,1); }
+  #musdline.on { width: 130px; }
+  .mcol { border-top: 1px solid #111; margin-top: 14px; padding-top: 10px; }
+  .mcol p { margin-top: 4px !important; }
+  .mcol .mnote { font-size: 10.5px; }
+  /* alianza y pasos */
+  .mvenn svg { width: 100%; max-width: 230px; height: auto; }
   #m .mvenn.in .venn .va, #m .mvenn.in .venn .vb { transform: none; }
   #m .mvenn.in .venn .vl { opacity: 1; }
-  #m .web { letter-spacing: .12em !important; padding: 12px 14px !important; white-space: nowrap; font-size: 10px !important; }
-  /* próximos pasos */
-  .mstep { margin-top: 26px; }
-  .mstep .pstep { margin: 0; }
+  .mgrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; margin-top: 14px; text-align: left; }
+  .mg2 { border-top: 1px solid #111; padding-top: 10px; font-size: 12px; line-height: 1.4; }
+  .mg2 .ic2 { display: block; width: 46px; height: 36px; margin-bottom: 6px; }
+  .mg2 b { display: block; font-size: 12px; }
+  .mg2 span { display: block; color: #444; margin-top: 3px; }
+  .mpk { font-size: 9px; letter-spacing: .18em; color: #a0583a; margin-bottom: 3px; }
+  .mpasos .mg2 .ic2 { width: 52px; height: 42px; }
+  /* acompañamiento */
+  .macomp { justify-content: flex-end; padding-top: calc(34vh + 20px); }
+  .mpils { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 16px; }
+  .mpils .pil { border-top: 1px solid #111; padding-top: 10px; }
+  .mpils .pil div { margin-top: 6px; font-size: 8.5px; letter-spacing: .06em; text-transform: uppercase; }
   .mtel { color: #111; }
-  .mfoot { text-align: center; font-size: 10px; letter-spacing: .1em; color: #777; padding: 18px 24px 28px; }
+  .mgr { align-items: center; }
+  #m .web { padding: 11px 13px; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+  @media (max-height: 720px) {
+    .ms { padding: 48px 20px 30px; }
+    .ms h2 { font-size: 17px; }
+    .mlead { font-size: 12.5px; margin-top: 8px; }
+    .mslabs { max-width: 130px; }
+    .mpanel { padding: 12px 14px; margin-top: 8px; }
+    .mpg { margin-top: 3px; padding-top: 4px; padding-bottom: 4px; }
+    .mpg p { font-size: 12px; }
+    .mstp li { font-size: 12px; margin-top: 3px; }
+    .mq4 p { font-size: 11.5px; margin-top: 18px; }
+    .mq4s { gap: 8px; margin-top: 10px; }
+    .musd { font-size: 32px; }
+    .mcard { padding: 18px 16px; }
+    .mcard p, .mhon p { font-size: 12px; }
+    .mcol { margin-top: 10px; padding-top: 8px; }
+    #m .pop { max-width: 220px; }
+    .mbgtop { height: 28vh; }
+    .macomp { padding-top: calc(28vh + 14px); }
+    .mgrid2 { gap: 10px; margin-top: 10px; }
+    .mg2, .mg2 b { font-size: 11.5px; }
+    .mvenn svg { max-width: 190px; }
+    .mchips .chip.feel { font-size: 13.5px; }
+    .mnote { font-size: 10.5px; margin-top: 6px; }
+  }
 </style>
 </head>
 <body>
 <div id="bar"></div>
 
+
 <div id="m">
-  <nav id="mnav"><a href="#m-portada">Inicio</a><a href="#m-propuesta">Propuesta</a><a href="#m-alcance">Alcance</a><a href="#m-plazos">Plazos y honorarios</a><a href="#m-alianza">Alianza</a></nav>
+  <nav id="mnav"><a href="#m-portada">Inicio</a><a href="#m-contenido">Contenido</a><a href="#m-propuesta">Propuesta</a><a href="#m-alcance">Alcance</a><a href="#m-plazos">Plazos y honorarios</a><a href="#m-alianza">Alianza</a></nav>
 
   <section class="ms mcover" id="m-portada">
     <svg class="mcv" viewBox="400 90 640 660" fill="none" stroke="#111" stroke-width="1.1" stroke-opacity=".13">
@@ -378,14 +421,14 @@
     <div class="mtitle">
       <div class="trk m1" style="--d:.3s; --ls:.3em;">PROPUESTA</div>
       <div class="trk m2" style="--d:.6s; --ls:.3em;">DE INTERIORISMO</div>
-      <div class="mrv" style="margin-top:22px; font-size:11px; letter-spacing:.24em; line-height:1.9;">OFICINAS CORPORATIVAS,<br>PLANTA DE PRODUCCIÓN DE ALIMENTOS</div>
+      <div class="mrv" style="margin-top:22px; font-size:10.5px; letter-spacing:.22em; line-height:1.9;">OFICINAS CORPORATIVAS,<br>PLANTA DE PRODUCCIÓN DE ALIMENTOS</div>
       <div class="mrv" style="font-style:italic; font-size:12.5px; margin-top:10px; color:#333;">Pilar, Buenos Aires — Argentina</div>
     </div>
     <div class="mnames mrv">Arquitecta <b>Clara Tacco Carulli</b><br>Diseñadora de interiores <b>Lucía Da Silva</b></div>
-    <div class="mscroll">DESLIZÁ HACIA ABAJO<span>↓</span></div>
+    <div class="mscroll">DESLIZÁ HACIA ARRIBA<span>↑</span></div>
   </section>
 
-  <section class="ms mphoto" style="background:#f4e7b9;">
+  <section class="ms mphoto" id="m-contenido" style="background:#f4e7b9;">
     <div class="mbg" style="background-image:url('img/contenido.jpg'); opacity:.42;"></div>
     <div class="mcard mrv">
       <h2>Contenido</h2>
@@ -394,67 +437,59 @@
       <a class="midx" href="#m-plazos"><b>03 / Plazos y honorarios</b><br><span>Cronograma de 30 días e inversión.</span></a>
       <a class="midx" href="#m-alianza"><b>04 / Alianza y próximos pasos</b><br><span>Cómo seguimos y cómo podemos crecer juntos.</span></a>
     </div>
+    <div class="mnum">— 01 —</div>
   </section>
 
   <section class="ms" id="m-propuesta">
     <h2 class="mrv">Propuesta <span>general</span></h2>
     <p class="mrv mlead">Proponemos unas oficinas que cuenten quiénes son: una empresa que produce alimentos. La materia prima, el proceso y la precisión se traducen en materiales nobles, orden y buena luz.</p>
-    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M103 160 V100 a12 12 0 0 1 24 0 V160" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M89 160 V100 a26 26 0 0 1 52 0 V160"/><path pathLength="1" d="M75 160 V100 a40 40 0 0 1 80 0 V160"/><path pathLength="1" d="M61 160 V100 a54 54 0 0 1 108 0 V160"/></svg><p><b>/ Oficinas con identidad propia,</b><br>que reflejen el oficio y los valores de la empresa.</p></div>
-    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon class="f" points="115,18 175,46 115,74 55,46" fill="#2f2a26" stroke="none"/><polygon pathLength="1" points="115,18 175,46 115,74 55,46"/><polygon class="f" points="115,60 175,88 115,116 55,88" fill="#b49a7c" stroke="none"/><polygon pathLength="1" points="115,60 175,88 115,116 55,88"/><polygon class="f" points="115,102 175,130 115,158 55,130" fill="#ece5da" stroke="none"/><polygon pathLength="1" points="115,102 175,130 115,158 55,130"/></svg><p><b>/ Una distribución clara en tres niveles,</b><br>de lo público a lo privado, pensada para crecer.</p></div>
-    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line pathLength="1" x1="40" y1="112" x2="190" y2="112"/><line pathLength="1" x1="55" y1="112" x2="55" y2="168"/><line pathLength="1" x1="175" y1="112" x2="175" y2="168"/><rect pathLength="1" x="105" y="68" width="56" height="36" rx="2"/><line pathLength="1" x1="133" y1="104" x2="133" y2="112"/><path pathLength="1" d="M66 122 v-34 M66 122 h30 v46 M66 122 v46"/><line pathLength="1" x1="190" y1="18" x2="190" y2="52"/><path pathLength="1" d="M176 62 L190 50 L204 62 Z" fill="#f4e7b9"/></svg><p><b>/ Espacios de trabajo cómodos y flexibles,</b><br>con buena acústica, iluminación y zonas de pausa.</p></div>
-    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" cx="115" cy="146" rx="72" ry="14"/><path pathLength="1" d="M58 140 a57 57 0 0 1 114 0"/><circle pathLength="1" cx="115" cy="78" r="6" fill="#a0583a" stroke="#a0583a"/><line pathLength="1" x1="26" y1="100" x2="26" y2="170"/><path pathLength="1" d="M18 100 v20 a8 8 0 0 0 16 0 v-20"/><line pathLength="1" x1="204" y1="100" x2="204" y2="170"/><path pathLength="1" d="M204 100 q10 18 0 36"/><path pathLength="1" d="M100 52 q6 -10 0 -20 M115 52 q6 -10 0 -20 M130 52 q6 -10 0 -20" stroke="#a0583a"/></svg><p><b>/ Una sala demo memorable,</b><br>donde la degustación se vuelve experiencia de marca.</p></div>
-    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="40" y="52" width="130" height="92"/><line pathLength="1" x1="110" y1="52" x2="110" y2="104"/><line pathLength="1" x1="40" y1="104" x2="140" y2="104"/><line pathLength="1" x1="40" y1="34" x2="170" y2="34"/><line pathLength="1" x1="40" y1="28" x2="40" y2="40"/><line pathLength="1" x1="170" y1="28" x2="170" y2="40"/><polygon pathLength="1" points="168,166 204,130 212,138 176,174" fill="#f4e7b9"/><polygon pathLength="1" points="168,166 176,174 162,180"/></svg><p><b>/ Un diseño realizable y presupuestable,</b><br>que combina piezas de mercado con diseños a medida.</p></div>
+    <div class="mpgs">
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M103 160 V100 a12 12 0 0 1 24 0 V160" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M89 160 V100 a26 26 0 0 1 52 0 V160"/><path pathLength="1" d="M75 160 V100 a40 40 0 0 1 80 0 V160"/><path pathLength="1" d="M61 160 V100 a54 54 0 0 1 108 0 V160"/></svg><p><b>/ Oficinas con identidad propia,</b> que reflejen el oficio y los valores de la empresa.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon class="f" points="115,18 175,46 115,74 55,46" fill="#2f2a26" stroke="none"/><polygon pathLength="1" points="115,18 175,46 115,74 55,46"/><polygon class="f" points="115,60 175,88 115,116 55,88" fill="#b49a7c" stroke="none"/><polygon pathLength="1" points="115,60 175,88 115,116 55,88"/><polygon class="f" points="115,102 175,130 115,158 55,130" fill="#ece5da" stroke="none"/><polygon pathLength="1" points="115,102 175,130 115,158 55,130"/></svg><p><b>/ Una distribución clara en tres niveles,</b> de lo público a lo privado, pensada para crecer.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line pathLength="1" x1="40" y1="112" x2="190" y2="112"/><line pathLength="1" x1="55" y1="112" x2="55" y2="168"/><line pathLength="1" x1="175" y1="112" x2="175" y2="168"/><rect pathLength="1" x="105" y="68" width="56" height="36" rx="2"/><line pathLength="1" x1="133" y1="104" x2="133" y2="112"/><path pathLength="1" d="M66 122 v-34 M66 122 h30 v46 M66 122 v46"/><line pathLength="1" x1="190" y1="18" x2="190" y2="52"/><path pathLength="1" d="M176 62 L190 50 L204 62 Z" fill="#f4e7b9"/></svg><p><b>/ Espacios de trabajo cómodos y flexibles,</b> con buena acústica, iluminación y zonas de pausa.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" cx="115" cy="146" rx="72" ry="14"/><path pathLength="1" d="M58 140 a57 57 0 0 1 114 0"/><circle pathLength="1" cx="115" cy="78" r="6" fill="#a0583a" stroke="#a0583a"/><line pathLength="1" x1="26" y1="100" x2="26" y2="170"/><path pathLength="1" d="M18 100 v20 a8 8 0 0 0 16 0 v-20"/><line pathLength="1" x1="204" y1="100" x2="204" y2="170"/><path pathLength="1" d="M204 100 q10 18 0 36"/><path pathLength="1" d="M100 52 q6 -10 0 -20 M115 52 q6 -10 0 -20 M130 52 q6 -10 0 -20" stroke="#a0583a"/></svg><p><b>/ Una sala demo memorable,</b> donde la degustación se vuelve experiencia de marca.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="40" y="52" width="130" height="92"/><line pathLength="1" x1="110" y1="52" x2="110" y2="104"/><line pathLength="1" x1="40" y1="104" x2="140" y2="104"/><line pathLength="1" x1="40" y1="34" x2="170" y2="34"/><line pathLength="1" x1="40" y1="28" x2="40" y2="40"/><line pathLength="1" x1="170" y1="28" x2="170" y2="40"/><polygon pathLength="1" points="168,166 204,130 212,138 176,174" fill="#f4e7b9"/><polygon pathLength="1" points="168,166 176,174 162,180"/></svg><p><b>/ Un diseño realizable y presupuestable,</b> que combina piezas de mercado con diseños a medida.</p></div>
+    </div>
+    <div class="mnum">— 02 —</div>
   </section>
 
   <section class="ms" style="background:#d3e8df;">
     <h2 class="mrv">El edificio <span>en tres niveles</span></h2>
     <div class="msub mrv">≈ 900 m² de oficinas · De lo público a lo privado</div>
-    <div class="mrv" style="margin-top:22px;"><svg viewBox="180 150 460 560" width="100%" style="max-width:300px; display:block; margin:0 auto;">
+    <div class="mrv" style="margin-top:10px;"><svg class="mslabs" viewBox="180 150 460 560">
   <g stroke="#8f877b" stroke-width="1" stroke-dasharray="4 5"><line x1="200" y1="271" x2="200" y2="405"/><line x1="430" y1="386" x2="430" y2="520"/><line x1="610" y1="296" x2="610" y2="430"/><line x1="200" y1="421" x2="200" y2="555"/><line x1="430" y1="536" x2="430" y2="670"/><line x1="610" y1="446" x2="610" y2="580"/></g>
-  <g class="mlv" data-l="0"><polygon points="200,555 430,670 430,686 200,571" fill="#cfc3b2"/><polygon points="430,670 610,580 610,596 430,686" fill="#bfb19d"/><polygon points="380,465 610,580 430,670 200,555" fill="#ece5da" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="574" text-anchor="middle" font-size="18" letter-spacing="4" fill="#222">PB</text></g>
-  <g class="mlv" data-l="1"><polygon points="200,405 430,520 430,536 200,421" fill="#9a8166"/><polygon points="430,520 610,430 610,446 430,536" fill="#866e55"/><polygon points="380,315 610,430 430,520 200,405" fill="#b49a7c" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="424" text-anchor="middle" font-size="18" letter-spacing="4" fill="#fff">1°</text></g>
-  <g class="mlv" data-l="2"><polygon points="200,255 430,370 430,386 200,271" fill="#1d1a17"/><polygon points="430,370 610,280 610,296 430,386" fill="#141210"/><polygon points="380,165 610,280 430,370 200,255" fill="#2f2a26" stroke="#2f2a26" stroke-width="1.2"/><text x="405" y="274" text-anchor="middle" font-size="18" letter-spacing="4" fill="#fff">2°</text></g>
+  <g class="mlv" data-l="0"><polygon points="200,555 430,670 430,686 200,571" fill="#cfc3b2"/><polygon points="430,670 610,580 610,596 430,686" fill="#bfb19d"/><polygon points="380,465 610,580 430,670 200,555" fill="#ece5da" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="574" text-anchor="middle" font-size="22" letter-spacing="4" fill="#222">PB</text></g>
+  <g class="mlv" data-l="1"><polygon points="200,405 430,520 430,536 200,421" fill="#9a8166"/><polygon points="430,520 610,430 610,446 430,536" fill="#866e55"/><polygon points="380,315 610,430 430,520 200,405" fill="#b49a7c" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="424" text-anchor="middle" font-size="22" letter-spacing="4" fill="#fff">1°</text></g>
+  <g class="mlv" data-l="2"><polygon points="200,255 430,370 430,386 200,271" fill="#1d1a17"/><polygon points="430,370 610,280 610,296 430,386" fill="#141210"/><polygon points="380,165 610,280 430,370 200,255" fill="#2f2a26" stroke="#2f2a26" stroke-width="1.2"/><text x="405" y="274" text-anchor="middle" font-size="22" letter-spacing="4" fill="#fff">2°</text></g>
 </svg></div>
-    <div class="mtap"><i></i>TOCÁ CADA NIVEL PARA EXPLORARLO</div>
-    <div class="mlevel mrv" data-l="2">
-      <div class="mk">Segundo piso · Privado</div><p><b>Tres oficinas para los socios, gerencia y Recursos Humanos.</b><br><span>Y la sala demo de degustación: el lugar donde la marca se prueba.</span></p>
-      <button class="mbtn" type="button">Explorar el nivel <b>→</b></button>
-      <div class="mexp"><p class="mq">¿Cómo convertir una degustación en una experiencia que venda?</p>
-        <div class="mchips"><span class="chip need">OFICINAS DE SOCIOS</span><span class="chip feel">confianza</span><span class="chip need">GERENCIA Y RR. HH.</span><span class="chip feel">privacidad</span><span class="chip need">SALA DEMO</span><span class="chip feel">experiencia de marca</span></div>
-        <div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div>
-        <div class="mk" style="margin-top:16px;">Lo que vamos a diseñar</div>
-        <p class="mli"><b>/</b> Oficinas de los tres socios</p><p class="mli"><b>/</b> Gerencia y Recursos Humanos</p><p class="mli"><b>/</b> Sala demo de degustación</p>
-        <p class="mnote">La propuesta de distribución se presenta en la etapa de concepto, sobre el anteproyecto de arquitectura.</p>
+    <div class="mtabs mrv"><button type="button" class="mtb on" data-i="0">2°</button><button type="button" class="mtb" data-i="1">1°</button><button type="button" class="mtb" data-i="2">PB</button></div>
+    <div class="mpanel mrv">
+      <div class="mlvp on" data-i="0">
+        <div class="mk">Segundo piso · Privado</div>
+        <div class="minfo"><p><b>Tres oficinas para los socios, gerencia y Recursos Humanos.</b> <span>Y la sala demo de degustación: el lugar donde la marca se prueba.</span></p></div>
+        <div class="mexp"><p class="mq">¿Cómo convertir una degustación en una experiencia que venda?</p><div class="mchips"><span class="chip need">OFICINAS DE SOCIOS</span><span class="chip feel">confianza</span><span class="chip need">GERENCIA Y RR. HH.</span><span class="chip feel">privacidad</span><span class="chip need">SALA DEMO</span><span class="chip feel">experiencia de marca</span></div></div>
+        <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
+      </div>
+      <div class="mlvp" data-i="1">
+        <div class="mk">Primer piso · Semipúblico</div>
+        <div class="minfo"><p><b>Área de trabajo tipo cowork para unas 30 personas.</b> <span>Compras y equipos administrativos, mesas compartidas y zonas de pausa.</span></p></div>
+        <div class="mexp"><p class="mq">¿Cómo lograr que 30 personas trabajen cómodas, concentradas y conectadas?</p><div class="mchips"><span class="chip need">30 PUESTOS</span><span class="chip feel">colaboración</span><span class="chip need">COMPRAS</span><span class="chip feel">concentración</span><span class="chip need">OFFICE Y PAUSA</span><span class="chip feel">energía</span></div></div>
+        <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
+      </div>
+      <div class="mlvp" data-i="2">
+        <div class="mk">Planta baja · Público</div>
+        <div class="minfo"><p><b>Recepción y salas de reuniones.</b> <span>La primera impresión de la empresa para clientes, proveedores y visitas.</span></p></div>
+        <div class="mexp"><p class="mq">¿Cómo recibir a quien llega por primera vez para que se lleve la mejor impresión?</p><div class="mchips"><span class="chip need">RECEPCIÓN</span><span class="chip feel">primera impresión</span><span class="chip need">SALAS DE REUNIONES</span><span class="chip feel">identidad</span><span class="chip need">ESPERA</span><span class="chip feel">calidez</span></div></div>
+        <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
       </div>
     </div>
-    <div class="mlevel mrv" data-l="1">
-      <div class="mk">Primer piso · Semipúblico</div><p><b>Área de trabajo tipo cowork para unas 30 personas.</b><br><span>Compras y equipos administrativos, mesas compartidas y zonas de pausa.</span></p>
-      <button class="mbtn" type="button">Explorar el nivel <b>→</b></button>
-      <div class="mexp"><p class="mq">¿Cómo lograr que 30 personas trabajen cómodas, concentradas y conectadas?</p>
-        <div class="mchips"><span class="chip need">30 PUESTOS</span><span class="chip feel">colaboración</span><span class="chip need">COMPRAS</span><span class="chip feel">concentración</span><span class="chip need">OFFICE Y PAUSA</span><span class="chip feel">energía</span></div>
-        <div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div>
-        <div class="mk" style="margin-top:16px;">Lo que vamos a diseñar</div>
-        <p class="mli"><b>/</b> Puestos de trabajo para unas 30 personas</p><p class="mli"><b>/</b> Compras y equipos administrativos</p><p class="mli"><b>/</b> Pausas y encuentros</p>
-        <p class="mnote">La propuesta de distribución se presenta en la etapa de concepto, sobre el anteproyecto de arquitectura.</p>
-      </div>
-    </div>
-    <div class="mlevel mrv" data-l="0">
-      <div class="mk">Planta baja · Público</div><p><b>Recepción y salas de reuniones.</b><br><span>La primera impresión de la empresa para clientes, proveedores y visitas.</span></p>
-      <button class="mbtn" type="button">Explorar el nivel <b>→</b></button>
-      <div class="mexp"><p class="mq">¿Cómo recibir a quien llega por primera vez para que se lleve la mejor impresión de la empresa?</p>
-        <div class="mchips"><span class="chip need">RECEPCIÓN</span><span class="chip feel">primera impresión</span><span class="chip need">SALAS DE REUNIONES</span><span class="chip feel">identidad</span><span class="chip need">ESPERA</span><span class="chip feel">calidez</span></div>
-        <div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div>
-        <div class="mk" style="margin-top:16px;">Lo que vamos a diseñar</div>
-        <p class="mli"><b>/</b> Recepción y espera de visitas</p><p class="mli"><b>/</b> Salas de reuniones</p><p class="mli"><b>/</b> La primera imagen de la marca</p>
-        <p class="mnote">La propuesta de distribución se presenta en la etapa de concepto, sobre el anteproyecto de arquitectura.</p>
-      </div>
-    </div>
+    <div class="mnum">— 03 —</div>
   </section>
 
   <section class="ms">
     <h2 class="mrv">Pensado <span>para crecer</span></h2>
     <p class="mrv mlead">Diseñamos para hoy y para lo que viene: oficinas que acompañen el crecimiento de la compañía y estén preparadas para recibir a nuevos integrantes.</p>
-    <div class="grow mgrow mrv"><svg width="100%" style="display:block;" viewBox="700 210 700 400">
+    <div class="grow mgrow mrv"><svg width="100%" viewBox="700 210 700 400" style="display:block;">
       <g transform="matrix(4.2 2.1 -4.2 2.1 890 236)" class="vx">
         <rect x="0" y="0" width="100" height="40" fill="#fbfaf7" stroke="#111" stroke-width="1.2"/>
         <rect class="zone" x="60" y="0" width="40" height="40" fill="none" stroke="#a0583a" stroke-width="1.2" stroke-dasharray="4 3"/>
@@ -464,45 +499,39 @@
       </g>
       <text x="1200" y="560" font-size="12" letter-spacing="2" fill="#a0583a" font-style="italic">espacio previsto</text>
     </svg>
-      <div class="mgrowbar"><span class="mseats">30</span><span class="mk" style="margin:0 14px 0 8px;">puestos</span><button type="button" class="mg on" data-g="0">HOY</button><button type="button" class="mg" data-g="1">A FUTURO</button></div>
+      <div class="mgrowbar"><span class="mseats">30</span><span class="mk" style="margin:0 12px 0 6px;">puestos</span><button type="button" class="mg on" data-g="0">HOY</button><button type="button" class="mg" data-g="1">A FUTURO</button></div>
     </div>
-    <div class="mk mrv" style="margin-top:26px;">Algunas estrategias posibles</div>
-    <div class="cb mrv" data-c="0"><b>/ Distribuciones modulares,</b><br><span style="color:#444;">que puedan ampliarse sin grandes reformas.</span></div>
-    <div class="cb mrv" data-c="1"><b>/ Mobiliario adaptable,</b><br><span style="color:#444;">para sumar puestos o cambiar usos.</span></div>
-    <div class="cb mrv" data-c="2"><b>/ Instalaciones con margen,</b><br><span style="color:#444;">en electricidad, datos e iluminación.</span></div>
-    <div class="cb mrv" data-c="3"><b>/ Espacios flexibles,</b><br><span style="color:#444;">que puedan cambiar de función.</span></div>
-    <p class="mrv mnote" style="margin-top:12px;">Las definimos junto al Cliente, según su proyección de crecimiento.</p>
+    <div class="mk mrv" style="margin-top:14px;">Algunas estrategias posibles · tocá cada una</div>
+    <div class="mstrat mrv"><button type="button" class="msb" data-c="0">Distribuciones modulares</button><button type="button" class="msb" data-c="1">Mobiliario adaptable</button><button type="button" class="msb" data-c="2">Instalaciones con margen</button><button type="button" class="msb" data-c="3">Espacios flexibles</button></div>
+    <p class="mrv mstratx">Las definimos junto al Cliente, según su proyección de crecimiento.</p>
+    <div class="mnum">— 04 —</div>
   </section>
 
   <section class="ms mphoto">
     <div class="mbg" style="background-image:url('img/mirada.jpg'); background-position:left top;"></div>
     <div class="mwhite"></div>
     <h2 class="mrv">Mirada <span>a futuro</span></h2>
-    <p class="mrv mlead" style="text-align:center;">Para que el diseño acompañe la evolución de la empresa, nos interesa conocer su visión a mediano y largo plazo.</p>
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="30" cy="30" r="8"/><path pathLength="1" d="M16 64 q14 -26 28 0"/><circle pathLength="1" cx="56" cy="30" r="8"/><path pathLength="1" d="M42 64 q14 -26 28 0"/><line pathLength="1" x1="94" y1="24" x2="94" y2="50" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="81" y1="37" x2="107" y2="37" stroke="#a0583a" stroke-width="2"/></svg><div class="mnum">01</div><p>¿Cuántas personas prevén sumar en los próximos tres a cinco años?</p></div>
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" class="f" x="20" y="58" width="14" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="20" y="58" width="14" height="22"/><rect pathLength="1" x="42" y="46" width="14" height="34"/><rect pathLength="1" x="64" y="32" width="14" height="48"/><path pathLength="1" d="M18 36 L58 18 L94 10" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M84 4 L96 10 L88 20" stroke="#a0583a" stroke-width="2"/></svg><div class="mnum">02</div><p>¿Qué áreas de la empresa creen que van a crecer o cambiar?</p></div>
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="18" y="12" width="32" height="66"/><circle pathLength="1" cx="43" cy="46" r="2"/><line pathLength="1" x1="56" y1="46" x2="66" y2="46" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M62 41 L68 46 L62 51" stroke="#a0583a" stroke-width="2"/><circle pathLength="1" cx="88" cy="30" r="8"/><path pathLength="1" d="M74 76 q14 -32 28 0"/></svg><div class="mnum">03</div><p>¿Esperan recibir más visitas de clientes, proveedores o inversores?</p></div>
-    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon pathLength="1" class="f" points="36,40 60,28 84,40 60,52" fill="#f4e7b9" stroke="none"/><path pathLength="1" d="M36 40 L60 28 L84 40 L60 52 Z"/><path pathLength="1" d="M36 40 V66 L60 78 V52"/><path pathLength="1" d="M84 40 V66 L60 78"/><line pathLength="1" x1="98" y1="6" x2="98" y2="26" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="88" y1="16" x2="108" y2="16" stroke="#a0583a" stroke-width="2"/></svg><div class="mnum">04</div><p>¿Proyectan nuevos productos o servicios que impacten en las oficinas?</p></div>
+    <p class="mrv mlead">Para que el diseño acompañe la evolución de la empresa, nos interesa conocer su visión a mediano y largo plazo.</p>
+    <div class="mq4s">
+    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="30" cy="30" r="8"/><path pathLength="1" d="M16 64 q14 -26 28 0"/><circle pathLength="1" cx="56" cy="30" r="8"/><path pathLength="1" d="M42 64 q14 -26 28 0"/><line pathLength="1" x1="94" y1="24" x2="94" y2="50" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="81" y1="37" x2="107" y2="37" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">01</div><p>¿Cuántas personas prevén sumar en los próximos tres a cinco años?</p></div>
+    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" class="f" x="20" y="58" width="14" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="20" y="58" width="14" height="22"/><rect pathLength="1" x="42" y="46" width="14" height="34"/><rect pathLength="1" x="64" y="32" width="14" height="48"/><path pathLength="1" d="M18 36 L58 18 L94 10" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M84 4 L96 10 L88 20" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">02</div><p>¿Qué áreas de la empresa creen que van a crecer o cambiar?</p></div>
+    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="18" y="12" width="32" height="66"/><circle pathLength="1" cx="43" cy="46" r="2"/><line pathLength="1" x1="56" y1="46" x2="66" y2="46" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M62 41 L68 46 L62 51" stroke="#a0583a" stroke-width="2"/><circle pathLength="1" cx="88" cy="30" r="8"/><path pathLength="1" d="M74 76 q14 -32 28 0"/></svg><div class="mnumq">03</div><p>¿Esperan recibir más visitas de clientes, proveedores o inversores?</p></div>
+    <div class="mq4 qc hv mrv"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon pathLength="1" class="f" points="36,40 60,28 84,40 60,52" fill="#f4e7b9" stroke="none"/><path pathLength="1" d="M36 40 L60 28 L84 40 L60 52 Z"/><path pathLength="1" d="M36 40 V66 L60 78 V52"/><path pathLength="1" d="M84 40 V66 L60 78"/><line pathLength="1" x1="98" y1="6" x2="98" y2="26" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="88" y1="16" x2="108" y2="16" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">04</div><p>¿Proyectan nuevos productos o servicios que impacten en las oficinas?</p></div>
+    </div>
+    <div class="mnum">— 05 —</div>
   </section>
 
   <section class="ms" id="m-alcance">
     <h2 class="mrv">Alcance <span>del proyecto</span></h2>
-    <div class="msub mrv">Propuesta de interiorismo integral · Planta baja, primer y segundo piso</div>
     <p class="mrv mlead">Trabajamos junto al equipo de arquitectura desde el anteproyecto, para que el interiorismo nazca integrado al edificio y llegue a obra con toda la documentación necesaria.</p>
-    <div class="mtap"><i></i>TOCÁ CADA ETAPA PARA VER SU DETALLE</div>
-    <div class="mst open mrv">
-      <div class="msth"><svg class="ic mstic" width="62" height="52" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="44" height="56" rx="2" pathLength="1"/><line x1="14" y1="18" x2="42" y2="18" pathLength="1"/><line x1="14" y1="28" x2="38" y2="28" pathLength="1"/><line x1="14" y1="38" x2="34" y2="38" pathLength="1"/><circle cx="56" cy="42" r="14" pathLength="1"/><line x1="66" y1="52" x2="80" y2="66" pathLength="1"/></svg><div class="mno">01</div><div class="mti">Análisis y concepto</div><div class="msu">Entendemos la empresa y definimos el concepto.</div><span class="mplus">+</span></div>
-      <ul><li>Análisis del anteproyecto de arquitectura junto al equipo constructor.</li><li>Entrevista con el Cliente: necesidades, usos, puestos y crecimiento futuro.</li><li>Inmersión en la empresa: cómo trabajan sus equipos, cómo reciben y qué los hace únicos.</li><li>Concepto de diseño, paleta y referencias, alineados a la identidad de la marca.</li><li>Zonificación de los tres niveles.</li></ul>
+    <div class="mtabs3 mrv"><button type="button" class="mst3 on" data-i="0"><svg class="ic" width="40" height="34" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="44" height="56" rx="2" pathLength="1"/><line x1="14" y1="18" x2="42" y2="18" pathLength="1"/><line x1="14" y1="28" x2="38" y2="28" pathLength="1"/><line x1="14" y1="38" x2="34" y2="38" pathLength="1"/><circle cx="56" cy="42" r="14" pathLength="1"/><line x1="66" y1="52" x2="80" y2="66" pathLength="1"/></svg><span class="mno">01</span><span class="mti">Análisis y concepto</span></button><button type="button" class="mst3" data-i="1"><svg class="ic" width="40" height="34" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="56" y1="0" x2="56" y2="16" pathLength="1"/><path d="M44 28 Q56 10 68 28 Z" pathLength="1"/><path d="M10 64 L10 40 Q10 32 18 32 L18 48 L50 48 L50 32 Q58 32 58 40 L58 64" pathLength="1"/><line x1="18" y1="48" x2="18" y2="58" pathLength="1"/><line x1="10" y1="58" x2="58" y2="58" pathLength="1"/></svg><span class="mno">02</span><span class="mti">Diseño integral</span></button><button type="button" class="mst3" data-i="2"><svg class="ic" width="40" height="34" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="64" height="50" pathLength="1"/><line x1="6" y1="34" x2="40" y2="34" pathLength="1"/><line x1="40" y1="10" x2="40" y2="60" pathLength="1"/><line x1="6" y1="4" x2="70" y2="4" pathLength="1"/><line x1="6" y1="1" x2="6" y2="7" pathLength="1"/><line x1="70" y1="1" x2="70" y2="7" pathLength="1"/><circle cx="56" cy="24" r="6" pathLength="1"/><line x1="52" y1="20" x2="60" y2="28" pathLength="1"/><line x1="60" y1="20" x2="52" y2="28" pathLength="1"/></svg><span class="mno">03</span><span class="mti">Documentación</span></button></div>
+    <div class="mpanel mrv">
+      <div class="mstp on"><div class="msu">Entendemos la empresa y definimos el concepto.</div><ul><li>Análisis del anteproyecto de arquitectura junto al equipo constructor.</li><li>Entrevista con el Cliente: necesidades, usos, puestos y crecimiento futuro.</li><li>Inmersión en la empresa: cómo trabajan sus equipos, cómo reciben y qué los hace únicos.</li><li>Concepto de diseño, paleta y referencias, alineados a la identidad de la marca.</li><li>Zonificación de los tres niveles.</li></ul></div>
+      <div class="mstp"><div class="msu">Diseñamos cada espacio y cada mueble, y lo hacemos visible.</div><ul><li>Distribución y equipamiento de los tres niveles.</li><li>Materialidad y terminaciones: pisos, revestimientos, cielorrasos y textiles.</li><li>Diseño de iluminación por sector.</li><li>Mobiliario: diseño a medida y selección de piezas de mercado.</li><li>Modelado 3D, renders y video de recorrido virtual.</li></ul></div>
+      <div class="mstp"><div class="msu">Todo lo necesario para llevar la propuesta a obra.</div><ul><li>Planos en planta de distribución y equipamiento.</li><li>Planos de mobiliario a medida para fabricación.</li><li>Planos de electricidad con bocas de iluminación.</li><li>Listado de mobiliario y materiales de referencia.</li><li>Presentación final integral.</li></ul></div>
     </div>
-    <div class="mst mrv">
-      <div class="msth"><svg class="ic mstic" width="62" height="52" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="56" y1="0" x2="56" y2="16" pathLength="1"/><path d="M44 28 Q56 10 68 28 Z" pathLength="1"/><path d="M10 64 L10 40 Q10 32 18 32 L18 48 L50 48 L50 32 Q58 32 58 40 L58 64" pathLength="1"/><line x1="18" y1="48" x2="18" y2="58" pathLength="1"/><line x1="10" y1="58" x2="58" y2="58" pathLength="1"/></svg><div class="mno">02</div><div class="mti">Diseño integral</div><div class="msu">Diseñamos cada espacio y cada mueble, y lo hacemos visible.</div><span class="mplus">+</span></div>
-      <ul><li>Distribución y equipamiento de los tres niveles.</li><li>Materialidad y terminaciones: pisos, revestimientos, cielorrasos y textiles.</li><li>Diseño de iluminación por sector.</li><li>Mobiliario: diseño a medida y selección de piezas de mercado.</li><li>Modelado 3D, renders y video de recorrido virtual.</li></ul>
-    </div>
-    <div class="mst mrv">
-      <div class="msth"><svg class="ic mstic" width="62" height="52" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="64" height="50" pathLength="1"/><line x1="6" y1="34" x2="40" y2="34" pathLength="1"/><line x1="40" y1="10" x2="40" y2="60" pathLength="1"/><line x1="6" y1="4" x2="70" y2="4" pathLength="1"/><line x1="6" y1="1" x2="6" y2="7" pathLength="1"/><line x1="70" y1="1" x2="70" y2="7" pathLength="1"/><circle cx="56" cy="24" r="6" pathLength="1"/><line x1="52" y1="20" x2="60" y2="28" pathLength="1"/><line x1="60" y1="20" x2="52" y2="28" pathLength="1"/></svg><div class="mno">03</div><div class="mti">Documentación</div><div class="msu">Todo lo necesario para llevar la propuesta a obra.</div><span class="mplus">+</span></div>
-      <ul><li>Planos en planta de distribución y equipamiento.</li><li>Planos de mobiliario a medida para fabricación.</li><li>Planos de electricidad con bocas de iluminación.</li><li>Listado de mobiliario y materiales de referencia.</li><li>Presentación final integral.</li></ul>
-    </div>
-    <p class="mnote mrv" style="margin-top:18px;">Las piezas de mercado se proponen como referencia y pueden variar según la disponibilidad al momento de la compra. Las piezas a medida se diseñan para su fabricación.</p>
+    <p class="mnote mrv">Las piezas de mercado se proponen como referencia y pueden variar según la disponibilidad al momento de la compra. Las piezas a medida se diseñan para su fabricación.</p>
+    <div class="mnum">— 06 —</div>
   </section>
 
   <section class="ms mphoto mmarca">
@@ -513,13 +542,15 @@
       <p>Sin ser un servicio de branding, la propuesta deja una <b class="mhl">base estética clara y coherente</b> que la empresa puede tomar como punto de partida si decide actualizar su imagen corporativa.</p>
       <p>Lo físico impulsa lo intangible: un espacio con identidad ordena también cómo se comunica la marca.</p>
     </div>
+    <div class="mnum">— 07 —</div>
   </section>
 
   <section class="ms" id="m-plazos">
     <h2 class="mrv">Plazos <span>estimados</span></h2>
     <div class="msub mrv">30 días desde la confirmación y la recepción del anteproyecto de arquitectura</div>
-    <div class="mtl">
-    <div class="mwk mrv"><div class="mdot"></div><div class="mk">Semana 1</div><div class="mit">Análisis y programa</div><p>Estudio del anteproyecto, reunión con el Cliente y definición de necesidades de cada nivel.</p><div class="pop" data-pop="0">
+    <div class="mtline mrv"><button type="button" class="mwb on" data-i="0"><i></i><span>S1</span></button><button type="button" class="mwb" data-i="1"><i></i><span>S2</span></button><button type="button" class="mwb" data-i="2"><i></i><span>S3</span></button><button type="button" class="mwb" data-i="3"><i></i><span>S4</span></button></div>
+    <div class="mpanel mwkp mrv">
+      <div class="mwk on"><div class="mk">Semana 1</div><div class="mit">Análisis y programa</div><p>Estudio del anteproyecto, reunión con el Cliente y definición de necesidades de cada nivel.</p><div class="pop" data-pop="0">
     <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
       <circle class="d" pathLength="1" cx="62" cy="112" r="16" style="--a:.1s"/>
       <path class="d" pathLength="1" d="M32 172 Q62 128 92 172" style="--a:.3s"/>
@@ -536,7 +567,7 @@
     </svg>
     <div class="cap">Escuchamos y relevamos necesidades</div>
   </div></div>
-    <div class="mwk mrv"><div class="mdot"></div><div class="mk">Semana 2</div><div class="mit">Concepto y distribución</div><p>Concepto, paleta y zonificación de los tres niveles. Reunión de validación con el Cliente.</p><div class="pop" data-pop="1">
+      <div class="mwk"><div class="mk">Semana 2</div><div class="mit">Concepto y distribución</div><p>Concepto, paleta y zonificación de los tres niveles. Reunión de validación con el Cliente.</p><div class="pop" data-pop="1">
     <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round">
       <rect class="f" x="40" y="20" width="110" height="75" fill="#f4e7b9" stroke="none" style="--a:1.0s"/>
       <rect class="f" x="150" y="20" width="110" height="65" fill="#d3e8df" stroke="none" style="--a:1.3s"/>
@@ -550,7 +581,7 @@
     </svg>
     <div class="cap">Zonificamos cada nivel</div>
   </div></div>
-    <div class="mwk mrv"><div class="mdot"></div><div class="mk">Semana 3</div><div class="mit">Desarrollo</div><p>Modelado 3D, materiales, iluminación y mobiliario.</p><div class="pop" data-pop="2">
+      <div class="mwk"><div class="mk">Semana 3</div><div class="mit">Desarrollo</div><p>Modelado 3D, materiales, iluminación y mobiliario.</p><div class="pop" data-pop="2">
     <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.1" stroke-linejoin="round">
       <defs><radialGradient id="glw"><stop offset="0" stop-color="#ffd86b" stop-opacity=".95"/><stop offset="1" stop-color="#ffd86b" stop-opacity="0"/></radialGradient></defs>
       <g class="dr" style="--a:.2s"><g transform="translate(70,150)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#ece5da"/><polygon points="0,0 22,-11 22,11 0,22" fill="#d9d1c4"/></g></g>
@@ -566,7 +597,7 @@
     </svg>
     <div class="cap">Modelamos, equipamos e iluminamos</div>
   </div></div>
-    <div class="mwk mrv"><div class="mdot"></div><div class="mk">Semana 4</div><div class="mit">Renders y presentación</div><p>Renders, video de recorrido virtual, documentación y presentación final integral.</p><div class="pop" data-pop="3">
+      <div class="mwk"><div class="mk">Semana 4</div><div class="mit">Renders y presentación</div><p>Renders, video de recorrido virtual, documentación y presentación final integral.</p><div class="pop" data-pop="3">
     <svg viewBox="0 0 300 190" width="300" height="190" stroke="#111" stroke-width="1.1" stroke-linejoin="round">
       <g class="fall" style="--a:0s"><rect x="16" y="-44" width="56" height="38" fill="#f4e7b9"/><polyline points="22,-12 36,-28 46,-19 54,-30 66,-12" fill="none"/><circle cx="60" cy="-35" r="3" fill="#111"/></g>
       <g class="fall" style="--a:0.5s"><rect x="92" y="-44" width="56" height="38" fill="#fff"/><polygon points="114,-34 128,-25 114,-16" fill="#111"/></g>
@@ -582,18 +613,21 @@
     <div class="cap">Renders y recorrido virtual</div>
   </div></div>
     </div>
+    <div class="mtap mrv"><i></i>TOCÁ CADA SEMANA</div>
+    <div class="mnum">— 08 —</div>
   </section>
 
   <section class="ms mphoto">
     <div class="mbg" style="background-image:url('img/honorarios.jpg');"></div>
-    <div class="mcard mrv">
+    <div class="mcard mrv mhon">
       <h2>Honorarios <span>profesionales</span></h2>
       <div class="msub">Propuesta de interiorismo integral · Tres niveles</div>
-      <div class="mk" style="margin-top:26px;">Inversión</div>
+      <div class="mk" style="margin-top:18px;">Inversión</div>
       <div class="musd">USD <span id="musd">11.000</span></div><div id="musdline"></div>
       <div class="mcol"><div class="mit">Modalidad de pago</div><p>50% al confirmar la propuesta; 50% restante al entregar la presentación final. El pago podrá realizarse en pesos argentinos al tipo de cambio dólar blue vigente.</p><p class="mnote">Honorarios expresados para facturación tipo C. En caso de requerir Factura A, se ajustarán según la carga impositiva correspondiente, con IVA adicional.</p></div>
       <div class="mcol"><div class="mit">Base de los honorarios</div><p>Análisis del anteproyecto, diseño conceptual, distribución, modelado 3D, renders, video de recorrido, propuesta de mobiliario y documentación.</p></div>
     </div>
+    <div class="mnum">— 09 —</div>
   </section>
 
   <section class="ms" id="m-alianza" style="text-align:center;">
@@ -605,40 +639,37 @@
     </svg></div>
     <h2 class="mrv">Alianza <span>para próximos proyectos</span></h2>
     <p class="mrv mlead" style="text-align:center;">Queremos que este sea el primero de muchos proyectos juntos. Por eso proponemos una alianza de beneficio mutuo, pensada para crecer en conjunto.</p>
-    <div style="text-align:left;"><div class="mrv mali"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><circle pathLength="1" cx="22" cy="16" r="7"/><path pathLength="1" d="M10 44 q12 -24 24 0"/><circle pathLength="1" cx="42" cy="16" r="7"/><path pathLength="1" d="M30 44 q12 -24 24 0" stroke="#a0583a"/></svg><b>/ Un mismo equipo y un mismo estándar,</b><br><span style="color:#444;">proyecto tras proyecto.</span></div></div><div class="mrv mali"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><path pathLength="1" d="M6 12 h34 l12 12 l-12 12 h-34 z"/><circle pathLength="1" cx="14" cy="24" r="2.5"/><circle pathLength="1" class="f" cx="27" cy="18" r="2.5" fill="#a0583a" stroke="none"/><circle pathLength="1" cx="27" cy="18" r="2.5" stroke="#a0583a"/><circle pathLength="1" cx="37" cy="30" r="2.5" stroke="#a0583a"/><line pathLength="1" x1="25" y1="32" x2="39" y2="16" stroke="#a0583a"/></svg><b>/ Tarifa preferencial,</b><br><span style="color:#444;">con un 10% de descuento en los honorarios de cada proyecto que nos deriven.</span></div></div><div class="mrv mali"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><rect pathLength="1" class="f" x="8" y="12" width="22" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="8" y="12" width="22" height="22"/><path pathLength="1" d="M30 18 a5 5 0 0 1 0 10"/><rect pathLength="1" x="30" y="12" width="22" height="22" stroke="#a0583a"/></svg><b>/ Un servicio más completo para sus clientes,</b><br><span style="color:#444;">que suman interiorismo integral sin ampliar su estructura.</span></div></div><div class="mrv mali"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><rect pathLength="1" x="8" y="6" width="34" height="38"/><line pathLength="1" x1="14" y1="16" x2="36" y2="16"/><line pathLength="1" x1="14" y1="24" x2="32" y2="24"/><line pathLength="1" x1="14" y1="32" x2="28" y2="32"/><path pathLength="1" d="M38 40 L54 24 L58 28 L42 44 Z" fill="#f4e7b9" stroke="#a0583a"/></svg><b>/ Documentación pensada para la obra,</b><br><span style="color:#444;">con plantas y listados de referencia que facilitan presupuestar y construir.</span></div></div></div>
+    <div class="mgrid2"><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="22" cy="16" r="7"/><path pathLength="1" d="M10 44 q12 -24 24 0"/><circle pathLength="1" cx="42" cy="16" r="7"/><path pathLength="1" d="M30 44 q12 -24 24 0" stroke="#a0583a"/></svg><b>Un mismo equipo y un mismo estándar</b><span>proyecto tras proyecto.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M6 12 h34 l12 12 l-12 12 h-34 z"/><circle pathLength="1" cx="14" cy="24" r="2.5"/><circle pathLength="1" class="f" cx="27" cy="18" r="2.5" fill="#a0583a" stroke="none"/><circle pathLength="1" cx="27" cy="18" r="2.5" stroke="#a0583a"/><circle pathLength="1" cx="37" cy="30" r="2.5" stroke="#a0583a"/><line pathLength="1" x1="25" y1="32" x2="39" y2="16" stroke="#a0583a"/></svg><b>Tarifa preferencial</b><span>10% de descuento en los honorarios de cada proyecto que nos deriven.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" class="f" x="8" y="12" width="22" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="8" y="12" width="22" height="22"/><path pathLength="1" d="M30 18 a5 5 0 0 1 0 10"/><rect pathLength="1" x="30" y="12" width="22" height="22" stroke="#a0583a"/></svg><b>Un servicio más completo</b><span>para sus clientes, con interiorismo integral sin ampliar su estructura.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="8" y="6" width="34" height="38"/><line pathLength="1" x1="14" y1="16" x2="36" y2="16"/><line pathLength="1" x1="14" y1="24" x2="32" y2="24"/><line pathLength="1" x1="14" y1="32" x2="28" y2="32"/><path pathLength="1" d="M38 40 L54 24 L58 28 L42 44 Z" fill="#f4e7b9" stroke="#a0583a"/></svg><b>Documentación para la obra</b><span>plantas y listados de referencia para presupuestar y construir.</span></div></div>
+    <div class="mnum">— 10 —</div>
   </section>
 
-  <section class="ms mphoto">
-    <div class="mbgtop" style="background-image:url('img/acompanamiento.jpg'); height:300px;"></div>
-    <div style="position:relative; padding-top:300px;">
-      <h2 class="mrv">Acompañamiento <span>del proyecto</span></h2>
-      <p class="mrv mlead">Elegir un estudio profesional no solo significa definir la estética del espacio. Es contar con un acompañamiento para mejorar la funcionalidad de los espacios que se habitan, una planificación que optimiza tiempos y recursos, y un apoyo para tomar decisiones.</p>
-      <div class="mpils mrv"><div class="pil hv" style="border-top:1px solid #111; padding-top:16px;"><svg class="ic2" width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M8 40 V24 a4 4 0 0 1 4 -4 h4 v10 h20 v-10 h4 a4 4 0 0 1 4 4 v16"/><line pathLength="1" x1="16" y1="30" x2="16" y2="12"/><path pathLength="1" d="M16 12 h20 v18" stroke="#a0583a"/><line pathLength="1" x1="8" y1="40" x2="8" y2="46"/><line pathLength="1" x1="44" y1="40" x2="44" y2="46"/></svg><div style="margin-top:10px; font-size:11px; letter-spacing:.2em; text-transform:uppercase;">Funcionalidad</div></div><div class="pil hv" style="border-top:1px solid #111; padding-top:16px;"><svg class="ic2" width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="6" y="10" width="40" height="34" rx="2"/><line pathLength="1" x1="6" y1="19" x2="46" y2="19"/><line pathLength="1" x1="15" y1="6" x2="15" y2="13"/><line pathLength="1" x1="37" y1="6" x2="37" y2="13"/><polyline pathLength="1" points="16,31 23,37 36,25" stroke="#a0583a" stroke-width="2"/></svg><div style="margin-top:10px; font-size:11px; letter-spacing:.2em; text-transform:uppercase;">Planificación</div></div><div class="pil hv" style="border-top:1px solid #111; padding-top:16px;"><svg class="ic2" width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line pathLength="1" x1="26" y1="6" x2="26" y2="48"/><path pathLength="1" d="M26 10 h16 l5 5 l-5 5 h-16" stroke="#a0583a"/><path pathLength="1" d="M26 25 h-16 l-5 5 l5 5 h16"/></svg><div style="margin-top:10px; font-size:11px; letter-spacing:.2em; text-transform:uppercase;">Decisiones</div></div></div>
-    </div>
+  <section class="ms mphoto macomp">
+    <div class="mbgtop" style="background-image:url('img/acompanamiento.jpg');"></div>
+    <h2 class="mrv">Acompañamiento <span>del proyecto</span></h2>
+    <p class="mrv mlead">Elegir un estudio profesional no solo significa definir la estética del espacio. Es contar con un acompañamiento para mejorar la funcionalidad de los espacios que se habitan, una planificación que optimiza tiempos y recursos, y un apoyo para tomar decisiones.</p>
+    <div class="mpils mrv"><div class="pil hv"><svg class="ic2" width="40" height="40" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M8 40 V24 a4 4 0 0 1 4 -4 h4 v10 h20 v-10 h4 a4 4 0 0 1 4 4 v16"/><line pathLength="1" x1="16" y1="30" x2="16" y2="12"/><path pathLength="1" d="M16 12 h20 v18" stroke="#a0583a"/><line pathLength="1" x1="8" y1="40" x2="8" y2="46"/><line pathLength="1" x1="44" y1="40" x2="44" y2="46"/></svg><div>Funcionalidad</div></div><div class="pil hv"><svg class="ic2" width="40" height="40" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="6" y="10" width="40" height="34" rx="2"/><line pathLength="1" x1="6" y1="19" x2="46" y2="19"/><line pathLength="1" x1="15" y1="6" x2="15" y2="13"/><line pathLength="1" x1="37" y1="6" x2="37" y2="13"/><polyline pathLength="1" points="16,31 23,37 36,25" stroke="#a0583a" stroke-width="2"/></svg><div>Planificación</div></div><div class="pil hv"><svg class="ic2" width="40" height="40" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line pathLength="1" x1="26" y1="6" x2="26" y2="48"/><path pathLength="1" d="M26 10 h16 l5 5 l-5 5 h-16" stroke="#a0583a"/><path pathLength="1" d="M26 25 h-16 l-5 5 l5 5 h16"/></svg><div>Decisiones</div></div></div>
+    <div class="mnum">— 11 —</div>
   </section>
 
   <section class="ms">
     <h2 class="mrv">Próximos <span>pasos</span></h2>
-    <div class="mrv mstep"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 8 h48 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-28 l-12 10 v-10 h-8 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6 z"/><polyline pathLength="1" points="24,26 32,34 48,18" stroke="#a0583a" stroke-width="2.2"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 01</div><div class="h" style="margin-top:6px;">Confirmación<br>de la propuesta</div><p style="margin-top:14px; color:#333;">Confirmación por mail o WhatsApp para reservar el inicio del proyecto.</p></div></div></div>
-    <div class="mrv mstep"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" class="f" d="M36 6 a24 24 0 0 1 0 48 z" fill="#f4e7b9" stroke="none"/><circle pathLength="1" cx="36" cy="30" r="24"/><line pathLength="1" x1="36" y1="6" x2="36" y2="54" stroke="#a0583a" stroke-width="2"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 02</div><div class="h" style="margin-top:6px;">Pago del<br>primer 50%</div><p style="margin-top:14px; color:#333;">Con el pago inicial reservamos la agenda del estudio para el proyecto.</p></div></div></div>
-    <div class="mrv mstep"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="8" y="10" width="56" height="42"/><line pathLength="1" x1="36" y1="10" x2="36" y2="34"/><line pathLength="1" x1="8" y1="34" x2="50" y2="34"/><line pathLength="1" x1="8" y1="4" x2="64" y2="4" stroke="#a0583a"/><line pathLength="1" x1="8" y1="1" x2="8" y2="7" stroke="#a0583a"/><line pathLength="1" x1="64" y1="1" x2="64" y2="7" stroke="#a0583a"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 03</div><div class="h" style="margin-top:6px;">Anteproyecto<br>de arquitectura</div><p style="margin-top:14px; color:#333;">Recibimos los planos y la documentación del edificio para comenzar el trabajo.</p></div></div></div>
-    <div class="mrv mstep"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" class="f" cx="36" cy="32" rx="18" ry="9" fill="#f4e7b9" stroke="none"/><ellipse pathLength="1" cx="36" cy="32" rx="18" ry="9"/><circle pathLength="1" cx="36" cy="12" r="5"/><circle pathLength="1" cx="36" cy="52" r="5"/><circle pathLength="1" cx="8" cy="32" r="5" stroke="#a0583a"/><circle pathLength="1" cx="64" cy="32" r="5" stroke="#a0583a"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 04</div><div class="h" style="margin-top:6px;">Reunión<br>de inicio</div><p style="margin-top:14px; color:#333;">Encuentro con el Cliente y el equipo de arquitectura para definir necesidades y prioridades.</p></div></div></div>
-    <p class="mnote mrv" style="text-align:center; margin-top:26px;">Esta propuesta tiene una validez de 15 días a partir de su fecha de emisión.</p>
+    <div class="mgrid2 mpasos"><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 8 h48 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-28 l-12 10 v-10 h-8 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6 z"/><polyline pathLength="1" points="24,26 32,34 48,18" stroke="#a0583a" stroke-width="2.2"/></svg><div class="mpk">PASO 01</div><b>Confirmación de la propuesta</b><span>Por mail o WhatsApp, para reservar el inicio del proyecto.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" class="f" d="M36 6 a24 24 0 0 1 0 48 z" fill="#f4e7b9" stroke="none"/><circle pathLength="1" cx="36" cy="30" r="24"/><line pathLength="1" x1="36" y1="6" x2="36" y2="54" stroke="#a0583a" stroke-width="2"/></svg><div class="mpk">PASO 02</div><b>Pago del primer 50%</b><span>Con el pago inicial reservamos la agenda del estudio.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="8" y="10" width="56" height="42"/><line pathLength="1" x1="36" y1="10" x2="36" y2="34"/><line pathLength="1" x1="8" y1="34" x2="50" y2="34"/><line pathLength="1" x1="8" y1="4" x2="64" y2="4" stroke="#a0583a"/><line pathLength="1" x1="8" y1="1" x2="8" y2="7" stroke="#a0583a"/><line pathLength="1" x1="64" y1="1" x2="64" y2="7" stroke="#a0583a"/></svg><div class="mpk">PASO 03</div><b>Anteproyecto de arquitectura</b><span>Recibimos los planos y la documentación del edificio para comenzar el trabajo.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" class="f" cx="36" cy="32" rx="18" ry="9" fill="#f4e7b9" stroke="none"/><ellipse pathLength="1" cx="36" cy="32" rx="18" ry="9"/><circle pathLength="1" cx="36" cy="12" r="5"/><circle pathLength="1" cx="36" cy="52" r="5"/><circle pathLength="1" cx="8" cy="32" r="5" stroke="#a0583a"/><circle pathLength="1" cx="64" cy="32" r="5" stroke="#a0583a"/></svg><div class="mpk">PASO 04</div><b>Reunión de inicio</b><span>Encuentro con el Cliente y el equipo de arquitectura para definir necesidades y prioridades.</span></div></div>
+    <p class="mnote mrv" style="text-align:center;">Esta propuesta tiene una validez de 15 días a partir de su fecha de emisión.</p>
+    <div class="mnum">— 12 —</div>
   </section>
 
-  <section class="ms mphoto" style="min-height:100svh; display:flex; align-items:center; justify-content:center;">
+  <section class="ms mphoto mgr">
     <div class="mbg" style="background-image:url('img/gracias.jpg');"></div>
     <div class="mcard mrv" style="text-align:center;">
       <h2 style="text-align:center;">¡Muchas <span>gracias!</span></h2>
-      <p style="font-style:italic; margin-top:14px;">Quedamos a disposición</p>
-      <p style="margin-top:18px;">Arquitecta<br><b>Clara Tacco Carulli</b><br><a class="mtel" href="tel:+5492995046147">+54 9 299 504-6147</a></p>
-      <p style="margin-top:14px;">Diseñadora de interiores<br><b>Lucía Da Silva</b><br><a class="mtel" href="tel:+5491135659808">+54 9 11 3565-9808</a></p>
-      <p style="margin-top:20px; font-style:italic; font-size:13px;">Los invitamos a que conozcan algunos de nuestros trabajos</p>
-      <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener" style="display:inline-block; margin-top:10px; color:#111; text-decoration:none; border:1px solid #111; padding:12px 18px; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;">Conocé nuestros proyectos <b class="wa" style="display:inline-block; margin-left:6px;">→</b></a>
-      <div style="margin-top:10px; font-size:12px; color:#555;">luciadasilvaestudio.com.ar</div>
+      <p style="font-style:italic; margin-top:10px;">Quedamos a disposición</p>
+      <p style="margin-top:12px;">Arquitecta<br><b>Clara Tacco Carulli</b><br><a class="mtel" href="tel:+5492995046147">+54 9 299 504-6147</a></p>
+      <p style="margin-top:10px;">Diseñadora de interiores<br><b>Lucía Da Silva</b><br><a class="mtel" href="tel:+5491135659808">+54 9 11 3565-9808</a></p>
+      <p style="margin-top:14px; font-style:italic; font-size:12.5px;">Los invitamos a que conozcan algunos de nuestros trabajos</p>
+      <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener" style="display:inline-block; margin-top:8px; color:#111; text-decoration:none; border:1px solid #111;">Conocé nuestros proyectos <b class="wa" style="display:inline-block; margin-left:6px;">→</b></a>
+      <div style="margin-top:8px; font-size:11.5px; color:#555;">luciadasilvaestudio.com.ar</div>
     </div>
   </section>
-  <div class="mfoot">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva · Cliente · Oficinas Pilar</div>
 </div>
 <div id="stage">
 <nav id="sec">
@@ -1350,69 +1381,77 @@
         if (!e.isIntersecting) return;
         var t = e.target;
         t.classList.add('in');
-        if (t.classList.contains('hv') || t.querySelector('.hv')) {
-          [].slice.call(t.classList.contains('hv') ? [t] : t.querySelectorAll('.hv')).forEach(function(x, k){ setTimeout(function(){ x.classList.add('on'); }, 250 + k * 200); });
-        }
-        if (t.querySelector && t.querySelector('.pop')) setTimeout(function(){ t.querySelector('.pop').classList.add('on'); }, 300);
+        if (t.classList.contains('hv')) setTimeout(function(){ t.classList.add('on'); }, 300);
+        [].slice.call(t.querySelectorAll ? t.querySelectorAll('.hv') : []).forEach(function(x, k){ setTimeout(function(){ x.classList.add('on'); }, 300 + k * 180); });
         if (t.querySelector && t.querySelector('#musd')) mCount();
+        if (t.classList.contains('mwkp')) playWeek();
         io.unobserve(t);
       });
-    }, { threshold: .25 });
+    }, { threshold: .3 });
     document.querySelectorAll('#m .mrv, #m .mcover').forEach(function(el){ io.observe(el); });
-    setTimeout(function(){ document.querySelector('.mcover').classList.add('in'); }, 200);
 
-    // menú: sección actual
+    // menú fijo con la sección actual
     var links = [].slice.call(document.querySelectorAll('#mnav a'));
     var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
-    window.addEventListener('scroll', function(){
-      var y = window.scrollY + 120, act = 0;
+    function mark(){
+      var y = window.scrollY + window.innerHeight * .4, act = 0;
       secs.forEach(function(s, k){ if (s && s.offsetTop <= y) act = k; });
       links.forEach(function(a, k){ a.classList.toggle('on', k === act); });
-    }, { passive: true });
+    }
+    window.addEventListener('scroll', mark, { passive: true }); mark();
+    links.concat([].slice.call(document.querySelectorAll('.midx'))).forEach(function(a){
+      a.addEventListener('click', function(e){ e.preventDefault(); var s = document.querySelector(a.getAttribute('href')); window.scrollTo({ top: s.offsetTop, behavior: 'smooth' }); });
+    });
 
-    // propuesta: tocar cada punto
+    // propuesta
     document.querySelectorAll('.mpg').forEach(function(p){
-      p.addEventListener('click', function(){ document.querySelectorAll('.mpg').forEach(function(o){ o.classList.toggle('on', o === p); }); p.classList.remove('on-draw'); });
+      p.addEventListener('click', function(){ document.querySelectorAll('.mpg').forEach(function(o){ o.classList.toggle('on', o === p); }); p.classList.remove('on'); void p.offsetWidth; p.classList.add('on'); });
     });
 
-    // niveles: abrir cada uno
-    document.querySelectorAll('.mlevel').forEach(function(lv){
-      lv.querySelector('.mbtn').addEventListener('click', function(){
-        var open = !lv.classList.contains('open');
-        document.querySelectorAll('.mlevel').forEach(function(o){ o.classList.remove('open'); });
-        document.querySelectorAll('.mlv').forEach(function(g){ g.classList.toggle('hi', open && g.dataset.l === lv.dataset.l); });
-        if (open) lv.classList.add('open');
-      });
-    });
-    document.querySelectorAll('.mlv').forEach(function(g){
-      g.addEventListener('click', function(){ var lv = document.querySelector('.mlevel[data-l="' + g.dataset.l + '"]'); lv.scrollIntoView({ behavior: 'smooth', block: 'center' }); if (!lv.classList.contains('open')) lv.querySelector('.mbtn').click(); });
-    });
+    // niveles
+    var tbs = [].slice.call(document.querySelectorAll('.mtb')), lvps = [].slice.call(document.querySelectorAll('.mlvp'));
+    function lev(i){
+      tbs.forEach(function(b, k){ b.classList.toggle('on', k === i); });
+      lvps.forEach(function(p, k){ p.classList.toggle('on', k === i); p.classList.remove('exp'); });
+      var l = lvps[i] && ['2','1','0'][i];
+      document.querySelectorAll('.mlv').forEach(function(g){ g.classList.toggle('hi', g.dataset.l === l); });
+    }
+    tbs.forEach(function(b, k){ b.addEventListener('click', function(){ lev(k); }); });
+    document.querySelectorAll('.mlv').forEach(function(g){ g.addEventListener('click', function(){ lev(['2','1','0'].indexOf(g.dataset.l)); }); });
+    lvps.forEach(function(p){ p.querySelector('.mbtn').addEventListener('click', function(){ p.classList.toggle('exp'); }); });
+    lev(0);
 
     // crecer
-    var mg = document.querySelector('.mgrow'), seats = document.querySelector('.mseats');
+    var mg = document.querySelector('.mgrow'), seats = document.querySelector('.mseats'), stx = document.querySelector('.mstratx');
+    var SX = ["Distribuciones modulares, que puedan ampliarse sin grandes reformas.","Mobiliario adaptable, para sumar puestos o cambiar usos.","Instalaciones con margen, en electricidad, datos e iluminación.","Espacios flexibles, que puedan cambiar de función."];
     function mSet(f){ mg.classList.toggle('fut', !!f); seats.textContent = f ? 40 : 30; document.querySelectorAll('.mg').forEach(function(b){ b.classList.toggle('on', +b.dataset.g === f); }); }
-    document.querySelectorAll('.mg').forEach(function(b){ b.addEventListener('click', function(){ mSet(+b.dataset.g); }); });
-    document.querySelectorAll('#m .cb').forEach(function(b){
+    var mgT = setInterval(function(){ mSet(mg.classList.contains('fut') ? 0 : 1); }, 3200);
+    document.querySelectorAll('.mg').forEach(function(b){ b.addEventListener('click', function(){ clearInterval(mgT); mSet(+b.dataset.g); }); });
+    document.querySelectorAll('.msb').forEach(function(b){
       b.addEventListener('click', function(){
-        var c = +b.dataset.c;
-        document.querySelectorAll('#m .cb').forEach(function(o){ o.classList.toggle('on', o === b); });
+        clearInterval(mgT); var c = +b.dataset.c;
+        document.querySelectorAll('.msb').forEach(function(o){ o.classList.toggle('on', o === b); });
         mg.classList.remove('h0','h1','h2','h3'); mg.classList.add('h' + c);
         if (c === 0 || c === 3) mSet(1);
-        mg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-    });
-    var mgT = setInterval(function(){ if (!document.querySelector('#m .cb.on')) mSet(mg.classList.contains('fut') ? 0 : 1); else clearInterval(mgT); }, 3200);
-
-    // alcance: acordeón
-    document.querySelectorAll('.mst').forEach(function(s){
-      s.querySelector('.msth').addEventListener('click', function(){
-        var open = !s.classList.contains('open');
-        document.querySelectorAll('.mst').forEach(function(o){ o.classList.remove('open'); });
-        if (open) s.classList.add('open');
+        stx.textContent = SX[c] + '. Las definimos junto al Cliente, según su proyección de crecimiento.';
       });
     });
 
-    // honorarios: conteo
+    // alcance
+    var s3 = [].slice.call(document.querySelectorAll('.mst3')), stp = [].slice.call(document.querySelectorAll('.mstp'));
+    s3.forEach(function(b, k){ b.addEventListener('click', function(){ s3.forEach(function(o, j){ o.classList.toggle('on', j === k); }); stp.forEach(function(p, j){ p.classList.toggle('on', j === k); }); }); });
+
+    // plazos
+    var wbs = [].slice.call(document.querySelectorAll('.mwb')), wks = [].slice.call(document.querySelectorAll('.mwk')), wkT = null, wkCur = 0;
+    function week(i){
+      wkCur = i;
+      wbs.forEach(function(b, k){ b.classList.toggle('on', k === i); });
+      wks.forEach(function(w, k){ w.classList.toggle('on', k === i); var p = w.querySelector('.pop'); p.classList.remove('on'); if (k === i) { void p.offsetWidth; p.classList.add('on'); } });
+    }
+    function playWeek(){ week(0); wkT = setInterval(function(){ week((wkCur + 1) % wbs.length); }, 4200); }
+    wbs.forEach(function(b, k){ b.addEventListener('click', function(){ clearInterval(wkT); week(k); }); });
+
+    // honorarios
     function mCount(){
       var el = document.getElementById('musd'), line = document.getElementById('musdline'), t0 = Date.now(), dur = 2000;
       el.textContent = '0';
@@ -1422,6 +1461,10 @@
         if (p >= 1) { clearInterval(it); line.classList.add('on'); }
       }, 30);
     }
+    // toques en dibujos
+    document.querySelectorAll('#m .hv').forEach(function(el){
+      el.addEventListener('click', function(){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); });
+    });
   })();
 </script>
 </body>

@@ -290,7 +290,7 @@
   .mslabs { display: block; width: 100%; max-width: 170px; margin: 0 auto; overflow: visible; }
   .mlv { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
   .mlv.hi { transform: translateY(-16px); }
-  .mtabs { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+  .mtabs { display: flex; flex-direction: row-reverse; justify-content: center; gap: 8px; margin-top: 12px; }
   .mtb, .mwb { font: 500 11px "Montserrat", Arial; letter-spacing: .14em; background: rgba(255,255,255,.55); border: 1px solid rgba(17,17,17,.25); padding: 8px 16px; color: #111; }
   .mtb.on { background: #111; color: #fff; border-color: #111; }
   .mpanel { margin-top: 12px; background: rgba(255,255,255,.88); padding: 16px; }
@@ -1495,7 +1495,7 @@
       lvps.forEach(function(o, k){ o.classList.toggle('exp', exploring && k === curL); });
       if (exploring) fillPlan(curL);
     }); });
-    lev(0);
+    lev(2);
 
     // crecer
     var mg = document.querySelector('.mgrow'), seats = document.querySelector('.mseats'), stx = document.querySelector('.mstratx');

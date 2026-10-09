@@ -200,7 +200,10 @@
   @keyframes webpulse { 0%,100% { box-shadow: 0 0 0 0 rgba(160,88,58,0); } 50% { box-shadow: 0 0 0 7px rgba(160,88,58,.18); } }
 
   #usdline { height: 2px; width: 0; background: #a0583a; margin-top: 8px; transition: width .9s cubic-bezier(.2,.7,.2,1); }
-  #usdline.on { width: 210px; }
+  #usdline.on { width: 100%; }
+  .usdwrap { display: inline-block; }
+  .usdwrap.float .usdnum { animation: usdfloat 3.2s ease-in-out infinite; }
+  @keyframes usdfloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
   /* portada */
   .trk { letter-spacing: .9em; opacity: 0; transition: letter-spacing 1.8s cubic-bezier(.2,.7,.2,1), opacity 1.4s ease; }
@@ -377,7 +380,7 @@
   .mhon p { font-size: 12.5px; }
   .musd { font-weight: 300; font-size: 38px; line-height: 1.1; margin-top: 2px; }
   #musdline { height: 2px; width: 0; background: #a0583a; margin-top: 4px; transition: width .9s cubic-bezier(.2,.7,.2,1); }
-  #musdline.on { width: 130px; }
+  #musdline.on { width: 100%; }
   .mcol { border-top: 1px solid #111; margin-top: 14px; padding-top: 10px; }
   .mcol p { margin-top: 4px !important; }
   .mcol .mnote { font-size: 10.5px; }
@@ -657,7 +660,7 @@
       <h2>Honorarios <span>profesionales</span></h2>
       <div class="msub">Propuesta de interiorismo integral · Tres niveles</div>
       <div class="mk" style="margin-top:18px;">Inversión</div>
-      <div class="musd">USD <span id="musd">11.000</span></div><div id="musdline"></div>
+      <div class="usdwrap"><div class="musd usdnum">USD <span id="musd">11.000</span></div><div id="musdline"></div></div>
       <div class="mcol"><div class="mit">Modalidad de pago</div><p>50% al confirmar la propuesta; 50% restante al entregar la presentación final. El pago podrá realizarse en pesos argentinos al tipo de cambio dólar blue vigente.</p><p class="mnote">Honorarios expresados para facturación tipo C. En caso de requerir Factura A, se ajustarán según la carga impositiva correspondiente, con IVA adicional.</p></div>
       <div class="mcol"><div class="mit">Base de los honorarios</div><p>Análisis del anteproyecto, diseño conceptual, distribución, modelado 3D, renders, video de recorrido, propuesta de mobiliario y documentación.</p></div>
     </div>
@@ -1088,8 +1091,8 @@
     <div style="font-weight:700; letter-spacing:.2em; font-size:26px; text-transform:uppercase;">Honorarios <span style="font-weight:300;">profesionales</span></div>
     <div style="font-weight:400; letter-spacing:.26em; text-transform:uppercase; font-size:11px; color:#555; margin-top:6px;">Propuesta de interiorismo integral · Tres niveles</div>
     <div class="k" style="margin-top:44px;">Inversión</div>
-    <div style="font-weight:300; font-size:60px; letter-spacing:.05em; line-height:1.1; margin-top:6px;">USD <span id="usd">11.000</span></div>
-    <div id="usdline"></div>
+    <div class="usdwrap"><div class="usdnum" style="font-weight:300; font-size:60px; letter-spacing:.05em; line-height:1.1; margin-top:6px;">USD <span id="usd">11.000</span></div>
+    <div id="usdline"></div></div>
     <div class="col rv" style="--d:.9s; margin-top:36px;"><div class="h">Modalidad de pago</div><p style="margin-top:10px; color:#333; font-size:13.5px;">50% al confirmar la propuesta; 50% restante al entregar la presentación final. El pago podrá realizarse en pesos argentinos al tipo de cambio dólar blue vigente.</p><p style="margin-top:8px; color:#555; font-size:12.5px; font-style:italic;">Honorarios expresados para facturación tipo C. En caso de requerir Factura A, se ajustarán según la carga impositiva correspondiente, con IVA adicional.</p></div>
     <div class="col rv" style="--d:1.1s; margin-top:28px;"><div class="h">Base de los honorarios</div><p style="margin-top:10px; color:#333; font-size:13.5px;">Análisis del anteproyecto, diseño conceptual, distribución, modelado 3D, renders, video de recorrido, propuesta de mobiliario y documentación.</p></div>
   </div></div>
@@ -1207,6 +1210,7 @@
     document.getElementById('bar').style.width = ((cur + 1) / slides.length * 100) + '%';
     if (slides[cur].id === 'niveles') closeLevel();
     if (slides[cur].id === 'crecer' && window.autoGrow) autoGrow();
+    if (slides[cur].id === 'alcance') [].slice.call(document.querySelectorAll('#stage .st')).forEach(function(o, k){ o.classList.toggle('on', k === 0); });
     if (typeof showPop === 'function') showPop(-1);
     if (slides[cur].querySelector('#usd')) countUp();
     try { history.replaceState(null, '', '#' + (cur + 1)); } catch(e) {}
@@ -1215,7 +1219,6 @@
     var secs = [].slice.call(document.querySelectorAll('#sec button')), act = -1;
     secs.forEach(function(b, k){ if (cur >= +b.dataset.to) act = k; });
     secs.forEach(function(b, k){ b.classList.toggle('on', k === act); });
-    document.getElementById('sec').classList.toggle('hide', cur === 0);
   }
   document.querySelectorAll('#sec button').forEach(function(b){ b.onclick = function(){ go(+b.dataset.to); }; });
   document.getElementById('prev').onclick = function(){ go(cur - 1); };
@@ -1236,14 +1239,14 @@
   // contador de honorarios
   function countUp(){
     var el = document.getElementById('usd'), line = document.getElementById('usdline'), t0 = null, dur = 2000;
-    line.classList.remove('on'); el.textContent = '0';
+    line.classList.remove('on'); line.parentNode.classList.remove('float'); el.textContent = '0';
     clearInterval(window.__usdT);
     setTimeout(function(){
       t0 = Date.now();
       window.__usdT = setInterval(function(){
         var p = Math.min(1, (Date.now() - t0) / dur); p = 1 - Math.pow(1 - p, 3);
         el.textContent = Math.round(11000 * p).toLocaleString('es-AR');
-        if (p >= 1) { clearInterval(window.__usdT); line.classList.add('on'); }
+        if (p >= 1) { clearInterval(window.__usdT); line.classList.add('on'); line.parentNode.classList.add('float'); }
       }, 30);
     }, 600);
     setTimeout(function(){ el.textContent = '11.000'; line.classList.add('on'); }, 3000);
@@ -1350,7 +1353,7 @@
   setInterval(function(){ if (!pgTouched && slides[cur].id === 'propuesta') pgSet((pgCur + 1) % pgb.length); }, 3400);
 
   // ===== pensado para crecer =====
-  var grow = document.querySelector('.grow'), seats = document.getElementById('seats'), gTimer = null, gAuto = true, gState = 0;
+  var grow = document.querySelector('#stage .grow'), seats = document.getElementById('seats'), gTimer = null, gAuto = true, gState = 0;
   function setGrow(f){
     gState = f; grow.classList.toggle('fut', !!f);
     document.querySelectorAll('.tabs2 button').forEach(function(b){ b.classList.toggle('on', +b.dataset.g === f); });
@@ -1362,7 +1365,7 @@
   function autoGrow(){ clearInterval(gTimer); gAuto = true; setGrow(0); gTimer = setInterval(function(){ if (gAuto) setGrow(gState ? 0 : 1); }, 3200); }
   document.querySelectorAll('.tabs2 button').forEach(function(b){ b.onclick = function(){ gAuto = false; clearInterval(gTimer); setGrow(+b.dataset.g); }; });
   window.autoGrow = autoGrow;
-  var cbs = [].slice.call(document.querySelectorAll(".cb"));
+  var cbs = [].slice.call(document.querySelectorAll("#stage .cb"));
   cbs.forEach(function(b){
     function act(){
       var c = +b.dataset.c; gAuto = false; clearInterval(gTimer);
@@ -1374,7 +1377,7 @@
   });
 
   // ===== alcance: etapas que se expanden =====
-  var sts = [].slice.call(document.querySelectorAll('.st'));
+  var sts = [].slice.call(document.querySelectorAll('#stage .st'));
   sts.forEach(function(s){
     function act(){ sts.forEach(function(o){ o.classList.toggle('on', o === s); }); }
     s.addEventListener('mouseenter', act); s.addEventListener('click', act);
@@ -1385,8 +1388,8 @@
 
   // ===== plazos: dibujos que se animan =====
   window.showPop = null;
-  var pops = [].slice.call(document.querySelectorAll('.pop'));
-  var icos = [].slice.call(document.querySelectorAll('.ico'));
+  var pops = [].slice.call(document.querySelectorAll('#stage .pop'));
+  var icos = [].slice.call(document.querySelectorAll('#stage .ico'));
   var openP = -1;
   showPop = function(i){
     if (i === openP) return;
@@ -1531,11 +1534,11 @@
     // honorarios
     function mCount(){
       var el = document.getElementById('musd'), line = document.getElementById('musdline'), t0 = Date.now(), dur = 2000;
-      el.textContent = '0'; line.classList.remove('on'); clearInterval(window.__mcT);
+      el.textContent = '0'; line.classList.remove('on'); line.parentNode.classList.remove('float'); clearInterval(window.__mcT);
       var it = window.__mcT = setInterval(function(){
         var p = Math.min(1, (Date.now() - t0) / dur); p = 1 - Math.pow(1 - p, 3);
         el.textContent = Math.round(11000 * p).toLocaleString('es-AR');
-        if (p >= 1) { clearInterval(it); line.classList.add('on'); }
+        if (p >= 1) { clearInterval(it); line.classList.add('on'); line.parentNode.classList.add('float'); }
       }, 30);
     }
     // mirada: una tarjeta a la vez llama la atención hasta que tocan alguna

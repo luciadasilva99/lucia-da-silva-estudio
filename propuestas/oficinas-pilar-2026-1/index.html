@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){
+  var w = window.innerWidth, hgt = window.innerHeight, touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  if (w < 820 || (touch && Math.min(w, hgt) < 600) || (touch && hgt > w)) document.documentElement.classList.add('mobile');
+})();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Propuesta de Interiorismo · Oficinas corporativas · Lucía Da Silva Estudio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Propuesta de Interiorismo · Oficinas corporativas">
+<meta property="og:description" content="Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva · Lucía Da Silva Estudio">
+<meta property="og:image" content="https://luciadasilvaestudio.com.ar/propuestas/oficinas-pilar-2026-1/img/gracias.jpg">
+<meta property="og:url" content="https://luciadasilvaestudio.com.ar/propuestas/oficinas-pilar-2026-1/">
+<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "yv9lywlscl");
+  clarity("set", "propuesta", "oficinas-pilar-2026-1");
+  // link personalizado (?c=codigo o ?de=nombre) para saber quién la miró
+  (function(){ var q = new URLSearchParams(location.search), v = q.get("c") || q.get("de"); if (v) clarity("set", "visitante", v.toLowerCase()); })();
+</script>
+<title>Propuesta de Interiorismo · Oficinas Pilar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#111; --yellow:#f4e7b9; --mint:#d3e8df; --cream:#ece5da; --brown:#6b5d4a; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #e7e3dc; overflow: hidden; }
+  body { font-family: "Montserrat", Arial, sans-serif; color: var(--ink); font-size: 16px; line-height: 1.55; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1440px; height: 810px; transform-origin: 0 0; background:#fff; box-shadow: 0 10px 40px rgba(0,0,0,.12); overflow: hidden; }
+  .slide { position: absolute; inset: 0; background: #fff; opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility 0s linear .6s; }
+  .slide.on { opacity: 1; visibility: visible; transition: opacity .6s ease; z-index: 2; }
+  .rv { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .slide.on .rv { opacity: 1; transform: none; transition-delay: var(--d, .15s); }
+  .slide { overflow: hidden; }
+  .zoom { transform: scale(1.05) translateZ(0); will-change: transform; backface-visibility: hidden; transition: transform 8s cubic-bezier(.25,.1,.25,1); }
+  .slide.on .zoom { transform: scale(1.0001) translateZ(0); }
+  .draw * { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); transition: stroke-dashoffset 1.8s ease; }
+  .slide.on .draw * { stroke-dashoffset: 0; transition-delay: var(--d, .4s); }
+
+  .fl, .fr { position: absolute; bottom: 28px; font-size: 11px; letter-spacing: .1em; color: #555; font-weight:300; z-index: 3; }
+  .fl { left: 56px; } .fr { right: 56px; }
+  .ondark { color: rgba(255,255,255,.9) !important; text-shadow: 0 0 6px rgba(0,0,0,.35); }
+  .date { position: absolute; top: 30px; right: 56px; font-size: 11px; letter-spacing: .1em; color: #555; z-index: 3; }
+  .num { position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font-size: 12px; color: #333; z-index: 3; }
+  .t { position: absolute; top: 74px; left: 56px; z-index: 3; }
+  .t h1 { font-weight: 700; letter-spacing: .2em; font-size: 26px; text-transform: uppercase; }
+  .t h1 span { font-weight: 300; }
+  .t .s { font-weight: 400; letter-spacing: .26em; text-transform: uppercase; font-size: 11px; color: #555; margin-top: 6px; }
+  .img { background-size: cover; background-position: center; }
+  .col { border-top: 1px solid #111; padding-top: 20px; }
+  .col .h { font-style: italic; font-size: 14px; }
+  .col ul { list-style: none; margin-top: 14px; color: #333; font-size: 13px; }
+  .col li { margin-bottom: 7px; padding-left: 14px; position: relative; }
+  .col li::before { content: "/"; position: absolute; left: 0; color: #111; }
+  .k { font-weight: 300; letter-spacing: .26em; text-transform: uppercase; font-size: 11px; color: #555; }
+
+  /* indice clickeable */
+  .idx a { display: block; color: inherit; text-decoration: none; padding: 4px 10px; margin: -4px -10px; transition: background .25s; cursor: pointer; }
+  .idx a:hover { background: var(--yellow); }
+
+  /* edificio interactivo */
+  .lvl { cursor: pointer; transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+  .lvl:hover, .lvl.hi { transform: translateY(-12px); }
+  .lvltx { cursor: pointer; transition: opacity .3s, transform .3s; padding: 6px 0; }
+  .lvltx:hover, .lvltx.hi { transform: translateX(6px); }
+  .lvltx .go { font-size: 11px; letter-spacing: .2em; color: var(--brown); margin-top: 6px; opacity: .0; transition: opacity .3s; }
+  .lvltx:hover .go, .lvltx.hi .go { opacity: 1; }
+  .hint { position: absolute; left: 56px; top: 690px; font-size: 10.5px; letter-spacing: .22em; color: rgba(75,90,84,.75); z-index: 4; display:flex; align-items:center; gap:10px; }
+  .hint i { width: 9px; height: 9px; border-radius: 50%; background: var(--brown); animation: pulse 1.6s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(107,93,74,.5)} 100%{box-shadow:0 0 0 12px rgba(107,93,74,0)} }
+  #ov, #dt { position: absolute; inset: 0; transition: opacity .55s ease, transform .55s ease; }
+  #dt { opacity: 0; pointer-events: none; transform: scale(.97); }
+  .detail #ov { opacity: 0; pointer-events: none; transform: scale(1.03); }
+  .detail #dt { opacity: 1; pointer-events: auto; transform: none; }
+  #plan .z { opacity: 0; transition: opacity .5s ease; }
+  #plan.show .z { opacity: 1; }
+  #plan * { vector-effect: non-scaling-stroke; }
+  .chip { position: absolute; translate: -50% -50%; white-space: nowrap; opacity: 0; animation: chipin .6s ease forwards, bob 3.4s ease-in-out infinite; }
+  .chip.need { font: 500 10.5px "Montserrat", Arial; letter-spacing: .18em; background: #2f2a26; color: #fff; padding: 7px 12px; }
+  .chip.feel { font: italic 300 21px "Montserrat", Arial; letter-spacing: .02em; color: #a0583a; text-shadow: 0 0 10px #fbfaf7, 0 0 4px #fbfaf7; animation-duration: .6s, 4.6s; }
+  .legend { display: flex; gap: 22px; margin-top: 18px; font-size: 11px; color: #444; align-items: center; }
+  .legend .n { display: inline-block; background: #2f2a26; color: #fff; font-size: 9px; letter-spacing: .16em; padding: 3px 7px; margin-right: 6px; }
+  .legend .f { font-style: italic; color: #a0583a; font-size: 14px; margin-right: 6px; }
+  @keyframes chipin { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+  @keyframes bob { 0%,100% { margin-top: 0; } 50% { margin-top: -9px; } }
+
+  /* plazos: dibujos interactivos */
+  .ico { cursor: pointer; transition: opacity .3s; }
+  .ico .hit { fill: transparent; stroke: none; }
+  .ico.dim { opacity: .15; }
+  .wk { cursor: pointer; }
+  .pop { position: absolute; top: 186px; width: 300px; background: #fff; border: 1px solid #111; box-shadow: 0 12px 30px rgba(0,0,0,.12); padding: 10px 0 12px; opacity: 0; transform: translateY(10px) scale(.96); transition: opacity .35s ease, transform .35s ease; pointer-events: none; z-index: 6; overflow: hidden; }
+  .pop.on { opacity: 1; transform: none; }
+  .pop svg { display: block; overflow: hidden; }
+  .pop .cap { font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; text-align: center; margin-top: 6px; color: #333; }
+  .pop .d { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .pop.on .d { animation: dash .7s ease forwards; animation-delay: var(--a, 0s); }
+  .pop .f, .pop .b, .pop .dr, .pop .gl, .pop .fall { opacity: 0; }
+  .pop.on .f { animation: fade .5s ease forwards; animation-delay: var(--a, 0s); }
+  .pop .b { transform-box: fill-box; transform-origin: center; }
+  .pop.on .b { animation: popin .45s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: var(--a, 0s); }
+  .pop.on .dr { animation: drop .6s cubic-bezier(.3,1.3,.5,1) forwards; animation-delay: var(--a, 0s); }
+  .pop.on .gl { animation: glow 1.4s ease forwards; animation-delay: var(--a, 0s); }
+  .pop .fall { transform-box: fill-box; transform-origin: center; }
+  .pop.on .fall { animation: fall 2.8s linear infinite; animation-delay: var(--a, 0s); }
+  @keyframes dash { to { stroke-dashoffset: 0; } }
+  @keyframes fade { to { opacity: 1; } }
+  @keyframes popin { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
+  @keyframes drop { 0% { opacity: 0; transform: translateY(-70px); } 50% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+  @keyframes glow { 0% { opacity: 0; } 40% { opacity: 1; } 60% { opacity: .55; } 100% { opacity: 1; } }
+  @keyframes fall { 0% { opacity: 0; transform: translateY(0) rotate(-7deg); } 10% { opacity: 1; } 88% { opacity: 1; } 100% { opacity: 0; transform: translateY(250px) rotate(7deg); } }
+  .hint2 { position: absolute; left: 0; right: 0; top: 664px; text-align: center; font-size: 10.5px; letter-spacing: .22em; color: rgba(107,93,74,.7); display: flex; align-items: center; justify-content: center; gap: 10px; }
+  .hint2 i { width: 7px; height: 7px; border-radius: 50%; background: rgba(107,93,74,.6); animation: pulse 1.6s infinite; }
+
+  /* alcance: etapas */
+  .stg { position: absolute; left: 56px; right: 56px; top: 262px; height: 384px; display: flex; gap: 28px; }
+  .st { flex: 1 1 0; min-width: 0; border-top: 1px solid #111; padding: 22px 24px 0; position: relative; overflow: hidden; cursor: pointer; transition: flex-grow .55s cubic-bezier(.2,.7,.2,1), background .4s ease }
+  .st.on { flex-grow: 1.9; background: #f6edd6; animation: breathe 2.6s ease-in-out infinite; }
+  .st:not(.on):hover { background: #faf6ee; }
+  @keyframes breathe { 0%,100% { background: #f6edd6; box-shadow: 0 0 0 0 rgba(244,231,185,0); } 50% { background: #f2e2b8; box-shadow: 0 0 0 8px rgba(244,231,185,.45); } }
+  .st .more, .st .next { position: absolute; left: 24px; bottom: 22px; font: 500 10.5px "Montserrat", Arial; letter-spacing: .2em; text-transform: uppercase; color: rgba(17,17,17,.7); border: 1px solid rgba(17,17,17,.25); background: rgba(255,255,255,.35); padding: 9px 14px; display: inline-flex; align-items: center; gap: 10px; transition: opacity .3s ease, background .25s, color .25s, border-color .25s; cursor: pointer; }
+  .st .more b, .st .next b { display: inline-block; font-size: 15px; animation: nudge 1.3s ease-in-out infinite; }
+  @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+  .st .more:hover, .st .next:hover { background: rgba(17,17,17,.82); color: #fff; border-color: transparent; }
+  .st.on .more { opacity: 0; pointer-events: none; }
+  .st .next { opacity: 0; pointer-events: none; }
+  .st.on .next { opacity: 1; pointer-events: auto; transition-delay: .4s; }
+  .st .step { position: absolute; right: 24px; bottom: 30px; font-size: 11px; letter-spacing: .2em; color: #777; }
+  .st .ic { position: absolute; right: 22px; top: 22px; }
+  .st .ic * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .st.on .ic * { animation: redraw 1.4s ease; }
+  @keyframes redraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  .st .no { font-weight: 300; font-size: 40px; letter-spacing: .06em; line-height: 1; }
+  .st .ti { font-weight: 700; letter-spacing: .2em; font-size: 15px; margin-top: 24px; text-transform: uppercase; white-space: nowrap; }
+  .st .su { font-style: italic; font-size: 13.5px; color: #444; margin-top: 6px; text-wrap: balance; }
+  .st.on .su { white-space: nowrap; }
+  .st ul { list-style: none; margin-top: 18px; font-size: 13px; color: #333; width: 520px; opacity: 0; transform: translateY(8px); transition: opacity .3s ease, transform .3s ease; }
+  .st.on ul { opacity: 1; transform: none; transition: opacity .45s ease .25s, transform .45s ease .25s; }
+  .st li { margin-bottom: 8px; padding-left: 14px; position: relative; }
+  .st li::before { content: "/"; position: absolute; left: 0; color: #111; }
+
+  /* pensado para crecer */
+  .cb { display: block; padding: 6px 12px; margin-left: -12px; border-left: 3px solid transparent; cursor: pointer; transition: background .3s ease, border-color .3s ease, padding .3s ease; }
+  .cb:hover, .cb.on { background: #f6edd6; border-left-color: #a0583a; padding-left: 20px; }
+  .grow .elec { opacity: 0; transition: opacity .4s ease; }
+  .grow.h2 .elec { opacity: 1; }
+  .grow.h2 .elec circle { animation: blink .8s ease-in-out infinite alternate; }
+  @keyframes blink { from { opacity: .25; } to { opacity: 1; } }
+  .grow.h1 g:not(.elec) > circle { animation: chairb .45s ease-in-out infinite alternate; }
+  @keyframes chairb { from { transform: translate(0, 0); } to { transform: translate(0, -1.8px); } }
+  .grow.h3 .zone { fill: #a0583a; animation: zonep 1.3s ease-in-out infinite; }
+  @keyframes zonep { 0%,100% { fill-opacity: .06; } 50% { fill-opacity: .24; } }
+  .grow .fm { opacity: 0; transform: translate(14px, 0); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: calc(var(--i) * .25s); }
+  .grow.fut .fm { opacity: 1; transform: none; }
+  .tabs2 { display: flex; gap: 8px; }
+  .tabs2 button { font: 500 11px "Montserrat", Arial; letter-spacing: .2em; background: none; border: 1px solid #111; padding: 8px 14px; cursor: pointer; transition: background .25s, color .25s; }
+  .tabs2 button.on, .tabs2 button:hover { background: #111; color: #fff; }
+  .qc { transition: transform .35s ease, box-shadow .35s ease; }
+  .qc:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(160,88,58,.18); }
+
+  /* propuesta general */
+  .pgb { padding: 6px 14px; margin: 0 0 4px -14px; border-left: 3px solid transparent; cursor: pointer; transition: background .3s ease, border-color .3s ease, padding .3s ease; }
+  .pgb:hover, .pgb.on { background: #f6edd6; border-left-color: #a0583a; padding-left: 22px; }
+  .pgi { opacity: 0; transition: opacity .35s ease; }
+  .pgi.on { opacity: 1; }
+  .pgi * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .pgi.on * { animation: redraw 1.3s ease both; }
+  .pgi .f { stroke-dasharray: none; opacity: 0; }
+  .pgi.on .f { animation: fade .6s ease .6s forwards; }
+
+  /* dibujos que se trazan al pasar el mouse (regla general) */
+  .hv { cursor: pointer; transition: background .3s ease, transform .3s ease, box-shadow .3s ease; }
+  .ic2 * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .ic2 .f { stroke-dasharray: none; opacity: 0; transition: opacity .5s ease .4s; }
+  .hv:hover .ic2 *, .hv.on .ic2 * { animation: redraw 1s ease both; }
+  .hv:hover .ic2 .f, .hv.on .ic2 .f { animation: none; opacity: 1; }
+  .qc .ic2 { opacity: .16; transition: opacity .35s ease; }
+  .qc:hover .ic2, .qc.on .ic2 { opacity: 1; }
+  .pstep { padding: 14px 14px 18px; margin: -14px; }
+  .pstep:hover, .pstep.on { background: #f6edd6; transform: translateY(-4px); }
+  .pil { transition: border-color .3s; }
+  .pil:hover, .pil.on { border-top-color: #a0583a; }
+  .hl { background: linear-gradient(#f4e7b9, #f4e7b9) no-repeat 0 85% / 0% 45%; transition: background-size 1.2s ease 1s; }
+  .slide.on .hl { background-size: 100% 45%; }
+  .venn .va, .venn .vb { transition: transform 1.1s cubic-bezier(.2,.7,.2,1) .2s; }
+  .venn .va { transform: translateX(-34px); } .venn .vb { transform: translateX(34px); }
+  .slide.on .venn .va, .slide.on .venn .vb { transform: none; }
+  .venn .vl { opacity: 0; transition: opacity .8s ease 1.2s; }
+  .slide.on .venn .vl { opacity: 1; }
+
+  /* mirada a futuro */
+  #mirada .blob { position: absolute; border-radius: 50%; background: rgba(255,255,255,.38); transition: transform .8s cubic-bezier(.2,.7,.2,1); pointer-events: none; }
+  #spot { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.45), transparent 60%); opacity: 0; transition: opacity .5s; }
+  #mirada:hover #spot { opacity: 1; }
+  #mirada .qc { transition: transform .25s ease-out, box-shadow .35s ease; will-change: transform; }
+
+  /* invitación a la web */
+  .web { transition: background .25s, color .25s; animation: webpulse 2.4s ease-in-out infinite 2s; }
+  .web:hover { background: #111; color: #fff !important; }
+  .web .wa { animation: nudge 1.3s ease-in-out infinite; }
+  @keyframes webpulse { 0%,100% { box-shadow: 0 0 0 0 rgba(160,88,58,0); } 50% { box-shadow: 0 0 0 7px rgba(160,88,58,.18); } }
+
+  #usdline { height: 2px; width: 0; background: #a0583a; margin-top: 8px; transition: width .9s cubic-bezier(.2,.7,.2,1); }
+  #usdline.on { width: 100%; }
+  .usdwrap { display: inline-block; }
+  .usdwrap.float .usdnum { animation: usdfloat 3.2s ease-in-out infinite; }
+  @keyframes usdfloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+  /* portada */
+  .trk { letter-spacing: .9em; opacity: 0; transition: letter-spacing 1.8s cubic-bezier(.2,.7,.2,1), opacity 1.4s ease; }
+  .slide.on .trk { letter-spacing: var(--ls); opacity: 1; transition-delay: var(--d); }
+  #portada .cs { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+
+  /* cursor guía (computadora) */
+  #ghost { position: absolute; left: 0; top: 0; z-index: 35; pointer-events: none; opacity: 0; transition: left .8s cubic-bezier(.4,0,.2,1), top .8s cubic-bezier(.4,0,.2,1), opacity .45s ease; }
+  #ghost.show { opacity: .95; }
+  #ghost svg { display: block; filter: drop-shadow(0 2px 5px rgba(0,0,0,.25)); }
+  #ghost span { position: absolute; left: 24px; top: 28px; font: 500 9.5px "Montserrat", Arial; letter-spacing: .2em; color: #333; background: rgba(255,255,255,.72); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(17,17,17,.12); border-radius: 20px; padding: 5px 11px; white-space: nowrap; animation: bob 2.6s ease-in-out infinite; }
+  #ghost i { position: absolute; left: -9px; top: -9px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(160,88,58,.65); opacity: 0; }
+  #ghost.tap i { animation: ghosttap .55s ease-out; }
+  @keyframes ghosttap { from { opacity: 1; transform: scale(.4); } to { opacity: 0; transform: scale(1.7); } }
+  .ali.on { background: #f4e7b9; transform: translateY(-4px); }
+
+  /* alianza */
+  .ali { transition: background .3s, transform .3s; padding-left: 12px; padding-right: 12px; padding-bottom: 12px; }
+  .ali:hover { background: #f4e7b9; transform: translateY(-4px); }
+  .tabs { display: flex; gap: 8px; margin-top: 26px; }
+  .tabs button { font: 500 11px "Montserrat", Arial; letter-spacing: .2em; background: none; border: 1px solid #111; padding: 8px 14px; cursor: pointer; transition: background .25s, color .25s; }
+  .tabs button.on, .tabs button:hover { background: #111; color: #fff; }
+  .back { font: 400 11px "Montserrat", Arial; letter-spacing: .2em; background: none; border: 0; cursor: pointer; color: #333; padding: 0; }
+  .back:hover { color: var(--brown); }
+  #dtlist p { margin-bottom: 9px; font-size: 13.5px; }
+
+  /* navegacion */
+  #nav { position: fixed; right: 18px; bottom: 14px; z-index: 20; font: 400 12px "Montserrat", Arial; letter-spacing: .14em; color: #555; }
+  .side { position: fixed; top: 50%; z-index: 21; width: 52px; height: 52px; margin-top: -26px; border-radius: 50%; border: 1px solid rgba(17,17,17,.14); background: rgba(255,255,255,.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: rgba(17,17,17,.7); font-size: 28px; line-height: 1; cursor: pointer; transition: background .25s, color .25s, transform .2s, opacity .3s; display: flex; align-items: center; justify-content: center; padding-bottom: 4px; }
+  .side:hover { background: rgba(17,17,17,.78); color: #fff; transform: scale(1.06); }
+  .side.off { opacity: 0; pointer-events: none; }
+  #prev { left: 14px; } #next { right: 14px; }
+  #sec { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); z-index: 30; display: flex; gap: 2px; padding: 4px 6px; background: rgba(255,255,255,.38); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(17,17,17,.06); border-radius: 30px; transition: opacity .4s; white-space: nowrap; }
+  #sec.hide { opacity: 0; pointer-events: none; }
+  #sec button { font: 400 10px "Montserrat", Arial; letter-spacing: .2em; text-transform: uppercase; color: rgba(17,17,17,.6); background: none; border: 0; border-radius: 20px; padding: 7px 12px; cursor: pointer; white-space: nowrap; transition: background .25s, color .25s; }
+  #sec button:hover { color: #111; background: rgba(255,255,255,.5); }
+  #sec button.on { color: #111; font-weight: 600; background: rgba(255,255,255,.7); }
+  #bar { position: fixed; left: 0; top: 0; height: 3px; background: var(--brown); transition: width .5s ease; z-index: 20; }
+  #help { position: fixed; left: 18px; bottom: 22px; font: 400 12px "Montserrat", Arial; letter-spacing: .08em; color: #555; z-index: 20; }
+  @media (max-width: 700px) { #help { display: none; } }
+  p, li, .su, .cap { text-wrap: pretty; }
+  .vx * { vector-effect: non-scaling-stroke; }
+
+  /* ===== versión celular ===== */
+  #m { display: none; }
+  html.mobile { overflow-y: auto; height: auto; scroll-snap-type: y mandatory; background: #fff; }
+  html.mobile body { overflow: visible; height: auto; background: #fff; }
+  html.mobile #stage, html.mobile .side, html.mobile #nav, html.mobile #bar { display: none !important; }
+  html.mobile #m { display: block; font-size: 14px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+  #mnav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; gap: 2px; overflow-x: auto; padding: 8px 10px; background: rgba(255,255,255,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,.05); scrollbar-width: none; }
+  #mnav::-webkit-scrollbar { display: none; }
+  #mnav a { flex: 0 0 auto; font: 400 9.5px "Montserrat", Arial; letter-spacing: .16em; text-transform: uppercase; color: rgba(17,17,17,.6); text-decoration: none; padding: 6px 10px; border-radius: 20px; }
+  #mnav a.on { color: #111; font-weight: 600; background: rgba(255,255,255,.75); }
+  .ms { position: relative; min-height: 100vh; min-height: 100svh; min-height: 100dvh; padding: 54px 22px 36px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
+  .ms > * { position: relative; }
+  .mnum { position: absolute !important; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 10.5px; color: #555; }
+  .ms h2 { font-weight: 700; font-size: 19px; letter-spacing: .17em; text-transform: uppercase; line-height: 1.3; }
+  .ms h2 span { font-weight: 300; }
+  .msub { font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: #555; margin-top: 6px; line-height: 1.6; }
+  .mlead { margin-top: 12px; color: #222; font-size: 13.5px; text-wrap: pretty; }
+  .mk { font-weight: 300; letter-spacing: .22em; text-transform: uppercase; font-size: 9.5px; color: #555; }
+  .mnote { font-size: 11px; font-style: italic; color: #666; margin-top: 10px; text-wrap: pretty; }
+  .mrv { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .mrv.in { opacity: 1; transform: none; }
+  .mtap { margin-top: 10px; font-size: 9.5px; letter-spacing: .2em; color: rgba(107,93,74,.8); display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .mtap i { width: 6px; height: 6px; border-radius: 50%; background: rgba(107,93,74,.7); animation: pulse 1.6s infinite; }
+  .mbg { position: absolute !important; inset: 0; background-size: cover; background-position: center; }
+  .mbgtop { position: relative !important; flex: 0 0 auto; height: 30vh; margin: 0 -22px; background-size: cover; background-position: center; }
+  .mwhite { position: absolute !important; inset: 0; background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.85)); }
+  .mcard { background: #fff; padding: 24px 20px; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+  .mcard p { margin-top: 10px; font-size: 13.5px; color: #333; }
+  .mcard h2 { font-size: 18px; }
+  .mhl { background: linear-gradient(transparent 55%, #f4e7b9 55%); }
+  /* portada */
+  .mcover { align-items: center; text-align: center; }
+  .mcv { position: absolute !important; left: 50%; top: 50%; width: 125%; max-width: 560px; transform: translate(-50%, -54%); }
+  .mdraw * { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 2s ease; transition-delay: var(--d); }
+  .mcover.in .mdraw * { stroke-dashoffset: 0; }
+  .mdate { position: absolute !important; top: 52px; right: 22px; font-size: 10px; letter-spacing: .1em; color: #555; }
+  .mtitle { background: #fff; box-shadow: 0 0 40px 30px #fff; padding: 4px 6px; }
+  .mtitle .m1 { font-weight: 700; font-size: 28px; }
+  .mtitle .m2 { font-weight: 300; font-size: 15px; margin-top: 8px; }
+  .mcover.in .trk { letter-spacing: var(--ls); opacity: 1; transition-delay: var(--d); }
+  .mnames { margin-top: 56px; font-size: 12px; line-height: 1.9; }
+  .mscroll { position: absolute !important; bottom: 16px; left: 0; right: 0; font-size: 9px; letter-spacing: .22em; color: rgba(17,17,17,.5); display: flex; flex-direction: column-reverse; align-items: center; gap: 2px; }
+  .mscroll span { font-size: 15px; animation: bounce 1.6s ease-in-out infinite; }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .midx { display: block; color: inherit; text-decoration: none; margin-top: 12px; font-size: 13px; }
+  .midx span { color: #555; }
+  /* propuesta */
+  .mpgs { margin-top: 10px; }
+  .mpg { display: flex; gap: 12px; align-items: center; margin-top: 6px; padding: 6px 8px 6px 0; border-left: 3px solid transparent; transition: background .3s, border-color .3s, padding .3s; }
+  .mpg .ic2 { flex: 0 0 40px; width: 40px; height: 33px; }
+  .mpg p { font-size: 12.5px; line-height: 1.45; }
+  .mpg.on { background: #f6edd6; border-left-color: #a0583a; padding-left: 8px; }
+  /* niveles */
+  .mslabs { display: block; width: 100%; max-width: 170px; margin: 0 auto; overflow: visible; }
+  .mlv { transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  .mlv.hi { transform: translateY(-16px); }
+  .mtabs { display: flex; flex-direction: row-reverse; justify-content: center; gap: 8px; margin-top: 12px; }
+  .mtb, .mwb { font: 500 11px "Montserrat", Arial; letter-spacing: .14em; background: rgba(255,255,255,.55); border: 1px solid rgba(17,17,17,.25); padding: 8px 16px; color: #111; }
+  .mtb.on { background: #111; color: #fff; border-color: #111; }
+  .mpanel { margin-top: 12px; background: rgba(255,255,255,.88); padding: 16px; }
+  .mlvp, .mstp, .mwk { display: none; }
+  .mlvp.on, .mstp.on, .mwk.on { display: block; animation: fadeIn .45s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .minfo p { margin-top: 6px; font-size: 13px; }
+  .minfo span { color: #444; }
+  .mexp { display: none; }
+  .mlvp.exp .minfo { display: none; }
+  .mlvp.exp .mexp { display: block; animation: fadeIn .45s ease; }
+  .mq { font-style: italic; font-size: 13px; margin-top: 6px; color: #222; }
+  .mchips { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 10px; }
+  .mchips .chip { position: static; translate: none; opacity: 1; animation: bob 3.4s ease-in-out infinite; }
+  .mchips .chip.need { font-size: 9px; padding: 5px 9px; }
+  .mchips .chip.feel { font-size: 15px; text-shadow: none; }
+  .mchips .chip:nth-child(2n) { animation-delay: .8s; }
+  .mbtn { margin-top: 10px; font: 500 10px "Montserrat", Arial; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(17,17,17,.3); padding: 8px 12px; color: #111; }
+  .mbtn b { display: inline-block; margin-left: 6px; transition: transform .3s; }
+  .mlvp.exp .mbtn b { transform: rotate(180deg); }
+  .mviz { position: relative; }
+  .mplan { display: none; position: relative; }
+  .mviz.exp .mbld { display: none; }
+  .mviz.exp .mplan { display: block; animation: fadeIn .5s ease; }
+  .mplanw { position: absolute; inset: 0; }
+  .mplanw .chip { opacity: 0; animation: chipin .5s ease forwards, bob 3.4s ease-in-out infinite; }
+  .mplanw .chip.need { font-size: 8px; padding: 4px 7px; letter-spacing: .14em; }
+  .mplanw .chip.feel { font-size: 13px; }
+  .mleg { display: flex; gap: 16px; margin-top: 10px; font-size: 10.5px; color: #444; align-items: center; }
+  .mleg .n { display: inline-block; background: #2f2a26; color: #fff; font-size: 8.5px; letter-spacing: .14em; padding: 3px 6px; margin-right: 6px; }
+  .mleg .f { font-style: italic; color: #a0583a; font-size: 13px; margin-right: 6px; }
+  /* mirada: invitar a tocar */
+  .mq4 { transition: transform .35s ease, box-shadow .35s ease, background .35s ease; }
+  .mq4.attn { transform: translateY(-4px); box-shadow: 0 0 0 2px rgba(160,88,58,.45), 0 14px 30px rgba(160,88,58,.2); }
+  .mq4.sel { background: #f6edd6; transform: translateY(-4px); }
+  .mq4.sel .mnumq { transform: scale(1.12); }
+  .mnumq { transition: transform .35s ease; transform-origin: left center; display: inline-block; }
+  .mq4 { padding-bottom: 26px !important; }
+  .mtapdot { position: absolute; right: 12px; bottom: 10px; width: 8px; height: 8px; border-radius: 50%; background: #a0583a; animation: pulse 1.6s infinite; }
+  .mq4.sel .mtapdot { display: none; }
+  /* crecer */
+  .mgrow { margin-top: 6px; }
+  .mgrowbar { display: flex; align-items: center; gap: 6px; }
+  .mseats { font-weight: 300; font-size: 34px; line-height: 1; }
+  .mg { font: 500 10px "Montserrat", Arial; letter-spacing: .16em; background: none; border: 1px solid #111; padding: 7px 10px; color: #111; }
+  .mg.on { background: #111; color: #fff; }
+  .mstrat { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+  .msb { font: 500 11px "Montserrat", Arial; text-align: left; background: #fff; border: 1px solid rgba(17,17,17,.2); border-left: 3px solid transparent; padding: 9px 10px; color: #111; line-height: 1.3; }
+  .msb.on { background: #f6edd6; border-left-color: #a0583a; }
+  .mstratx { font-size: 12px; font-style: italic; color: #555; margin-top: 10px; min-height: 2.8em; }
+  /* mirada */
+  .mq4s { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .mq4 { position: relative; background: #fff; padding: 14px 12px 14px; box-shadow: 0 8px 22px rgba(0,0,0,.07); }
+  .mq4 .ic2 { position: absolute; right: 8px; top: 8px; width: 52px; height: 40px; }
+  .mnumq { font-weight: 300; font-size: 26px; line-height: 1; color: #a0583a; }
+  .mq4 p { margin-top: 22px; font-size: 12px; line-height: 1.4; }
+  /* alcance */
+  .mtabs3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-top: 14px; }
+  .mst3 { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; background: #fff; border: 0; border-top: 1px solid #111; padding: 10px 8px 10px; text-align: left; color: #111; }
+  .mst3.on { background: #f6edd6; animation: breathe 2.6s ease-in-out infinite; }
+  .mst3 .mno { font-weight: 300; font-size: 22px; line-height: 1; }
+  .mst3 .mti { font-weight: 700; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; line-height: 1.3; }
+  .mst3.on .ic * { animation: redraw 1.4s ease; }
+  #m-alcance .mpanel { background: #f6edd6; margin-top: 0; }
+  .msu { font-style: italic; font-size: 13px; color: #444; }
+  .mstp ul { list-style: none; margin-top: 6px; font-size: 12.5px; color: #333; }
+  .mstp li { padding-left: 13px; position: relative; margin-top: 5px; line-height: 1.4; }
+  .mstp li::before { content: "/"; position: absolute; left: 0; color: #111; }
+  /* marca */
+  .mmarca { justify-content: center; }
+  .mmarca .mcard { margin: -46px 6px 0; }
+  /* plazos */
+  .mtline { position: relative; display: flex; justify-content: space-between; margin-top: 22px; }
+  .mtline::before { content: ""; position: absolute; left: 14px; right: 14px; top: 13px; height: 1px; background: #111; }
+  .mwb { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; font: 600 10.5px "Montserrat", Arial; letter-spacing: .14em; color: #111; }
+  .mwb i { width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 2px solid #111; transition: background .3s, transform .3s, border-color .3s; animation: pulse 1.8s infinite; }
+  .mwb.on i { background: #a0583a; border-color: #a0583a; transform: scale(1.12); box-shadow: 0 0 0 6px rgba(160,88,58,.18); animation: none; }
+  .mwb.on span { font-weight: 700; }
+  .mwkp { background: none !important; padding: 12px 0 0 !important; }
+  .mit { font-style: italic; font-size: 14px; margin-top: 2px; }
+  .mwk p { font-size: 13px; color: #333; margin-top: 4px; }
+  #m .pop { position: relative; top: auto; left: auto; width: 100%; max-width: 280px; margin: 10px auto 0; opacity: 1; transform: none; box-shadow: none; border: 1px solid rgba(17,17,17,.15); pointer-events: auto; }
+  #m .pop svg { width: 100%; height: auto; }
+  /* honorarios */
+  .mhon p { font-size: 12.5px; }
+  .musd { font-weight: 300; font-size: 38px; line-height: 1.1; margin-top: 2px; }
+  #musdline { height: 2px; width: 0; background: #a0583a; margin-top: 4px; transition: width .9s cubic-bezier(.2,.7,.2,1); }
+  #musdline.on { width: 100%; }
+  .mcol { border-top: 1px solid #111; margin-top: 14px; padding-top: 10px; }
+  .mcol p { margin-top: 4px !important; }
+  .mcol .mnote { font-size: 10.5px; }
+  /* alianza y pasos */
+  .mvenn svg { width: 100%; max-width: 230px; height: auto; }
+  #m .mvenn.in .venn .va, #m .mvenn.in .venn .vb { transform: none; }
+  #m .mvenn.in .venn .vl { opacity: 1; }
+  .mgrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; margin-top: 14px; text-align: left; }
+  .mg2 { border-top: 1px solid #111; padding-top: 10px; font-size: 12px; line-height: 1.4; }
+  .mg2 .ic2 { display: block; width: 46px; height: 36px; margin-bottom: 6px; }
+  .mg2 b { display: block; font-size: 12px; }
+  .mg2 span { display: block; color: #444; margin-top: 3px; }
+  .mpk { font-size: 9px; letter-spacing: .18em; color: #a0583a; margin-bottom: 3px; }
+  .mpasos .mg2 .ic2 { width: 52px; height: 42px; }
+  /* acompañamiento */
+  .macomp { justify-content: center; }
+  .macomp .mbgtop { margin-bottom: 20px; }
+  .mpils { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 16px; }
+  .mpils .pil { border-top: 1px solid #111; padding-top: 10px; }
+  .mpils .pil div { margin-top: 6px; font-size: 8.5px; letter-spacing: .06em; text-transform: uppercase; }
+  .mtel { color: #111; }
+  .mgr { align-items: center; }
+  #m .web { padding: 11px 13px; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+  @media (max-height: 720px) {
+    .ms { padding: 48px 20px 30px; }
+    .ms h2 { font-size: 17px; }
+    .mlead { font-size: 12.5px; margin-top: 8px; }
+    .mslabs { max-width: 130px; }
+    .mpanel { padding: 12px 14px; margin-top: 8px; }
+    .mpg { margin-top: 3px; padding-top: 4px; padding-bottom: 4px; }
+    .mpg p { font-size: 12px; }
+    .mstp li { font-size: 12px; margin-top: 3px; }
+    .mq4 p { font-size: 11.5px; margin-top: 18px; }
+    .mq4s { gap: 8px; margin-top: 10px; }
+    .musd { font-size: 30px; }
+    .mhon .msub { display: none; }
+    .mhon h2 { font-size: 16px; }
+    .mhon p { font-size: 11.5px !important; }
+    .mcard { padding: 18px 16px; }
+    .mcard p, .mhon p { font-size: 12px; }
+    .mcol { margin-top: 10px; padding-top: 8px; }
+    #m .pop { max-width: 220px; }
+    .mbgtop { height: 24vh; }
+    .macomp .mbgtop { margin-bottom: 12px; }
+    .mgrid2 { gap: 10px; margin-top: 10px; }
+    .mg2, .mg2 b { font-size: 11.5px; }
+    .mvenn svg { max-width: 190px; }
+    .mchips .chip.feel { font-size: 13.5px; }
+    .mnote { font-size: 10.5px; margin-top: 6px; }
+  }
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+
+<div id="m">
+  <nav id="mnav"><a href="#m-portada">Inicio</a><a href="#m-contenido">Contenido</a><a href="#m-propuesta">Propuesta</a><a href="#m-alcance">Alcance</a><a href="#m-plazos">Etapas y honorarios</a><a href="#m-alianza">Alianza</a></nav>
+
+  <section class="ms mcover" id="m-portada">
+    <svg class="mcv" viewBox="400 90 640 660" fill="none" stroke="#111" stroke-width="1.1" stroke-opacity=".13">
+      <g class="mdraw" style="--d:0.1s"><polygon pathLength="1" points="720,110 1020,260 720,410 420,260"/><polyline pathLength="1" points="420,260 420,274 720,424 1020,274 1020,260"/></g><g class="mdraw" style="--d:0.44999999999999996s"><polygon pathLength="1" points="720,262 1020,412 720,562 420,412"/><polyline pathLength="1" points="420,412 420,426 720,576 1020,426 1020,412"/></g><g class="mdraw" style="--d:0.7999999999999999s"><polygon pathLength="1" points="720,414 1020,564 720,714 420,564"/><polyline pathLength="1" points="420,564 420,578 720,728 1020,578 1020,564"/></g>
+    </svg>
+    <div class="mdate">Octubre 2026</div>
+    <div class="mtitle">
+      <div class="trk m1" style="--d:.3s; --ls:.3em;">PROPUESTA</div>
+      <div class="trk m2" style="--d:.6s; --ls:.3em;">DE INTERIORISMO</div>
+      <div class="mrv" style="margin-top:22px; font-size:10.5px; letter-spacing:.22em; line-height:1.9;">OFICINAS CORPORATIVAS,<br>PLANTA DE PRODUCCIÓN DE ALIMENTOS</div>
+      <div class="mrv" style="font-style:italic; font-size:12.5px; margin-top:10px; color:#333;">Pilar, Buenos Aires — Argentina</div>
+    </div>
+    <div class="mnames mrv">Arquitecta <b>Clara Tacco Carulli</b><br>Diseñadora de interiores <b>Lucía Da Silva</b></div>
+    <div class="mscroll">DESLIZÁ HACIA ARRIBA<span>↑</span></div>
+  </section>
+
+  <section class="ms mphoto" id="m-contenido" style="background:#f4e7b9;">
+    <div class="mbg" style="background-image:url('img/contenido.jpg'); opacity:.42;"></div>
+    <div class="mcard mrv">
+      <h2>Contenido</h2>
+      <a class="midx" href="#m-propuesta"><b>01 / Propuesta general</b><br><span>Nuestra mirada, el edificio en tres niveles y su crecimiento.</span></a>
+      <a class="midx" href="#m-alcance"><b>02 / Alcance del proyecto</b><br><span>Qué incluye la propuesta de interiorismo integral.</span></a>
+      <a class="midx" href="#m-plazos"><b>03 / Etapas y honorarios</b><br><span>Etapas de trabajo e inversión.</span></a>
+      <a class="midx" href="#m-alianza"><b>04 / Alianza y próximos pasos</b><br><span>Cómo seguimos y cómo podemos crecer juntos.</span></a>
+    </div>
+    <div class="mnum">— 01 —</div>
+  </section>
+
+  <section class="ms" id="m-propuesta">
+    <h2 class="mrv">Propuesta <span>general</span></h2>
+    <p class="mrv mlead">Proponemos unas oficinas que cuenten quiénes son: una empresa que produce alimentos. La materia prima, el proceso y la precisión se traducen en materiales nobles, orden y buena luz.</p>
+    <div class="mpgs">
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M103 160 V100 a12 12 0 0 1 24 0 V160" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M89 160 V100 a26 26 0 0 1 52 0 V160"/><path pathLength="1" d="M75 160 V100 a40 40 0 0 1 80 0 V160"/><path pathLength="1" d="M61 160 V100 a54 54 0 0 1 108 0 V160"/></svg><p><b>/ Oficinas con identidad propia,</b> que reflejen el oficio y los valores de la empresa.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polygon class="f" points="115,18 175,46 115,74 55,46" fill="#2f2a26" stroke="none"/><polygon pathLength="1" points="115,18 175,46 115,74 55,46"/><polygon class="f" points="115,60 175,88 115,116 55,88" fill="#b49a7c" stroke="none"/><polygon pathLength="1" points="115,60 175,88 115,116 55,88"/><polygon class="f" points="115,102 175,130 115,158 55,130" fill="#ece5da" stroke="none"/><polygon pathLength="1" points="115,102 175,130 115,158 55,130"/></svg><p><b>/ Una distribución clara en tres niveles,</b> de lo público a lo privado, pensada para crecer.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line pathLength="1" x1="40" y1="112" x2="190" y2="112"/><line pathLength="1" x1="55" y1="112" x2="55" y2="168"/><line pathLength="1" x1="175" y1="112" x2="175" y2="168"/><rect pathLength="1" x="105" y="68" width="56" height="36" rx="2"/><line pathLength="1" x1="133" y1="104" x2="133" y2="112"/><path pathLength="1" d="M66 122 v-34 M66 122 h30 v46 M66 122 v46"/><line pathLength="1" x1="190" y1="18" x2="190" y2="52"/><path pathLength="1" d="M176 62 L190 50 L204 62 Z" fill="#f4e7b9"/></svg><p><b>/ Espacios de trabajo cómodos y flexibles,</b> con buena acústica, iluminación y zonas de pausa.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" cx="115" cy="146" rx="72" ry="14"/><path pathLength="1" d="M58 140 a57 57 0 0 1 114 0"/><circle pathLength="1" cx="115" cy="78" r="6" fill="#a0583a" stroke="#a0583a"/><line pathLength="1" x1="26" y1="100" x2="26" y2="170"/><path pathLength="1" d="M18 100 v20 a8 8 0 0 0 16 0 v-20"/><line pathLength="1" x1="204" y1="100" x2="204" y2="170"/><path pathLength="1" d="M204 100 q10 18 0 36"/><path pathLength="1" d="M100 52 q6 -10 0 -20 M115 52 q6 -10 0 -20 M130 52 q6 -10 0 -20" stroke="#a0583a"/></svg><p><b>/ Una sala demo memorable,</b> donde la degustación se vuelve experiencia de marca.</p></div>
+    <div class="mpg hv mrv"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="40" y="52" width="130" height="92"/><line pathLength="1" x1="110" y1="52" x2="110" y2="104"/><line pathLength="1" x1="40" y1="104" x2="140" y2="104"/><line pathLength="1" x1="40" y1="34" x2="170" y2="34"/><line pathLength="1" x1="40" y1="28" x2="40" y2="40"/><line pathLength="1" x1="170" y1="28" x2="170" y2="40"/><polygon pathLength="1" points="168,166 204,130 212,138 176,174" fill="#f4e7b9"/><polygon pathLength="1" points="168,166 176,174 162,180"/></svg><p><b>/ Un diseño realizable y presupuestable,</b> que combina piezas de mercado con diseños a medida.</p></div>
+    </div>
+    <div class="mnum">— 02 —</div>
+  </section>
+
+  <section class="ms" style="background:#d3e8df;">
+    <h2 class="mrv">El edificio <span>en tres niveles</span></h2>
+    <div class="msub mrv">≈ 900 m² de oficinas · De lo público a lo privado</div>
+    <div class="mviz mrv" style="margin-top:10px;"><div class="mbld"><svg class="mslabs" viewBox="180 150 460 560">
+  <g stroke="#8f877b" stroke-width="1" stroke-dasharray="4 5"><line x1="200" y1="271" x2="200" y2="405"/><line x1="430" y1="386" x2="430" y2="520"/><line x1="610" y1="296" x2="610" y2="430"/><line x1="200" y1="421" x2="200" y2="555"/><line x1="430" y1="536" x2="430" y2="670"/><line x1="610" y1="446" x2="610" y2="580"/></g>
+  <g class="mlv" data-l="0"><polygon points="200,555 430,670 430,686 200,571" fill="#cfc3b2"/><polygon points="430,670 610,580 610,596 430,686" fill="#bfb19d"/><polygon points="380,465 610,580 430,670 200,555" fill="#ece5da" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="574" text-anchor="middle" font-size="22" letter-spacing="4" fill="#222">PB</text></g>
+  <g class="mlv" data-l="1"><polygon points="200,405 430,520 430,536 200,421" fill="#9a8166"/><polygon points="430,520 610,430 610,446 430,536" fill="#866e55"/><polygon points="380,315 610,430 430,520 200,405" fill="#b49a7c" stroke="#6b5d4a" stroke-width="1.2"/><text x="405" y="424" text-anchor="middle" font-size="22" letter-spacing="4" fill="#fff">1°</text></g>
+  <g class="mlv" data-l="2"><polygon points="200,255 430,370 430,386 200,271" fill="#1d1a17"/><polygon points="430,370 610,280 610,296 430,386" fill="#141210"/><polygon points="380,165 610,280 430,370 200,255" fill="#2f2a26" stroke="#2f2a26" stroke-width="1.2"/><text x="405" y="274" text-anchor="middle" font-size="22" letter-spacing="4" fill="#fff">2°</text></g>
+</svg></div>
+      <div class="mplan">
+        <svg viewBox="200 160 820 440" width="100%" style="display:block;">
+          <polygon points="220,345 660,565 660,583 220,363" fill="#d9d1c4"/>
+          <polygon points="660,565 1000,395 1000,413 660,583" fill="#cbc1b2"/>
+          <polygon points="560,175 1000,395 660,565 220,345" fill="#fbfaf7" stroke="#6b5d4a" stroke-width="1.4"/>
+          <g transform="matrix(4.4 2.2 -5.6667 2.8333 560 175)" class="vx">
+            <g stroke="#a99d8a" stroke-width="1" stroke-dasharray="3 4"><line x1="10" y1="0" x2="10" y2="60"/><line x1="20" y1="0" x2="20" y2="60"/><line x1="30" y1="0" x2="30" y2="60"/><line x1="40" y1="0" x2="40" y2="60"/><line x1="50" y1="0" x2="50" y2="60"/><line x1="60" y1="0" x2="60" y2="60"/><line x1="70" y1="0" x2="70" y2="60"/><line x1="80" y1="0" x2="80" y2="60"/><line x1="90" y1="0" x2="90" y2="60"/><line x1="0" y1="10" x2="100" y2="10"/><line x1="0" y1="20" x2="100" y2="20"/><line x1="0" y1="30" x2="100" y2="30"/><line x1="0" y1="40" x2="100" y2="40"/><line x1="0" y1="50" x2="100" y2="50"/></g>
+            <rect x="-6" y="0" width="6" height="60" fill="#d3e8df" opacity=".9"><animate attributeName="x" from="-6" to="100" dur="3.2s" repeatCount="indefinite"/></rect>
+          </g>
+        </svg>
+        <div class="mplanw"></div>
+      </div>
+    </div>
+    <div class="mtabs mrv"><button type="button" class="mtb on" data-i="0">2°</button><button type="button" class="mtb" data-i="1">1°</button><button type="button" class="mtb" data-i="2">PB</button></div>
+    <div class="mpanel mrv">
+      <div class="mlvp on" data-i="0">
+        <div class="mk">Segundo piso · Privado</div>
+        <div class="minfo"><p><b>Tres oficinas para los socios, gerencia y Recursos Humanos.</b> <span>Y la sala demo de degustación: el lugar donde la marca se prueba.</span></p></div>
+        <div class="mexp"><p class="mq">¿Cómo convertir una degustación en una experiencia que venda?</p><div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div></div>
+        <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
+      </div>
+      <div class="mlvp" data-i="1">
+        <div class="mk">Primer piso · Semipúblico</div>
+        <div class="minfo"><p><b>Área de trabajo tipo cowork para unas 30 personas.</b> <span>Compras y equipos administrativos, mesas compartidas y zonas de pausa.</span></p></div>
+        <div class="mexp"><p class="mq">¿Cómo lograr que 30 personas trabajen cómodas, concentradas y conectadas?</p><div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div></div>
+        <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
+      </div>
+      <div class="mlvp" data-i="2">
+        <div class="mk">Planta baja · Público</div>
+        <div class="minfo"><p><b>Recepción y salas de reuniones.</b> <span>La primera impresión de la empresa para clientes, proveedores y visitas.</span></p></div>
+        <div class="mexp"><p class="mq">¿Cómo recibir a quien llega por primera vez para que se lleve la mejor impresión?</p><div class="mleg"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div></div>
+        <button type="button" class="mbtn">Explorar el nivel <b>→</b></button>
+      </div>
+    </div>
+    <div class="mnum">— 03 —</div>
+  </section>
+
+  <section class="ms">
+    <h2 class="mrv">Pensado <span>para crecer</span></h2>
+    <p class="mrv mlead">Diseñamos para hoy y para lo que viene: oficinas que acompañen el crecimiento de la compañía y estén preparadas para recibir a nuevos integrantes.</p>
+    <div class="grow mgrow mrv"><svg width="100%" viewBox="700 210 700 400" style="display:block;">
+      <g transform="matrix(4.2 2.1 -4.2 2.1 890 236)" class="vx">
+        <rect x="0" y="0" width="100" height="40" fill="#fbfaf7" stroke="#111" stroke-width="1.2"/>
+        <rect class="zone" x="60" y="0" width="40" height="40" fill="none" stroke="#a0583a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <g class=""><rect x="2" y="15" width="16" height="10" fill="#fff" stroke="#111" stroke-width="1.2"/><circle cx="6" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="14" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="6" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="14" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g><g class=""><rect x="22" y="15" width="16" height="10" fill="#fff" stroke="#111" stroke-width="1.2"/><circle cx="26" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="34" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="26" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="34" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g><g class=""><rect x="42" y="15" width="16" height="10" fill="#fff" stroke="#111" stroke-width="1.2"/><circle cx="46" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="54" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="46" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="54" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g>
+        <g class="fm" style="--i:1"><rect x="62" y="15" width="16" height="10" fill="#f6e1d6" stroke="#111" stroke-width="1.2"/><circle cx="66" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="74" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="66" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="74" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g><g class="fm" style="--i:2"><rect x="82" y="15" width="16" height="10" fill="#f6e1d6" stroke="#111" stroke-width="1.2"/><circle cx="86" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="94" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="86" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="94" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g>
+        <g class="elec"><line x1="0" y1="20" x2="100" y2="20" stroke="#a0583a" stroke-width="1" stroke-dasharray="2 2"/><circle cx="10" cy="20" r="1.6" fill="#a0583a"/><circle cx="30" cy="20" r="1.6" fill="#a0583a"/><circle cx="50" cy="20" r="1.6" fill="#a0583a"/><circle cx="70" cy="20" r="1.6" fill="#a0583a"/><circle cx="90" cy="20" r="1.6" fill="#a0583a"/></g>
+      </g>
+      <text x="1200" y="560" font-size="12" letter-spacing="2" fill="#a0583a" font-style="italic">espacio previsto</text>
+    </svg>
+      <div class="mgrowbar"><span class="mseats">30</span><span class="mk" style="margin:0 12px 0 6px;">puestos</span><button type="button" class="mg on" data-g="0">HOY</button><button type="button" class="mg" data-g="1">A FUTURO</button></div>
+    </div>
+    <div class="mk mrv" style="margin-top:14px;">Algunas estrategias posibles · tocá cada una</div>
+    <div class="mstrat mrv"><button type="button" class="msb" data-c="0">Distribuciones modulares</button><button type="button" class="msb" data-c="1">Mobiliario adaptable</button><button type="button" class="msb" data-c="2">Instalaciones con margen</button><button type="button" class="msb" data-c="3">Espacios flexibles</button></div>
+    <p class="mrv mstratx">Las definimos junto al Cliente, según su proyección de crecimiento.</p>
+    <div class="mnum">— 04 —</div>
+  </section>
+
+  <section class="ms mphoto" id="m-mirada">
+    <div class="mbg" style="background-image:url('img/mirada.jpg'); background-position:left top;"></div>
+    <div class="mwhite"></div>
+    <h2 class="mrv">Mirada <span>a futuro</span></h2>
+    <p class="mrv mlead">Para que el diseño acompañe la evolución de la empresa, nos interesa conocer su visión a mediano y largo plazo.</p>
+    <div class="mq4s">
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="30" cy="30" r="8"/><path pathLength="1" d="M16 64 q14 -26 28 0"/><circle pathLength="1" cx="56" cy="30" r="8"/><path pathLength="1" d="M42 64 q14 -26 28 0"/><line pathLength="1" x1="94" y1="24" x2="94" y2="50" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="81" y1="37" x2="107" y2="37" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">01</div><p>¿Cuántas personas prevén sumar en los próximos tres a cinco años?</p></div>
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" class="f" x="20" y="58" width="14" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="20" y="58" width="14" height="22"/><rect pathLength="1" x="42" y="46" width="14" height="34"/><rect pathLength="1" x="64" y="32" width="14" height="48"/><path pathLength="1" d="M18 36 L58 18 L94 10" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M84 4 L96 10 L88 20" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">02</div><p>¿Qué áreas de la empresa creen que van a crecer o cambiar?</p></div>
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="18" y="12" width="32" height="66"/><circle pathLength="1" cx="43" cy="46" r="2"/><line pathLength="1" x1="56" y1="46" x2="66" y2="46" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M62 41 L68 46 L62 51" stroke="#a0583a" stroke-width="2"/><circle pathLength="1" cx="88" cy="30" r="8"/><path pathLength="1" d="M74 76 q14 -32 28 0"/></svg><div class="mnumq">03</div><p>¿Esperan recibir más visitas de clientes, proveedores o inversores?</p></div>
+    <div class="mq4 qc hv mrv"><span class="mtapdot"></span><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon pathLength="1" class="f" points="36,40 60,28 84,40 60,52" fill="#f4e7b9" stroke="none"/><path pathLength="1" d="M36 40 L60 28 L84 40 L60 52 Z"/><path pathLength="1" d="M36 40 V66 L60 78 V52"/><path pathLength="1" d="M84 40 V66 L60 78"/><line pathLength="1" x1="98" y1="6" x2="98" y2="26" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="88" y1="16" x2="108" y2="16" stroke="#a0583a" stroke-width="2"/></svg><div class="mnumq">04</div><p>¿Proyectan nuevos productos o servicios que impacten en las oficinas?</p></div>
+    </div>
+    <div class="mtap mrv"><i></i>TOCÁ CADA PREGUNTA</div>
+    <div class="mnum">— 05 —</div>
+  </section>
+
+  <section class="ms" id="m-alcance">
+    <h2 class="mrv">Alcance <span>del proyecto</span></h2>
+    <p class="mrv mlead">Trabajamos junto al equipo de arquitectura desde el anteproyecto, para que el interiorismo nazca integrado al edificio y llegue a obra con toda la documentación necesaria.</p>
+    <div class="mtabs3 mrv"><button type="button" class="mst3 on" data-i="0"><svg class="ic" width="40" height="34" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="44" height="56" rx="2" pathLength="1"/><line x1="14" y1="18" x2="42" y2="18" pathLength="1"/><line x1="14" y1="28" x2="38" y2="28" pathLength="1"/><line x1="14" y1="38" x2="34" y2="38" pathLength="1"/><circle cx="56" cy="42" r="14" pathLength="1"/><line x1="66" y1="52" x2="80" y2="66" pathLength="1"/></svg><span class="mno">01</span><span class="mti">Análisis y concepto</span></button><button type="button" class="mst3" data-i="1"><svg class="ic" width="40" height="34" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="56" y1="0" x2="56" y2="16" pathLength="1"/><path d="M44 28 Q56 10 68 28 Z" pathLength="1"/><path d="M10 64 L10 40 Q10 32 18 32 L18 48 L50 48 L50 32 Q58 32 58 40 L58 64" pathLength="1"/><line x1="18" y1="48" x2="18" y2="58" pathLength="1"/><line x1="10" y1="58" x2="58" y2="58" pathLength="1"/></svg><span class="mno">02</span><span class="mti">Diseño integral</span></button><button type="button" class="mst3" data-i="2"><svg class="ic" width="40" height="34" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="64" height="50" pathLength="1"/><line x1="6" y1="34" x2="40" y2="34" pathLength="1"/><line x1="40" y1="10" x2="40" y2="60" pathLength="1"/><line x1="6" y1="4" x2="70" y2="4" pathLength="1"/><line x1="6" y1="1" x2="6" y2="7" pathLength="1"/><line x1="70" y1="1" x2="70" y2="7" pathLength="1"/><circle cx="56" cy="24" r="6" pathLength="1"/><line x1="52" y1="20" x2="60" y2="28" pathLength="1"/><line x1="60" y1="20" x2="52" y2="28" pathLength="1"/></svg><span class="mno">03</span><span class="mti">Documentación</span></button></div>
+    <div class="mpanel mrv">
+      <div class="mstp on"><div class="msu">Entendemos la empresa y definimos el concepto.</div><ul><li>Análisis del anteproyecto de arquitectura junto al equipo constructor.</li><li>Entrevista con el Cliente: necesidades, usos, puestos y crecimiento futuro.</li><li>Inmersión en la empresa: cómo trabajan sus equipos, cómo reciben y qué los hace únicos.</li><li>Concepto de diseño, paleta y referencias, alineados a la identidad de la marca.</li><li>Zonificación de los tres niveles.</li></ul></div>
+      <div class="mstp"><div class="msu">Diseñamos cada espacio y cada mueble, y lo hacemos visible.</div><ul><li>Distribución y equipamiento de los tres niveles.</li><li>Materialidad y terminaciones: pisos, revestimientos, cielorrasos y textiles.</li><li>Diseño de iluminación por sector.</li><li>Mobiliario: diseño a medida y selección de piezas de mercado.</li><li>Modelado 3D, renders y video de recorrido virtual.</li></ul></div>
+      <div class="mstp"><div class="msu">Todo lo necesario para llevar la propuesta a obra.</div><ul><li>Planos en planta de distribución y equipamiento.</li><li>Planos de mobiliario a medida para fabricación.</li><li>Planos de electricidad con bocas de iluminación.</li><li>Listado de mobiliario y materiales de referencia.</li><li>Presentación final integral.</li></ul></div>
+    </div>
+    <p class="mnote mrv">Las piezas de mercado se proponen como referencia y pueden variar según la disponibilidad al momento de la compra. Las piezas a medida se diseñan para su fabricación.</p>
+    <div class="mnum">— 06 —</div>
+  </section>
+
+  <section class="ms mphoto mmarca">
+    <div class="mbgtop" style="background-image:url('img/marca.jpg');"></div>
+    <div class="mcard mrv">
+      <h2>Del espacio <span>a la marca</span></h2>
+      <p>Mudarse a un edificio nuevo es una oportunidad para mostrar quién es hoy la empresa. El interiorismo define colores, materiales, texturas y un lenguaje visual propio.</p>
+      <p>Sin ser un servicio de branding, la propuesta deja una <b class="mhl">base estética clara y coherente</b> que la empresa puede tomar como punto de partida si decide actualizar su imagen corporativa.</p>
+      <p>Lo físico impulsa lo intangible: un espacio con identidad ordena también cómo se comunica la marca.</p>
+    </div>
+    <div class="mnum">— 07 —</div>
+  </section>
+
+  <section class="ms" id="m-plazos">
+    <h2 class="mrv">Etapas <span>de trabajo</span></h2>
+    <div class="msub mrv">Plazos a coordinar con el Cliente según necesidad y disponibilidad</div>
+    <div class="mtline mrv"><button type="button" class="mwb on" data-i="0"><i></i><span>E1</span></button><button type="button" class="mwb" data-i="1"><i></i><span>E2</span></button><button type="button" class="mwb" data-i="2"><i></i><span>E3</span></button><button type="button" class="mwb" data-i="3"><i></i><span>E4</span></button></div>
+    <div class="mpanel mwkp mrv">
+      <div class="mwk on"><div class="mk">Etapa 1</div><div class="mit">Análisis y programa</div><p>Estudio del anteproyecto, reunión con el Cliente y definición de necesidades de cada nivel.</p><div class="pop" data-pop="0">
+    <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <circle class="d" pathLength="1" cx="62" cy="112" r="16" style="--a:.1s"/>
+      <path class="d" pathLength="1" d="M32 172 Q62 128 92 172" style="--a:.3s"/>
+      <circle class="b" cx="92" cy="90" r="4" fill="#fff" style="--a:.6s"/>
+      <circle class="b" cx="106" cy="71" r="7" fill="#fff" style="--a:.75s"/>
+      <rect class="f" x="120" y="16" width="160" height="112" rx="22" fill="#f4e7b9" stroke="none" style="--a:.9s"/>
+      <rect class="d" pathLength="1" x="120" y="16" width="160" height="112" rx="22" style="--a:.9s"/>
+      <rect class="d" pathLength="1" x="138" y="39" width="12" height="12" style="--a:1.2s"/><line class="d" pathLength="1" x1="160" y1="45" x2="262" y2="45" style="--a:1.3s"/>
+      <rect class="d" pathLength="1" x="138" y="65" width="12" height="12" style="--a:1.4s"/><line class="d" pathLength="1" x1="160" y1="71" x2="240" y2="71" style="--a:1.5s"/>
+      <rect class="d" pathLength="1" x="138" y="91" width="12" height="12" style="--a:1.6s"/><line class="d" pathLength="1" x1="160" y1="97" x2="252" y2="97" style="--a:1.7s"/>
+      <polyline class="d" pathLength="1" points="139,44 143,49 151,37" stroke="#6b5d4a" stroke-width="2.2" style="--a:2s"/>
+      <polyline class="d" pathLength="1" points="139,70 143,75 151,63" stroke="#6b5d4a" stroke-width="2.2" style="--a:2.3s"/>
+      <polyline class="d" pathLength="1" points="139,96 143,101 151,89" stroke="#6b5d4a" stroke-width="2.2" style="--a:2.6s"/>
+    </svg>
+    <div class="cap">Escuchamos y relevamos necesidades</div>
+  </div></div>
+      <div class="mwk"><div class="mk">Etapa 2</div><div class="mit">Concepto y distribución</div><p>Concepto, paleta y zonificación de los tres niveles. Reunión de validación con el Cliente.</p><div class="pop" data-pop="1">
+    <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round">
+      <rect class="f" x="40" y="20" width="110" height="75" fill="#f4e7b9" stroke="none" style="--a:1.0s"/>
+      <rect class="f" x="150" y="20" width="110" height="65" fill="#d3e8df" stroke="none" style="--a:1.3s"/>
+      <rect class="f" x="40" y="95" width="110" height="65" fill="#ead2c1" stroke="none" style="--a:1.6s"/>
+      <rect class="f" x="150" y="85" width="110" height="75" fill="#ece5da" stroke="none" style="--a:1.9s"/>
+      <rect class="d" pathLength="1" x="40" y="20" width="220" height="140" stroke-width="2" style="--a:.1s"/>
+      <line class="d" pathLength="1" x1="150" y1="20" x2="150" y2="160" style="--a:.5s"/>
+      <line class="d" pathLength="1" x1="40" y1="95" x2="150" y2="95" style="--a:.7s"/>
+      <line class="d" pathLength="1" x1="150" y1="85" x2="260" y2="85" style="--a:.8s"/>
+      <path class="d" pathLength="1" d="M150 120 A16 16 0 0 1 134 136" stroke-dasharray="3 3" style="--a:2.2s"/>
+    </svg>
+    <div class="cap">Zonificamos cada nivel</div>
+  </div></div>
+      <div class="mwk"><div class="mk">Etapa 3</div><div class="mit">Desarrollo</div><p>Modelado 3D, materiales, iluminación y mobiliario.</p><div class="pop" data-pop="2">
+    <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.1" stroke-linejoin="round">
+      <defs><radialGradient id="glw"><stop offset="0" stop-color="#ffd86b" stop-opacity=".95"/><stop offset="1" stop-color="#ffd86b" stop-opacity="0"/></radialGradient></defs>
+      <g class="dr" style="--a:.2s"><g transform="translate(70,150)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#ece5da"/><polygon points="0,0 22,-11 22,11 0,22" fill="#d9d1c4"/></g></g>
+      <g class="dr" style="--a:.45s"><g transform="translate(92,161)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#ece5da"/><polygon points="0,0 22,-11 22,11 0,22" fill="#d9d1c4"/></g></g>
+      <g class="dr" style="--a:.7s"><g transform="translate(70,128)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#ece5da"/><polygon points="0,0 22,-11 22,11 0,22" fill="#d9d1c4"/></g></g>
+      <circle class="gl" cx="200" cy="112" r="62" fill="url(#glw)" stroke="none" style="--a:2.1s"/>
+      <polygon class="f" points="186,148 232,171 202,186 156,163" fill="#ead2c1" stroke="none" style="--a:1.5s"/>
+      <polygon class="d" pathLength="1" points="186,148 232,171 202,186 156,163" style="--a:1.0s"/>
+      <line class="d" pathLength="1" x1="156" y1="163" x2="156" y2="182" style="--a:1.3s"/>
+      <line class="d" pathLength="1" x1="232" y1="171" x2="232" y2="188" style="--a:1.3s"/>
+      <line class="d" pathLength="1" x1="198" y1="0" x2="198" y2="70" style="--a:1.6s"/>
+      <polygon class="f" points="184,70 212,70 220,84 176,84" fill="#111" style="--a:1.9s"/>
+    </svg>
+    <div class="cap">Modelamos, equipamos e iluminamos</div>
+  </div></div>
+      <div class="mwk"><div class="mk">Etapa 4</div><div class="mit">Renders y presentación</div><p>Renders, video de recorrido virtual, documentación y presentación final integral.</p><div class="pop" data-pop="3">
+    <svg viewBox="0 0 300 190" width="300" height="190" stroke="#111" stroke-width="1.1" stroke-linejoin="round">
+      <g class="fall" style="--a:0s"><rect x="16" y="-44" width="56" height="38" fill="#f4e7b9"/><polyline points="22,-12 36,-28 46,-19 54,-30 66,-12" fill="none"/><circle cx="60" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:0.5s"><rect x="92" y="-44" width="56" height="38" fill="#fff"/><polygon points="114,-34 128,-25 114,-16" fill="#111"/></g>
+      <g class="fall" style="--a:0.25s"><rect x="168" y="-44" width="56" height="38" fill="#d3e8df"/><polyline points="174,-12 188,-28 198,-19 206,-30 218,-12" fill="none"/><circle cx="212" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:0.9s"><rect x="236" y="-44" width="56" height="38" fill="#ead2c1"/><polygon points="258,-34 272,-25 258,-16" fill="#111"/></g>
+      <g class="fall" style="--a:1.3s"><rect x="54" y="-44" width="56" height="38" fill="#d3e8df"/><polygon points="76,-34 90,-25 76,-16" fill="#111"/></g>
+      <g class="fall" style="--a:1.1s"><rect x="130" y="-44" width="56" height="38" fill="#fff"/><polyline points="136,-12 150,-28 160,-19 168,-30 180,-12" fill="none"/><circle cx="174" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:1.7s"><rect x="204" y="-44" width="56" height="38" fill="#f4e7b9"/><polyline points="210,-12 224,-28 234,-19 242,-30 254,-12" fill="none"/><circle cx="248" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:2s"><rect x="8" y="-44" width="56" height="38" fill="#ead2c1"/><polyline points="14,-12 28,-28 38,-19 46,-30 58,-12" fill="none"/><circle cx="52" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:2.2s"><rect x="110" y="-44" width="56" height="38" fill="#f4e7b9"/><polygon points="132,-34 146,-25 132,-16" fill="#111"/></g>
+      <g class="fall" style="--a:2.4s"><rect x="226" y="-44" width="56" height="38" fill="#fff"/><polygon points="248,-34 262,-25 248,-16" fill="#111"/></g>
+    </svg>
+    <div class="cap">Renders y recorrido virtual</div>
+  </div></div>
+    </div>
+    <div class="mtap mrv"><i></i>TOCÁ CADA ETAPA</div>
+    <div class="mnum">— 08 —</div>
+  </section>
+
+  <section class="ms mphoto">
+    <div class="mbg" style="background-image:url('img/honorarios.jpg');"></div>
+    <div class="mcard mrv mhon">
+      <h2>Honorarios <span>profesionales</span></h2>
+      <div class="msub">Propuesta de interiorismo integral · Tres niveles</div>
+      <div class="mk" style="margin-top:18px;">Inversión</div>
+      <div class="usdwrap"><div class="musd usdnum">USD <span id="musd">11.000</span></div><div id="musdline"></div></div><p class="mnote" style="font-style:normal; color:#333; font-size:11.5px; margin-top:8px;">Calculado sobre <b>900 m²</b> de oficinas: <b>USD 12,22 por m²</b>. El valor por m² varía según la superficie y la complejidad del proyecto; si el alcance cambia, revisamos los honorarios.</p>
+      <div class="mcol"><div class="mit">Modalidad de pago</div><p>En tres pagos iguales: un tercio al confirmar la propuesta, un tercio al presentar el concepto y la distribución de los tres niveles, y el tercio restante al entregar la presentación final. El pago podrá realizarse en pesos argentinos al tipo de cambio dólar blue vigente.</p><p class="mnote">Honorarios expresados para facturación tipo C. En caso de requerir Factura A, se ajustarán según la carga impositiva correspondiente, con IVA adicional.</p></div>
+      <div class="mcol"><div class="mit">Base de los honorarios</div><p>Análisis del anteproyecto, diseño conceptual, distribución, modelado 3D, renders, video de recorrido, propuesta de mobiliario y documentación.</p></div>
+    </div>
+    <div class="mnum">— 09 —</div>
+  </section>
+
+  <section class="ms" id="m-alianza" style="text-align:center;">
+    <div class="mrv mvenn"><svg width="360" height="150" viewBox="0 0 360 150" class="venn">
+      <defs><clipPath id="clipAm"><circle cx="128" cy="75" r="62"/></clipPath></defs>
+      <g class="va"><circle cx="128" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="116" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">SU</text><text x="116" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">CONSULTORA</text></g>
+      <g class="vb"><circle cx="232" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="244" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">NUESTRO</text><text x="244" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">ESTUDIO</text></g>
+      <circle class="vl" cx="232" cy="75" r="62" fill="#a0583a" fill-opacity=".85" clip-path="url(#clipAm)"/>
+    </svg></div>
+    <h2 class="mrv">Alianza <span>para próximos proyectos</span></h2>
+    <p class="mrv mlead" style="text-align:center;">Queremos que este sea el primero de muchos proyectos juntos. Por eso proponemos una alianza de beneficio mutuo, pensada para crecer en conjunto.</p>
+    <div class="mgrid2"><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="22" cy="16" r="7"/><path pathLength="1" d="M10 44 q12 -24 24 0"/><circle pathLength="1" cx="42" cy="16" r="7"/><path pathLength="1" d="M30 44 q12 -24 24 0" stroke="#a0583a"/></svg><b>Un mismo equipo y un mismo estándar</b><span>proyecto tras proyecto.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M6 12 h34 l12 12 l-12 12 h-34 z"/><circle pathLength="1" cx="14" cy="24" r="2.5"/><circle pathLength="1" class="f" cx="27" cy="18" r="2.5" fill="#a0583a" stroke="none"/><circle pathLength="1" cx="27" cy="18" r="2.5" stroke="#a0583a"/><circle pathLength="1" cx="37" cy="30" r="2.5" stroke="#a0583a"/><line pathLength="1" x1="25" y1="32" x2="39" y2="16" stroke="#a0583a"/></svg><b>Tarifa preferencial</b><span>10% de descuento en los honorarios de cada proyecto que nos deriven.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" class="f" x="8" y="12" width="22" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="8" y="12" width="22" height="22"/><path pathLength="1" d="M30 18 a5 5 0 0 1 0 10"/><rect pathLength="1" x="30" y="12" width="22" height="22" stroke="#a0583a"/></svg><b>Un servicio más completo</b><span>para sus clientes, con interiorismo integral sin ampliar su estructura.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="8" y="6" width="34" height="38"/><line pathLength="1" x1="14" y1="16" x2="36" y2="16"/><line pathLength="1" x1="14" y1="24" x2="32" y2="24"/><line pathLength="1" x1="14" y1="32" x2="28" y2="32"/><path pathLength="1" d="M38 40 L54 24 L58 28 L42 44 Z" fill="#f4e7b9" stroke="#a0583a"/></svg><b>Documentación para la obra</b><span>plantas y listados de referencia para presupuestar y construir.</span></div></div>
+    <div class="mnum">— 10 —</div>
+  </section>
+
+  <section class="ms mphoto macomp">
+    <div class="mbgtop" style="background-image:url('img/acompanamiento.jpg');"></div>
+    <h2 class="mrv">Acompañamiento <span>del proyecto</span></h2>
+    <p class="mrv mlead">Elegir un estudio profesional no solo significa definir la estética del espacio. Es contar con un acompañamiento para mejorar la funcionalidad de los espacios que se habitan, una planificación que optimiza tiempos y recursos, y un apoyo para tomar decisiones.</p>
+    <div class="mpils mrv"><div class="pil hv"><svg class="ic2" width="40" height="40" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M8 40 V24 a4 4 0 0 1 4 -4 h4 v10 h20 v-10 h4 a4 4 0 0 1 4 4 v16"/><line pathLength="1" x1="16" y1="30" x2="16" y2="12"/><path pathLength="1" d="M16 12 h20 v18" stroke="#a0583a"/><line pathLength="1" x1="8" y1="40" x2="8" y2="46"/><line pathLength="1" x1="44" y1="40" x2="44" y2="46"/></svg><div>Funcionalidad</div></div><div class="pil hv"><svg class="ic2" width="40" height="40" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="6" y="10" width="40" height="34" rx="2"/><line pathLength="1" x1="6" y1="19" x2="46" y2="19"/><line pathLength="1" x1="15" y1="6" x2="15" y2="13"/><line pathLength="1" x1="37" y1="6" x2="37" y2="13"/><polyline pathLength="1" points="16,31 23,37 36,25" stroke="#a0583a" stroke-width="2"/></svg><div>Planificación</div></div><div class="pil hv"><svg class="ic2" width="40" height="40" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line pathLength="1" x1="26" y1="6" x2="26" y2="48"/><path pathLength="1" d="M26 10 h16 l5 5 l-5 5 h-16" stroke="#a0583a"/><path pathLength="1" d="M26 25 h-16 l-5 5 l5 5 h16"/></svg><div>Decisiones</div></div></div>
+    <div class="mnum">— 11 —</div>
+  </section>
+
+  <section class="ms">
+    <h2 class="mrv">Próximos <span>pasos</span></h2>
+    <div class="mgrid2 mpasos"><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 8 h48 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-28 l-12 10 v-10 h-8 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6 z"/><polyline pathLength="1" points="24,26 32,34 48,18" stroke="#a0583a" stroke-width="2.2"/></svg><div class="mpk">PASO 01</div><b>Confirmación de la propuesta</b><span>Por mail o WhatsApp, para reservar el inicio del proyecto.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" class="f" d="M36 30 L36 6 A24 24 0 0 1 56.78 42 Z" fill="#f4e7b9" stroke="none"/><circle pathLength="1" cx="36" cy="30" r="24"/><polyline pathLength="1" points="36,6 36,30 56.78,42" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="36" y1="30" x2="15.22" y2="42" stroke="#111"/></svg><div class="mpk">PASO 02</div><b>Pago del primer tercio</b><span>Con el pago inicial reservamos la agenda del estudio.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="8" y="10" width="56" height="42"/><line pathLength="1" x1="36" y1="10" x2="36" y2="34"/><line pathLength="1" x1="8" y1="34" x2="50" y2="34"/><line pathLength="1" x1="8" y1="4" x2="64" y2="4" stroke="#a0583a"/><line pathLength="1" x1="8" y1="1" x2="8" y2="7" stroke="#a0583a"/><line pathLength="1" x1="64" y1="1" x2="64" y2="7" stroke="#a0583a"/></svg><div class="mpk">PASO 03</div><b>Anteproyecto de arquitectura</b><span>Recibimos los planos y la documentación del edificio para comenzar el trabajo.</span></div><div class="mg2 hv mrv"><svg class="ic2" width="52" height="42" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" class="f" cx="36" cy="32" rx="18" ry="9" fill="#f4e7b9" stroke="none"/><ellipse pathLength="1" cx="36" cy="32" rx="18" ry="9"/><circle pathLength="1" cx="36" cy="12" r="5"/><circle pathLength="1" cx="36" cy="52" r="5"/><circle pathLength="1" cx="8" cy="32" r="5" stroke="#a0583a"/><circle pathLength="1" cx="64" cy="32" r="5" stroke="#a0583a"/></svg><div class="mpk">PASO 04</div><b>Reunión de inicio</b><span>Encuentro con el Cliente y el equipo de arquitectura para definir necesidades y prioridades.</span></div></div>
+    <p class="mnote mrv" style="text-align:center; margin-top:28px;">Esta propuesta tiene una validez de 15 días a partir de su fecha de emisión.</p>
+    <div class="mnum">— 12 —</div>
+  </section>
+
+  <section class="ms mphoto mgr">
+    <div class="mbg" style="background-image:url('img/gracias.jpg');"></div>
+    <div class="mcard mrv" style="text-align:center;">
+      <h2 style="text-align:center;">¡Muchas <span>gracias!</span></h2>
+      <p style="font-style:italic; margin-top:10px;">Quedamos a disposición</p>
+      <p style="margin-top:12px;">Arquitecta<br><b>Clara Tacco Carulli</b><br><a class="mtel" href="tel:+5492995046147">+54 9 299 504-6147</a></p>
+      <p style="margin-top:10px;">Diseñadora de interiores<br><b>Lucía Da Silva</b><br><a class="mtel" href="tel:+5491135659808">+54 9 11 3565-9808</a></p>
+      <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener" style="display:inline-block; margin-top:8px; color:#111; text-decoration:none; border:1px solid #111;">Conocé nuestros proyectos <b class="wa" style="display:inline-block; margin-left:6px;">→</b></a>
+      <div style="margin-top:8px; font-size:11.5px; color:#555;">luciadasilvaestudio.com.ar</div>
+    </div>
+  </section>
+</div>
+<div id="stage">
+<nav id="sec">
+  <button data-to="0">Inicio</button>
+  <button data-to="1">Contenido</button>
+  <button data-to="2">01 · Propuesta general</button>
+  <button data-to="6">02 · Alcance</button>
+  <button data-to="8">03 · Etapas y honorarios</button>
+  <button data-to="10">04 · Alianza y próximos pasos</button>
+</nav>
+
+<!-- PORTADA -->
+<section class="slide" id="portada">
+  <svg id="cvsvg" style="position:absolute; left:0; top:-30px;" width="1440" height="810" viewBox="0 0 1440 810" fill="none" stroke="#111" stroke-width="1.1" stroke-opacity=".12">
+    <g class="cs draw" data-k="26" style="--d:0.10s"><polygon points="720,110 1020,260 720,410 420,260"/><polyline points="420,260 420,274 720,424 1020,274 1020,260"/><line x1="720" y1="410" x2="720" y2="424"/></g>
+    <g class="cs draw" data-k="16" style="--d:0.45s"><polygon points="720,262 1020,412 720,562 420,412"/><polyline points="420,412 420,426 720,576 1020,426 1020,412"/><line x1="720" y1="562" x2="720" y2="576"/></g>
+    <g class="cs draw" data-k="8" style="--d:0.80s"><polygon points="720,414 1020,564 720,714 420,564"/><polyline points="420,564 420,578 720,728 1020,578 1020,564"/><line x1="720" y1="714" x2="720" y2="728"/></g>
+    <g class="draw" style="--d:1.2s"><g stroke-dasharray="3 6"><line x1="420" y1="274" x2="420" y2="412"/><line x1="1020" y1="274" x2="1020" y2="412"/><line x1="720" y1="424" x2="720" y2="562"/><line x1="420" y1="426" x2="420" y2="564"/><line x1="1020" y1="426" x2="1020" y2="564"/><line x1="720" y1="576" x2="720" y2="714"/></g></g>
+  </svg>
+  <div class="date">Octubre 2026</div>
+  <div style="position:absolute; left:0; right:0; top:300px; text-align:center;"><div style="display:inline-block; background:#fff; box-shadow:0 0 60px 46px #fff; padding:6px 24px;">
+    <div class="trk" style="--d:.3s; --ls:.42em; font-weight:700; font-size:44px;">PROPUESTA</div>
+    <div class="trk" style="--d:.6s; --ls:.42em; font-weight:300; font-size:22px; margin-top:12px;">DE INTERIORISMO</div>
+    <div class="rv" style="--d:.7s; font-weight:400; letter-spacing:.34em; font-size:14px; margin-top:30px;">OFICINAS CORPORATIVAS, PLANTA DE PRODUCCIÓN DE ALIMENTOS</div>
+    <div class="rv" style="--d:.85s; font-style:italic; font-size:13px; margin-top:12px; color:#333;">Pilar, Buenos Aires — Argentina</div>
+  </div></div>
+  <div class="rv" style="--d:1.1s; position:absolute; left:0; right:0; bottom:60px; text-align:center; font-size:13px; color:#222;">
+    Arquitecta <b>Clara Tacco Carulli</b> &nbsp;&nbsp;·&nbsp;&nbsp; Diseñadora de interiores <b>Lucía Da Silva</b>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<section class="slide">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; inset:0; background:var(--yellow);"></div>
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/contenido.jpg'); opacity:.42;"></div>
+  <div class="rv" style="position:absolute; left:300px; top:195px; width:840px; height:420px; background:#fff; display:flex; align-items:center; padding:60px 64px;"><div style="display:grid; grid-template-columns: 300px 1fr; align-items:stretch; width:100%;">
+    <div><div style="font-weight:700; letter-spacing:.24em; font-size:28px; line-height:1; margin-top:1px;">CONTENIDO</div></div>
+    <div class="idx" style="font-size:13.5px; display:grid; row-gap:18px;">
+      <a data-go="2"><b>01 / Propuesta general</b><br><span style="color:#555">Nuestra mirada, el edificio en tres niveles y su crecimiento.</span></a>
+      <a data-go="6"><b>02 / Alcance del proyecto</b><br><span style="color:#555">Qué incluye la propuesta de interiorismo integral.</span></a>
+      <a data-go="8"><b>03 / Etapas y honorarios</b><br><span style="color:#555">Etapas de trabajo e inversión.</span></a>
+      <a data-go="10"><b>04 / Alianza y próximos pasos</b><br><span style="color:#555">Cómo seguimos y cómo podemos crecer juntos.</span></a>
+    </div>
+  </div></div>
+  <div class="num">— 01 —</div>
+</section>
+
+<!-- PROPUESTA GENERAL -->
+<section class="slide" id="propuesta">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; left:0; right:0; top:0; height:810px; display:flex; align-items:center; justify-content:center;"><div style="display:grid; grid-template-columns: 330px 700px; align-items:start;">
+    <div class="rv" style="--d:.1s"><div style="font-weight:700; letter-spacing:.2em; font-size:26px; line-height:1; margin-top:3px;">PROPUESTA</div><div style="font-weight:300; letter-spacing:.2em; font-size:26px; line-height:1; margin-top:10px;">GENERAL</div>
+      <svg id="pgsvg" width="230" height="190" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-top:46px; display:block;">
+        <g class="pgi on"><path pathLength="1" d="M103 160 V100 a12 12 0 0 1 24 0 V160" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M89 160 V100 a26 26 0 0 1 52 0 V160"/><path pathLength="1" d="M75 160 V100 a40 40 0 0 1 80 0 V160"/><path pathLength="1" d="M61 160 V100 a54 54 0 0 1 108 0 V160"/></g>
+        <g class="pgi"><polygon class="f" points="115,18 175,46 115,74 55,46" fill="#2f2a26" stroke="none"/><polygon pathLength="1" points="115,18 175,46 115,74 55,46"/><polygon class="f" points="115,60 175,88 115,116 55,88" fill="#b49a7c" stroke="none"/><polygon pathLength="1" points="115,60 175,88 115,116 55,88"/><polygon class="f" points="115,102 175,130 115,158 55,130" fill="#ece5da" stroke="none"/><polygon pathLength="1" points="115,102 175,130 115,158 55,130"/></g>
+        <g class="pgi"><line pathLength="1" x1="40" y1="112" x2="190" y2="112"/><line pathLength="1" x1="55" y1="112" x2="55" y2="168"/><line pathLength="1" x1="175" y1="112" x2="175" y2="168"/><rect pathLength="1" x="105" y="68" width="56" height="36" rx="2"/><line pathLength="1" x1="133" y1="104" x2="133" y2="112"/><path pathLength="1" d="M66 122 v-34 M66 122 h30 v46 M66 122 v46"/><line pathLength="1" x1="190" y1="18" x2="190" y2="52"/><path pathLength="1" d="M176 62 L190 50 L204 62 Z" fill="#f4e7b9"/></g>
+        <g class="pgi"><ellipse pathLength="1" cx="115" cy="146" rx="72" ry="14"/><path pathLength="1" d="M58 140 a57 57 0 0 1 114 0"/><circle pathLength="1" cx="115" cy="78" r="6" fill="#a0583a" stroke="#a0583a"/><line pathLength="1" x1="26" y1="100" x2="26" y2="170"/><path pathLength="1" d="M18 100 v20 a8 8 0 0 0 16 0 v-20"/><line pathLength="1" x1="204" y1="100" x2="204" y2="170"/><path pathLength="1" d="M204 100 q10 18 0 36"/><path pathLength="1" d="M100 52 q6 -10 0 -20 M115 52 q6 -10 0 -20 M130 52 q6 -10 0 -20" stroke="#a0583a"/></g>
+        <g class="pgi"><rect pathLength="1" x="40" y="52" width="130" height="92"/><line pathLength="1" x1="110" y1="52" x2="110" y2="104"/><line pathLength="1" x1="40" y1="104" x2="140" y2="104"/><line pathLength="1" x1="40" y1="34" x2="170" y2="34"/><line pathLength="1" x1="40" y1="28" x2="40" y2="40"/><line pathLength="1" x1="170" y1="28" x2="170" y2="40"/><polygon pathLength="1" points="168,166 204,130 212,138 176,174" fill="#f4e7b9"/><polygon pathLength="1" points="168,166 176,174 162,180"/></g>
+      </svg>
+      <div style="margin-top:14px; font-size:11px; letter-spacing:.18em; color:#6b5d4a; display:flex; align-items:center; gap:8px;"><i style="width:8px; height:8px; border-radius:50%; background:#6b5d4a; animation:pulse 1.6s infinite;"></i>PASÁ EL MOUSE O TOCÁ CADA PUNTO</div>
+    </div>
+    <div style="font-size:16px; line-height:1.6;">
+      <p class="rv" style="--d:.2s; margin-bottom:20px; color:#333;">Proponemos unas oficinas que cuenten quiénes son: una empresa que produce alimentos. La materia prima, el proceso y la precisión se traducen en materiales nobles, orden y buena luz.</p>
+      <div class="rv" style="--d:.4s;">
+        <p class="pgb on" data-i="0"><b>/ Oficinas con identidad propia,</b><br>que reflejen el oficio y los valores de la empresa.</p>
+        <p class="pgb" data-i="1"><b>/ Una distribución clara en tres niveles,</b><br>de lo público a lo privado, pensada para crecer.</p>
+        <p class="pgb" data-i="2"><b>/ Espacios de trabajo cómodos y flexibles,</b><br>con buena acústica, iluminación y zonas de pausa.</p>
+        <p class="pgb" data-i="3"><b>/ Una sala demo memorable,</b><br>donde la degustación se vuelve experiencia de marca.</p>
+        <p class="pgb" data-i="4"><b>/ Un diseño realizable y presupuestable,</b><br>que combina piezas de mercado con diseños a medida.</p>
+      </div>
+    </div>
+  </div></div>
+  <div class="num">— 02 —</div>
+</section>
+
+<!-- TRES NIVELES (interactiva) -->
+<section class="slide" id="niveles">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; left:0; top:0; width:690px; height:810px; background:var(--mint);"></div>
+  <div class="t"><h1>El edificio <span>en tres niveles</span></h1><div class="s">≈ 900 m² de oficinas · De lo público a lo privado</div></div>
+
+  <div id="ov">
+    <svg style="position:absolute; left:0; top:0;" width="1440" height="810" viewBox="0 0 1440 810">
+      <g class="draw" stroke="#8f877b" stroke-width="1" fill="none" style="--d:.2s">
+        <line x1="200" y1="271" x2="200" y2="405"/><line x1="430" y1="386" x2="430" y2="520"/><line x1="610" y1="296" x2="610" y2="430"/>
+        <line x1="200" y1="421" x2="200" y2="555"/><line x1="430" y1="536" x2="430" y2="670"/><line x1="610" y1="446" x2="610" y2="580"/>
+      </g>
+      <g class="lvl rv" data-l="0" style="--d:.2s">
+        <polygon points="200,555 430,670 430,686 200,571" fill="#cfc3b2"/>
+        <polygon points="430,670 610,580 610,596 430,686" fill="#bfb19d"/>
+        <polygon points="380,465 610,580 430,670 200,555" fill="#ece5da" stroke="#6b5d4a" stroke-width="1.2"/>
+        <text x="405" y="574" text-anchor="middle" font-size="15" letter-spacing="4" fill="#222">PB</text>
+      </g>
+      <g class="lvl rv" data-l="1" style="--d:.4s">
+        <polygon points="200,405 430,520 430,536 200,421" fill="#9a8166"/>
+        <polygon points="430,520 610,430 610,446 430,536" fill="#866e55"/>
+        <polygon points="380,315 610,430 430,520 200,405" fill="#b49a7c" stroke="#6b5d4a" stroke-width="1.2"/>
+        <text x="405" y="424" text-anchor="middle" font-size="15" letter-spacing="4" fill="#fff">1°</text>
+      </g>
+      <g class="lvl rv" data-l="2" style="--d:.6s">
+        <polygon points="200,255 430,370 430,386 200,271" fill="#1d1a17"/>
+        <polygon points="430,370 610,280 610,296 430,386" fill="#141210"/>
+        <polygon points="380,165 610,280 430,370 200,255" fill="#2f2a26" stroke="#2f2a26" stroke-width="1.2"/>
+        <text x="405" y="274" text-anchor="middle" font-size="15" letter-spacing="4" fill="#fff">2°</text>
+      </g>
+      <g class="draw" stroke="#111" stroke-width="1.1" style="--d:.9s">
+        <line x1="610" y1="280" x2="740" y2="280"/><line x1="610" y1="430" x2="740" y2="430"/><line x1="610" y1="580" x2="740" y2="580"/>
+      </g>
+    </svg>
+    <div class="lvltx rv" data-l="2" style="--d:.9s; position:absolute; left:770px; top:226px; width:600px;">
+      <div class="k">Segundo piso · Privado</div>
+      <p style="font-size:14px; margin-top:6px;"><b>Tres oficinas para los socios, gerencia y Recursos Humanos.</b><br><span style="color:#444;">Y la sala demo de degustación: el lugar donde la marca se prueba.</span></p>
+      <div class="go">EXPLORAR EL NIVEL →</div>
+    </div>
+    <div class="lvltx rv" data-l="1" style="--d:1s; position:absolute; left:770px; top:376px; width:600px;">
+      <div class="k">Primer piso · Semipúblico</div>
+      <p style="font-size:14px; margin-top:6px;"><b>Área de trabajo tipo cowork para unas 30 personas.</b><br><span style="color:#444;">Compras y equipos administrativos, mesas compartidas y zonas de pausa.</span></p>
+      <div class="go">EXPLORAR EL NIVEL →</div>
+    </div>
+    <div class="lvltx rv" data-l="0" style="--d:1.1s; position:absolute; left:770px; top:526px; width:600px;">
+      <div class="k">Planta baja · Público</div>
+      <p style="font-size:14px; margin-top:6px;"><b>Recepción y salas de reuniones.</b><br><span style="color:#444;">La primera impresión de la empresa para clientes, proveedores y visitas.</span></p>
+      <div class="go">EXPLORAR EL NIVEL →</div>
+    </div>
+    <div class="hint rv" style="--d:1.4s;"><i></i>HACÉ CLIC EN CADA NIVEL PARA EXPLORARLO</div>
+  </div>
+
+  <div id="dt">
+    <svg style="position:absolute; left:0; top:0;" width="1440" height="810" viewBox="0 0 1440 810">
+      <polygon points="220,345 660,565 660,583 220,363" fill="#d9d1c4"/>
+      <polygon points="660,565 1000,395 1000,413 660,583" fill="#cbc1b2"/>
+      <polygon points="560,175 1000,395 660,565 220,345" fill="#fbfaf7" stroke="#6b5d4a" stroke-width="1.4"/>
+      <g id="plan" transform="matrix(4.4 2.2 -5.6667 2.8333 560 175)"></g>
+    </svg>
+    <div id="chips"></div>
+    <div style="position:absolute; left:1050px; top:190px; width:340px;">
+      <button class="back" id="back">← VOLVER AL EDIFICIO</button>
+      <div id="dtk" class="k" style="margin-top:28px;"></div>
+      <div id="dth" style="font-weight:700; letter-spacing:.2em; font-size:22px; margin-top:6px;"></div>
+      <p id="dtq" style="margin-top:16px; font-size:15px; font-style:italic; line-height:1.5; color:#222;"></p>
+      <div class="legend"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div>
+      <div class="k" style="margin-top:22px;">Lo que vamos a diseñar</div>
+      <div id="dtlist" style="margin-top:10px;"></div>
+      <div class="tabs"><button data-l="0">PB</button><button data-l="1">1°</button><button data-l="2">2°</button></div>
+      <p style="margin-top:26px; font-size:11px; color:#666; font-style:italic; line-height:1.5;">La propuesta de distribución se presenta en la etapa de concepto, sobre el anteproyecto de arquitectura.</p>
+    </div>
+  </div>
+  <div class="num">— 03 —</div>
+</section>
+
+<!-- VERSATILIDAD -->
+<section class="slide" id="crecer">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; left:110px; top:0; height:810px; width:560px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="rv" style="--d:.1s; font-weight:700; letter-spacing:.2em; font-size:26px; line-height:1;">PENSADO</div>
+    <div class="rv" style="--d:.15s; font-weight:300; letter-spacing:.2em; font-size:26px; line-height:1; margin-top:10px;">PARA CRECER</div>
+    <p class="rv" style="--d:.3s; margin-top:30px; font-size:16px; line-height:1.6; color:#222;">Diseñamos para hoy y para lo que viene: oficinas que acompañen el crecimiento de la compañía y estén preparadas para recibir a nuevos integrantes.</p>
+    <p class="rv" style="--d:.4s; margin-top:24px; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#6b5d4a;">Algunas estrategias posibles</p>
+    <div style="margin-top:12px; font-size:14px;">
+      <p class="rv" style="--d:0.45s; margin-bottom:4px;"><span class="cb" data-c="0"><b>/ Distribuciones modulares,</b><br><span style="color:#444;">que puedan ampliarse sin grandes reformas.</span></span></p>
+      <p class="rv" style="--d:0.57s; margin-bottom:4px;"><span class="cb" data-c="1"><b>/ Mobiliario adaptable,</b><br><span style="color:#444;">para sumar puestos o cambiar usos.</span></span></p>
+      <p class="rv" style="--d:0.69s; margin-bottom:4px;"><span class="cb" data-c="2"><b>/ Instalaciones con margen,</b><br><span style="color:#444;">en electricidad, datos e iluminación.</span></span></p>
+      <p class="rv" style="--d:0.81s; margin-bottom:4px;"><span class="cb" data-c="3"><b>/ Espacios flexibles,</b><br><span style="color:#444;">que puedan cambiar de función.</span></span></p>
+    </div>
+    <p class="rv" style="--d:.95s; margin-top:10px; font-size:13px; font-style:italic; color:#555;">Las definimos junto al Cliente, según su proyección de crecimiento.</p>
+    <div class="rv" style="--d:1.2s; margin-top:16px; font-size:10.5px; letter-spacing:.22em; color:rgba(107,93,74,.7); display:flex; align-items:center; gap:10px;"><i style="width:7px; height:7px; border-radius:50%; background:rgba(107,93,74,.6); animation:pulse 1.6s infinite;"></i>PASÁ EL MOUSE POR CADA ESTRATEGIA</div>
+  </div>
+  <div class="grow rv" style="--d:.4s;">
+    <svg style="position:absolute; left:740px; top:150px;" width="640" height="520" viewBox="740 150 640 520">
+      <g transform="matrix(4.2 2.1 -4.2 2.1 890 236)" class="vx">
+        <rect x="0" y="0" width="100" height="40" fill="#fbfaf7" stroke="#111" stroke-width="1.2"/>
+        <rect class="zone" x="60" y="0" width="40" height="40" fill="none" stroke="#a0583a" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <g class=""><rect x="2" y="15" width="16" height="10" fill="#fff" stroke="#111" stroke-width="1.2"/><circle cx="6" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="14" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="6" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="14" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g><g class=""><rect x="22" y="15" width="16" height="10" fill="#fff" stroke="#111" stroke-width="1.2"/><circle cx="26" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="34" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="26" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="34" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g><g class=""><rect x="42" y="15" width="16" height="10" fill="#fff" stroke="#111" stroke-width="1.2"/><circle cx="46" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="54" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="46" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="54" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g>
+        <g class="fm" style="--i:1"><rect x="62" y="15" width="16" height="10" fill="#f6e1d6" stroke="#111" stroke-width="1.2"/><circle cx="66" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="74" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="66" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="74" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g><g class="fm" style="--i:2"><rect x="82" y="15" width="16" height="10" fill="#f6e1d6" stroke="#111" stroke-width="1.2"/><circle cx="86" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="94" cy="12" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="86" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/><circle cx="94" cy="28" r="1.7" fill="#fff" stroke="#6b5d4a" stroke-width="1"/></g>
+        <g class="elec"><line x1="0" y1="20" x2="100" y2="20" stroke="#a0583a" stroke-width="1" stroke-dasharray="2 2"/><circle cx="10" cy="20" r="1.6" fill="#a0583a"/><circle cx="30" cy="20" r="1.6" fill="#a0583a"/><circle cx="50" cy="20" r="1.6" fill="#a0583a"/><circle cx="70" cy="20" r="1.6" fill="#a0583a"/><circle cx="90" cy="20" r="1.6" fill="#a0583a"/></g>
+      </g>
+      <text x="1200" y="560" font-size="12" letter-spacing="2" fill="#a0583a" font-style="italic">espacio previsto</text>
+    </svg>
+    <div style="position:absolute; left:780px; top:600px; display:flex; align-items:center; gap:28px;">
+      <div style="display:flex; align-items:baseline; gap:10px;"><span id="seats" style="font-weight:300; font-size:54px; line-height:1;">30</span><span class="k">puestos</span></div>
+      <div class="tabs2"><button data-g="0" class="on">HOY</button><button data-g="1">A FUTURO</button></div>
+    </div>
+  </div>
+  <div class="num">— 04 —</div>
+</section>
+
+<!-- MIRADA A FUTURO -->
+<section class="slide" id="mirada">
+  <div class="zoom" style="position:absolute; inset:0;"><div class="img" style="position:absolute; left:0; top:0; width:720px; height:810px; background-image:url('img/mirada.jpg'); background-position:left center;"></div><div class="img" style="position:absolute; left:720px; top:0; width:720px; height:810px; background-image:url('img/mirada.jpg'); background-position:left center; transform:scaleX(-1);"></div></div>
+  <div id="spot"></div>
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; left:0; right:0; top:0; height:810px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+    <div class="rv" style="--d:0.1s; font-weight:700; letter-spacing:.2em; font-size:26px; text-transform:uppercase;">Mirada <span style="font-weight:300;">a futuro</span></div>
+    <p class="rv" style="--d:0.25s; margin-top:32px; width:760px; text-align:center; font-size:16px; color:#333;">Para que el diseño acompañe la evolución de la empresa, nos interesa conocer su visión a mediano y largo plazo.</p>
+    <div class="rv" style="--d:0.4s; width:1180px; margin-top:44px; display:grid; grid-template-columns:repeat(4,1fr); gap:22px;">
+      <div class="qc hv" style="position:relative; background:#fff; box-shadow:0 10px 28px rgba(0,0,0,.07); padding:26px 24px 30px; min-height:220px;"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:16px;"><circle pathLength="1" cx="30" cy="30" r="8"/><path pathLength="1" d="M16 64 q14 -26 28 0"/><circle pathLength="1" cx="56" cy="30" r="8"/><path pathLength="1" d="M42 64 q14 -26 28 0"/><line pathLength="1" x1="94" y1="24" x2="94" y2="50" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="81" y1="37" x2="107" y2="37" stroke="#a0583a" stroke-width="2"/></svg><div style="font-weight:300; font-size:38px; line-height:1; color:#a0583a;">01</div><p style="margin-top:58px; font-size:14.5px; line-height:1.5;">¿Cuántas personas prevén sumar en los próximos tres a cinco años?</p></div>
+      <div class="qc hv" style="position:relative; background:#fff; box-shadow:0 10px 28px rgba(0,0,0,.07); padding:26px 24px 30px; min-height:220px;"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:16px;"><rect pathLength="1" class="f" x="20" y="58" width="14" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="20" y="58" width="14" height="22"/><rect pathLength="1" x="42" y="46" width="14" height="34"/><rect pathLength="1" x="64" y="32" width="14" height="48"/><path pathLength="1" d="M18 36 L58 18 L94 10" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M84 4 L96 10 L88 20" stroke="#a0583a" stroke-width="2"/></svg><div style="font-weight:300; font-size:38px; line-height:1; color:#a0583a;">02</div><p style="margin-top:58px; font-size:14.5px; line-height:1.5;">¿Qué áreas de la empresa creen que van a crecer o cambiar?</p></div>
+      <div class="qc hv" style="position:relative; background:#fff; box-shadow:0 10px 28px rgba(0,0,0,.07); padding:26px 24px 30px; min-height:220px;"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:16px;"><rect pathLength="1" x="18" y="12" width="32" height="66"/><circle pathLength="1" cx="43" cy="46" r="2"/><line pathLength="1" x1="56" y1="46" x2="66" y2="46" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M62 41 L68 46 L62 51" stroke="#a0583a" stroke-width="2"/><circle pathLength="1" cx="88" cy="30" r="8"/><path pathLength="1" d="M74 76 q14 -32 28 0"/></svg><div style="font-weight:300; font-size:38px; line-height:1; color:#a0583a;">03</div><p style="margin-top:58px; font-size:14.5px; line-height:1.5;">¿Esperan recibir más visitas de clientes, proveedores o inversores?</p></div>
+      <div class="qc hv" style="position:relative; background:#fff; box-shadow:0 10px 28px rgba(0,0,0,.07); padding:26px 24px 30px; min-height:220px;"><svg class="ic2" width="96" height="72" viewBox="0 0 120 90" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:16px; top:16px;"><polygon pathLength="1" class="f" points="36,40 60,28 84,40 60,52" fill="#f4e7b9" stroke="none"/><path pathLength="1" d="M36 40 L60 28 L84 40 L60 52 Z"/><path pathLength="1" d="M36 40 V66 L60 78 V52"/><path pathLength="1" d="M84 40 V66 L60 78"/><line pathLength="1" x1="98" y1="6" x2="98" y2="26" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="88" y1="16" x2="108" y2="16" stroke="#a0583a" stroke-width="2"/></svg><div style="font-weight:300; font-size:38px; line-height:1; color:#a0583a;">04</div><p style="margin-top:58px; font-size:14.5px; line-height:1.5;">¿Proyectan nuevos productos o servicios que impacten en las oficinas?</p></div>
+    </div>
+    <div class="hint2 rv" style="--d:1s; position:static; margin-top:34px;"><i></i>PASÁ EL MOUSE O TOCÁ CADA PREGUNTA</div>
+  </div>
+  <div class="num">— 05 —</div>
+</section>
+
+<!-- ALCANCE -->
+<section class="slide" id="alcance">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div class="t"><h1>Alcance <span>del proyecto</span></h1><div class="s">Propuesta de interiorismo integral · Planta baja, primer y segundo piso</div></div>
+  <p class="rv" style="--d:.15s; position:absolute; left:56px; width:900px; top:190px; font-size:14.5px; color:#333;">Trabajamos junto al equipo de arquitectura desde el anteproyecto, para que el interiorismo nazca integrado al edificio y llegue a obra con toda la documentación necesaria.</p>
+  <div class="stg rv" style="--d:.3s">
+    <div class="st on" data-s="0">
+      <span class="more">Ver detalle <b>→</b></span><span class="next" data-to="1">Siguiente etapa <b>→</b></span><span class="step">ETAPA 1 DE 3</span>
+      <svg class="ic" width="62" height="52" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="44" height="56" rx="2" pathLength="1"/><line x1="14" y1="18" x2="42" y2="18" pathLength="1"/><line x1="14" y1="28" x2="38" y2="28" pathLength="1"/><line x1="14" y1="38" x2="34" y2="38" pathLength="1"/><circle cx="56" cy="42" r="14" pathLength="1"/><line x1="66" y1="52" x2="80" y2="66" pathLength="1"/></svg>
+      <div class="no">01</div><div class="ti">Análisis y concepto</div><div class="su">Entendemos la empresa y definimos el concepto.</div>
+      <ul><li>Análisis del anteproyecto de arquitectura junto al equipo constructor.</li><li>Entrevista con el Cliente: necesidades, usos, puestos y crecimiento futuro.</li><li>Inmersión en la empresa: cómo trabajan sus equipos, cómo reciben y qué los hace únicos.</li><li>Concepto de diseño, paleta y referencias, alineados a la identidad de la marca.</li><li>Zonificación de los tres niveles.</li></ul>
+    </div>
+    <div class="st" data-s="1">
+      <span class="more">Ver detalle <b>→</b></span><span class="next" data-to="2">Siguiente etapa <b>→</b></span><span class="step">ETAPA 2 DE 3</span>
+      <svg class="ic" width="62" height="52" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><line x1="56" y1="0" x2="56" y2="16" pathLength="1"/><path d="M44 28 Q56 10 68 28 Z" pathLength="1"/><path d="M10 64 L10 40 Q10 32 18 32 L18 48 L50 48 L50 32 Q58 32 58 40 L58 64" pathLength="1"/><line x1="18" y1="48" x2="18" y2="58" pathLength="1"/><line x1="10" y1="58" x2="58" y2="58" pathLength="1"/></svg>
+      <div class="no">02</div><div class="ti">Diseño integral</div><div class="su">Diseñamos cada espacio y cada mueble, y lo hacemos visible.</div>
+      <ul><li>Distribución y equipamiento de los tres niveles.</li><li>Materialidad y terminaciones: pisos, revestimientos, cielorrasos y textiles.</li><li>Diseño de iluminación por sector.</li><li>Mobiliario: diseño a medida y selección de piezas de mercado.</li><li>Modelado 3D, renders y video de recorrido virtual.</li></ul>
+    </div>
+    <div class="st" data-s="2">
+      <span class="more">Ver detalle <b>→</b></span><span class="next" data-to="0"><b style="animation:none">←</b> Volver a la primera</span><span class="step">ETAPA 3 DE 3</span>
+      <svg class="ic" width="62" height="52" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10" width="64" height="50" pathLength="1"/><line x1="6" y1="34" x2="40" y2="34" pathLength="1"/><line x1="40" y1="10" x2="40" y2="60" pathLength="1"/><line x1="6" y1="4" x2="70" y2="4" pathLength="1"/><line x1="6" y1="1" x2="6" y2="7" pathLength="1"/><line x1="70" y1="1" x2="70" y2="7" pathLength="1"/><circle cx="56" cy="24" r="6" pathLength="1"/><line x1="52" y1="20" x2="60" y2="28" pathLength="1"/><line x1="60" y1="20" x2="52" y2="28" pathLength="1"/></svg>
+      <div class="no">03</div><div class="ti">Documentación</div><div class="su">Todo lo necesario para llevar la propuesta a obra.</div>
+      <ul><li>Planos en planta de distribución y equipamiento.</li><li>Planos de mobiliario a medida para fabricación.</li><li>Planos de electricidad con bocas de iluminación.</li><li>Listado de mobiliario y materiales de referencia.</li><li>Presentación final integral.</li></ul>
+    </div>
+  </div>
+  <div class="hint2 rv" style="--d:1s; top:206px; left:auto; right:56px; justify-content:flex-end;"><i></i>PASÁ EL MOUSE O TOCÁ CADA ETAPA</div>
+  <p style="position:absolute; left:56px; right:56px; top:700px; text-align:center; font-size:12px; color:#666; font-style:italic;">Las piezas de mercado se proponen como referencia y pueden variar según la disponibilidad al momento de la compra. Las piezas a medida se diseñan para su fabricación.</p>
+  <div class="num">— 06 —</div>
+</section>
+
+<!-- DEL ESPACIO A LA MARCA -->
+<section class="slide">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/marca.jpg');"></div>
+  <div class="rv" style="--d:.3s; position:absolute; left:250px; top:190px; width:940px; height:430px; background:#fff; display:flex; align-items:center; padding:60px 64px;"><div style="display:grid; grid-template-columns: 300px 1fr; align-items:stretch; width:100%;">
+    <div style="display:flex; flex-direction:column; justify-content:space-between;">
+      <div style="font-weight:700; letter-spacing:.24em; font-size:26px; line-height:1.3;">DEL ESPACIO</div>
+      <div style="font-weight:300; letter-spacing:.24em; font-size:26px; line-height:1.3;">A LA MARCA</div>
+    </div>
+    <div style="font-size:13.5px; color:#333;">
+      <p style="margin-bottom:16px;">Mudarse a un edificio nuevo es una oportunidad para mostrar quién es hoy la empresa. El interiorismo define colores, materiales, texturas y un lenguaje visual propio.</p>
+      <p style="margin-bottom:16px;">Sin ser un servicio de branding, la propuesta deja una <b class="hl">base estética clara y coherente</b> que la empresa puede tomar como punto de partida si decide actualizar su imagen corporativa.</p>
+      <p>Lo físico impulsa lo intangible: un espacio con identidad ordena también cómo se comunica la marca.</p>
+    </div>
+  </div></div>
+  <div class="num">— 07 —</div>
+</section>
+
+<!-- PLAZOS -->
+<section class="slide" id="plazos">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div class="t"><h1>Etapas <span>de trabajo</span></h1><div class="s">Plazos a coordinar con el Cliente según necesidad y disponibilidad</div></div>
+  <svg style="position:absolute; left:0; top:0;" width="1440" height="810">
+    <g transform="translate(0,120)">
+      <g class="draw" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="round" style="--d:.3s">
+      <!-- semana 1: planos -->
+      <g class="ico" data-p="0">
+        <polygon points="205,207 251,230 205,253 159,230"/>
+        <polygon points="205,191 251,214 205,237 159,214"/>
+        <line x1="183" y1="208" x2="217" y2="225"/><line x1="193" y1="203" x2="227" y2="220"/><line x1="203" y1="198" x2="225" y2="209"/>
+        <rect class="hit" x="135" y="160" width="140" height="110"/>
+      </g>
+      <!-- semana 2: zonificacion -->
+      <g class="ico" data-p="1">
+        <polygon points="548,182 598,207 548,232 498,207"/>
+        <polyline points="498,207 498,215 548,240 598,215 598,207"/>
+        <line x1="548" y1="232" x2="548" y2="240"/>
+        <line x1="523" y1="194.5" x2="573" y2="219.5"/><line x1="560" y1="188" x2="535" y2="200.5"/>
+        <rect class="hit" x="478" y="160" width="140" height="110"/>
+      </g>
+      <!-- semana 3: modelado 3D -->
+      <g class="ico" data-p="2">
+        <polygon points="891,176 927,194 891,212 855,194"/>
+        <polyline points="855,194 855,234 891,252 927,234 927,194"/>
+        <line x1="891" y1="212" x2="891" y2="252"/>
+        <rect class="hit" x="821" y="160" width="140" height="110"/>
+      </g>
+      <!-- semana 4: render y video -->
+      <g class="ico" data-p="3">
+        <rect x="1186" y="180" width="96" height="58" rx="2"/>
+        <line x1="1234" y1="238" x2="1234" y2="250"/><line x1="1216" y1="250" x2="1252" y2="250"/>
+        <polygon points="1226,197 1248,209 1226,221"/>
+        <rect class="hit" x="1164" y="160" width="140" height="110"/>
+      </g>
+      </g>
+      <line x1="56" y1="300" x2="1384" y2="300" stroke="#111" stroke-width="1.2"/>
+      <g fill="#fff" stroke="#111" stroke-width="1.5"><circle cx="56" cy="300" r="7"/><circle cx="388" cy="300" r="7"/><circle cx="720" cy="300" r="7"/><circle cx="1052" cy="300" r="7"/></g>
+      <circle cx="1384" cy="300" r="9" fill="#111"/>
+    </g>
+  </svg>
+  <div style="position:absolute; left:56px; right:56px; top:492px; display:grid; grid-template-columns: repeat(4,1fr); gap:44px; font-size:13.5px;">
+    <div class="wk rv" data-p="0" style="--d:0.4s"><div class="k">Etapa 1</div><div style="font-style:italic; font-size:14px; margin-top:8px;">Análisis y programa</div><p style="margin-top:12px; color:#333;">Estudio del anteproyecto, reunión con el Cliente y definición de necesidades de cada nivel.</p></div>
+    <div class="wk rv" data-p="1" style="--d:0.6s"><div class="k">Etapa 2</div><div style="font-style:italic; font-size:14px; margin-top:8px;">Concepto y distribución</div><p style="margin-top:12px; color:#333;">Concepto, paleta y zonificación de los tres niveles. Reunión de validación con el Cliente.</p></div>
+    <div class="wk rv" data-p="2" style="--d:0.8s"><div class="k">Etapa 3</div><div style="font-style:italic; font-size:14px; margin-top:8px;">Desarrollo</div><p style="margin-top:12px; color:#333;">Modelado 3D, materiales, iluminación y mobiliario.</p></div>
+    <div class="wk rv" data-p="3" style="--d:1.0s"><div class="k">Etapa 4</div><div style="font-style:italic; font-size:14px; margin-top:8px;">Renders y presentación</div><p style="margin-top:12px; color:#333;">Renders, video de recorrido virtual, documentación y presentación final integral.</p></div>
+  </div>
+  <div class="pop" data-pop="0" style="left:56px;">
+    <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <circle class="d" pathLength="1" cx="62" cy="112" r="16" style="--a:.1s"/>
+      <path class="d" pathLength="1" d="M32 172 Q62 128 92 172" style="--a:.3s"/>
+      <circle class="b" cx="92" cy="90" r="4" fill="#fff" style="--a:.6s"/>
+      <circle class="b" cx="106" cy="71" r="7" fill="#fff" style="--a:.75s"/>
+      <rect class="f" x="120" y="16" width="160" height="112" rx="22" fill="#f4e7b9" stroke="none" style="--a:.9s"/>
+      <rect class="d" pathLength="1" x="120" y="16" width="160" height="112" rx="22" style="--a:.9s"/>
+      <rect class="d" pathLength="1" x="138" y="39" width="12" height="12" style="--a:1.2s"/><line class="d" pathLength="1" x1="160" y1="45" x2="262" y2="45" style="--a:1.3s"/>
+      <rect class="d" pathLength="1" x="138" y="65" width="12" height="12" style="--a:1.4s"/><line class="d" pathLength="1" x1="160" y1="71" x2="240" y2="71" style="--a:1.5s"/>
+      <rect class="d" pathLength="1" x="138" y="91" width="12" height="12" style="--a:1.6s"/><line class="d" pathLength="1" x1="160" y1="97" x2="252" y2="97" style="--a:1.7s"/>
+      <polyline class="d" pathLength="1" points="139,44 143,49 151,37" stroke="#6b5d4a" stroke-width="2.2" style="--a:2s"/>
+      <polyline class="d" pathLength="1" points="139,70 143,75 151,63" stroke="#6b5d4a" stroke-width="2.2" style="--a:2.3s"/>
+      <polyline class="d" pathLength="1" points="139,96 143,101 151,89" stroke="#6b5d4a" stroke-width="2.2" style="--a:2.6s"/>
+    </svg>
+    <div class="cap">Escuchamos y relevamos necesidades</div>
+  </div>
+  <div class="pop" data-pop="1" style="left:398px;">
+    <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round">
+      <rect class="f" x="40" y="20" width="110" height="75" fill="#f4e7b9" stroke="none" style="--a:1.0s"/>
+      <rect class="f" x="150" y="20" width="110" height="65" fill="#d3e8df" stroke="none" style="--a:1.3s"/>
+      <rect class="f" x="40" y="95" width="110" height="65" fill="#ead2c1" stroke="none" style="--a:1.6s"/>
+      <rect class="f" x="150" y="85" width="110" height="75" fill="#ece5da" stroke="none" style="--a:1.9s"/>
+      <rect class="d" pathLength="1" x="40" y="20" width="220" height="140" stroke-width="2" style="--a:.1s"/>
+      <line class="d" pathLength="1" x1="150" y1="20" x2="150" y2="160" style="--a:.5s"/>
+      <line class="d" pathLength="1" x1="40" y1="95" x2="150" y2="95" style="--a:.7s"/>
+      <line class="d" pathLength="1" x1="150" y1="85" x2="260" y2="85" style="--a:.8s"/>
+      <path class="d" pathLength="1" d="M150 120 A16 16 0 0 1 134 136" stroke-dasharray="3 3" style="--a:2.2s"/>
+    </svg>
+    <div class="cap">Zonificamos cada nivel</div>
+  </div>
+  <div class="pop" data-pop="2" style="left:741px;">
+    <svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.1" stroke-linejoin="round">
+      <defs><radialGradient id="glw"><stop offset="0" stop-color="#ffd86b" stop-opacity=".95"/><stop offset="1" stop-color="#ffd86b" stop-opacity="0"/></radialGradient></defs>
+      <g class="dr" style="--a:.2s"><g transform="translate(70,150)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#ece5da"/><polygon points="0,0 22,-11 22,11 0,22" fill="#d9d1c4"/></g></g>
+      <g class="dr" style="--a:.45s"><g transform="translate(92,161)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#ece5da"/><polygon points="0,0 22,-11 22,11 0,22" fill="#d9d1c4"/></g></g>
+      <g class="dr" style="--a:.7s"><g transform="translate(70,128)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#ece5da"/><polygon points="0,0 22,-11 22,11 0,22" fill="#d9d1c4"/></g></g>
+      <circle class="gl" cx="200" cy="112" r="62" fill="url(#glw)" stroke="none" style="--a:2.1s"/>
+      <polygon class="f" points="186,148 232,171 202,186 156,163" fill="#ead2c1" stroke="none" style="--a:1.5s"/>
+      <polygon class="d" pathLength="1" points="186,148 232,171 202,186 156,163" style="--a:1.0s"/>
+      <line class="d" pathLength="1" x1="156" y1="163" x2="156" y2="182" style="--a:1.3s"/>
+      <line class="d" pathLength="1" x1="232" y1="171" x2="232" y2="188" style="--a:1.3s"/>
+      <line class="d" pathLength="1" x1="198" y1="0" x2="198" y2="70" style="--a:1.6s"/>
+      <polygon class="f" points="184,70 212,70 220,84 176,84" fill="#111" style="--a:1.9s"/>
+    </svg>
+    <div class="cap">Modelamos, equipamos e iluminamos</div>
+  </div>
+  <div class="pop" data-pop="3" style="left:1084px;">
+    <svg viewBox="0 0 300 190" width="300" height="190" stroke="#111" stroke-width="1.1" stroke-linejoin="round">
+      <g class="fall" style="--a:0s"><rect x="16" y="-44" width="56" height="38" fill="#f4e7b9"/><polyline points="22,-12 36,-28 46,-19 54,-30 66,-12" fill="none"/><circle cx="60" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:0.5s"><rect x="92" y="-44" width="56" height="38" fill="#fff"/><polygon points="114,-34 128,-25 114,-16" fill="#111"/></g>
+      <g class="fall" style="--a:0.25s"><rect x="168" y="-44" width="56" height="38" fill="#d3e8df"/><polyline points="174,-12 188,-28 198,-19 206,-30 218,-12" fill="none"/><circle cx="212" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:0.9s"><rect x="236" y="-44" width="56" height="38" fill="#ead2c1"/><polygon points="258,-34 272,-25 258,-16" fill="#111"/></g>
+      <g class="fall" style="--a:1.3s"><rect x="54" y="-44" width="56" height="38" fill="#d3e8df"/><polygon points="76,-34 90,-25 76,-16" fill="#111"/></g>
+      <g class="fall" style="--a:1.1s"><rect x="130" y="-44" width="56" height="38" fill="#fff"/><polyline points="136,-12 150,-28 160,-19 168,-30 180,-12" fill="none"/><circle cx="174" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:1.7s"><rect x="204" y="-44" width="56" height="38" fill="#f4e7b9"/><polyline points="210,-12 224,-28 234,-19 242,-30 254,-12" fill="none"/><circle cx="248" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:2s"><rect x="8" y="-44" width="56" height="38" fill="#ead2c1"/><polyline points="14,-12 28,-28 38,-19 46,-30 58,-12" fill="none"/><circle cx="52" cy="-35" r="3" fill="#111"/></g>
+      <g class="fall" style="--a:2.2s"><rect x="110" y="-44" width="56" height="38" fill="#f4e7b9"/><polygon points="132,-34 146,-25 132,-16" fill="#111"/></g>
+      <g class="fall" style="--a:2.4s"><rect x="226" y="-44" width="56" height="38" fill="#fff"/><polygon points="248,-34 262,-25 248,-16" fill="#111"/></g>
+    </svg>
+    <div class="cap">Renders y recorrido virtual</div>
+  </div>
+  <div class="hint2 rv" style="--d:1.4s;"><i></i>PASÁ EL MOUSE O HACÉ CLIC EN CADA DIBUJO</div>
+  <div class="num">— 08 —</div>
+</section>
+
+<!-- HONORARIOS -->
+<section class="slide">
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/honorarios.jpg'); background-position:left center;"></div>
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; left:0; right:0; top:0; height:810px; display:flex; align-items:center; justify-content:center;"><div style="width:740px; background:#fff; padding:52px 60px 56px;">
+    <div style="font-weight:700; letter-spacing:.2em; font-size:26px; text-transform:uppercase;">Honorarios <span style="font-weight:300;">profesionales</span></div>
+    <div style="font-weight:400; letter-spacing:.26em; text-transform:uppercase; font-size:11px; color:#555; margin-top:6px;">Propuesta de interiorismo integral · Tres niveles</div>
+    <div class="k" style="margin-top:44px;">Inversión</div>
+    <div class="usdwrap"><div class="usdnum" style="font-weight:300; font-size:60px; letter-spacing:.05em; line-height:1.1; margin-top:6px;">USD <span id="usd">11.000</span></div>
+    <div id="usdline"></div></div>
+    <p class="m2note" style="margin-top:14px; font-size:13px; color:#333; line-height:1.5;">Calculado sobre <b>900 m²</b> de oficinas: <b>USD 12,22 por m²</b>. El valor por m² varía según la superficie y la complejidad del proyecto; si el alcance cambia, revisamos los honorarios.</p>
+    <div class="col rv" style="--d:.9s; margin-top:36px;"><div class="h">Modalidad de pago</div><p style="margin-top:10px; color:#333; font-size:13.5px;">En tres pagos iguales: un tercio al confirmar la propuesta, un tercio al presentar el concepto y la distribución de los tres niveles, y el tercio restante al entregar la presentación final. El pago podrá realizarse en pesos argentinos al tipo de cambio dólar blue vigente.</p><p style="margin-top:8px; color:#555; font-size:12.5px; font-style:italic;">Honorarios expresados para facturación tipo C. En caso de requerir Factura A, se ajustarán según la carga impositiva correspondiente, con IVA adicional.</p></div>
+    <div class="col rv" style="--d:1.1s; margin-top:28px;"><div class="h">Base de los honorarios</div><p style="margin-top:10px; color:#333; font-size:13.5px;">Análisis del anteproyecto, diseño conceptual, distribución, modelado 3D, renders, video de recorrido, propuesta de mobiliario y documentación.</p></div>
+  </div></div>
+  <div class="num">— 09 —</div>
+</section>
+
+<!-- ALIANZA -->
+<section class="slide" id="alianza">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; left:0; right:0; top:0; height:810px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+    <svg width="360" height="150" viewBox="0 0 360 150" class="venn">
+      <defs><clipPath id="clipAi"><circle cx="128" cy="75" r="62"/></clipPath></defs>
+      <g class="va"><circle cx="128" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="116" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">SU</text><text x="116" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">CONSULTORA</text></g>
+      <g class="vb"><circle cx="232" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="244" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">NUESTRO</text><text x="244" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">ESTUDIO</text></g>
+      <circle class="vl" cx="232" cy="75" r="62" fill="#a0583a" fill-opacity=".85" clip-path="url(#clipAi)"/>
+    </svg>
+    <div class="rv" style="--d:0.3s; margin-top:18px; font-weight:700; letter-spacing:.2em; font-size:26px; text-transform:uppercase;">Alianza <span style="font-weight:300;">para próximos proyectos</span></div>
+    <p class="rv" style="--d:0.45s; margin-top:34px; width:760px; text-align:center; font-size:16px; color:#333;">Queremos que este sea el primero de muchos proyectos juntos.<br>Por eso proponemos una alianza de beneficio mutuo, pensada para crecer en conjunto.</p>
+    <div style="width:900px; margin-top:34px; display:grid; grid-template-columns:1fr 1fr; column-gap:56px; row-gap:24px; font-size:14px;">
+      <div class="rv" style="--d:0.60s"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><circle pathLength="1" cx="22" cy="16" r="7"/><path pathLength="1" d="M10 44 q12 -24 24 0"/><circle pathLength="1" cx="42" cy="16" r="7"/><path pathLength="1" d="M30 44 q12 -24 24 0" stroke="#a0583a"/></svg><b>/ Un mismo equipo y un mismo estándar,</b><br><span style="color:#444;">proyecto tras proyecto.</span></div></div>
+      <div class="rv" style="--d:0.75s"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><path pathLength="1" d="M6 12 h34 l12 12 l-12 12 h-34 z"/><circle pathLength="1" cx="14" cy="24" r="2.5"/><circle pathLength="1" class="f" cx="27" cy="18" r="2.5" fill="#a0583a" stroke="none"/><circle pathLength="1" cx="27" cy="18" r="2.5" stroke="#a0583a"/><circle pathLength="1" cx="37" cy="30" r="2.5" stroke="#a0583a"/><line pathLength="1" x1="25" y1="32" x2="39" y2="16" stroke="#a0583a"/></svg><b>/ Tarifa preferencial,</b><br><span style="color:#444;">con un 10% de descuento en los honorarios de cada proyecto que nos deriven.</span></div></div>
+      <div class="rv" style="--d:0.90s"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><rect pathLength="1" class="f" x="8" y="12" width="22" height="22" fill="#f4e7b9" stroke="none"/><rect pathLength="1" x="8" y="12" width="22" height="22"/><path pathLength="1" d="M30 18 a5 5 0 0 1 0 10"/><rect pathLength="1" x="30" y="12" width="22" height="22" stroke="#a0583a"/></svg><b>/ Un servicio más completo para sus clientes,</b><br><span style="color:#444;">que suman interiorismo integral sin ampliar su estructura.</span></div></div>
+      <div class="rv" style="--d:1.05s"><div class="col ali hv" style="position:relative; padding-right:76px; min-height:84px;"><svg class="ic2" width="60" height="48" viewBox="0 0 60 48" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="position:absolute; right:10px; top:18px;"><rect pathLength="1" x="8" y="6" width="34" height="38"/><line pathLength="1" x1="14" y1="16" x2="36" y2="16"/><line pathLength="1" x1="14" y1="24" x2="32" y2="24"/><line pathLength="1" x1="14" y1="32" x2="28" y2="32"/><path pathLength="1" d="M38 40 L54 24 L58 28 L42 44 Z" fill="#f4e7b9" stroke="#a0583a"/></svg><b>/ Documentación pensada para la obra,</b><br><span style="color:#444;">con plantas y listados de referencia que facilitan presupuestar y construir.</span></div></div>
+    </div>
+  </div>
+  <div class="num">— 10 —</div>
+</section>
+
+<!-- ACOMPAÑAMIENTO -->
+<section class="slide" id="acomp">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; right:0; top:0; width:640px; height:810px; overflow:hidden;"><div id="acpx" style="position:absolute; inset:-24px; transition: transform .6s ease-out;"><div class="img zoom" style="position:absolute; inset:0; background-image:url('img/acompanamiento.jpg');"></div></div></div>
+  <div style="position:absolute; left:56px; top:0; height:810px; width:620px; display:flex; flex-direction:column; justify-content:center; padding-right:40px;">
+    <div class="rv" style="--d:0.2s; font-weight:700; letter-spacing:.24em; font-size:26px;">ACOMPAÑAMIENTO</div>
+    <div class="rv" style="--d:0.3s; font-weight:300; letter-spacing:.24em; font-size:26px;">DEL PROYECTO</div>
+    <p class="rv" style="--d:0.5s; margin-top:34px; font-size:16px; line-height:1.7; color:#222;">Elegir un estudio profesional no solo significa definir la estética del espacio. Es contar con un acompañamiento para mejorar la funcionalidad de los espacios que se habitan, una planificación que optimiza tiempos y recursos, y un apoyo para tomar decisiones.</p>
+    <div class="rv" style="--d:0.7s; margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+      <div class="pil hv" style="border-top:1px solid #111; padding-top:16px;"><svg class="ic2" width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M8 40 V24 a4 4 0 0 1 4 -4 h4 v10 h20 v-10 h4 a4 4 0 0 1 4 4 v16"/><line pathLength="1" x1="16" y1="30" x2="16" y2="12"/><path pathLength="1" d="M16 12 h20 v18" stroke="#a0583a"/><line pathLength="1" x1="8" y1="40" x2="8" y2="46"/><line pathLength="1" x1="44" y1="40" x2="44" y2="46"/></svg><div style="margin-top:10px; font-size:11px; letter-spacing:.2em; text-transform:uppercase;">Funcionalidad</div></div>
+      <div class="pil hv" style="border-top:1px solid #111; padding-top:16px;"><svg class="ic2" width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="6" y="10" width="40" height="34" rx="2"/><line pathLength="1" x1="6" y1="19" x2="46" y2="19"/><line pathLength="1" x1="15" y1="6" x2="15" y2="13"/><line pathLength="1" x1="37" y1="6" x2="37" y2="13"/><polyline pathLength="1" points="16,31 23,37 36,25" stroke="#a0583a" stroke-width="2"/></svg><div style="margin-top:10px; font-size:11px; letter-spacing:.2em; text-transform:uppercase;">Planificación</div></div>
+      <div class="pil hv" style="border-top:1px solid #111; padding-top:16px;"><svg class="ic2" width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><line pathLength="1" x1="26" y1="6" x2="26" y2="48"/><path pathLength="1" d="M26 10 h16 l5 5 l-5 5 h-16" stroke="#a0583a"/><path pathLength="1" d="M26 25 h-16 l-5 5 l5 5 h16"/></svg><div style="margin-top:10px; font-size:11px; letter-spacing:.2em; text-transform:uppercase;">Decisiones</div></div>
+    </div>
+  </div>
+  <div class="num" style="right:640px;">— 11 —</div>
+</section>
+
+<!-- PROXIMOS PASOS -->
+<section class="slide" id="proximos">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">Cliente · Oficinas Pilar</div>
+  <div style="position:absolute; left:56px; right:56px; top:0; height:810px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="rv" style="--d:0.1s; font-weight:700; letter-spacing:.2em; font-size:32px; text-transform:uppercase;">Próximos <span style="font-weight:300;">pasos</span></div>
+    <div style="margin-top:56px; display:grid; grid-template-columns: repeat(4,1fr); gap:44px; font-size:13.5px;">
+      <div class="rv" style="--d:0.25s"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M12 8 h48 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-28 l-12 10 v-10 h-8 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6 z"/><polyline pathLength="1" points="24,26 32,34 48,18" stroke="#a0583a" stroke-width="2.2"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 01</div><div class="h" style="margin-top:6px;">Confirmación<br>de la propuesta</div><p style="margin-top:14px; color:#333;">Confirmación por mail o WhatsApp para reservar el inicio del proyecto.</p></div></div></div>
+      <div class="rv" style="--d:0.40s"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" class="f" d="M36 30 L36 6 A24 24 0 0 1 56.78 42 Z" fill="#f4e7b9" stroke="none"/><circle pathLength="1" cx="36" cy="30" r="24"/><polyline pathLength="1" points="36,6 36,30 56.78,42" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="36" y1="30" x2="15.22" y2="42" stroke="#111"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 02</div><div class="h" style="margin-top:6px;">Pago del<br>primer tercio</div><p style="margin-top:14px; color:#333;">Con el pago inicial reservamos la agenda del estudio para el proyecto.</p></div></div></div>
+      <div class="rv" style="--d:0.55s"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="8" y="10" width="56" height="42"/><line pathLength="1" x1="36" y1="10" x2="36" y2="34"/><line pathLength="1" x1="8" y1="34" x2="50" y2="34"/><line pathLength="1" x1="8" y1="4" x2="64" y2="4" stroke="#a0583a"/><line pathLength="1" x1="8" y1="1" x2="8" y2="7" stroke="#a0583a"/><line pathLength="1" x1="64" y1="1" x2="64" y2="7" stroke="#a0583a"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 03</div><div class="h" style="margin-top:6px;">Anteproyecto<br>de arquitectura</div><p style="margin-top:14px; color:#333;">Recibimos los planos y la documentación del edificio para comenzar el trabajo.</p></div></div></div>
+      <div class="rv" style="--d:0.70s"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><ellipse pathLength="1" class="f" cx="36" cy="32" rx="18" ry="9" fill="#f4e7b9" stroke="none"/><ellipse pathLength="1" cx="36" cy="32" rx="18" ry="9"/><circle pathLength="1" cx="36" cy="12" r="5"/><circle pathLength="1" cx="36" cy="52" r="5"/><circle pathLength="1" cx="8" cy="32" r="5" stroke="#a0583a"/><circle pathLength="1" cx="64" cy="32" r="5" stroke="#a0583a"/></svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 04</div><div class="h" style="margin-top:6px;">Reunión<br>de inicio</div><p style="margin-top:14px; color:#333;">Encuentro con el Cliente y el equipo de arquitectura para definir necesidades y prioridades.</p></div></div></div>
+    </div>
+    <p style="margin-top:64px; text-align:center; font-size:12px; color:#666; font-style:italic;">Esta propuesta tiene una validez de 15 días a partir de su fecha de emisión.</p>
+  </div>
+  <div class="num">— 12 —</div>
+</section>
+
+<!-- GRACIAS -->
+<section class="slide">
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/gracias.jpg');"></div>
+  <div class="rv" style="--d:.3s; position:absolute; left:500px; top:160px; width:440px; height:490px; background:#fff; display:flex; justify-content:center;">
+    <div style="padding:48px 40px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+      <div style="font-weight:700; letter-spacing:.2em; font-size:24px;">¡MUCHAS</div>
+      <div style="font-weight:300; letter-spacing:.2em; font-size:24px;">GRACIAS!</div>
+      <div style="margin-top:30px; font-size:13px; line-height:1.75;">
+        <i>Quedamos a disposición</i><br><br>
+        Arquitecta<br><b>Clara Tacco Carulli</b><br>+54 9 299 504-6147<br><br>
+        Diseñadora de interiores<br><b>Lucía Da Silva</b><br>+54 9 11 3565-9808<br><br>
+        <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener" style="display:inline-block; margin-top:6px; color:#111; text-decoration:none; border:1px solid #111; padding:11px 18px; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;">Conocé nuestros proyectos <b class="wa" style="display:inline-block; margin-left:6px;">→</b></a><br>
+        <span style="display:inline-block; margin-top:10px; font-size:12px; color:#555;">luciadasilvaestudio.com.ar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<button class="side" id="prev" aria-label="Lámina anterior">‹</button>
+<button class="side" id="next" aria-label="Lámina siguiente">›</button>
+<div id="nav"><span id="count"></span></div>
+
+
+<script>
+(function(){
+  var stage = document.getElementById('stage');
+  var slides = [].slice.call(document.querySelectorAll('.slide'));
+  var cur = 0;
+
+  function fit(){
+    var s = Math.min((window.innerWidth - 150) / 1440, (window.innerHeight - 40) / 810);
+    stage.style.top = '50%';
+    stage.style.transform = 'translate(-50%,-50%) scale(' + s + ')';
+    stage.style.transformOrigin = 'center center';
+  }
+  window.addEventListener('resize', fit); fit();
+
+  // largo de trazos para la animación de dibujo
+  document.querySelectorAll('.draw *').forEach(function(el){
+    if (el.getTotalLength) { var l = Math.ceil(el.getTotalLength()) + 2; el.style.setProperty('--len', l); }
+  });
+
+  function go(i){
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    slides[cur].classList.remove('on');
+    cur = i;
+    slides[cur].classList.add('on');
+    document.getElementById('count').textContent = String(cur + 1).padStart(2,'0') + ' / ' + slides.length;
+    document.getElementById('bar').style.width = ((cur + 1) / slides.length * 100) + '%';
+    if (slides[cur].id === 'niveles') closeLevel();
+    if (slides[cur].id === 'crecer' && window.autoGrow) autoGrow();
+    if (slides[cur].id === 'alcance') [].slice.call(document.querySelectorAll('#stage .st')).forEach(function(o, k){ o.classList.toggle('on', k === 0); });
+    if (typeof showPop === 'function') showPop(-1);
+    if (slides[cur].querySelector('#usd')) countUp();
+    try { history.replaceState(null, '', '#' + (cur + 1)); } catch(e) {}
+    document.getElementById('prev').classList.toggle('off', cur === 0);
+    document.getElementById('next').classList.toggle('off', cur === slides.length - 1);
+    var secs = [].slice.call(document.querySelectorAll('#sec button')), act = -1;
+    secs.forEach(function(b, k){ if (cur >= +b.dataset.to) act = k; });
+    secs.forEach(function(b, k){ b.classList.toggle('on', k === act); });
+    startDemo();
+  }
+  document.querySelectorAll('#sec button').forEach(function(b){ b.onclick = function(){ go(+b.dataset.to); }; });
+  document.getElementById('prev').onclick = function(){ go(cur - 1); };
+  document.getElementById('next').onclick = function(){ go(cur + 1); };
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(cur + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(cur - 1); }
+    if (e.key === 'Escape') closeLevel();
+  });
+  var tx = null;
+  document.addEventListener('touchstart', function(e){ if (document.documentElement.classList.contains('mobile')) return; tx = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null;
+    if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1));
+  }, {passive:true});
+  document.querySelectorAll('[data-go]').forEach(function(a){ a.onclick = function(){ go(+a.dataset.go); }; });
+
+  // contador de honorarios
+  function countUp(){
+    var el = document.getElementById('usd'), line = document.getElementById('usdline'), t0 = null, dur = 2000;
+    line.classList.remove('on'); line.parentNode.classList.remove('float'); el.textContent = '0';
+    clearInterval(window.__usdT);
+    setTimeout(function(){
+      t0 = Date.now();
+      window.__usdT = setInterval(function(){
+        var p = Math.min(1, (Date.now() - t0) / dur); p = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(11000 * p).toLocaleString('es-AR');
+        if (p >= 1) { clearInterval(window.__usdT); line.classList.add('on'); line.parentNode.classList.add('float'); }
+      }, 30);
+    }, 600);
+    setTimeout(function(){ el.textContent = '11.000'; line.classList.add('on'); }, 3000);
+  }
+
+  // ===== edificio interactivo =====
+  var NS = 'http://www.w3.org/2000/svg';
+  var LV = {
+    0: { k: 'Planta baja · Público', h: 'RECEPCIÓN', q: '¿Cómo recibir a quien llega por primera vez para que se lleve la mejor impresión de la empresa?',
+      items: ['Recepción y espera de visitas', 'Salas de reuniones', 'La primera imagen de la marca'],
+      need: [[410, 290, 'RECEPCIÓN'], [760, 370, 'SALAS DE REUNIONES'], [510, 450, 'ESPERA']], feel: [[710, 290, 'primera impresión'], [460, 370, 'identidad'], [770, 450, 'calidez']] },
+    1: { k: 'Primer piso · Semipúblico', h: 'COWORK', q: '¿Cómo lograr que 30 personas trabajen cómodas, concentradas y conectadas?',
+      items: ['Puestos de trabajo para unas 30 personas', 'Compras y equipos administrativos', 'Pausas y encuentros'],
+      need: [[410, 290, '30 PUESTOS'], [760, 370, 'COMPRAS'], [510, 450, 'OFFICE Y PAUSA']], feel: [[710, 290, 'colaboración'], [460, 370, 'concentración'], [770, 450, 'energía']] },
+    2: { k: 'Segundo piso · Privado', h: 'DIRECCIÓN', q: '¿Cómo convertir una degustación en una experiencia que venda?',
+      items: ['Oficinas de los tres socios', 'Gerencia y Recursos Humanos', 'Sala demo de degustación'],
+      need: [[410, 290, 'OFICINAS DE SOCIOS'], [760, 370, 'GERENCIA Y RR. HH.'], [510, 450, 'SALA DEMO']], feel: [[710, 290, 'confianza'], [460, 370, 'privacidad'], [770, 450, 'experiencia de marca']] }
+  };
+  function el(tag, at, parent){ var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; }
+  function iso(x, y){ return [560 + 4.4 * x - 5.6667 * y, 175 + 2.2 * x + 2.8333 * y]; }
+  var plan = document.getElementById('plan'), chips = document.getElementById('chips');
+  function openLevel(l){
+    var d = LV[l];
+    plan.classList.remove('show'); plan.innerHTML = ''; chips.innerHTML = '';
+    var grid = el('g', { class: 'z', stroke: '#a99d8a', 'stroke-width': 1, 'stroke-dasharray': '3 4' }, plan);
+    for (var x = 10; x < 100; x += 10) el('line', { x1: x, y1: 0, x2: x, y2: 60 }, grid);
+    for (var y = 10; y < 60; y += 10) el('line', { x1: 0, y1: y, x2: 100, y2: y }, grid);
+    var sc = el('rect', { class: 'z', x: -6, y: 0, width: 6, height: 60, fill: '#d3e8df', opacity: .9 }, plan);
+    el('animate', { attributeName: 'x', from: -6, to: 100, dur: '3.2s', repeatCount: 'indefinite' }, sc);
+    function addChip(c, i, cls){
+      var p = [c[0], c[1]], n = document.createElement('div');
+      n.className = 'chip ' + cls; n.textContent = c[2];
+      n.style.left = p[0] + 'px'; n.style.top = p[1] + 'px';
+      n.style.animationDelay = (0.3 + i * 0.15) + 's, ' + (i * 0.6) + 's';
+      chips.appendChild(n);
+    }
+    d.need.forEach(function(c, i){ addChip(c, i, 'need'); });
+    d.feel.forEach(function(c, i){ addChip(c, i + d.need.length, 'feel'); });
+    document.getElementById('dtk').textContent = d.k;
+    document.getElementById('dth').textContent = d.h;
+    document.getElementById('dtq').textContent = d.q;
+    document.getElementById('dtlist').innerHTML = d.items.map(function(s){ return '<p><b>/</b> ' + s + '</p>'; }).join('');
+    document.querySelectorAll('.tabs button').forEach(function(b){ b.classList.toggle('on', +b.dataset.l === l); });
+    document.getElementById('niveles').classList.add('detail');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ plan.classList.add('show'); }); });
+  }
+  function closeLevel(){ document.getElementById('niveles').classList.remove('detail'); }
+  document.querySelectorAll('.lvl, .lvltx').forEach(function(n){
+    var l = +n.dataset.l;
+    n.addEventListener('click', function(){ openLevel(l); });
+    n.addEventListener('mouseenter', function(){ document.querySelectorAll('[data-l="' + l + '"]').forEach(function(m){ m.classList.add('hi'); }); });
+    n.addEventListener('mouseleave', function(){ document.querySelectorAll('.hi').forEach(function(m){ m.classList.remove('hi'); }); });
+  });
+  document.querySelectorAll('.tabs button').forEach(function(b){ b.onclick = function(){ openLevel(+b.dataset.l); }; });
+  document.getElementById('back').onclick = closeLevel;
+
+  // ===== dibujos al tocar (pantallas táctiles) =====
+  document.querySelectorAll('.hv').forEach(function(el){
+    el.addEventListener('click', function(){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); });
+    el.addEventListener('mouseleave', function(){ el.classList.remove('on'); });
+  });
+  // foto de acompañamiento que sigue suavemente al mouse
+  var acomp = document.getElementById('acomp'), acpx = document.getElementById('acpx');
+  acomp.addEventListener('mousemove', function(e){
+    var r = acomp.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    acpx.style.transform = 'translate(' + (-x * 18) + 'px,' + (-y * 18) + 'px)';
+  });
+
+  // ===== mirada a futuro: tarjetas y fondo que siguen al mouse =====
+  var mir = document.getElementById('mirada'), spot = document.getElementById('spot');
+  var qcs = [].slice.call(mir.querySelectorAll('.qc')), blobs = [].slice.call(mir.querySelectorAll('.blob'));
+  mir.addEventListener('mousemove', function(e){
+    var r = mir.getBoundingClientRect(), sx = r.width / 1440;
+    var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    spot.style.setProperty('--mx', (x * 100) + '%'); spot.style.setProperty('--my', (y * 100) + '%');
+    blobs.forEach(function(b){ var k = +b.dataset.k; b.style.transform = 'translate(' + ((x - .5) * k * 2) + 'px,' + ((y - .5) * k * 2) + 'px)'; });
+    qcs.forEach(function(c){
+      var cr = c.getBoundingClientRect(), cx = (e.clientX - (cr.left + cr.width / 2)) / (r.width / 2), cy = (e.clientY - (cr.top + cr.height / 2)) / (r.height / 2);
+      var inside = e.clientX >= cr.left && e.clientX <= cr.right && e.clientY >= cr.top && e.clientY <= cr.bottom;
+      c.style.transform = 'perspective(800px) rotateY(' + (cx * 7).toFixed(2) + 'deg) rotateX(' + (-cy * 7).toFixed(2) + 'deg)' + (inside ? ' translateY(-10px) scale(1.03)' : '');
+      c.style.boxShadow = inside ? '0 18px 36px rgba(160,88,58,.22)' : '';
+    });
+  });
+  mir.addEventListener('mouseleave', function(){
+    qcs.forEach(function(c){ c.style.transform = ''; c.style.boxShadow = ''; });
+    blobs.forEach(function(b){ b.style.transform = ''; });
+  });
+
+  // ===== portada: el edificio se mueve apenas con el mouse =====
+  var por = document.getElementById("portada"), css = [].slice.call(por.querySelectorAll(".cs"));
+  por.addEventListener("mousemove", function(e){
+    var r = por.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    css.forEach(function(g){ var k = +g.dataset.k; g.style.transform = "translate(" + (x * k) + "px," + (y * k * .6) + "px)"; });
+  });
+  por.addEventListener("mouseleave", function(){ css.forEach(function(g){ g.style.transform = ""; }); });
+
+  // ===== propuesta general: dibujo por punto =====
+  var pgb = [].slice.call(document.querySelectorAll('.pgb')), pgi = [].slice.call(document.querySelectorAll('.pgi')), pgCur = 0, pgTouched = false;
+  function pgSet(i){ pgCur = i; pgb.forEach(function(b, k){ b.classList.toggle('on', k === i); }); pgi.forEach(function(g, k){ g.classList.toggle('on', k === i); }); }
+  pgb.forEach(function(b, k){
+    b.addEventListener('mouseenter', function(){ pgTouched = true; pgSet(k); });
+    b.addEventListener('click', function(){ pgTouched = true; pgSet(k); });
+  });
+  setInterval(function(){ if (!pgTouched && slides[cur].id === 'propuesta') pgSet((pgCur + 1) % pgb.length); }, 3400);
+
+  // ===== pensado para crecer =====
+  var grow = document.querySelector('#stage .grow'), seats = document.getElementById('seats'), gTimer = null, gAuto = true, gState = 0;
+  function setGrow(f){
+    gState = f; grow.classList.toggle('fut', !!f);
+    document.querySelectorAll('.tabs2 button').forEach(function(b){ b.classList.toggle('on', +b.dataset.g === f); });
+    var from = +seats.textContent, to = f ? 40 : 30, t0 = null;
+    function st(t){ if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 700); seats.textContent = Math.round(from + (to - from) * p); if (p < 1) requestAnimationFrame(st); }
+    requestAnimationFrame(st);
+    setTimeout(function(){ seats.textContent = to; }, 760);
+  }
+  function autoGrow(){ clearInterval(gTimer); gAuto = true; setGrow(0); gTimer = setInterval(function(){ if (gAuto) setGrow(gState ? 0 : 1); }, 3200); }
+  document.querySelectorAll('.tabs2 button').forEach(function(b){ b.onclick = function(){ gAuto = false; clearInterval(gTimer); setGrow(+b.dataset.g); }; });
+  window.autoGrow = autoGrow;
+  var cbs = [].slice.call(document.querySelectorAll("#stage .cb"));
+  cbs.forEach(function(b){
+    function act(){
+      var c = +b.dataset.c; gAuto = false; clearInterval(gTimer);
+      cbs.forEach(function(o){ o.classList.toggle("on", o === b); });
+      grow.classList.remove("h0","h1","h2","h3"); grow.classList.add("h" + c);
+      if (c === 0 || c === 3) setGrow(1); else if (c === 1) setGrow(gState);
+    }
+    b.addEventListener("mouseenter", act); b.addEventListener("click", act);
+  });
+
+  // ===== alcance: etapas que se expanden =====
+  var sts = [].slice.call(document.querySelectorAll('#stage .st'));
+  sts.forEach(function(s){
+    function act(){ sts.forEach(function(o){ o.classList.toggle('on', o === s); }); }
+    s.addEventListener('mouseenter', act); s.addEventListener('click', act);
+  });
+  document.querySelectorAll('.st .next').forEach(function(b){
+    b.addEventListener('click', function(e){ e.stopPropagation(); var t = sts[+b.dataset.to]; sts.forEach(function(o){ o.classList.toggle('on', o === t); }); });
+  });
+
+  // ===== plazos: dibujos que se animan =====
+  window.showPop = null;
+  var pops = [].slice.call(document.querySelectorAll('#stage .pop'));
+  var icos = [].slice.call(document.querySelectorAll('#stage .ico'));
+  var openP = -1;
+  showPop = function(i){
+    if (i === openP) return;
+    openP = i;
+    pops.forEach(function(p, j){ p.classList.toggle('on', j === i); });
+    icos.forEach(function(c, j){ c.classList.toggle('dim', j === i); });
+  };
+  document.querySelectorAll('.ico, .wk').forEach(function(n){
+    var i = +n.dataset.p;
+    n.addEventListener('mouseenter', function(){ showPop(i); });
+    n.addEventListener('mouseleave', function(){ showPop(-1); });
+    n.addEventListener('click', function(e){ e.stopPropagation(); showPop(openP === i ? -1 : i); });
+  });
+
+  // ===== rueda del mouse / panel táctil: una lámina por gesto =====
+  var wAcc = 0, wPrev = 0, wUsed = false;
+  window.addEventListener('wheel', function(e){
+    if (document.documentElement.classList.contains('mobile')) return;
+    var now = Date.now();
+    if (now - wPrev > 260) { wUsed = false; wAcc = 0; }
+    wPrev = now;
+    if (wUsed) return;
+    wAcc += e.deltaY;
+    if (Math.abs(wAcc) > 40) { wUsed = true; go(cur + (wAcc > 0 ? 1 : -1)); }
+  }, { passive: true });
+
+  // ===== cursor guía: muestra solo lo que se puede explorar =====
+  var ghost = document.createElement('div');
+  ghost.id = 'ghost';
+  ghost.innerHTML = '<svg width="26" height="30" viewBox="0 0 26 30"><path d="M3 2 L3 24 L9 18.5 L13 27 L17 25 L13 16.5 L21 16.5 Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg><span>PASÁ EL MOUSE</span><i></i>';
+  stage.appendChild(ghost);
+  function hvOn(el){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); }
+  function hvOff(el){ el.classList.remove('on'); }
+  function enterEv(el){ el.dispatchEvent(new MouseEvent('mouseenter')); }
+  function leaveEv(el){ el.dispatchEvent(new MouseEvent('mouseleave')); }
+  var DEMO = {
+    propuesta: { sel: '.pgb', on: function(el){ pgTouched = true; pgSet(pgb.indexOf(el)); } },
+    niveles: { sel: '.lvltx', on: enterEv, off: leaveEv },
+    crecer: { sel: '.cb', on: enterEv },
+    mirada: { sel: '.qc', on: function(el){ hvOn(el); el.style.transform = 'perspective(800px) translateY(-10px) scale(1.03)'; el.style.boxShadow = '0 18px 36px rgba(160,88,58,.22)'; }, off: function(el){ hvOff(el); el.style.transform = ''; el.style.boxShadow = ''; } },
+    alcance: { sel: '.st', on: enterEv },
+    plazos: { sel: '.wk', on: function(el){ showPop(+el.dataset.p); }, off: function(){ showPop(-1); }, dwell: 3600 },
+    alianza: { sel: '.ali', on: hvOn, off: hvOff },
+    acomp: { sel: '.pil', on: hvOn, off: hvOff },
+    proximos: { sel: '.pstep', on: hvOn, off: hvOff }
+  };
+  var learned = {}, dT = null, dT2 = null, dPrev = null, dCfg = null, dId = null;
+  function moveGhost(el){
+    var sr = stage.getBoundingClientRect(), s = sr.width / 1440, r = el.getBoundingClientRect();
+    ghost.style.left = ((r.left + Math.min(r.width * .5, 160) - sr.left) / s) + 'px';
+    ghost.style.top = ((r.top + Math.min(r.height * .45, 60) - sr.top) / s) + 'px';
+  }
+  function stopDemo(keep){
+    clearTimeout(dT); clearTimeout(dT2);
+    if (!keep && dCfg && dCfg.off && dPrev) dCfg.off(dPrev);
+    dPrev = null; dCfg = null; dId = null;
+    ghost.classList.remove('show');
+  }
+  function startDemo(){
+    stopDemo();
+    if (document.documentElement.classList.contains('mobile')) return;
+    var id = slides[cur].id, cfg = DEMO[id];
+    if (!cfg || learned[id]) return;
+    var els = [].slice.call(slides[cur].querySelectorAll(cfg.sel));
+    if (!els.length) return;
+    dCfg = cfg; dId = id;
+    var i = 0;
+    function step(){
+      if (dCfg !== cfg) return;
+      var el = els[i % els.length];
+      if (dPrev && cfg.off && dPrev !== el) cfg.off(dPrev);
+      ghost.classList.add('show'); moveGhost(el);
+      dT2 = setTimeout(function(){
+        if (dCfg !== cfg) return;
+        ghost.classList.remove('tap'); void ghost.offsetWidth; ghost.classList.add('tap');
+        cfg.on(el);
+      }, 800);
+      dPrev = el; i++;
+      dT = setTimeout(step, cfg.dwell || 2800);
+    }
+    dT = setTimeout(step, 1600);
+  }
+  // cuando la persona usa su propio mouse, el cursor guía se retira
+  Object.keys(DEMO).forEach(function(id){
+    var sl = document.getElementById(id); if (!sl) return;
+    [].slice.call(sl.querySelectorAll(DEMO[id].sel)).forEach(function(el){
+      function mine(e){ if (e.isTrusted) { learned[id] = true; if (dId === id) stopDemo(true); } }
+      el.addEventListener('mouseenter', mine); el.addEventListener('click', mine);
+    });
+  });
+
+  var start = parseInt((location.hash || '').slice(1), 10);
+  go(isNaN(start) ? 0 : start - 1);
+})();
+
+  // ===== versión celular =====
+  (function(){
+    if (!document.documentElement.classList.contains('mobile')) return;
+    var mSecs = [].slice.call(document.querySelectorAll('#m .ms'));
+    var sio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.intersectionRatio >= .55) mEnter(e.target);
+        else if (e.intersectionRatio < .15) mLeave(e.target);
+      });
+    }, { threshold: [0, .15, .55, .85] });
+    mSecs.forEach(function(s){ sio.observe(s); });
+    function mCheck(){
+      var vh = window.innerHeight;
+      mSecs.forEach(function(s){
+        var r = s.getBoundingClientRect(), vis = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0)) / Math.min(r.height, vh);
+        if (vis >= .55) mEnter(s); else if (vis < .15) mLeave(s);
+      });
+    }
+    window.addEventListener("scroll", mCheck, { passive: true });
+    setInterval(mCheck, 350); setTimeout(mCheck, 100);
+    function mEnter(s){
+      if (s.classList.contains('act')) return;
+      s.classList.add('act', 'in');
+      [].slice.call(s.querySelectorAll('.mrv')).forEach(function(el, k){ setTimeout(function(){ el.classList.add('in'); }, 60 + k * 110); });
+      [].slice.call(s.querySelectorAll('.hv')).forEach(function(x, k){ setTimeout(function(){ x.classList.remove('on'); void x.offsetWidth; x.classList.add('on'); }, 450 + k * 220); });
+      if (s.querySelector('#musd')) setTimeout(mCount, 450);
+      if (s.querySelector('.mwkp')) setTimeout(playWeek, 450);
+      if (s.id === 'm-mirada') startAttn();
+      if (s.querySelector('.mgrow')) startGrow();
+    }
+    function mLeave(s){
+      if (!s.classList.contains('act')) return;
+      s.classList.remove('act');
+      if (s.classList.contains('mcover')) return;
+      [].slice.call(s.querySelectorAll('.mrv')).forEach(function(el){ el.classList.remove('in'); });
+      [].slice.call(s.querySelectorAll('.hv')).forEach(function(x){ x.classList.remove('on'); });
+      if (s.querySelector('.mwkp')) { clearInterval(wkT); [].slice.call(s.querySelectorAll('.pop')).forEach(function(p){ p.classList.remove('on'); }); }
+      if (s.querySelector('#musd')) { clearInterval(window.__mcT); document.getElementById('musd').textContent = '0'; document.getElementById('musdline').classList.remove('on'); }
+      if (s.id === 'm-mirada') stopAttn();
+      if (s.querySelector('.mgrow')) clearInterval(mgT);
+    }
+
+    function mGoTo(s){
+      if (!s) return;
+      var root = document.documentElement, top = s.getBoundingClientRect().top + window.pageYOffset;
+      root.style.scrollSnapType = 'none';
+      window.scrollTo(0, top);
+      setTimeout(function(){ window.scrollTo(0, top); root.style.scrollSnapType = ''; mark(); mCheck(); }, 80);
+    }
+    // menú fijo con la sección actual
+    var links = [].slice.call(document.querySelectorAll('#mnav a'));
+    var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+    function mark(){
+      var y = window.scrollY + window.innerHeight * .4, act = 0;
+      secs.forEach(function(s, k){ if (s && s.offsetTop <= y) act = k; });
+      links.forEach(function(a, k){ a.classList.toggle('on', k === act); });
+    }
+    window.addEventListener('scroll', mark, { passive: true }); mark();
+    links.concat([].slice.call(document.querySelectorAll('.midx'))).forEach(function(a){
+      a.addEventListener('click', function(e){ e.preventDefault(); mGoTo(document.querySelector(a.getAttribute('href'))); });
+    });
+
+    // propuesta
+    document.querySelectorAll('.mpg').forEach(function(p){
+      p.addEventListener('click', function(){ document.querySelectorAll('.mpg').forEach(function(o){ o.classList.toggle('on', o === p); }); p.classList.remove('on'); void p.offsetWidth; p.classList.add('on'); });
+    });
+
+    // niveles
+    var tbs = [].slice.call(document.querySelectorAll('.mtb')), lvps = [].slice.call(document.querySelectorAll('.mlvp'));
+    var mviz = document.querySelector('.mviz'), mplanw = document.querySelector('.mplanw'), exploring = false, curL = 0;
+    var LVD = [
+      { need: [['25.6%','29.5%','OFICINAS DE SOCIOS'],['68.3%','47.7%','GERENCIA Y RR. HH.'],['33%','65.9%','SALA DEMO']], feel: [['62.2%','29.5%','confianza'],['31.7%','47.7%','privacidad'],['72%','65.9%','experiencia de marca']] },
+      { need: [['25.6%','29.5%','30 PUESTOS'],['68.3%','47.7%','COMPRAS'],['37.8%','65.9%','OFFICE Y PAUSA']], feel: [['62.2%','29.5%','colaboración'],['31.7%','47.7%','concentración'],['69.5%','65.9%','energía']] },
+      { need: [['25.6%','29.5%','RECEPCIÓN'],['68.3%','47.7%','SALAS DE REUNIONES'],['37.8%','65.9%','ESPERA']], feel: [['62.2%','29.5%','primera impresión'],['31.7%','47.7%','identidad'],['69.5%','65.9%','calidez']] }
+    ];
+    function fillPlan(i){
+      var d = LVD[i], out = '', k = 0;
+      d.need.forEach(function(c){ out += '<span class="chip need" style="left:' + c[0] + '; top:' + c[1] + '; animation-delay:' + (0.2 + k++ * 0.12) + 's, ' + (k * 0.5) + 's">' + c[2] + '</span>'; });
+      d.feel.forEach(function(c){ out += '<span class="chip feel" style="left:' + c[0] + '; top:' + c[1] + '; animation-delay:' + (0.2 + k++ * 0.12) + 's, ' + (k * 0.5) + 's">' + c[2] + '</span>'; });
+      mplanw.innerHTML = out;
+    }
+    function lev(i){
+      curL = i;
+      tbs.forEach(function(b, k){ b.classList.toggle('on', k === i); });
+      lvps.forEach(function(p, k){ p.classList.toggle('on', k === i); p.classList.toggle('exp', exploring && k === i); });
+      if (exploring) fillPlan(i);
+      var l = lvps[i] && ['2','1','0'][i];
+      document.querySelectorAll('.mlv').forEach(function(g){ g.classList.toggle('hi', g.dataset.l === l); });
+    }
+    tbs.forEach(function(b, k){ b.addEventListener('click', function(){ lev(k); }); });
+    document.querySelectorAll('.mlv').forEach(function(g){ g.addEventListener('click', function(){ lev(['2','1','0'].indexOf(g.dataset.l)); }); });
+    lvps.forEach(function(p){ p.querySelector('.mbtn').addEventListener('click', function(){
+      exploring = !exploring;
+      mviz.classList.toggle('exp', exploring);
+      lvps.forEach(function(o, k){ o.classList.toggle('exp', exploring && k === curL); });
+      if (exploring) fillPlan(curL);
+    }); });
+    lev(2);
+
+    // crecer
+    var mg = document.querySelector('.mgrow'), seats = document.querySelector('.mseats'), stx = document.querySelector('.mstratx');
+    var SX = ["Distribuciones modulares, que puedan ampliarse sin grandes reformas.","Mobiliario adaptable, para sumar puestos o cambiar usos.","Instalaciones con margen, en electricidad, datos e iluminación.","Espacios flexibles, que puedan cambiar de función."];
+    function mSet(f){ mg.classList.toggle('fut', !!f); seats.textContent = f ? 40 : 30; document.querySelectorAll('.mg').forEach(function(b){ b.classList.toggle('on', +b.dataset.g === f); }); }
+    var mgT = null, mgTouched = false;
+    function startGrow(){ clearInterval(mgT); if (mgTouched) return; mSet(0); mgT = setInterval(function(){ mSet(mg.classList.contains('fut') ? 0 : 1); }, 3000); }
+    document.querySelectorAll('.mg').forEach(function(b){ b.addEventListener('click', function(){ mgTouched = true; clearInterval(mgT); mSet(+b.dataset.g); }); });
+    document.querySelectorAll('.msb').forEach(function(b){
+      b.addEventListener('click', function(){
+        mgTouched = true; clearInterval(mgT); var c = +b.dataset.c;
+        document.querySelectorAll('.msb').forEach(function(o){ o.classList.toggle('on', o === b); });
+        mg.classList.remove('h0','h1','h2','h3'); mg.classList.add('h' + c);
+        if (c === 0 || c === 3) mSet(1);
+        stx.textContent = SX[c] + '. Las definimos junto al Cliente, según su proyección de crecimiento.';
+      });
+    });
+
+    // alcance
+    var s3 = [].slice.call(document.querySelectorAll('.mst3')), stp = [].slice.call(document.querySelectorAll('.mstp'));
+    s3.forEach(function(b, k){ b.addEventListener('click', function(){ s3.forEach(function(o, j){ o.classList.toggle('on', j === k); }); stp.forEach(function(p, j){ p.classList.toggle('on', j === k); }); }); });
+
+    // plazos
+    var wbs = [].slice.call(document.querySelectorAll('.mwb')), wks = [].slice.call(document.querySelectorAll('.mwk')), wkT = null, wkCur = 0;
+    function week(i){
+      wkCur = i;
+      wbs.forEach(function(b, k){ b.classList.toggle('on', k === i); });
+      wks.forEach(function(w, k){ w.classList.toggle('on', k === i); var p = w.querySelector('.pop'); p.classList.remove('on'); if (k === i) { void p.offsetWidth; p.classList.add('on'); } });
+    }
+    function playWeek(){ clearInterval(wkT); week(0); wkT = setInterval(function(){ week((wkCur + 1) % wbs.length); }, 4200); }
+    wbs.forEach(function(b, k){ b.addEventListener('click', function(){ clearInterval(wkT); week(k); }); });
+
+    // honorarios
+    function mCount(){
+      var el = document.getElementById('musd'), line = document.getElementById('musdline'), t0 = Date.now(), dur = 2000;
+      el.textContent = '0'; line.classList.remove('on'); line.parentNode.classList.remove('float'); clearInterval(window.__mcT);
+      var it = window.__mcT = setInterval(function(){
+        var p = Math.min(1, (Date.now() - t0) / dur); p = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(11000 * p).toLocaleString('es-AR');
+        if (p >= 1) { clearInterval(it); line.classList.add('on'); line.parentNode.classList.add('float'); }
+      }, 30);
+    }
+    // mirada: una tarjeta a la vez llama la atención hasta que tocan alguna
+    var mq = [].slice.call(document.querySelectorAll('.mq4')), attnT = null, attnI = 0, mqTouched = false;
+    function startAttn(){ stopAttn(); if (mqTouched) return; attnT = setInterval(function(){ mq.forEach(function(c, k){ c.classList.toggle('attn', k === attnI); }); attnI = (attnI + 1) % mq.length; }, 1300); }
+    function stopAttn(){ clearInterval(attnT); mq.forEach(function(c){ c.classList.remove('attn'); }); }
+    mq.forEach(function(c){ c.addEventListener('click', function(){ mqTouched = true; stopAttn(); mq.forEach(function(o){ o.classList.toggle('sel', o === c); }); }); });
+
+    // toques en dibujos
+    document.querySelectorAll('#m .hv').forEach(function(el){
+      el.addEventListener('click', function(){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); });
+    });
+  })();
+</script>
+</body>
+</html>

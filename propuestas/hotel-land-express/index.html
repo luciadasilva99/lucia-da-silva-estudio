@@ -199,6 +199,9 @@
   .cv-img .img { position: absolute; inset: 0; transform: scale(1.06); transition: transform 6s ease-out; }
   .slide.on .cv-img .img { transform: scale(1); }
   .cv-txt { position: absolute; left: 820px; top: 0; bottom: 0; width: 520px; display: flex; flex-direction: column; justify-content: center; }
+  .cv-c { left: 0 !important; right: 0; width: auto !important; align-items: center; text-align: center; }
+  .cv-c p { max-width: 520px; }
+  html.mobile .cv-c { position: absolute !important; inset: 0; padding: 0 24px; }
   .cv-txt .n { font-weight: 300; font-size: 64px; letter-spacing: .1em; line-height: 1; }
   .cv-txt .h { font-weight: 700; letter-spacing: .3em; font-size: 34px; margin-top: 22px; }
   .cv-txt .k { font-weight: 300; letter-spacing: .3em; font-size: 16px; margin-top: 10px; }
@@ -428,14 +431,13 @@
 
 <!-- CARÁTULA 201 -->
 <section class="slide" id="c201" data-sec="Hab. 201">
-  <div class="cv-img"><div class="img" style="background-image:url('img/c201_gasa.jpg'); background-position:28% center;"></div></div>
-  <div class="cv-txt">
+  <div class="cv-txt cv-c">
     <div class="n rv">201</div>
     <div class="h rv" style="--d:.15s">HABITACIÓN</div>
     <div class="k rv" style="--d:.25s">SUITE</div>
     <p class="rv" style="--d:.4s">Una suite serena y luminosa.</p>
   </div>
-  <div class="num" style="left:720px;">— 05 —</div>
+  <div class="num"></div>
 </section>
 
 <!-- 201 PROPUESTA GENERAL -->
@@ -600,14 +602,13 @@
 
 <!-- CARÁTULA 411 -->
 <section class="slide" id="c411" data-sec="Hab. 411">
-  <div class="cv-img"><div class="img" style="background-image:url('img/t_lana2.jpg')"></div></div>
-  <div class="cv-txt">
+  <div class="cv-txt cv-c">
     <div class="n rv">411</div>
     <div class="h rv" style="--d:.15s">HABITACIÓN</div>
     <div class="k rv" style="--d:.25s">SUITE CON COCINA</div>
     <p class="rv" style="--d:.4s">Una suite amplia y cálida.</p>
   </div>
-  <div class="num" style="left:720px;">— 11 —</div>
+  <div class="num"></div>
 </section>
 
 <!-- 411 PROPUESTA GENERAL -->

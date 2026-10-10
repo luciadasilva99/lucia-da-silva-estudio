@@ -123,6 +123,10 @@
   .tile .lab { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 10px; background: linear-gradient(transparent, rgba(0,0,0,.55)); color: #fff; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; }
   .tile .lab em { display: block; font-style: italic; text-transform: none; letter-spacing: .02em; font-size: 12.5px; opacity: 0; max-height: 0; transition: opacity .4s, max-height .4s; }
   .tile:hover .lab em, .tile.act .lab em { opacity: 1; max-height: 40px; }
+  .base { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: #444; }
+  .base > span { font-size: 10px; letter-spacing: .2em; color: #14306a; font-weight: 500; margin-right: 4px; }
+  .base div { display: flex; align-items: center; gap: 6px; }
+  .base i { width: 22px; height: 22px; border-radius: 4px; border: 1px solid rgba(0,0,0,.12); display: inline-block; }
   .pal { display: flex; gap: 7px; margin-top: 22px; flex-wrap: nowrap; }
   .pal div { width: 40px; text-align: center; font-size: 7.5px; letter-spacing: .08em; text-transform: uppercase; color: #444; transition: transform .4s; }
   .pal div i { display: block; width: 36px; height: 36px; margin-left: auto; margin-right: auto; border-radius: 50%; margin-bottom: 6px; border: 1px solid rgba(0,0,0,.08); transition: box-shadow .4s; }
@@ -344,9 +348,10 @@
   <div class="pad" style="top:96px;"><div class="nq">
     <div class="txt">
       <h2 class="rv">NUESTRA<span>IMPRONTA</span></h2>
-      <p class="rv" style="--d:.2s">Nos encanta la provincia de Neuquén como punto de partida: las araucarias, el Lanín, los lagos del sur, la piedra volcánica y la estepa del norte, la lana y los tejidos de telar.</p>
-      <p class="rv mhide" style="--d:.3s">De ahí tomamos los tonos, las texturas, los materiales y el arte para los cuadros. Siempre en una versión neutra, delicada y fina, propia de la hotelería.</p>
-      <div class="hint rv" style="--d:.5s; margin-top:18px;"><i></i>Pasá el mouse o tocá cada imagen</div>
+      <p class="rv" style="--d:.2s">Un hotel corporativo en la ciudad, con raíz neuquina: sobre una base sobria y prolija, alineada con la identidad de Land Hoteles, sumamos la impronta de la provincia en los detalles.</p>
+      <p class="rv mhide" style="--d:.3s">De las araucarias, el Lanín, los lagos, la piedra volcánica, la estepa y el telar tomamos tonos, texturas y el arte para los cuadros. Siempre en una versión neutra, fina y práctica: no un lodge de montaña, sino un hotel urbano con identidad.</p>
+      <div class="hint rv" style="--d:.5s; margin-top:16px;"><i></i>Pasá el mouse o tocá cada imagen</div>
+      <div class="base rv" style="--d:.55s"><span>Base Land</span><div><i style="background:#14306a"></i>Azul</div><div><i style="background:#b8b1a6"></i>Gris piedra</div><div><i style="background:#ffffff"></i>Blanco</div></div>
       <div class="pal rv" style="--d:.6s" id="pal">
         <div data-c="0"><i style="background:#3f4a3a"></i>Araucaria</div>
         <div data-c="1"><i style="background:#f3f1ec"></i>Nieve</div>

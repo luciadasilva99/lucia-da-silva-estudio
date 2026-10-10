@@ -24,6 +24,8 @@
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "yv9lywlscl");
   clarity("set", "propuesta", "oficinas-pilar-2026");
+  // link personalizado (?de=nombre) para saber quién la miró
+  (function(){ var de = new URLSearchParams(location.search).get("de"); if (de) clarity("set", "visitante", de.toLowerCase()); })();
 </script>
 <title>Propuesta de Interiorismo · Oficinas Pilar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">

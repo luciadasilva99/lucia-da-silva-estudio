@@ -37,6 +37,8 @@ html = html.replace(anchor, `${anchor}
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
   })(window, document, "clarity", "script", "yv9lywlscl");
   clarity("set", "propuesta", "${slug}");
+  // link personalizado (?de=nombre) para saber quién la miró
+  (function(){ var de = new URLSearchParams(location.search).get("de"); if (de) clarity("set", "visitante", de.toLowerCase()); })();
 </script>`);
 fs.writeFileSync(path.join(dest, 'index.html'), html);
 console.log('Publicada en', url);

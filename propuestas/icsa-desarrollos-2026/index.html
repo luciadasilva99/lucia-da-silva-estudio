@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+(function(){
+  var w = window.innerWidth, hgt = window.innerHeight, touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  if (w < 820 || (touch && Math.min(w, hgt) < 600) || (touch && hgt > w)) document.documentElement.classList.add('mobile');
+})();
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Propuesta de Alianza · ICSA Desarrollos · Lucía Da Silva Estudio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Propuesta de Alianza · ICSA Desarrollos">
+<meta property="og:description" content="Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva · Lucía Da Silva Estudio">
+<meta property="og:image" content="https://luciadasilvaestudio.com.ar/propuestas/icsa-desarrollos-2026/img/p-hotel.jpg">
+<meta property="og:url" content="https://luciadasilvaestudio.com.ar/propuestas/icsa-desarrollos-2026/">
+<link rel="icon" type="image/png" href="/assets/images/favicon.png">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "yv9lywlscl");
+  clarity("set", "propuesta", "icsa-desarrollos-2026");
+  // link personalizado (?c=codigo o ?de=nombre) para saber quién la miró
+  (function(){ var q = new URLSearchParams(location.search), v = q.get("c") || q.get("de"); if (v) clarity("set", "visitante", v.toLowerCase()); })();
+</script>
+<title>Propuesta de Alianza · ICSA Desarrollos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#111; --terra:#a0583a; --brown:#6b5d4a; --sand:#efe4d6; --blush:#efdfd3; --sage:#dfe4d8; --hl:#f3e9dc; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #e7e3dc; overflow: hidden; }
+  body { font-family: "Montserrat", Arial, sans-serif; color: var(--ink); font-size: 16px; line-height: 1.55; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1440px; height: 810px; transform-origin: 0 0; background:#fff; box-shadow: 0 10px 40px rgba(0,0,0,.12); overflow: hidden; }
+  .slide { position: absolute; inset: 0; background: #fff; opacity: 0; visibility: hidden; overflow: hidden; transition: opacity .6s ease, visibility 0s linear .6s; }
+  .slide.on { opacity: 1; visibility: visible; transition: opacity .6s ease; z-index: 2; }
+  .rv { opacity: 0; transform: translateY(16px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .slide.on .rv { opacity: 1; transform: none; transition-delay: var(--d, .15s); }
+  .zoom { transform: scale(1.05) translateZ(0); will-change: transform; backface-visibility: hidden; transition: transform 8s cubic-bezier(.25,.1,.25,1); }
+  .slide.on .zoom { transform: scale(1.0001) translateZ(0); }
+  .draw * { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); transition: stroke-dashoffset 1.8s ease; }
+  .slide.on .draw * { stroke-dashoffset: 0; transition-delay: var(--d, .4s); }
+  .img { background-size: cover; background-position: center; }
+
+  .fl, .fr { position: absolute; bottom: 28px; font-size: 11px; letter-spacing: .1em; color: #555; font-weight:300; z-index: 3; }
+  .fl { left: 56px; } .fr { right: 56px; }
+  .ondark { color: rgba(255,255,255,.92) !important; text-shadow: 0 0 6px rgba(0,0,0,.4); }
+  .date { position: absolute; top: 30px; right: 56px; font-size: 11px; letter-spacing: .1em; color: #555; z-index: 3; }
+  .num { position: absolute; bottom: 28px; left: 0; right: 0; text-align: center; font-size: 12px; color: #333; z-index: 3; }
+  .t { position: absolute; top: 74px; left: 56px; z-index: 3; }
+  .t h1 { font-weight: 700; letter-spacing: .2em; font-size: 26px; text-transform: uppercase; }
+  .t h1 span { font-weight: 300; }
+  .t .s { font-weight: 400; letter-spacing: .26em; text-transform: uppercase; font-size: 11px; color: #555; margin-top: 6px; }
+  .h2 { font-weight: 700; letter-spacing: .2em; font-size: 26px; text-transform: uppercase; line-height: 1.1; }
+  .h2 span { font-weight: 300; }
+  .col { border-top: 1px solid #111; padding-top: 20px; }
+  .col .h { font-style: italic; font-size: 14px; }
+  .k { font-weight: 300; letter-spacing: .26em; text-transform: uppercase; font-size: 11px; color: #555; }
+  p, li { text-wrap: pretty; }
+  .bal { text-wrap: balance; }
+  .vx * { vector-effect: non-scaling-stroke; }
+
+  .hint2 { font-size: 10.5px; letter-spacing: .22em; color: rgba(107,93,74,.75); display: flex; align-items: center; gap: 10px; }
+  .hint2 i { width: 7px; height: 7px; border-radius: 50%; background: rgba(107,93,74,.6); animation: pulse 1.6s infinite; flex: 0 0 auto; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(107,93,74,.5)} 100%{box-shadow:0 0 0 12px rgba(107,93,74,0)} }
+  @keyframes bob { 0%,100% { margin-top: 0; } 50% { margin-top: -7px; } }
+  @keyframes fade { to { opacity: 1; } }
+  @keyframes redraw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  @keyframes nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  /* índice */
+  .idx a { display: block; color: inherit; text-decoration: none; padding: 4px 10px; margin: -4px -10px; transition: background .25s; cursor: pointer; }
+  .idx a:hover { background: var(--hl); }
+
+  /* dibujos de línea que se trazan (regla general) */
+  .hv { cursor: pointer; transition: background .3s ease, transform .3s ease, box-shadow .3s ease; }
+  .ic2 * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .ic2 .f { stroke-dasharray: none; opacity: 0; transition: opacity .5s ease .4s; }
+  .hv:hover .ic2 *, .hv.on .ic2 * { animation: redraw 1s ease both; }
+  .hv:hover .ic2 .f, .hv.on .ic2 .f { animation: none; opacity: 1; }
+
+  /* oportunidad */
+  .pgb { padding: 6px 14px; margin: 0 0 4px -14px; border-left: 3px solid transparent; cursor: pointer; transition: background .3s ease, border-color .3s ease, padding .3s ease; }
+  .pgb:hover, .pgb.on { background: var(--hl); border-left-color: var(--terra); padding-left: 22px; }
+  .pgi { opacity: 0; transition: opacity .35s ease; }
+  .pgi.on { opacity: 1; }
+  .pgi * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .pgi.on * { animation: redraw 1.3s ease both; }
+  .pgi .f { stroke-dasharray: none; opacity: 0; }
+  .pgi.on .f { animation: fade .6s ease .6s forwards; }
+  .hl { background: linear-gradient(#f1dccb, #f1dccb) no-repeat 0 85% / 0% 45%; transition: background-size 1.2s ease 1s; }
+  .slide.on .hl { background-size: 100% 45%; }
+
+  /* del plano a la vida */
+  .cmp { position: relative; cursor: ew-resize; touch-action: none; user-select: none; -webkit-user-select: none; }
+  .cmp svg { display: block; width: 100%; height: auto; }
+  .cmp .bar { position: absolute; top: 0; bottom: 0; left: var(--x, 50%); width: 1.5px; margin-left: -.75px; background: #111; pointer-events: none; }
+  .cmp .knob { position: absolute; top: 50%; left: 50%; width: 46px; height: 46px; margin: -23px 0 0 -23px; border-radius: 50%; background: #fff; border: 1px solid #111; display: flex; align-items: center; justify-content: center; font-size: 15px; color: #111; animation: pulsek 2s infinite; }
+  @keyframes pulsek { 0%{box-shadow:0 0 0 0 rgba(160,88,58,.45)} 100%{box-shadow:0 0 0 16px rgba(160,88,58,0)} }
+  .tag { position: absolute; top: 4px; font: 500 9.5px "Montserrat", Arial; letter-spacing: .22em; color: #555; pointer-events: none; }
+  .glowp { animation: glowp 3s ease-in-out infinite; }
+  @keyframes glowp { 0%,100% { opacity: .75; } 50% { opacity: 1; } }
+
+  /* torre */
+  .flr { transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .4s; }
+  .flr polygon { transition: fill .45s ease; }
+  .zone-on .flr:not(.act) { opacity: .45; }
+  .flr.act { transform: translateX(-18px); }
+  .flr.act .lf { fill: #e6c6b1; } .flr.act .rf { fill: #d2a68b; } .flr.act .tp { fill: #f3e2d6; }
+  .rise { opacity: 0; transform: translateY(-30px); }
+  .slide.on .rise, .mrise.in .rise { opacity: 1; transform: none; transition: opacity .5s ease var(--d), transform .6s cubic-bezier(.2,.7,.2,1) var(--d); }
+  .zr { display: block; padding: 9px 16px; margin-left: -16px; border-left: 3px solid transparent; cursor: pointer; transition: background .3s, border-color .3s, padding .3s; }
+  .zr:hover, .zr.on { background: var(--hl); border-left-color: var(--terra); padding-left: 24px; }
+  .zr .k { font-size: 10px; }
+  .zr b { font-size: 14px; letter-spacing: .16em; }
+  .stat { font-weight: 300; font-size: 40px; line-height: 1; letter-spacing: .02em; }
+  .stat small { display: block; margin-top: 8px; font-size: 10px; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; color: #555; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+  .chip { display: inline-block; white-space: nowrap; animation: bob 3.4s ease-in-out infinite, fadeIn .5s ease both; }
+  .chip:nth-child(2n) { animation-delay: .8s, .1s; }
+  .chip:nth-child(3n) { animation-delay: 1.5s, .2s; }
+  .chip.need { font: 500 10px "Montserrat", Arial; letter-spacing: .18em; background: #2f2a26; color: #fff; padding: 7px 11px; }
+  .chip.feel { font: italic 300 19px "Montserrat", Arial; color: var(--terra); }
+  .legend { display: flex; gap: 22px; font-size: 11px; color: #444; align-items: center; }
+  .legend .n { display: inline-block; background: #2f2a26; color: #fff; font-size: 9px; letter-spacing: .16em; padding: 3px 7px; margin-right: 6px; }
+  .legend .f { font-style: italic; color: var(--terra); font-size: 14px; margin-right: 6px; }
+  #zdet > * { animation: fadeIn .45s ease both; }
+
+  /* perfiles */
+  .qc { position: relative; background: #fff; box-shadow: 0 10px 28px rgba(0,0,0,.12); padding: 28px 28px 30px; transition: transform .25s ease-out, box-shadow .35s ease; will-change: transform; }
+  .qc .ic2 { position: absolute; right: 18px; top: 18px; opacity: .2; transition: opacity .35s ease; }
+  .qc:hover .ic2, .qc.on .ic2 { opacity: 1; }
+  .qc .ans { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(17,17,17,.15); font-size: 13.5px; color: #333; }
+  .qc .ans b { color: var(--terra); font-weight: 500; letter-spacing: .14em; font-size: 10.5px; display: block; margin-bottom: 4px; }
+  #spot { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,.28), transparent 60%); opacity: 0; transition: opacity .5s; }
+  #perfiles:hover #spot { opacity: 1; }
+
+  /* servicios: etapas */
+  .stg { position: absolute; left: 56px; right: 56px; top: 250px; height: 400px; display: flex; gap: 28px; }
+  .st { flex: 1 1 0; min-width: 0; border-top: 1px solid #111; padding: 22px 24px 0; position: relative; overflow: hidden; cursor: pointer; transition: flex-grow .55s cubic-bezier(.2,.7,.2,1), background .4s ease; }
+  .st.on { flex-grow: 1.9; background: #f6ece2; animation: breathe 2.6s ease-in-out infinite; }
+  .st:not(.on):hover { background: #faf6f1; }
+  @keyframes breathe { 0%,100% { background: #f6ece2; box-shadow: 0 0 0 0 rgba(239,223,211,0); } 50% { background: #f1e0d2; box-shadow: 0 0 0 8px rgba(239,223,211,.45); } }
+  .st .more, .st .next { position: absolute; left: 24px; bottom: 22px; font: 500 10.5px "Montserrat", Arial; letter-spacing: .2em; text-transform: uppercase; color: rgba(17,17,17,.7); border: 1px solid rgba(17,17,17,.25); background: rgba(255,255,255,.35); padding: 9px 14px; display: inline-flex; align-items: center; gap: 10px; transition: opacity .3s ease, background .25s, color .25s; cursor: pointer; }
+  .st .more b, .st .next b { display: inline-block; font-size: 15px; animation: nudge 1.3s ease-in-out infinite; }
+  .st .more:hover, .st .next:hover { background: rgba(17,17,17,.82); color: #fff; border-color: transparent; }
+  .st.on .more { opacity: 0; pointer-events: none; }
+  .st .next { opacity: 0; pointer-events: none; }
+  .st.on .next { opacity: 1; pointer-events: auto; transition-delay: .4s; }
+  .st .step { position: absolute; right: 24px; bottom: 30px; font-size: 11px; letter-spacing: .2em; color: #777; }
+  .st .ic { position: absolute; right: 22px; top: 22px; }
+  .st .ic * { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .st.on .ic * { animation: redraw 1.4s ease; }
+  .st .no { font-weight: 300; font-size: 40px; letter-spacing: .06em; line-height: 1; }
+  .st .ti { font-weight: 700; letter-spacing: .18em; font-size: 15px; margin-top: 24px; text-transform: uppercase; line-height: 1.35; min-height: 2.7em; padding-right: 50px; text-wrap: balance; }
+  .st .su { font-style: italic; font-size: 13.5px; color: #444; margin-top: 6px; text-wrap: balance; }
+  .st.on .su { white-space: nowrap; }
+  .st ul { list-style: none; margin-top: 18px; font-size: 13px; color: #333; width: 540px; opacity: 0; transform: translateY(8px); transition: opacity .3s ease, transform .3s ease; }
+  .st.on ul { opacity: 1; transform: none; transition: opacity .45s ease .25s, transform .45s ease .25s; }
+  .st li, .pk li { margin-bottom: 8px; padding-left: 14px; position: relative; }
+  .st li::before, .pk li::before { content: "/"; position: absolute; left: 0; color: #111; }
+
+  /* tipologías */
+  #unit .z { opacity: 0; transition: opacity .5s ease; }
+  #unit.show .z { opacity: 1; }
+  .ty { display: flex; gap: 8px; }
+  .ty button, .tabs2 button { font: 500 11px "Montserrat", Arial; letter-spacing: .18em; background: rgba(255,255,255,.4); border: 1px solid #111; padding: 9px 14px; cursor: pointer; transition: background .25s, color .25s; color: #111; }
+  .ty button.on, .ty button:hover { background: #111; color: #fff; }
+  .pk { position: relative; border-top: 1px solid #111; padding: 18px 16px 16px; transition: background .35s, transform .35s; }
+  .pk .ttl { font-weight: 700; letter-spacing: .18em; font-size: 13px; text-transform: uppercase; }
+  .pk .sb { font-style: italic; font-size: 13px; color: #444; margin-top: 3px; }
+  .pk ul { list-style: none; margin-top: 12px; font-size: 12.5px; color: #333; }
+  .pk li { margin-bottom: 5px; }
+  .pk .ic2 { position: absolute; right: 12px; top: 14px; }
+  .pk.sug { background: #f6ece2; }
+  .pk .badge { position: absolute; right: 70px; top: 18px; font: 600 9px "Montserrat", Arial; letter-spacing: .2em; color: #fff; background: var(--terra); padding: 4px 8px; opacity: 0; transform: translateY(-4px); transition: opacity .35s, transform .35s; }
+  .pk.sug .badge { opacity: 1; transform: none; }
+  .pk:hover { transform: translateY(-4px); }
+  #ucnt { font-weight: 300; font-size: 54px; line-height: 1; }
+
+  /* cómo funciona: dibujos */
+  .ico { cursor: pointer; transition: opacity .3s; }
+  .ico .hit { fill: transparent; stroke: none; }
+  .ico.dim { opacity: .15; }
+  .wk { cursor: pointer; padding: 12px 14px 16px; margin: -12px -14px; transition: background .3s; }
+  .wk.on { background: var(--hl); }
+  .pop { position: absolute; top: 176px; width: 300px; background: #fff; border: 1px solid #111; box-shadow: 0 12px 30px rgba(0,0,0,.12); padding: 10px 0 12px; opacity: 0; transform: translateY(10px) scale(.96); transition: opacity .35s ease, transform .35s ease; pointer-events: none; z-index: 6; overflow: hidden; }
+  .pop.on { opacity: 1; transform: none; }
+  .pop svg { display: block; overflow: hidden; }
+  .pop .cap { font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; text-align: center; margin-top: 6px; color: #333; }
+  .pop .d { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  .pop.on .d { animation: dash .7s ease forwards; animation-delay: var(--a, 0s); }
+  .pop .f, .pop .b, .pop .dr, .pop .gl, .pop .sw { opacity: 0; }
+  .pop.on .f { animation: fade .5s ease forwards; animation-delay: var(--a, 0s); }
+  .pop .b, .pop .sw { transform-box: fill-box; transform-origin: center; }
+  .pop.on .b { animation: popin .45s cubic-bezier(.3,1.6,.5,1) forwards; animation-delay: var(--a, 0s); }
+  .pop.on .dr { animation: drop .6s cubic-bezier(.3,1.3,.5,1) forwards; animation-delay: var(--a, 0s); }
+  .pop.on .gl { animation: glow 1.4s ease forwards; animation-delay: var(--a, 0s); }
+  .pop .door { transform-box: fill-box; transform-origin: left center; }
+  .pop.on .door { animation: opendoor 1.2s ease forwards; animation-delay: var(--a, 0s); }
+  .pop.on .sw { animation: twinkle 1.6s ease-in-out infinite; animation-delay: var(--a, 0s); }
+  @keyframes dash { to { stroke-dashoffset: 0; } }
+  @keyframes popin { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
+  @keyframes drop { 0% { opacity: 0; transform: translateY(-70px); } 50% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+  @keyframes glow { 0% { opacity: 0; } 40% { opacity: 1; } 60% { opacity: .55; } 100% { opacity: 1; } }
+  @keyframes opendoor { from { transform: scaleX(1); } to { transform: scaleX(.35); } }
+  @keyframes twinkle { 0%,100% { opacity: 0; transform: scale(.4); } 50% { opacity: 1; transform: scale(1); } }
+
+  /* beneficios */
+  .venn .va, .venn .vb { transition: transform 1.1s cubic-bezier(.2,.7,.2,1) .2s; }
+  .venn .va { transform: translateX(-34px); } .venn .vb { transform: translateX(34px); }
+  .slide.on .venn .va, .slide.on .venn .vb { transform: none; }
+  .venn .vl { opacity: 0; transition: opacity .8s ease 1.2s; }
+  .slide.on .venn .vl { opacity: 1; }
+  .ali { position: relative; padding: 14px 70px 12px 12px; transition: background .3s, transform .3s; border-top: 1px solid #111; }
+  .ali:hover, .ali.on { background: var(--hl); transform: translateY(-4px); }
+  .ali .ic2 { position: absolute; right: 10px; top: 14px; }
+
+  /* nosotros */
+  .pil { border-top: 1px solid #111; padding-top: 14px; transition: border-color .3s; }
+  .pil:hover, .pil.on { border-top-color: var(--terra); }
+  .rnd { position: relative; overflow: hidden; background: #ddd; }
+  .rnd div { position: absolute; inset: 0; background-size: cover; background-position: center; transform: scale(1.02); transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .rnd:hover div, .rnd.on div { transform: scale(1.1); }
+  .rnd span { position: absolute; left: 0; bottom: 0; font: 500 10px "Montserrat", Arial; letter-spacing: .22em; text-transform: uppercase; background: rgba(255,255,255,.85); padding: 7px 12px; transform: translateY(100%); transition: transform .4s ease; }
+  .rnd:hover span, .rnd.on span { transform: none; }
+
+  /* próximos pasos */
+  .pstep { padding: 14px 14px 18px; margin: -14px; }
+  .pstep:hover, .pstep.on { background: var(--hl); transform: translateY(-4px); }
+
+  /* botones de cierre */
+  .web { display: inline-flex; align-items: center; gap: 8px; color: #111; text-decoration: none; border: 1px solid #111; padding: 11px 18px; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; transition: background .25s, color .25s; animation: webpulse 2.4s ease-in-out infinite 2s; }
+  .web:hover { background: #111; color: #fff !important; }
+  .web .wa { display: inline-block; animation: nudge 1.3s ease-in-out infinite; }
+  .web.fill { background: #111; color: #fff; }
+  .web.fill:hover { background: var(--terra); }
+  @keyframes webpulse { 0%,100% { box-shadow: 0 0 0 0 rgba(160,88,58,0); } 50% { box-shadow: 0 0 0 7px rgba(160,88,58,.18); } }
+
+  /* portada */
+  .trk { letter-spacing: .9em; opacity: 0; transition: letter-spacing 1.8s cubic-bezier(.2,.7,.2,1), opacity 1.4s ease; }
+  .slide.on .trk { letter-spacing: var(--ls); opacity: 1; transition-delay: var(--d); }
+  #cvsvg g { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+
+  /* cursor guía (computadora) */
+  #ghost { position: absolute; left: 0; top: 0; z-index: 35; pointer-events: none; opacity: 0; transition: left .8s cubic-bezier(.4,0,.2,1), top .8s cubic-bezier(.4,0,.2,1), opacity .45s ease; }
+  #ghost.show { opacity: .95; }
+  #ghost svg { display: block; filter: drop-shadow(0 2px 5px rgba(0,0,0,.25)); }
+  #ghost span { position: absolute; left: 24px; top: 28px; font: 500 9.5px "Montserrat", Arial; letter-spacing: .2em; color: #333; background: rgba(255,255,255,.75); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); border: 1px solid rgba(17,17,17,.12); border-radius: 20px; padding: 5px 11px; white-space: nowrap; animation: bob 2.6s ease-in-out infinite; }
+  #ghost i { position: absolute; left: -9px; top: -9px; width: 24px; height: 24px; border-radius: 50%; border: 2px solid rgba(160,88,58,.65); opacity: 0; }
+  #ghost.tap i { animation: ghosttap .55s ease-out; }
+  @keyframes ghosttap { from { opacity: 1; transform: scale(.4); } to { opacity: 0; transform: scale(1.7); } }
+
+  /* navegación */
+  #nav { position: fixed; right: 18px; bottom: 14px; z-index: 20; font: 400 12px "Montserrat", Arial; letter-spacing: .14em; color: #555; }
+  .side { position: fixed; top: 50%; z-index: 21; width: 52px; height: 52px; margin-top: -26px; border-radius: 50%; border: 1px solid rgba(17,17,17,.14); background: rgba(255,255,255,.45); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: rgba(17,17,17,.7); font-size: 28px; line-height: 1; cursor: pointer; transition: background .25s, color .25s, transform .2s, opacity .3s; display: flex; align-items: center; justify-content: center; padding-bottom: 4px; }
+  .side:hover { background: rgba(17,17,17,.78); color: #fff; transform: scale(1.06); }
+  .side.off { opacity: 0; pointer-events: none; }
+  #prev { left: 14px; } #next { right: 14px; }
+  #sec { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); z-index: 30; display: flex; gap: 2px; padding: 4px 6px; background: rgba(255,255,255,.42); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(17,17,17,.06); border-radius: 30px; white-space: nowrap; }
+  #sec button { font: 400 10px "Montserrat", Arial; letter-spacing: .2em; text-transform: uppercase; color: rgba(17,17,17,.6); background: none; border: 0; border-radius: 20px; padding: 7px 12px; cursor: pointer; white-space: nowrap; transition: background .25s, color .25s; }
+  #sec button:hover { color: #111; background: rgba(255,255,255,.5); }
+  #sec button.on { color: #111; font-weight: 600; background: rgba(255,255,255,.75); }
+  #bar { position: fixed; left: 0; top: 0; height: 3px; background: var(--brown); transition: width .5s ease; z-index: 20; }
+
+  /* ===== versión celular ===== */
+  #m { display: none; }
+  html.mobile { overflow-y: auto; height: auto; scroll-snap-type: y mandatory; background: #fff; }
+  html.mobile body { overflow: visible; height: auto; background: #fff; }
+  html.mobile #stage, html.mobile .side, html.mobile #nav, html.mobile #bar { display: none !important; }
+  html.mobile #m { display: block; font-size: 14px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+  #mnav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; gap: 2px; overflow-x: auto; padding: 8px 10px; background: rgba(255,255,255,.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid rgba(0,0,0,.05); scrollbar-width: none; }
+  #mnav::-webkit-scrollbar { display: none; }
+  #mnav a { flex: 0 0 auto; font: 400 9.5px "Montserrat", Arial; letter-spacing: .16em; text-transform: uppercase; color: rgba(17,17,17,.6); text-decoration: none; padding: 6px 10px; border-radius: 20px; }
+  #mnav a.on { color: #111; font-weight: 600; background: rgba(255,255,255,.75); }
+  .ms { position: relative; min-height: 100vh; min-height: 100svh; min-height: 100dvh; padding: 54px 22px 36px; display: flex; flex-direction: column; justify-content: center; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
+  .ms > * { position: relative; }
+  .mnum { position: absolute !important; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 10.5px; color: #555; }
+  .ms h2 { font-weight: 700; font-size: 19px; letter-spacing: .17em; text-transform: uppercase; line-height: 1.3; }
+  .ms h2 span { font-weight: 300; }
+  .msub { font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; color: #555; margin-top: 6px; line-height: 1.6; text-wrap: balance; }
+  .mlead { margin-top: 12px; color: #222; font-size: 13.5px; text-wrap: pretty; }
+  .mnote { font-size: 11px; font-style: italic; color: #666; margin-top: 10px; text-wrap: pretty; }
+  .mrv { opacity: 0; transform: translateY(14px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+  .mrv.in { opacity: 1; transform: none; }
+  .mtap { margin-top: 12px; font-size: 9.5px; letter-spacing: .2em; color: rgba(107,93,74,.85); display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .mtap i { width: 6px; height: 6px; border-radius: 50%; background: rgba(107,93,74,.7); animation: pulse 1.6s infinite; }
+  .mbg { position: absolute !important; inset: 0; background-size: cover; background-position: center; }
+  .mcard { background: #fff; padding: 24px 20px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+  .mcard p { margin-top: 10px; font-size: 13.5px; color: #333; }
+  .mcover { align-items: center; text-align: center; }
+  .mcv { position: absolute !important; left: 50%; top: 50%; width: 110%; max-width: 520px; transform: translate(-50%, -52%); }
+  .mdate { position: absolute !important; top: 52px; right: 22px; font-size: 10px; letter-spacing: .1em; color: #555; }
+  .mtitle { background: #fff; box-shadow: 0 0 40px 30px #fff; padding: 4px 6px; }
+  .mcover.in .trk { letter-spacing: var(--ls); opacity: 1; transition-delay: var(--d); }
+  .mnames { margin-top: 56px; font-size: 12px; line-height: 1.9; }
+  .mscroll { position: absolute !important; bottom: 16px; left: 0; right: 0; font-size: 9px; letter-spacing: .22em; color: rgba(17,17,17,.5); display: flex; flex-direction: column-reverse; align-items: center; gap: 2px; }
+  .mscroll span { font-size: 15px; animation: mbounce 1.6s ease-in-out infinite; }
+  @keyframes mbounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .midx { display: block; color: inherit; text-decoration: none; margin-top: 12px; font-size: 13px; }
+  .midx span { color: #555; }
+  .mpg { display: flex; gap: 12px; align-items: center; margin-top: 6px; padding: 7px 8px 7px 0; border-left: 3px solid transparent; transition: background .3s, border-color .3s, padding .3s; }
+  .mpg .ic2 { flex: 0 0 44px; width: 44px; height: 36px; }
+  .mpg p { font-size: 12.5px; line-height: 1.45; }
+  .mpg.on { background: var(--hl); border-left-color: var(--terra); padding-left: 8px; }
+  .mbtns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .mb { font: 500 10px "Montserrat", Arial; letter-spacing: .14em; text-transform: uppercase; background: rgba(255,255,255,.6); border: 1px solid rgba(17,17,17,.25); padding: 8px 11px; color: #111; }
+  .mb.on { background: #111; color: #fff; border-color: #111; }
+  .mpanel { margin-top: 12px; background: rgba(255,255,255,.9); padding: 14px 16px; }
+  .mpanel .chips { margin-top: 10px; gap: 6px 10px; }
+  .mpanel .chip.need { font-size: 8.5px; padding: 5px 8px; }
+  .mpanel .chip.feel { font-size: 15px; }
+  .mtower { display: block; width: 100%; max-width: 150px; margin: 0 auto; }
+  .mstats { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; margin-top: 12px; text-align: center; }
+  .mstats .stat { font-size: 22px; }
+  .mstats .stat small { font-size: 7.5px; letter-spacing: .14em; margin-top: 4px; }
+  .mq { position: relative; background: #fff; padding: 14px 14px; margin-top: 10px; box-shadow: 0 8px 22px rgba(0,0,0,.12); transition: transform .35s, box-shadow .35s; }
+  .mq .t1 { font-weight: 600; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; padding-right: 50px; }
+  .mq .ic2 { position: absolute; right: 10px; top: 10px; width: 44px; height: 34px; }
+  .mq p { font-size: 12px; margin-top: 4px; color: #444; }
+  .mq .ans { display: none; font-size: 12px; margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(17,17,17,.15); color: #222; }
+  .mq .ans b { display: block; color: var(--terra); font-weight: 500; letter-spacing: .14em; font-size: 9px; }
+  .mq.sel .ans { display: block; animation: fadeIn .45s ease; }
+  .mq.attn { transform: translateY(-3px); box-shadow: 0 0 0 2px rgba(160,88,58,.45), 0 14px 30px rgba(160,88,58,.2); }
+  .mtabs3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; margin-top: 14px; }
+  .mst3 { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; background: #fff; border: 0; border-top: 1px solid #111; padding: 10px 8px; text-align: left; color: #111; }
+  .mst3.on { background: #f6ece2; animation: breathe 2.6s ease-in-out infinite; }
+  .mst3 .mno { font-weight: 300; font-size: 22px; line-height: 1; }
+  .mst3 .mti { font-weight: 700; font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; line-height: 1.3; }
+  .mstp { display: none; background: #f6ece2; padding: 14px 16px; }
+  .mstp.on { display: block; animation: fadeIn .45s ease; }
+  .mstp ul, .mpk ul { list-style: none; margin-top: 6px; font-size: 12.5px; color: #333; }
+  .mstp li, .mpk li { padding-left: 13px; position: relative; margin-top: 4px; line-height: 1.4; }
+  .mstp li::before, .mpk li::before { content: "/"; position: absolute; left: 0; color: #111; }
+  .msu { font-style: italic; font-size: 13px; color: #444; }
+  .mpk { border-top: 1px solid #111; padding: 10px 10px 8px; margin-top: 8px; position: relative; transition: background .35s; }
+  .mpk .ttl { font-weight: 700; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+  .mpk ul { display: none; }
+  .mpk.open ul { display: block; animation: fadeIn .4s ease; }
+  .mpk.sug { background: #f6ece2; }
+  .mpk .badge { position: absolute; right: 8px; top: 9px; font: 600 8px "Montserrat", Arial; letter-spacing: .16em; color: #fff; background: var(--terra); padding: 3px 6px; display: none; }
+  .mpk.sug .badge { display: block; }
+  .mtline { position: relative; display: flex; justify-content: space-between; margin-top: 22px; }
+  .mtline::before { content: ""; position: absolute; left: 14px; right: 14px; top: 13px; height: 1px; background: #111; }
+  .mwb { position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; background: none; border: 0; padding: 0; font: 600 10px "Montserrat", Arial; letter-spacing: .14em; color: #111; }
+  .mwb i { width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 2px solid #111; transition: background .3s, transform .3s, border-color .3s; animation: pulse 1.8s infinite; }
+  .mwb.on i { background: var(--terra); border-color: var(--terra); transform: scale(1.12); box-shadow: 0 0 0 6px rgba(160,88,58,.18); animation: none; }
+  .mwk { display: none; padding-top: 12px; }
+  .mwk.on { display: block; animation: fadeIn .45s ease; }
+  .mwk p { font-size: 13px; color: #333; margin-top: 4px; }
+  #m .pop { position: relative; top: auto; left: auto; width: 100%; max-width: 260px; margin: 10px auto 0; opacity: 1; transform: none; box-shadow: none; border: 1px solid rgba(17,17,17,.15); pointer-events: auto; }
+  #m .pop svg { width: 100%; height: auto; }
+  .mvenn svg { width: 100%; max-width: 220px; height: auto; }
+  #m .mvenn.in .venn .va, #m .mvenn.in .venn .vb { transform: none; }
+  #m .mvenn.in .venn .vl { opacity: 1; }
+  .mgrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; margin-top: 14px; text-align: left; }
+  .mg2 { border-top: 1px solid #111; padding-top: 10px; font-size: 12px; line-height: 1.4; }
+  .mg2 .ic2 { display: block; width: 46px; height: 36px; margin-bottom: 6px; }
+  .mg2 b { display: block; font-size: 12px; }
+  .mg2 span { display: block; color: #444; margin-top: 3px; }
+  .mpk2 { font-size: 9px; letter-spacing: .18em; color: var(--terra); margin-bottom: 3px; }
+  .mben { margin-top: 10px; text-align: left; }
+  .mben .k { font-size: 9px; color: var(--terra); }
+  .mben p { font-size: 12px; margin-top: 5px; padding-left: 12px; position: relative; }
+  .mben p::before { content: "/"; position: absolute; left: 0; }
+  .mrnds { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 14px; }
+  .mrnds .rnd { height: 17vh; }
+  .mrnds .rnd span { font-size: 8px; padding: 5px 8px; }
+  #m .web { padding: 11px 13px; font-size: 9.5px; letter-spacing: .12em; white-space: nowrap; }
+  .mcmp { margin-top: 10px; touch-action: pan-y; }
+  .mcmp .tag { font-size: 8px; }
+  .mcmp .knob { width: 36px; height: 36px; margin: -18px 0 0 -18px; font-size: 12px; }
+  @media (max-height: 720px) {
+    .ms { padding: 48px 20px 30px; }
+    .ms h2 { font-size: 17px; }
+    .mlead { font-size: 12.5px; margin-top: 8px; }
+    .mpg p { font-size: 11.5px; }
+    .mtower { max-width: 110px; }
+    .mq { padding: 10px 12px; margin-top: 7px; }
+    .mq p { font-size: 11.5px; }
+    .mcmp { height: 38vh; }
+    .mrnds .rnd { height: 14vh; }
+    .mgrid2 { gap: 10px; margin-top: 10px; }
+    .mg2, .mg2 b { font-size: 11.5px; }
+    .mvenn svg { max-width: 180px; }
+    .mnote { font-size: 10.5px; margin-top: 6px; }
+    .mstp li, .mpk li { font-size: 11.5px; margin-top: 3px; }
+  }
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<!-- ======================= VERSIÓN CELULAR ======================= -->
+<div id="m">
+  <nav id="mnav"><a href="#m-portada">Inicio</a><a href="#m-contenido">Contenido</a><a href="#m-oportunidad">Oportunidad</a><a href="#m-torre">Torre Libertadores II</a><a href="#m-servicios">Servicios</a><a href="#m-funciona">Alianza</a><a href="#m-somos">Nosotros</a></nav>
+
+  <section class="ms mcover" id="m-portada">
+    <svg class="mcv" id="mcvsvg" viewBox="440 20 560 640" fill="none" stroke="#111" stroke-width="1.1" stroke-opacity=".14"></svg>
+    <div class="mdate">Octubre 2026</div>
+    <div class="mtitle">
+      <div class="trk" style="--d:.2s; --ls:.3em; font-weight:700; font-size:27px;">PROPUESTA</div>
+      <div class="trk" style="--d:.5s; --ls:.3em; font-weight:300; font-size:15px; margin-top:8px;">DE ALIANZA</div>
+      <div class="mrv" style="margin-top:22px; font-size:10px; letter-spacing:.22em; line-height:1.7;">INTERIORISMO PARA<br>DESARROLLOS INMOBILIARIOS</div>
+      <div class="mrv" style="margin-top:10px; font-size:12px; font-style:italic; color:#333;">ICSA Desarrollos · Neuquén</div>
+    </div>
+    <div class="mnames mrv">Arquitecta <b>Clara Tacco Carulli</b><br>Diseñadora de interiores <b>Lucía Da Silva</b></div>
+    <div class="mscroll"><span>↓</span>DESLIZÁ</div>
+  </section>
+
+  <section class="ms" id="m-contenido">
+    <div class="mbg" style="background-image:url('img/contenido.webp');"></div>
+    <div class="mcard mrv">
+      <h2>Contenido</h2>
+      <a class="midx" href="#m-oportunidad"><b>01 / La oportunidad</b><br><span>Neuquén crece y el interiorismo hace la diferencia.</span></a>
+      <a class="midx" href="#m-torre"><b>02 / Torre Libertadores II</b><br><span>Dónde podemos sumar valor, piso por piso.</span></a>
+      <a class="midx" href="#m-servicios"><b>03 / Servicios</b><br><span>Amenities, imágenes de venta y paquetes por tipología.</span></a>
+      <a class="midx" href="#m-funciona"><b>04 / La alianza</b><br><span>Cómo funciona y qué gana cada parte.</span></a>
+      <a class="midx" href="#m-somos"><b>05 / Nosotros y próximos pasos</b><br><span>Quiénes somos y cómo seguimos.</span></a>
+    </div>
+    <div class="mnum">— 01 —</div>
+  </section>
+
+  <section class="ms" id="m-oportunidad">
+    <h2 class="mrv">La <span>oportunidad</span></h2>
+    <p class="mlead mrv">Neuquén vive un momento único. En un mercado con cada vez más oferta, lo que diferencia a un edificio es <b>cómo se imagina vivir en él</b>.</p>
+    <div class="mrv" style="margin-top:8px;" id="mpgs"></div>
+    <div class="mtap mrv"><i></i>TOCÁ CADA PUNTO</div>
+    <div class="mnum">— 02 —</div>
+  </section>
+
+  <section class="ms" id="m-vida">
+    <div class="mbg" style="background-image:url('img/vida.webp');"></div>
+    <div class="mcard mrv">
+      <h2>Del plano <span>a la vida</span></h2>
+      <p>Hoy, el comprador elige sobre un plano. Quien puede verse viviendo ahí, decide antes.</p>
+      <div class="cmp mcmp" id="mcmp"><span class="tag" style="left:0;">UNIDAD VACÍA</span><span class="tag" style="right:0;">CON INTERIORISMO</span><svg viewBox="0 0 560 420"></svg><div class="bar"><div class="knob">‹ ›</div></div></div>
+      <div class="mtap"><i></i>DESLIZÁ LA LÍNEA CON EL DEDO</div>
+    </div>
+    <div class="mnum ondark">— 03 —</div>
+  </section>
+
+  <section class="ms" id="m-torre">
+    <h2 class="mrv">Torre <span>Libertadores II</span></h2>
+    <div class="msub mrv">Dónde sumamos valor, piso por piso</div>
+    <div class="mstats mrv"><div class="stat"><span data-n="39">39</span><small>unidades</small></div><div class="stat"><span data-n="16">16</span><small>pisos</small></div><div class="stat"><span data-n="7198">7.198</span><small>m² totales</small></div><div class="stat"><span data-n="900">900</span><small>m² terraza</small></div></div>
+    <div class="mrv mrise" style="margin-top:10px;"><svg class="mtower" id="mtower" viewBox="230 120 340 620"></svg></div>
+    <div class="mbtns mrv" id="mzb"></div>
+    <div class="mpanel mrv" id="mzdet"></div>
+    <div class="mnum">— 04 —</div>
+  </section>
+
+  <section class="ms" id="m-perfiles">
+    <div class="mbg" style="background-image:url('img/perfiles.webp');"></div>
+    <h2 class="mrv ondark" style="text-shadow:0 0 12px rgba(0,0,0,.35);">Para quién <span>diseñamos</span></h2>
+    <div id="mqs"></div>
+    <div class="mtap mrv ondark"><i></i>TOCÁ CADA PERFIL</div>
+    <div class="mnum ondark">— 05 —</div>
+  </section>
+
+  <section class="ms" id="m-servicios">
+    <h2 class="mrv">Tres formas <span>de sumar valor</span></h2>
+    <div class="mtabs3 mrv" id="mst3"></div>
+    <div class="mrv" id="mstp"></div>
+    <p class="mnote mrv">Las piezas de mercado se proponen como referencia y pueden variar según la disponibilidad al momento de la compra.</p>
+    <div class="mnum">— 06 —</div>
+  </section>
+
+  <section class="ms" id="m-tipologias">
+    <div class="mbg" style="background-image:url('img/tipologias.webp');"></div><div class="mbg" style="background:rgba(251,248,243,.7);"></div>
+    <h2 class="mrv">Interiorismo <span>por tipología</span></h2>
+    <div class="msub mrv">Un beneficio exclusivo para compradores ICSA</div>
+    <div class="mbtns mrv" id="mty"></div>
+    <div class="mrv" style="display:flex; align-items:baseline; gap:10px; margin-top:10px;"><span id="mucnt" style="font-weight:300; font-size:30px; line-height:1;">21</span><span class="k" id="mutx" style="font-size:9px;">unidades · 47 a 55 m²</span></div>
+    <div class="mrv" id="mpks"></div>
+    <p class="mnote mrv">Tocá cada paquete para ver qué incluye. Condiciones preferenciales para compradores de ICSA Desarrollos.</p>
+    <div class="mnum">— 07 —</div>
+  </section>
+
+  <section class="ms" id="m-funciona">
+    <h2 class="mrv">Cómo <span>funciona</span></h2>
+    <div class="msub mrv">Simple para ICSA, valioso para el comprador</div>
+    <div class="mtline mrv" id="mwbs"></div>
+    <div class="mrv" id="mwks"></div>
+    <div class="mnum">— 08 —</div>
+  </section>
+
+  <section class="ms" id="m-beneficios" style="text-align:center;">
+    <div class="mbg" style="background-image:url('img/beneficios.webp');"></div>
+    <div class="mcard mrv">
+      <div class="mvenn"><svg viewBox="0 0 360 150" class="venn"><defs><clipPath id="mclipA"><circle cx="128" cy="75" r="62"/></clipPath></defs><g class="va"><circle cx="128" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="112" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6">ICSA</text><text x="112" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6">DESARROLLOS</text></g><g class="vb"><circle cx="232" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="248" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6">NUESTRO</text><text x="248" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6">ESTUDIO</text></g><circle class="vl" cx="232" cy="75" r="62" fill="#a0583a" fill-opacity=".85" clip-path="url(#mclipA)"/></svg></div>
+      <h2 style="margin-top:6px; font-size:16px;">Una alianza <span>que suma</span></h2>
+      <div class="mben"><div class="k">Para ICSA Desarrollos</div><p>Un diferencial comercial que no suma estructura.</p><p>Imágenes que ayudan a vender desde el pozo.</p><p>Amenities con identidad propia.</p><p>Compradores acompañados hasta la mudanza.</p></div>
+      <div class="mben"><div class="k">Para sus compradores</div><p>Condiciones preferenciales exclusivas.</p><p>Un equipo que ya conoce el edificio y sus plantas.</p><p>Una unidad lista para habitar o alquilar.</p></div>
+    </div>
+    <div class="mnum ondark">— 09 —</div>
+  </section>
+
+  <section class="ms" id="m-somos" style="background:var(--sage);">
+    <h2 class="mrv">Quiénes <span>somos</span></h2>
+    <p class="mlead mrv">Somos <b>Clara y Lucía</b>. Trabajamos juntas en proyectos de interiorismo y diseñamos espacios residenciales, comerciales y de hospitalidad. Nos apasiona lo que hacemos: cada proyecto empieza escuchando a quien lo va a habitar y termina en un espacio que se siente propio.</p>
+    <div class="mrnds mrv"><div class="rnd hv"><div style="background-image:url('img/p-hotel.jpg'); background-position:center 65%;"></div><span>Hotel Land Express</span></div><div class="rnd hv"><div style="background-image:url('img/p-mud.jpg')"></div><span>MUD</span></div><div class="rnd hv"><div style="background-image:url('img/p-terraza.jpg')"></div><span>Terraza</span></div><div class="rnd hv"><div style="background-image:url('img/p-alerces.jpg')"></div><span>Alerces</span></div></div>
+    <p class="mnote mrv" style="font-style:normal;">Interiorismo integral · Residencial, comercial y hospitalidad · Dirección de obra en Buenos Aires y Neuquén</p>
+    <div class="mnum">— 10 —</div>
+  </section>
+
+  <section class="ms mpasos" id="m-pasos">
+    <h2 class="mrv">Próximos <span>pasos</span></h2>
+    <div class="mgrid2 mrv" id="mpasos"></div>
+    <p class="mnote mrv" style="text-align:center;">Una primera reunión, sin compromiso, para conocer sus proyectos.</p>
+    <div class="mnum">— 11 —</div>
+  </section>
+
+  <section class="ms" style="align-items:center;">
+    <div class="mbg" style="background-image:url('img/gracias.webp');"></div>
+    <div class="mcard mrv" style="text-align:center; width:100%;">
+      <h2>¡Muchas <span>gracias!</span></h2>
+      <p style="font-style:italic;">Quedamos a disposición</p>
+      <p style="font-size:12.5px; line-height:1.7;">Arquitecta <b>Clara Tacco Carulli</b><br><a href="tel:+5492995046147" style="color:#111;">+54 9 299 504-6147</a><br>Diseñadora de interiores <b>Lucía Da Silva</b><br><a href="tel:+5491135659808" style="color:#111;">+54 9 11 3565-9808</a></p>
+      <div style="display:flex; flex-direction:column; align-items:center; gap:8px; margin-top:14px;">
+        <a class="web fill wapp" href="#" target="_blank" rel="noopener">Coordinemos una reunión <b class="wa">→</b></a>
+        <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener">Conocé nuestros proyectos <b class="wa">→</b></a>
+      </div>
+      <p style="font-size:11.5px; color:#555;">luciadasilvaestudio.com.ar</p>
+    </div>
+  </section>
+</div>
+
+<!-- ======================= VERSIÓN COMPUTADORA ======================= -->
+<div id="stage">
+<nav id="sec">
+  <button data-to="0">Inicio</button>
+  <button data-to="1">Contenido</button>
+  <button data-to="2">01 · Oportunidad</button>
+  <button data-to="4">02 · Torre Libertadores II</button>
+  <button data-to="6">03 · Servicios</button>
+  <button data-to="8">04 · Alianza</button>
+  <button data-to="10">05 · Nosotros</button>
+</nav>
+
+<!-- PORTADA -->
+<section class="slide" id="portada">
+  <svg id="cvsvg" style="position:absolute; left:0; top:0;" width="1440" height="810" viewBox="0 0 1440 810" fill="none" stroke="#111" stroke-width="1.1" stroke-opacity=".13"></svg>
+  <div class="date">Octubre 2026</div>
+  <div style="position:absolute; left:0; right:0; top:292px; text-align:center;"><div style="display:inline-block; background:#fff; box-shadow:0 0 60px 46px #fff; padding:6px 24px;">
+    <div class="trk" style="--d:.3s; --ls:.42em; font-weight:700; font-size:44px;">PROPUESTA</div>
+    <div class="trk" style="--d:.6s; --ls:.42em; font-weight:300; font-size:22px; margin-top:12px;">DE ALIANZA</div>
+    <div class="rv" style="--d:.7s; font-weight:400; letter-spacing:.34em; font-size:14px; margin-top:30px;">INTERIORISMO PARA DESARROLLOS INMOBILIARIOS</div>
+    <div class="rv" style="--d:.85s; font-style:italic; font-size:13px; margin-top:12px; color:#333;">ICSA Desarrollos · Neuquén, Argentina</div>
+  </div></div>
+  <div class="rv" style="--d:1.1s; position:absolute; left:0; right:0; bottom:60px; text-align:center; font-size:13px; color:#222;">
+    Arquitecta <b>Clara Tacco Carulli</b> &nbsp;&nbsp;·&nbsp;&nbsp; Diseñadora de interiores <b>Lucía Da Silva</b>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<section class="slide">
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/contenido.webp');"></div>
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div class="rv" style="position:absolute; left:300px; top:175px; width:840px; height:460px; background:#fff; display:flex; align-items:center; padding:60px 64px;"><div style="display:grid; grid-template-columns: 300px 1fr; align-items:start; width:100%;">
+    <div style="font-weight:700; letter-spacing:.24em; font-size:28px; line-height:1; margin-top:1px;">CONTENIDO</div>
+    <div class="idx" style="font-size:13.5px; display:grid; row-gap:16px;">
+      <a data-go="2"><b>01 / La oportunidad</b><br><span style="color:#555">Neuquén crece y el interiorismo hace la diferencia.</span></a>
+      <a data-go="4"><b>02 / Torre Libertadores II</b><br><span style="color:#555">Dónde podemos sumar valor, piso por piso.</span></a>
+      <a data-go="6"><b>03 / Servicios</b><br><span style="color:#555">Amenities, imágenes de venta y paquetes por tipología.</span></a>
+      <a data-go="8"><b>04 / La alianza</b><br><span style="color:#555">Cómo funciona y qué gana cada parte.</span></a>
+      <a data-go="10"><b>05 / Nosotros y próximos pasos</b><br><span style="color:#555">Quiénes somos y cómo seguimos.</span></a>
+    </div>
+  </div></div>
+  <div class="num">— 01 —</div>
+</section>
+
+<!-- LA OPORTUNIDAD -->
+<section class="slide" id="oportunidad">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div style="position:absolute; left:0; right:0; top:0; height:810px; display:flex; align-items:center; justify-content:center;"><div style="display:grid; grid-template-columns: 330px 720px; align-items:start;">
+    <div class="rv" style="--d:.1s"><div class="h2">LA</div><div class="h2"><span>OPORTUNIDAD</span></div>
+      <svg id="pgsvg" width="230" height="190" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="margin-top:46px; display:block;"></svg>
+      <div class="hint2" style="margin-top:14px;"><i></i>PASÁ EL MOUSE O TOCÁ CADA PUNTO</div>
+    </div>
+    <div style="font-size:16px; line-height:1.6;">
+      <p class="rv" style="--d:.2s; margin-bottom:22px; color:#333;">Neuquén vive un momento único: Vaca Muerta trae profesionales, familias e inversores que buscan dónde vivir. En un mercado con cada vez más oferta, lo que diferencia a un edificio no es solo dónde está, sino <b class="hl">cómo se imagina vivir en él</b>.</p>
+      <div class="rv" style="--d:.4s;" id="pgbs"></div>
+    </div>
+  </div></div>
+  <div class="num">— 02 —</div>
+</section>
+
+<!-- DEL PLANO A LA VIDA -->
+<section class="slide" id="vida">
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/vida.webp');"></div>
+  <div class="fl ondark">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr ondark">ICSA Desarrollos</div>
+  <div class="rv" style="--d:.2s; position:absolute; left:170px; top:135px; width:1100px; height:540px; background:#fff; padding:56px 60px; display:grid; grid-template-columns:330px 1fr; column-gap:50px; align-items:center;">
+    <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%; padding:6px 0;">
+      <div><div class="h2" style="font-size:24px;">DEL PLANO</div><div class="h2" style="font-size:24px; margin-top:6px;"><span>A LA VIDA</span></div></div>
+      <div>
+        <p style="font-size:14.5px; color:#333;">Hoy, el comprador elige sobre un plano. Quien puede <b class="hl">verse viviendo ahí</b>, decide antes.</p>
+        <p style="margin-top:14px; font-size:14.5px; color:#333;">El interiorismo convierte metros cuadrados en una forma de vivir.</p>
+      </div>
+      <div class="hint2"><i></i>ARRASTRÁ LA LÍNEA</div>
+    </div>
+    <div class="cmp" id="cmp"><span class="tag" style="left:0;">UNIDAD VACÍA</span><span class="tag" style="right:0;">CON INTERIORISMO</span><svg viewBox="0 0 560 420"></svg><div class="bar"><div class="knob">‹ ›</div></div></div>
+  </div>
+  <div class="num ondark">— 03 —</div>
+</section>
+
+<!-- TORRE LIBERTADORES II -->
+<section class="slide" id="torre">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div class="t"><h1>Torre <span>Libertadores II</span></h1><div class="s">Dónde sumamos valor, piso por piso</div></div>
+  <svg id="tower" style="position:absolute; left:0; top:0;" width="760" height="810" viewBox="0 0 760 810"></svg>
+  <div style="position:absolute; left:740px; width:644px; top:150px;">
+    <div class="rv" style="--d:.3s; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; padding-bottom:22px; border-bottom:1px solid rgba(17,17,17,.15);">
+      <div class="stat"><span data-n="39">39</span><small>unidades</small></div>
+      <div class="stat"><span data-n="16">16</span><small>pisos</small></div>
+      <div class="stat"><span data-n="7198">7.198</span><small>m² construidos</small></div>
+      <div class="stat"><span data-n="900">900</span><small>m² de terraza</small></div>
+    </div>
+    <div class="rv" style="--d:.5s; margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:4px 26px;" id="zrows"></div>
+    <div id="zdet" style="margin-top:20px; min-height:200px;"></div>
+  </div>
+  <p style="position:absolute; left:56px; bottom:58px; font-size:10.5px; color:#777; font-style:italic;">Esquema ilustrativo, según la información pública del proyecto.</p>
+  <div class="num">— 04 —</div>
+</section>
+
+<!-- PERFILES -->
+<section class="slide" id="perfiles">
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/perfiles.webp');"></div>
+  <div style="position:absolute; inset:0; background:rgba(40,25,15,.18);"></div>
+  <div id="spot"></div>
+  <div class="fl ondark">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr ondark">ICSA Desarrollos</div>
+  <div style="position:absolute; left:0; right:0; top:0; height:810px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+    <div class="rv h2 ondark" style="--d:.1s;">Para quién <span>diseñamos</span></div>
+    <p class="rv ondark" style="--d:.25s; margin-top:22px; width:760px; text-align:center; font-size:16px;">Quienes eligen hoy Torre Libertadores II buscan confort y modernidad. Cada perfil necesita algo distinto de su unidad.</p>
+    <div class="rv" style="--d:.4s; width:1180px; margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:26px;" id="qcs"></div>
+    <div class="hint2 rv ondark" style="--d:1s; margin-top:30px;"><i style="background:#fff;"></i>PASÁ EL MOUSE O TOCÁ CADA PERFIL</div>
+  </div>
+  <div class="num ondark">— 05 —</div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="slide" id="servicios">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div class="t"><h1>Tres formas <span>de sumar valor</span></h1><div class="s">Pueden contratarse por separado o en conjunto</div></div>
+  <p class="rv" style="--d:.15s; position:absolute; left:56px; width:860px; top:178px; font-size:14.5px; color:#333;">Trabajamos junto a la desarrolladora y al equipo de arquitectura para que el interiorismo acompañe cada etapa: del lanzamiento a la entrega de llaves.</p>
+  <div class="stg rv" style="--d:.3s" id="stg"></div>
+  <div class="hint2 rv" style="--d:1s; position:absolute; top:192px; right:56px;"><i></i>PASÁ EL MOUSE O TOCÁ CADA SERVICIO</div>
+  <p style="position:absolute; left:56px; right:56px; top:690px; text-align:center; font-size:12px; color:#666; font-style:italic;">Las piezas de mercado se proponen como referencia y pueden variar según la disponibilidad al momento de la compra. Las piezas a medida se diseñan para su fabricación.</p>
+  <div class="num">— 06 —</div>
+</section>
+
+<!-- TIPOLOGÍAS -->
+<section class="slide" id="tipologias">
+  <div style="position:absolute; left:0; top:0; width:620px; height:810px; overflow:hidden;"><div class="img zoom" style="position:absolute; inset:0; background-image:url('img/tipologias.webp');"></div><div style="position:absolute; inset:0; background:rgba(251,248,243,.7);"></div></div>
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div class="t"><h1>Por <span>tipología</span></h1><div class="s">Un beneficio exclusivo para compradores ICSA</div></div>
+  <svg style="position:absolute; left:0; top:0;" width="620" height="810" viewBox="0 0 620 810"><g id="unit"></g></svg>
+  <div id="uchips" style="position:absolute; left:0; top:0; width:620px; height:810px; pointer-events:none;"></div>
+  <div style="position:absolute; left:56px; top:640px; display:flex; align-items:center; gap:26px;">
+    <div><div style="display:flex; align-items:baseline; gap:8px;"><span id="ucnt">21</span><span class="k">unidades</span></div><div id="um2" style="font-size:12px; color:#444; margin-top:4px;">47 a 55 m² cubiertos</div></div>
+    <div class="ty"><button data-t="0" class="on">1 DORM.</button><button data-t="1">2 DORM.</button><button data-t="2">3 DORM.</button></div>
+  </div>
+  <div style="position:absolute; left:680px; right:56px; top:170px;">
+    <p class="rv" style="--d:.2s; font-size:14.5px; color:#333;">Cada comprador puede sumar interiorismo a su unidad, con condiciones preferenciales y un equipo que ya conoce el edificio. Tres niveles de servicio:</p>
+    <div class="rv" style="--d:.35s; margin-top:22px; display:grid; grid-template-columns:1fr; gap:14px;" id="pks"></div>
+    <p class="rv" style="--d:.6s; margin-top:16px; font-size:12px; color:#666; font-style:italic;">Valores y condiciones preferenciales a definir en conjunto con ICSA Desarrollos.</p>
+  </div>
+  <div class="num">— 07 —</div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="slide" id="funciona">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div class="t"><h1>Cómo <span>funciona</span></h1><div class="s">Simple para ICSA, valioso para el comprador</div></div>
+  <svg style="position:absolute; left:0; top:0;" width="1440" height="810">
+    <g transform="translate(0,120)">
+      <g class="draw" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round" style="--d:.3s">
+        <g class="ico" data-p="0"><rect x="182" y="176" width="46" height="60" rx="2"/><line x1="192" y1="192" x2="218" y2="192"/><line x1="192" y1="204" x2="214" y2="204"/><line x1="192" y1="216" x2="208" y2="216"/><circle cx="226" cy="234" r="11"/><rect class="hit" x="135" y="160" width="140" height="110"/></g>
+        <g class="ico" data-p="1"><rect x="524" y="170" width="44" height="78" rx="8"/><line x1="540" y1="240" x2="552" y2="240"/><path d="M572 186 h34 a6 6 0 0 1 6 6 v14 a6 6 0 0 1 -6 6 h-20 l-8 8 v-8 h-6 a6 6 0 0 1 -6 -6 v-14 a6 6 0 0 1 6 -6 z"/><rect class="hit" x="478" y="160" width="140" height="110"/></g>
+        <g class="ico" data-p="2"><polygon points="891,176 927,194 891,212 855,194"/><polyline points="855,194 855,234 891,252 927,234 927,194"/><line x1="891" y1="212" x2="891" y2="252"/><rect class="hit" x="821" y="160" width="140" height="110"/></g>
+        <g class="ico" data-p="3"><polyline points="1196,250 1196,206 1234,180 1272,206 1272,250"/><rect x="1222" y="220" width="24" height="30"/><circle cx="1241" cy="236" r="1.5"/><rect class="hit" x="1164" y="160" width="140" height="110"/></g>
+      </g>
+      <line x1="56" y1="300" x2="1384" y2="300" stroke="#111" stroke-width="1.2"/>
+      <g fill="#fff" stroke="#111" stroke-width="1.5"><circle cx="56" cy="300" r="7"/><circle cx="388" cy="300" r="7"/><circle cx="720" cy="300" r="7"/><circle cx="1052" cy="300" r="7"/></g>
+      <circle cx="1384" cy="300" r="9" fill="#a0583a"/>
+    </g>
+  </svg>
+  <div style="position:absolute; left:56px; right:56px; top:492px; display:grid; grid-template-columns: repeat(4,1fr); gap:44px; font-size:13.5px;">
+    <div class="wk rv" data-p="0" style="--d:0.4s"><div class="k">Paso 01</div><div style="font-style:italic; font-size:14.5px; margin-top:8px;">ICSA presenta el beneficio</div><p style="margin-top:10px; color:#333;">En la venta, junto al folleto o al boleto: interiorismo con condiciones exclusivas para compradores.</p></div>
+    <div class="wk rv" data-p="1" style="--d:0.6s"><div class="k">Paso 02</div><div style="font-style:italic; font-size:14.5px; margin-top:8px;">El comprador nos contacta</div><p style="margin-top:10px; color:#333;">Conocemos a la persona, cómo quiere vivir o alquilar su unidad, y elegimos juntos el paquete.</p></div>
+    <div class="wk rv" data-p="2" style="--d:0.8s"><div class="k">Paso 03</div><div style="font-style:italic; font-size:14.5px; margin-top:8px;">Diseñamos su unidad</div><p style="margin-top:10px; color:#333;">Sobre la planta real del edificio, con tiempos coordinados con el avance de la obra.</p></div>
+    <div class="wk rv" data-p="3" style="--d:1.0s"><div class="k">Paso 04</div><div style="font-style:italic; font-size:14.5px; margin-top:8px;">Lista para habitar</div><p style="margin-top:10px; color:#333;">Al recibir la posesión, el comprador ya sabe qué hacer: mudarse, alquilar o equipar sin improvisar.</p></div>
+  </div>
+  <div class="pop" data-pop="0" style="left:56px;"></div>
+  <div class="pop" data-pop="1" style="left:398px;"></div>
+  <div class="pop" data-pop="2" style="left:741px;"></div>
+  <div class="pop" data-pop="3" style="left:1084px;"></div>
+  <div class="hint2 rv" style="--d:1.4s; position:absolute; left:0; right:0; top:664px; justify-content:center;"><i></i>PASÁ EL MOUSE O HACÉ CLIC EN CADA PASO</div>
+  <div class="num">— 08 —</div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="slide" id="beneficios">
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/beneficios.webp');"></div>
+  <div class="fl ondark">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr ondark">ICSA Desarrollos</div>
+  <div class="rv" style="--d:.2s; position:absolute; left:200px; top:96px; width:1040px; height:620px; background:#fff; padding:40px 64px; display:flex; flex-direction:column; align-items:center;">
+    <svg width="300" height="125" viewBox="0 0 360 150" class="venn"><defs><clipPath id="clipA"><circle cx="128" cy="75" r="62"/></clipPath></defs><g class="va"><circle cx="128" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="112" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">ICSA</text><text x="112" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">DESARROLLOS</text></g><g class="vb"><circle cx="232" cy="75" r="62" fill="none" stroke="#111" stroke-width="1.3"/><text x="248" y="72" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">NUESTRO</text><text x="248" y="86" text-anchor="middle" font-size="9" letter-spacing="1.6" fill="#111">ESTUDIO</text></g><circle class="vl" cx="232" cy="75" r="62" fill="#a0583a" fill-opacity=".85" clip-path="url(#clipA)"/></svg>
+    <div class="h2" style="margin-top:14px;">Una alianza <span>que suma</span></div>
+    <div style="width:100%; margin-top:30px; display:grid; grid-template-columns:1fr 1fr; column-gap:48px; font-size:13.5px;" id="alis"></div>
+  </div>
+  <div class="num ondark">— 09 —</div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="slide" id="somos">
+  <div style="position:absolute; inset:0; background:var(--sage);"></div>
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div style="position:absolute; left:56px; top:0; height:810px; width:560px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="rv h2" style="--d:.1s;">QUIÉNES</div><div class="rv h2" style="--d:.15s; margin-top:6px;"><span>SOMOS</span></div>
+    <p class="rv" style="--d:.3s; margin-top:28px; font-size:15.5px; line-height:1.65; color:#222;">Somos <b>Clara y Lucía</b>. Trabajamos juntas en proyectos de interiorismo y diseñamos espacios residenciales, comerciales y de hospitalidad. Nos apasiona lo que hacemos: cada proyecto empieza escuchando a quien lo va a habitar y termina en un espacio que se siente propio.</p>
+    <div class="rv" style="--d:.5s; margin-top:34px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;" id="pils"></div>
+  </div>
+  <div class="rv" style="--d:.4s; position:absolute; left:680px; top:110px; width:704px; height:590px; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:12px;">
+    <div class="rnd hv"><div style="background-image:url('img/p-hotel.jpg'); background-position:center 65%;"></div><span>Hotel Land Express · Obra</span></div>
+    <div class="rnd hv"><div style="background-image:url('img/p-mud.jpg')"></div><span>MUD · Bar</span></div>
+    <div class="rnd hv"><div style="background-image:url('img/p-terraza.jpg')"></div><span>Terraza · Living comedor</span></div>
+    <div class="rnd hv"><div style="background-image:url('img/p-alerces.jpg')"></div><span>Alerces · Living</span></div>
+  </div>
+  <div class="num">— 10 —</div>
+</section>
+
+<!-- PRÓXIMOS PASOS -->
+<section class="slide" id="proximos">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
+  <div class="fr">ICSA Desarrollos</div>
+  <div style="position:absolute; left:56px; right:56px; top:0; height:810px; display:flex; flex-direction:column; justify-content:center;">
+    <div class="rv h2" style="--d:0.1s; font-size:32px;">Próximos <span>pasos</span></div>
+    <div style="margin-top:56px; display:grid; grid-template-columns: repeat(4,1fr); gap:44px; font-size:13.5px;" id="pasos"></div>
+    <p style="margin-top:60px; text-align:center; font-size:12px; color:#666; font-style:italic;">Una primera reunión, sin compromiso, para conocer sus proyectos y sus tiempos de comercialización.</p>
+  </div>
+  <div class="num">— 11 —</div>
+</section>
+
+<!-- GRACIAS -->
+<section class="slide">
+  <div class="img zoom" style="position:absolute; inset:0; background-image:url('img/gracias.webp');"></div>
+  <div class="rv" style="--d:.3s; position:absolute; left:490px; top:140px; width:460px; height:530px; background:#fff; display:flex; justify-content:center;">
+    <div style="padding:44px 40px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+      <div style="font-weight:700; letter-spacing:.2em; font-size:24px;">¡MUCHAS</div>
+      <div style="font-weight:300; letter-spacing:.2em; font-size:24px;">GRACIAS!</div>
+      <div style="margin-top:24px; font-size:13px; line-height:1.75;">
+        <i>Quedamos a disposición</i><br><br>
+        Arquitecta<br><b>Clara Tacco Carulli</b><br>+54 9 299 504-6147<br><br>
+        Diseñadora de interiores<br><b>Lucía Da Silva</b><br>+54 9 11 3565-9808
+      </div>
+      <a class="web fill wapp" href="#" target="_blank" rel="noopener" style="margin-top:22px;">Coordinemos una reunión <b class="wa">→</b></a>
+      <a class="web" href="https://luciadasilvaestudio.com.ar" target="_blank" rel="noopener" style="margin-top:10px; animation:none;">Conocé nuestros proyectos <b class="wa">→</b></a>
+      <span style="display:inline-block; margin-top:10px; font-size:12px; color:#555;">luciadasilvaestudio.com.ar</span>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<button class="side" id="prev" aria-label="Lámina anterior">‹</button>
+<button class="side" id="next" aria-label="Lámina siguiente">›</button>
+<div id="nav"><span id="count"></span></div>
+
+<script>
+/* ======================= CONTENIDO COMPARTIDO ======================= */
+var WAPP = 'https://wa.me/5491135659808?text=' + encodeURIComponent('Hola Lucía, vimos la propuesta de alianza para ICSA Desarrollos y nos gustaría coordinar una reunión.');
+document.querySelectorAll('.wapp').forEach(function(a){ a.href = WAPP; });
+
+// dibujos (viewBox 0 0 230 190) para "La oportunidad"
+var PG = [
+  { t: 'Imágenes que enamoran,', s: 'renders y recorridos de unidades equipadas para vender desde el pozo.',
+    svg: '<rect pathLength="1" x="30" y="40" width="170" height="110" rx="3"/><polyline pathLength="1" points="44,138 92,86 124,116 146,96 186,138"/><circle pathLength="1" cx="168" cy="66" r="10" stroke="#a0583a"/><path pathLength="1" d="M200 24 v18 M191 33 h18" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M24 168 h182"/>' },
+  { t: 'Amenities con identidad,', s: 'espacios comunes que se recuerdan y se usan.',
+    svg: '<rect pathLength="1" class="f" x="50" y="120" width="130" height="34" fill="#efdfd3" stroke="none"/><rect pathLength="1" x="50" y="120" width="130" height="34"/><path pathLength="1" d="M64 137 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0" stroke="#a0583a"/><line pathLength="1" x1="40" y1="100" x2="40" y2="160"/><path pathLength="1" d="M18 100 q22 -28 44 0 z"/><line pathLength="1" x1="196" y1="92" x2="196" y2="160"/><circle pathLength="1" cx="196" cy="70" r="16" stroke="#a0583a"/><path pathLength="1" d="M100 70 h40 v30 h-40 z M100 80 h40"/>' },
+  { t: 'Un beneficio exclusivo,', s: 'interiorismo con condiciones preferenciales para sus compradores.',
+    svg: '<rect pathLength="1" class="f" x="58" y="82" width="114" height="76" fill="#efdfd3" stroke="none"/><rect pathLength="1" x="58" y="82" width="114" height="76"/><rect pathLength="1" x="50" y="62" width="130" height="22"/><line pathLength="1" x1="115" y1="62" x2="115" y2="158" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M115 62 q-30 -34 -38 -8 q-4 12 38 8 q30 -34 38 -8 q4 12 -38 8" stroke="#a0583a"/>' },
+  { t: 'Unidades listas para habitar o alquilar,', s: 'para quien llega a Neuquén o invierte buscando renta.',
+    svg: '<polyline pathLength="1" points="40,160 40,92 100,48 160,92 160,160"/><rect pathLength="1" x="84" y="110" width="32" height="50"/><circle pathLength="1" cx="176" cy="128" r="14" stroke="#a0583a"/><path pathLength="1" d="M176 142 v28 M176 156 h9 M176 166 h7" stroke="#a0583a"/><line pathLength="1" x1="20" y1="160" x2="210" y2="160"/>' },
+  { t: 'Un estándar de diseño propio,', s: 'que fortalece la marca ICSA edificio tras edificio.',
+    svg: '<rect pathLength="1" x="30" y="70" width="44" height="90"/><rect pathLength="1" x="93" y="40" width="44" height="120"/><rect pathLength="1" class="f" x="156" y="20" width="44" height="140" fill="#efdfd3" stroke="none"/><rect pathLength="1" x="156" y="20" width="44" height="140" stroke="#a0583a"/><path pathLength="1" d="M40 90 h24 M40 110 h24 M103 60 h24 M103 80 h24 M103 100 h24 M166 40 h24 M166 60 h24 M166 80 h24"/><line pathLength="1" x1="18" y1="160" x2="212" y2="160"/>' }
+];
+
+// zonas de la torre
+var ZONES = [
+  { id: 'terraza', k: 'Terraza · 900 m²', h: 'TERRAZA JARDÍN Y PILETA', q: '¿Cómo convertir la terraza en la postal del edificio?',
+    need: ['PILETA', 'SOLÁRIUM', 'TERRAZA JARDÍN'], feel: ['verano', 'vistas', 'celebración'],
+    ap: 'Equipamiento exterior, sombras e iluminación nocturna: la imagen protagonista de la campaña de venta.' },
+  { id: 'amen', k: 'Último nivel · Amenities', h: 'SUM, GIMNASIO Y SPA', q: '¿Cómo lograr que los espacios comunes se usen y se recuerden?',
+    need: ['SUM CON PARRILLAS', 'GIMNASIO', 'SAUNAS E HIDROMASAJE'], feel: ['encuentro', 'bienestar', 'pertenencia'],
+    ap: 'Concepto, materialidad, iluminación y equipamiento de cada amenity, con mobiliario a medida.' },
+  { id: 'dptos', k: 'Pisos tipo · 39 unidades', h: 'DEPARTAMENTOS', q: '¿Cómo ayudar a cada comprador a imaginarse viviendo ahí?',
+    need: ['1 DORMITORIO · 21', '2 DORMITORIOS · 7', '3 DORMITORIOS · 11'], feel: ['hogar', 'confort', 'renta'],
+    ap: 'Renders de unidades equipadas para la venta y paquetes de interiorismo para cada tipología.' },
+  { id: 'hall', k: 'Planta baja · Acceso', h: 'HALL DE ACCESO', q: '¿Qué siente quien llega por primera vez al edificio?',
+    need: ['HALL', 'ESPERA', 'CIRCULACIONES'], feel: ['bienvenida', 'identidad', 'primera impresión'],
+    ap: 'Revestimientos, iluminación, mobiliario y piezas a medida para una llegada memorable.' }
+];
+
+// perfiles de comprador
+var PERF = [
+  { t: 'Profesionales de la energía', p: 'Llegan a Neuquén por trabajo y necesitan un hogar listo desde el primer día.', a: 'Unidades equipadas y funcionales, listas para la posesión.',
+    svg: '<circle pathLength="1" cx="40" cy="28" r="10"/><path pathLength="1" d="M20 74 q20 -34 40 0"/><path pathLength="1" d="M78 74 v-40 h26 v40" stroke="#a0583a"/><path pathLength="1" d="M70 34 h42 M91 22 v12" stroke="#a0583a"/><line pathLength="1" x1="10" y1="76" x2="112" y2="76"/>' },
+  { t: 'Inversores', p: 'Buscan proteger su capital y obtener renta con su unidad.', a: 'Unidades pensadas para alquilar: durables, fotogénicas y fáciles de mantener.',
+    svg: '<rect pathLength="1" x="14" y="54" width="16" height="22"/><rect pathLength="1" x="38" y="42" width="16" height="34"/><rect pathLength="1" class="f" x="62" y="28" width="16" height="48" fill="#efdfd3" stroke="none"/><rect pathLength="1" x="62" y="28" width="16" height="48"/><path pathLength="1" d="M12 34 L48 16 L92 8" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M82 2 L94 8 L86 18" stroke="#a0583a" stroke-width="2"/>' },
+  { t: 'Familias que se radican', p: 'Eligen Neuquén para quedarse y buscan un lugar para crecer.', a: 'Espacios a medida, con guardado, calidez y lugar para cada integrante.',
+    svg: '<circle pathLength="1" cx="30" cy="28" r="9"/><path pathLength="1" d="M12 74 q18 -32 36 0"/><circle pathLength="1" cx="62" cy="26" r="9"/><path pathLength="1" d="M44 74 q18 -32 36 0"/><circle pathLength="1" cx="94" cy="44" r="6" stroke="#a0583a"/><path pathLength="1" d="M82 74 q12 -22 24 0" stroke="#a0583a"/>' }
+];
+
+// servicios
+var SERV = [
+  { t: 'Amenities y espacios comunes', s: 'Un edificio con identidad, de la puerta a la terraza.',
+    li: ['Concepto de diseño y paleta del edificio.', 'Hall de acceso, SUM, gimnasio, spa y terraza.', 'Materialidad, iluminación y equipamiento.', 'Mobiliario a medida y selección de piezas de mercado.', 'Documentación para obra y presupuesto.'],
+    ic: '<rect x="8" y="30" width="34" height="34" pathLength="1"/><path d="M8 30 L25 12 L42 30" pathLength="1"/><path d="M52 64 V40 a12 12 0 0 1 24 0 V64" pathLength="1"/><line x1="2" y1="64" x2="82" y2="64" pathLength="1"/>' },
+  { t: 'Imágenes para la venta', s: 'Que el comprador vea su futuro hogar antes de que exista.',
+    li: ['Renders de unidades equipadas, por tipología.', 'Renders de amenities para folletos, web y redes.', 'Video de recorrido virtual 3D.', 'Diseño de una unidad modelo para mostrar en obra.'],
+    ic: '<rect x="6" y="10" width="64" height="44" rx="2" pathLength="1"/><polyline points="12,48 30,30 42,42 50,34 64,48" pathLength="1"/><circle cx="56" cy="22" r="5" pathLength="1"/><line x1="38" y1="54" x2="38" y2="64" pathLength="1"/><line x1="24" y1="64" x2="52" y2="64" pathLength="1"/>' },
+  { t: 'Interiorismo para compradores', s: 'Un beneficio exclusivo que acompaña la venta.',
+    li: ['Paquetes por tipología: 1, 2 y 3 dormitorios.', 'Condiciones preferenciales para compradores ICSA.', 'Opción lista para alquilar, pensada para inversores.', 'Diseño sobre la planta real del edificio.', 'Coordinación con la obra cuando lo permita.'],
+    ic: '<circle cx="22" cy="20" r="9" pathLength="1"/><path d="M4 60 q18 -32 36 0" pathLength="1"/><polyline points="48,62 48,34 64,22 80,34 80,62" pathLength="1"/><rect x="58" y="46" width="12" height="16" pathLength="1"/>' }
+];
+
+// tipologías y paquetes
+var TYP = [
+  { n: 21, m2: '47 a 55 m² cubiertos · balcón de 8 m²', mt: '47 a 55 m²', sc: .86, sug: 2,
+    need: [[150, 300, 'LIVING-COMEDOR'], [400, 360, 'DORMITORIO'], [210, 470, 'BALCÓN']], feel: [[380, 260, 'práctico'], [150, 390, 'luminoso'], [420, 470, 'listo para alquilar']] },
+  { n: 7, m2: '85 m² cubiertos · balcón de 8 a 12 m²', mt: '85 m²', sc: .95, sug: 1,
+    need: [[150, 290, 'ESTAR-COMEDOR'], [410, 360, '2 DORMITORIOS'], [200, 480, 'BALCÓN']], feel: [[400, 250, 'equilibrio'], [140, 390, 'guardado'], [430, 480, 'calidez']] },
+  { n: 11, m2: '90 a 160 m² cubiertos · balcón de 12 m²', mt: '90 a 160 m²', sc: 1.05, sug: 1,
+    need: [[140, 280, 'COCINA INTEGRADA'], [420, 350, '3 DORMITORIOS'], [200, 490, 'BALCÓN 12 m²']], feel: [[400, 240, 'familia'], [130, 390, 'amplitud'], [440, 490, 'hogar']] }
+];
+var PKS = [
+  { t: 'Esencial', s: 'Para definir el rumbo.', li: ['Asesoría en la unidad o a distancia.', 'Paleta de colores y materiales.', 'Plano de equipamiento.', 'Listado de compras de referencia.'],
+    ic: '<circle pathLength="1" cx="26" cy="24" r="16"/><path pathLength="1" d="M26 12 v12 l8 6" stroke="#a0583a"/><line pathLength="1" x1="38" y1="36" x2="50" y2="48"/>' },
+  { t: 'Integral', s: 'El diseño completo de la unidad.', li: ['Distribución, equipamiento e iluminación.', 'Muebles a medida: cocina, placares, vestidor.', 'Renders 3D de la unidad.', 'Documentación para ejecutar.'],
+    ic: '<polygon pathLength="1" class="f" points="12,20 30,10 48,20 30,30" fill="#efdfd3" stroke="none"/><polygon pathLength="1" points="12,20 30,10 48,20 30,30"/><polyline pathLength="1" points="12,20 12,40 30,50 48,40 48,20"/><line pathLength="1" x1="30" y1="30" x2="30" y2="50" stroke="#a0583a"/>' },
+  { t: 'Lista para habitar o alquilar', s: 'Llave en mano, sin preocupaciones.', li: ['Todo lo del paquete Integral.', 'Coordinación de compras e instalación.', 'Unidad equipada al recibir la posesión.', 'Ideal para inversores y para quien llega a Neuquén.'],
+    ic: '<circle pathLength="1" cx="18" cy="22" r="10" stroke="#a0583a"/><path pathLength="1" d="M28 22 h22 M42 22 v8 M48 22 v6" stroke="#a0583a"/><polyline pathLength="1" points="10,50 10,40 30,30 50,40 50,50"/>' }
+];
+
+// pasos de "cómo funciona" (dibujos animados)
+var POPS = [
+  { cap: 'Un beneficio en la venta', svg: '<svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect class="f" x="96" y="16" width="112" height="150" fill="#f6ece2" stroke="none" style="--a:.6s"/><rect class="d" pathLength="1" x="96" y="16" width="112" height="150" style="--a:.1s"/><line class="d" pathLength="1" x1="114" y1="44" x2="190" y2="44" style="--a:.5s"/><line class="d" pathLength="1" x1="114" y1="64" x2="182" y2="64" style="--a:.65s"/><line class="d" pathLength="1" x1="114" y1="84" x2="188" y2="84" style="--a:.8s"/><line class="d" pathLength="1" x1="114" y1="104" x2="160" y2="104" style="--a:.95s"/><circle class="b" cx="196" cy="146" r="26" fill="#a0583a" stroke="none" style="--a:1.3s"/><polyline class="d" pathLength="1" points="184,146 193,155 209,137" stroke="#fff" stroke-width="2.6" style="--a:1.7s"/></svg>' },
+  { cap: 'El comprador nos escribe', svg: '<svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect class="d" pathLength="1" x="112" y="12" width="76" height="166" rx="12" style="--a:.1s"/><line class="d" pathLength="1" x1="140" y1="166" x2="160" y2="166" style="--a:.4s"/><rect class="b" x="36" y="40" width="120" height="34" rx="17" fill="#f6ece2" stroke="#111" style="--a:.7s"/><rect class="b" x="146" y="92" width="120" height="34" rx="17" fill="#dfe4d8" stroke="#111" style="--a:1.2s"/><circle class="b" cx="74" cy="57" r="3" fill="#111" stroke="none" style="--a:1s"/><circle class="b" cx="96" cy="57" r="3" fill="#111" stroke="none" style="--a:1.1s"/><circle class="b" cx="118" cy="57" r="3" fill="#111" stroke="none" style="--a:1.2s"/><path class="d" pathLength="1" d="M196 104 l8 8 l16 -14" stroke="#a0583a" stroke-width="2.2" style="--a:1.6s"/></svg>' },
+  { cap: 'Diseñamos, equipamos e iluminamos', svg: '<svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.1" stroke-linejoin="round"><defs><radialGradient id="glw"><stop offset="0" stop-color="#ffd86b" stop-opacity=".95"/><stop offset="1" stop-color="#ffd86b" stop-opacity="0"/></radialGradient></defs><g class="dr" style="--a:.2s"><g transform="translate(70,150)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#efdfd3"/><polygon points="0,0 22,-11 22,11 0,22" fill="#dcc3b2"/></g></g><g class="dr" style="--a:.45s"><g transform="translate(92,161)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#efdfd3"/><polygon points="0,0 22,-11 22,11 0,22" fill="#dcc3b2"/></g></g><g class="dr" style="--a:.7s"><g transform="translate(70,128)"><polygon points="0,-22 22,-11 0,0 -22,-11" fill="#fff"/><polygon points="-22,-11 0,0 0,22 -22,11" fill="#efdfd3"/><polygon points="0,0 22,-11 22,11 0,22" fill="#dcc3b2"/></g></g><circle class="gl" cx="200" cy="112" r="62" fill="url(#glw)" stroke="none" style="--a:2.1s"/><polygon class="f" points="186,148 232,171 202,186 156,163" fill="#dcc3b2" stroke="none" style="--a:1.5s"/><polygon class="d" pathLength="1" points="186,148 232,171 202,186 156,163" style="--a:1.0s"/><line class="d" pathLength="1" x1="156" y1="163" x2="156" y2="182" style="--a:1.3s"/><line class="d" pathLength="1" x1="232" y1="171" x2="232" y2="188" style="--a:1.3s"/><line class="d" pathLength="1" x1="198" y1="0" x2="198" y2="70" style="--a:1.6s"/><polygon class="f" points="184,70 212,70 220,84 176,84" fill="#111" style="--a:1.9s"/></svg>' },
+  { cap: 'Llaves en mano', svg: '<svg viewBox="0 0 300 190" width="300" height="190" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect class="f" x="118" y="34" width="70" height="140" fill="#fff3d6" stroke="none" style="--a:.9s"/><rect class="d" pathLength="1" x="112" y="28" width="82" height="148" style="--a:.1s"/><rect class="door" x="118" y="34" width="70" height="140" fill="#efdfd3" stroke="#111" style="--a:.9s"/><circle class="b" cx="228" cy="112" r="14" stroke="#a0583a" stroke-width="2" style="--a:1.6s"/><path class="d" pathLength="1" d="M228 126 v34 M228 146 h10 M228 156 h8" stroke="#a0583a" stroke-width="2" style="--a:1.9s"/><path class="sw" d="M66 60 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4 z" fill="#a0583a" stroke="none" style="--a:1.4s"/><path class="sw" d="M250 40 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3 z" fill="#d9a441" stroke="none" style="--a:2s"/><path class="sw" d="M80 140 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3 z" fill="#d9a441" stroke="none" style="--a:2.5s"/></svg>' }
+];
+var POPTX = [
+  ['Paso 01', 'ICSA presenta el beneficio', 'En la venta, junto al folleto o al boleto: interiorismo con condiciones exclusivas.'],
+  ['Paso 02', 'El comprador nos contacta', 'Conocemos cómo quiere vivir o alquilar su unidad y elegimos juntos el paquete.'],
+  ['Paso 03', 'Diseñamos su unidad', 'Sobre la planta real, con tiempos coordinados con el avance de la obra.'],
+  ['Paso 04', 'Lista para habitar', 'Al recibir la posesión, ya sabe qué hacer: mudarse, alquilar o equipar sin improvisar.']
+];
+
+// beneficios
+var ALI = [
+  [ 'Para ICSA Desarrollos', [
+    ['Un diferencial comercial,', 'que suma valor a la venta sin ampliar su estructura.', '<path pathLength="1" d="M8 40 L22 26 L32 34 L52 12" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M42 12 h10 v10" stroke="#a0583a" stroke-width="2"/><line pathLength="1" x1="6" y1="44" x2="56" y2="44"/>'],
+    ['Imágenes que ayudan a vender,', 'desde el lanzamiento y antes de que la obra termine.', '<rect pathLength="1" x="6" y="8" width="44" height="30" rx="2"/><polyline pathLength="1" points="10,34 22,22 30,30 36,24 46,34" stroke="#a0583a"/><line pathLength="1" x1="28" y1="38" x2="28" y2="44"/>'],
+    ['Amenities con identidad,', 'que se convierten en la imagen del edificio.', '<rect pathLength="1" x="8" y="26" width="44" height="16"/><path pathLength="1" d="M14 34 q4 -4 8 0 t8 0 t8 0 t8 0" stroke="#a0583a"/><path pathLength="1" d="M10 18 q10 -14 20 0 z"/><line pathLength="1" x1="20" y1="18" x2="20" y2="26"/>']
+  ]],
+  [ 'Para sus compradores', [
+    ['Condiciones preferenciales,', 'exclusivas por comprar en un edificio ICSA.', '<path pathLength="1" d="M6 12 h34 l12 12 l-12 12 h-34 z"/><circle pathLength="1" cx="14" cy="24" r="2.5"/><line pathLength="1" x1="25" y1="32" x2="39" y2="16" stroke="#a0583a"/><circle pathLength="1" cx="27" cy="18" r="2.5" stroke="#a0583a"/><circle pathLength="1" cx="37" cy="30" r="2.5" stroke="#a0583a"/>'],
+    ['Un equipo que ya conoce el edificio,', 'sus plantas, tiempos y terminaciones.', '<rect pathLength="1" x="10" y="6" width="26" height="38"/><line pathLength="1" x1="16" y1="14" x2="30" y2="14"/><line pathLength="1" x1="16" y1="22" x2="30" y2="22"/><line pathLength="1" x1="16" y1="30" x2="30" y2="30"/><circle pathLength="1" cx="44" cy="30" r="7" stroke="#a0583a"/><line pathLength="1" x1="49" y1="35" x2="56" y2="42" stroke="#a0583a"/>'],
+    ['Una mudanza sin improvisar,', 'con la unidad lista para habitar o alquilar.', '<polyline pathLength="1" points="8,44 8,22 28,8 48,22 48,44"/><rect pathLength="1" class="f" x="22" y="28" width="12" height="16" fill="#efdfd3" stroke="none"/><rect pathLength="1" x="22" y="28" width="12" height="16" stroke="#a0583a"/>']
+  ]]
+];
+
+var PILS = [
+  ['Interiorismo integral', '<path pathLength="1" d="M8 40 V24 a4 4 0 0 1 4 -4 h4 v10 h20 v-10 h4 a4 4 0 0 1 4 4 v16"/><line pathLength="1" x1="16" y1="30" x2="16" y2="12"/><path pathLength="1" d="M16 12 h20 v18" stroke="#a0583a"/>'],
+  ['Residencial, comercial y hospitalidad', '<polygon pathLength="1" points="26,8 44,18 26,28 8,18"/><polyline pathLength="1" points="8,18 8,36 26,46 44,36 44,18"/><line pathLength="1" x1="26" y1="28" x2="26" y2="46" stroke="#a0583a"/>'],
+  ['Dirección de obra en Buenos Aires y Neuquén', '<path pathLength="1" d="M26 46 C10 30 10 22 10 18 a16 16 0 0 1 32 0 c0 4 0 12 -16 28 z"/><circle pathLength="1" cx="26" cy="18" r="6" stroke="#a0583a"/>']
+];
+
+var PASOS = [
+  ['Reunión de presentación', 'Conocemos sus proyectos, tiempos de venta y prioridades.', '<path pathLength="1" d="M12 8 h48 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-28 l-12 10 v-10 h-8 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6 z"/><polyline pathLength="1" points="24,26 32,34 48,18" stroke="#a0583a" stroke-width="2.2"/>'],
+  ['Proyecto piloto', 'Definimos juntos el alcance para Torre Libertadores II.', '<polyline pathLength="1" points="20,54 20,10 52,10 52,54"/><path pathLength="1" d="M26 18 h8 M38 18 h8 M26 28 h8 M38 28 h8 M26 38 h8 M38 38 h8"/><line pathLength="1" x1="10" y1="54" x2="62" y2="54"/><path pathLength="1" d="M36 2 v8" stroke="#a0583a" stroke-width="2"/><path pathLength="1" d="M36 2 l10 3 l-10 3" stroke="#a0583a"/>'],
+  ['Propuesta a medida', 'Alcance, honorarios y condiciones preferenciales por escrito.', '<rect pathLength="1" x="14" y="6" width="38" height="48"/><line pathLength="1" x1="22" y1="18" x2="44" y2="18"/><line pathLength="1" x1="22" y1="28" x2="40" y2="28"/><line pathLength="1" x1="22" y1="38" x2="36" y2="38"/><path pathLength="1" d="M48 50 L64 34 L68 38 L52 54 Z" fill="#f6ece2" stroke="#a0583a"/>'],
+  ['Lanzamiento', 'Sumamos el beneficio a la comercialización del edificio.', '<path pathLength="1" d="M36 52 c-10 -10 -10 -30 0 -46 c10 16 10 36 0 46 z"/><circle pathLength="1" cx="36" cy="24" r="5" stroke="#a0583a"/><path pathLength="1" d="M28 44 l-8 8 M44 44 l8 8" stroke="#a0583a"/>']
+];
+
+/* ======================= TORRE (dibujo isométrico) ======================= */
+var NS = 'http://www.w3.org/2000/svg';
+function mk(tag, at, parent){ var e = document.createElementNS(NS, tag); for (var k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; }
+function zoneOf(i){ return i <= 1 ? 'hall' : i <= 14 ? 'dptos' : 'amen'; }
+// o: { cx, base, ex, ey, fh, line } ; dibuja 16 pisos + terraza
+function buildTower(svg, o){
+  var a = 10, b = 6, n = 16, H = n * o.fh;
+  function S(x, y, z){ return (o.cx + (x - y) * o.ex).toFixed(1) + ',' + (o.base + (x + y) * o.ey - z).toFixed(1); }
+  var g0 = mk('g', {}, svg);
+  for (var i = 0; i < n; i++){
+    var z0 = i * o.fh, z1 = z0 + o.fh;
+    var g = mk('g', { class: 'flr' + (o.line ? '' : ' rise'), 'data-z': zoneOf(i), style: '--d:' + (0.25 + i * 0.05).toFixed(2) + 's' }, g0);
+    if (o.line) {
+      mk('polyline', { points: [S(0,b,z1), S(a,b,z1), S(a,0,z1)].join(' ') }, g);
+      if (i === 0) mk('polyline', { points: [S(0,b,0), S(a,b,0), S(a,0,0)].join(' ') }, g);
+      continue;
+    }
+    mk('polygon', { class: 'lf', points: [S(0,b,z0), S(a,b,z0), S(a,b,z1), S(0,b,z1)].join(' '), fill: '#f6f3ee', stroke: '#6b5d4a', 'stroke-width': .9 }, g);
+    mk('polygon', { class: 'rf', points: [S(a,b,z0), S(a,0,z0), S(a,0,z1), S(a,b,z1)].join(' '), fill: '#e7e1d8', stroke: '#6b5d4a', 'stroke-width': .9 }, g);
+    // ritmo de fachada
+    var col = i <= 1 ? '#b9ab98' : '#cfc4b5';
+    for (var x = 2; x < a; x += 2) mk('line', { x1: S(x,b,z0+3).split(',')[0], y1: S(x,b,z0+3).split(',')[1], x2: S(x,b,z1-3).split(',')[0], y2: S(x,b,z1-3).split(',')[1], stroke: col, 'stroke-width': .8 }, g);
+    for (var y = 1.5; y < b; y += 1.5) mk('line', { x1: S(a,y,z0+3).split(',')[0], y1: S(a,y,z0+3).split(',')[1], x2: S(a,y,z1-3).split(',')[0], y2: S(a,y,z1-3).split(',')[1], stroke: col, 'stroke-width': .8 }, g);
+  }
+  // vertical de las aristas (portada)
+  if (o.line) {
+    var gv = mk('g', { 'stroke-dasharray': '3 6' }, g0);
+    [[0,b],[a,b],[a,0]].forEach(function(p){ var s0 = S(p[0],p[1],0).split(','), s1 = S(p[0],p[1],H).split(','); mk('line', { x1: s0[0], y1: s0[1], x2: s1[0], y2: s1[1] }, gv); });
+    var top = mk('g', {}, g0);
+    mk('polygon', { points: [S(0,0,H), S(a,0,H), S(a,b,H), S(0,b,H)].join(' ') }, top);
+    mk('polygon', { points: [S(1.2,1.2,H), S(5.6,1.2,H), S(5.6,3.4,H), S(1.2,3.4,H)].join(' ') }, top);
+    return g0;
+  }
+  // terraza con pileta y solárium
+  var t = mk('g', { class: 'flr rise', 'data-z': 'terraza', style: '--d:' + (0.25 + n * 0.05).toFixed(2) + 's' }, g0);
+  mk('polygon', { class: 'tp', points: [S(0,0,H), S(a,0,H), S(a,b,H), S(0,b,H)].join(' '), fill: '#fbfaf7', stroke: '#6b5d4a', 'stroke-width': 1 }, t);
+  mk('polygon', { points: [S(1.2,1.2,H), S(5.6,1.2,H), S(5.6,3.4,H), S(1.2,3.4,H)].join(' '), fill: '#d6e4e4', stroke: '#6b5d4a', 'stroke-width': .9 }, t);
+  for (var r = 0; r < 4; r++) mk('polygon', { points: [S(6.6 + r * .8, 1.2, H), S(7.2 + r * .8, 1.2, H), S(7.2 + r * .8, 2.6, H), S(6.6 + r * .8, 2.6, H)].join(' '), fill: '#fff', stroke: '#6b5d4a', 'stroke-width': .7 }, t);
+  [[2,4.6],[4.4,5],[8.4,4.4]].forEach(function(p){ var c = S(p[0], p[1], H).split(','); mk('ellipse', { cx: c[0], cy: c[1], rx: o.ex * .7, ry: o.ey * .7, fill: '#cfd8c4', stroke: '#6b5d4a', 'stroke-width': .7 }, t); });
+  // baranda
+  mk('polyline', { points: [S(0,b,H+8), S(a,b,H+8), S(a,0,H+8)].join(' '), fill: 'none', stroke: '#6b5d4a', 'stroke-width': .8, 'stroke-dasharray': '2 3' }, t);
+  return g0;
+}
+
+/* ======================= DEL PLANO A LA VIDA (unidad isométrica) ======================= */
+// dibuja la unidad vacía y, encima, la unidad equipada recortada desde la línea hacia la derecha
+function buildRoom(svg, uid){
+  function P(u, v, h){ return [280 + 220 * u - 220 * v, 150 + 110 * u + 110 * v - (h || 0)]; }
+  function pts(a){ return a.map(function(p){ return P(p[0], p[1], p[2]).map(function(n){ return n.toFixed(1); }).join(','); }).join(' '); }
+  function poly(g, a, fill, st){ return mk('polygon', { points: pts(a), fill: fill, stroke: st || '#6b5d4a', 'stroke-width': .8, 'stroke-linejoin': 'round' }, g); }
+  function ln(g, a, b, st, w, dash){ var p = P(a[0], a[1], a[2]), q = P(b[0], b[1], b[2]); var at = { x1: p[0], y1: p[1], x2: q[0], y2: q[1], stroke: st, 'stroke-width': w || .8 }; if (dash) at['stroke-dasharray'] = dash; return mk('line', at, g); }
+  function box(g, u0, v0, du, dv, z0, h, top, fu, fv){
+    var u1 = u0 + du, v1 = v0 + dv, z1 = z0 + h;
+    poly(g, [[u1,v0,z0],[u1,v1,z0],[u1,v1,z1],[u1,v0,z1]], fu);
+    poly(g, [[u0,v1,z0],[u1,v1,z0],[u1,v1,z1],[u0,v1,z1]], fv);
+    poly(g, [[u0,v0,z1],[u1,v0,z1],[u1,v1,z1],[u0,v1,z1]], top);
+  }
+  var WALL = 130;
+  var defs = mk('defs', {}, svg);
+  var cp = mk('clipPath', { id: 'cl' + uid }, defs);
+  var cr = mk('rect', { x: 280, y: 0, width: 280, height: 420 }, cp);
+  var rg = mk('radialGradient', { id: 'gl' + uid }, defs);
+  mk('stop', { offset: 0, 'stop-color': '#ffd98a', 'stop-opacity': .85 }, rg);
+  mk('stop', { offset: 1, 'stop-color': '#ffd98a', 'stop-opacity': 0 }, rg);
+
+  // unidad vacía: líneas, grilla y luz neutra
+  var e = mk('g', {}, svg);
+  poly(e, [[0,0,0],[0,1,0],[0,1,WALL],[0,0,WALL]], '#f7f5f1');
+  poly(e, [[0,0,0],[1,0,0],[1,0,WALL],[0,0,WALL]], '#efebe5');
+  poly(e, [[0,0,0],[1,0,0],[1,1,0],[0,1,0]], '#fdfcfa');
+  for (var k = .1; k < 1; k += .1) { ln(e, [k,0], [k,1], '#cfc6b9', .7, '3 4'); ln(e, [0,k], [1,k], '#cfc6b9', .7, '3 4'); }
+  poly(e, [[.55,0,35],[.85,0,35],[.85,0,105],[.55,0,105]], '#f4f6f5');
+  ln(e, [.7,0,35], [.7,0,105], '#6b5d4a');
+  poly(e, [[0,.7,0],[0,.86,0],[0,.86,95],[0,.7,95]], 'none');
+
+  // unidad equipada
+  var f = mk('g', { 'clip-path': 'url(#cl' + uid + ')' }, svg);
+  poly(f, [[0,0,0],[0,1,0],[0,1,WALL],[0,0,WALL]], '#f1e6d9');
+  poly(f, [[0,0,0],[1,0,0],[1,0,WALL],[0,0,WALL]], '#e8dccd');
+  poly(f, [[0,0,0],[1,0,0],[1,1,0],[0,1,0]], '#e4d0b8');
+  for (var v = .08; v < 1; v += .08) ln(f, [0,v], [1,v], '#d3bb9f', .7);
+  poly(f, [[.55,0,35],[.85,0,35],[.85,0,105],[.55,0,105]], '#fff4d9');
+  ln(f, [.7,0,35], [.7,0,105], '#6b5d4a');
+  poly(f, [[.52,0,108],[.88,0,108],[.88,0,112],[.52,0,112]], '#cdbba6');
+  poly(f, [[0,.7,0],[0,.86,0],[0,.86,95],[0,.7,95]], '#d9c4ae');
+  // cuadro
+  poly(f, [[0,.3,58],[0,.56,58],[0,.56,104],[0,.3,104]], '#c99d84');
+  poly(f, [[0,.34,64],[0,.52,64],[0,.52,98],[0,.34,98]], '#ead2c1');
+  // estantes con objetos
+  [42, 76].forEach(function(z){ box(f, .1, 0, .34, .06, z, 4, '#c9a27e', '#b48a65', '#a87d59'); });
+  box(f, .14, .01, .04, .03, 46, 12, '#a0583a', '#8e4d33', '#7d432c');
+  box(f, .3, .01, .07, .03, 80, 8, '#f6f3ee', '#e3dcd2', '#d9d0c4');
+  // luz del sol en el piso
+  poly(f, [[.5,.04,0],[.86,.04,0],[.74,.46,0],[.38,.46,0]], 'rgba(255,243,214,.75)', 'none');
+  // alfombra
+  poly(f, [[.28,.3,0],[.8,.3,0],[.8,.86,0],[.28,.86,0]], '#efdfd3', '#c9a990');
+  poly(f, [[.32,.34,0],[.76,.34,0],[.76,.82,0],[.32,.82,0]], 'none', '#d9bba6');
+  // planta
+  box(f, .88, .06, .07, .07, 0, 24, '#c98b6c', '#b97c5e', '#a96f53');
+  [[.915,.095,52,13,'#9fb08a'],[.89,.08,40,10,'#b3c29f'],[.94,.11,42,10,'#8fa37a'],[.92,.1,66,9,'#a9b894']].forEach(function(c){ var p = P(c[0], c[1], c[2]); mk('circle', { cx: p[0], cy: p[1], r: c[3], fill: c[4], stroke: '#6b5d4a', 'stroke-width': .6 }, f); });
+  // sillón contra la pared
+  box(f, .02, .3, .2, .04, 0, 40, '#efe9e1', '#ddd5ca', '#d2c9bc');
+  box(f, .02, .3, .05, .5, 0, 62, '#f3eee7', '#e1d9ce', '#d6cdc0');
+  box(f, .07, .34, .15, .42, 0, 28, '#f6f3ee', '#e3dcd2', '#d9d0c4');
+  box(f, .08, .38, .03, .1, 28, 18, '#c98b6c', '#b97c5e', '#a96f53');
+  box(f, .08, .62, .03, .1, 28, 18, '#b9c4a8', '#a7b495', '#98a687');
+  box(f, .02, .76, .2, .04, 0, 40, '#efe9e1', '#ddd5ca', '#d2c9bc');
+  // mesa ratona
+  box(f, .42, .5, .18, .18, 0, 20, '#c9a27e', '#b48a65', '#a87d59');
+  var vz = P(.5, .58, 20); mk('ellipse', { cx: vz[0], cy: vz[1] - 8, rx: 6, ry: 10, fill: '#f6f3ee', stroke: '#6b5d4a', 'stroke-width': .6 }, f);
+  // butaca
+  box(f, .68, .3, .12, .18, 0, 26, '#e6c6b1', '#d2a68b', '#c79a80');
+  box(f, .8, .3, .04, .18, 0, 50, '#d9b8a3', '#c99d84', '#bf8f74');
+  // lámpara de pie
+  var lb = P(.12, .9, 0), lt = P(.12, .9, 112);
+  mk('circle', { class: 'glowp', cx: lt[0], cy: lt[1] + 10, r: 52, fill: 'url(#gl' + uid + ')' }, f);
+  mk('line', { x1: lb[0], y1: lb[1], x2: lt[0], y2: lt[1], stroke: '#2f2a26', 'stroke-width': 1.4 }, f);
+  mk('polygon', { points: [lt[0] - 12, lt[1] + 14, lt[0] + 12, lt[1] + 14, lt[0] + 7, lt[1] - 4, lt[0] - 7, lt[1] - 4].join(','), fill: '#f6f3ee', stroke: '#6b5d4a', 'stroke-width': .8 }, f);
+  mk('ellipse', { cx: lb[0], cy: lb[1], rx: 8, ry: 4, fill: '#2f2a26' }, f);
+  // colgante sobre la mesa
+  var ph = P(.51, .59, 100);
+  mk('circle', { class: 'glowp', cx: ph[0], cy: ph[1] + 14, r: 62, fill: 'url(#gl' + uid + ')' }, f);
+  mk('line', { x1: ph[0], y1: 0, x2: ph[0], y2: ph[1], stroke: '#2f2a26', 'stroke-width': 1 }, f);
+  mk('path', { d: 'M' + (ph[0] - 16) + ' ' + (ph[1] + 10) + ' a16 12 0 0 1 32 0 z', fill: '#2f2a26' }, f);
+
+  return function(p){ var x = 560 * p / 100; cr.setAttribute('x', x.toFixed(1)); cr.setAttribute('width', (560 - x).toFixed(1)); };
+}
+
+/* ======================= COMPUTADORA ======================= */
+(function(){
+  var stage = document.getElementById('stage');
+  var slides = [].slice.call(document.querySelectorAll('#stage .slide'));
+  var cur = 0;
+
+  function fit(){
+    var s = Math.min((window.innerWidth - 150) / 1440, (window.innerHeight - 40) / 810);
+    stage.style.transform = 'translate(-50%,-50%) scale(' + s + ')';
+    stage.style.transformOrigin = 'center center';
+  }
+  window.addEventListener('resize', fit); fit();
+
+  // ---- portada: torre en línea que se traza de abajo hacia arriba
+  var cv = document.getElementById('cvsvg');
+  var cvg = buildTower(cv, { cx: 682, base: 456, ex: 19, ey: 11, fh: 22, line: true });
+  [].slice.call(cvg.children).forEach(function(g, i){ g.classList.add('draw'); g.style.setProperty('--d', (0.1 + i * 0.07).toFixed(2) + 's'); g.dataset.k = 6 + i * 1.3; });
+
+  // ---- oportunidad
+  var pgsvg = document.getElementById('pgsvg'), pgbs = document.getElementById('pgbs');
+  pgsvg.innerHTML = PG.map(function(p, i){ return '<g class="pgi' + (i ? '' : ' on') + '">' + p.svg + '</g>'; }).join('');
+  pgbs.innerHTML = PG.map(function(p, i){ return '<p class="pgb' + (i ? '' : ' on') + '"><b>/ ' + p.t + '</b><br>' + p.s + '</p>'; }).join('');
+
+  // ---- torre
+  var tsvg = document.getElementById('tower');
+  buildTower(tsvg, { cx: 330, base: 568, ex: 19, ey: 11, fh: 24 });
+  var zrows = document.getElementById('zrows'), zdet = document.getElementById('zdet');
+  zrows.innerHTML = ZONES.map(function(z, i){ return '<div class="zr" data-i="' + i + '"><div class="k">' + z.k + '</div><b>' + z.h + '</b></div>'; }).join('');
+  function chipsHTML(z){ return z.need.map(function(c){ return '<span class="chip need">' + c + '</span>'; }).join('') + z.feel.map(function(c){ return '<span class="chip feel">' + c + '</span>'; }).join(''); }
+  function zoneSet(i){
+    var z = ZONES[i];
+    [].slice.call(zrows.children).forEach(function(r, k){ r.classList.toggle('on', k === i); });
+    tsvg.classList.add('zone-on');
+    [].slice.call(tsvg.querySelectorAll('.flr')).forEach(function(f){ f.classList.toggle('act', f.dataset.z === z.id); });
+    zdet.innerHTML = '<p style="font-size:16px; font-style:italic; line-height:1.5; color:#222;">' + z.q + '</p>'
+      + '<div class="chips" style="margin-top:14px;">' + chipsHTML(z) + '</div>'
+      + '<p style="margin-top:16px; font-size:13.5px; color:#333;"><span class="k" style="font-size:10px; color:#a0583a;">Lo que aportamos · </span>' + z.ap + '</p>'
+      + '<div class="legend" style="margin-top:14px;"><span><span class="n">ABC</span>Necesidades</span><span><span class="f">abc</span>Sensaciones</span></div>';
+  }
+  window.zoneSet = zoneSet;
+  [].slice.call(zrows.children).forEach(function(r, i){ r.addEventListener('mouseenter', function(){ zoneSet(i); }); r.addEventListener('click', function(){ zoneSet(i); }); });
+  [].slice.call(tsvg.querySelectorAll('.flr')).forEach(function(f){
+    f.style.cursor = 'pointer';
+    function act(){ var i = ZONES.map(function(z){ return z.id; }).indexOf(f.dataset.z); zoneSet(i); }
+    f.addEventListener('mouseenter', act); f.addEventListener('click', act);
+  });
+  zoneSet(0);
+  function countStats(root){
+    [].slice.call(root.querySelectorAll('[data-n]')).forEach(function(el){
+      var to = +el.dataset.n, t0 = null;
+      el.textContent = '0';
+      function st(t){ if (!t0) t0 = t; var p = Math.min(1, (t - t0) / 1600); p = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * p).toLocaleString('es-AR'); if (p < 1) requestAnimationFrame(st); }
+      setTimeout(function(){ requestAnimationFrame(st); }, 400);
+    });
+  }
+  window.countStats = countStats;
+
+  // ---- perfiles
+  var qcs = document.getElementById('qcs');
+  qcs.innerHTML = PERF.map(function(p, i){ return '<div class="qc hv"><svg class="ic2" width="104" height="70" viewBox="0 0 120 82" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + p.svg + '</svg><div style="font-weight:300; font-size:38px; line-height:1; color:#a0583a;">0' + (i + 1) + '</div><div style="margin-top:34px; font-weight:600; font-size:13px; letter-spacing:.14em; text-transform:uppercase;">' + p.t + '</div><p style="margin-top:8px; font-size:14px; color:#333;">' + p.p + '</p><div class="ans"><b>LO QUE DISEÑAMOS</b>' + p.a + '</div></div>'; }).join('');
+  var per = document.getElementById('perfiles'), spot = document.getElementById('spot'), qcEls = [].slice.call(qcs.children);
+  per.addEventListener('mousemove', function(e){
+    var r = per.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    spot.style.setProperty('--mx', (x * 100) + '%'); spot.style.setProperty('--my', (y * 100) + '%');
+    qcEls.forEach(function(c){
+      var cr = c.getBoundingClientRect(), cx = (e.clientX - (cr.left + cr.width / 2)) / (r.width / 2), cy = (e.clientY - (cr.top + cr.height / 2)) / (r.height / 2);
+      var inside = e.clientX >= cr.left && e.clientX <= cr.right && e.clientY >= cr.top && e.clientY <= cr.bottom;
+      c.style.transform = 'perspective(800px) rotateY(' + (cx * 7).toFixed(2) + 'deg) rotateX(' + (-cy * 7).toFixed(2) + 'deg)' + (inside ? ' translateY(-10px) scale(1.03)' : '');
+      c.style.boxShadow = inside ? '0 18px 36px rgba(160,88,58,.3)' : '';
+    });
+  });
+  per.addEventListener('mouseleave', function(){ qcEls.forEach(function(c){ c.style.transform = ''; c.style.boxShadow = ''; }); });
+
+  // ---- servicios
+  var stg = document.getElementById('stg');
+  stg.innerHTML = SERV.map(function(s, i){
+    var nx = i < 2 ? '<span class="next" data-to="' + (i + 1) + '">Siguiente servicio <b>→</b></span>' : '<span class="next" data-to="0"><b style="animation:none">←</b> Volver al primero</span>';
+    return '<div class="st' + (i ? '' : ' on') + '"><span class="more">Ver detalle <b>→</b></span>' + nx + '<span class="step">SERVICIO ' + (i + 1) + ' DE 3</span>'
+      + '<svg class="ic" width="62" height="52" viewBox="-2 -2 86 72" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">' + s.ic + '</svg>'
+      + '<div class="no">0' + (i + 1) + '</div><div class="ti">' + s.t + '</div><div class="su">' + s.s + '</div><ul>' + s.li.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul></div>';
+  }).join('');
+  var sts = [].slice.call(stg.children);
+  sts.forEach(function(s){ function act(){ sts.forEach(function(o){ o.classList.toggle('on', o === s); }); } s.addEventListener('mouseenter', act); s.addEventListener('click', act); });
+  stg.querySelectorAll('.next').forEach(function(b){ b.addEventListener('click', function(e){ e.stopPropagation(); var t = sts[+b.dataset.to]; sts.forEach(function(o){ o.classList.toggle('on', o === t); }); }); });
+
+  // ---- tipologías
+  var pks = document.getElementById('pks');
+  pks.innerHTML = PKS.map(function(p){ return '<div class="pk hv"><span class="badge">SUGERIDO</span><svg class="ic2" width="56" height="52" viewBox="0 0 60 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + p.ic + '</svg><div class="ttl">' + p.t + '</div><div class="sb">' + p.s + '</div><ul style="display:grid; grid-template-columns:1fr 1fr; column-gap:18px; padding-right:60px;">' + p.li.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul></div>'; }).join('');
+  var unit = document.getElementById('unit'), uchips = document.getElementById('uchips'), tyCur = 0, tyTouched = false;
+  function iso(x, y, sc){ var k = .68 * sc; return [310 - 50 * k + (4.4 * x - 5.6667 * y) * k, 400 - 195 * k + (2.2 * x + 2.8333 * y) * k]; }
+  function tySet(t){
+    tyCur = t; var d = TYP[t], sc = d.sc;
+    unit.classList.remove('show'); unit.innerHTML = '';
+    function P(pts){ return pts.map(function(p){ return iso(p[0], p[1], sc).map(function(v){ return v.toFixed(1); }).join(','); }).join(' '); }
+    // losa con espesor
+    var a = iso(100, 0, sc), b2 = iso(100, 60, sc), c = iso(0, 60, sc);
+    mk('polygon', { points: [c, b2, [b2[0], b2[1] + 16], [c[0], c[1] + 16]].map(function(p){ return p.join(','); }).join(' '), fill: '#d9c6b6' }, unit);
+    mk('polygon', { points: [b2, a, [a[0], a[1] + 16], [b2[0], b2[1] + 16]].map(function(p){ return p.join(','); }).join(' '), fill: '#c9b19d' }, unit);
+    mk('polygon', { points: P([[0,0],[100,0],[100,60],[0,60]]), fill: '#fbfaf7', stroke: '#6b5d4a', 'stroke-width': 1.3 }, unit);
+    var grid = mk('g', { class: 'z', stroke: '#b9ab98', 'stroke-width': 1, 'stroke-dasharray': '3 4' }, unit);
+    for (var x = 10; x < 100; x += 10) { var p1 = iso(x, 0, sc), p2 = iso(x, 60, sc); mk('line', { x1: p1[0], y1: p1[1], x2: p2[0], y2: p2[1] }, grid); }
+    for (var y = 10; y < 60; y += 10) { var q1 = iso(0, y, sc), q2 = iso(100, y, sc); mk('line', { x1: q1[0], y1: q1[1], x2: q2[0], y2: q2[1] }, grid); }
+    // balcón
+    mk('polygon', { class: 'z', points: P([[100,8],[114,8],[114,52],[100,52]]), fill: 'none', stroke: '#a0583a', 'stroke-width': 1.2, 'stroke-dasharray': '4 3' }, unit);
+    var scan = mk('polygon', { class: 'z', points: P([[0,0],[4,0],[4,60],[0,60]]), fill: '#dfe4d8', opacity: .9 }, unit);
+    mk('animateTransform', { attributeName: 'transform', type: 'translate', from: '0 0', to: (iso(96, 0, sc)[0] - iso(0, 0, sc)[0]) + ' ' + (iso(96, 0, sc)[1] - iso(0, 0, sc)[1]), dur: '3.2s', repeatCount: 'indefinite' }, scan);
+    uchips.innerHTML = '';
+    d.need.concat(d.feel).forEach(function(c, i){
+      var n = document.createElement('span'); n.className = 'chip ' + (i < 3 ? 'need' : 'feel'); n.textContent = c[2];
+      n.style.cssText = 'position:absolute; left:' + (310 + (c[0] - 290) * sc) + 'px; top:' + (400 + (c[1] - 365) * sc) + 'px; translate:-50% -50%; animation-delay:' + (i * .5) + 's, ' + (.2 + i * .12) + 's;' + (i >= 3 ? 'color:#8a4527; text-shadow:0 0 12px #fbfaf7, 0 0 6px #fbfaf7, 0 0 2px #fbfaf7;' : '');
+      uchips.appendChild(n);
+    });
+    document.querySelectorAll('#stage .ty button').forEach(function(bt){ bt.classList.toggle('on', +bt.dataset.t === t); });
+    var el = document.getElementById('ucnt'), from = +el.textContent, t0 = null;
+    function st(tm){ if (!t0) t0 = tm; var p = Math.min(1, (tm - t0) / 600); el.textContent = Math.round(from + (d.n - from) * p); if (p < 1) requestAnimationFrame(st); }
+    requestAnimationFrame(st);
+    document.getElementById('um2').textContent = d.m2;
+    [].slice.call(pks.children).forEach(function(p, k){ p.classList.toggle('sug', k === d.sug); });
+    setTimeout(function(){ unit.classList.add('show'); }, 40);
+  }
+  var tyT = null;
+  function autoTy(){ clearInterval(tyT); if (tyTouched) return; tyT = setInterval(function(){ if (!tyTouched && slides[cur].id === 'tipologias') tySet((tyCur + 1) % 3); }, 4200); }
+  document.querySelectorAll('#stage .ty button').forEach(function(bt){ bt.onclick = function(){ tyTouched = true; clearInterval(tyT); tySet(+bt.dataset.t); }; });
+  tySet(0);
+  window.autoTy = autoTy;
+
+  // ---- cómo funciona
+  var pops = [].slice.call(document.querySelectorAll('#stage .pop'));
+  pops.forEach(function(p, i){ p.innerHTML = POPS[i].svg + '<div class="cap">' + POPS[i].cap + '</div>'; });
+  var icos = [].slice.call(document.querySelectorAll('#stage .ico')), wks = [].slice.call(document.querySelectorAll('#stage .wk')), openP = -1;
+  window.showPop = function(i){
+    if (i === openP) return; openP = i;
+    pops.forEach(function(p, j){ p.classList.toggle('on', j === i); });
+    icos.forEach(function(c, j){ c.classList.toggle('dim', j === i); });
+    wks.forEach(function(c, j){ c.classList.toggle('on', j === i); });
+  };
+  icos.concat(wks).forEach(function(n){
+    var i = +n.dataset.p;
+    n.addEventListener('mouseenter', function(){ showPop(i); });
+    n.addEventListener('mouseleave', function(){ showPop(-1); });
+    n.addEventListener('click', function(e){ e.stopPropagation(); showPop(openP === i ? -1 : i); });
+  });
+
+  // ---- beneficios
+  document.getElementById('alis').innerHTML = ALI.map(function(c){
+    return '<div><div class="k" style="color:#a0583a; margin-bottom:12px;">' + c[0] + '</div>' + c[1].map(function(it){
+      return '<div class="ali hv" style="margin-bottom:12px;"><svg class="ic2" width="56" height="48" viewBox="0 0 60 50" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + it[2] + '</svg><b>/ ' + it[0] + '</b><br><span style="color:#444;">' + it[1] + '</span></div>';
+    }).join('') + '</div>';
+  }).join('');
+
+  // ---- nosotros
+  document.getElementById('pils').innerHTML = PILS.map(function(p){ return '<div class="pil hv"><svg class="ic2" width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + p[1] + '</svg><div style="margin-top:10px; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; line-height:1.5;">' + p[0] + '</div></div>'; }).join('');
+
+  // ---- próximos pasos
+  document.getElementById('pasos').innerHTML = PASOS.map(function(p, i){ return '<div class="rv" style="--d:' + (0.25 + i * 0.15).toFixed(2) + 's"><div class="pstep hv"><svg class="ic2" width="72" height="58" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + p[2] + '</svg><div class="col" style="margin-top:18px;"><div style="font-size:11px; letter-spacing:.2em; color:#a0583a;">PASO 0' + (i + 1) + '</div><div class="h" style="margin-top:6px;">' + p[0] + '</div><p style="margin-top:12px; color:#333;">' + p[1] + '</p></div></div></div>'; }).join('');
+
+  // ---- largos de trazo para la animación de dibujo
+  document.querySelectorAll('#stage .draw *').forEach(function(el){
+    if (el.getTotalLength) { try { var l = Math.ceil(el.getTotalLength()) + 2; el.style.setProperty('--len', l); } catch(e) {} }
+  });
+
+  // ---- dibujos al tocar
+  document.querySelectorAll('#stage .hv').forEach(function(el){
+    el.addEventListener('click', function(){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); });
+    el.addEventListener('mouseleave', function(){ el.classList.remove('on'); });
+  });
+
+  // ---- oportunidad: punto activo + auto recorrido
+  var pgb = [].slice.call(pgbs.children), pgi = [].slice.call(pgsvg.children), pgCur = 0, pgTouched = false;
+  function pgSet(i){ pgCur = i; pgb.forEach(function(b, k){ b.classList.toggle('on', k === i); }); pgi.forEach(function(g, k){ g.classList.toggle('on', k === i); }); }
+  pgb.forEach(function(b, k){ b.addEventListener('mouseenter', function(e){ if (e.isTrusted) pgTouched = true; pgSet(k); }); b.addEventListener('click', function(){ pgTouched = true; pgSet(k); }); });
+  setInterval(function(){ if (!pgTouched && slides[cur].id === 'oportunidad') pgSet((pgCur + 1) % pgb.length); }, 3400);
+
+  // ---- del plano a la vida: comparador
+  var cmp = document.getElementById('cmp'), dragging = false, cmpTouched = false, cmpAnim = null;
+  var clipD = buildRoom(cmp.querySelector('svg'), 'd');
+  function setX(p){ p = Math.max(2, Math.min(98, p)); cmp.style.setProperty('--x', p + '%'); clipD(p); }
+  function fromEv(e){ var r = cmp.getBoundingClientRect(); setX((e.clientX - r.left) / r.width * 100); }
+  cmp.addEventListener('pointerdown', function(e){ dragging = true; cmpTouched = true; cancelAnimationFrame(cmpAnim); fromEv(e); try { cmp.setPointerCapture(e.pointerId); } catch(_) {} });
+  cmp.addEventListener('pointermove', function(e){ if (dragging || e.pointerType === 'mouse') { if (e.isTrusted) { cmpTouched = true; cancelAnimationFrame(cmpAnim); } fromEv(e); } });
+  cmp.addEventListener('pointerup', function(){ dragging = false; });
+  function sweep(){
+    cancelAnimationFrame(cmpAnim); if (cmpTouched) return;
+    var keys = [[0, 92], [1400, 92], [3200, 18], [4800, 60]], t0 = null;
+    function st(t){ if (!t0) t0 = t; var e = t - t0, k = 0; while (k < keys.length - 1 && e > keys[k + 1][0]) k++;
+      if (k >= keys.length - 1) { setX(keys[keys.length - 1][1]); return; }
+      var a = keys[k], b = keys[k + 1], p = (e - a[0]) / (b[0] - a[0]); p = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      setX(a[1] + (b[1] - a[1]) * p); cmpAnim = requestAnimationFrame(st); }
+    cmpAnim = requestAnimationFrame(st);
+  }
+
+  // ---- portada: la torre se mueve apenas con el mouse
+  var por = document.getElementById('portada'), cgs = [].slice.call(cvg.children);
+  por.addEventListener('mousemove', function(e){
+    var r = por.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    cgs.forEach(function(g){ var k = +g.dataset.k || 8; g.style.transform = 'translate(' + (x * k) + 'px,' + (y * k * .5) + 'px)'; });
+  });
+  por.addEventListener('mouseleave', function(){ cgs.forEach(function(g){ g.style.transform = ''; }); });
+
+  // ---- navegación
+  function go(i){
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    slides[cur].classList.remove('on');
+    cur = i;
+    slides[cur].classList.add('on');
+    var id = slides[cur].id;
+    document.getElementById('count').textContent = String(cur + 1).padStart(2,'0') + ' / ' + slides.length;
+    document.getElementById('bar').style.width = ((cur + 1) / slides.length * 100) + '%';
+    if (id === 'torre') countStats(slides[cur]);
+    if (id === 'vida') { setX(92); setTimeout(sweep, 700); }
+    if (id === 'servicios') sts.forEach(function(o, k){ o.classList.toggle('on', k === 0); });
+    if (id === 'tipologias') autoTy();
+    showPop(-1);
+    try { history.replaceState(null, '', '#' + (cur + 1)); } catch(e) {}
+    document.getElementById('prev').classList.toggle('off', cur === 0);
+    document.getElementById('next').classList.toggle('off', cur === slides.length - 1);
+    var secs = [].slice.call(document.querySelectorAll('#sec button')), act = -1;
+    secs.forEach(function(b, k){ if (cur >= +b.dataset.to) act = k; });
+    secs.forEach(function(b, k){ b.classList.toggle('on', k === act); });
+    startDemo();
+  }
+  document.querySelectorAll('#sec button').forEach(function(b){ b.onclick = function(){ go(+b.dataset.to); }; });
+  document.getElementById('prev').onclick = function(){ go(cur - 1); };
+  document.getElementById('next').onclick = function(){ go(cur + 1); };
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); go(cur + 1); }
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(cur - 1); }
+  });
+  var tx = null;
+  document.addEventListener('touchstart', function(e){ if (document.documentElement.classList.contains('mobile')) return; if (e.target.closest && e.target.closest('#cmp')) return; tx = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){ if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; tx = null; if (Math.abs(dx) > 50) go(cur + (dx < 0 ? 1 : -1)); }, {passive:true});
+  document.querySelectorAll('[data-go]').forEach(function(a){ a.onclick = function(){ go(+a.dataset.go); }; });
+  var wAcc = 0, wPrev = 0, wUsed = false;
+  window.addEventListener('wheel', function(e){
+    if (document.documentElement.classList.contains('mobile')) return;
+    var now = Date.now(); if (now - wPrev > 260) { wUsed = false; wAcc = 0; } wPrev = now;
+    if (wUsed) return; wAcc += e.deltaY;
+    if (Math.abs(wAcc) > 40) { wUsed = true; go(cur + (wAcc > 0 ? 1 : -1)); }
+  }, { passive: true });
+
+  // ---- cursor guía: muestra lo que se puede explorar
+  var ghost = document.createElement('div');
+  ghost.id = 'ghost';
+  ghost.innerHTML = '<svg width="26" height="30" viewBox="0 0 26 30"><path d="M3 2 L3 24 L9 18.5 L13 27 L17 25 L13 16.5 L21 16.5 Z" fill="#fff" stroke="#111" stroke-width="1.6" stroke-linejoin="round"/></svg><span>PASÁ EL MOUSE</span><i></i>';
+  stage.appendChild(ghost);
+  function hvOn(el){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); }
+  function hvOff(el){ el.classList.remove('on'); }
+  function enterEv(el){ el.dispatchEvent(new MouseEvent('mouseenter')); }
+  var DEMO = {
+    oportunidad: { sel: '.pgb', on: function(el){ pgTouched = true; pgSet(pgb.indexOf(el)); } },
+    torre: { sel: '.zr', on: enterEv },
+    perfiles: { sel: '.qc', on: function(el){ hvOn(el); el.style.transform = 'perspective(800px) translateY(-10px) scale(1.03)'; el.style.boxShadow = '0 18px 36px rgba(160,88,58,.3)'; }, off: function(el){ hvOff(el); el.style.transform = ''; el.style.boxShadow = ''; }, dwell: 3200 },
+    servicios: { sel: '.st', on: enterEv },
+    tipologias: { sel: '.ty button', on: function(el){ tySet(+el.dataset.t); }, dwell: 3400 },
+    funciona: { sel: '.wk', on: function(el){ showPop(+el.dataset.p); }, off: function(){ showPop(-1); }, dwell: 3600 },
+    beneficios: { sel: '.ali', on: hvOn, off: hvOff },
+    somos: { sel: '.rnd', on: hvOn, off: hvOff },
+    proximos: { sel: '.pstep', on: hvOn, off: hvOff }
+  };
+  var learned = {}, dT = null, dT2 = null, dPrev = null, dCfg = null, dId = null;
+  function moveGhost(el){
+    var sr = stage.getBoundingClientRect(), s = sr.width / 1440, r = el.getBoundingClientRect();
+    ghost.style.left = ((r.left + Math.min(r.width * .5, 160) - sr.left) / s) + 'px';
+    ghost.style.top = ((r.top + Math.min(r.height * .45, 60) - sr.top) / s) + 'px';
+  }
+  function stopDemo(keep){
+    clearTimeout(dT); clearTimeout(dT2);
+    if (!keep && dCfg && dCfg.off && dPrev) dCfg.off(dPrev);
+    dPrev = null; dCfg = null; dId = null;
+    ghost.classList.remove('show');
+  }
+  function startDemo(){
+    stopDemo();
+    if (document.documentElement.classList.contains('mobile')) return;
+    var id = slides[cur].id, cfg = DEMO[id];
+    if (!cfg || learned[id]) return;
+    var els = [].slice.call(slides[cur].querySelectorAll(cfg.sel));
+    if (!els.length) return;
+    dCfg = cfg; dId = id;
+    var i = 0;
+    function step(){
+      if (dCfg !== cfg) return;
+      var el = els[i % els.length];
+      if (dPrev && cfg.off && dPrev !== el) cfg.off(dPrev);
+      ghost.classList.add('show'); moveGhost(el);
+      dT2 = setTimeout(function(){ if (dCfg !== cfg) return; ghost.classList.remove('tap'); void ghost.offsetWidth; ghost.classList.add('tap'); cfg.on(el); }, 800);
+      dPrev = el; i++;
+      dT = setTimeout(step, cfg.dwell || 2800);
+    }
+    dT = setTimeout(step, 1600);
+  }
+  Object.keys(DEMO).forEach(function(id){
+    var sl = document.getElementById(id); if (!sl) return;
+    [].slice.call(sl.querySelectorAll(DEMO[id].sel)).forEach(function(el){
+      function mine(e){ if (e.isTrusted) { learned[id] = true; if (id === 'tipologias') { tyTouched = true; clearInterval(tyT); } if (dId === id) stopDemo(true); } }
+      el.addEventListener('mouseenter', mine); el.addEventListener('click', mine);
+    });
+  });
+
+  var start = parseInt((location.hash || '').slice(1), 10);
+  go(isNaN(start) ? 0 : start - 1);
+})();
+
+/* ======================= CELULAR ======================= */
+(function(){
+  if (!document.documentElement.classList.contains('mobile')) return;
+  var M = document.getElementById('m');
+
+  // portada
+  var mcv = document.getElementById('mcvsvg');
+  var mg = buildTower(mcv, { cx: 682, base: 456, ex: 19, ey: 11, fh: 22, line: true });
+  [].slice.call(mg.querySelectorAll('polyline, polygon, line')).forEach(function(el, i){
+    el.setAttribute('pathLength', 1); el.style.strokeDasharray = 1; el.style.strokeDashoffset = 1;
+    el.style.transition = 'stroke-dashoffset 1.6s ease ' + (0.1 + Math.min(i, 30) * 0.06).toFixed(2) + 's';
+  });
+
+  // oportunidad
+  document.getElementById('mpgs').innerHTML = PG.map(function(p, i){ return '<div class="mpg hv' + (i ? '' : ' on') + '"><svg class="ic2" viewBox="0 0 230 190" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">' + p.svg + '</svg><p><b>' + p.t + '</b> ' + p.s + '</p></div>'; }).join('');
+
+  // comparador
+  var mc = document.getElementById('mcmp'), mcTouched = false, mcAnim = null;
+  var clipM = buildRoom(mc.querySelector('svg'), 'm');
+  function mset(p){ p = Math.max(2, Math.min(98, p)); mc.style.setProperty('--x', p + '%'); clipM(p); }
+  function mfrom(x){ var r = mc.getBoundingClientRect(); mset((x - r.left) / r.width * 100); }
+  mc.addEventListener('touchstart', function(e){ mcTouched = true; cancelAnimationFrame(mcAnim); mfrom(e.touches[0].clientX); }, { passive: true });
+  mc.addEventListener('touchmove', function(e){ mfrom(e.touches[0].clientX); }, { passive: true });
+  mc.addEventListener('click', function(e){ mcTouched = true; cancelAnimationFrame(mcAnim); mfrom(e.clientX); });
+  function msweep(){
+    cancelAnimationFrame(mcAnim); if (mcTouched) return;
+    var t0 = null;
+    function st(t){ if (!t0) t0 = t; var e = (t - t0) / 1000; mset(50 + 40 * Math.cos(e * 1.3)); if (e < 4.6) mcAnim = requestAnimationFrame(st); else mset(55); }
+    mcAnim = requestAnimationFrame(st);
+  }
+
+  // torre
+  var mt = document.getElementById('mtower');
+  buildTower(mt, { cx: 330, base: 568, ex: 19, ey: 11, fh: 24 });
+  var mzb = document.getElementById('mzb'), mzdet = document.getElementById('mzdet');
+  mzb.innerHTML = ZONES.map(function(z, i){ return '<button class="mb" data-i="' + i + '">' + ['Terraza', 'Amenities', 'Departamentos', 'Hall'][i] + '</button>'; }).join('');
+  function mzone(i){
+    var z = ZONES[i];
+    [].slice.call(mzb.children).forEach(function(b, k){ b.classList.toggle('on', k === i); });
+    mt.classList.add('zone-on');
+    [].slice.call(mt.querySelectorAll('.flr')).forEach(function(f){ f.classList.toggle('act', f.dataset.z === z.id); });
+    mzdet.innerHTML = '<div class="k" style="font-size:9px;">' + z.k + '</div><p style="font-style:italic; font-size:13px; margin-top:4px;">' + z.q + '</p><div class="chips">' + z.need.map(function(c){ return '<span class="chip need">' + c + '</span>'; }).join('') + z.feel.map(function(c){ return '<span class="chip feel">' + c + '</span>'; }).join('') + '</div><p style="font-size:12px; margin-top:8px; color:#333;"><b style="color:#a0583a; font-weight:500;">Aportamos:</b> ' + z.ap + '</p>';
+  }
+  [].slice.call(mzb.children).forEach(function(b, i){ b.addEventListener('click', function(){ mzTouched = true; clearInterval(mzT); mzone(i); }); });
+  [].slice.call(mt.querySelectorAll('.flr')).forEach(function(f){ f.addEventListener('click', function(){ mzTouched = true; clearInterval(mzT); mzone(ZONES.map(function(z){ return z.id; }).indexOf(f.dataset.z)); }); });
+  mzone(0);
+  var mzT = null, mzTouched = false, mzCur = 0;
+  function startZ(){ clearInterval(mzT); if (mzTouched) return; mzT = setInterval(function(){ mzCur = (mzCur + 1) % 4; mzone(mzCur); }, 3600); }
+
+  // perfiles
+  var mqs = document.getElementById('mqs');
+  mqs.innerHTML = PERF.map(function(p){ return '<div class="mq mrv hv"><svg class="ic2" viewBox="0 0 120 82" fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + p.svg + '</svg><div class="t1">' + p.t + '</div><p>' + p.p + '</p><div class="ans"><b>LO QUE DISEÑAMOS</b>' + p.a + '</div></div>'; }).join('');
+  var mq = [].slice.call(mqs.children), attnT = null, attnI = 0, mqTouched = false;
+  function startAttn(){ stopAttn(); if (mqTouched) return; attnT = setInterval(function(){ mq.forEach(function(c, k){ c.classList.toggle('attn', k === attnI); }); attnI = (attnI + 1) % mq.length; }, 1300); }
+  function stopAttn(){ clearInterval(attnT); mq.forEach(function(c){ c.classList.remove('attn'); }); }
+  mq.forEach(function(c){ c.addEventListener('click', function(){ mqTouched = true; stopAttn(); mq.forEach(function(o){ o.classList.toggle('sel', o === c); }); }); });
+
+  // servicios
+  var mst3 = document.getElementById('mst3'), mstp = document.getElementById('mstp');
+  mst3.innerHTML = SERV.map(function(s, i){ return '<button class="mst3' + (i ? '' : ' on') + '"><span class="mno">0' + (i + 1) + '</span><span class="mti">' + s.t + '</span></button>'; }).join('');
+  mstp.innerHTML = SERV.map(function(s, i){ return '<div class="mstp' + (i ? '' : ' on') + '"><div class="msu">' + s.s + '</div><ul>' + s.li.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul></div>'; }).join('');
+  [].slice.call(mst3.children).forEach(function(b, k){ b.addEventListener('click', function(){ [].slice.call(mst3.children).forEach(function(o, j){ o.classList.toggle('on', j === k); }); [].slice.call(mstp.children).forEach(function(p, j){ p.classList.toggle('on', j === k); }); }); });
+
+  // tipologías
+  var mty = document.getElementById('mty'), mpks = document.getElementById('mpks');
+  mty.innerHTML = ['1 dormitorio', '2 dormitorios', '3 dormitorios'].map(function(t, i){ return '<button class="mb' + (i ? '' : ' on') + '">' + t + '</button>'; }).join('');
+  mpks.innerHTML = PKS.map(function(p, i){ return '<div class="mpk' + (i === 0 ? ' open' : '') + '"><span class="badge">SUGERIDO</span><div class="ttl">' + p.t + '</div><div class="msu" style="font-size:12px;">' + p.s + '</div><ul>' + p.li.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul></div>'; }).join('');
+  var mpk = [].slice.call(mpks.children);
+  mpk.forEach(function(p){ p.addEventListener('click', function(){ mpk.forEach(function(o){ o.classList.toggle('open', o === p); }); }); });
+  function mtSet(i){
+    var d = TYP[i];
+    [].slice.call(mty.children).forEach(function(b, k){ b.classList.toggle('on', k === i); });
+    document.getElementById('mucnt').textContent = d.n;
+    document.getElementById('mutx').textContent = 'unidades · ' + d.mt;
+    mpk.forEach(function(p, k){ p.classList.toggle('sug', k === d.sug); p.classList.toggle('open', k === d.sug); });
+  }
+  [].slice.call(mty.children).forEach(function(b, i){ b.addEventListener('click', function(){ mtSet(i); }); });
+  mtSet(0);
+
+  // cómo funciona
+  var mwbs = document.getElementById('mwbs'), mwks = document.getElementById('mwks');
+  mwbs.innerHTML = POPTX.map(function(p, i){ return '<button class="mwb' + (i ? '' : ' on') + '"><i></i><span>0' + (i + 1) + '</span></button>'; }).join('');
+  mwks.innerHTML = POPTX.map(function(p, i){ return '<div class="mwk' + (i ? '' : ' on') + '"><div class="k" style="font-size:9px;">' + p[0] + '</div><div style="font-style:italic; font-size:14px; margin-top:2px;">' + p[1] + '</div><p>' + p[2] + '</p><div class="pop">' + POPS[i].svg + '<div class="cap">' + POPS[i].cap + '</div></div></div>'; }).join('');
+  var wbs = [].slice.call(mwbs.children), wks = [].slice.call(mwks.children), wkT = null, wkCur = 0;
+  function week(i){ wkCur = i; wbs.forEach(function(b, k){ b.classList.toggle('on', k === i); }); wks.forEach(function(w, k){ w.classList.toggle('on', k === i); var p = w.querySelector('.pop'); p.classList.remove('on'); if (k === i) { void p.offsetWidth; p.classList.add('on'); } }); }
+  function playWeek(){ clearInterval(wkT); week(0); wkT = setInterval(function(){ week((wkCur + 1) % wbs.length); }, 4200); }
+  wbs.forEach(function(b, k){ b.addEventListener('click', function(){ clearInterval(wkT); week(k); }); });
+
+  // próximos pasos
+  document.getElementById('mpasos').innerHTML = PASOS.map(function(p, i){ return '<div class="mg2 hv"><svg class="ic2" viewBox="0 -2 72 60" fill="none" stroke="#111" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + p[2] + '</svg><div class="mpk2">PASO 0' + (i + 1) + '</div><b>' + p[0] + '</b><span>' + p[1] + '</span></div>'; }).join('');
+
+  // animaciones al llegar a cada lámina
+  var mSecs = [].slice.call(M.querySelectorAll('.ms'));
+  function mEnter(s){
+    if (s.classList.contains('act')) return;
+    s.classList.add('act', 'in');
+    [].slice.call(s.querySelectorAll('.mrv')).forEach(function(el, k){ setTimeout(function(){ el.classList.add('in'); }, 60 + k * 110); });
+    [].slice.call(s.querySelectorAll('.hv')).forEach(function(x, k){ setTimeout(function(){ x.classList.remove('on'); void x.offsetWidth; x.classList.add('on'); }, 450 + k * 220); });
+    if (s.id === 'm-portada') mcv.querySelectorAll('polyline, polygon, line').forEach(function(el){ el.style.strokeDashoffset = 0; });
+    if (s.id === 'm-vida') { mset(90); setTimeout(msweep, 600); }
+    if (s.id === 'm-torre') { countStats(s); startZ(); }
+    if (s.id === 'm-perfiles') startAttn();
+    if (s.id === 'm-funciona') setTimeout(playWeek, 450);
+    if (s.id === 'm-oportunidad') startPg();
+  }
+  function mLeave(s){
+    if (!s.classList.contains('act')) return;
+    s.classList.remove('act');
+    if (s.classList.contains('mcover')) return;
+    [].slice.call(s.querySelectorAll('.mrv')).forEach(function(el){ el.classList.remove('in'); });
+    [].slice.call(s.querySelectorAll('.hv')).forEach(function(x){ x.classList.remove('on'); });
+    if (s.id === 'm-torre') clearInterval(mzT);
+    if (s.id === 'm-perfiles') stopAttn();
+    if (s.id === 'm-funciona') clearInterval(wkT);
+    if (s.id === 'm-oportunidad') clearInterval(pgT);
+  }
+  var mpgs = [].slice.call(document.querySelectorAll('.mpg')), pgT = null, pgI = 0, pgTouched = false;
+  function pgOn(i){ mpgs.forEach(function(o, k){ o.classList.toggle('on', k === i); }); var p = mpgs[i]; p.classList.remove('on'); void p.offsetWidth; p.classList.add('on'); }
+  function startPg(){ clearInterval(pgT); if (pgTouched) return; pgT = setInterval(function(){ pgI = (pgI + 1) % mpgs.length; pgOn(pgI); }, 2600); }
+  mpgs.forEach(function(p, i){ p.addEventListener('click', function(){ pgTouched = true; clearInterval(pgT); pgOn(i); }); });
+
+  function mCheck(){
+    var vh = window.innerHeight;
+    mSecs.forEach(function(s){
+      var r = s.getBoundingClientRect(), vis = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0)) / Math.min(r.height, vh);
+      if (vis >= .55) mEnter(s); else if (vis < .15) mLeave(s);
+    });
+  }
+  window.addEventListener('scroll', mCheck, { passive: true });
+  setInterval(mCheck, 350); setTimeout(mCheck, 100);
+
+  // menú fijo
+  var links = [].slice.call(document.querySelectorAll('#mnav a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function mark(){
+    var y = window.scrollY + window.innerHeight * .4, act = 0;
+    secs.forEach(function(s, k){ if (s && s.offsetTop <= y) act = k; });
+    links.forEach(function(a, k){ a.classList.toggle('on', k === act); });
+  }
+  window.addEventListener('scroll', mark, { passive: true }); mark();
+  function mGoTo(s){
+    if (!s) return;
+    var root = document.documentElement, top = s.getBoundingClientRect().top + window.pageYOffset;
+    root.style.scrollSnapType = 'none';
+    window.scrollTo(0, top);
+    setTimeout(function(){ window.scrollTo(0, top); root.style.scrollSnapType = ''; mark(); mCheck(); }, 80);
+  }
+  links.concat([].slice.call(document.querySelectorAll('.midx'))).forEach(function(a){
+    a.addEventListener('click', function(e){ e.preventDefault(); mGoTo(document.querySelector(a.getAttribute('href'))); });
+  });
+  document.querySelectorAll('#m .hv').forEach(function(el){
+    el.addEventListener('click', function(){ el.classList.remove('on'); void el.offsetWidth; el.classList.add('on'); });
+  });
+})();
+</script>
+</body>
+</html>

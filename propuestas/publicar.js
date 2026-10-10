@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const [src, slug, title] = process.argv.slice(2);
+const [src, slug, title, ogImg] = process.argv.slice(2);
 if (!src || !slug || !title) {
   console.error('Uso: node propuestas/publicar.js "<carpeta>" <slug> "<titulo>"');
   process.exit(1);
@@ -27,7 +27,7 @@ html = html.replace(anchor, `${anchor}
 <meta property="og:type" content="website">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva · Lucía Da Silva Estudio">
-<meta property="og:image" content="${url}img/gracias.jpg">
+<meta property="og:image" content="${url}img/${ogImg || 'gracias.jpg'}">
 <meta property="og:url" content="${url}">
 <link rel="icon" type="image/png" href="/assets/images/favicon.png">
 <script type="text/javascript">

@@ -123,6 +123,12 @@
   .tile .lab { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 10px; background: linear-gradient(transparent, rgba(0,0,0,.55)); color: #fff; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; }
   .tile .lab em { display: block; font-style: italic; text-transform: none; letter-spacing: .02em; font-size: 12.5px; opacity: 0; max-height: 0; transition: opacity .4s, max-height .4s; }
   .tile:hover .lab em, .tile.act .lab em { opacity: 1; max-height: 40px; }
+  .mats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+  .mats div { font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; color: #333; line-height: 1.3; }
+  .mats i { display: block; height: 62px; margin-bottom: 7px; border: 1px solid rgba(0,0,0,.06); background-size: cover; background-position: center; transition: transform .4s; }
+  .mats div:hover i { transform: translateY(-3px); }
+  .mats small { display: block; text-transform: none; letter-spacing: 0; color: #666; font-size: 10px; margin-top: 2px; }
+  html.mobile .mats i { height: 44px; }
   .base { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: #444; }
   .base > span { font-size: 10px; letter-spacing: .2em; color: #14306a; font-weight: 500; margin-right: 4px; }
   .base div { display: flex; align-items: center; gap: 6px; }
@@ -396,36 +402,42 @@
       <svg class="plan" id="plan" viewBox="0 0 780 470" font-family="Montserrat, Arial">
         <defs>
           <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf87" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf87" stop-opacity="0"/></linearGradient>
+          <linearGradient id="coneC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dde9ff" stop-opacity=".6"/><stop offset="1" stop-color="#dde9ff" stop-opacity="0"/></linearGradient>
           <radialGradient id="gw"><stop offset="0" stop-color="#ffcf87" stop-opacity=".9"/><stop offset="1" stop-color="#ffcf87" stop-opacity="0"/></radialGradient>
+          <radialGradient id="gc"><stop offset="0" stop-color="#dde9ff" stop-opacity=".9"/><stop offset="1" stop-color="#dde9ff" stop-opacity="0"/></radialGradient>
           <linearGradient id="kel" x1="0" x2="1"><stop offset="0" stop-color="#ffb35c"/><stop offset=".5" stop-color="#fff1d6"/><stop offset="1" stop-color="#cfe0ff"/></linearGradient>
         </defs>
         <line x1="20" y1="40" x2="760" y2="40" stroke="#6d635a" stroke-width="2"/>
         <text x="20" y="28" font-size="10" letter-spacing="3" fill="#8d8176">CIELORRASO</text>
         <line x1="20" y1="330" x2="760" y2="330" stroke="#4a423c" stroke-width="1"/>
-        <g class="lp" style="--d:0.00s"><polygon points="84,44 96,44 145,330 35,330" fill="url(#cone)"/><ellipse cx="90" cy="330" rx="58" ry="9" fill="url(#gw)"/><circle cx="90" cy="44" r="14" fill="url(#gw)"/></g>
-        <rect x="81" y="38" width="18" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.15s"><polygon points="184,44 196,44 245,330 135,330" fill="url(#cone)"/><ellipse cx="190" cy="330" rx="58" ry="9" fill="url(#gw)"/><circle cx="190" cy="44" r="14" fill="url(#gw)"/></g>
-        <rect x="181" y="38" width="18" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.30s"><polygon points="284,44 296,44 345,330 235,330" fill="url(#cone)"/><ellipse cx="290" cy="330" rx="58" ry="9" fill="url(#gw)"/><circle cx="290" cy="44" r="14" fill="url(#gw)"/></g>
-        <rect x="281" y="38" width="18" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.45s"><polygon points="384,44 396,44 445,330 335,330" fill="url(#cone)"/><ellipse cx="390" cy="330" rx="58" ry="9" fill="url(#gw)"/><circle cx="390" cy="44" r="14" fill="url(#gw)"/></g>
-        <rect x="381" y="38" width="18" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.60s"><polygon points="484,44 496,44 545,330 435,330" fill="url(#cone)"/><ellipse cx="490" cy="330" rx="58" ry="9" fill="url(#gw)"/><circle cx="490" cy="44" r="14" fill="url(#gw)"/></g>
-        <rect x="481" y="38" width="18" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.75s"><polygon points="584,44 596,44 645,330 535,330" fill="url(#cone)"/><ellipse cx="590" cy="330" rx="58" ry="9" fill="url(#gw)"/><circle cx="590" cy="44" r="14" fill="url(#gw)"/></g>
-        <rect x="581" y="38" width="18" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.90s"><polygon points="684,44 696,44 745,330 635,330" fill="url(#cone)"/><ellipse cx="690" cy="330" rx="58" ry="9" fill="url(#gw)"/><circle cx="690" cy="44" r="14" fill="url(#gw)"/></g>
-        <rect x="681" y="38" width="18" height="6" fill="#d9cfc4"/>
-        <text class="lp" style="--d:1.00s" x="140" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">CIRCULACIÓN</text>
-        <text class="lp" style="--d:1.15s" x="340" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">DESCANSO</text>
-        <text class="lp" style="--d:1.30s" x="540" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">ESTAR</text>
-        <text class="lp" style="--d:1.45s" x="690" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">TRABAJO</text>
+        <line x1="662" y1="40" x2="662" y2="330" stroke="#6d635a" stroke-width="1" stroke-dasharray="4 6"/>
+        <g class="lp" style="--d:0.00s"><polygon points="54,44 66,44 105,330 15,330" fill="url(#cone)"/><ellipse cx="60" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="60" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="52" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.15s"><polygon points="144,44 156,44 195,330 105,330" fill="url(#cone)"/><ellipse cx="150" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="150" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="142" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.30s"><polygon points="234,44 246,44 285,330 195,330" fill="url(#cone)"/><ellipse cx="240" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="240" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="232" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.45s"><polygon points="324,44 336,44 375,330 285,330" fill="url(#cone)"/><ellipse cx="330" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="330" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="322" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.60s"><polygon points="414,44 426,44 465,330 375,330" fill="url(#cone)"/><ellipse cx="420" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="420" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="412" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.75s"><polygon points="504,44 516,44 555,330 465,330" fill="url(#cone)"/><ellipse cx="510" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="510" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="502" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.90s"><polygon points="594,44 606,44 645,330 555,330" fill="url(#cone)"/><ellipse cx="600" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="600" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="592" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:1.35s"><polygon points="714,44 726,44 760,330 680,330" fill="url(#coneC)"/><ellipse cx="720" cy="330" rx="42" ry="8" fill="url(#gc)"/><circle cx="720" cy="44" r="13" fill="url(#gc)"/></g>
+        <rect x="712" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <text class="lp" style="--d:1.00s" x="105" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">CIRCULACIÓN</text>
+        <text class="lp" style="--d:1.12s" x="285" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">DESCANSO</text>
+        <text class="lp" style="--d:1.24s" x="465" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">ESTAR</text>
+        <text class="lp" style="--d:1.36s" x="600" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">TRABAJO</text>
+        <text class="lp" style="--d:1.48s" x="720" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#cfe0ff">BAÑO</text>
         <text x="20" y="420" font-size="10" letter-spacing="3" fill="#8d8176">TEMPERATURA DE LUZ</text>
         <rect x="20" y="432" width="740" height="8" rx="4" fill="url(#kel)" opacity=".85"/>
-        <g class="lp" style="--d:1.6s"><circle cx="150" cy="436" r="9" fill="none" stroke="#fff" stroke-width="2"/><text x="150" y="462" text-anchor="middle" font-size="10" letter-spacing="2" fill="#f0c98a">CÁLIDA</text></g>
-        <text x="740" y="462" text-anchor="end" font-size="10" letter-spacing="2" fill="#8d8176">FRÍA</text>
+        <g class="lp" style="--d:1.6s"><circle cx="150" cy="436" r="9" fill="none" stroke="#fff" stroke-width="2"/><text x="150" y="462" text-anchor="middle" font-size="10" letter-spacing="2" fill="#f0c98a">AMBIENTES · CÁLIDA</text></g>
+        <g class="lp" style="--d:1.8s"><circle cx="560" cy="436" r="9" fill="none" stroke="#fff" stroke-width="2"/><text x="560" y="462" text-anchor="middle" font-size="10" letter-spacing="2" fill="#cfe0ff">BAÑO · MÁS NEUTRA</text></g>
       </svg>
-      <div class="legend mhide"><span><i style="background:#ffcf87"></i>Luz cálida</span><span><i style="border:1px dashed #a99c8f"></i>Gráfico conceptual</span></div>
+      <div class="legend mhide"><span><i style="background:#ffcf87"></i>Luz cálida</span><span><i style="background:#dde9ff"></i>Baño · más neutra</span><span><i style="border:1px dashed #a99c8f"></i>Gráfico conceptual</span></div>
     </div>
   </div></div>
   <div class="num">— 04 —</div>
@@ -450,10 +462,15 @@
   <div class="pad"><div class="split">
     <div class="txt">
       <span class="tag rv">PRIORIDAD</span>
-      <p class="lead rv" style="--d:.1s"><b>/ Una sola TV para los dos ambientes:</b> hacia la cama y hacia el living.</p>
-      <p class="rv" style="--d:.2s">La TV se fija a una <b>placa de fondo, sin marco ni laterales</b>, que gira sobre un <b>caño de piso a techo</b>. La placa oculta los cables, que pueden bajar por dentro del caño.</p>
-      <p class="rv" style="--d:.25s">Al no encuadrar la pantalla, no limita el tamaño: entra una TV de 55" o más y, el día de mañana, una más grande.</p>
-      <p class="rv mhide" style="--d:.3s">Se diseña junto con el escritorio, en un mismo lenguaje de líneas simples y madera cálida.</p>
+      <p class="lead rv" style="--d:.1s"><b>/ De un mueble cerrado a una placa abierta,</b> que gira hacia la cama y hacia el living.</p>
+      <p class="rv" style="--d:.2s">El mueble actual ya permite girar la TV, pero la contiene dentro de un módulo cerrado que limita el tamaño de pantalla. Proponemos mantener el giro con una <b>placa de fondo sin marco ni laterales</b>, sobre un <b>caño de piso a techo</b>.</p>
+      <p class="rv mhide" style="--d:.25s">La placa oculta los cables y no limita el tamaño: entra una TV de 55" o más y, el día de mañana, una más grande. Se diseña junto con el escritorio, en un mismo lenguaje.</p>
+      <div class="mats rv" style="--d:.3s">
+        <div><i class="img" style="background-image:url('img/m_roble.jpg')"></i><span>Roble claro<small>Placa y escritorio</small></span></div>
+        <div><i style="background:linear-gradient(135deg,#d6cdc1,#c4baad)"></i><span>Laca greige<small>Alternativa de placa</small></span></div>
+        <div><i style="background:linear-gradient(135deg,#3a3836,#161514)"></i><span>Negro mate<small>Caño giratorio</small></span></div>
+        <div><i class="img" style="background-image:url('img/t_bronce.jpg')"></i><span>Bronce cepillado<small>Tiradores y detalles</small></span></div>
+      </div>
       <div class="ctrl rv" style="--d:.4s"><button class="btn" data-tv="0">Hacia la cama</button><button class="btn" data-tv="1">Hacia el living</button></div>
     </div>
     <div class="fig rv" style="--d:.2s">

@@ -191,7 +191,8 @@
   .slide:not(.on) #tomaNew { transform: translateY(-150px); }
 
   /* coffee station */
-  .cs { opacity: 0; transform: translateY(-14px); transition: opacity .6s, transform .6s; transition-delay: var(--d, 0s); }
+  .cs { opacity: 0; transform: translateY(-40px); transition: opacity .7s, transform .9s cubic-bezier(.2,.8,.2,1); transition-delay: var(--d, 0s); }
+  .reset .cs { transition: none !important; }
   .built .cs { opacity: 1; transform: none; }
   .term { animation: pulseT 1.8s infinite; }
   @keyframes pulseT { 50% { opacity: .35; } }
@@ -784,7 +785,7 @@
 
   // Coffee station
   var csFig = document.getElementById('csFig');
-  function csBuild(){ csFig.classList.remove('built'); void csFig.offsetWidth; setTimeout(function(){ csFig.classList.add('built'); }, 300); }
+  function csBuild(){ csFig.classList.add('reset'); csFig.classList.remove('built'); void csFig.getBoundingClientRect(); csFig.classList.remove('reset'); setTimeout(function(){ csFig.classList.add('built'); }, 350); }
   document.getElementById('csBtn').addEventListener('click', csBuild);
 
   // 411 vistas

@@ -129,6 +129,35 @@
   .mats div:hover i { transform: translateY(-3px); }
   .mats small { display: block; text-transform: none; letter-spacing: 0; color: #666; font-size: 10px; margin-top: 2px; }
   html.mobile .mats i { height: 44px; }
+  .gen { height: 100%; display: flex; flex-direction: column; justify-content: center; }
+  .cols { display: grid; gap: 34px; }
+  .cols.c4 { grid-template-columns: repeat(4, 1fr); } .cols.c3 { grid-template-columns: repeat(3, 1fr); gap: 50px; }
+  .col h3 { font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; border-top: 1px solid #111; padding-top: 14px; margin-bottom: 8px; transition: border-color .4s, color .4s; }
+  .col:hover h3 { border-color: var(--tc); color: var(--tc); }
+  .col ul { list-style: none; }
+  .col li { font-size: 13px; color: #333; padding: 7px 0 7px 18px; position: relative; line-height: 1.45; }
+  .col li::before { content: ""; position: absolute; left: 0; top: 15px; width: 8px; height: 1px; background: var(--tc); }
+  .col li b { color: #111; font-weight: 500; }
+  .pr { display: inline-block; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase; color: #fff; background: var(--tc); padding: 1px 6px; margin-left: 4px; vertical-align: 1px; }
+  .next { margin-top: 34px; font-size: 13px; color: #444; text-align: center; }
+  .matg { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+  .disc { max-width: 700px; text-align: center; font-size: 15px; color: #333; margin-bottom: 40px; }
+  .sw { display: grid; grid-template-columns: repeat(6, 130px); gap: 26px; }
+  .sw div { text-align: center; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: #333; }
+  .sw i { display: block; width: 130px; height: 130px; border-radius: 50%; margin-bottom: 12px; transition: transform .5s; }
+  .sw div:hover i { transform: scale(1.06); }
+  html.mobile .gen { height: auto; }
+  html.mobile .cols.c4, html.mobile .cols.c3 { grid-template-columns: 1fr 1fr; gap: 14px 16px; }
+  html.mobile .col h3 { font-size: 10px; padding-top: 8px; margin-bottom: 2px; }
+  html.mobile .col li { font-size: 11px; padding: 3px 0 3px 12px; line-height: 1.35; }
+  html.mobile .col li::before { top: 10px; width: 6px; }
+  html.mobile .next { display: none; }
+  html.mobile #tv201 .fig svg { max-height: 22vh; }
+  html.mobile #tv201 .fig .cap small { display: none; }
+  html.mobile #p411 .col li { font-size: 10.5px; padding: 2px 0 2px 12px; }
+  html.mobile .sw { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  html.mobile .sw i { width: 84px; height: 84px; margin: 0 auto 8px; }
+  html.mobile .disc { font-size: 13px; margin-bottom: 22px; }
   .base { display: flex; align-items: center; gap: 10px; margin-top: 20px; font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; color: #444; }
   .base > span { font-size: 10px; letter-spacing: .2em; color: #14306a; font-weight: 500; margin-right: 4px; }
   .base div { display: flex; align-items: center; gap: 6px; }
@@ -328,9 +357,9 @@
       <div class="l"><b>CONTENIDO</b><span>PROPUESTA DE INTERIORISMO<br>HABITACIONES 201 · 411</span></div>
       <div class="r">
         <a data-go="objetivos"><b>01 / Objetivos e impronta</b><br><span>Qué buscamos y la inspiración neuquina.</span></a>
-        <a data-go="luz"><b>02 / Iluminación</b><br><span>Un criterio general para ambas habitaciones.</span></a>
-        <a data-go="c201"><b>03 / Habitación 201</b><br><span>TV giratoria, escritorio, coffee station y cambios.</span></a>
-        <a data-go="c411"><b>04 / Habitación 411</b><br><span>Muebles TV y cambios por ambiente.</span></a>
+        <a data-go="c201"><b>02 / Habitación 201</b><br><span>Propuesta general, TV giratoria, escritorio y coffee station.</span></a>
+        <a data-go="c411"><b>03 / Habitación 411</b><br><span>Propuesta general, muebles TV y cocina.</span></a>
+        <a data-go="luz"><b>04 / Iluminación y materiales</b><br><span>Criterios comunes para ambas habitaciones.</span></a>
         <a data-go="h404"><b>05 / Habitación 404 y próximos pasos</b><br><span>Lo que sigue.</span></a>
       </div>
     </div>
@@ -387,63 +416,6 @@
   <div class="num">— 03 —</div>
 </section>
 
-<!-- ILUMINACIÓN -->
-<section class="slide dark" id="luz" data-sec="Iluminación">
-  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Iluminación <span>· Ambas habitaciones</span></h1><div class="s">Criterio general</div></div>
-  <div class="pad"><div class="lum">
-    <div>
-      <p class="rv" style="--d:.15s"><b>Más bocas de luz, bien distribuidas</b> a lo largo de cada espacio, según la circulación y el uso de cada ambiente, para que todo quede más iluminado.</p>
-      <p class="rv" style="--d:.25s"><b>Luz cálida en todos los ambientes</b>, para un clima de descanso y bienestar.</p>
-      <p class="rv" style="--d:.35s">La ubicación exacta de cada boca la definimos en el desarrollo del proyecto.</p>
-      <div class="ex rv" style="--d:.45s"><b>Algunos ejemplos</b>Dos spots dirigidos al escritorio en la 201 · spots reubicados y de mayor diámetro en la cocina de la 411 · nuevas pantallas en apliques y veladores.</div>
-      <div class="ctrl rv" style="--d:.55s"><button class="btn" id="luzBtn">Encender las luces</button></div>
-    </div>
-    <div class="rv" style="--d:.3s">
-      <svg class="plan" id="plan" viewBox="0 0 780 470" font-family="Montserrat, Arial">
-        <defs>
-          <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf87" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf87" stop-opacity="0"/></linearGradient>
-          <linearGradient id="coneC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dde9ff" stop-opacity=".6"/><stop offset="1" stop-color="#dde9ff" stop-opacity="0"/></linearGradient>
-          <radialGradient id="gw"><stop offset="0" stop-color="#ffcf87" stop-opacity=".9"/><stop offset="1" stop-color="#ffcf87" stop-opacity="0"/></radialGradient>
-          <radialGradient id="gc"><stop offset="0" stop-color="#dde9ff" stop-opacity=".9"/><stop offset="1" stop-color="#dde9ff" stop-opacity="0"/></radialGradient>
-          <linearGradient id="kel" x1="0" x2="1"><stop offset="0" stop-color="#ffb35c"/><stop offset=".5" stop-color="#fff1d6"/><stop offset="1" stop-color="#cfe0ff"/></linearGradient>
-        </defs>
-        <line x1="20" y1="40" x2="760" y2="40" stroke="#6d635a" stroke-width="2"/>
-        <text x="20" y="28" font-size="10" letter-spacing="3" fill="#8d8176">CIELORRASO</text>
-        <line x1="20" y1="330" x2="760" y2="330" stroke="#4a423c" stroke-width="1"/>
-        <line x1="662" y1="40" x2="662" y2="330" stroke="#6d635a" stroke-width="1" stroke-dasharray="4 6"/>
-        <g class="lp" style="--d:0.00s"><polygon points="54,44 66,44 105,330 15,330" fill="url(#cone)"/><ellipse cx="60" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="60" cy="44" r="13" fill="url(#gw)"/></g>
-        <rect x="52" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.15s"><polygon points="144,44 156,44 195,330 105,330" fill="url(#cone)"/><ellipse cx="150" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="150" cy="44" r="13" fill="url(#gw)"/></g>
-        <rect x="142" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.30s"><polygon points="234,44 246,44 285,330 195,330" fill="url(#cone)"/><ellipse cx="240" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="240" cy="44" r="13" fill="url(#gw)"/></g>
-        <rect x="232" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.45s"><polygon points="324,44 336,44 375,330 285,330" fill="url(#cone)"/><ellipse cx="330" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="330" cy="44" r="13" fill="url(#gw)"/></g>
-        <rect x="322" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.60s"><polygon points="414,44 426,44 465,330 375,330" fill="url(#cone)"/><ellipse cx="420" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="420" cy="44" r="13" fill="url(#gw)"/></g>
-        <rect x="412" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.75s"><polygon points="504,44 516,44 555,330 465,330" fill="url(#cone)"/><ellipse cx="510" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="510" cy="44" r="13" fill="url(#gw)"/></g>
-        <rect x="502" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:0.90s"><polygon points="594,44 606,44 645,330 555,330" fill="url(#cone)"/><ellipse cx="600" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="600" cy="44" r="13" fill="url(#gw)"/></g>
-        <rect x="592" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <g class="lp" style="--d:1.35s"><polygon points="714,44 726,44 760,330 680,330" fill="url(#coneC)"/><ellipse cx="720" cy="330" rx="42" ry="8" fill="url(#gc)"/><circle cx="720" cy="44" r="13" fill="url(#gc)"/></g>
-        <rect x="712" y="38" width="16" height="6" fill="#d9cfc4"/>
-        <text class="lp" style="--d:1.00s" x="105" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">CIRCULACIÓN</text>
-        <text class="lp" style="--d:1.12s" x="285" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">DESCANSO</text>
-        <text class="lp" style="--d:1.24s" x="465" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">ESTAR</text>
-        <text class="lp" style="--d:1.36s" x="600" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">TRABAJO</text>
-        <text class="lp" style="--d:1.48s" x="720" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#cfe0ff">BAÑO</text>
-        <text x="20" y="420" font-size="10" letter-spacing="3" fill="#8d8176">TEMPERATURA DE LUZ</text>
-        <rect x="20" y="432" width="740" height="8" rx="4" fill="url(#kel)" opacity=".85"/>
-        <g class="lp" style="--d:1.6s"><circle cx="150" cy="436" r="9" fill="none" stroke="#fff" stroke-width="2"/><text x="150" y="462" text-anchor="middle" font-size="10" letter-spacing="2" fill="#f0c98a">AMBIENTES · CÁLIDA</text></g>
-        <g class="lp" style="--d:1.8s"><circle cx="560" cy="436" r="9" fill="none" stroke="#fff" stroke-width="2"/><text x="560" y="462" text-anchor="middle" font-size="10" letter-spacing="2" fill="#cfe0ff">BAÑO · MÁS NEUTRA</text></g>
-      </svg>
-      <div class="legend mhide"><span><i style="background:#ffcf87"></i>Luz cálida</span><span><i style="background:#dde9ff"></i>Baño · más neutra</span><span><i style="border:1px dashed #a99c8f"></i>Gráfico conceptual</span></div>
-    </div>
-  </div></div>
-  <div class="num">— 04 —</div>
-</section>
-
 <!-- CARÁTULA 201 -->
 <section class="slide" id="c201" data-sec="Hab. 201">
   <div class="cv-img"><div class="img" style="background-image:url('img/t_cortina.jpg')"></div></div>
@@ -454,6 +426,22 @@
     <p class="rv" style="--d:.4s">Una suite serena y luminosa: luz cálida en todo el ambiente, un cielorraso continuo, tonos neutros, una TV que acompaña tanto el descanso como el estar, y un rincón de café que suma practicidad a la estadía.</p>
   </div>
   <div class="num" style="left:720px;">— 05 —</div>
+</section>
+
+<!-- 201 PROPUESTA GENERAL -->
+<section class="slide" id="p201" style="background:#e5ebe2;">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
+  <div class="t rv"><h1>Habitación 201 <span>· Propuesta general</span></h1><div class="s">Todo lo que proponemos para la suite</div></div>
+  <div class="pad"><div class="gen">
+    <div class="cols c4">
+      <div class="col rv" style="--d:0.1s"><h3>Techo y luz</h3><ul><li><b>Cielorraso continuo de junta tomada</b>, con garganta para las cortinas.</li><li><b>Más bocas de luz</b>, bien distribuidas, con luz cálida.</li><li>Pintura general del cielorraso.</li><li>Cortinas nuevas.</li><li>Pantallas nuevas en los apliques de la cama.</li></ul></div>
+      <div class="col rv" style="--d:0.2s"><h3>Paredes y arte</h3><ul><li><b>Empapelado de tono neutro</b> detrás de la cama.</li><li>Tomacorriente a la altura del escritorio.</li><li>Módulos eléctricos Cambre Siglo XXII.</li><li>Pintura de detalles y marcos de puertas.</li><li>Cuadros reenmarcados: se conservan el de la cama y los del sofá, más agrupados.</li></ul></div>
+      <div class="col rv" style="--d:0.3s"><h3>Baño</h3><ul><li><b>Renovación de la piedra de la bañadera</b>: revestimiento cerámico o pulido.</li><li>Flor de ducha nueva, de mayor tamaño.</li><li>Nuevo caño para la cortina de ducha.</li><li>Placas del cielorraso pintadas.</li></ul></div>
+      <div class="col rv" style="--d:0.4s"><h3>Mobiliario</h3><ul><li><b>Mueble TV giratorio y escritorio nuevos.</b> <span class="pr">Prioridad</span></li><li><b>Coffee station</b> en el nicho de ingreso.</li><li>Mesa ratona nueva.</li><li>Sillas retapizadas.</li><li>Almohadones nuevos para el sofá.</li></ul></div>
+    </div>
+    <p class="next rv" style="--d:.55s">A continuación, el detalle de las piezas principales: <b>mueble TV, escritorio y coffee station</b> →</p>
+  </div></div>
+  <div class="num"></div>
 </section>
 
 <!-- 201 TV GIRATORIA -->
@@ -547,7 +535,7 @@
 <section class="slide" id="cafe201">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Habitación 201 <span>· Coffee station</span></h1><div class="s">Nicho junto al ingreso · Medidas en cm</div></div>
-  <div class="pad"><div class="split" style="grid-template-columns: 400px 1fr 300px; gap:40px; align-items:stretch;">
+  <div class="pad"><div class="split" style="grid-template-columns: 400px 1fr; gap:60px; align-items:stretch;">
     <div class="txt" style="align-self:center;">
       <p class="lead rv"><b>/ Todo en un mismo lugar,</b> aprovechando el nicho a la izquierda del ingreso.</p>
       <p class="rv" style="--d:.1s">Heladera bajo mesada, microondas en un estante superior y, arriba, cafetera, tazas y detalles.</p>
@@ -573,43 +561,13 @@
         </g>
       </svg>
     </div>
-    <div class="tx rv mhide" style="--d:.3s"><div class="ph"><div class="img" style="background-image:url('img/t_cafe.jpg')"></div></div><div class="cap">Inspiración<small>Cerámica, madera y café</small></div></div>
   </div></div>
   <div class="num">— 08 —</div>
 </section>
 
-<!-- 201 PROPUESTA -->
-<section class="slide" id="p201" style="background:#e5ebe2;">
-  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Habitación 201 <span>· Propuesta</span></h1><div class="s">Cambios por rubro</div></div>
-  <div class="pad"><div class="wrap-tabs">
-    <div class="tabs rv" data-tabs="t201"><button class="btn on">Techo y luz</button><button class="btn">Paredes</button><button class="btn">Baño</button><button class="btn">Mobiliario y arte</button></div>
-    <div class="panes rv" style="--d:.15s" id="t201">
-      <div class="pane on"><ul><li><b>Cielorraso continuo de junta tomada</b>, con garganta para las cortinas.</li><li>Más bocas de luz, bien distribuidas, y <b>luz cálida</b> en todo el ambiente.</li><li>Pantallas nuevas en los apliques de la cama.</li><li>Cortinas nuevas.</li><li>Pintura general del cielorraso.</li></ul><div class="pimg"><div class="img" style="background-image:url('img/t_lampara.jpg')"></div></div></div>
-      <div class="pane"><ul><li><b>Empapelado de tono neutro</b> detrás de la cama.</li><li>Pintura de detalles y marcos de puertas.</li><li>Módulos eléctricos nuevos, línea <b>Cambre Siglo XXII</b>.</li><li>Tomacorriente del escritorio a la altura de la mesada.</li></ul><div class="pimg"><div class="img" style="background-image:url('img/t_revoque.jpg')"></div></div></div>
-      <div class="pane"><ul><li>Placas del cielorraso pintadas.</li><li>Pared bajo la mesada pintada en blanco.</li><li>Nuevo caño para la cortina de ducha.</li><li><b>Flor de ducha nueva</b>, de mayor tamaño.</li><li>Renovación de la piedra de la bañadera: revestimiento cerámico o pulido, según la opción elegida.</li></ul><div class="pimg"><div class="img" style="background-image:url('img/t_ceramica.jpg')"></div></div></div>
-      <div class="pane"><ul><li><b>Mueble TV giratorio</b> y escritorio nuevos.</li><li>Coffee station en el nicho de ingreso.</li><li>Mesa ratona nueva y sillas retapizadas.</li><li>Almohadones nuevos para el sofá.</li><li>Cuadros reenmarcados: se conservan el de la cama y los del sofá, más agrupados.</li></ul><div class="pimg"><div class="img" style="background-image:url('img/n_telar.jpg')"></div></div></div>
-    </div>
-  </div></div>
-  <div class="num">— 09 —</div>
-</section>
-
-<!-- 201 TEXTURAS -->
-<section class="slide" id="tx201">
-  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Habitación 201 <span>· Texturas</span></h1><div class="s">Materiales de referencia</div></div>
-  <div class="pad" style="top:170px;"><div class="tex">
-    <div class="tx rv" style="--d:.1s"><div class="ph"><div class="img" style="background-image:url('img/m_corderoy.jpg')"></div></div><div class="cap">Corderoy crudo<small>Cubrecamas y almohadones</small></div></div>
-    <div class="tx rv" style="--d:.2s"><div class="ph"><div class="img" style="background-image:url('img/m_lino.jpg')"></div></div><div class="cap">Lino natural<small>Cortinas y pantallas</small></div></div>
-    <div class="tx rv" style="--d:.3s"><div class="ph"><div class="img" style="background-image:url('img/m_roble.jpg')"></div></div><div class="cap">Madera clara<small>Mueble TV y escritorio</small></div></div>
-    <div class="tx rv" style="--d:.4s"><div class="ph"><div class="img" style="background-image:url('img/n_lana.jpg')"></div></div><div class="cap">Lana<small>Detalles textiles</small></div></div>
-  </div></div>
-  <div class="num">— 10 —</div>
-</section>
-
 <!-- CARÁTULA 411 -->
 <section class="slide" id="c411" data-sec="Hab. 411">
-  <div class="cv-img"><div class="img" style="background-image:url('img/n_lago.jpg')"></div></div>
+  <div class="cv-img"><div class="img" style="background-image:url('img/t_lana2.jpg')"></div></div>
   <div class="cv-txt">
     <div class="n rv">411</div>
     <div class="h rv" style="--d:.15s">HABITACIÓN</div>
@@ -617,6 +575,21 @@
     <p class="rv" style="--d:.4s">La suite más amplia del hotel, pensada como un pequeño departamento: un living comedor luminoso, una cocina renovada y un dormitorio cálido, con arte de inspiración neuquina.</p>
   </div>
   <div class="num" style="left:720px;">— 11 —</div>
+</section>
+
+<!-- 411 PROPUESTA GENERAL -->
+<section class="slide" id="p411" style="background:#f4e9e1;">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
+  <div class="t rv"><h1>Habitación 411 <span>· Propuesta general</span></h1><div class="s">Todo lo que proponemos para la suite</div></div>
+  <div class="pad"><div class="gen">
+    <div class="cols c3">
+      <div class="col rv" style="--d:0.1s"><h3>Living comedor</h3><ul><li><b>Mueble TV nuevo</b>, minimalista. <span class="pr">Prioridad</span></li><li><b>Más bocas de luz</b>, con luz cálida: un ambiente más luminoso.</li><li>Pintura del cielorraso.</li><li>Cortinas nuevas.</li><li>Módulos eléctricos Cambre de línea actual.</li><li>Mesa de comedor y sillas nuevas, en una nueva ubicación.</li><li>Almohadones del respaldo del sofá retapizados.</li><li>Arte de inspiración neuquina en lugar de los cuadros actuales.</li><li>Un ambiente más despejado: sin la mesa chica y su sillón.</li></ul></div>
+      <div class="col rv" style="--d:0.2s"><h3>Cocina</h3><ul><li><b>Frentes nuevos</b> para el mueble de cocina.</li><li>Spots reubicados y agregados, de mayor diámetro.</li><li>Frente de la heladera pintado o vinilado, al tono de los nuevos frentes.</li></ul></div>
+      <div class="col rv" style="--d:0.3s"><h3>Dormitorio</h3><ul><li><b>Mueble TV nuevo</b>, en el mismo lenguaje que el del living. <span class="pr">Prioridad</span></li><li><b>Nueva iluminación</b>, cálida.</li><li>Respaldo y sillones retapizados.</li><li>Pantallas nuevas para los veladores.</li><li>Mesas de luz más despejadas.</li></ul></div>
+    </div>
+    <p class="next rv" style="--d:.5s">A continuación, el detalle de <b>los muebles TV y la cocina</b> →</p>
+  </div></div>
+  <div class="num"></div>
 </section>
 
 <!-- 411 MUEBLES TV -->
@@ -652,16 +625,17 @@
   <div class="num">— 12 —</div>
 </section>
 
-<!-- 411 PROPUESTA -->
-<section class="slide" id="p411" style="background:#f4e9e1;">
+<!-- 411 COCINA -->
+<section class="slide" id="coc411">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Habitación 411 <span>· Propuesta</span></h1><div class="s">Cambios por ambiente</div></div>
-  <div class="pad"><div class="wrap-tabs">
-    <div class="tabs rv" data-tabs="t411"><button class="btn on">Living comedor</button><button class="btn">Cocina</button><button class="btn">Dormitorio</button></div>
-    <div class="panes rv" style="--d:.15s" id="t411">
-      <div class="pane on"><ul><li>Más bocas de luz y <b>luz cálida</b>: un ambiente más luminoso.</li><li>Cielorraso pintado y cortinas nuevas.</li><li><b>Mesa de comedor y sillas nuevas</b>, en una nueva ubicación.</li><li>Almohadones del respaldo del sofá retapizados.</li><li>Arte de inspiración neuquina en lugar de los cuadros actuales.</li><li>Un ambiente más despejado: sin la mesa chica y su sillón.</li><li>Módulos eléctricos Cambre de línea actual.</li></ul><div class="pimg"><div class="img" style="background-image:url('img/n_araucaria.jpg')"></div></div></div>
-      <div class="pane"><ul><li><b>Frentes nuevos</b> para el mueble de cocina.</li><li>Frente de la heladera pintado o vinilado, al tono de los nuevos frentes.</li><li>Spots reubicados y agregados, de mayor diámetro.</li></ul>
-        <div class="fig" style="background:#fbf6f2; height:300px;"><svg viewBox="0 0 520 280" width="500" height="270" font-family="Montserrat, Arial">
+  <div class="t rv"><h1>Habitación 411 <span>· Cocina</span></h1><div class="s">Vista del frente</div></div>
+  <div class="pad"><div class="split">
+    <div class="txt">
+      <p class="lead rv"><b>/ Una cocina renovada, sin obra pesada.</b></p>
+      <p class="rv" style="--d:.1s">Cambiamos los frentes del mueble de cocina y unificamos el frente de la heladera, pintado o vinilado, al mismo tono.</p>
+      <p class="rv" style="--d:.2s">Reubicamos y sumamos spots de mayor diámetro, para que la mesada quede bien iluminada.</p>
+    </div>
+    <div class="fig rv" style="--d:.15s; background:#fbf6f2;"><svg viewBox="0 0 520 280" width="500" height="270" font-family="Montserrat, Arial">
           <line x1="10" y1="20" x2="510" y2="20" stroke="#111" stroke-width="2"/>
           <g fill="#ffcf87" opacity=".4"><polygon points="90,22 50,140 130,140"/><polygon points="210,22 170,140 250,140"/><polygon points="330,22 290,140 370,140"/><polygon points="450,22 410,140 490,140"/></g>
           <g fill="#111"><rect x="80" y="20" width="20" height="7"/><rect x="200" y="20" width="20" height="7"/><rect x="320" y="20" width="20" height="7"/><rect x="440" y="20" width="20" height="7"/></g>
@@ -669,36 +643,95 @@
           <g fill="#c9a77a" stroke="#a8875c"><rect x="20" y="150" width="98" height="110"/><rect x="120" y="150" width="98" height="110"/><rect x="220" y="150" width="98" height="110"/><rect x="320" y="150" width="98" height="110"/></g>
           <rect x="425" y="60" width="80" height="200" fill="#c9a77a" stroke="#a8875c"/><text x="465" y="165" text-anchor="middle" font-size="8" letter-spacing="1" fill="#5c4630">HELADERA</text>
           <text x="220" y="276" text-anchor="middle" font-size="9" letter-spacing="2" fill="#555">FRENTES NUEVOS · SPOTS DE MAYOR DIÁMETRO</text>
-        </svg></div></div>
-      <div class="pane"><ul><li>Nueva iluminación, cálida.</li><li>Pantallas nuevas para los veladores.</li><li><b>Respaldo y sillones retapizados.</b></li><li>Mesas de luz más despejadas.</li><li>Mueble TV nuevo.</li></ul><div class="pimg"><div class="img" style="background-image:url('img/t_tejido.jpg')"></div></div></div>
-    </div>
+        </svg><div class="cap">Esquema del frente<small>Ilustrativo, sin escala</small></div></div>
   </div></div>
-  <div class="num">— 13 —</div>
+  <div class="num"></div>
 </section>
 
-<!-- 411 TEXTURAS -->
-<section class="slide" id="tx411">
+<!-- ILUMINACIÓN -->
+<section class="slide dark" id="luz" data-sec="Iluminación">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Habitación 411 <span>· Texturas</span></h1><div class="s">Materiales de referencia</div></div>
-  <div class="pad" style="top:170px;"><div class="tex">
-    <div class="tx rv" style="--d:.1s"><div class="ph"><div class="img" style="background-image:url('img/t_piedra.jpg')"></div></div><div class="cap">Piedra clara<small>Mesadas y detalles</small></div></div>
-    <div class="tx rv" style="--d:.2s"><div class="ph"><div class="img" style="background-image:url('img/t_lana2.jpg')"></div></div><div class="cap">Tejido de lana<small>Tapizados y mantas</small></div></div>
-    <div class="tx rv" style="--d:.3s"><div class="ph"><div class="img" style="background-image:url('img/t_bronce.jpg')"></div></div><div class="cap">Bronce cepillado<small>Tiradores y luminarias</small></div></div>
-    <div class="tx rv" style="--d:.4s"><div class="ph"><div class="img" style="background-image:url('img/n_basalto.jpg')"></div></div><div class="cap">Piedra volcánica<small>Arte y acentos</small></div></div>
+  <div class="t rv"><h1>Iluminación <span>· Ambas habitaciones</span></h1><div class="s">Criterio general</div></div>
+  <div class="pad"><div class="lum">
+    <div>
+      <p class="rv" style="--d:.15s"><b>Más bocas de luz, bien distribuidas</b> a lo largo de cada espacio, según la circulación y el uso de cada ambiente, para que todo quede más iluminado.</p>
+      <p class="rv" style="--d:.25s"><b>Luz cálida en todos los ambientes</b>, para un clima de descanso y bienestar.</p>
+      <p class="rv" style="--d:.35s">La ubicación exacta de cada boca la definimos en el desarrollo del proyecto.</p>
+      <div class="ex rv" style="--d:.45s"><b>Algunos ejemplos</b>Dos spots dirigidos al escritorio en la 201 · spots reubicados y de mayor diámetro en la cocina de la 411 · nuevas pantallas en apliques y veladores.</div>
+      <div class="ctrl rv" style="--d:.55s"><button class="btn" id="luzBtn">Encender las luces</button></div>
+    </div>
+    <div class="rv" style="--d:.3s">
+      <svg class="plan" id="plan" viewBox="0 0 780 470" font-family="Montserrat, Arial">
+        <defs>
+          <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf87" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf87" stop-opacity="0"/></linearGradient>
+          <linearGradient id="coneC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dde9ff" stop-opacity=".6"/><stop offset="1" stop-color="#dde9ff" stop-opacity="0"/></linearGradient>
+          <radialGradient id="gw"><stop offset="0" stop-color="#ffcf87" stop-opacity=".9"/><stop offset="1" stop-color="#ffcf87" stop-opacity="0"/></radialGradient>
+          <radialGradient id="gc"><stop offset="0" stop-color="#dde9ff" stop-opacity=".9"/><stop offset="1" stop-color="#dde9ff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="kel" x1="0" x2="1"><stop offset="0" stop-color="#ffb35c"/><stop offset=".5" stop-color="#fff1d6"/><stop offset="1" stop-color="#cfe0ff"/></linearGradient>
+        </defs>
+        <line x1="20" y1="40" x2="760" y2="40" stroke="#6d635a" stroke-width="2"/>
+        <text x="20" y="28" font-size="10" letter-spacing="3" fill="#8d8176">CIELORRASO</text>
+        <line x1="20" y1="330" x2="760" y2="330" stroke="#4a423c" stroke-width="1"/>
+        <line x1="662" y1="40" x2="662" y2="330" stroke="#6d635a" stroke-width="1" stroke-dasharray="4 6"/>
+        <g class="lp" style="--d:0.00s"><polygon points="54,44 66,44 105,330 15,330" fill="url(#cone)"/><ellipse cx="60" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="60" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="52" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.15s"><polygon points="144,44 156,44 195,330 105,330" fill="url(#cone)"/><ellipse cx="150" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="150" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="142" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.30s"><polygon points="234,44 246,44 285,330 195,330" fill="url(#cone)"/><ellipse cx="240" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="240" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="232" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.45s"><polygon points="324,44 336,44 375,330 285,330" fill="url(#cone)"/><ellipse cx="330" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="330" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="322" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.60s"><polygon points="414,44 426,44 465,330 375,330" fill="url(#cone)"/><ellipse cx="420" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="420" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="412" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.75s"><polygon points="504,44 516,44 555,330 465,330" fill="url(#cone)"/><ellipse cx="510" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="510" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="502" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:0.90s"><polygon points="594,44 606,44 645,330 555,330" fill="url(#cone)"/><ellipse cx="600" cy="330" rx="48" ry="8" fill="url(#gw)"/><circle cx="600" cy="44" r="13" fill="url(#gw)"/></g>
+        <rect x="592" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <g class="lp" style="--d:1.35s"><polygon points="714,44 726,44 760,330 680,330" fill="url(#coneC)"/><ellipse cx="720" cy="330" rx="42" ry="8" fill="url(#gc)"/><circle cx="720" cy="44" r="13" fill="url(#gc)"/></g>
+        <rect x="712" y="38" width="16" height="6" fill="#d9cfc4"/>
+        <text class="lp" style="--d:1.00s" x="105" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">CIRCULACIÓN</text>
+        <text class="lp" style="--d:1.12s" x="285" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">DESCANSO</text>
+        <text class="lp" style="--d:1.24s" x="465" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">ESTAR</text>
+        <text class="lp" style="--d:1.36s" x="600" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#f1ebe4">TRABAJO</text>
+        <text class="lp" style="--d:1.48s" x="720" y="362" text-anchor="middle" font-size="11" letter-spacing="3" fill="#cfe0ff">BAÑO</text>
+        <text x="20" y="420" font-size="10" letter-spacing="3" fill="#8d8176">TEMPERATURA DE LUZ</text>
+        <rect x="20" y="432" width="740" height="8" rx="4" fill="url(#kel)" opacity=".85"/>
+        <g class="lp" style="--d:1.6s"><circle cx="150" cy="436" r="9" fill="none" stroke="#fff" stroke-width="2"/><text x="150" y="462" text-anchor="middle" font-size="10" letter-spacing="2" fill="#f0c98a">AMBIENTES · CÁLIDA</text></g>
+        <g class="lp" style="--d:1.8s"><circle cx="560" cy="436" r="9" fill="none" stroke="#fff" stroke-width="2"/><text x="560" y="462" text-anchor="middle" font-size="10" letter-spacing="2" fill="#cfe0ff">BAÑO · MÁS NEUTRA</text></g>
+      </svg>
+      <div class="legend mhide"><span><i style="background:#ffcf87"></i>Luz cálida</span><span><i style="background:#dde9ff"></i>Baño · más neutra</span><span><i style="border:1px dashed #a99c8f"></i>Gráfico conceptual</span></div>
+    </div>
   </div></div>
-  <div class="num">— 14 —</div>
+  <div class="num">— 04 —</div>
+</section>
+
+<!-- MATERIALES DE REFERENCIA -->
+<section class="slide" id="mat">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
+  <div class="t rv"><h1>Materiales <span>de referencia</span></h1><div class="s">Ambas habitaciones</div></div>
+  <div class="pad"><div class="matg">
+    <p class="disc rv">Una paleta neutra, cálida y fina. Las imágenes son <b>ilustrativas</b>: la selección final de materiales la definimos junto al Cliente en el desarrollo del proyecto.</p>
+    <div class="sw">
+      <div class="rv" style="--d:0.10s"><i class="img" style="background-image:url('img/m_roble.jpg')"></i><span>Madera clara</span></div>
+      <div class="rv" style="--d:0.18s"><i class="img" style="background-image:url('img/m_lino.jpg')"></i><span>Lino natural</span></div>
+      <div class="rv" style="--d:0.26s"><i class="img" style="background-image:url('img/m_corderoy.jpg')"></i><span>Corderoy crudo</span></div>
+      <div class="rv" style="--d:0.34s"><i class="img" style="background-image:url('img/t_lana2.jpg')"></i><span>Tejido de lana</span></div>
+      <div class="rv" style="--d:0.42s"><i class="img" style="background-image:url('img/t_piedra.jpg')"></i><span>Piedra clara</span></div>
+      <div class="rv" style="--d:0.50s"><i class="img" style="background-image:url('img/t_bronce.jpg')"></i><span>Bronce cepillado</span></div>
+    </div>
+  </div></div>
+  <div class="num"></div>
 </section>
 
 <!-- 404 -->
-<section class="slide" id="h404" data-sec="404 y pasos">
-  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/n_estepa.jpg');"></div>
-  <div class="fl ondark">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr ondark">Cliente · Hotel Land Express</div>
+<section class="slide" id="h404" data-sec="404 y pasos" style="background:#ece6dc;">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="c404 rv" style="--d:.15s">
     <div style="font-weight:300; font-size:54px; letter-spacing:.1em; line-height:1;">404</div>
     <div style="font-weight:700; letter-spacing:.3em; font-size:20px; margin-top:16px;">PRÓXIMA ETAPA</div>
     <p style="margin-top:22px; font-size:14px; color:#333;">La habitación 404 todavía no pudo relevarse. Tenemos previsto hacerlo apenas se libere, para sumar su propuesta con la misma línea de diseño que la 201 y la 411.</p>
   </div>
-  <div class="num ondark">— 15 —</div>
+  <div class="num">— 15 —</div>
 </section>
 
 <!-- PRÓXIMOS PASOS -->
@@ -740,6 +773,7 @@
   var stage = document.getElementById('stage');
   var slides = [].slice.call(stage.querySelectorAll('.slide'));
   var cur = -1;
+  slides.forEach(function(s, i){ var n = s.querySelector('.num'); if (n) n.textContent = '— ' + (i < 10 ? '0' : '') + i + ' —'; });
 
   // secciones (menú)
   var secIdx = [];

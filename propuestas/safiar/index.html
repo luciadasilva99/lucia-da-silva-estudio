@@ -184,6 +184,43 @@
   .pics .rnd { opacity: 0; transform: scale(.96); transition: opacity .9s, transform 1s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
   .slide.on .pics .rnd { opacity: 1; transform: none; }
 
+  /* identidad */
+  .id-img { position: absolute; left: 0; top: 0; width: 470px; height: 810px; overflow: hidden; }
+  .id-img .img { position: absolute; inset: 0; transform: scale(1.08); transition: transform 8s ease-out; }
+  .slide.on .id-img .img { transform: scale(1); }
+  #identidad .fl { color: rgba(255,255,255,.92); text-shadow: 0 0 6px rgba(0,0,0,.35); }
+  .id-wrap { position: absolute; left: 550px; right: 56px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+  .id-lead { font-style: italic; font-size: 24px; color: var(--tc); line-height: 1.4; margin-top: 24px; }
+  .id-tx { font-size: 14.5px; color: #333; margin-top: 12px; max-width: 760px; }
+  .id-grid { display: grid; grid-template-columns: 220px 1fr; column-gap: 40px; align-items: center; margin-top: 26px; }
+  .id-svg { width: 220px; height: auto; }
+  .zn { cursor: pointer; }
+  .zn .zf { fill: var(--tc); fill-opacity: 0; stroke: none; transition: fill-opacity .4s; }
+  .zn .zl { stroke: #999; transition: stroke .4s; }
+  .zn.act .zf { fill-opacity: .2; } .zn.act .zl { stroke: var(--tc); stroke-width: 1.6; }
+  .ids > div { padding: 11px 0 11px 16px; border-left: 2px solid rgba(17,17,17,.12); cursor: pointer; transition: border-color .3s, background .3s; }
+  .ids > div + div { margin-top: 4px; }
+  .ids b { display: block; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; transition: color .3s; }
+  .ids em { display: block; font-size: 15px; color: var(--tc); margin-top: 3px; }
+  .ids span { display: block; font-size: 12.5px; color: #444; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .5s ease, opacity .4s, margin .4s; }
+  .ids > div.act { border-color: var(--tc); background: rgba(160,88,58,.05); }
+  .ids > div.act b { color: var(--tc); }
+  .ids > div.act span { max-height: 60px; opacity: 1; margin-top: 4px; }
+  .id-foot { margin-top: 24px; font-size: 13px; color: #555; border-top: 1px solid rgba(17,17,17,.12); padding-top: 14px; }
+  #servicios .sv { background: #f6f2ec; }
+  .sv.feat { background: #fff !important; box-shadow: 0 0 0 1px rgba(160,88,58,.35); }
+  .sv.feat::after { width: 100%; }
+  .sv.feat .k { font-weight: 600; }
+  html.mobile .id-img { position: relative; width: auto; height: 26vh; margin: -70px -20px 22px; }
+  html.mobile .id-wrap { position: relative; left: auto; right: auto; top: auto; bottom: auto; }
+  html.mobile .id-lead { font-size: 17px; margin-top: 14px; } html.mobile .id-tx { font-size: 13px; }
+  html.mobile .id-grid { grid-template-columns: 90px 1fr; column-gap: 14px; margin-top: 14px; }
+  html.mobile .id-svg { width: 90px; }
+  html.mobile .ids > div { padding: 6px 0 6px 10px; } html.mobile .ids b { font-size: 10px; } html.mobile .ids em { font-size: 12.5px; }
+  html.mobile .ids span { font-size: 11.5px; }
+  html.mobile .id-foot { font-size: 11.5px; margin-top: 14px; }
+  html.mobile #identidad .fl { display: none; }
+
   /* gracias */
   .thx { position: absolute; left: 490px; top: 130px; width: 460px; height: 550px; background: #fff; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 40px; }
   .web { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #222; border: 1px solid rgba(17,17,17,.3); border-radius: 30px; padding: 11px 20px; font: 500 11px "Montserrat", Arial; letter-spacing: .14em; text-transform: uppercase; transition: transform .3s, border-color .3s, color .3s; }
@@ -316,8 +353,41 @@
   <div class="num"></div>
 </section>
 
+<!-- IDENTIDAD DEL EDIFICIO -->
+<section class="slide" id="identidad" data-sec="Identidad">
+  <div class="id-img"><div class="img" style="background-image:url('img/vida.jpg');"></div></div>
+  <div class="fl ondark">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Safiar</div>
+  <div class="id-wrap">
+    <div class="h2 rv" style="--d:.1s">Un edificio <span>con identidad</span></div>
+    <p class="id-lead rv" style="--d:.25s">El hall de acceso es la primera unidad que conoce cada comprador.</p>
+    <p class="id-tx rv" style="--d:.35s">Diseñamos los espacios comunes con una impronta propia, para que cada edificio Safiar se reconozca apenas se entra y se viva como un lugar con carácter.</p>
+    <div class="id-grid">
+      <svg class="id-svg rv" style="--d:.3s" viewBox="0 0 240 330" fill="none" stroke="#111" stroke-width="1.2" stroke-linejoin="round">
+        <g class="draw" style="--d:.5s">
+          <line pathLength="1" x1="10" y1="310" x2="230" y2="310"/>
+          <rect pathLength="1" x="40" y="30" width="160" height="280"/>
+          <path pathLength="1" d="M40 70 H200 M40 110 H200 M40 150 H200 M40 190 H200 M40 230 H200 M40 270 H200"/>
+          <path pathLength="1" d="M28 30 H212"/>
+        </g>
+        <g class="zn" data-z="0"><rect class="zf" x="100" y="270" width="60" height="40"/><path class="zl" d="M118 310 V286 H142 V310"/></g>
+        <g class="zn" data-z="1"><rect class="zf" x="40" y="230" width="60" height="40"/><path class="zl" d="M52 262 h36 M58 252 a12 8 0 0 1 24 0"/></g>
+        <g class="zn" data-z="2"><rect class="zf" x="40" y="30" width="160" height="40"/><path class="zl" d="M60 58 h22 M150 44 v18 M164 44 v18 M150 53 h14"/></g>
+        <g class="zn" data-z="3"><rect class="zf" x="105" y="70" width="30" height="200"/><path class="zl" d="M120 80 V260" stroke-dasharray="3 4"/></g>
+      </svg>
+      <div class="ids">
+        <div class="rv" style="--d:.45s" data-z="0"><b>Hall de acceso</b><em>Una primera impresión que se recuerda.</em><span>Materiales nobles, luz de acento, arte y un recibimiento con carácter.</span></div>
+        <div class="rv" style="--d:.55s" data-z="1"><b>SUM</b><em>Un lugar donde la comunidad se encuentra.</em><span>Un espacio flexible y cálido para reuniones, celebraciones y encuentros.</span></div>
+        <div class="rv" style="--d:.65s" data-z="2"><b>Amenities</b><em>Bienestar, todos los días.</em><span>Gimnasio, terraza y espacios de pausa dentro de la misma identidad.</span></div>
+        <div class="rv" style="--d:.75s" data-z="3"><b>Palieres y circulaciones</b><em>Coherencia en cada recorrido.</em><span>Una misma paleta, iluminación y señalética que unen todo el edificio.</span></div>
+      </div>
+    </div>
+    <p class="id-foot rv" style="--d:.9s">Diseño diferencial, bienestar, comunidad y arte: los valores de Safiar, llevados a cada espacio común.</p>
+  </div>
+  <div class="num"></div>
+</section>
+
 <!-- SERVICIOS -->
-<section class="slide" id="servicios" data-sec="Servicios" style="background:#efe7dc;">
+<section class="slide" id="servicios" data-sec="Servicios">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Safiar</div>
   <div class="sv-wrap">
     <div class="sv-head">
@@ -325,10 +395,10 @@
       <p class="rv" style="--d:.2s">Acompañamos cada etapa, del lanzamiento a la entrega de llaves, junto al equipo de arquitectura de Safiar. Pueden contratarse por separado o en conjunto.</p>
     </div>
     <div class="svs">
-      <div class="sv rv" style="--d:.3s">
+      <div class="sv feat rv" style="--d:.3s">
         <svg class="draw" style="--d:.5s" viewBox="0 0 70 70" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" d="M8 60 V22 L35 8 L62 22 V60 Z"/><path pathLength="1" d="M18 60 V40 H52 V60"/><circle pathLength="1" cx="35" cy="27" r="5" stroke="#a0583a"/></svg>
-        <div class="k">01</div><h3>Espacios comunes</h3>
-        <p>Halls, SUM y amenities con identidad, pensados para el bienestar y la comunidad.</p>
+        <div class="k">01 · IDENTIDAD DEL EDIFICIO</div><h3>Espacios comunes</h3>
+        <p>Halls de acceso, SUM y amenities con una impronta propia, que hace reconocible a cada edificio Safiar.</p>
         <div class="more">Ver detalle →</div>
         <ul><li>Concepto y paleta del edificio</li><li>Mobiliario, iluminación y arte</li><li>Documentación para la ejecución</li></ul>
       </div>
@@ -352,7 +422,7 @@
 </section>
 
 <!-- PROYECTOS -->
-<section class="slide" id="proyectos" data-sec="Proyectos">
+<section class="slide" id="proyectos" data-sec="Proyectos" style="background:#efe7dc;">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Safiar</div>
   <div class="pj">
     <svg id="towers" viewBox="0 0 700 600" fill="none" class="rv" style="--d:.1s">
@@ -377,7 +447,6 @@
 
 <!-- LA ALIANZA -->
 <section class="slide" id="alianza" data-sec="La alianza">
-  <div class="img bgfull" style="background-image:url('img/beneficios.jpg');"></div>
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Safiar</div>
   <div class="al rv" style="--d:.15s">
     <div class="h2">Cómo <span>funciona</span></div>
@@ -420,7 +489,7 @@
 
 <!-- GRACIAS -->
 <section class="slide" id="gracias">
-  <div class="img bgfull" style="background-image:url('img/gracias.jpg');"></div>
+  <div class="img bgfull" style="background-image:url('img/beneficios.jpg');"></div>
   <div class="thx rv" style="--d:.15s">
     <div style="font-weight:700; letter-spacing:.2em; font-size:24px;">¡MUCHAS</div>
     <div style="font-weight:300; letter-spacing:.2em; font-size:24px;">GRACIAS!</div>
@@ -538,7 +607,16 @@
   // servicios y pasos en celular: realce que recorre las tarjetas
   function cycle(id, sel){ var els = [].slice.call(document.querySelectorAll('#' + id + ' ' + sel)), i = -1; addT(id, setInterval(function(){ els.forEach(function(e){ e.classList.remove('hv'); }); i = (i + 1) % els.length; els[i].classList.add('hv'); }, 2200)); }
 
+  // identidad: zonas del edificio
+  var iEls = [].slice.call(document.querySelectorAll('#identidad [data-z]')), iTouched = false;
+  function iSet(k){ iEls.forEach(function(el){ el.classList.toggle('act', +el.dataset.z === k); }); }
+  iEls.forEach(function(el){
+    el.addEventListener('mouseenter', function(e){ if (e.isTrusted) { iTouched = true; clearT('identidad'); } iSet(+el.dataset.z); });
+    el.addEventListener('click', function(){ iTouched = true; clearT('identidad'); iSet(+el.dataset.z); });
+  });
+
   var hooks = {
+    identidad: { enter: function(){ iSet(0); if (iTouched || !mobile) return; var i = 0; addT('identidad', setInterval(function(){ i = (i + 1) % 4; iSet(i); }, 2400)); } },
     edifica: { enter: count700 },
     vida: { enter: cmpIntro },
     proyectos: { enter: function(){ pSet(-1); if (pTouched || !mobile) return; var i = -1; addT('proyectos', setInterval(function(){ i = (i + 1) % 3; pSet(i); }, 2200)); } },
@@ -586,6 +664,7 @@
     function hvOn(el){ el.classList.add('hv'); }
     function hvOff(el){ el.classList.remove('hv'); }
     var DEMO = {
+      identidad: { sel: '.ids > div', on: function(el){ iSet(+el.dataset.z); }, dwell: 2800 },
       servicios: { sel: '.sv', on: hvOn, off: hvOff, dwell: 3000 },
       proyectos: { sel: '.pjs div', on: function(el){ pSet(+el.dataset.p); }, off: function(){ pSet(-1); }, dwell: 2600 },
       alianza: { sel: '.st', on: hvOn, off: hvOff, dwell: 2200 }

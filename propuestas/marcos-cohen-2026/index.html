@@ -205,6 +205,8 @@
   .opt.prem .bd { background: var(--tc); }
   .opt.med .bd { background: #6b5d4a; }
   .opt svg { width: 70px; height: 56px; margin-top: 22px; }
+  .opt .ph { height: 120px; margin-top: 16px; background-size: cover; background-position: center; }
+  .opt .ph + h3 { margin-top: 12px; }
   .opt h3 { font-size: 19px; font-weight: 600; margin-top: 14px; line-height: 1.3; }
   .opt .st { font-size: 13px; color: #666; margin-top: 4px; }
   .opt ul { list-style: none; margin-top: 14px; }
@@ -442,7 +444,7 @@ var ITEMS = [
     b: { bd: 'MEJOR CALIDAD', h: 'Sillas tipo Tolix reforzadas para exterior', st: 'Mercado Libre · por unidad', li: ['Acero reforzado', 'Pintura apta intemperie'], pr: '$560.000 – $800.000', sm: 'las 8 sillas, aprox.', url: 'https://listado.mercadolibre.com.ar/silla-tolix-apta-exterior-acero-reforzada' } },
   { id: 'c-mesa', name: 'Mesa', qty: '2,20 × 0,90 m', x: 450, y: 355, ico: 'mesa', what: 'Mesa larga para 8 personas, entre la ventana del comedor y el jardín.',
     a: { bd: 'ECONÓMICA', h: 'Mesa de quincho 2,00 × 1,00 m', st: 'Mercado Libre · lista para usar', li: ['Para 8 a 10 personas', 'Madera dura: aceite una vez por año'], pr: '$150.000 – $205.000', sm: 'aprox.', url: 'https://listado.mercadolibre.com.ar/mesa-quincho-guayubira-exterior-200-x-100' },
-    b: { bd: 'A MEDIDA', cls: 'med', h: 'Base de hierro negro y tapa símil madera', st: 'Con herrero · 2,20 × 0,90 m', li: ['Sin mantenimiento', 'Mismo lenguaje que la barra'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' } },
+    b: { bd: 'MEJOR CALIDAD', h: 'Mesa de exterior Mike', st: 'Mike · estructura negra y tapa símil madera', photo: 'img/mesa_mike.webp', li: ['Sin mantenimiento', 'Línea de diseño, muy resistente'], pr: 'A consultar', sm: 'pedimos precio a Mike' } },
   { id: 'c-banq', name: 'Banquetas', qty: 'x 2', x: 925, y: 455, ico: 'banq', what: 'Dos banquetas altas para la barra, con asiento a 75 cm.',
     a: { bd: 'ECONÓMICA', h: 'Banqueta alta de hierro y madera', st: 'Mercado Libre · altura 75 cm', li: ['Estructura de hierro negro', 'Asiento de madera'], pr: '$45.000 – $110.000', sm: 'las 2 banquetas, aprox.', url: 'https://listado.mercadolibre.com.ar/banqueta-hierro-madera-alta-75-cm' },
     b: { bd: 'MEJOR CALIDAD', h: 'Banqueta de bar de hierro y eucalipto', st: 'Easy · verificar altura de asiento', li: ['Más robusta y pesada', 'Terminación más prolija'], pr: '≈ $190.000', sm: 'las 2 banquetas, aprox.', url: 'https://easy.com.ar/banqueta-bar-eucalipto-35x35x95/p' } },
@@ -461,10 +463,10 @@ var ITEMS = [
   function card(o){
     if (!o) return '<div class="opt med"><span class="bd">CÓMO SEGUIMOS</span><svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round"><path pathLength="1" d="M10 46 L60 10 M48 10 H60 V22"/></svg><h3>Medimos y cotizamos</h3><ul><li>Tomamos las medidas finales</li><li>Pedimos 2 presupuestos a herreros</li><li>Te los pasamos para elegir</li></ul></div>';
     return '<div class="opt ' + (o.cls || (o.bd.indexOf('MEJOR') > -1 ? 'prem' : '')) + '"><span class="bd">' + o.bd + '</span>' +
-      '<svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + ICO[o.ico] + '</svg>' +
+      (o.photo ? '<div class="ph" style="background-image:url(' + o.photo + ')"></div>' : '<svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + ICO[o.ico] + '</svg>') +
       '<h3>' + o.h + '</h3><div class="st">' + o.st + '</div><ul>' + o.li.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul>' +
       '<div class="pr">' + o.pr + '<small>' + o.sm + '</small></div>' +
-      (o.url ? '<a href="' + o.url + '" target="_blank" rel="noopener">Ver producto</a>' : '<span class="cot">A cotizar</span>') + '</div>';
+      (o.url ? '<a href="' + o.url + '" target="_blank" rel="noopener">Ver producto</a>' : '<span class="cot">' + (o.photo ? 'Precio a confirmar' : 'A cotizar') + '</span>') + '</div>';
   }
   ITEMS.forEach(function(it, n){
     if (it.a) it.a.ico = it.ico; if (it.b) it.b.ico = it.ico;

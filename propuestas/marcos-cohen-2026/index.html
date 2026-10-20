@@ -174,6 +174,55 @@
   #lb button { margin-top: 20px; background: none; border: 1px solid rgba(255,255,255,.4); color: #fff; border-radius: 30px; padding: 9px 20px; font: 500 11px "Montserrat", Arial; letter-spacing: .16em; text-transform: uppercase; }
   .zoomable { cursor: zoom-in; }
 
+  /* compras: resumen con números sobre la planta */
+  .ovplan { position: absolute; left: 56px; top: 175px; width: 800px; height: 420px; }
+  .ovplan img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  #pins { position: absolute; inset: 0; }
+  .pin { position: absolute; transform: translate(-50%, -50%); width: 34px; height: 34px; border-radius: 50%; background: var(--tc); color: #fff; border: 2px solid #fff; font: 600 15px "Montserrat", Arial; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,.25); animation: pulse 2.2s infinite; cursor: pointer; }
+  .pin:hover { transform: translate(-50%, -50%) scale(1.15); }
+  .ovlist { position: absolute; left: 900px; right: 56px; top: 175px; display: flex; flex-direction: column; gap: 4px; }
+  .ovlist button { display: flex; align-items: center; gap: 14px; background: none; border: 0; border-bottom: 1px solid rgba(17,17,17,.12); padding: 10px 4px; text-align: left; font: 500 15px "Montserrat", Arial; color: #111; transition: background .3s, padding .3s; }
+  .ovlist button:hover { background: #f6f2ec; padding-left: 12px; }
+  .ovlist button i { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--tc); color: #fff; font: 600 13px "Montserrat", Arial; font-style: normal; display: flex; align-items: center; justify-content: center; }
+  .ovlist button small { display: block; font-size: 12px; font-weight: 400; color: #666; }
+  .ovlist button span.go { margin-left: auto; color: var(--tc); font-size: 13px; letter-spacing: .1em; }
+
+  /* compras: una lámina por mueble */
+  .mini { position: absolute; left: 56px; top: 190px; width: 600px; height: 316px; }
+  .mini img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: .9; }
+  .mini svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .mini .ring { fill: none; stroke: var(--tc); stroke-width: 3; animation: ring2 1.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes ring2 { from { opacity: 1; transform: scale(.6); } to { opacity: 0; transform: scale(1.6); } }
+  .mini .dot { fill: var(--tc); stroke: #fff; stroke-width: 3; }
+  .mini .lead { stroke: var(--tc); stroke-width: 2.5; fill: none; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s ease .5s; }
+  .slide.on .mini .lead { stroke-dashoffset: 0; }
+  .mini .lab { position: absolute; transform: translate(-50%, 0); background: var(--tc); color: #fff; font: 600 13px "Montserrat", Arial; letter-spacing: .14em; padding: 7px 14px; white-space: nowrap; }
+  .what { position: absolute; left: 56px; top: 560px; width: 600px; font-size: 15.5px; color: #333; }
+  .opts { position: absolute; left: 720px; right: 56px; top: 170px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .opt { background: #f6f2ec; padding: 26px 26px 24px; display: flex; flex-direction: column; min-height: 470px; transition: transform .4s, box-shadow .4s, background .3s; }
+  .opt:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(107,69,48,.15); background: #fff; }
+  .opt .bd { align-self: flex-start; font: 600 11px "Montserrat", Arial; letter-spacing: .2em; padding: 5px 10px; background: #111; color: #fff; }
+  .opt.prem .bd { background: var(--tc); }
+  .opt.med .bd { background: #6b5d4a; }
+  .opt svg { width: 70px; height: 56px; margin-top: 22px; }
+  .opt h3 { font-size: 19px; font-weight: 600; margin-top: 14px; line-height: 1.3; }
+  .opt .st { font-size: 13px; color: #666; margin-top: 4px; }
+  .opt ul { list-style: none; margin-top: 14px; }
+  .opt li { font-size: 15px; color: #333; padding: 5px 0 5px 18px; position: relative; }
+  .opt li::before { content: ""; position: absolute; left: 0; top: 15px; width: 8px; height: 1px; background: var(--tc); }
+  .opt .pr { margin-top: auto; padding-top: 16px; font-size: 22px; font-weight: 300; }
+  .opt .pr small { display: block; font-size: 13px; color: #666; font-weight: 400; margin-top: 2px; }
+  .opt a, .opt .cot { margin-top: 14px; align-self: stretch; text-align: center; font: 600 13px "Montserrat", Arial; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; padding: 13px 16px; border-radius: 30px; }
+  .opt a { background: #111; color: #fff; transition: background .3s; }
+  .opt a:hover { background: var(--tc); }
+  .opt .cot { border: 1px solid rgba(17,17,17,.3); color: #333; }
+  .refnote { position: absolute; left: 720px; right: 56px; top: 664px; font-size: 12.5px; color: #666; font-style: italic; text-align: center; }
+  html.mobile .ovplan, html.mobile .mini { position: relative; left: auto; top: auto; width: 100%; height: auto; aspect-ratio: 1467 / 771; }
+  html.mobile .ovlist, html.mobile .opts, html.mobile .what, html.mobile .refnote { position: relative; left: auto; right: auto; top: auto; width: auto; margin-top: 14px; }
+  html.mobile .opts { grid-template-columns: 1fr; gap: 12px; }
+  html.mobile .opt { min-height: 0; padding: 18px; } html.mobile .opt svg { display: none; } html.mobile .opt h3 { font-size: 16px; margin-top: 10px; }
+  html.mobile .pin { width: 24px; height: 24px; font-size: 12px; } html.mobile .mini .lab { font-size: 10px; padding: 4px 8px; }
+
   /* lectura cómoda: textos más grandes y claros */
   .pl { font-size: 12.5px; padding: 4px 10px; }
   .side { font-size: 15px; } .side p { font-size: 15px; } .side .sw div { font-size: 10.5px; }
@@ -328,8 +377,10 @@
 <!-- COMPRAS -->
 <section class="slide" id="compras" data-sec="Compras">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>
-  <div class="t rv"><h1>Lista <span>de compras</span></h1><div class="s">Valores de referencia · Octubre 2026</div></div>
-  <div class="buy">
+  <div class="t rv"><h1>Qué vamos <span>a comprar</span></h1><div class="s">Tocá cada número para ver las opciones</div></div>
+  <div class="ovplan rv" style="--d:.15s"><img src="img/planta_v2_piedra.webp" alt="Planta de la galería"><div id="pins"></div></div>
+  <div class="ovlist" id="ovlist"></div>
+  <div class="buy" style="display:none">
     <div class="it rv" style="--d:.15s"><svg class="draw" viewBox="0 0 54 44" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round"><path pathLength="1" d="M18 4 V40 M36 4 V40 M18 22 H36 M16 22 l-4 18 M38 22 l4 18 M18 4 H36"/></svg><div class="q">Comedor · x8</div><h3>Sillas metálicas negras tipo Tolix</h3><p>Aptas exterior, apilables.</p><div class="pr">$260.000 – $330.000<small>las 8 sillas</small></div><a href="https://listado.mercadolibre.com.ar/silla-tolix-negra-exterior" target="_blank" rel="noopener">Ver opciones</a></div>
     <div class="it rv" style="--d:.25s"><svg class="draw" viewBox="0 0 54 44" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round"><path pathLength="1" d="M2 14 H52 M2 18 H52 M8 18 V42 M46 18 V42"/></svg><div class="q">Comedor · x1</div><h3>Mesa 2,20 × 0,90 m</h3><p>Base de hierro negro y tapa símil madera.</p><div class="pr">A cotizar<small>a medida, con herrero</small></div><a href="https://listado.mercadolibre.com.ar/mesa-exterior-hierro-madera-8-personas" target="_blank" rel="noopener">Ver referencias</a></div>
     <div class="it rv" style="--d:.35s"><svg class="draw" viewBox="0 0 54 44" fill="none" stroke="#111" stroke-width="1.3" stroke-linecap="round"><ellipse pathLength="1" cx="27" cy="8" rx="10" ry="3"/><path pathLength="1" d="M19 10 L15 42 M35 10 L39 42 M17 30 H37"/></svg><div class="q">Barra · x2</div><h3>Banquetas altas</h3><p>Asiento de madera símil o polipropileno.</p><div class="pr">$120.000 – $190.000<small>las 2 banquetas</small></div><a href="https://listado.mercadolibre.com.ar/banqueta-alta-exterior" target="_blank" rel="noopener">Ver opciones</a></div>
@@ -376,6 +427,74 @@
 <div id="lb"><img alt=""><button type="button">Cerrar ✕</button></div>
 
 <script>
+// ===== compras: una lámina por mueble, con flecha sobre la planta =====
+var ICO = {
+  silla: '<path pathLength="1" d="M24 6 V50 M46 6 V50 M24 28 H46 M22 28 l-5 22 M48 28 l5 22 M24 6 H46"/>',
+  mesa: '<path pathLength="1" d="M2 18 H68 M2 23 H68 M10 23 V54 M60 23 V54"/>',
+  banq: '<ellipse pathLength="1" cx="35" cy="8" rx="12" ry="4"/><path pathLength="1" d="M25 11 L20 54 M45 11 L50 54 M23 36 H47"/>',
+  barra: '<path pathLength="1" d="M6 14 H64 M10 14 V54 H60 V14 M10 20 H60"/>',
+  parr: '<path pathLength="1" d="M6 24 H40 V54 H6 Z M6 24 a17 14 0 0 1 34 0 M46 10 H64 V54 H46 Z M55 28 V36"/>',
+  luz: '<path pathLength="1" d="M20 6 H50 V24 H20 Z M35 24 V30 M22 40 l-6 10 M35 40 V54 M48 40 l6 10"/>'
+};
+var ITEMS = [
+  { id: 'c-sillas', name: 'Sillas', qty: 'x 8', x: 350, y: 255, ico: 'silla', what: 'Sillas metálicas negras, livianas, apilables y aptas para exterior.',
+    a: { bd: 'ECONÓMICA', h: 'Sillas tipo Tolix, negro mate', st: 'Mercado Libre · pack x 6 + 2 sueltas', li: ['Acero pintado, apilables', 'Se arman en minutos'], pr: '$310.000 – $420.000', sm: 'las 8 sillas, aprox.', url: 'https://www.mercadolibre.com.ar/silla-de-comedor-desillas-tolix-con-estructura-color-negro-mate-x-6-unidades/p/MLA18647684' },
+    b: { bd: 'MEJOR CALIDAD', h: 'Sillas tipo Tolix reforzadas para exterior', st: 'Mercado Libre · por unidad', li: ['Acero reforzado', 'Pintura apta intemperie'], pr: '$560.000 – $800.000', sm: 'las 8 sillas, aprox.', url: 'https://listado.mercadolibre.com.ar/silla-tolix-apta-exterior-acero-reforzada' } },
+  { id: 'c-mesa', name: 'Mesa', qty: '2,20 × 0,90 m', x: 450, y: 355, ico: 'mesa', what: 'Mesa larga para 8 personas, entre la ventana del comedor y el jardín.',
+    a: { bd: 'ECONÓMICA', h: 'Mesa de quincho 2,00 × 1,00 m', st: 'Mercado Libre · lista para usar', li: ['Para 8 a 10 personas', 'Madera dura: aceite una vez por año'], pr: '$150.000 – $205.000', sm: 'aprox.', url: 'https://listado.mercadolibre.com.ar/mesa-quincho-guayubira-exterior-200-x-100' },
+    b: { bd: 'A MEDIDA', cls: 'med', h: 'Base de hierro negro y tapa símil madera', st: 'Con herrero · 2,20 × 0,90 m', li: ['Sin mantenimiento', 'Mismo lenguaje que la barra'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' } },
+  { id: 'c-banq', name: 'Banquetas', qty: 'x 2', x: 925, y: 455, ico: 'banq', what: 'Dos banquetas altas para la barra, con asiento a 75 cm.',
+    a: { bd: 'ECONÓMICA', h: 'Banqueta alta de hierro y madera', st: 'Mercado Libre · altura 75 cm', li: ['Estructura de hierro negro', 'Asiento de madera'], pr: '$45.000 – $110.000', sm: 'las 2 banquetas, aprox.', url: 'https://listado.mercadolibre.com.ar/banqueta-hierro-madera-alta-75-cm' },
+    b: { bd: 'MEJOR CALIDAD', h: 'Banqueta de bar de hierro y eucalipto', st: 'Easy · verificar altura de asiento', li: ['Más robusta y pesada', 'Terminación más prolija'], pr: '≈ $190.000', sm: 'las 2 banquetas, aprox.', url: 'https://easy.com.ar/banqueta-bar-eucalipto-35x35x95/p' } },
+  { id: 'c-barra', name: 'Barra', qty: 'frente a la parrilla', x: 987, y: 330, ico: 'barra', what: 'Barra de apoyo frente a la parrilla, con tapa símil madera.',
+    a: { bd: 'A MEDIDA · ECONÓMICA', cls: 'med', h: 'Barra de mampostería revestida', st: 'Con albañil', li: ['Tapa símil madera', 'Muy firme y durable'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' },
+    b: { bd: 'A MEDIDA · MEJOR CALIDAD', cls: 'prem', h: 'Barra de hierro y chapa negra', st: 'Con herrero', li: ['Tapa símil madera', 'Más liviana y prolija'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' } },
+  { id: 'c-parr', name: 'Parrilla y guardado', qty: 'a medida', x: 1275, y: 250, ico: 'parr', what: 'Parrilla con tapa, puertas de chapa negra y guardado a la derecha.',
+    a: { bd: 'A MEDIDA', cls: 'med', h: 'Parrilla con tapa y guardado', st: 'Con herrero', li: ['Tapa de parrilla', 'Puertas de chapa negra', 'Guardado lateral para leña y utensilios'], pr: 'A cotizar', sm: 'tomamos medidas y pedimos 2 presupuestos' },
+    b: null },
+  { id: 'c-luz', name: 'Luces exteriores', qty: 'x 4 apliques', x: 734, y: 132, ico: 'luz', what: 'Cuatro apliques de pared sobre la fachada, con luz cálida.',
+    a: { bd: 'ECONÓMICA', h: 'Aplique tortuga LED, negro', st: 'Mercado Libre · IP65 (apto exterior)', li: ['Luz cálida', 'Fácil de instalar'], pr: '$25.000 – $40.000', sm: 'los 4 apliques, aprox.', url: 'https://listado.mercadolibre.com.ar/aplique-tortuga-led-ip65-negro' },
+    b: { bd: 'MEJOR CALIDAD', h: 'Aplique de pared Eglo LED, negro', st: 'Mercado Libre · IP65 (apto exterior)', li: ['Marca reconocida', 'Mejor terminación'], pr: '$170.000 – $210.000', sm: 'los 4 apliques, aprox.', url: 'https://listado.mercadolibre.com.ar/aplique-eglo-exterior-led-negro' } }
+];
+(function(){
+  var W = 1467, H = 771, pasos = document.getElementById('pasos');
+  function card(o){
+    if (!o) return '<div class="opt med"><span class="bd">CÓMO SEGUIMOS</span><svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round"><path pathLength="1" d="M10 46 L60 10 M48 10 H60 V22"/></svg><h3>Medimos y cotizamos</h3><ul><li>Tomamos las medidas finales</li><li>Pedimos 2 presupuestos a herreros</li><li>Te los pasamos para elegir</li></ul></div>';
+    return '<div class="opt ' + (o.cls || (o.bd.indexOf('MEJOR') > -1 ? 'prem' : '')) + '"><span class="bd">' + o.bd + '</span>' +
+      '<svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + ICO[o.ico] + '</svg>' +
+      '<h3>' + o.h + '</h3><div class="st">' + o.st + '</div><ul>' + o.li.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul>' +
+      '<div class="pr">' + o.pr + '<small>' + o.sm + '</small></div>' +
+      (o.url ? '<a href="' + o.url + '" target="_blank" rel="noopener">Ver producto</a>' : '<span class="cot">A cotizar</span>') + '</div>';
+  }
+  ITEMS.forEach(function(it, n){
+    if (it.a) it.a.ico = it.ico; if (it.b) it.b.ico = it.ico;
+    var below = it.y < H * .5, ly = below ? it.y + 230 : it.y - 260, lx = Math.max(160, Math.min(W - 160, it.x));
+    var s = document.createElement('section'); s.className = 'slide'; s.id = it.id;
+    s.innerHTML = '<div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>' +
+      '<div class="t rv"><h1>' + (n + 1) + ' · ' + it.name + ' <span>· ' + it.qty + '</span></h1><div class="s">Dos opciones para elegir</div></div>' +
+      '<div class="mini rv" style="--d:.1s"><img src="img/planta_v2_piedra.webp" alt="">' +
+      '<svg viewBox="0 0 ' + W + ' ' + H + '"><path class="lead" pathLength="1" d="M' + it.x + ' ' + it.y + ' L' + lx + ' ' + (below ? ly : ly + 60) + '"/>' +
+      '<circle class="ring" cx="' + it.x + '" cy="' + it.y + '" r="34"/><circle class="dot" cx="' + it.x + '" cy="' + it.y + '" r="16"/></svg>' +
+      '<div class="lab" style="left:' + (lx / W * 100) + '%; top:' + (ly / H * 100) + '%">' + it.name.toUpperCase() + '</div></div>' +
+      '<p class="what rv" style="--d:.3s">' + it.what + '</p>' +
+      '<div class="opts">' + card(it.a).replace('class="opt', 'class="rv opt') + card(it.b).replace('class="opt', 'class="rv opt') + '</div>' +
+      (it.a && it.a.url ? '<p class="refnote">Precios de referencia de octubre 2026, a confirmar al momento de la compra.</p>' : '') +
+      '<div class="num"></div>';
+    stageInsert(s);
+  });
+  function stageInsert(s){ pasos.parentNode.insertBefore(s, pasos); }
+  // resumen: números sobre la planta y lista
+  var pins = document.getElementById('pins'), list = document.getElementById('ovlist');
+  ITEMS.forEach(function(it, n){
+    var p = document.createElement('button'); p.className = 'pin'; p.type = 'button'; p.textContent = n + 1;
+    p.style.left = (it.x / W * 100) + '%'; p.style.top = (it.y / H * 100) + '%'; p.setAttribute('aria-label', it.name);
+    p.addEventListener('click', function(){ window.goId && goId(it.id); }); pins.appendChild(p);
+    var b = document.createElement('button'); b.type = 'button';
+    b.innerHTML = '<i>' + (n + 1) + '</i><span>' + it.name + '<small>' + it.qty + '</small></span><span class="go">VER →</span>';
+    b.addEventListener('click', function(){ window.goId && goId(it.id); }); list.appendChild(b);
+  });
+})();
+
 // ===== deck símil madera dibujado sobre el piso de piedra =====
 // Reemplaza solo los píxeles de piedra (claros y poco saturados) dentro del sector del piso
 // y conserva sus luces y sombras; muebles, plantas y pasto quedan intactos.

@@ -102,6 +102,8 @@
   /* plantas */
   .planbox { position: absolute; left: 150px; top: 175px; width: 1000px; height: 526px; }
   .planbox img, .planbox canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .planbox.planb { height: 541px; top: 170px; }
+  html.mobile .planbox.planb { height: auto; aspect-ratio: 1276 / 691; }
   .wipe { clip-path: inset(0 100% 0 0); transition: clip-path 1.6s cubic-bezier(.6,0,.2,1) .2s; }
   .slide.on .wipe { clip-path: inset(0 0 0 0); }
   .pl { position: absolute; transform: translate(-50%, -50%); font-size: 10.5px; letter-spacing: .16em; color: #222; background: rgba(255,255,255,.9); padding: 3px 8px; white-space: nowrap; opacity: 0; transition: opacity .5s, background .3s, color .3s; transition-delay: var(--d, 0s); cursor: default; }
@@ -271,12 +273,12 @@
 <section class="slide" id="opb" data-sec="Opción B" style="background:#f3ece2;">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>
   <div class="t rv"><h1>Opción B <span>· Deck</span></h1><div class="s">Planta · 7,70 × 2,79 m</div></div>
-  <div class="planbox wipe zoomable" data-lb="b"><canvas id="planB" width="1467" height="771"></canvas></div>
-  <div class="planbox" style="pointer-events:none">
-    <div class="pl" style="left:30.7%; top:46%; --d:1.3s; pointer-events:auto">COMEDOR · 8 PERSONAS</div>
-    <div class="pl" style="left:67.1%; top:48%; --d:1.45s; pointer-events:auto">BARRA</div>
-    <div class="pl" style="left:87.1%; top:32%; --d:1.6s; pointer-events:auto">PARRILLA</div>
-    <div class="pl" style="left:88.6%; top:62%; --d:1.75s; pointer-events:auto">GUARDADO</div>
+  <div class="planbox planb wipe zoomable" data-lb="b"><img src="img/planta_v2_deck.webp" alt="Planta opción B con deck"></div>
+  <div class="planbox planb" style="pointer-events:none">
+    <div class="pl" style="left:30.9%; top:45.9%; --d:1.3s; pointer-events:auto">COMEDOR · 8 PERSONAS</div>
+    <div class="pl" style="left:67%; top:48%; --d:1.45s; pointer-events:auto">BARRA</div>
+    <div class="pl" style="left:86.2%; top:32.6%; --d:1.6s; pointer-events:auto">PARRILLA</div>
+    <div class="pl" style="left:87.8%; top:61.5%; --d:1.75s; pointer-events:auto">GUARDADO</div>
   </div>
   <div class="side rv" style="--d:.5s">
     <span class="tag">DECK</span>
@@ -434,7 +436,6 @@ function deckView(img, cv){
 }
 
 (function(){
-  var a = new Image(); a.onload = function(){ deckPlan(a, document.getElementById('planB')); }; a.src = 'img/planta_v2_piedra.webp';
   var v = new Image(); v.onload = function(){ deckView(v, document.getElementById('vistaB')); }; v.src = 'img/vista_v2_piedra.webp';
 })();
 
@@ -459,7 +460,7 @@ function deckView(img, cv){
   // ampliar plantas
   var lb = document.getElementById('lb'), lbImg = lb.querySelector('img');
   [].slice.call(document.querySelectorAll('.zoomable')).forEach(function(z){
-    z.addEventListener('click', function(){ lbImg.src = z.dataset.lb === 'b' ? document.getElementById('planB').toDataURL('image/jpeg', .9) : 'img/planta_v2_piedra.webp'; lb.classList.add('on'); });
+    z.addEventListener('click', function(){ lbImg.src = z.dataset.lb === 'b' ? 'img/planta_v2_deck.webp' : 'img/planta_v2_piedra.webp'; lb.classList.add('on'); });
   });
   lb.addEventListener('click', function(){ lb.classList.remove('on'); });
 

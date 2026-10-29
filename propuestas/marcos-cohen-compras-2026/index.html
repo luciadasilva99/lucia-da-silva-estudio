@@ -444,9 +444,9 @@ var ITEMS = [
     b: null },
   { id: 'c-luz', name: 'Luces exteriores', qty: 'x 4 apliques', x: 734, y: 132, ico: 'luz', single: true, what: 'Cuatro apliques de pared para la mesa y la parrilla.',
     a: { bd: 'MERCADO LIBRE', h: 'Aplique tortuga con reja', st: 'Mercado Libre · pack x 4 con LED', photo: 'img/ml_luces.webp', li: ['Metal negro', 'Luz cálida', 'Apta exterior'], pr: '$71.572', sm: 'los 4 apliques', url: 'https://www.mercadolibre.com.ar/tortuga-exterior-metalica-con-reja-para-parrilla--led-x-4/up/MLAU4437854804' } },
-  { id: 'c-piso', name: 'Piso', qty: '≈ 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: piedra (opción A) o deck (opción B).',
-    a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', h: 'Travertino irregular claro', st: 'Con colocación', li: ['Muy resistente', 'Se retira el piso actual'], pr: '$1.300.000 – $2.000.000', sm: 'estimado', note: 'A cotizar' },
-    b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck símil madera (WPC)', st: 'Instalado, sobre estructura', li: ['Sin mantenimiento', 'Va sobre el piso actual'], pr: '$1.700.000 – $2.800.000', sm: 'estimado', note: 'A cotizar' } }
+  { id: 'c-piso', name: 'Piso', qty: 'piedra o deck · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: piedra (opción A) o deck (opción B).',
+    a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', h: 'Piedra travertino, con colocación', st: 'Con colocación', li: ['Muy resistente', 'Se retira el piso actual'], pr: '$1.300.000 – $2.000.000', sm: 'estimado', note: 'A cotizar' },
+    b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck WPC, instalado', st: 'Instalado, sobre estructura', li: ['Sin mantenimiento', 'Va sobre el piso actual'], pr: '$1.700.000 – $2.800.000', sm: 'estimado', note: 'A cotizar' } }
 ];
 (function(){
   var W = 1467, H = 771, pasos = document.getElementById('pasos');
@@ -519,7 +519,7 @@ var ITEMS = [
     '<div class="t rv"><h1>Cotización <span>de todo</span></h1><div class="s">Las dos opciones de cada cosa a comprar</div></div>' +
     '<table class="cot-t rv" style="--d:.15s"><thead><tr><th>QUÉ</th><th>OPCIÓN ECONÓMICA</th><th>OPCIÓN MEJOR CALIDAD</th></tr></thead><tbody>' + filas +
     '</tbody><tfoot><tr><td>Total cotizado</td>' + total('a') + total('b') + '</tr></tfoot></table>' +
-    '<p class="cot-n">Piso, pintura, arreglos, electricista y retiro: valores estimados. Precios de referencia de octubre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
+    '<p class="cot-n">El total económico incluye piso de piedra y el de mejor calidad, deck. Piso, pintura, arreglos, electricista y retiro: valores estimados. Precios de referencia de octubre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
     '<div class="num"></div>';
   [].forEach.call(cs.querySelectorAll('tr[data-go]'), function(tr){ tr.addEventListener('click', function(){ window.goId && goId(tr.getAttribute('data-go')); }); });
   var car = document.getElementById('compras'); car.parentNode.insertBefore(cs, car.nextSibling);

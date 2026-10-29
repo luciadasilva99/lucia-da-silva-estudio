@@ -207,7 +207,7 @@
   .opt.prem .bd { background: var(--tc); }
   .opt.med .bd { background: #6b5d4a; }
   .opt svg { width: 70px; height: 56px; margin-top: 22px; }
-  .opt .ph { height: 120px; margin-top: 16px; background-size: cover; background-position: center; }
+  .opt .ph { height: 106px; margin-top: 16px; background-size: cover; background-position: center; }
   .opt .ph + h3 { margin-top: 12px; }
   .opt h3 { font-size: 19px; font-weight: 600; margin-top: 14px; line-height: 1.3; }
   .opt .st { font-size: 13px; color: #666; margin-top: 4px; }
@@ -429,18 +429,12 @@ var ICO = {
   piso: '<path pathLength="1" d="M2 14 H68 M2 26 H68 M2 38 H68 M2 50 H68 M22 14 V26 M46 26 V38 M14 38 V50 M38 50 V56"/>'
 };
 var ITEMS = [
-  { id: 'c-sillas', name: 'Sillas', qty: 'x 8', x: 350, y: 255, ico: 'silla', what: 'Ocho sillas de aluminio negras, con almohadón, para exterior.',
-    a: { bd: 'ECONÓMICA', h: 'Silla de aluminio con almohadón', st: 'Mercado Libre · 2 packs x 4', photo: 'img/ml_sillas.jpg', li: ['Negra', 'Apta exterior'], pr: '$1.935.254', sm: 'las 8 sillas', url: 'https://www.mercadolibre.com.ar/silla-de-aluminio-con-almohadon-apto-exterior-jardin-x4-unid/up/MLAU5336171775' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Silla Prana', st: 'Mike · 48 × 56 × 87 cm', photo: 'img/sillas_mike_prana.webp', li: ['Negro graphite', 'Apta exterior'], pr: '$2.787.029', sm: 'las 8 sillas', quote: 'img/presupuesto_mike.png' } },
-  { id: 'c-mesa', name: 'Mesa', qty: 'para 8', x: 450, y: 355, ico: 'mesa', what: 'Mesa larga para 8 personas, entre la ventana del comedor y el jardín.',
-    a: { bd: 'ECONÓMICA', h: 'Mesa de acero y WPC 2,00 × 1,16 m', st: 'Mercado Libre', photo: 'img/ml_mesa.webp', li: ['Estructura negra', 'Tapa símil madera nogal', 'Apta exterior'], pr: '$1.818.302', sm: 'la mesa', url: 'https://www.mercadolibre.com.ar/mesa-wpc-acero-exterior-outdoor-intemperie-plena-200116/up/MLAU3800777068' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Mesa Runco 2,25 × 1,20 m', st: 'Mike', photo: 'img/mesa_mike_runco.png', li: ['Estructura negra', 'Tapa símil madera', 'Apta exterior'], pr: '$2.574.094', sm: 'la mesa', quote: 'img/presupuesto_mike.png' } },
-  { id: 'c-banq', name: 'Banquetas', qty: 'x 2', x: 925, y: 455, ico: 'banq', what: 'Dos banquetas altas para la barra.',
-    a: { bd: 'ECONÓMICA', h: 'Banqueta alta con respaldo', st: 'Mercado Libre · 77 cm de alto', photo: 'img/ml_banqueta.webp', li: ['Metal negro', 'Apta exterior'], pr: '$300.908', sm: 'las 2 banquetas', url: 'https://www.mercadolibre.com.ar/banqueta-taburete-alta-desayunador-reforzada-metal-exterior-interior-con-respaldo-americana-para-barra-negro-cintek/p/MLA67146899' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Banqueta Prana', st: 'Mike · 42 × 51 × 100 cm', li: ['Negro graphite', 'Apta exterior'], pr: '$766.522', sm: 'las 2 banquetas', quote: 'img/presupuesto_mike.png' } },
-  { id: 'c-barra', name: 'Barra', qty: 'frente a la parrilla', x: 987, y: 330, ico: 'barra', what: 'Barra de apoyo frente a la parrilla.',
-    a: { bd: 'A MEDIDA · ECONÓMICA', cls: 'med', h: 'Barra de hierro y tapa WPC', st: 'Con herrero', li: ['Estructura negra', 'Tapa símil madera', 'Apta exterior'], pr: 'A cotizar', sm: 'con el herrero de la parrilla' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Barra Wide 2,00 × 0,67 m', st: 'Mike · 1,00 m de alto', li: ['Negra', 'Apta exterior'], pr: '$1.669.135', sm: 'la barra', quote: 'img/presupuesto_mike.png' } },
+  { id: 'c-comedor', name: 'Mesa y sillas', qty: 'para 8', x: 450, y: 355, ico: 'mesa', what: 'Mesa larga con 8 sillas de la misma línea, entre la ventana del comedor y el jardín.',
+    a: { bd: 'ECONÓMICA', h: 'Juego mesa 2,50 × 0,90 m + 8 sillas', st: 'Mercado Libre · un solo proveedor', photo: 'img/ml_comedor.webp', li: ['Aluminio negro', 'Símil madera', 'Apto exterior'], pr: '$1.892.000', sm: 'mesa y 8 sillas', url: 'https://www.mercadolibre.com.ar/set-juego-de-mesa-exterior-y-8-sillas-aluminio-simil-madera/up/MLAU5377903864' },
+    b: { bd: 'MEJOR CALIDAD', h: 'Mesa Runco 2,25 × 1,20 m + 8 sillas Prana', st: 'Mike', photo: 'img/sillas_mike_prana.webp', li: ['Negro graphite', 'Tapa símil madera', 'Apto exterior'], pr: '$5.361.123', sm: 'mesa $2.574.094 · sillas $2.787.029', quote: 'img/presupuesto_mike.png' } },
+  { id: 'c-barra', name: 'Barra y banquetas', qty: 'frente a la parrilla', x: 987, y: 400, ico: 'barra', what: 'Barra de apoyo frente a la parrilla, con banquetas de la misma línea.',
+    a: { bd: 'ECONÓMICA', h: 'Juego barra 1,76 m + 4 banquetas', st: 'Mercado Libre · mismo proveedor que la mesa', photo: 'img/ml_barra.webp', li: ['Aluminio negro, almohadón gris', 'Apto exterior'], pr: '$1.331.000', sm: 'barra y 4 banquetas', url: 'https://www.mercadolibre.com.ar/juego-comedor-alto-exterior-aluminio-4-banquetas-mesa-bar/up/MLAU4369337297' },
+    b: { bd: 'MEJOR CALIDAD', h: 'Barra Wide 2,00 m + 2 banquetas Prana', st: 'Mike', li: ['Negro graphite', 'Apto exterior'], pr: '$2.435.657', sm: 'barra $1.669.135 · banquetas $766.522', quote: 'img/presupuesto_mike.png' } },
   { id: 'c-parr', name: 'Parrilla y guardado', qty: 'a medida', x: 1275, y: 250, ico: 'parr', what: 'Tapa para la parrilla, puertas abajo y guardado a la derecha, en chapa negra.',
     a: { bd: 'A MEDIDA', cls: 'med', h: 'Tapa, puertas abajo y guardado lateral', st: 'Con herrero', li: ['Tapa de parrilla', 'Puertas abajo de la parrilla', 'Guardado lateral con puertas', 'Chapa negra'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' },
     b: null },

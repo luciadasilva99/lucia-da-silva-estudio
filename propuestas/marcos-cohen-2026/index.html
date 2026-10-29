@@ -198,6 +198,7 @@
   .slide.on .mini .lead { stroke-dashoffset: 0; }
   .mini .lab { position: absolute; transform: translate(-50%, 0); background: var(--tc); color: #fff; font: 600 13px "Montserrat", Arial; letter-spacing: .14em; padding: 7px 14px; white-space: nowrap; }
   .what { position: absolute; left: 56px; top: 560px; width: 600px; font-size: 15.5px; color: #333; }
+  .opts.one { grid-template-columns: minmax(0, 322px); }
   .opts { position: absolute; left: 720px; right: 56px; top: 170px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   .opt { background: #f6f2ec; padding: 26px 26px 24px; display: flex; flex-direction: column; min-height: 470px; transition: transform .4s, box-shadow .4s, background .3s; }
   .opt:hover { transform: translateY(-6px); box-shadow: 0 16px 34px rgba(107,69,48,.15); background: #fff; }
@@ -447,27 +448,30 @@ var ICO = {
   banq: '<ellipse pathLength="1" cx="35" cy="8" rx="12" ry="4"/><path pathLength="1" d="M25 11 L20 54 M45 11 L50 54 M23 36 H47"/>',
   barra: '<path pathLength="1" d="M6 14 H64 M10 14 V54 H60 V14 M10 20 H60"/>',
   parr: '<path pathLength="1" d="M6 24 H40 V54 H6 Z M6 24 a17 14 0 0 1 34 0 M46 10 H64 V54 H46 Z M55 28 V36"/>',
-  luz: '<path pathLength="1" d="M20 6 H50 V24 H20 Z M35 24 V30 M22 40 l-6 10 M35 40 V54 M48 40 l6 10"/>'
+  luz: '<path pathLength="1" d="M20 6 H50 V24 H20 Z M35 24 V30 M22 40 l-6 10 M35 40 V54 M48 40 l6 10"/>',
+  piso: '<path pathLength="1" d="M2 14 H68 M2 26 H68 M2 38 H68 M2 50 H68 M22 14 V26 M46 26 V38 M14 38 V50 M38 50 V56"/>'
 };
 var ITEMS = [
-  { id: 'c-sillas', name: 'Sillas', qty: 'x 8', x: 350, y: 255, ico: 'silla', what: 'Sillas metálicas negras, livianas, apilables y aptas para exterior.',
-    a: { bd: 'ECONÓMICA', h: 'Sillas tipo Tolix, negro mate', st: 'Mercado Libre · pack x 6 + 2 sueltas', li: ['Acero pintado, apilables', 'Se arman en minutos'], pr: '$310.000 – $420.000', sm: 'las 8 sillas, aprox.', url: 'https://www.mercadolibre.com.ar/silla-de-comedor-desillas-tolix-con-estructura-color-negro-mate-x-6-unidades/p/MLA18647684' },
+  { id: 'c-sillas', name: 'Sillas', qty: 'x 8', x: 350, y: 255, ico: 'silla', what: 'Sillas de aluminio negras, livianas, apilables y aptas para exterior.',
+    a: { bd: 'ECONÓMICA', h: 'Silla de aluminio Slat, negra', st: 'Mercado Libre · $157.000 c/u', li: ['Aluminio, apta exterior', 'Apilable, con apoyabrazos'], pr: '$1.256.000', sm: 'las 8 sillas, aprox.', url: 'https://articulo.mercadolibre.com.ar/MLA-1285496906-silla-de-aluminio-para-exterior-slat-negra-_JM' },
     b: { bd: 'MEJOR CALIDAD', h: 'Silla Prana negro graphite', st: 'Mike · 48 × 56 × 87 cm', photo: 'img/sillas_mike_prana.webp', li: ['Línea de exterior, sin mantenimiento', 'Entrega 45 a 50 días'], pr: '$3.019.281', sm: 'las 8 sillas, pago en efectivo', note: 'Presupuesto Mike 23/10' } },
-  { id: 'c-mesa', name: 'Mesa', qty: '2,20 × 0,90 m', x: 450, y: 355, ico: 'mesa', what: 'Mesa larga para 8 personas, entre la ventana del comedor y el jardín.',
-    a: { bd: 'ECONÓMICA', h: 'Mesa de quincho 2,00 × 1,00 m', st: 'Mercado Libre · lista para usar', li: ['Para 8 a 10 personas', 'Madera dura: aceite una vez por año'], pr: '$150.000 – $205.000', sm: 'aprox.', url: 'https://listado.mercadolibre.com.ar/mesa-quincho-guayubira-exterior-200-x-100' },
+  { id: 'c-mesa', name: 'Mesa', qty: 'para 8', x: 450, y: 355, ico: 'mesa', what: 'Mesa larga para 8 personas, entre la ventana del comedor y el jardín.',
+    a: { bd: 'ECONÓMICA', h: 'Mesa de hierro negro y madera', st: 'Mercado Libre · 2,50 × 1,00 m', li: ['Estructura negra, como la de Mike', 'Tapa de madera: aceite una vez por año'], pr: '≈ $1.334.000', sm: 'aprox.', url: 'https://listado.mercadolibre.com.ar/mesas-de-hierro-y-madera-exterior' },
     b: { bd: 'MEJOR CALIDAD', h: 'Mesa Runco oscuro 2,25 × 1,20 m', st: 'Mike · estructura negra y tapa símil madera', photo: 'img/mesa_mike_runco.png', li: ['Sin mantenimiento', 'Entrega 45 a 50 días'], pr: '$2.788.601', sm: 'pago en efectivo · envío $357.400', note: 'Presupuesto Mike 23/10' } },
   { id: 'c-banq', name: 'Banquetas', qty: 'x 2', x: 925, y: 455, ico: 'banq', what: 'Dos banquetas altas para la barra, con asiento a 75 cm.',
-    a: { bd: 'ECONÓMICA', h: 'Banqueta alta de hierro y madera', st: 'Mercado Libre · altura 75 cm', li: ['Estructura de hierro negro', 'Asiento de madera'], pr: '$45.000 – $110.000', sm: 'las 2 banquetas, aprox.', url: 'https://listado.mercadolibre.com.ar/banqueta-hierro-madera-alta-75-cm' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Banqueta de bar de hierro y eucalipto', st: 'Easy · verificar altura de asiento', li: ['Más robusta y pesada', 'Terminación más prolija'], pr: '≈ $190.000', sm: 'las 2 banquetas, aprox.', url: 'https://easy.com.ar/banqueta-bar-eucalipto-35x35x95/p' } },
-  { id: 'c-barra', name: 'Barra', qty: 'frente a la parrilla', x: 987, y: 330, ico: 'barra', what: 'Barra de apoyo frente a la parrilla, con tapa símil madera.',
-    a: { bd: 'A MEDIDA · ECONÓMICA', cls: 'med', h: 'Barra de mampostería revestida', st: 'Con albañil', li: ['Tapa símil madera', 'Muy firme y durable'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' },
-    b: { bd: 'A MEDIDA · MEJOR CALIDAD', cls: 'prem', h: 'Barra de hierro y chapa negra', st: 'Con herrero', li: ['Tapa símil madera', 'Más liviana y prolija'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' } },
-  { id: 'c-parr', name: 'Parrilla y guardado', qty: 'a medida', x: 1275, y: 250, ico: 'parr', what: 'Parrilla con tapa, puertas de chapa negra y guardado a la derecha.',
-    a: { bd: 'A MEDIDA', cls: 'med', h: 'Parrilla con tapa y guardado', st: 'Con herrero', li: ['Tapa de parrilla', 'Puertas de chapa negra', 'Guardado lateral para leña y utensilios'], pr: 'A cotizar', sm: 'tomamos medidas y pedimos 2 presupuestos' },
+    a: { bd: 'ECONÓMICA', h: 'Banqueta alta negra, asiento de madera', st: 'Mercado Libre · altura 75 cm', li: ['Estructura de metal negro', 'Se venden de a dos'], pr: '$137.000 – $290.000', sm: 'las 2 banquetas, aprox.', url: 'https://listado.mercadolibre.com.ar/banquetas-altas-de-aluminio' },
+    b: { bd: 'MEJOR CALIDAD', h: 'Banqueta de exterior Mike', st: 'Mike · línea de la mesa y las sillas', li: ['Sin mantenimiento', 'Combina con el comedor'], pr: 'A confirmar', sm: 'pedimos precio a Mike', note: 'Presupuesto Mike en curso' } },
+  { id: 'c-barra', name: 'Barra', qty: 'frente a la parrilla', x: 987, y: 330, ico: 'barra', what: 'Barra de apoyo frente a la parrilla, para comer algo mientras se cocina.',
+    a: { bd: 'ECONÓMICA', h: 'Barra de hierro negro y madera', st: 'Mercado Libre · 140 a 150 cm', li: ['Base de hierro negro', 'Tapa de madera'], pr: '$190.000 – $265.000', sm: 'aprox.', url: 'https://listado.mercadolibre.com.ar/mesa-barra-desayunador-exterior' },
+    b: { bd: 'MEJOR CALIDAD', h: 'Barra de exterior Mike', st: 'Mike · sin cajones', li: ['Estructura negra y tapa símil madera', 'Sin mantenimiento'], pr: 'A confirmar', sm: 'pedimos precio a Mike', note: 'Presupuesto Mike en curso' } },
+  { id: 'c-parr', name: 'Parrilla y guardado', qty: 'a medida', x: 1275, y: 250, ico: 'parr', what: 'Tapa para la parrilla y mueble de guardado a la derecha, con puertas de chapa negra.',
+    a: { bd: 'A MEDIDA', cls: 'med', h: 'Tapa de parrilla y guardado con puertas', st: 'Con herrero', li: ['Tapa de parrilla', 'Puertas de chapa negra', 'Guardado lateral para leña y utensilios'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos a herreros' },
     b: null },
-  { id: 'c-luz', name: 'Luces exteriores', qty: 'x 4 apliques', x: 734, y: 132, ico: 'luz', what: 'Cuatro apliques de pared sobre la fachada, con luz cálida.',
-    a: { bd: 'ECONÓMICA', h: 'Aplique tortuga LED, negro', st: 'Mercado Libre · IP65 (apto exterior)', li: ['Luz cálida', 'Fácil de instalar'], pr: '$25.000 – $40.000', sm: 'los 4 apliques, aprox.', url: 'https://listado.mercadolibre.com.ar/aplique-tortuga-led-ip65-negro' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Aplique de pared Eglo LED, negro', st: 'Mercado Libre · IP65 (apto exterior)', li: ['Marca reconocida', 'Mejor terminación'], pr: '$170.000 – $210.000', sm: 'los 4 apliques, aprox.', url: 'https://listado.mercadolibre.com.ar/aplique-eglo-exterior-led-negro' } }
+  { id: 'c-luz', name: 'Luces exteriores', qty: 'x 4 apliques', x: 734, y: 132, ico: 'luz', single: true, what: 'Cuatro apliques de pared, de luz cálida, para iluminar la mesa y la parrilla.',
+    a: { bd: 'MERCADO LIBRE', h: 'Aplique tortuga LED, negro', st: 'Mercado Libre · IP65 (apto exterior)', li: ['Luz cálida', 'Fácil de instalar'], pr: '$25.000 – $40.000', sm: 'los 4 apliques, aprox.', url: 'https://listado.mercadolibre.com.ar/aplique-tortuga-led-ip65-negro' } },
+  { id: 'c-piso', name: 'Piso', qty: '≈ 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: piedra (opción A) o deck (opción B).',
+    a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', h: 'Travertino irregular claro', st: 'Con colocación · ≈ $60.000 – $95.000 por m²', li: ['Muy resistente, fresco en verano', 'Solo limpieza'], pr: '$1.300.000 – $2.000.000', sm: 'estimado, sin retiro del piso actual', note: 'Estimado · pedimos presupuesto' },
+    b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck símil madera (WPC)', st: 'Instalado · ≈ $80.000 – $130.000 por m²', li: ['Sin mantenimiento', 'Se coloca en seco, sobre estructura'], pr: '$1.700.000 – $2.800.000', sm: 'estimado, con estructura', note: 'Estimado · pedimos presupuesto' } }
 ];
 (function(){
   var W = 1467, H = 771, pasos = document.getElementById('pasos');
@@ -484,13 +488,13 @@ var ITEMS = [
     var below = it.y < H * .5, ly = below ? it.y + 230 : it.y - 260, lx = Math.max(160, Math.min(W - 160, it.x));
     var s = document.createElement('section'); s.className = 'slide'; s.id = it.id;
     s.innerHTML = '<div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>' +
-      '<div class="t rv"><h1>' + (n + 1) + ' · ' + it.name + ' <span>· ' + it.qty + '</span></h1><div class="s">Dos opciones para elegir</div></div>' +
+      '<div class="t rv"><h1>' + (n + 1) + ' · ' + it.name + ' <span>· ' + it.qty + '</span></h1><div class="s">' + (it.single ? 'Opción recomendada' : 'Dos opciones para elegir') + '</div></div>' +
       '<div class="mini rv" style="--d:.1s"><img src="img/planta_v2_piedra.webp" alt="">' +
       '<svg viewBox="0 0 ' + W + ' ' + H + '"><path class="lead" pathLength="1" d="M' + it.x + ' ' + it.y + ' L' + lx + ' ' + (below ? ly : ly + 60) + '"/>' +
       '<circle class="ring" cx="' + it.x + '" cy="' + it.y + '" r="34"/><circle class="dot" cx="' + it.x + '" cy="' + it.y + '" r="16"/></svg>' +
       '<div class="lab" style="left:' + (lx / W * 100) + '%; top:' + (ly / H * 100) + '%">' + it.name.toUpperCase() + '</div></div>' +
       '<p class="what rv" style="--d:.3s">' + it.what + '</p>' +
-      '<div class="opts">' + card(it.a).replace('class="opt', 'class="rv opt') + card(it.b).replace('class="opt', 'class="rv opt') + '</div>' +
+      '<div class="opts' + (it.single ? ' one' : '') + '">' + card(it.a).replace('class="opt', 'class="rv opt') + (it.single ? '' : card(it.b).replace('class="opt', 'class="rv opt')) + '</div>' +
       (it.a && it.a.url ? '<p class="refnote">Precios de referencia de octubre 2026, a confirmar al momento de la compra.</p>' : '') +
       '<div class="num"></div>';
     stageInsert(s);
@@ -523,9 +527,8 @@ var ITEMS = [
   cs.innerHTML = '<div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>' +
     '<div class="t rv"><h1>Cotización <span>de todo</span></h1><div class="s">Las dos opciones de cada cosa a comprar</div></div>' +
     '<table class="cot-t rv" style="--d:.15s"><thead><tr><th>QUÉ</th><th>OPCIÓN ECONÓMICA</th><th>OPCIÓN MEJOR CALIDAD</th></tr></thead><tbody>' + filas +
-    '<tr data-go="comparar"><td><i>+</i>Piso <small style="display:inline">≈ 21,5 m²</small></td><td class="pend">A cotizar<small>Piedra irregular clara, con colocación</small></td><td>$1.700.000 – $2.800.000<small>Deck símil madera (WPC), instalado</small></td></tr>' +
     '</tbody><tfoot><tr><td>Total cotizado</td>' + total('a') + total('b') + '</tr></tfoot></table>' +
-    '<p class="cot-n">Totales sin piso. Precios de referencia de octubre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
+    '<p class="cot-n">Piso: valores estimados. Precios de referencia de octubre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
     '<div class="num"></div>';
   [].forEach.call(cs.querySelectorAll('tr[data-go]'), function(tr){ tr.addEventListener('click', function(){ window.goId && goId(tr.getAttribute('data-go')); }); });
   stageInsert(cs);

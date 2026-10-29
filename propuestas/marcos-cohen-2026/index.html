@@ -219,17 +219,20 @@
   .opt a { background: #111; color: #fff; transition: background .3s; }
   .opt a:hover { background: var(--tc); }
   .opt .cot { border: 1px solid rgba(17,17,17,.3); color: #333; }
-  .cot-t { position: absolute; left: 120px; width: 1200px; top: 158px; border-collapse: collapse; font-size: 15px; }
+  .cot-t { position: absolute; left: 120px; width: 1200px; top: 180px; border-collapse: collapse; font-size: 15px; }
   .cot-t th { text-align: left; font-weight: 600; font-size: 11.5px; letter-spacing: .2em; color: var(--tc); padding: 0 14px 10px; border-bottom: 1px solid #111; }
-  .cot-t td { padding: 7px 14px; border-bottom: 1px solid rgba(17,17,17,.12); vertical-align: top; }
-  .cot-t td small { display: block; font-size: 12px; color: #666; margin-top: 2px; }
+  .cot-t tr.ex { cursor: default; } .cot-t tr.ex td { padding-top: 5px; padding-bottom: 5px; font-size: 14px; }
+  .cot-t tr.ex td:first-child i { background: #b9a999; }
+  .cot-t td { padding: 6px 14px; border-bottom: 1px solid rgba(17,17,17,.12); vertical-align: top; }
+  .cot-t td { line-height: 1.3; }
+  .cot-t td small { display: block; font-size: 12px; color: #666; margin-top: 0; }
   .cot-t tbody tr { cursor: pointer; transition: background .3s; }
   .cot-t tbody tr:hover { background: #f6f2ec; }
   .cot-t td:first-child { font-weight: 600; white-space: nowrap; }
   .cot-t td:first-child i { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; background: var(--tc); color: #fff; font: 600 12px "Montserrat", Arial; font-style: normal; align-items: center; justify-content: center; margin-right: 10px; }
   .cot-t td.pend { color: #8a7a6a; font-style: italic; }
   .cot-t tfoot td { border-bottom: 0; border-top: 1px solid #111; font-weight: 600; padding-top: 10px; }
-  .cot-n { position: absolute; left: 120px; right: 120px; top: 722px; font-size: 12.5px; color: #666; font-style: italic; text-align: center; }
+  .cot-n { position: absolute; left: 720px; right: 120px; top: 96px; font-size: 12.5px; color: #666; font-style: italic; text-align: right; }
   html.mobile .cot-t, html.mobile .cot-n { position: relative; left: auto; right: auto; top: auto; width: 100%; font-size: 13px; margin-top: 10px; }
   html.mobile .cot-t td, html.mobile .cot-t th { padding: 8px 6px; }
   html.mobile .cot-t td:first-child { white-space: normal; }
@@ -468,9 +471,9 @@ var ITEMS = [
     a: { bd: 'A MEDIDA', cls: 'med', h: 'Tapa de parrilla y guardado con puertas', st: 'Con herrero', li: ['Tapa de parrilla', 'Puertas de chapa negra', 'Guardado lateral para leña y utensilios'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos a herreros' },
     b: null },
   { id: 'c-luz', name: 'Luces exteriores', qty: 'x 4 apliques', x: 734, y: 132, ico: 'luz', single: true, what: 'Cuatro apliques de pared, de luz cálida, para iluminar la mesa y la parrilla.',
-    a: { bd: 'MERCADO LIBRE', h: 'Aplique tortuga LED, negro', st: 'Mercado Libre · IP65 (apto exterior)', li: ['Luz cálida', 'Fácil de instalar'], pr: '$25.000 – $40.000', sm: 'los 4 apliques, aprox.', url: 'https://listado.mercadolibre.com.ar/aplique-tortuga-led-ip65-negro' } },
+    a: { bd: 'MERCADO LIBRE', h: 'Aplique tortuga LED, negro', st: 'Mercado Libre · IP65 (apto exterior)', li: ['Luz cálida', 'Colocación con electricista, a cotizar'], pr: '$25.000 – $40.000', sm: 'los 4 apliques, aprox.', url: 'https://listado.mercadolibre.com.ar/aplique-tortuga-led-ip65-negro' } },
   { id: 'c-piso', name: 'Piso', qty: '≈ 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: piedra (opción A) o deck (opción B).',
-    a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', h: 'Travertino irregular claro', st: 'Con colocación · ≈ $60.000 – $95.000 por m²', li: ['Muy resistente, fresco en verano', 'Solo limpieza'], pr: '$1.300.000 – $2.000.000', sm: 'estimado, sin retiro del piso actual', note: 'Estimado · pedimos presupuesto' },
+    a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', h: 'Travertino irregular claro', st: 'Con colocación · ≈ $60.000 – $95.000 por m²', li: ['Muy resistente, fresco en verano', 'Antes se retira el piso actual'], pr: '$1.300.000 – $2.000.000', sm: 'estimado, sin retiro del piso actual', note: 'Estimado · pedimos presupuesto' },
     b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck símil madera (WPC)', st: 'Instalado · ≈ $80.000 – $130.000 por m²', li: ['Sin mantenimiento', 'Se coloca en seco, sobre estructura'], pr: '$1.700.000 – $2.800.000', sm: 'estimado, con estructura', note: 'Estimado · pedimos presupuesto' } }
 ];
 (function(){
@@ -519,6 +522,19 @@ var ITEMS = [
     });
     return '<tr data-go="' + it.id + '"><td><i>' + (n + 1) + '</i>' + it.name + ' <small style="display:inline">' + it.qty + '</small></td>' + celda(it.a) + (it.b ? celda(it.b) : celda(it.a)) + '</tr>';
   }).join('');
+  var EXTRAS = [
+    { name: 'Envío', a: { pr: 'Según publicación', h: 'Mercado Libre' }, b: { pr: '$357.400', h: 'Mike' } },
+    { name: 'Electricista', a: { pr: '$200.000 – $350.000', h: 'cable y colocación de 4 apliques · a cotizar' } },
+    { name: 'Retiro del piso actual', a: { pr: '$350.000 – $600.000', h: 'solo con piedra · con volquete · a cotizar' }, b: { pr: 'No hace falta', h: 'el deck va sobre el piso actual', cero: true } }
+  ];
+  filas += EXTRAS.map(function(ex){
+    ['a', 'b'].forEach(function(k){
+      var o = ex[k] || ex.a, r = rango(o.pr);
+      if (r) { tot[k][0] += r[0]; tot[k][1] += r[1]; } else if (!o.cero) falta[k].push(ex.name.toLowerCase());
+    });
+    function c(o){ return '<td' + (rango(o.pr) ? '' : ' class="pend"') + '>' + o.pr + ' <small style="display:inline">· ' + o.h + '</small></td>'; }
+    return '<tr class="ex"><td><i>+</i>' + ex.name + '</td>' + c(ex.a) + c(ex.b || ex.a) + '</tr>';
+  }).join('');
   function total(k){
     var t = tot[k], v = t[0] === t[1] ? fmt(t[0]) : fmt(t[0]) + ' – ' + fmt(t[1]);
     return '<td>' + v + (falta[k].length ? '<small>+ ' + falta[k].join(', ') + ' (a cotizar)</small>' : '') + '</td>';
@@ -528,7 +544,7 @@ var ITEMS = [
     '<div class="t rv"><h1>Cotización <span>de todo</span></h1><div class="s">Las dos opciones de cada cosa a comprar</div></div>' +
     '<table class="cot-t rv" style="--d:.15s"><thead><tr><th>QUÉ</th><th>OPCIÓN ECONÓMICA</th><th>OPCIÓN MEJOR CALIDAD</th></tr></thead><tbody>' + filas +
     '</tbody><tfoot><tr><td>Total cotizado</td>' + total('a') + total('b') + '</tr></tfoot></table>' +
-    '<p class="cot-n">Piso: valores estimados. Precios de referencia de octubre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
+    '<p class="cot-n">Piso, electricista y retiro: valores estimados. Precios de referencia de octubre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
     '<div class="num"></div>';
   [].forEach.call(cs.querySelectorAll('tr[data-go]'), function(tr){ tr.addEventListener('click', function(){ window.goId && goId(tr.getAttribute('data-go')); }); });
   stageInsert(cs);

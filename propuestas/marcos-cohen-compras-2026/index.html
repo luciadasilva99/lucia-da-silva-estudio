@@ -428,16 +428,16 @@ var ICO = {
 var ITEMS = [
   { id: 'c-sillas', name: 'Sillas', qty: 'x 8', x: 350, y: 255, ico: 'silla', what: 'Sillas de aluminio negras, livianas, apilables y aptas para exterior.',
     a: { bd: 'ECONÓMICA', h: 'Silla de aluminio Slat, negra', st: 'Mercado Libre · $157.000 c/u', li: ['Aluminio, apta exterior', 'Apilable, con apoyabrazos'], pr: '$1.256.000', sm: 'las 8 sillas, aprox.', url: 'https://articulo.mercadolibre.com.ar/MLA-1285496906-silla-de-aluminio-para-exterior-slat-negra-_JM' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Silla Prana negro graphite', st: 'Mike · 48 × 56 × 87 cm', photo: 'img/sillas_mike_prana.webp', li: ['Línea de exterior, sin mantenimiento', 'Entrega 45 a 50 días'], pr: '$3.019.281', sm: 'las 8 sillas, pago en efectivo', note: 'Presupuesto Mike 23/10' } },
+    b: { bd: 'MEJOR CALIDAD', h: 'Silla Prana negro graphite', st: 'Mike · 48 × 56 × 87 cm', photo: 'img/sillas_mike_prana.webp', li: ['Línea de exterior, sin mantenimiento', 'Entrega 45 a 50 días'], pr: '$2.787.029', sm: 'las 8 sillas, pago en efectivo', note: 'Presupuesto Mike' } },
   { id: 'c-mesa', name: 'Mesa', qty: 'para 8', x: 450, y: 355, ico: 'mesa', what: 'Mesa larga para 8 personas, entre la ventana del comedor y el jardín.',
     a: { bd: 'ECONÓMICA', h: 'Mesa de hierro negro y madera', st: 'Mercado Libre · 2,50 × 1,00 m', li: ['Estructura negra, como la de Mike', 'Tapa de madera: aceite una vez por año'], pr: '≈ $1.334.000', sm: 'aprox.', url: 'https://listado.mercadolibre.com.ar/mesas-de-hierro-y-madera-exterior' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Mesa Runco oscuro 2,25 × 1,20 m', st: 'Mike · estructura negra y tapa símil madera', photo: 'img/mesa_mike_runco.png', li: ['Sin mantenimiento', 'Entrega 45 a 50 días'], pr: '$2.788.601', sm: 'pago en efectivo · envío $357.400', note: 'Presupuesto Mike 23/10' } },
+    b: { bd: 'MEJOR CALIDAD', h: 'Mesa Runco oscuro 2,25 × 1,20 m', st: 'Mike · estructura negra y tapa símil madera', photo: 'img/mesa_mike_runco.png', li: ['Sin mantenimiento', 'Entrega 45 a 50 días'], pr: '$2.574.094', sm: 'pago en efectivo · envío $520.000', note: 'Presupuesto Mike' } },
   { id: 'c-banq', name: 'Banquetas', qty: 'x 2', x: 925, y: 455, ico: 'banq', what: 'Dos banquetas altas para la barra, con asiento a 75 cm.',
     a: { bd: 'ECONÓMICA', h: 'Banqueta alta negra, asiento de madera', st: 'Mercado Libre · altura 75 cm', li: ['Estructura de metal negro', 'Se venden de a dos'], pr: '$137.000 – $290.000', sm: 'las 2 banquetas, aprox.', url: 'https://listado.mercadolibre.com.ar/banquetas-altas-de-aluminio' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Banqueta de exterior Mike', st: 'Mike · línea de la mesa y las sillas', li: ['Sin mantenimiento', 'Combina con el comedor'], pr: 'A confirmar', sm: 'pedimos precio a Mike', note: 'Presupuesto Mike en curso' } },
+    b: { bd: 'MEJOR CALIDAD', h: 'Banqueta Prana negro graphite', st: 'Mike · 42 × 51 × 100 cm', li: ['Misma línea que las sillas', 'Sin mantenimiento'], pr: '$766.522', sm: 'las 2 banquetas, pago en efectivo', note: 'Presupuesto Mike' } },
   { id: 'c-barra', name: 'Barra', qty: 'frente a la parrilla', x: 987, y: 330, ico: 'barra', what: 'Barra de apoyo frente a la parrilla, para comer algo mientras se cocina.',
     a: { bd: 'ECONÓMICA', h: 'Barra de hierro negro y madera', st: 'Mercado Libre · 140 a 150 cm', li: ['Base de hierro negro', 'Tapa de madera'], pr: '$190.000 – $265.000', sm: 'aprox.', url: 'https://listado.mercadolibre.com.ar/mesa-barra-desayunador-exterior' },
-    b: { bd: 'MEJOR CALIDAD', h: 'Barra de exterior Mike', st: 'Mike · sin cajones', li: ['Estructura negra y tapa símil madera', 'Sin mantenimiento'], pr: 'A confirmar', sm: 'pedimos precio a Mike', note: 'Presupuesto Mike en curso' } },
+    b: { bd: 'MEJOR CALIDAD', h: 'Barra Wide negra 2,00 × 0,67 m', st: 'Mike · 1,00 m de alto, sin cajones', li: ['Estructura negra', 'Sin mantenimiento'], pr: '$1.669.135', sm: 'pago en efectivo', note: 'Presupuesto Mike' } },
   { id: 'c-parr', name: 'Parrilla y guardado', qty: 'a medida', x: 1275, y: 250, ico: 'parr', what: 'Tapa para la parrilla, puertas abajo (hoy es hueco) y guardado a la derecha, todo en chapa negra. La parrilla actual se pinta de negro.',
     a: { bd: 'A MEDIDA', cls: 'med', h: 'Tapa, puertas abajo y guardado lateral', st: 'Con herrero', li: ['Tapa de parrilla', 'Puertas abajo de la parrilla', 'Guardado lateral con puertas', 'Todo en chapa negra'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos a herreros' },
     b: null },
@@ -495,7 +495,7 @@ var ITEMS = [
     return '<tr data-go="' + it.id + '"><td><i>' + (n + 1) + '</i>' + it.name + ' <small style="display:inline">' + it.qty + '</small></td>' + celda(it.a) + (it.b ? celda(it.b) : celda(it.a)) + '</tr>';
   }).join('');
   var EXTRAS = [
-    { name: 'Envío', a: { pr: 'Según publicación', h: 'Mercado Libre' }, b: { pr: '$357.400', h: 'Mike' } },
+    { name: 'Envío', a: { pr: 'Según publicación', h: 'Mercado Libre' }, b: { pr: '$520.000', h: 'Mike' } },
     { name: 'Pintura negra de la parrilla', a: { pr: '$150.000 – $300.000', h: 'pintura apta alta temperatura · a cotizar' } },
     { name: 'Electricista', a: { pr: '$200.000 – $350.000', h: 'cable y colocación de 4 apliques · a cotizar' } },
     { name: 'Retiro del piso actual', a: { pr: '$350.000 – $600.000', h: 'solo con piedra · con volquete · a cotizar' }, b: { pr: 'No hace falta', h: 'el deck va sobre el piso actual', cero: true } }

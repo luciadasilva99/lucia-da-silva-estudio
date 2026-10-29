@@ -209,6 +209,7 @@
   .opt svg { width: 70px; height: 56px; margin-top: 22px; }
   .opt .ph { height: 106px; margin-top: 16px; background-size: cover; background-position: center; }
   .opt .ph + h3 { margin-top: 12px; }
+  .opt .ph.q { cursor: zoom-in; }
   .opt h3 { font-size: 19px; font-weight: 600; margin-top: 14px; line-height: 1.3; }
   .opt .st { font-size: 13px; color: #666; margin-top: 4px; }
   .opt ul { list-style: none; margin-top: 14px; }
@@ -439,10 +440,12 @@ var ITEMS = [
     a: { bd: 'ECONÓMICA', h: 'Banqueta alta con respaldo', st: 'Mercado Libre · 77 cm de alto', photo: 'img/ml_banqueta.webp', li: ['Metal negro', 'Apta exterior'], pr: '$300.908', sm: 'las 2 banquetas', url: 'https://www.mercadolibre.com.ar/banqueta-taburete-alta-desayunador-reforzada-metal-exterior-interior-con-respaldo-americana-para-barra-negro-cintek/p/MLA67146899' },
     b: { bd: 'MEJOR CALIDAD', h: 'Banqueta Prana', st: 'Mike · 42 × 51 × 100 cm', li: ['Negro graphite', 'Misma línea que las sillas', 'Apta exterior'], pr: '$766.522', sm: 'las 2 banquetas', quote: 'img/presupuesto_mike.png' } },
   { id: 'c-parr', name: 'Parrilla y guardado', qty: 'a medida', x: 1275, y: 250, ico: 'parr', what: 'Tapa para la parrilla, puertas abajo y guardado a la derecha, en chapa negra.',
-    a: { bd: 'A MEDIDA', cls: 'med', h: 'Tapa, puertas abajo y guardado lateral', st: 'Con herrero', li: ['Tapa de parrilla', 'Puertas abajo de la parrilla', 'Guardado lateral con puertas', 'Chapa negra'], pr: 'A cotizar', sm: 'pedimos 2 presupuestos' },
+    a: { bd: 'A MEDIDA', cls: 'med', h: 'Tapa, puertas abajo y guardado lateral', st: 'Con herrero', photo: 'img/parrilla_herreria.webp', phh: 175, phz: '135% auto', php: '66% 30%', li: ['Tapa, puertas y guardado', 'Chapa negra'], pr: 'A cotizar', sm: 'con herrero', note: 'Pedimos 2 presupuestos' },
     b: null },
-  { id: 'c-luz', name: 'Luces exteriores', qty: 'x 4 apliques', x: 734, y: 132, ico: 'luz', single: true, what: 'Cuatro apliques de pared para la mesa y la parrilla.',
-    a: { bd: 'MERCADO LIBRE', h: 'Aplique tortuga con reja', st: 'Mercado Libre · pack x 4 con LED', photo: 'img/ml_luces.webp', li: ['Metal negro', 'Luz cálida', 'Apta exterior'], pr: '$71.572', sm: 'los 4 apliques', url: 'https://www.mercadolibre.com.ar/tortuga-exterior-metalica-con-reja-para-parrilla--led-x-4/up/MLAU4437854804' } },
+  { id: 'c-luz', name: 'Luces generales', qty: 'x 2 faroles', x: 734, y: 132, ico: 'luz', single: true, what: 'Dos faroles de pared para iluminar la zona de la mesa.',
+    a: { bd: 'MERCADO LIBRE', h: 'Farol galponero', st: 'Mercado Libre · pack x 2', photo: 'img/ml_galponero.webp', li: ['Chapa negra texturada', 'Lámpara LED cálida aparte', 'Apto exterior'], pr: '$80.586', sm: 'los 2 faroles', url: 'https://www.mercadolibre.com.ar/apliques-pared-galponero-lampara-vintage-industrial-pack-2/up/MLAU3501184855?pdp_filters=item_id:MLA1562225001' } },
+  { id: 'c-luz2', name: 'Luz de parrilla', qty: 'x 1 reflector', x: 1180, y: 160, ico: 'luz', single: true, what: 'Un reflector orientable que apunta a la parrilla, para cocinar con buena luz.',
+    a: { bd: 'MERCADO LIBRE', h: 'Reflector orientable', st: 'Mercado Libre · FW Iluminación', photo: 'img/ml_spot.webp', li: ['Aluminio negro mate', 'Lámpara LED aparte', 'Apto exterior'], pr: '$84.300', sm: 'el reflector', url: 'https://www.mercadolibre.com.ar/aplique-spot-exterior-aluminio-para-led-ar111-fw-2065/up/MLAU255862419' } },
   { id: 'c-piso', name: 'Piso', qty: 'piedra o deck · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: piedra (opción A) o deck (opción B).',
     a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', h: 'Piedra travertino, con colocación', st: 'Con colocación', li: ['Muy resistente', 'Se retira el piso actual'], pr: '$1.300.000 – $2.000.000', sm: 'estimado', note: 'A cotizar' },
     b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck WPC, instalado', st: 'Instalado, sobre estructura', li: ['Sin mantenimiento', 'Va sobre el piso actual'], pr: '$1.700.000 – $2.800.000', sm: 'estimado', note: 'A cotizar' } }
@@ -452,7 +455,7 @@ var ITEMS = [
   function card(o){
     if (!o) return '<div class="opt med"><span class="bd">CÓMO SEGUIMOS</span><svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round"><path pathLength="1" d="M10 46 L60 10 M48 10 H60 V22"/></svg><h3>Medimos y cotizamos</h3><ul><li>Tomamos las medidas finales</li><li>Pedimos 2 presupuestos a herreros</li><li>Te los pasamos para elegir</li></ul></div>';
     return '<div class="opt ' + (o.cls || (o.bd.indexOf('MEJOR') > -1 ? 'prem' : '')) + '"><span class="bd">' + o.bd + '</span>' +
-      (o.photo ? '<div class="ph" style="background-image:url(' + o.photo + ')"></div>' : '<svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + ICO[o.ico] + '</svg>') +
+      (o.photo ? '<div class="ph q" data-q="' + o.photo + '" style="background-image:url(' + o.photo + ')' + (o.phh ? ';height:' + o.phh + 'px' : '') + (o.phz ? ';background-size:' + o.phz : '') + (o.php ? ';background-position:' + o.php : '') + '"></div>' : '<svg class="draw" viewBox="0 0 70 56" fill="none" stroke="#111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">' + ICO[o.ico] + '</svg>') +
       '<h3>' + o.h + '</h3><div class="st">' + o.st + '</div><ul>' + o.li.map(function(l){ return '<li>' + l + '</li>'; }).join('') + '</ul>' +
       '<div class="pr">' + o.pr + '<small>' + o.sm + '</small></div>' +
       (o.url ? '<a href="' + o.url + '" target="_blank" rel="noopener">Ver producto</a>' : o.quote ? '<button type="button" class="cot q" data-q="' + o.quote + '">Ver presupuesto Mike</button>' : '<span class="cot">' + (o.note || (o.photo ? 'Precio a confirmar' : 'A cotizar')) + '</span>') + '</div>';
@@ -462,7 +465,7 @@ var ITEMS = [
     var below = it.y < H * .5, ly = below ? it.y + 230 : it.y - 260, lx = Math.max(160, Math.min(W - 160, it.x));
     var s = document.createElement('section'); s.className = 'slide'; s.id = it.id;
     s.innerHTML = '<div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>' +
-      '<div class="t rv"><h1>' + (n + 1) + ' · ' + it.name + ' <span>· ' + it.qty + '</span></h1><div class="s">' + (it.single ? 'Opción recomendada' : 'Dos opciones para elegir') + '</div></div>' +
+      '<div class="t rv"><h1>' + (n + 1) + ' · ' + it.name + ' <span>· ' + it.qty + '</span></h1><div class="s">' + (it.single ? 'Opción recomendada' : !it.b ? 'Se hace a medida' : 'Dos opciones para elegir') + '</div></div>' +
       '<button type="button" class="back" onclick="goId(\'cotizacion\')">← Volver al listado</button>' +
       '<div class="mini rv" style="--d:.1s"><img src="img/planta_v2_piedra.webp" alt="">' +
       '<svg viewBox="0 0 ' + W + ' ' + H + '">' + (it.id === 'c-piso' ? '' : '<defs><mask id="mk-' + it.id + '"><rect width="' + W + '" height="' + H + '" fill="#fff"/><circle cx="' + it.x + '" cy="' + it.y + '" r="150" fill="#000"/></mask></defs><rect width="' + W + '" height="' + H + '" fill="#fff" fill-opacity=".6" mask="url(#mk-' + it.id + ')"/>') + '<path class="lead" pathLength="1" d="M' + it.x + ' ' + it.y + ' L' + lx + ' ' + (below ? ly : ly + 60) + '"/>' +
@@ -498,7 +501,7 @@ var ITEMS = [
     { name: 'Envío', a: { pr: 'Según publicación', h: 'Mercado Libre' }, b: { pr: '$520.000', h: 'Mike' } },
     { name: 'Pintura', a: { pr: '$200.000 – $400.000', h: 'parrilla y retoques · a cotizar' } },
     { name: 'Arreglos de terminación', a: { pr: '$250.000 – $500.000', h: 'zócalos y detalles · a cotizar' } },
-    { name: 'Electricista', a: { pr: '$200.000 – $350.000', h: 'cable y colocación de 4 apliques · a cotizar' } },
+    { name: 'Electricista', a: { pr: '$200.000 – $350.000', h: 'cable y colocación de 3 luces · a cotizar' } },
     { name: 'Retiro del piso actual', a: { pr: '$350.000 – $600.000', h: 'solo con piedra · con volquete · a cotizar' }, b: { pr: 'No hace falta', h: 'el deck va sobre el piso actual', cero: true } }
   ];
   filas += EXTRAS.map(function(ex){

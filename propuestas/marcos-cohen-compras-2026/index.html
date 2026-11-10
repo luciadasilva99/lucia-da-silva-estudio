@@ -346,27 +346,27 @@
 <!-- OPCIÓN B -->
 
 <!-- VISTA -->
-<section class="slide" id="vista" data-sec="Piedra o deck">
+<section class="slide" id="vista" data-sec="El piso">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>
-  <div class="t rv"><h1>Piedra <span>o deck</span></h1><div class="s"><span class="dsk">Arrastrá la línea para comparar</span><span class="mob">Deslizá la línea para comparar</span></div></div>
+  <div class="t rv"><h1>El piso <span>· cómo queda</span></h1><div class="s">Dos opciones para elegir</div></div>
   <div class="cmp rv" id="cmp" style="--d:.2s; left:140px; right:140px; top:160px; height:396px;">
-    <span class="tg l">Opción A · Piedra</span><span class="tg r">Opción B · Deck</span>
+    
     <img src="img/vista_v2_piedra.webp" alt="Vista con piso de piedra">
-    <div class="over"><canvas id="vistaB" width="1907" height="651"></canvas></div>
-    <div class="bar"><div class="knob">‹ ›</div></div>
+    <div class="over" style="display:none"><canvas id="vistaB" width="1907" height="651"></canvas></div>
+    <div class="bar" style="display:none"><div class="knob">‹ ›</div></div>
   </div>
   <div class="pd rv" style="--d:.35s">
-    <div class="vsc"><h3><i style="background-image:url('img/travertino.jpg')"></i>Opción A · Piedra</h3><ul>
-      <li><b>Más luminosa:</b> amplía la galería.</li>
-      <li><b>Fresca en verano</b> y muy resistente.</li>
+    <div class="vsc"><h3><i style="background-image:url('img/travertino.jpg')"></i>Económica · Porcelanato</h3><ul>
+      <li><b>Símil travertino</b></li>
+      <li><b>Antideslizante</b></li>
       <li><b>Mantenimiento mínimo:</b> solo limpieza.</li>
       <li>Se retira el piso actual.</li>
     </ul></div>
-    <div class="vsc"><h3><i style="background-image:url('img/roble_natural.jpg')"></i>Opción B · Deck símil madera</h3><ul>
-      <li><b>Más cálido</b> al tacto y a la vista.</li>
-      <li><b>Sin mantenimiento:</b> no se pinta.</li>
-      <li>Va sobre el piso actual.</li>
-      <li>Inversión mayor que la piedra.</li>
+    <div class="vsc"><h3><i style="background-image:url('img/piedra_travertino_organico.png')"></i>Sugerida · Piedra</h3><ul>
+      <li><b>Travertino natural</b></li>
+      <li><b>Fresca en verano</b> y muy resistente.</li>
+      <li><b>Mantenimiento mínimo:</b> solo limpieza.</li>
+      <li>Se retira el piso actual.</li>
     </ul></div>
   </div>
   <div class="num"></div>
@@ -448,9 +448,9 @@ var ITEMS = [
     a: { bd: 'A MEDIDA', cls: 'med', h: 'Armario de chapa', st: 'Herrero · material, armado y colocación', photo: 'img/parrilla_herreria.webp', phz: '135% auto', php: '85% 30%', li: ['Chapa negra', 'Igual al frente de la parrilla', 'Opción más económica: en cotización'], pr: '$3.900.000', sm: 'aproximado', note: 'Se confirma con medidas' } },
   { id: 'c-luz', name: 'Luces', qty: 'x 3 faroles', x: 734, y: 132, ico: 'luz', single: true, what: 'Tres faroles de pared de luz cálida: uno hacia el comedor, uno al centro de la galería y uno cerca de la parrilla.',
     a: { bd: 'MERCADO LIBRE', h: 'Farol galponero', st: 'Mercado Libre · por unidad', photo: 'img/ml_galponero.webp', li: ['Chapa negra texturada', 'Lámpara LED cálida aparte', 'Apto exterior bajo techo'], pr: '$94.047', sm: 'los 3 faroles', url: 'https://www.mercadolibre.com.ar/lampara-aplique-pared-galponero-vintage-industrial-ap-1307/up/MLAU3493446188?pdp_filters=item_id:MLA1557720017' } },
-  { id: 'c-piso', name: 'Piso', qty: 'piedra o deck · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: piedra (opción A) o deck (opción B).',
-    a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', photo: 'img/piedra_travertino_organico.png', phh: 130, h: 'Travertino orgánico', st: 'Piezas irregulares · color claro', li: ['<span class="lnk" onclick="goId(\'c-piedras\')">Ver las 3 piedras para elegir</span>', 'Se retira el piso actual'], pr: '$2.510.000', sm: 'solo material · 22 m²', note: 'Colocación a cotizar' },
-    b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck WPC, instalado', st: 'Instalado, sobre estructura', li: ['Sin mantenimiento', 'Va sobre el piso actual'], pr: '$2.000.000 – $3.300.000', sm: 'estimado', note: 'A cotizar' } }
+  { id: 'c-piso', name: 'Piso', qty: 'porcelanato o piedra · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: porcelanato símil travertino o piedra travertino natural.',
+    a: { bd: 'ECONÓMICA', photo: 'img/travertino.jpg', phh: 130, h: 'Porcelanato símil travertino', st: 'Para exterior · antideslizante', li: ['Color claro', 'Se retira el piso actual'], pr: '$650.000 – $1.100.000', sm: 'estimado · solo material · 24 m²', note: 'A confirmar' },
+    b: { bd: 'SUGERIDA', cls: 'prem', photo: 'img/piedra_travertino_organico.png', phh: 130, h: 'Travertino orgánico', st: 'Piedra natural · piezas irregulares', li: ['<span class="lnk" onclick="goId(\'c-piedras\')">Ver las 3 piedras para elegir</span>', 'Se retira el piso actual'], pr: '$2.510.000', sm: 'solo material · 22 m²', note: 'Colocación aparte' } }
 ];
 (function(){
   var W = 1467, H = 771, pasos = document.getElementById('pasos');
@@ -513,13 +513,13 @@ var ITEMS = [
     return '<tr data-go="' + it.id + '"><td><i>' + (n + 1) + '</i>' + it.name + ' <small style="display:inline">' + it.qty + '</small></td>' + celda(it.a) + (it.b ? celda(it.b) : celda(it.a)) + '</tr>';
   }).join('');
   var EXTRAS = [
-    { name: 'Colocación de la piedra', a: { pr: '$1.000.000 – $1.600.000', h: 'solo con piedra · con materiales' }, b: { pr: 'No hace falta', h: 'el deck ya incluye instalación', cero: true } },
+    { name: 'Colocación del piso', a: { pr: '$800.000 – $1.300.000', h: 'con materiales' }, b: { pr: '$1.000.000 – $1.600.000', h: 'con materiales' } },
     { name: 'Envío', a: { pr: 'Según publicación', h: 'Mercado Libre' }, b: { pr: '$520.000', h: 'Mike' } },
     { name: 'Pintura', a: { pr: '$300.000 – $550.000', h: 'parrilla y retoques · a cotizar' } },
     { name: 'Arreglos de terminación', a: { pr: '$350.000 – $700.000', h: 'zócalos y detalles · a cotizar' } },
     { name: 'Electricista', a: { pr: '$300.000 – $500.000', h: 'cable y colocación de 3 luces · a cotizar' } },
     { name: 'Cerco símil madera', a: { pr: 'A cotizar', h: 'sin mantenimiento' } },
-    { name: 'Retiro del piso actual', a: { pr: '$500.000 – $850.000', h: 'solo con piedra · con volquete · a cotizar' }, b: { pr: 'No hace falta', h: 'el deck va sobre el piso actual', cero: true } }
+    { name: 'Retiro del piso actual', a: { pr: '$500.000 – $850.000', h: 'con volquete · a cotizar' } }
   ];
   filas += EXTRAS.map(function(ex){
     ['a', 'b'].forEach(function(k){
@@ -538,7 +538,7 @@ var ITEMS = [
     '<div class="t rv"><h1>Cotización <span>de todo</span></h1><div class="s">Las dos opciones de cada cosa a comprar</div></div>' +
     '<table class="cot-t rv" style="--d:.15s"><thead><tr><th>QUÉ</th><th>OPCIÓN ECONÓMICA</th><th>OPCIÓN SUGERIDA</th></tr></thead><tbody>' + filas +
     '</tbody><tfoot><tr><td>Total cotizado</td>' + total('a') + total('b') + '</tr></tfoot></table>' +
-    '<p class="cot-n">El total económico incluye piso de piedra y el sugerido, deck. Deck, colocación, pintura, arreglos, electricista y retiro: valores estimados. Piedra: precio en dólares con IVA, al dólar Banco Nación del 4/11 ($1.570). Precios de referencia de octubre y noviembre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
+    '<p class="cot-n">El total económico incluye piso de porcelanato y el sugerido, piedra. Porcelanato, colocación, pintura, arreglos, electricista y retiro: valores estimados. Piedra: precio en dólares con IVA, al dólar Banco Nación del 4/11 ($1.570). Precios de referencia de octubre y noviembre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
     '<div class="num"></div>';
   [].forEach.call(cs.querySelectorAll('tr[data-go]'), function(tr){ tr.addEventListener('click', function(){ window.goId && goId(tr.getAttribute('data-go')); }); });
   var car = document.getElementById('compras'); car.parentNode.insertBefore(cs, car.nextSibling);

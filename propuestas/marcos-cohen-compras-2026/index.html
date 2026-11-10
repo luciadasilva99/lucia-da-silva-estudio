@@ -345,33 +345,6 @@
 
 <!-- OPCIÓN B -->
 
-<!-- VISTA -->
-<section class="slide" id="vista" data-sec="El piso">
-  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Marcos Cohen</div>
-  <div class="t rv"><h1>El piso <span>· cómo queda</span></h1><div class="s">Dos opciones para elegir</div></div>
-  <div class="cmp rv" id="cmp" style="--d:.2s; left:140px; right:140px; top:160px; height:396px;">
-    
-    <img src="img/vista_v2_piedra.webp" alt="Vista con piso de piedra">
-    <div class="over" style="display:none"><canvas id="vistaB" width="1907" height="651"></canvas></div>
-    <div class="bar" style="display:none"><div class="knob">‹ ›</div></div>
-  </div>
-  <div class="pd rv" style="--d:.35s">
-    <div class="vsc"><h3><i style="background-image:url('img/porcelanato_beige_60.jpg');background-size:300%"></i>Económica · Porcelanato</h3><ul>
-      <li><b>Beige mate</b>, 60 × 60</li>
-      <li><b>Antideslizante</b></li>
-      <li><b>Mantenimiento mínimo:</b> solo limpieza.</li>
-      <li>Se retira el piso actual.</li>
-    </ul></div>
-    <div class="vsc"><h3><i style="background-image:url('img/piedra_travertino_organico.png')"></i>Sugerida · Piedra</h3><ul>
-      <li><b>Travertino natural</b></li>
-      <li><b>Fresca en verano</b> y muy resistente.</li>
-      <li><b>Mantenimiento mínimo:</b> solo limpieza.</li>
-      <li>Se retira el piso actual.</li>
-    </ul></div>
-  </div>
-  <div class="num"></div>
-</section>
-
 <!-- PIEDRA O DECK -->
 
 <!-- COMPRAS -->
@@ -614,7 +587,7 @@ function deckView(img, cv){
 }
 
 (function(){
-  var v = new Image(); v.onload = function(){ deckView(v, document.getElementById('vistaB')); }; v.src = 'img/vista_v2_piedra.webp';
+  var v = new Image(); v.onload = function(){ var c = document.getElementById('vistaB'); if (c) deckView(v, c); }; v.src = 'img/vista_v2_piedra.webp';
 })();
 
 (function(){
@@ -643,7 +616,7 @@ function deckView(img, cv){
   lb.addEventListener('click', function(){ lb.classList.remove('on'); });
 
   // comparador
-  var cmp = document.getElementById('cmp'), touched = false, sweep = null, drag = false;
+  var cmp = document.getElementById('cmp') || document.createElement('div'), touched = false, sweep = null, drag = false;
   function setX(p){ cmp.style.setProperty('--x', Math.max(0, Math.min(100, p)) + '%'); }
   function fromEv(e){ var r = cmp.getBoundingClientRect(); setX((e.clientX - r.left) / r.width * 100); }
   cmp.addEventListener('pointerdown', function(e){ drag = true; touched = true; clearInterval(sweep); fromEv(e); try { cmp.setPointerCapture(e.pointerId); } catch(x){} });

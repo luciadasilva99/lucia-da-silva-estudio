@@ -450,7 +450,7 @@ var ITEMS = [
     a: { bd: 'MERCADO LIBRE', h: 'Farol galponero', st: 'Mercado Libre · por unidad', photo: 'img/ml_galponero.webp', li: ['Chapa negra texturada', 'Lámpara LED cálida aparte', 'Apto exterior bajo techo'], pr: '$94.047', sm: 'los 3 faroles', url: 'https://www.mercadolibre.com.ar/lampara-aplique-pared-galponero-vintage-industrial-ap-1307/up/MLAU3493446188?pdp_filters=item_id:MLA1557720017' } },
   { id: 'c-piso', name: 'Piso', qty: 'piedra o deck · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: piedra (opción A) o deck (opción B).',
     a: { bd: 'OPCIÓN A · PIEDRA', cls: 'med', photo: 'img/piedra_travertino_organico.png', phh: 130, h: 'Travertino orgánico', st: 'Piezas irregulares · color claro', li: ['<span class="lnk" onclick="goId(\'c-piedras\')">Ver las 3 piedras para elegir</span>', 'Se retira el piso actual'], pr: '$2.510.000', sm: 'solo material · 22 m²', note: 'Colocación a cotizar' },
-    b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck WPC, instalado', st: 'Instalado, sobre estructura', li: ['Sin mantenimiento', 'Va sobre el piso actual'], pr: '$1.700.000 – $2.800.000', sm: 'estimado', note: 'A cotizar' } }
+    b: { bd: 'OPCIÓN B · DECK', cls: 'med', h: 'Deck WPC, instalado', st: 'Instalado, sobre estructura', li: ['Sin mantenimiento', 'Va sobre el piso actual'], pr: '$2.000.000 – $3.300.000', sm: 'estimado', note: 'A cotizar' } }
 ];
 (function(){
   var W = 1467, H = 771, pasos = document.getElementById('pasos');
@@ -513,13 +513,13 @@ var ITEMS = [
     return '<tr data-go="' + it.id + '"><td><i>' + (n + 1) + '</i>' + it.name + ' <small style="display:inline">' + it.qty + '</small></td>' + celda(it.a) + (it.b ? celda(it.b) : celda(it.a)) + '</tr>';
   }).join('');
   var EXTRAS = [
-    { name: 'Colocación de la piedra', a: { pr: 'A cotizar', h: 'solo con piedra' }, b: { pr: 'No hace falta', h: 'el deck ya incluye instalación', cero: true } },
+    { name: 'Colocación de la piedra', a: { pr: '$1.000.000 – $1.600.000', h: 'solo con piedra · con materiales' }, b: { pr: 'No hace falta', h: 'el deck ya incluye instalación', cero: true } },
     { name: 'Envío', a: { pr: 'Según publicación', h: 'Mercado Libre' }, b: { pr: '$520.000', h: 'Mike' } },
-    { name: 'Pintura', a: { pr: '$200.000 – $400.000', h: 'parrilla y retoques · a cotizar' } },
-    { name: 'Arreglos de terminación', a: { pr: '$250.000 – $500.000', h: 'zócalos y detalles · a cotizar' } },
-    { name: 'Electricista', a: { pr: '$200.000 – $350.000', h: 'cable y colocación de 3 luces · a cotizar' } },
+    { name: 'Pintura', a: { pr: '$300.000 – $550.000', h: 'parrilla y retoques · a cotizar' } },
+    { name: 'Arreglos de terminación', a: { pr: '$350.000 – $700.000', h: 'zócalos y detalles · a cotizar' } },
+    { name: 'Electricista', a: { pr: '$300.000 – $500.000', h: 'cable y colocación de 3 luces · a cotizar' } },
     { name: 'Cerco símil madera', a: { pr: 'A cotizar', h: 'sin mantenimiento' } },
-    { name: 'Retiro del piso actual', a: { pr: '$350.000 – $600.000', h: 'solo con piedra · con volquete · a cotizar' }, b: { pr: 'No hace falta', h: 'el deck va sobre el piso actual', cero: true } }
+    { name: 'Retiro del piso actual', a: { pr: '$500.000 – $850.000', h: 'solo con piedra · con volquete · a cotizar' }, b: { pr: 'No hace falta', h: 'el deck va sobre el piso actual', cero: true } }
   ];
   filas += EXTRAS.map(function(ex){
     ['a', 'b'].forEach(function(k){
@@ -538,7 +538,7 @@ var ITEMS = [
     '<div class="t rv"><h1>Cotización <span>de todo</span></h1><div class="s">Las dos opciones de cada cosa a comprar</div></div>' +
     '<table class="cot-t rv" style="--d:.15s"><thead><tr><th>QUÉ</th><th>OPCIÓN ECONÓMICA</th><th>OPCIÓN SUGERIDA</th></tr></thead><tbody>' + filas +
     '</tbody><tfoot><tr><td>Total cotizado</td>' + total('a') + total('b') + '</tr></tfoot></table>' +
-    '<p class="cot-n">El total económico incluye piso de piedra y el sugerido, deck. Deck, pintura, arreglos, electricista y retiro: valores estimados. Piedra: precio en dólares con IVA, al dólar Banco Nación del 4/11 ($1.570). Precios de referencia de octubre y noviembre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
+    '<p class="cot-n">El total económico incluye piso de piedra y el sugerido, deck. Deck, colocación, pintura, arreglos, electricista y retiro: valores estimados. Piedra: precio en dólares con IVA, al dólar Banco Nación del 4/11 ($1.570). Precios de referencia de octubre y noviembre 2026, a confirmar al momento de la compra. Tocá cada fila para ver el detalle.</p>' +
     '<div class="num"></div>';
   [].forEach.call(cs.querySelectorAll('tr[data-go]'), function(tr){ tr.addEventListener('click', function(){ window.goId && goId(tr.getAttribute('data-go')); }); });
   var car = document.getElementById('compras'); car.parentNode.insertBefore(cs, car.nextSibling);

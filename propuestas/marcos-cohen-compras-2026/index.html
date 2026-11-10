@@ -356,8 +356,8 @@
     <div class="bar" style="display:none"><div class="knob">‹ ›</div></div>
   </div>
   <div class="pd rv" style="--d:.35s">
-    <div class="vsc"><h3><i style="background-image:url('img/travertino.jpg')"></i>Económica · Porcelanato</h3><ul>
-      <li><b>Símil travertino</b></li>
+    <div class="vsc"><h3><i style="background-image:url('img/porcelanato_beige.jpg');background-size:300%"></i>Económica · Porcelanato</h3><ul>
+      <li><b>Beige mate</b>, 60 × 120</li>
       <li><b>Antideslizante</b></li>
       <li><b>Mantenimiento mínimo:</b> solo limpieza.</li>
       <li>Se retira el piso actual.</li>
@@ -448,9 +448,9 @@ var ITEMS = [
     a: { bd: 'A MEDIDA', cls: 'med', h: 'Armario de chapa', st: 'Herrero · material, armado y colocación', photo: 'img/parrilla_herreria.webp', phz: '135% auto', php: '85% 30%', li: ['Chapa negra', 'Igual al frente de la parrilla', 'Opción más económica: en cotización'], pr: '$3.900.000', sm: 'aproximado', note: 'Se confirma con medidas' } },
   { id: 'c-luz', name: 'Luces', qty: 'x 3 faroles', x: 734, y: 132, ico: 'luz', single: true, what: 'Tres faroles de pared de luz cálida: uno hacia el comedor, uno al centro de la galería y uno cerca de la parrilla.',
     a: { bd: 'MERCADO LIBRE', h: 'Farol galponero', st: 'Mercado Libre · por unidad', photo: 'img/ml_galponero.webp', li: ['Chapa negra texturada', 'Lámpara LED cálida aparte', 'Apto exterior bajo techo'], pr: '$94.047', sm: 'los 3 faroles', url: 'https://www.mercadolibre.com.ar/lampara-aplique-pared-galponero-vintage-industrial-ap-1307/up/MLAU3493446188?pdp_filters=item_id:MLA1557720017' } },
-  { id: 'c-piso', name: 'Piso', qty: 'porcelanato o piedra · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: porcelanato símil travertino o piedra travertino natural.',
-    a: { bd: 'ECONÓMICA', photo: 'img/travertino.jpg', phh: 130, h: 'Porcelanato símil travertino', st: 'Para exterior · antideslizante', li: ['Color claro', 'Se retira el piso actual'], pr: '$650.000 – $1.100.000', sm: 'estimado · solo material · 24 m²', note: 'A confirmar' },
-    b: { bd: 'SUGERIDA', cls: 'prem', photo: 'img/piedra_travertino_organico.png', phh: 130, h: 'Travertino orgánico', st: 'Piedra natural · piezas irregulares', li: ['<span class="lnk" onclick="goId(\'c-piedras\')">Ver las 3 piedras para elegir</span>', 'Se retira el piso actual'], pr: '$2.510.000', sm: 'solo material · 22 m²', note: 'Colocación aparte' } }
+  { id: 'c-piso', name: 'Piso', qty: 'porcelanato o piedra · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: porcelanato beige o piedra travertino natural.',
+    a: { bd: 'ECONÓMICA', photo: 'img/porcelanato_beige.jpg', phh: 110, phz: '150% auto', h: 'Porcelanato beige mate 60 × 120', st: 'Easy · 17 cajas (24 m²)', li: ['Antideslizante · textura rústica', 'Interior y exterior'], pr: '$1.028.038', sm: 'las 17 cajas · hoy en oferta: $616.823', ver: '10/11', url: 'https://www.easy.com.ar/porc-mat-60x120x9-8-mm-1-44-baldara-1448060/p' },
+    b: { bd: 'SUGERIDA', cls: 'prem', photo: 'img/piedra_travertino_organico.png', phh: 110, h: 'Travertino orgánico', st: 'Piedra natural · piezas irregulares', li: ['<span class="lnk" onclick="goId(\'c-piedras\')">Ver las 3 piedras para elegir</span>'], pr: '$2.510.000', sm: 'solo material · 22 m²', note: 'Colocación aparte' } }
 ];
 (function(){
   var W = 1467, H = 771, pasos = document.getElementById('pasos');
@@ -475,7 +475,7 @@ var ITEMS = [
       '<div class="lab" style="left:' + (lx / W * 100) + '%; top:' + (ly / H * 100) + '%">' + it.name.toUpperCase() + '</div></div>' +
       '<p class="what rv" style="--d:.3s">' + it.what + '</p>' +
       '<div class="opts' + (it.single ? ' one' : '') + '">' + card(it.a).replace('class="opt', 'class="rv opt') + (it.single ? '' : card(it.b).replace('class="opt', 'class="rv opt')) + '</div>' +
-      (it.a && it.a.url ? '<p class="refnote">Link listo para comprar, con stock verificado el 29/10. Si al comprar falta stock o se busca una variante, elegimos una opción equivalente en estilo y precio.</p>' : '') +
+      (it.a && it.a.url ? '<p class="refnote">Link listo para comprar, con stock verificado el ' + (it.a.ver || '29/10') + '. Si al comprar falta stock o se busca una variante, elegimos una opción equivalente en estilo y precio.</p>' : '') +
       '<div class="num"></div>';
     stageInsert(s);
   });

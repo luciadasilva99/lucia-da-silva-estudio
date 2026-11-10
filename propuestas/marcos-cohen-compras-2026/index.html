@@ -422,7 +422,7 @@ var ITEMS = [
   { id: 'c-luz', name: 'Luces', qty: 'x 3 faroles', x: 734, y: 132, ico: 'luz', single: true, what: 'Tres faroles de pared de luz cálida: uno hacia el comedor, uno al centro de la galería y uno cerca de la parrilla.',
     a: { bd: 'MERCADO LIBRE', h: 'Farol galponero', st: 'Mercado Libre · por unidad', photo: 'img/ml_galponero.webp', li: ['Chapa negra texturada', 'Lámpara LED cálida aparte', 'Apto exterior bajo techo'], pr: '$94.047', sm: 'los 3 faroles', url: 'https://www.mercadolibre.com.ar/lampara-aplique-pared-galponero-vintage-industrial-ap-1307/up/MLAU3493446188?pdp_filters=item_id:MLA1557720017' } },
   { id: 'c-piso', name: 'Piso', qty: 'porcelanato o piedra · 21,5 m²', x: 760, y: 530, ico: 'piso', what: 'Piso nuevo para toda la galería: porcelanato beige o piedra travertino natural.',
-    a: { bd: 'ECONÓMICA', photo: 'img/porcelanato_beige_60.jpg', phh: 110, phz: '180% auto', h: 'Porcelanato beige mate 60 × 60', st: 'Easy · 17 cajas (24 m²)', li: ['Antideslizante · textura rústica', 'Apto heladas: a confirmar'], pr: '$979.078', sm: 'las 17 cajas · hoy en oferta: $685.354', ver: '10/11', url: 'https://www.easy.com.ar/porc-mat-60x60x9-2-mm-1-44-baldara-1448059/p' },
+    a: { bd: 'ECONÓMICA', photo: 'img/porcelanato_travertino_romano.png', phh: 110, phz: '160% auto', h: 'Porcelanato Travertino Romano', st: 'Cerro Negro · 45 × 181 · 10 cajas (24,5 m²)', li: ['Para exterior · resiste heladas', 'Antideslizante · beige'], pr: '$800.152', sm: 'las 10 cajas', ref: 'Modelo de Cerro Negro para exterior, resistente a heladas. Link con stock verificado el 10/11; también se consigue en distribuidores Cerro Negro de Neuquén.', url: 'https://ranco.com.ar/marmol/6773-45x181-travertino-romano-taad-rect-ccn.html' },
     b: { bd: 'SUGERIDA', cls: 'prem', photo: 'img/piedra_travertino_organico.png', phh: 110, h: 'Travertino orgánico', st: 'Piedra natural · piezas irregulares', li: ['<span class="lnk" onclick="goId(\'c-piedras\')">Ver las 3 piedras para elegir</span>'], pr: '$2.510.000', sm: 'solo material · 22 m²', note: 'Colocación aparte' } }
 ];
 (function(){
@@ -448,7 +448,7 @@ var ITEMS = [
       '<div class="lab" style="left:' + (lx / W * 100) + '%; top:' + (ly / H * 100) + '%">' + it.name.toUpperCase() + '</div></div>' +
       '<p class="what rv" style="--d:.3s">' + it.what + '</p>' +
       '<div class="opts' + (it.single ? ' one' : '') + '">' + card(it.a).replace('class="opt', 'class="rv opt') + (it.single ? '' : card(it.b).replace('class="opt', 'class="rv opt')) + '</div>' +
-      (it.a && it.a.url ? '<p class="refnote">Link listo para comprar, con stock verificado el ' + (it.a.ver || '29/10') + '. Si al comprar falta stock o se busca una variante, elegimos una opción equivalente en estilo y precio.</p>' : '') +
+      (it.a && it.a.url ? '<p class="refnote">' + (it.a.ref || 'Link listo para comprar, con stock verificado el 29/10. Si al comprar falta stock o se busca una variante, elegimos una opción equivalente en estilo y precio.') + '</p>' : '') +
       '<div class="num"></div>';
     stageInsert(s);
   });

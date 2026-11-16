@@ -9,11 +9,11 @@ module.exports = {
   ],
   planta: { img: "planta_general.png", ar: 1.2, ingreso: { x: 38.2, y: 16.6 },
     zonas: [
-      { t: "Dormitorio", go: "r0", x: 57.6, y: 65.4, dir: 0 },
-      { t: "Escritorio y rack TV", go: "r1", x: 53.1, y: 85.7, dir: 180 },
-      { t: "Living", go: "r2", x: 20.3, y: 39.6, dir: 90 },
-      { t: "Coffee station", go: "r3", x: 29.4, y: 7.1, dir: 180 },
-      { t: "Vanity", go: "r4", x: 67.2, y: 50.5, dir: 270 }
+      { t: "Dormitorio", go: "r0", x: 80.8, y: 66.1 },
+      { t: "Escritorio y rack TV", go: "r1", x: 38.6, y: 72.2 },
+      { t: "Living", go: "r2", x: 21.5, y: 57.9 },
+      { t: "Coffee station", go: "r3", x: 16.6, y: 6.8 },
+      { t: "Vanity", go: "r4", x: 67.2, y: 32.8 }
     ] },
   layout: [
     { t: 'Dormitorio', img: 'layout_dormitorio.png', d: 'Cama con respaldo pared a pared, mesas de luz flotantes, escritorio y mueble TV integrados.' },
@@ -32,9 +32,10 @@ module.exports = {
     { n: "Apliques<br>dorados", img: "t_bronce.jpg" }
   ],
   renders: [
-    { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.263, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama."],
+    { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.263, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama.", "Cuadro de paisaje neuquino en blanco y negro."],
       pins: [
-        { x: 65.1, y: 30, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
+        { x: 61, y: 24, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
+        { x: 46.6, y: 36, img: "o_cuadro.jpg", t: "Cuadro de paisaje neuquino en blanco y negro, marco negro fino" },
         { x: 32.8, y: 57.5, img: "o_aplique.jpg", t: "Aplique dorado de luz cálida" },
         { x: 68, y: 56, img: "o_respaldo.jpg", t: "Respaldo de madera con mesas flotantes" },
         { x: 59.8, y: 63.9, img: "o_toma.jpg", t: "Tomacorriente integrado al respaldo" },

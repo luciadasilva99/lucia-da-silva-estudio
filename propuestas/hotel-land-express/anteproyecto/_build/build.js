@@ -28,31 +28,40 @@ const by = `<div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva<
 const cam = `<svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><path d="M23 6 L39 15 L39 33 L23 42 L7 33 L7 15 Z"/><path d="M7 15 L23 24 L39 15 M23 24 L23 42"/></svg>Vista en proceso`;
 
 // Lámina de modelado 3D por zona. Si la zona tiene "pins", se agrega una segunda lámina
-// con la misma vista, flechas a cada objeto y su foto al costado.
+// con la MISMA vista en el mismo lugar (queda fija al pasar), y solo cambia el lateral:
+// desaparece el texto, aparecen las fotos de los detalles y se dibujan flechas a lápiz por fuera de la imagen.
+function sk(k) {
+  const pts = [], n = 48, rx = 17 + (k % 3), ry = 15 + ((k + 1) % 3);
+  for (let i = 0; i <= n + 5; i++) {
+    const t = (i / n) * Math.PI * 2 + k * 0.9, w = 1 + Math.sin(i * 1.7 + k) * 0.07;
+    pts.push([(Math.cos(t) * rx * w).toFixed(1), (Math.sin(t) * ry * w + (i > n ? (i - n) * 0.7 : 0)).toFixed(1)]);
+  }
+  return `<svg viewBox="-24 -24 48 48"><path d="M${pts.map(p => p.join(" ")).join(" L")}"/></svg>`;
+}
 function vista(id, r) {
   const pic = (inner) => `<div class="pic" style="--ar:${r.ar || 1.6}"><img src="img/${r.img}" alt="Modelado 3D ${r.zona}">${inner || ''}</div>`;
   const fr = r.img ? pic() : cam;
+  const pair = !!(r.img && r.pins && r.pins.length);
   let out = `
 <!-- MODELADO 3D ${r.zona.toUpperCase()} -->
-<section class="slide" id="${id}">
+<section class="slide${pair ? ' pairA' : ''}" id="${id}">
   ${by}
   <div class="t rv"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Habitación ${room}</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame rv${r.img ? ' has' : ''}" style="--d:.1s">${fr}</div>
+    <div class="frame${r.img ? ' has' : ' rv'}" style="--d:.1s">${fr}</div>
     <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>${r.zona}</h3><ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul></div>
   </div></div>
   <div class="num"></div>
 </section>`;
-  if (r.img && r.pins && r.pins.length) {
+  if (pair) {
     out += `
 <!-- MODELADO 3D ${r.zona.toUpperCase()} · DETALLES -->
 <section class="slide pinsl" id="${id}d">
   ${by}
-  <div class="t rv"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Detalles · Habitación ${room}</div></div>
+  <div class="t"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Detalles · Habitación ${room}</div></div>
   <div class="pad"><div class="rnd pins">
-    <div class="frame has rv" style="--d:.1s">${pic(r.pins.map((p, k) => `<i class="pin" style="left:${p.x}%;top:${p.y}%;--d:${(.5 + k * .12).toFixed(2)}s"></i>`).join(''))}</div>
-    <div class="side"><div class="z">Zona</div><h3>Detalles</h3><div class="objs">${r.pins.map((p, k) => `<figure class="rv" style="--d:${(.6 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption>${p.t}</figcaption></figure>`).join('')}</div></div>
-    <svg class="lines"></svg>
+    <div class="frame has">${pic(r.pins.map((p, k) => `<i class="pin" data-k="${k}" style="left:${p.x}%;top:${p.y}%;--d:${(.5 + k * .12).toFixed(2)}s">${sk(k)}<b>${k + 1}</b></i>`).join(''))}</div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs">${r.pins.map((p, k) => `<figure class="rv" data-k="${k}" style="--d:${(.3 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption><b>${k + 1}</b>${p.t}</figcaption></figure>`).join('')}</div></div>
   </div></div>
   <div class="num"></div>
 </section>`;
@@ -60,46 +69,49 @@ function vista(id, r) {
   return out;
 }
 
-// Dibuja las flechas de cada punto a su foto cuando la lámina de detalles aparece.
+// 1) Flechas a lápiz: salen de cada foto, bajan por el costado y rodean la imagen por fuera
+//    (arriba, abajo o por la izquierda), y entran al objeto con un tramo corto. Curvas y temblorosas, finitas.
+// 2) Imagen fija: entre la vista y sus detalles la imagen no se funde; solo cambia el lateral.
 const pinsScript = `<script>
 (function () {
-  function draw(sec) {
-    var box = sec.querySelector('.rnd.pins'); if (!box) return;
-    var svg = box.querySelector('.lines'), B = box.getBoundingClientRect();
-    var k = B.width / box.offsetWidth || 1;
-    var pins = box.querySelectorAll('.pin'), figs = box.querySelectorAll('.objs figure');
-    var h = '';
-    pins.forEach(function (p, i) {
-      var f = figs[i]; if (!f) return;
-      var a = p.getBoundingClientRect(), c = f.getBoundingClientRect();
-      var x1 = (a.left + a.width / 2 - B.left) / k, y1 = (a.top + a.height / 2 - B.top) / k;
-      var x2 = (c.left - B.left) / k - 8, y2 = (c.top + c.height / 2 - B.top) / k;
-      h += '<path d="M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2 + '" style="--d:' + (0.5 + i * 0.12) + 's"/>' +
-           '<path class="hd" d="M' + (x2 - 7) + ' ' + (y2 - 4) + ' L' + x2 + ' ' + y2 + ' L' + (x2 - 7) + ' ' + (y2 + 4) + '" style="--d:' + (0.9 + i * 0.12) + 's"/>';
+  // al pasar el mouse por una foto se marca su objeto en la imagen, y al revés
+  document.querySelectorAll(".slide.pinsl").forEach(function (sec) {
+    function hl(k, on) { sec.querySelectorAll("[data-k='" + k + "']").forEach(function (el) { el.classList.toggle("hi", on); }); }
+    sec.querySelectorAll("[data-k]").forEach(function (el) {
+      el.addEventListener("mouseenter", function () { hl(el.dataset.k, true); });
+      el.addEventListener("mouseleave", function () { hl(el.dataset.k, false); });
     });
-    svg.setAttribute('viewBox', '0 0 ' + box.offsetWidth + ' ' + box.offsetHeight);
-    svg.innerHTML = h;
+  });
+  // Imagen fija entre la vista (A) y sus detalles (B)
+  if (typeof window.go === "function" && !document.documentElement.classList.contains("mobile")) {
+    var base = window.go, slides = [].slice.call(document.querySelectorAll(".slide"));
+    window.go = function (i) {
+      var from = slides.indexOf(document.querySelector(".slide.on"));
+      var A = slides[from], Bs = slides[i];
+      if (A && Bs && A.classList.contains("pairA") && Bs.id === A.id + "d") {
+        A.classList.add("keep"); base(i); setTimeout(function () { A.classList.remove("keep"); }, 700); return;
+      }
+      if (A && Bs && Bs.classList.contains("pairA") && A.id === Bs.id + "d") {
+        Bs.classList.add("snap"); base(i); setTimeout(function () { Bs.classList.remove("snap"); }, 700); return;
+      }
+      base(i);
+    };
   }
-  function all() { document.querySelectorAll('.slide.pinsl').forEach(draw); }
-  window.addEventListener('resize', function () { setTimeout(all, 60); });
-  (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { setTimeout(all, 200); });
-  document.querySelectorAll('.slide.pinsl img').forEach(function (i) { i.addEventListener('load', all); });
 })();
 </script>`;
 
 const D = require(path.join(__dirname, `data${room}.js`));
 
-// Planta general dibujada a lápiz, con un número por zona y un cono que indica hacia dónde mira cada vista.
-// dir: 0 = derecha, 90 = abajo, 180 = izquierda, 270 = arriba. Click en la zona lleva a su lámina de modelado 3D.
+// Planta general dibujada a lápiz, con un punto de color sobre cada zona. Click lleva a su lámina de modelado 3D.
+const zcol = ['#a0583a', '#7f8f6e', '#c9a35c', '#6f8494', '#b97d7d', '#8a6d5a'];
 function plantaGeneral(P) {
-  const cone = `<svg viewBox="-40 -40 80 80"><path d="M0 0 L36 -14 A38 38 0 0 1 36 14 Z"/></svg>`;
   return `<div class="rnd plg">
     <div class="frame has rv" style="--d:.1s"><div class="pic" style="--ar:${P.ar}"><img src="img/${P.img}" alt="Planta general">
-      ${P.zonas.map((z, k) => `<a class="mk" data-go="${z.go}" style="left:${z.x}%;top:${z.y}%;--r:${z.dir}deg;--d:${(.5 + k * .12).toFixed(2)}s"><i class="cone">${cone}</i><b>${k + 1}</b></a>`).join('')}
+      ${P.zonas.map((z, k) => `<a class="mk" data-go="${z.go}" title="${z.t}" style="left:${z.x}%;top:${z.y}%;--c:${zcol[k % zcol.length]};--d:${(.5 + k * .12).toFixed(2)}s"><b></b></a>`).join('')}
       ${P.ingreso ? `<span class="ing" style="left:${P.ingreso.x}%;top:${P.ingreso.y}%">Ingreso</span>` : ''}
     </div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zonas</div><h3>Vistas del modelado</h3>
-      <ol class="zl">${P.zonas.map((z, k) => `<li><a data-go="${z.go}"><b>${k + 1}</b>${z.t}</a></li>`).join('')}</ol>
+    <div class="side rv" style="--d:.3s"><div class="z">Zonas</div><h3>Planta general</h3>
+      <ol class="zl">${P.zonas.map((z, k) => `<li><a data-go="${z.go}" style="--c:${zcol[k % zcol.length]}"><b></b>${z.t}</a></li>`).join('')}</ol>
     </div>
   </div>`;
 }
@@ -170,7 +182,7 @@ ${objetivos}
 <!-- LAYOUT -->
 <section class="slide" id="layout" data-sec="Layout">
   ${by}
-  <div class="t rv"><h1>Layout <span>· Habitación ${room}</span></h1><div class="s">${D.planta ? 'Planta general · desde dónde mira cada vista' : 'Distribución en planta'}</div></div>
+  <div class="t rv"><h1>Layout <span>· Habitación ${room}</span></h1><div class="s">${D.planta ? 'Planta general · zonas a intervenir' : 'Distribución en planta'}</div></div>
   <div class="pad">${D.planta ? plantaGeneral(D.planta) : `<div class="lay">
 ${layout}
   </div>`}</div>

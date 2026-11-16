@@ -284,7 +284,7 @@ ${D.renders.map((r, k) => vista('r' + k, r)).join('\n')}
 
 <!-- GRACIAS -->
 <section class="slide" id="gracias">
-  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/gracias.jpg');"></div>
+  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/m_dakar.jpg');"></div>
   <div class="thx rv" style="--d:.15s">
     <div style="font-weight:700; letter-spacing:.2em; font-size:24px;">¡MUCHAS</div>
     <div style="font-weight:300; letter-spacing:.2em; font-size:24px;">GRACIAS!</div>

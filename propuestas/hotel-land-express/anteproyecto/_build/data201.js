@@ -67,12 +67,12 @@ module.exports = {
         { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Cafetera · única pieza por delante de las térmicas, que quedan accesibles" },
         { x: 48.5, y: 76.7, img: "o_frente.jpg", t: "Frigobar con frente de madera" }
       ] },
-    { zona: "Vanity", img: "v_vanity.jpg", ar: 1.773, alt: { img: "v_vanity_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Mesada flotante de madera con cajón.", "Espejo redondo.", "Silla de madera.", "Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opción en Safari (Faplac).", "Spots de luz cálida."],
+    { zona: "Vanity", img: "v_vanity.jpg", ar: 1.773, alt: { img: "v_vanity_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Mesada flotante de madera con hueco abierto, de muy poca profundidad (sin cajón).", "Espejo redondo.", "Silla de madera.", "Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opción en Safari (Faplac).", "Spots de luz cálida."],
       pins: [
         { x: 11.3, y: 16.8, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
         { x: 54.1, y: 29.5, img: "o_espejo.jpg", t: "Espejo redondo" },
         { x: 82.5, y: 48.6, img: "o_armario.jpg", t: "Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)" },
-        { x: 58.7, y: 71.6, img: "o_mesada.jpg", t: "Mesada flotante de madera con cajón" },
+        { x: 58.7, y: 71.6, img: "o_mesada.jpg", t: "Mesada flotante de madera con hueco abierto, de muy poca profundidad" },
         { x: 47.6, y: 79.1, img: "o_silla.jpg", t: "Silla de madera" }
       ] }
   ]

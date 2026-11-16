@@ -32,9 +32,28 @@ module.exports = {
         { x: 59.8, y: 63.9, img: "o_toma.jpg", t: "Tomacorriente integrado al respaldo" },
         { x: 46.5, y: 80.6, img: "o_banco.jpg", t: "Banco de madera al pie de la cama" }
       ] },
-    { zona: 'Escritorio y rack TV', items: ['Escritorio, mueble y panel TV en Roble Dakar.', 'Mueble bajo abierto, con un estante que forma dos huecos.', 'Silla tapizada con cuero de cordero.', 'Colgante de chapa con lámpara cálida E27.'] },
+    { zona: "Escritorio y rack TV", img: "v_escritorio.jpg", ar: 1.658, items: ["Escritorio de madera con pie cilíndrico.", "Rack TV bajo, con estante abierto.", "Silla de madera.", "Colgantes dorados de luz cálida sobre el escritorio.", "Tomacorrientes a la altura del escritorio."],
+      pins: [
+        { x: 26, y: 30.4, img: "o_colgante.jpg", t: "Colgantes dorados de luz cálida" },
+        { x: 24.3, y: 62, img: "o_tomas.jpg", t: "Tomacorrientes sobre el escritorio" },
+        { x: 24.7, y: 79.2, img: "o_escritorio.jpg", t: "Escritorio de madera con pie cilíndrico" },
+        { x: 36.7, y: 84.9, img: "o_silla.jpg", t: "Silla de madera" },
+        { x: 70, y: 84.9, img: "o_rack.jpg", t: "Rack TV bajo de madera" }
+      ] },
     { zona: 'Living', items: ['Sofá con almohadones nuevos.', 'Dos mesas ratonas redondas: mármol verde y tono tierra.', 'Lámpara de pie de luz cálida.'] },
-    { zona: 'Coffee station', items: ['Nicho de ingreso con mueble en Roble Dakar.', 'Espacio para frigobar, microondas y cafetera.', 'Luz cálida sobre la mesada.'] },
-    { zona: 'Vanity', items: ['Mesada y espejo con luz cálida.', 'Terminaciones en línea con el resto de la suite.'] }
+    { zona: "Coffee station", img: "v_coffee.jpg", ar: 0.311, items: ["Nicho con estantes en madera oscura.", "Espacio para cafetera y microondas.", "Frigobar bajo mesada con frente de madera.", "Spot de luz cálida en el nicho."],
+      pins: [
+        { x: 26.4, y: 34.2, img: "o_estantes.jpg", t: "Nicho con estantes de madera" },
+        { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Cafetera" },
+        { x: 48.5, y: 76.7, img: "o_frente.jpg", t: "Frigobar con frente de madera" }
+      ] },
+    { zona: "Vanity", img: "v_vanity.jpg", ar: 1.784, items: ["Mesada flotante de madera con cajón.", "Espejo redondo.", "Silla de madera.", "Placard en melamina Sahara.", "Spots de luz cálida."],
+      pins: [
+        { x: 16.5, y: 18, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
+        { x: 56.6, y: 30, img: "o_espejo.jpg", t: "Espejo redondo" },
+        { x: 83.2, y: 48, img: "m_sahara.jpg", t: "Placard en melamina Sahara" },
+        { x: 60.9, y: 69.7, img: "o_mesada.jpg", t: "Mesada flotante de madera con cajón" },
+        { x: 50.5, y: 76.7, img: "o_silla.jpg", t: "Silla de madera" }
+      ] }
   ]
 };

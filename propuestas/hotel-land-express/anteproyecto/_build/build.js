@@ -30,14 +30,15 @@ const cam = `<svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width=
 // Lámina de modelado 3D por zona. Si la zona tiene "pins", se agrega una segunda lámina
 // con la misma vista, flechas a cada objeto y su foto al costado.
 function vista(id, r) {
-  const fr = r.img ? `<img src="img/${r.img}" alt="Modelado 3D ${r.zona}">` : cam;
+  const pic = (inner) => `<div class="pic" style="--ar:${r.ar || 1.6}"><img src="img/${r.img}" alt="Modelado 3D ${r.zona}">${inner || ''}</div>`;
+  const fr = r.img ? pic() : cam;
   let out = `
 <!-- MODELADO 3D ${r.zona.toUpperCase()} -->
 <section class="slide" id="${id}">
   ${by}
   <div class="t rv"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Habitación ${room}</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame rv" style="--d:.1s">${fr}</div>
+    <div class="frame rv${r.img ? ' has' : ''}" style="--d:.1s">${fr}</div>
     <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>${r.zona}</h3><ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul></div>
   </div></div>
   <div class="num"></div>
@@ -49,7 +50,7 @@ function vista(id, r) {
   ${by}
   <div class="t rv"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Detalles · Habitación ${room}</div></div>
   <div class="pad"><div class="rnd pins">
-    <div class="frame rv" style="--d:.1s"><img src="img/${r.img}" alt="Modelado 3D ${r.zona}">${r.pins.map((p, k) => `<i class="pin" style="left:${p.x}%;top:${p.y}%;--d:${(.5 + k * .12).toFixed(2)}s"></i>`).join('')}</div>
+    <div class="frame has rv" style="--d:.1s">${pic(r.pins.map((p, k) => `<i class="pin" style="left:${p.x}%;top:${p.y}%;--d:${(.5 + k * .12).toFixed(2)}s"></i>`).join(''))}</div>
     <div class="side"><div class="z">Zona</div><h3>Detalles</h3><div class="objs">${r.pins.map((p, k) => `<figure class="rv" style="--d:${(.6 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption>${p.t}</figcaption></figure>`).join('')}</div></div>
     <svg class="lines"></svg>
   </div></div>

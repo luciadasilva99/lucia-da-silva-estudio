@@ -466,6 +466,12 @@
   .rnd.pins .objs figure:hover .ph { transform: scale(1.06); }
   .rnd.pins .objs figcaption { font-size: 12.5px; color: #333; line-height: 1.35; }
   html.mobile .rnd.pins .lines { display: none; }
+
+  /* Vista del modelado: la imagen mantiene su proporción y los puntos quedan fijos sobre ella */
+  .rnd .frame.has { background: transparent; border: 0; }
+  .rnd .frame .pic { position: relative; width: 100%; max-width: calc(584px * var(--ar)); aspect-ratio: var(--ar); }
+  .rnd .frame .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  html.mobile .rnd .frame.has { height: auto; }
 </style>
 </head>
 <body>
@@ -576,8 +582,19 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><path d="M23 6 L39 15 L39 33 L23 42 L7 33 L7 15 Z"/><path d="M7 15 L23 24 L39 15 M23 24 L23 42"/></svg>Vista en proceso</div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Dormitorio</h3><ul><li>Respaldo de pared a pared en Roble Dakar.</li><li>Tira LED cálida en el borde superior.</li><li>Mesas de luz flotantes con tapa de mármol verde oscuro.</li><li>Apliques redondos dorados, de luz cálida.</li></ul></div>
+    <div class="frame rv has" style="--d:.1s"><div class="pic" style="--ar:2.263"><img src="img/v_dormitorio.jpg" alt="Modelado 3D Dormitorio"></div></div>
+    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Dormitorio</h3><ul><li>Respaldo de madera de pared a pared, con mesas de luz flotantes.</li><li>Empapelado símil lino blanco crudo en la parte superior.</li><li>Apliques redondos dorados, de luz cálida.</li><li>Tomacorrientes y llaves integrados al respaldo.</li><li>Banco de madera al pie de la cama.</li></ul></div>
+  </div></div>
+  <div class="num"></div>
+</section>
+<!-- MODELADO 3D DORMITORIO · DETALLES -->
+<section class="slide pinsl" id="r0d">
+  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
+  <div class="t rv"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Detalles · Habitación 201</div></div>
+  <div class="pad"><div class="rnd pins">
+    <div class="frame has rv" style="--d:.1s"><div class="pic" style="--ar:2.263"><img src="img/v_dormitorio.jpg" alt="Modelado 3D Dormitorio"><i class="pin" style="left:65.1%;top:30%;--d:0.50s"></i><i class="pin" style="left:32.8%;top:57.5%;--d:0.62s"></i><i class="pin" style="left:68%;top:56%;--d:0.74s"></i><i class="pin" style="left:59.8%;top:63.9%;--d:0.86s"></i><i class="pin" style="left:46.5%;top:80.6%;--d:0.98s"></i></div></div>
+    <div class="side"><div class="z">Zona</div><h3>Detalles</h3><div class="objs"><figure class="rv" style="--d:0.60s"><div class="ph" style="background-image:url('img/m_simil_lino.jpg')"></div><figcaption>Empapelado símil lino blanco crudo</figcaption></figure><figure class="rv" style="--d:0.72s"><div class="ph" style="background-image:url('img/o_aplique.jpg')"></div><figcaption>Aplique dorado de luz cálida</figcaption></figure><figure class="rv" style="--d:0.84s"><div class="ph" style="background-image:url('img/o_respaldo.jpg')"></div><figcaption>Respaldo de madera con mesas flotantes</figcaption></figure><figure class="rv" style="--d:0.96s"><div class="ph" style="background-image:url('img/o_toma.jpg')"></div><figcaption>Tomacorriente integrado al respaldo</figcaption></figure><figure class="rv" style="--d:1.08s"><div class="ph" style="background-image:url('img/o_banco.jpg')"></div><figcaption>Banco de madera al pie de la cama</figcaption></figure></div></div>
+    <svg class="lines"></svg>
   </div></div>
   <div class="num"></div>
 </section>

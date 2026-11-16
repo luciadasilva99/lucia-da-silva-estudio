@@ -44,12 +44,12 @@ module.exports = {
         { x: 49.5, y: 80.6, img: "o_banco.jpg", t: "Banco de madera al pie de la cama" },
         { x: 30, y: 43.5, img: "o_led.jpg", t: "Tira LED de luz cálida por detrás del respaldo, en todo su ancho" }
       ] },
-    { zona: "Escritorio y rack TV", img: "v_escritorio.jpg", ar: 1.658, items: ["Escritorio de madera con pie cilíndrico.", "Rack TV bajo en melamina Roble Dakar (Faplac), con estante abierto. La placa donde apoya la TV es giratoria y se puede orientar entre el dormitorio y el living.", "Silla de madera.", "Colgantes Rain (Indigo Lumieres) en color dorado, de luz cálida, sobre el escritorio.", "Tomacorrientes e interruptor sobre el escritorio."],
+    { zona: "Escritorio y rack TV", img: "v_escritorio.jpg", ar: 1.658, items: ["Escritorio de madera con pie cilíndrico.", "Rack TV bajo en melamina Roble Dakar (Faplac), con estante abierto. La placa donde apoya la TV es giratoria y se puede orientar entre el dormitorio y el living.", "Silla Oslo (Antequera Muebles), con lustre en tono madera y tapizado a elección.", "Colgantes Rain (Indigo Lumieres) en color dorado, de luz cálida, sobre el escritorio.", "Tomacorrientes e interruptor sobre el escritorio."],
       pins: [
         { x: 26, y: 30.4, img: "o_colgante.jpg", t: "Colgantes Rain · Indigo Lumieres, en color dorado", url: "https://indigolumieres.com/productos/rain/" },
         { x: 24.3, y: 62, img: "o_tomas.jpg", t: "Tomacorrientes e interruptor sobre el escritorio" },
         { x: 24.7, y: 79.2, img: "o_escritorio.jpg", t: "Escritorio de madera con pie cilíndrico" },
-        { x: 36.7, y: 84.9, img: "o_silla.jpg", t: "Silla de madera" },
+        { x: 36.7, y: 84.9, img: "o_silla_oslo.jpg", t: "Silla Oslo · Antequera Muebles, con lustre en tono madera y tapizado a elección", url: "https://antequeramuebles.com.ar/productos/silla-oslo/" },
         { x: 70, y: 71, img: "o_rack.jpg", t: "Rack TV en melamina Roble Dakar (Faplac) · la placa donde apoya la TV gira entre dormitorio y living" }
       ] },
     { zona: "Living", img: "v_living.jpg", ar: 1.544, items: ["Sofá curvo tapizado en tono claro.", "Dos mesas ratonas redondas: madera y piedra verde oscura.", "Lámpara de pie de arco, de luz cálida.", "Cortinas de piso a techo: blackout más gasa de hilo.", "Rack TV en melamina Roble Dakar (Faplac)."],

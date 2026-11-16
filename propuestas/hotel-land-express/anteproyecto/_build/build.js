@@ -13,6 +13,7 @@ head = head
   .replace(/<title>.*<\/title>/, `<title>${t}</title>`)
   .replace(/(name="description" content=")[^"]*/, `$1${t} · Lucía Da Silva Estudio`)
   .replace(/(property="og:title" content=")[^"]*/, `$1${t}`)
+  .replace(/(property="og:image" content=")[^"]*/, `$1https://luciadasilvaestudio.com.ar/propuestas/hotel-land-express/anteproyecto/${room}/img/m_dakar.jpg`)
   .replace(/(property="og:url" content=")[^"]*/, `$1https://luciadasilvaestudio.com.ar/propuestas/hotel-land-express/anteproyecto/${room}/`)
   .replace(/clarity\("set", "propuesta", "hotel-land-express"\)/, `clarity("set", "propuesta", "hotel-land-express-anteproyecto-${room}")`);
 

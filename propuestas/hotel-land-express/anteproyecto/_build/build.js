@@ -58,7 +58,7 @@ function vista(id, r) {
   <div class="t"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Detalles · Habitación ${room}</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has">${pic(r.pins.map((p, k) => `<i class="pin" data-k="${k}" style="left:${p.x}%;top:${p.y}%;--d:${(.5 + k * .12).toFixed(2)}s">${sk(k)}<b>${k + 1}</b></i>`).join(''))}</div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs">${r.pins.map((p, k) => `<figure class="rv" data-k="${k}" style="--d:${(.3 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption><b>${k + 1}</b>${p.t}</figcaption>${p.url ? `<a class="lnk" href="${p.url}" target="_blank" rel="noopener">Ver producto ↗</a>` : ""}</figure>`).join('')}</div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs${r.pins.length > 8 ? " many" : ""}">${r.pins.map((p, k) => `<figure class="rv" data-k="${k}" style="--d:${(.3 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption><b>${k + 1}</b>${p.t}</figcaption>${p.url ? `<a class="lnk" href="${p.url}" target="_blank" rel="noopener">Ver producto ↗</a>` : ""}</figure>`).join('')}</div></div>
   </div></div>
   <div class="num"></div>
 </section>`;

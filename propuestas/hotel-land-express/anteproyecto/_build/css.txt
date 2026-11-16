@@ -148,3 +148,6 @@
   .rnd.pins .objs figure:hover .lnk, .rnd.pins .objs figure.hi .lnk { opacity: 1; transform: none; }
   html.mobile .rnd.pins .objs .lnk { opacity: 1; position: static; display: inline-block; margin: 4px 0 0 88px; }
   .lbx .cap a { color: #fff; margin-left: 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.6); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+  .rnd.pins .objs.many { gap: 6px; }
+  .rnd.pins .objs.many .ph { height: 50px; }
+  .rnd.pins .objs.many figcaption { font-size: 12px; }

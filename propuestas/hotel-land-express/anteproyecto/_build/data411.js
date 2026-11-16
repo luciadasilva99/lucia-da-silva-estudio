@@ -2,16 +2,20 @@ module.exports = {
   tipo: 'SUITE PRESIDENCIAL',
   layoutTxt: 'Distribución del dormitorio, el living y la cocina.',
   objetivos: [
-    ['Muebles TV abiertos,', 'con huecos y sin puertas, pensados para pantallas grandes.'],
-    ['Un living versátil,', 'protagonista de la suite, para reunirse o descansar.'],
-    ['Más luz y siempre cálida,', 'con artefactos prácticos, fáciles de limpiar y con repuesto.'],
-    ['Una cocina práctica,', 'ordenada y en línea con el resto de la suite.'],
-    ['Tecnología integrada,', 'sin cables a la vista.'],
-    ['Arte con raíz neuquina,', 'con paisajes o mapas de la provincia.']
+    ["Diseñar una suite versátil y coherente,", "que acompañe tanto una reunión de trabajo como el descanso del huésped.", 1],
+    ["Darle a la suite presidencial una identidad propia,", "cálida y refinada, en línea con Land Hoteles y con raíz neuquina.", 5],
+    ["Hacer del living el corazón del espacio,", "con una distribución flexible, buena luz y tecnología integrada.", 4],
+    ["Definir materiales y colores de referencia,", "durables y fáciles de mantener, que sostengan el concepto general del proyecto.", 6]
   ],
   layout: [
     { t: 'Dormitorio', d: 'En desarrollo.' },
     { t: 'Living y cocina', d: 'En desarrollo.' }
+  ],
+  inspiracion: [
+    { img: "t_lampara.jpg", t: "Luz cálida", d: "Ambientes que invitan a quedarse." },
+    { img: "t_tejido.jpg", t: "Tejidos", d: "Lana y texturas suaves para el confort." },
+    { img: "n_basalto.jpg", t: "La piedra", d: "Texturas de la piedra volcánica neuquina." },
+    { img: "n_lenga.jpg", t: "El bosque", d: "Los ocres y las maderas de las lengas." }
   ],
   materiales: [
     { n: 'Melamina Faplac<br>Roble Dakar', img: 'm_dakar.jpg' },

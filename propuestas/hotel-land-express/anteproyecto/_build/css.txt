@@ -21,3 +21,15 @@
   html.mobile .rnd .frame { height: 32vh; }
   html.mobile .rnd .side li { font-size: 12px; padding: 4px 0 4px 16px; }
   html.mobile .rnd .side li::before { top: 13px; }
+  .lay .ph.cad { background: #fff; border: 1px solid rgba(17,17,17,.10); }
+  .lay .ph.cad img { box-shadow: none; }
+  .insp { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; height: 100%; }
+  .insp figure { display: flex; flex-direction: column; min-height: 0; }
+  .insp .img { flex: 1; min-height: 0; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .insp figure:hover .img { transform: scale(1.03); }
+  .insp figcaption { margin-top: 14px; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+  .insp figcaption small { display: block; font-weight: 400; letter-spacing: .02em; text-transform: none; font-size: 13.5px; color: #333; margin-top: 4px; }
+  html.mobile .insp { grid-template-columns: 1fr 1fr; gap: 12px; height: auto; }
+  html.mobile .insp .img { flex: none; height: 22vh; }
+  html.mobile .insp figcaption { font-size: 10.5px; margin-top: 6px; }
+  html.mobile .insp figcaption small { font-size: 11.5px; }

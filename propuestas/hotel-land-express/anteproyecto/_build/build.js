@@ -49,14 +49,15 @@ const icons = [
   '<circle pathLength="1" cx="15" cy="12" r="7"/><path pathLength="1" d="M11 22 h8 M12 26 h6"/>',
   '<path pathLength="1" d="M6 11 h15 v8 a6 6 0 0 1 -6 6 h-3 a6 6 0 0 1 -6 -6 z M21 13 h2 a3 3 0 0 1 0 6 h-2"/><path pathLength="1" d="M11 4 q2 2 0 4 M15 4 q2 2 0 4"/>',
   '<path pathLength="1" d="M4 25 L4 8 L15 4 L26 8 L26 25 Z M4 13 h22"/>',
-  '<path pathLength="1" d="M15 3 v24 M15 8 l-6 4 M15 8 l6 4 M15 14 l-8 5 M15 14 l8 5 M15 20 l-10 5 M15 20 l10 5"/>'
+  '<path pathLength="1" d="M15 3 v24 M15 8 l-6 4 M15 8 l6 4 M15 14 l-8 5 M15 14 l8 5 M15 20 l-10 5 M15 20 l10 5"/>',
+  '<rect pathLength="1" x="4" y="4" width="13" height="13"/><rect pathLength="1" x="13" y="13" width="13" height="13"/>'
 ];
 const delays = ['.2', '.35', '.42', '.5', '.65', '.8'];
 const objetivos = D.objetivos.map((o, k) =>
-  `    <p class="rv" style="--d:${delays[k]}s"><svg class="draw" style="--d:${(k * .15).toFixed(2)}s" viewBox="0 0 30 30" fill="none" stroke="#a0583a" stroke-width="1.4">${icons[k % icons.length]}</svg><b>/ ${o[0]}</b><br>${o[1]}</p>`).join('\n');
+  `    <p class="rv" style="--d:${delays[k]}s"><svg class="draw" style="--d:${(k * .15).toFixed(2)}s" viewBox="0 0 30 30" fill="none" stroke="#a0583a" stroke-width="1.4">${icons[o[2] != null ? o[2] : k % icons.length]}</svg><b>/ ${o[0]}</b><br>${o[1]}</p>`).join('\n');
 
 const layout = D.layout.map((f, k) =>
-  `    <figure class="rv" style="--d:${(.15 + k * .15).toFixed(2)}s"><div class="ph">${f.img ? `<img src="img/${f.img}" alt="Planta ${f.t}">` : `<div class="frame" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#8a7d70;font-size:11px;letter-spacing:.24em;text-transform:uppercase;">Planta en proceso</div>`}</div><figcaption>${f.t}<small>${f.d}</small></figcaption></figure>`).join('\n');
+  `    <figure class="rv" style="--d:${(.15 + k * .15).toFixed(2)}s"><div class="ph cad">${f.img ? `<img src="img/${f.img}" alt="Planta ${f.t}">` : `<div class="frame" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#8a7d70;font-size:11px;letter-spacing:.24em;text-transform:uppercase;">Planta en proceso</div>`}</div><figcaption>${f.t}<small>${f.d}</small></figcaption></figure>`).join('\n');
 
 const mats = D.materiales.map((m, k) =>
   `      <div class="rv" style="--d:${(.1 + k * .08).toFixed(2)}s"><i ${m.img ? `class="img" style="background-image:url('img/${m.img}')"` : `style="${m.css}"`}></i><span>${m.n}</span></div>`).join('\n');
@@ -86,9 +87,10 @@ const body = `
       <div class="r">
         <a data-go="objetivos"><b>01 / Objetivos</b><br><span>Qué resuelve este anteproyecto.</span></a>
         <a data-go="layout"><b>02 / Layout</b><br><span>${D.layoutTxt}</span></a>
-        <a data-go="mat"><b>03 / Materiales</b><br><span>Terminaciones a utilizar.</span></a>
-        <a data-go="renders"><b>04 / Renders por zona</b><br><span>${zonas.charAt(0).toUpperCase() + zonas.slice(1)}.</span></a>
-        <a data-go="pasos"><b>05 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
+        <a data-go="insp"><b>03 / Inspiración</b><br><span>Las imágenes que guían el diseño.</span></a>
+        <a data-go="mat"><b>04 / Materiales</b><br><span>Terminaciones a utilizar.</span></a>
+        <a data-go="renders"><b>05 / Renders por zona</b><br><span>${zonas.charAt(0).toUpperCase() + zonas.slice(1)}.</span></a>
+        <a data-go="pasos"><b>06 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
       </div>
     </div>
   </div>
@@ -111,6 +113,16 @@ ${objetivos}
   <div class="t rv"><h1>Layout <span>· Habitación ${room}</span></h1><div class="s">Distribución en planta</div></div>
   <div class="pad"><div class="lay">
 ${layout}
+  </div></div>
+  <div class="num"></div>
+</section>
+
+<!-- INSPIRACIÓN -->
+<section class="slide" id="insp" data-sec="Inspiración">
+  ${by}
+  <div class="t rv"><h1>Inspiración</h1><div class="s">Habitación ${room}</div></div>
+  <div class="pad"><div class="insp">
+${D.inspiracion.map((f, k) => `    <figure class="rv" style="--d:${(.1 + k * .12).toFixed(2)}s"><div class="img" style="background-image:url('img/${f.img}')"></div><figcaption>${f.t}<small>${f.d}</small></figcaption></figure>`).join('\n')}
   </div></div>
   <div class="num"></div>
 </section>

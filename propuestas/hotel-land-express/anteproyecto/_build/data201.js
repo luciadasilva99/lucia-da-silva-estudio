@@ -2,16 +2,20 @@ module.exports = {
   tipo: 'SUITE',
   layoutTxt: 'Distribución del dormitorio y del living.',
   objetivos: [
-    ['Escritorio y mueble TV integrados,', 'en Roble Dakar, con el mueble bajo abierto y dos huecos, sin puertas.'],
-    ['Un respaldo de pared a pared,', 'con luz cálida arriba y mesas de luz flotantes con tapa de piedra.'],
-    ['Luz cálida en toda la suite,', 'con artefactos prácticos, fáciles de limpiar y con repuesto.'],
-    ['Una coffee station en el nicho de ingreso,', 'para que el huésped tenga todo a mano.'],
-    ['Paredes y cielorraso en blanco crudo,', 'una base limpia y luminosa.'],
-    ['La raíz neuquina en los detalles,', 'con el telar, la piedra y la madera.']
+    ["Diseñar una suite funcional y coherente,", "que responda a lo que necesita el huésped y a la operación diaria del hotel.", 1],
+    ["Darle al espacio una identidad propia,", "cálida y sobria a la vez, en línea con Land Hoteles y con raíz neuquina.", 5],
+    ["Aprovechar mejor cada metro,", "con una distribución ordenada, circulaciones cómodas y luz cálida.", 4],
+    ["Definir materiales y colores de referencia,", "durables y fáciles de mantener, que sostengan el concepto general del proyecto.", 6]
   ],
   layout: [
-    { t: 'Dormitorio', img: 'layout_dormitorio.webp', d: 'Cama con respaldo pared a pared, mesas de luz flotantes, escritorio y mueble TV integrados.' },
+    { t: 'Dormitorio', img: 'layout_dormitorio.png', d: 'Cama con respaldo pared a pared, mesas de luz flotantes, escritorio y mueble TV integrados.' },
     { t: 'Living', img: 'layout_living.png', d: 'Sofá, dos mesas ratonas redondas y lámpara de pie.' }
+  ],
+  inspiracion: [
+    { img: "t_lampara.jpg", t: "Luz cálida", d: "Una luz baja y envolvente para el descanso." },
+    { img: "n_telar.jpg", t: "El telar", d: "Los hilados crudos del pie de cama." },
+    { img: "n_basalto.jpg", t: "La piedra", d: "Texturas de la piedra volcánica neuquina." },
+    { img: "t_cafe.jpg", t: "El café", d: "Un ritual simple, al alcance de la mano." }
   ],
   materiales: [
     { n: 'Melamina Faplac<br>Roble Dakar', img: 'm_dakar.jpg' },

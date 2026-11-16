@@ -51,10 +51,10 @@ module.exports = {
         { x: 36.7, y: 84.9, img: "o_silla.jpg", t: "Silla de madera" },
         { x: 70, y: 71, img: "o_rack.jpg", t: "Rack TV en melamina Roble Dakar (Faplac) · la placa donde apoya la TV gira hacia el living" }
       ] },
-    { zona: "Living", img: "v_living.jpg", ar: 1.544, items: ["Sofá curvo tapizado en tono claro.", "Dos mesas ratonas redondas: madera y mármol verde.", "Lámpara de pie de arco, de luz cálida.", "Cortinas de lino de piso a techo.", "Rack TV en melamina Roble Dakar (Faplac)."],
+    { zona: "Living", img: "v_living.jpg", ar: 1.544, items: ["Sofá curvo tapizado en tono claro.", "Dos mesas ratonas redondas: madera y mármol verde.", "Lámpara de pie de arco, de luz cálida.", "Cortinas de piso a techo: blackout más gasa de hilo.", "Rack TV en melamina Roble Dakar (Faplac)."],
       pins: [
         { x: 72.3, y: 30, img: "o_lampara_pie.jpg", t: "Lámpara de pie de arco, luz cálida" },
-        { x: 47, y: 42, img: "m_lino.jpg", t: "Cortinas de lino de piso a techo" },
+        { x: 47, y: 42, img: "o_cortinas.jpg", t: "Cortinas blackout más gasa de hilo, de piso a techo" },
         { x: 14.9, y: 53, img: "o_rack.jpg", t: "Rack TV en melamina Roble Dakar (Faplac) · placa de la TV giratoria hacia el living" },
         { x: 85.8, y: 72.5, img: "o_sofa.jpg", t: "Sofá curvo · Antequera Muebles", url: "https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" },
         { x: 51.9, y: 80.9, img: "m_marmol_verde.jpg", t: "Mesas ratonas en madera y mármol verde" }

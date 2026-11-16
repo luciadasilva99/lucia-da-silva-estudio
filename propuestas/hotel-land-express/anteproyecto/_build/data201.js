@@ -2,10 +2,10 @@ module.exports = {
   tipo: 'SUITE',
   layoutTxt: 'Distribución del dormitorio y del living.',
   objetivos: [
-    ["Diseñar una suite funcional y coherente,", "que responda a lo que necesita el huésped y a la operación diaria del hotel.", 1],
-    ["Darle al espacio una identidad propia,", "cálida y sobria a la vez, en línea con Land Hoteles y con raíz neuquina.", 5],
-    ["Aprovechar mejor cada metro,", "con una distribución ordenada, circulaciones cómodas y luz cálida.", 4],
-    ["Definir materiales y colores de referencia,", "durables y fáciles de mantener, que sostengan el concepto general del proyecto.", 6]
+    ["Diseñar espacios funcionales y estéticamente coherentes.", "", 1],
+    ["Proponer una identidad espacial clara.", "", 5],
+    ["Optimizar la distribución y el uso del espacio.", "", 4],
+    ["Seleccionar materiales y paleta de colores a modo referencial.", "", 6]
   ],
   layout: [
     { t: 'Dormitorio', img: 'layout_dormitorio.png', d: 'Cama con respaldo pared a pared, mesas de luz flotantes, escritorio y mueble TV integrados.' },

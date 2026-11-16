@@ -2,10 +2,10 @@ module.exports = {
   tipo: 'SUITE PRESIDENCIAL',
   layoutTxt: 'Distribución del dormitorio, el living y la cocina.',
   objetivos: [
-    ["Diseñar una suite versátil y coherente,", "que acompañe tanto una reunión de trabajo como el descanso del huésped.", 1],
-    ["Darle a la suite presidencial una identidad propia,", "cálida y refinada, en línea con Land Hoteles y con raíz neuquina.", 5],
-    ["Hacer del living el corazón del espacio,", "con una distribución flexible, buena luz y tecnología integrada.", 4],
-    ["Definir materiales y colores de referencia,", "durables y fáciles de mantener, que sostengan el concepto general del proyecto.", 6]
+    ["Diseñar espacios funcionales y estéticamente coherentes.", "", 1],
+    ["Proponer una identidad espacial clara.", "", 5],
+    ["Optimizar la distribución y el uso del espacio.", "", 4],
+    ["Seleccionar materiales y paleta de colores a modo referencial.", "", 6]
   ],
   layout: [
     { t: 'Dormitorio', d: 'En desarrollo.' },

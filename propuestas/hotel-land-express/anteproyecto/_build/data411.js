@@ -22,7 +22,7 @@ module.exports = {
     { n: "Piso roble natural<br>existente", img: "m_roble.jpg" },
     { n: "Pintura<br>blanco crudo", css: "background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)" },
     { n: "Empapelado símil lino<br>blanco crudo", img: "m_simil_lino.jpg" },
-    { n: "Apliques<br>dorados", img: "t_bronce.jpg" }
+    { n: "Metal<br>dorado", img: "t_bronce.jpg" }
   ],
   renders: [
     { zona: 'Dormitorio', items: ['En desarrollo.'] },

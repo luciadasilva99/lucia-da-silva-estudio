@@ -30,7 +30,7 @@ module.exports = {
     { n: "Piso roble natural<br>existente", img: "m_roble.jpg" },
     { n: "Pintura<br>blanco crudo", css: "background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)" },
     { n: "Empapelado símil lino<br>blanco crudo", img: "m_simil_lino.jpg" },
-    { n: "Apliques<br>dorados", img: "t_bronce.jpg" }
+    { n: "Metal<br>dorado", img: "t_bronce.jpg" }
   ],
   renders: [
     { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.127, alt: { img: "v_dormitorio_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama.", "Armario en melamina Sahara (Faplac), con opción en Safari (Faplac).", "Cuadro de paisaje neuquino en blanco y negro."],

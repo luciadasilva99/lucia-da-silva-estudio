@@ -15,8 +15,8 @@ module.exports = {
     { img: "i_1.jpg" }, { img: "i_2.jpg" }, { img: "i_3.jpg" }, { img: "i_4.jpg" }
   ],
   materiales: [
-    { n: "Melamina Faplac<br>Roble Dakar", img: "m_dakar.jpg" },
-    { n: "Melamina Faplac<br>Sahara", img: "m_sahara.jpg" },
+    { n: "Melamina Roble Dakar<br>(Faplac)", img: "m_dakar.jpg" },
+    { n: "Melamina Sahara<br>(Faplac)", img: "m_sahara.jpg" },
     { n: "Mármol<br>verde oscuro", img: "m_marmol_verde.jpg" },
     { n: "Piso roble natural<br>existente", img: "m_roble.jpg" },
     { n: "Pintura<br>blanco crudo", css: "background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)" },

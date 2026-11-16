@@ -23,8 +23,8 @@ module.exports = {
     { img: "i_1.jpg" }, { img: "i_2.jpg" }, { img: "i_3.jpg" }, { img: "i_4.jpg" }
   ],
   materiales: [
-    { n: "Melamina Faplac<br>Roble Dakar", img: "m_dakar.jpg" },
-    { n: "Melamina Faplac<br>Sahara", img: "m_sahara.jpg" },
+    { n: "Melamina Roble Dakar<br>(Faplac)", img: "m_dakar.jpg" },
+    { n: "Melamina Sahara<br>(Faplac)", img: "m_sahara.jpg" },
     { n: "Mármol<br>verde oscuro", img: "m_marmol_verde.jpg" },
     { n: "Piso roble natural<br>existente", img: "m_roble.jpg" },
     { n: "Pintura<br>blanco crudo", css: "background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)" },
@@ -63,11 +63,11 @@ module.exports = {
         { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Cafetera" },
         { x: 48.5, y: 76.7, img: "o_frente.jpg", t: "Frigobar con frente de madera" }
       ] },
-    { zona: "Vanity", img: "v_vanity.jpg", ar: 1.784, items: ["Mesada flotante de madera con cajón.", "Espejo redondo.", "Silla de madera.", "Placard en melamina Sahara.", "Spots de luz cálida."],
+    { zona: "Vanity", img: "v_vanity.jpg", ar: 1.784, items: ["Mesada flotante de madera con cajón.", "Espejo redondo.", "Silla de madera.", "Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac).", "Spots de luz cálida."],
       pins: [
         { x: 16.5, y: 18, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
         { x: 56.6, y: 30, img: "o_espejo.jpg", t: "Espejo redondo" },
-        { x: 83.2, y: 48, img: "m_sahara.jpg", t: "Placard en melamina Sahara" },
+        { x: 83.2, y: 48, img: "m_sahara.jpg", t: "Frentes de puertas del armario en melamina Sahara (Faplac)" },
         { x: 60.9, y: 69.7, img: "o_mesada.jpg", t: "Mesada flotante de madera con cajón" },
         { x: 50.5, y: 76.7, img: "o_silla.jpg", t: "Silla de madera" }
       ] }

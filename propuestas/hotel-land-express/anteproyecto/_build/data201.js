@@ -40,7 +40,14 @@ module.exports = {
         { x: 36.7, y: 84.9, img: "o_silla.jpg", t: "Silla de madera" },
         { x: 70, y: 84.9, img: "o_rack.jpg", t: "Rack TV bajo de madera" }
       ] },
-    { zona: 'Living', items: ['Sofá con almohadones nuevos.', 'Dos mesas ratonas redondas: mármol verde y tono tierra.', 'Lámpara de pie de luz cálida.'] },
+    { zona: "Living", img: "v_living.jpg", ar: 1.544, items: ["Sofá curvo tapizado en tono claro.", "Dos mesas ratonas redondas: madera y mármol verde.", "Lámpara de pie de arco, de luz cálida.", "Cortinas de lino de piso a techo.", "Rack TV en madera oscura."],
+      pins: [
+        { x: 72.3, y: 30, img: "o_lampara_pie.jpg", t: "Lámpara de pie de arco, luz cálida" },
+        { x: 47, y: 42, img: "m_lino.jpg", t: "Cortinas de lino de piso a techo" },
+        { x: 14.9, y: 53, img: "o_rack.jpg", t: "Rack TV en madera oscura" },
+        { x: 85.8, y: 72.5, img: "o_sofa.jpg", t: "Sofá curvo · Antequera Muebles" },
+        { x: 51.9, y: 80.9, img: "m_marmol_verde.jpg", t: "Mesas ratonas en madera y mármol verde" }
+      ] },
     { zona: "Coffee station", img: "v_coffee.jpg", ar: 0.311, items: ["Nicho con estantes en madera oscura.", "Espacio para cafetera y microondas.", "Frigobar bajo mesada con frente de madera.", "Spot de luz cálida en el nicho."],
       pins: [
         { x: 26.4, y: 34.2, img: "o_estantes.jpg", t: "Nicho con estantes de madera" },

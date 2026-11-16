@@ -40,7 +40,8 @@ function sk(k) {
 }
 function vista(id, r) {
   const pic = (inner) => `<div class="pic" style="--ar:${r.ar || 1.6}"><img src="img/${r.img}" alt="Modelado 3D ${r.zona}">${inner || ''}</div>`;
-  const fr = r.img ? pic() : cam;
+  const altLayer = r.alt ? `<img class="altimg" src="img/${r.alt.img}" alt="Modelado 3D ${r.zona} · opción ${r.alt.b}"><div class="opt"><span>Armario</span><button class="on" data-o="0">${r.alt.a}<small>principal</small></button><button data-o="1">${r.alt.b}<small>alternativa</small></button></div>` : '';
+  const fr = r.img ? pic(altLayer) : cam;
   const pair = !!(r.img && r.pins && r.pins.length);
   let out = `
 <!-- MODELADO 3D ${r.zona.toUpperCase()} -->
@@ -82,6 +83,15 @@ const pinsScript = `<script>
       el.addEventListener("mouseleave", function () { hl(el.dataset.k, false); });
     });
   });
+  // Opción de armario: desliza la alternativa sobre la principal
+  document.querySelectorAll(".pic .opt button").forEach(function (bt) {
+    bt.addEventListener("click", function (e) {
+      e.stopPropagation(); var pic = bt.closest(".pic");
+      pic.classList.toggle("alt-on", bt.dataset.o === "1");
+      pic.querySelectorAll(".opt button").forEach(function (o) { o.classList.toggle("on", o === bt); });
+    });
+  });
+  function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
   // Imagen fija entre la vista (A) y sus detalles (B)
   if (typeof window.go === "function" && !document.documentElement.classList.contains("mobile")) {
     var base = window.go, slides = [].slice.call(document.querySelectorAll(".slide"));
@@ -89,12 +99,12 @@ const pinsScript = `<script>
       var from = slides.indexOf(document.querySelector(".slide.on"));
       var A = slides[from], Bs = slides[i];
       if (A && Bs && A.classList.contains("pairA") && Bs.id === A.id + "d") {
-        A.classList.add("keep"); base(i); setTimeout(function () { A.classList.remove("keep"); }, 700); return;
+        A.classList.add("keep"); base(i); resetAlt(); setTimeout(function () { A.classList.remove("keep"); }, 700); return;
       }
       if (A && Bs && Bs.classList.contains("pairA") && A.id === Bs.id + "d") {
-        Bs.classList.add("snap"); base(i); setTimeout(function () { Bs.classList.remove("snap"); }, 700); return;
+        Bs.classList.add("snap"); base(i); resetAlt(); setTimeout(function () { Bs.classList.remove("snap"); }, 700); return;
       }
-      base(i);
+      base(i); resetAlt();
     };
   }
 })();
@@ -205,7 +215,7 @@ ${D.inspiracion.map((f, k) => `    <figure class="rv" style="--d:${(.1 + k * .12
   <div class="t rv"><h1>Materiales <span>a utilizar</span></h1><div class="s">Habitación ${room}</div></div>
   <div class="pad"><div class="matg">
     <p class="disc rv">Las terminaciones de la suite. Los tonos finales los confirmamos con muestras físicas.</p>
-    <div class="sw${D.materiales.length > 6 ? " n7" : ""}">
+    <div class="sw${D.materiales.length > 6 ? " n" + D.materiales.length : ""}">
 ${mats}
     </div>
   </div></div>

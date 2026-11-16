@@ -451,6 +451,21 @@
   html.mobile .insp figcaption small { font-size: 11.5px; }
 
   .sw.n7 { grid-template-columns: repeat(7, 118px); gap: 22px; }
+
+  /* Modelado 3D · lámina de detalles con flechas */
+  .rnd.pins { position: relative; }
+  .rnd.pins .frame { overflow: visible; }
+  .rnd.pins .pin { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--tc); box-shadow: 0 0 0 4px rgba(255,255,255,.75); z-index: 2; transform: scale(0); transition: transform .5s cubic-bezier(.2,.7,.2,1) var(--d); }
+  .slide.on .rnd.pins .pin { transform: scale(1); }
+  .rnd.pins .lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 3; }
+  .rnd.pins .lines path { fill: none; stroke: var(--tc); stroke-width: 1.2; stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 1s ease var(--d); }
+  .slide.on .rnd.pins .lines path { stroke-dashoffset: 0; }
+  .rnd.pins .objs { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .rnd.pins .objs figure { display: grid; grid-template-columns: 74px 1fr; gap: 14px; align-items: center; }
+  .rnd.pins .objs .ph { height: 58px; background-size: cover; background-position: center; border: 1px solid rgba(0,0,0,.06); transition: transform .4s; }
+  .rnd.pins .objs figure:hover .ph { transform: scale(1.06); }
+  .rnd.pins .objs figcaption { font-size: 12.5px; color: #333; line-height: 1.35; }
+  html.mobile .rnd.pins .lines { display: none; }
 </style>
 </head>
 <body>
@@ -481,7 +496,7 @@
         <a data-go="layout"><b>02 / Layout</b><br><span>Distribución del dormitorio, el living y la cocina.</span></a>
         <a data-go="insp"><b>03 / Inspiración</b><br><span>Las imágenes que guían el diseño.</span></a>
         <a data-go="mat"><b>04 / Materiales</b><br><span>Terminaciones a utilizar.</span></a>
-        <a data-go="renders"><b>05 / Renders por zona</b><br><span>Dormitorio, living, muebles tv y cocina.</span></a>
+        <a data-go="modelado"><b>05 / Modelado 3D</b><br><span>Dormitorio, living, muebles tv y cocina.</span></a>
         <a data-go="pasos"><b>06 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
       </div>
     </div>
@@ -545,56 +560,56 @@
   <div class="num"></div>
 </section>
 
-<!-- CARÁTULA RENDERS -->
-<section class="slide" id="renders" data-sec="Renders">
+<!-- CARÁTULA MODELADO 3D -->
+<section class="slide" id="modelado" data-sec="Modelado 3D">
   <div class="cv-txt cv-c">
     <div class="n rv">411</div>
-    <div class="h rv" style="--d:.15s">RENDERS</div>
+    <div class="h rv" style="--d:.15s">MODELADO 3D</div>
     <div class="k rv" style="--d:.25s">POR ZONA</div>
     <p class="rv" style="--d:.4s">Dormitorio, living, muebles tv y cocina.</p>
   </div>
   <div class="num"></div>
 </section>
 
-<!-- RENDER DORMITORIO -->
+<!-- MODELADO 3D DORMITORIO -->
 <section class="slide" id="r0">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Render <span>· Dormitorio</span></h1><div class="s">Habitación 411</div></div>
+  <div class="t rv"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Habitación 411</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><rect x="5" y="11" width="36" height="26" rx="2"/><circle cx="23" cy="24" r="7"/><path d="M16 11 l3 -5 h8 l3 5"/></svg>Render en proceso</div>
+    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><path d="M23 6 L39 15 L39 33 L23 42 L7 33 L7 15 Z"/><path d="M7 15 L23 24 L39 15 M23 24 L23 42"/></svg>Vista en proceso</div>
     <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Dormitorio</h3><ul><li>En desarrollo.</li></ul></div>
   </div></div>
   <div class="num"></div>
 </section>
 
-<!-- RENDER LIVING -->
+<!-- MODELADO 3D LIVING -->
 <section class="slide" id="r1">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Render <span>· Living</span></h1><div class="s">Habitación 411</div></div>
+  <div class="t rv"><h1>Modelado 3D <span>· Living</span></h1><div class="s">Habitación 411</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><rect x="5" y="11" width="36" height="26" rx="2"/><circle cx="23" cy="24" r="7"/><path d="M16 11 l3 -5 h8 l3 5"/></svg>Render en proceso</div>
+    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><path d="M23 6 L39 15 L39 33 L23 42 L7 33 L7 15 Z"/><path d="M7 15 L23 24 L39 15 M23 24 L23 42"/></svg>Vista en proceso</div>
     <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Living</h3><ul><li>En desarrollo.</li></ul></div>
   </div></div>
   <div class="num"></div>
 </section>
 
-<!-- RENDER MUEBLES TV -->
+<!-- MODELADO 3D MUEBLES TV -->
 <section class="slide" id="r2">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Render <span>· Muebles TV</span></h1><div class="s">Habitación 411</div></div>
+  <div class="t rv"><h1>Modelado 3D <span>· Muebles TV</span></h1><div class="s">Habitación 411</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><rect x="5" y="11" width="36" height="26" rx="2"/><circle cx="23" cy="24" r="7"/><path d="M16 11 l3 -5 h8 l3 5"/></svg>Render en proceso</div>
+    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><path d="M23 6 L39 15 L39 33 L23 42 L7 33 L7 15 Z"/><path d="M7 15 L23 24 L39 15 M23 24 L23 42"/></svg>Vista en proceso</div>
     <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Muebles TV</h3><ul><li>En desarrollo.</li></ul></div>
   </div></div>
   <div class="num"></div>
 </section>
 
-<!-- RENDER COCINA -->
+<!-- MODELADO 3D COCINA -->
 <section class="slide" id="r3">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Render <span>· Cocina</span></h1><div class="s">Habitación 411</div></div>
+  <div class="t rv"><h1>Modelado 3D <span>· Cocina</span></h1><div class="s">Habitación 411</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><rect x="5" y="11" width="36" height="26" rx="2"/><circle cx="23" cy="24" r="7"/><path d="M16 11 l3 -5 h8 l3 5"/></svg>Render en proceso</div>
+    <div class="frame rv" style="--d:.1s"><svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><path d="M23 6 L39 15 L39 33 L23 42 L7 33 L7 15 Z"/><path d="M7 15 L23 24 L39 15 M23 24 L23 42"/></svg>Vista en proceso</div>
     <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Cocina</h3><ul><li>En desarrollo.</li></ul></div>
   </div></div>
   <div class="num"></div>
@@ -605,8 +620,8 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv" style="top:110px;"><h1 style="font-size:32px;">Próximos <span>pasos</span></h1></div>
   <div class="pad" style="top:200px;"><div class="steps">
-    <div class="rv" style="--d:.1s"><div class="n">01</div><div class="k">Revisión del<br>anteproyecto</div><p>Recibimos sus comentarios sobre el layout, los materiales y los renders.</p></div>
-    <div class="rv" style="--d:.25s"><div class="n">02</div><div class="k">Proyecto<br>final</div><p>Ajustamos el diseño y entregamos la versión final con los renders definitivos.</p></div>
+    <div class="rv" style="--d:.1s"><div class="n">01</div><div class="k">Revisión del<br>anteproyecto</div><p>Nos reunimos para revisar el layout, los materiales y el modelado 3D, y recibir su OK para avanzar.</p></div>
+    <div class="rv" style="--d:.25s"><div class="n">02</div><div class="k">Renders<br>fotorrealistas</div><p>Con el diseño aprobado, ajustamos los detalles y emitimos los renders finales de cada zona.</p></div>
     <div class="rv" style="--d:.4s"><div class="n">03</div><div class="k">Documentación<br>y compras</div><p>Planos de los muebles a medida, listado de materiales y pedidos de lo que más demora.</p></div>
     <div class="rv" style="--d:.55s"><div class="n">04</div><div class="k">Ejecución<br>en obra</div><p>Coordinamos a los gremios y supervisamos cada instancia hasta entregar la suite terminada.</p></div>
   </div></div>
@@ -736,6 +751,31 @@
   }
   (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(run);
   window.addEventListener('resize', function(){ setTimeout(run, 50); });
+})();
+</script>
+<script>
+(function () {
+  function draw(sec) {
+    var box = sec.querySelector('.rnd.pins'); if (!box) return;
+    var svg = box.querySelector('.lines'), B = box.getBoundingClientRect();
+    var k = B.width / box.offsetWidth || 1;
+    var pins = box.querySelectorAll('.pin'), figs = box.querySelectorAll('.objs figure');
+    var h = '';
+    pins.forEach(function (p, i) {
+      var f = figs[i]; if (!f) return;
+      var a = p.getBoundingClientRect(), c = f.getBoundingClientRect();
+      var x1 = (a.left + a.width / 2 - B.left) / k, y1 = (a.top + a.height / 2 - B.top) / k;
+      var x2 = (c.left - B.left) / k - 8, y2 = (c.top + c.height / 2 - B.top) / k;
+      h += '<path d="M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2 + '" style="--d:' + (0.5 + i * 0.12) + 's"/>' +
+           '<path class="hd" d="M' + (x2 - 7) + ' ' + (y2 - 4) + ' L' + x2 + ' ' + y2 + ' L' + (x2 - 7) + ' ' + (y2 + 4) + '" style="--d:' + (0.9 + i * 0.12) + 's"/>';
+    });
+    svg.setAttribute('viewBox', '0 0 ' + box.offsetWidth + ' ' + box.offsetHeight);
+    svg.innerHTML = h;
+  }
+  function all() { document.querySelectorAll('.slide.pinsl').forEach(draw); }
+  window.addEventListener('resize', function () { setTimeout(all, 60); });
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { setTimeout(all, 200); });
+  document.querySelectorAll('.slide.pinsl img').forEach(function (i) { i.addEventListener('load', all); });
 })();
 </script>
 </body>

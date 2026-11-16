@@ -25,22 +25,66 @@ const b = tail.indexOf('  function enter(i)');
 tail = tail.slice(0, a) + '  var hooks = {};\n  function clearT(){}\n' + tail.slice(b);
 
 const by = `<div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>`;
-const cam = `<svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><rect x="5" y="11" width="36" height="26" rx="2"/><circle cx="23" cy="24" r="7"/><path d="M16 11 l3 -5 h8 l3 5"/></svg>Render en proceso`;
+const cam = `<svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width="1.2"><path d="M23 6 L39 15 L39 33 L23 42 L7 33 L7 15 Z"/><path d="M7 15 L23 24 L39 15 M23 24 L23 42"/></svg>Vista en proceso`;
 
-function render(id, zona, items, img) {
-  const fr = img ? `<img src="img/${img}" alt="Render ${zona}">` : cam;
-  return `
-<!-- RENDER ${zona.toUpperCase()} -->
+// Lámina de modelado 3D por zona. Si la zona tiene "pins", se agrega una segunda lámina
+// con la misma vista, flechas a cada objeto y su foto al costado.
+function vista(id, r) {
+  const fr = r.img ? `<img src="img/${r.img}" alt="Modelado 3D ${r.zona}">` : cam;
+  let out = `
+<!-- MODELADO 3D ${r.zona.toUpperCase()} -->
 <section class="slide" id="${id}">
   ${by}
-  <div class="t rv"><h1>Render <span>· ${zona}</span></h1><div class="s">Habitación ${room}</div></div>
+  <div class="t rv"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Habitación ${room}</div></div>
   <div class="pad"><div class="rnd">
     <div class="frame rv" style="--d:.1s">${fr}</div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>${zona}</h3><ul>${items.map(i => `<li>${i}</li>`).join('')}</ul></div>
+    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>${r.zona}</h3><ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul></div>
   </div></div>
   <div class="num"></div>
 </section>`;
+  if (r.img && r.pins && r.pins.length) {
+    out += `
+<!-- MODELADO 3D ${r.zona.toUpperCase()} · DETALLES -->
+<section class="slide pinsl" id="${id}d">
+  ${by}
+  <div class="t rv"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Detalles · Habitación ${room}</div></div>
+  <div class="pad"><div class="rnd pins">
+    <div class="frame rv" style="--d:.1s"><img src="img/${r.img}" alt="Modelado 3D ${r.zona}">${r.pins.map((p, k) => `<i class="pin" style="left:${p.x}%;top:${p.y}%;--d:${(.5 + k * .12).toFixed(2)}s"></i>`).join('')}</div>
+    <div class="side"><div class="z">Zona</div><h3>Detalles</h3><div class="objs">${r.pins.map((p, k) => `<figure class="rv" style="--d:${(.6 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption>${p.t}</figcaption></figure>`).join('')}</div></div>
+    <svg class="lines"></svg>
+  </div></div>
+  <div class="num"></div>
+</section>`;
+  }
+  return out;
 }
+
+// Dibuja las flechas de cada punto a su foto cuando la lámina de detalles aparece.
+const pinsScript = `<script>
+(function () {
+  function draw(sec) {
+    var box = sec.querySelector('.rnd.pins'); if (!box) return;
+    var svg = box.querySelector('.lines'), B = box.getBoundingClientRect();
+    var k = B.width / box.offsetWidth || 1;
+    var pins = box.querySelectorAll('.pin'), figs = box.querySelectorAll('.objs figure');
+    var h = '';
+    pins.forEach(function (p, i) {
+      var f = figs[i]; if (!f) return;
+      var a = p.getBoundingClientRect(), c = f.getBoundingClientRect();
+      var x1 = (a.left + a.width / 2 - B.left) / k, y1 = (a.top + a.height / 2 - B.top) / k;
+      var x2 = (c.left - B.left) / k - 8, y2 = (c.top + c.height / 2 - B.top) / k;
+      h += '<path d="M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2 + '" style="--d:' + (0.5 + i * 0.12) + 's"/>' +
+           '<path class="hd" d="M' + (x2 - 7) + ' ' + (y2 - 4) + ' L' + x2 + ' ' + y2 + ' L' + (x2 - 7) + ' ' + (y2 + 4) + '" style="--d:' + (0.9 + i * 0.12) + 's"/>';
+    });
+    svg.setAttribute('viewBox', '0 0 ' + box.offsetWidth + ' ' + box.offsetHeight);
+    svg.innerHTML = h;
+  }
+  function all() { document.querySelectorAll('.slide.pinsl').forEach(draw); }
+  window.addEventListener('resize', function () { setTimeout(all, 60); });
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { setTimeout(all, 200); });
+  document.querySelectorAll('.slide.pinsl img').forEach(function (i) { i.addEventListener('load', all); });
+})();
+</script>`;
 
 const D = require(path.join(__dirname, `data${room}.js`));
 const icons = [
@@ -89,7 +133,7 @@ const body = `
         <a data-go="layout"><b>02 / Layout</b><br><span>${D.layoutTxt}</span></a>
         <a data-go="insp"><b>03 / Inspiración</b><br><span>Las imágenes que guían el diseño.</span></a>
         <a data-go="mat"><b>04 / Materiales</b><br><span>Terminaciones a utilizar.</span></a>
-        <a data-go="renders"><b>05 / Renders por zona</b><br><span>${zonas.charAt(0).toUpperCase() + zonas.slice(1)}.</span></a>
+        <a data-go="modelado"><b>05 / Modelado 3D</b><br><span>${zonas.charAt(0).toUpperCase() + zonas.slice(1)}.</span></a>
         <a data-go="pasos"><b>06 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
       </div>
     </div>
@@ -140,25 +184,25 @@ ${mats}
   <div class="num"></div>
 </section>
 
-<!-- CARÁTULA RENDERS -->
-<section class="slide" id="renders" data-sec="Renders">
+<!-- CARÁTULA MODELADO 3D -->
+<section class="slide" id="modelado" data-sec="Modelado 3D">
   <div class="cv-txt cv-c">
     <div class="n rv">${room}</div>
-    <div class="h rv" style="--d:.15s">RENDERS</div>
+    <div class="h rv" style="--d:.15s">MODELADO 3D</div>
     <div class="k rv" style="--d:.25s">POR ZONA</div>
     <p class="rv" style="--d:.4s">${zonas.charAt(0).toUpperCase() + zonas.slice(1)}.</p>
   </div>
   <div class="num"></div>
 </section>
-${D.renders.map((r, k) => render('r' + k, r.zona, r.items, r.img)).join('\n')}
+${D.renders.map((r, k) => vista('r' + k, r)).join('\n')}
 
 <!-- PRÓXIMOS PASOS -->
 <section class="slide" id="pasos" data-sec="Pasos">
   ${by}
   <div class="t rv" style="top:110px;"><h1 style="font-size:32px;">Próximos <span>pasos</span></h1></div>
   <div class="pad" style="top:200px;"><div class="steps">
-    <div class="rv" style="--d:.1s"><div class="n">01</div><div class="k">Revisión del<br>anteproyecto</div><p>Recibimos sus comentarios sobre el layout, los materiales y los renders.</p></div>
-    <div class="rv" style="--d:.25s"><div class="n">02</div><div class="k">Proyecto<br>final</div><p>Ajustamos el diseño y entregamos la versión final con los renders definitivos.</p></div>
+    <div class="rv" style="--d:.1s"><div class="n">01</div><div class="k">Revisión del<br>anteproyecto</div><p>Nos reunimos para revisar el layout, los materiales y el modelado 3D, y recibir su OK para avanzar.</p></div>
+    <div class="rv" style="--d:.25s"><div class="n">02</div><div class="k">Renders<br>fotorrealistas</div><p>Con el diseño aprobado, ajustamos los detalles y emitimos los renders finales de cada zona.</p></div>
     <div class="rv" style="--d:.4s"><div class="n">03</div><div class="k">Documentación<br>y compras</div><p>Planos de los muebles a medida, listado de materiales y pedidos de lo que más demora.</p></div>
     <div class="rv" style="--d:.55s"><div class="n">04</div><div class="k">Ejecución<br>en obra</div><p>Coordinamos a los gremios y supervisamos cada instancia hasta entregar la suite terminada.</p></div>
   </div></div>
@@ -209,7 +253,7 @@ const align = `<script>
   window.addEventListener('resize', function(){ setTimeout(run, 50); });
 })();
 </script>`;
-tail = tail.replace('</body>', align + '\n</body>');
+tail = tail.replace('</body>', align + '\n' + pinsScript + '\n</body>');
 
 const out = head + '\n' + css + '</style>\n</head>\n<body>\n<nav id="mnav"></nav>\n<div id="stage">\n' + body + '\n' + tail + '\n';
 const dest = path.join(base, 'anteproyecto', room, 'index.html');

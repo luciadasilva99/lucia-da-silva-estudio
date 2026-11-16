@@ -35,3 +35,18 @@
   html.mobile .insp figcaption small { font-size: 11.5px; }
 
   .sw.n7 { grid-template-columns: repeat(7, 118px); gap: 22px; }
+
+  /* Modelado 3D · lámina de detalles con flechas */
+  .rnd.pins { position: relative; }
+  .rnd.pins .frame { overflow: visible; }
+  .rnd.pins .pin { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--tc); box-shadow: 0 0 0 4px rgba(255,255,255,.75); z-index: 2; transform: scale(0); transition: transform .5s cubic-bezier(.2,.7,.2,1) var(--d); }
+  .slide.on .rnd.pins .pin { transform: scale(1); }
+  .rnd.pins .lines { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 3; }
+  .rnd.pins .lines path { fill: none; stroke: var(--tc); stroke-width: 1.2; stroke-dasharray: 1400; stroke-dashoffset: 1400; transition: stroke-dashoffset 1s ease var(--d); }
+  .slide.on .rnd.pins .lines path { stroke-dashoffset: 0; }
+  .rnd.pins .objs { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .rnd.pins .objs figure { display: grid; grid-template-columns: 74px 1fr; gap: 14px; align-items: center; }
+  .rnd.pins .objs .ph { height: 58px; background-size: cover; background-position: center; border: 1px solid rgba(0,0,0,.06); transition: transform .4s; }
+  .rnd.pins .objs figure:hover .ph { transform: scale(1.06); }
+  .rnd.pins .objs figcaption { font-size: 12.5px; color: #333; line-height: 1.35; }
+  html.mobile .rnd.pins .lines { display: none; }

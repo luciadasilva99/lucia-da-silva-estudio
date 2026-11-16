@@ -571,6 +571,18 @@
   .rnd.full { grid-template-columns: 1fr; }
   .rnd.full .frame.has { padding: 0; }
   .rnd.full .frame .pic { max-width: calc(584px * var(--ar)); }
+  /* v6: materiales con efecto dock de Mac */
+  .sw { --w: 130px; display: flex; justify-content: center; align-items: flex-end; }
+  .sw.n7 { --w: 118px; }
+  .sw.n8 { --w: 106px; }
+  .sw > div { width: calc(var(--w) * var(--m, 1)); flex: none; transition: width .22s ease-out; }
+  .sw i { width: calc(var(--w) * var(--m, 1)); height: calc(var(--w) * var(--m, 1)); margin-left: auto; margin-right: auto; transition: transform .9s cubic-bezier(.2,.7,.2,1), opacity .6s, width .22s ease-out, height .22s ease-out, box-shadow .3s; }
+  .slide.on .sw div:hover i { transform: none; box-shadow: 0 14px 30px rgba(0,0,0,.16); }
+  html.mobile .sw { display: grid; }
+  html.mobile .sw > div { width: auto; }
+  html.mobile .sw i { width: 84px; height: 84px; }
+  .sw > div > span { display: block; height: 4.6em; }
+  html.mobile .sw > div > span { height: auto; }
 </style>
 </head>
 <body>
@@ -976,6 +988,19 @@
     });
     pic.addEventListener("mouseleave", function () { lens.classList.remove("on"); });
     pic.addEventListener("click", function (e) { if (e.target.closest(".opt")) return; e.stopPropagation(); lens.classList.remove("on"); openL(cur(), ""); });
+  });
+  // Materiales: efecto "dock" de Mac, los círculos se agrandan según la cercanía del mouse
+  if (!document.documentElement.classList.contains("mobile")) document.querySelectorAll(".sw").forEach(function (sw) {
+    var its = sw.querySelectorAll(":scope > div");
+    sw.addEventListener("mousemove", function (e) {
+      var k = sw.getBoundingClientRect().width / sw.offsetWidth || 1;
+      its.forEach(function (d) {
+        var r = d.getBoundingClientRect(), dist = Math.abs(e.clientX - (r.left + r.width / 2)) / k;
+        var m = 1 + 0.9 * Math.max(0, Math.cos(Math.min(dist / 240, 1) * Math.PI / 2));
+        d.style.setProperty("--m", m.toFixed(3));
+      });
+    });
+    sw.addEventListener("mouseleave", function () { its.forEach(function (d) { d.style.setProperty("--m", 1); }); });
   });
   function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
   // Vista (A, grande y sin lateral) y detalles (B, achicada con fotos): la imagen no se funde,

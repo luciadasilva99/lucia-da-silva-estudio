@@ -128,6 +128,19 @@ const pinsScript = `<script>
     pic.addEventListener("mouseleave", function () { lens.classList.remove("on"); });
     pic.addEventListener("click", function (e) { if (e.target.closest(".opt")) return; e.stopPropagation(); lens.classList.remove("on"); openL(cur(), ""); });
   });
+  // Materiales: efecto "dock" de Mac, los círculos se agrandan según la cercanía del mouse
+  if (!document.documentElement.classList.contains("mobile")) document.querySelectorAll(".sw").forEach(function (sw) {
+    var its = sw.querySelectorAll(":scope > div");
+    sw.addEventListener("mousemove", function (e) {
+      var k = sw.getBoundingClientRect().width / sw.offsetWidth || 1;
+      its.forEach(function (d) {
+        var r = d.getBoundingClientRect(), dist = Math.abs(e.clientX - (r.left + r.width / 2)) / k;
+        var m = 1 + 0.9 * Math.max(0, Math.cos(Math.min(dist / 240, 1) * Math.PI / 2));
+        d.style.setProperty("--m", m.toFixed(3));
+      });
+    });
+    sw.addEventListener("mouseleave", function () { its.forEach(function (d) { d.style.setProperty("--m", 1); }); });
+  });
   function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
   // Vista (A, grande y sin lateral) y detalles (B, achicada con fotos): la imagen no se funde,
   // se agranda o se achica desde donde estaba hasta su lugar nuevo.

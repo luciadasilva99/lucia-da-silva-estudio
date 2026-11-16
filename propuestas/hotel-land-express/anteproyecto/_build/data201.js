@@ -43,26 +43,26 @@ module.exports = {
         { x: 63.6, y: 63.9, img: "o_toma.jpg", t: "Tomacorriente integrado al respaldo" },
         { x: 49.5, y: 80.6, img: "o_banco.jpg", t: "Banco de madera al pie de la cama" }
       ] },
-    { zona: "Escritorio y rack TV", img: "v_escritorio.jpg", ar: 1.658, items: ["Escritorio de madera con pie cilíndrico.", "Rack TV bajo, con estante abierto.", "Silla de madera.", "Colgantes dorados de luz cálida sobre el escritorio.", "Tomacorrientes a la altura del escritorio."],
+    { zona: "Escritorio y rack TV", img: "v_escritorio.jpg", ar: 1.658, items: ["Escritorio de madera con pie cilíndrico.", "Rack TV bajo, con estante abierto. La placa donde apoya la TV es giratoria y se orienta hacia el living.", "Silla de madera.", "Colgantes Rain (Indigo Lumieres) de luz cálida sobre el escritorio.", "Tomacorrientes e interruptor sobre el escritorio."],
       pins: [
-        { x: 26, y: 30.4, img: "o_colgante.jpg", t: "Colgantes dorados de luz cálida" },
-        { x: 24.3, y: 62, img: "o_tomas.jpg", t: "Tomacorrientes sobre el escritorio" },
+        { x: 26, y: 30.4, img: "o_colgante.jpg", t: "Colgantes Rain · Indigo Lumieres", url: "https://indigolumieres.com/productos/rain/" },
+        { x: 24.3, y: 62, img: "o_tomas.jpg", t: "Tomacorrientes e interruptor sobre el escritorio" },
         { x: 24.7, y: 79.2, img: "o_escritorio.jpg", t: "Escritorio de madera con pie cilíndrico" },
         { x: 36.7, y: 84.9, img: "o_silla.jpg", t: "Silla de madera" },
-        { x: 70, y: 84.9, img: "o_rack.jpg", t: "Rack TV bajo de madera" }
+        { x: 70, y: 71, img: "o_rack.jpg", t: "Rack TV bajo de madera · la placa donde apoya la TV gira hacia el living" }
       ] },
     { zona: "Living", img: "v_living.jpg", ar: 1.544, items: ["Sofá curvo tapizado en tono claro.", "Dos mesas ratonas redondas: madera y mármol verde.", "Lámpara de pie de arco, de luz cálida.", "Cortinas de lino de piso a techo.", "Rack TV en madera oscura."],
       pins: [
         { x: 72.3, y: 30, img: "o_lampara_pie.jpg", t: "Lámpara de pie de arco, luz cálida" },
         { x: 47, y: 42, img: "m_lino.jpg", t: "Cortinas de lino de piso a techo" },
-        { x: 14.9, y: 53, img: "o_rack.jpg", t: "Rack TV en madera oscura" },
-        { x: 85.8, y: 72.5, img: "o_sofa.jpg", t: "Sofá curvo · Antequera Muebles" },
+        { x: 14.9, y: 53, img: "o_rack.jpg", t: "Rack TV · placa de la TV giratoria hacia el living" },
+        { x: 85.8, y: 72.5, img: "o_sofa.jpg", t: "Sofá curvo · Antequera Muebles", url: "https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" },
         { x: 51.9, y: 80.9, img: "m_marmol_verde.jpg", t: "Mesas ratonas en madera y mármol verde" }
       ] },
-    { zona: "Coffee station", img: "v_coffee.jpg", ar: 0.311, items: ["Nicho con estantes en madera oscura.", "Espacio para cafetera y microondas.", "Frigobar bajo mesada con frente de madera.", "Spot de luz cálida en el nicho."],
+    { zona: "Coffee station", img: "v_coffee.jpg", ar: 0.311, items: ["Nicho con estantes en madera oscura.", "Espacio para cafetera y microondas.", "Frigobar bajo mesada con frente de madera.", "Spot de luz cálida en el nicho.", "Las térmicas quedan accesibles: por delante se coloca únicamente la cafetera."],
       pins: [
         { x: 26.4, y: 34.2, img: "o_estantes.jpg", t: "Nicho con estantes de madera" },
-        { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Cafetera" },
+        { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Cafetera · única pieza por delante de las térmicas, que quedan accesibles" },
         { x: 48.5, y: 76.7, img: "o_frente.jpg", t: "Frigobar con frente de madera" }
       ] },
     { zona: "Vanity", img: "v_vanity.jpg", ar: 1.773, alt: { img: "v_vanity_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Mesada flotante de madera con cajón.", "Espejo redondo.", "Silla de madera.", "Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac), con opción en Safari (Faplac).", "Spots de luz cálida."],

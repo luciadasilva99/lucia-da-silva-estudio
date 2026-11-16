@@ -143,3 +143,8 @@
   .rnd .peek.l { right: auto; left: 0; }
   .lbx img { max-height: 84vh; }
   .lbx .cap { bottom: 2.5vh; text-transform: none; letter-spacing: .02em; font-size: 14px; }
+  .rnd.pins .objs figure { position: relative; }
+  .rnd.pins .objs .lnk { position: absolute; left: 88px; bottom: -13px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--tc); text-decoration: none; border-bottom: 1px solid currentColor; opacity: 0; transform: translateY(-3px); transition: opacity .25s, transform .25s; cursor: pointer; z-index: 2; }
+  .rnd.pins .objs figure:hover .lnk, .rnd.pins .objs figure.hi .lnk { opacity: 1; transform: none; }
+  html.mobile .rnd.pins .objs .lnk { opacity: 1; position: static; display: inline-block; margin: 4px 0 0 88px; }
+  .lbx .cap a { color: #fff; margin-left: 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.6); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }

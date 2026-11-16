@@ -559,6 +559,11 @@
   .rnd .peek.l { right: auto; left: 0; }
   .lbx img { max-height: 84vh; }
   .lbx .cap { bottom: 2.5vh; text-transform: none; letter-spacing: .02em; font-size: 14px; }
+  .rnd.pins .objs figure { position: relative; }
+  .rnd.pins .objs .lnk { position: absolute; left: 88px; bottom: -13px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--tc); text-decoration: none; border-bottom: 1px solid currentColor; opacity: 0; transform: translateY(-3px); transition: opacity .25s, transform .25s; cursor: pointer; z-index: 2; }
+  .rnd.pins .objs figure:hover .lnk, .rnd.pins .objs figure.hi .lnk { opacity: 1; transform: none; }
+  html.mobile .rnd.pins .objs .lnk { opacity: 1; position: static; display: inline-block; margin: 4px 0 0 88px; }
+  .lbx .cap a { color: #fff; margin-left: 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.6); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
 </style>
 </head>
 <body>
@@ -870,7 +875,7 @@
   var lbx = document.createElement("div"); lbx.className = "lbx";
   lbx.innerHTML = '<span class="x">×</span><img alt=""><div class="cap"></div>';
   document.body.appendChild(lbx);
-  function openL(src, cap) { lbx.querySelector("img").src = src; lbx.querySelector(".cap").textContent = cap || ""; lbx.classList.add("on"); }
+  function openL(src, cap, url) { lbx.querySelector("img").src = src; var c = lbx.querySelector(".cap"); c.textContent = cap || ""; if (url) { var a = document.createElement("a"); a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver producto ↗"; a.addEventListener("click", function (e) { e.stopPropagation(); }); c.appendChild(a); } lbx.classList.add("on"); }
   function closeL() { lbx.classList.remove("on"); }
   lbx.addEventListener("click", function (e) { e.stopPropagation(); closeL(); });
   function block(e) { if (!lbx.classList.contains("on")) return; e.stopImmediatePropagation(); if (e.type === "keydown" && e.key === "Escape") closeL(); if (e.type === "wheel") e.preventDefault(); }
@@ -883,7 +888,8 @@
       var pin = box.querySelector(".pin[data-k='" + f.dataset.k + "']");
       f.addEventListener("mouseenter", function () { pk.querySelector("img").src = src; pk.classList.toggle("l", !!pin && parseFloat(pin.style.left) > 50); pk.classList.add("on"); });
       f.addEventListener("mouseleave", function () { pk.classList.remove("on"); });
-      f.addEventListener("click", function (e) { e.stopPropagation(); pk.classList.remove("on"); openL(src, cap); });
+      var lk = f.querySelector(".lnk"); if (lk) lk.addEventListener("click", function (e) { e.stopPropagation(); });
+      f.addEventListener("click", function (e) { if (e.target.closest(".lnk")) return; e.stopPropagation(); pk.classList.remove("on"); openL(src, cap, lk && lk.href); });
     });
   });
   var Z = 2.5;

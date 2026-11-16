@@ -58,7 +58,7 @@ function vista(id, r) {
   <div class="t"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Detalles · Habitación ${room}</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has">${pic(r.pins.map((p, k) => `<i class="pin" data-k="${k}" style="left:${p.x}%;top:${p.y}%;--d:${(.5 + k * .12).toFixed(2)}s">${sk(k)}<b>${k + 1}</b></i>`).join(''))}</div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs">${r.pins.map((p, k) => `<figure class="rv" data-k="${k}" style="--d:${(.3 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption><b>${k + 1}</b>${p.t}</figcaption></figure>`).join('')}</div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs">${r.pins.map((p, k) => `<figure class="rv" data-k="${k}" style="--d:${(.3 + k * .12).toFixed(2)}s"><div class="ph" style="background-image:url('img/${p.img}')"></div><figcaption><b>${k + 1}</b>${p.t}</figcaption>${p.url ? `<a class="lnk" href="${p.url}" target="_blank" rel="noopener">Ver producto ↗</a>` : ""}</figure>`).join('')}</div></div>
   </div></div>
   <div class="num"></div>
 </section>`;
@@ -92,7 +92,7 @@ const pinsScript = `<script>
   var lbx = document.createElement("div"); lbx.className = "lbx";
   lbx.innerHTML = '<span class="x">×</span><img alt=""><div class="cap"></div>';
   document.body.appendChild(lbx);
-  function openL(src, cap) { lbx.querySelector("img").src = src; lbx.querySelector(".cap").textContent = cap || ""; lbx.classList.add("on"); }
+  function openL(src, cap, url) { lbx.querySelector("img").src = src; var c = lbx.querySelector(".cap"); c.textContent = cap || ""; if (url) { var a = document.createElement("a"); a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "Ver producto ↗"; a.addEventListener("click", function (e) { e.stopPropagation(); }); c.appendChild(a); } lbx.classList.add("on"); }
   function closeL() { lbx.classList.remove("on"); }
   lbx.addEventListener("click", function (e) { e.stopPropagation(); closeL(); });
   function block(e) { if (!lbx.classList.contains("on")) return; e.stopImmediatePropagation(); if (e.type === "keydown" && e.key === "Escape") closeL(); if (e.type === "wheel") e.preventDefault(); }
@@ -105,7 +105,8 @@ const pinsScript = `<script>
       var pin = box.querySelector(".pin[data-k='" + f.dataset.k + "']");
       f.addEventListener("mouseenter", function () { pk.querySelector("img").src = src; pk.classList.toggle("l", !!pin && parseFloat(pin.style.left) > 50); pk.classList.add("on"); });
       f.addEventListener("mouseleave", function () { pk.classList.remove("on"); });
-      f.addEventListener("click", function (e) { e.stopPropagation(); pk.classList.remove("on"); openL(src, cap); });
+      var lk = f.querySelector(".lnk"); if (lk) lk.addEventListener("click", function (e) { e.stopPropagation(); });
+      f.addEventListener("click", function (e) { if (e.target.closest(".lnk")) return; e.stopPropagation(); pk.classList.remove("on"); openL(src, cap, lk && lk.href); });
     });
   });
   var Z = 2.5;

@@ -76,12 +76,12 @@ const body = `
 
 <!-- CONTENIDO -->
 <section class="slide" id="contenido">
-  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/portada.jpg');"></div>
+  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/m_dakar.jpg');"></div>
   <div class="fl ondark">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
   <div class="fr ondark">Cliente · Hotel Land Express</div>
   <div class="card rv" style="--d:.15s">
     <div class="idx">
-      <div class="l"><b>CONTENIDO</b><span>ANTEPROYECTO DE INTERIORISMO<br>HABITACIÓN ${room}</span></div>
+      <div class="l"><b>CONTENIDO</b><span>ANTEPROYECTO<br>DE INTERIORISMO<br>HABITACIÓN ${room}</span></div>
       <div class="r">
         <a data-go="objetivos"><b>01 / Objetivos</b><br><span>Qué resuelve este anteproyecto.</span></a>
         <a data-go="layout"><b>02 / Layout</b><br><span>${D.layoutTxt}</span></a>
@@ -167,6 +167,36 @@ ${D.renders.map((r, k) => render('r' + k, r.zona, r.items, r.img)).join('\n')}
   </div>
 </section>
 `;
+
+// Alineación óptica: los textos de la columna izquierda del índice quedan a ras de los de la derecha
+// (arriba: tope de mayúsculas de CONTENIDO = tope del primer ítem; abajo: última línea = última línea del índice).
+const align = `<script>
+(function(){
+  var cv = document.createElement('canvas').getContext('2d');
+  function met(el){ var cs = getComputedStyle(el), f = cs.fontWeight + ' 100px ' + cs.fontFamily, k = parseFloat(cs.fontSize) / 100; cv.font = f; var m = cv.measureText('H'); return { cap: m.actualBoundingBoxAscent * k, asc: m.fontBoundingBoxAscent * k, desc: m.fontBoundingBoxDescent * k }; }
+  function rects(el){ var r = document.createRange(); r.selectNodeContents(el); return [].slice.call(r.getClientRects()); }
+  function capTop(el){ var m = met(el), r = rects(el)[0]; return r.top + (m.asc - m.cap) * (r.height / (m.asc + m.desc)); }
+  function base(el){ var m = met(el), rs = rects(el), r = rs[rs.length - 1]; return r.bottom - m.desc * (r.height / (m.asc + m.desc)); }
+  function ink(el){ var t = el.firstChild, cs = getComputedStyle(el), r = document.createRange(); r.setStart(t, 0); r.setEnd(t, 1); cv.font = cs.fontWeight + ' 100px ' + cs.fontFamily; return r.getClientRects()[0].left - cv.measureText(t.data[0]).actualBoundingBoxLeft * parseFloat(cs.fontSize) / 100; }
+  function run(){
+    [].slice.call(document.querySelectorAll('.idx')).forEach(function(idx){
+      var b = idx.querySelector('.l b'), s = idx.querySelector('.l span'), its = idx.querySelectorAll('.r a');
+      if (!b || !s || !its.length) return;
+      var k = idx.getBoundingClientRect().width / idx.offsetWidth || 1;
+      b.style.transform = s.style.transform = '';
+      b.style.display = s.style.display = 'block';
+      var dt = (capTop(its[0].querySelector('b')) - capTop(b)) / k;
+      var db = (base(its[its.length - 1].querySelector('span') || its[its.length - 1]) - base(s)) / k;
+      var dx = (ink(b) - ink(s)) / k;
+      b.style.transform = 'translateY(' + dt.toFixed(2) + 'px)';
+      s.style.transform = 'translate(' + dx.toFixed(2) + 'px,' + db.toFixed(2) + 'px)';
+    });
+  }
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(run);
+  window.addEventListener('resize', function(){ setTimeout(run, 50); });
+})();
+</script>`;
+tail = tail.replace('</body>', align + '\n</body>');
 
 const out = head + '\n' + css + '</style>\n</head>\n<body>\n<nav id="mnav"></nav>\n<div id="stage">\n' + body + '\n' + tail + '\n';
 const dest = path.join(base, 'anteproyecto', room, 'index.html');

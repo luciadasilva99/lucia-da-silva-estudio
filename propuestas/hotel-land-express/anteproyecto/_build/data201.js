@@ -26,7 +26,7 @@ module.exports = {
     { n: "Melamina Roble Dakar<br>(Faplac)", img: "m_dakar.jpg" },
     { n: "Melamina Sahara<br>(Faplac)", img: "m_sahara.jpg" },
     { n: "Melamina Safari<br>(Faplac) · opción", img: "m_safari.jpg" },
-    { n: "Mármol<br>verde oscuro", img: "m_marmol_verde.jpg" },
+    { n: "Piedra<br>verde oscura", img: "m_marmol_verde.jpg" },
     { n: "Piso roble natural<br>existente", img: "m_roble.jpg" },
     { n: "Pintura<br>blanco crudo", css: "background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)" },
     { n: "Empapelado símil lino<br>blanco crudo", img: "m_simil_lino.jpg" },
@@ -52,13 +52,13 @@ module.exports = {
         { x: 36.7, y: 84.9, img: "o_silla.jpg", t: "Silla de madera" },
         { x: 70, y: 71, img: "o_rack.jpg", t: "Rack TV en melamina Roble Dakar (Faplac) · la placa donde apoya la TV gira hacia el living" }
       ] },
-    { zona: "Living", img: "v_living.jpg", ar: 1.544, items: ["Sofá curvo tapizado en tono claro.", "Dos mesas ratonas redondas: madera y mármol verde.", "Lámpara de pie de arco, de luz cálida.", "Cortinas de piso a techo: blackout más gasa de hilo.", "Rack TV en melamina Roble Dakar (Faplac)."],
+    { zona: "Living", img: "v_living.jpg", ar: 1.544, items: ["Sofá curvo tapizado en tono claro.", "Dos mesas ratonas redondas: madera y piedra verde oscura.", "Lámpara de pie de arco, de luz cálida.", "Cortinas de piso a techo: blackout más gasa de hilo.", "Rack TV en melamina Roble Dakar (Faplac)."],
       pins: [
         { x: 72.3, y: 30, img: "o_lampara_pie.jpg", t: "Lámpara de pie de arco, luz cálida" },
         { x: 47, y: 42, img: "o_cortinas.jpg", t: "Cortinas blackout más gasa de hilo, de piso a techo" },
         { x: 14.9, y: 53, img: "o_rack.jpg", t: "Rack TV en melamina Roble Dakar (Faplac) · placa de la TV giratoria hacia el living" },
         { x: 85.8, y: 72.5, img: "o_sofa.jpg", t: "Sofá curvo · Antequera Muebles", url: "https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" },
-        { x: 51.9, y: 80.9, img: "m_marmol_verde.jpg", t: "Mesas ratonas en madera y mármol verde" }
+        { x: 51.9, y: 80.9, img: "m_marmol_verde.jpg", t: "Mesas ratonas en madera y piedra verde oscura" }
       ] },
     { zona: "Coffee station", img: "v_coffee.jpg", ar: 0.311, items: ["Nicho con estantes en madera oscura.", "Espacio para cafetera y microondas.", "Frigobar bajo mesada con frente de madera.", "Spot de luz cálida en el nicho.", "Las térmicas quedan accesibles: por delante se coloca únicamente la cafetera."],
       pins: [

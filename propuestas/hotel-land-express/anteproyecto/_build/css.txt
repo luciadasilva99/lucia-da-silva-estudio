@@ -151,3 +151,7 @@
   .rnd.pins .objs.many { gap: 6px; }
   .rnd.pins .objs.many .ph { height: 50px; }
   .rnd.pins .objs.many figcaption { font-size: 12px; }
+  /* v5: vista grande sin lateral (la lista va con fotos en la lámina de detalles) */
+  .rnd.full { grid-template-columns: 1fr; }
+  .rnd.full .frame.has { padding: 0; }
+  .rnd.full .frame .pic { max-width: calc(584px * var(--ar)); }

@@ -567,6 +567,10 @@
   .rnd.pins .objs.many { gap: 6px; }
   .rnd.pins .objs.many .ph { height: 50px; }
   .rnd.pins .objs.many figcaption { font-size: 12px; }
+  /* v5: vista grande sin lateral (la lista va con fotos en la lámina de detalles) */
+  .rnd.full { grid-template-columns: 1fr; }
+  .rnd.full .frame.has { padding: 0; }
+  .rnd.full .frame .pic { max-width: calc(584px * var(--ar)); }
 </style>
 </head>
 <body>
@@ -682,9 +686,8 @@
 <section class="slide pairA" id="r0">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Habitación 201</div></div>
-  <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:2.127"><img src="img/v_dormitorio.jpg" alt="Modelado 3D Dormitorio"><img class="altimg" src="img/v_dormitorio_safari.jpg" alt="Modelado 3D Dormitorio · opción Safari"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>alternativa</small></button></div></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Dormitorio</h3><ul><li>Respaldo de madera de pared a pared, con mesas de luz flotantes.</li><li>Tira LED de luz cálida por detrás del respaldo, a lo largo de todo su ancho.</li><li>Empapelado símil lino blanco crudo en la parte superior.</li><li>Apliques redondos dorados, de luz cálida.</li><li>Tomacorrientes y llaves integrados al respaldo.</li><li>Banco de madera al pie de la cama.</li><li>Armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opción en Safari (Faplac).</li><li>Cuadro de paisaje neuquino en blanco y negro.</li><li>Cortinas de piso a techo: blackout más gasa de hilo.</li></ul></div>
+  <div class="pad"><div class="rnd full">
+    <div class="frame has"><div class="pic" style="--ar:2.127"><img src="img/v_dormitorio.jpg" alt="Modelado 3D Dormitorio"><img class="altimg" src="img/v_dormitorio_safari.jpg" alt="Modelado 3D Dormitorio · opción Safari"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>alternativa</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -703,9 +706,8 @@
 <section class="slide pairA" id="r1">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Escritorio y rack TV</span></h1><div class="s">Habitación 201</div></div>
-  <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.658"><img src="img/v_escritorio.jpg" alt="Modelado 3D Escritorio y rack TV"></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Escritorio y rack TV</h3><ul><li>Escritorio de madera con pie cilíndrico.</li><li>Rack TV bajo en melamina Roble Dakar (Faplac), con estante abierto. La placa donde apoya la TV es giratoria y se puede orientar entre el dormitorio y el living.</li><li>Silla Oslo (Antequera Muebles), con lustre en tono madera y tapizado a elección.</li><li>Colgantes Rain (Indigo Lumieres) en color dorado, de luz cálida, sobre el escritorio.</li><li>Tomacorrientes e interruptor sobre el escritorio.</li></ul></div>
+  <div class="pad"><div class="rnd full">
+    <div class="frame has"><div class="pic" style="--ar:1.658"><img src="img/v_escritorio.jpg" alt="Modelado 3D Escritorio y rack TV"></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -724,9 +726,8 @@
 <section class="slide pairA" id="r2">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Living</span></h1><div class="s">Habitación 201</div></div>
-  <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.544"><img src="img/v_living.jpg" alt="Modelado 3D Living"></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Living</h3><ul><li>Sofá curvo tapizado en tono claro.</li><li>Dos mesas ratonas redondas: madera y piedra verde oscura.</li><li>Lámpara de pie de arco, de luz cálida.</li><li>Cortinas de piso a techo: blackout más gasa de hilo.</li><li>Rack TV en melamina Roble Dakar (Faplac).</li></ul></div>
+  <div class="pad"><div class="rnd full">
+    <div class="frame has"><div class="pic" style="--ar:1.544"><img src="img/v_living.jpg" alt="Modelado 3D Living"></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -736,7 +737,7 @@
   <div class="t"><h1>Modelado 3D <span>· Living</span></h1><div class="s">Detalles · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:1.544"><img src="img/v_living.jpg" alt="Modelado 3D Living"><i class="pin" data-k="0" style="left:72.3%;top:30%;--d:0.50s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-60)"/></svg><b>1</b></i><i class="pin" data-k="1" style="left:47%;top:42%;--d:0.62s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-13)"/></svg><b>2</b></i><i class="pin" data-k="2" style="left:14.9%;top:53%;--d:0.74s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(34)"/></svg><b>3</b></i><i class="pin" data-k="3" style="left:85.8%;top:72.5%;--d:0.86s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(81)"/></svg><b>4</b></i><i class="pin" data-k="4" style="left:51.9%;top:80.9%;--d:0.98s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(128)"/></svg><b>5</b></i></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_lampara_pie.jpg')"></div><figcaption><b>1</b>Lámpara de pie de arco, luz cálida</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_cortinas.jpg')"></div><figcaption><b>2</b>Cortinas blackout más gasa de hilo, de piso a techo</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_rack.jpg')"></div><figcaption><b>3</b>Rack TV en melamina Roble Dakar (Faplac) · placa de la TV giratoria entre dormitorio y living</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_sofa.jpg')"></div><figcaption><b>4</b>Sofá curvo · Antequera Muebles</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/m_marmol_verde.jpg')"></div><figcaption><b>5</b>Mesas ratonas en madera y piedra verde oscura</figcaption></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_lampara_pie.jpg')"></div><figcaption><b>1</b>Lámpara de pie de arco, luz cálida</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_cortinas.jpg')"></div><figcaption><b>2</b>Cortinas blackout más gasa de hilo, de piso a techo</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_rack.jpg')"></div><figcaption><b>3</b>Rack TV en melamina Roble Dakar (Faplac) · placa de la TV giratoria entre dormitorio y living</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_sofa.jpg')"></div><figcaption><b>4</b>Sofá curvo tapizado en tono claro · Antequera Muebles</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/m_marmol_verde.jpg')"></div><figcaption><b>5</b>Mesas ratonas en madera y piedra verde oscura</figcaption></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -745,9 +746,8 @@
 <section class="slide pairA" id="r3">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Coffee station</span></h1><div class="s">Habitación 201</div></div>
-  <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:0.311"><img src="img/v_coffee.jpg" alt="Modelado 3D Coffee station"></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Coffee station</h3><ul><li>Nicho con estantes en madera oscura.</li><li>Espacio para cafetera y microondas.</li><li>Frigobar bajo mesada con frente de madera.</li><li>Spot de luz cálida en el nicho.</li><li>Las térmicas quedan accesibles: por delante se coloca únicamente la cafetera.</li></ul></div>
+  <div class="pad"><div class="rnd full">
+    <div class="frame has"><div class="pic" style="--ar:0.311"><img src="img/v_coffee.jpg" alt="Modelado 3D Coffee station"></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -757,7 +757,7 @@
   <div class="t"><h1>Modelado 3D <span>· Coffee station</span></h1><div class="s">Detalles · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:0.311"><img src="img/v_coffee.jpg" alt="Modelado 3D Coffee station"><i class="pin" data-k="0" style="left:26.4%;top:34.2%;--d:0.50s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-60)"/></svg><b>1</b></i><i class="pin" data-k="1" style="left:48.5%;top:43.8%;--d:0.62s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-13)"/></svg><b>2</b></i><i class="pin" data-k="2" style="left:48.5%;top:76.7%;--d:0.74s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(34)"/></svg><b>3</b></i></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_estantes.jpg')"></div><figcaption><b>1</b>Nicho con estantes de madera</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_cafetera.jpg')"></div><figcaption><b>2</b>Cafetera · única pieza por delante de las térmicas, que quedan accesibles</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_frente.jpg')"></div><figcaption><b>3</b>Frigobar con frente de madera</figcaption></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_estantes.jpg')"></div><figcaption><b>1</b>Nicho con estantes en madera oscura y spot de luz cálida</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_cafetera.jpg')"></div><figcaption><b>2</b>Espacio para cafetera y microondas · la cafetera es lo único que va por delante de las térmicas, que quedan accesibles</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_frente.jpg')"></div><figcaption><b>3</b>Frigobar bajo mesada con frente de madera</figcaption></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -766,9 +766,8 @@
 <section class="slide pairA" id="r4">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Vanity</span></h1><div class="s">Habitación 201</div></div>
-  <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.773"><img src="img/v_vanity.jpg" alt="Modelado 3D Vanity"><img class="altimg" src="img/v_vanity_safari.jpg" alt="Modelado 3D Vanity · opción Safari"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>alternativa</small></button></div></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>Vanity</h3><ul><li>Mesada flotante de madera con hueco abierto, de muy poca profundidad (sin cajón).</li><li>Espejo redondo.</li><li>Silla Oslo (Antequera Muebles), la misma del escritorio.</li><li>Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opción en Safari (Faplac).</li><li>Spots de luz cálida.</li></ul></div>
+  <div class="pad"><div class="rnd full">
+    <div class="frame has"><div class="pic" style="--ar:1.773"><img src="img/v_vanity.jpg" alt="Modelado 3D Vanity"><img class="altimg" src="img/v_vanity_safari.jpg" alt="Modelado 3D Vanity · opción Safari"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>alternativa</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -778,7 +777,7 @@
   <div class="t"><h1>Modelado 3D <span>· Vanity</span></h1><div class="s">Detalles · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:1.773"><img src="img/v_vanity.jpg" alt="Modelado 3D Vanity"><i class="pin" data-k="0" style="left:11.3%;top:16.8%;--d:0.50s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-60)"/></svg><b>1</b></i><i class="pin" data-k="1" style="left:54.1%;top:29.5%;--d:0.62s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-13)"/></svg><b>2</b></i><i class="pin" data-k="2" style="left:82.5%;top:48.6%;--d:0.74s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(34)"/></svg><b>3</b></i><i class="pin" data-k="3" style="left:58.7%;top:71.6%;--d:0.86s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(81)"/></svg><b>4</b></i><i class="pin" data-k="4" style="left:47.6%;top:79.1%;--d:0.98s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(128)"/></svg><b>5</b></i></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/m_simil_lino.jpg')"></div><figcaption><b>1</b>Empapelado símil lino blanco crudo</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_espejo.jpg')"></div><figcaption><b>2</b>Espejo redondo</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_armario.jpg')"></div><figcaption><b>3</b>Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_mesada.jpg')"></div><figcaption><b>4</b>Mesada flotante de madera con hueco abierto, de muy poca profundidad</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/o_silla_oslo.jpg')"></div><figcaption><b>5</b>Silla Oslo · Antequera Muebles, la misma del escritorio</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/silla-oslo/" target="_blank" rel="noopener">Ver producto ↗</a></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/m_simil_lino.jpg')"></div><figcaption><b>1</b>Empapelado símil lino blanco crudo</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_espejo.jpg')"></div><figcaption><b>2</b>Espejo redondo, con spots de luz cálida</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_armario.jpg')"></div><figcaption><b>3</b>Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_mesada.jpg')"></div><figcaption><b>4</b>Mesada flotante de madera con hueco abierto, de muy poca profundidad</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/o_silla_oslo.jpg')"></div><figcaption><b>5</b>Silla Oslo · Antequera Muebles, la misma del escritorio</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/silla-oslo/" target="_blank" rel="noopener">Ver producto ↗</a></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -979,18 +978,32 @@
     pic.addEventListener("click", function (e) { if (e.target.closest(".opt")) return; e.stopPropagation(); lens.classList.remove("on"); openL(cur(), ""); });
   });
   function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
-  // Imagen fija entre la vista (A) y sus detalles (B)
+  // Vista (A, grande y sin lateral) y detalles (B, achicada con fotos): la imagen no se funde,
+  // se agranda o se achica desde donde estaba hasta su lugar nuevo.
+  function morph(from, to, i) {
+    var pf = from.querySelector(".frame .pic"), pt = to.querySelector(".frame .pic");
+    if (!pf || !pt) { base(i); return; }
+    var a = pf.getBoundingClientRect();
+    from.classList.add("snap"); to.classList.add("keep");
+    pt.style.transition = "none"; pt.style.transform = "";
+    base(i);
+    var b = pt.getBoundingClientRect();
+    if (!b.width) return;
+    var k = b.width / pt.offsetWidth, s = a.width / b.width;
+    pt.style.transition = "none"; pt.style.transformOrigin = "0 0";
+    pt.style.transform = "translate(" + ((a.left - b.left) / k) + "px," + ((a.top - b.top) / k) + "px) scale(" + s + ")";
+    void pt.offsetWidth;
+    pt.style.transition = "transform .85s cubic-bezier(.65,0,.25,1)"; pt.style.transform = "";
+    setTimeout(function () { from.classList.remove("snap"); to.classList.remove("keep"); pt.style.transition = ""; pt.style.transformOrigin = ""; }, 900);
+  }
   if (typeof window.go === "function" && !document.documentElement.classList.contains("mobile")) {
     var base = window.go, slides = [].slice.call(document.querySelectorAll(".slide"));
     window.go = function (i) {
       var from = slides.indexOf(document.querySelector(".slide.on"));
       var A = slides[from], Bs = slides[i];
-      if (A && Bs && A.classList.contains("pairA") && Bs.id === A.id + "d") {
-        A.classList.add("keep"); base(i); resetAlt(); setTimeout(function () { A.classList.remove("keep"); }, 700); return;
-      }
-      if (A && Bs && Bs.classList.contains("pairA") && A.id === Bs.id + "d") {
-        Bs.classList.add("snap"); base(i); resetAlt(); setTimeout(function () { Bs.classList.remove("snap"); }, 700); return;
-      }
+      var fwd = A && Bs && A.classList.contains("pairA") && Bs.id === A.id + "d";
+      var back = A && Bs && Bs.classList.contains("pairA") && A.id === Bs.id + "d";
+      if (fwd || back) { morph(A, Bs, i); resetAlt(); return; }
       base(i); resetAlt();
     };
   }

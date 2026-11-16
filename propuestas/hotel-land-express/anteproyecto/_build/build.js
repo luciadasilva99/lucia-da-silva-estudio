@@ -44,10 +44,12 @@ function vista(id, r) {
 <section class="slide${pair ? ' pairA' : ''}" id="${id}">
   ${by}
   <div class="t rv"><h1>Modelado 3D <span>· ${r.zona}</span></h1><div class="s">Habitación ${room}</div></div>
-  <div class="pad"><div class="rnd">
+  <div class="pad">${pair ? `<div class="rnd full">
+    <div class="frame has">${fr}</div>
+  </div>` : `<div class="rnd">
     <div class="frame${r.img ? ' has' : ' rv'}" style="--d:.1s">${fr}</div>
     <div class="side rv" style="--d:.3s"><div class="z">Zona</div><h3>${r.zona}</h3><ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul></div>
-  </div></div>
+  </div>`}</div>
   <div class="num"></div>
 </section>`;
   if (pair) {
@@ -127,18 +129,32 @@ const pinsScript = `<script>
     pic.addEventListener("click", function (e) { if (e.target.closest(".opt")) return; e.stopPropagation(); lens.classList.remove("on"); openL(cur(), ""); });
   });
   function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
-  // Imagen fija entre la vista (A) y sus detalles (B)
+  // Vista (A, grande y sin lateral) y detalles (B, achicada con fotos): la imagen no se funde,
+  // se agranda o se achica desde donde estaba hasta su lugar nuevo.
+  function morph(from, to, i) {
+    var pf = from.querySelector(".frame .pic"), pt = to.querySelector(".frame .pic");
+    if (!pf || !pt) { base(i); return; }
+    var a = pf.getBoundingClientRect();
+    from.classList.add("snap"); to.classList.add("keep");
+    pt.style.transition = "none"; pt.style.transform = "";
+    base(i);
+    var b = pt.getBoundingClientRect();
+    if (!b.width) return;
+    var k = b.width / pt.offsetWidth, s = a.width / b.width;
+    pt.style.transition = "none"; pt.style.transformOrigin = "0 0";
+    pt.style.transform = "translate(" + ((a.left - b.left) / k) + "px," + ((a.top - b.top) / k) + "px) scale(" + s + ")";
+    void pt.offsetWidth;
+    pt.style.transition = "transform .85s cubic-bezier(.65,0,.25,1)"; pt.style.transform = "";
+    setTimeout(function () { from.classList.remove("snap"); to.classList.remove("keep"); pt.style.transition = ""; pt.style.transformOrigin = ""; }, 900);
+  }
   if (typeof window.go === "function" && !document.documentElement.classList.contains("mobile")) {
     var base = window.go, slides = [].slice.call(document.querySelectorAll(".slide"));
     window.go = function (i) {
       var from = slides.indexOf(document.querySelector(".slide.on"));
       var A = slides[from], Bs = slides[i];
-      if (A && Bs && A.classList.contains("pairA") && Bs.id === A.id + "d") {
-        A.classList.add("keep"); base(i); resetAlt(); setTimeout(function () { A.classList.remove("keep"); }, 700); return;
-      }
-      if (A && Bs && Bs.classList.contains("pairA") && A.id === Bs.id + "d") {
-        Bs.classList.add("snap"); base(i); resetAlt(); setTimeout(function () { Bs.classList.remove("snap"); }, 700); return;
-      }
+      var fwd = A && Bs && A.classList.contains("pairA") && Bs.id === A.id + "d";
+      var back = A && Bs && Bs.classList.contains("pairA") && A.id === Bs.id + "d";
+      if (fwd || back) { morph(A, Bs, i); resetAlt(); return; }
       base(i); resetAlt();
     };
   }

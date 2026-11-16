@@ -58,19 +58,19 @@ module.exports = {
         { x: 72.3, y: 30, img: "o_lampara_pie.jpg", t: "Lámpara de pie de arco, luz cálida" },
         { x: 47, y: 42, img: "o_cortinas.jpg", t: "Cortinas blackout más gasa de hilo, de piso a techo" },
         { x: 14.9, y: 53, img: "o_rack.jpg", t: "Rack TV en melamina Roble Dakar (Faplac) · placa de la TV giratoria entre dormitorio y living" },
-        { x: 85.8, y: 72.5, img: "o_sofa.jpg", t: "Sofá curvo · Antequera Muebles", url: "https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" },
+        { x: 85.8, y: 72.5, img: "o_sofa.jpg", t: "Sofá curvo tapizado en tono claro · Antequera Muebles", url: "https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" },
         { x: 51.9, y: 80.9, img: "m_marmol_verde.jpg", t: "Mesas ratonas en madera y piedra verde oscura" }
       ] },
     { zona: "Coffee station", img: "v_coffee.jpg", ar: 0.311, items: ["Nicho con estantes en madera oscura.", "Espacio para cafetera y microondas.", "Frigobar bajo mesada con frente de madera.", "Spot de luz cálida en el nicho.", "Las térmicas quedan accesibles: por delante se coloca únicamente la cafetera."],
       pins: [
-        { x: 26.4, y: 34.2, img: "o_estantes.jpg", t: "Nicho con estantes de madera" },
-        { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Cafetera · única pieza por delante de las térmicas, que quedan accesibles" },
-        { x: 48.5, y: 76.7, img: "o_frente.jpg", t: "Frigobar con frente de madera" }
+        { x: 26.4, y: 34.2, img: "o_estantes.jpg", t: "Nicho con estantes en madera oscura y spot de luz cálida" },
+        { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Espacio para cafetera y microondas · la cafetera es lo único que va por delante de las térmicas, que quedan accesibles" },
+        { x: 48.5, y: 76.7, img: "o_frente.jpg", t: "Frigobar bajo mesada con frente de madera" }
       ] },
     { zona: "Vanity", img: "v_vanity.jpg", ar: 1.773, alt: { img: "v_vanity_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Mesada flotante de madera con hueco abierto, de muy poca profundidad (sin cajón).", "Espejo redondo.", "Silla Oslo (Antequera Muebles), la misma del escritorio.", "Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opción en Safari (Faplac).", "Spots de luz cálida."],
       pins: [
         { x: 11.3, y: 16.8, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
-        { x: 54.1, y: 29.5, img: "o_espejo.jpg", t: "Espejo redondo" },
+        { x: 54.1, y: 29.5, img: "o_espejo.jpg", t: "Espejo redondo, con spots de luz cálida" },
         { x: 82.5, y: 48.6, img: "o_armario.jpg", t: "Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)" },
         { x: 58.7, y: 71.6, img: "o_mesada.jpg", t: "Mesada flotante de madera con hueco abierto, de muy poca profundidad" },
         { x: 47.6, y: 79.1, img: "o_silla_oslo.jpg", t: "Silla Oslo · Antequera Muebles, la misma del escritorio", url: "https://antequeramuebles.com.ar/productos/silla-oslo/" }

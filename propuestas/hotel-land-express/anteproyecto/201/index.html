@@ -472,6 +472,23 @@
   .rnd .frame .pic { position: relative; width: 100%; max-width: calc(584px * var(--ar)); aspect-ratio: var(--ar); }
   .rnd .frame .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   html.mobile .rnd .frame.has { height: auto; }
+
+  /* Planta general con zonas */
+  .plg .pic img { object-fit: contain; }
+  .plg .mk { position: absolute; width: 0; height: 0; cursor: pointer; z-index: 2; }
+  .plg .mk .cone { position: absolute; left: -40px; top: -40px; width: 80px; height: 80px; transform: rotate(var(--r)) scale(0); transform-origin: 50% 50%; transition: transform .7s cubic-bezier(.2,.7,.2,1) var(--d); }
+  .plg .mk .cone svg { width: 100%; height: 100%; display: block; }
+  .plg .mk .cone path { fill: rgba(160,88,58,.22); stroke: var(--tc); stroke-width: 1; }
+  .slide.on .plg .mk .cone { transform: rotate(var(--r)) scale(1); }
+  .plg .mk b { position: absolute; left: -12px; top: -12px; width: 24px; height: 24px; border-radius: 50%; background: var(--tc); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px #fff; transform: scale(0); transition: transform .5s cubic-bezier(.2,.7,.2,1) var(--d); }
+  .slide.on .plg .mk b { transform: scale(1); }
+  .plg .mk:hover b { background: #111; }
+  .plg .ing { position: absolute; transform: translate(-50%, -50%); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--tc); background: #fff; padding: 2px 6px; }
+  .plg .zl { list-style: none; }
+  .plg .zl a { display: flex; align-items: center; gap: 12px; padding: 9px 0; font-size: 13.5px; color: #333; border-bottom: 1px solid rgba(17,17,17,.10); cursor: pointer; text-decoration: none; transition: color .3s, padding .3s; }
+  .plg .zl a:hover { color: var(--tc); padding-left: 4px; }
+  .plg .zl b { width: 22px; height: 22px; border-radius: 50%; background: var(--tc); color: #fff; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
+  .plg .side li { padding: 0; border: 0; } .plg .side li::before { display: none; }
 </style>
 </head>
 <body>
@@ -526,10 +543,15 @@
 <!-- LAYOUT -->
 <section class="slide" id="layout" data-sec="Layout">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Layout <span>· Habitación 201</span></h1><div class="s">Distribución en planta</div></div>
-  <div class="pad"><div class="lay">
-    <figure class="rv" style="--d:0.15s"><div class="ph cad"><img src="img/layout_dormitorio.png" alt="Planta Dormitorio"></div><figcaption>Dormitorio<small>Cama con respaldo pared a pared, mesas de luz flotantes, escritorio y mueble TV integrados.</small></figcaption></figure>
-    <figure class="rv" style="--d:0.30s"><div class="ph cad"><img src="img/layout_living.png" alt="Planta Living"></div><figcaption>Living<small>Sofá, dos mesas ratonas redondas y lámpara de pie.</small></figcaption></figure>
+  <div class="t rv"><h1>Layout <span>· Habitación 201</span></h1><div class="s">Planta general · desde dónde mira cada vista</div></div>
+  <div class="pad"><div class="rnd plg">
+    <div class="frame has rv" style="--d:.1s"><div class="pic" style="--ar:1.2"><img src="img/planta_general.png" alt="Planta general">
+      <a class="mk" data-go="r0" style="left:57.6%;top:65.4%;--r:0deg;--d:0.50s"><i class="cone"><svg viewBox="-40 -40 80 80"><path d="M0 0 L36 -14 A38 38 0 0 1 36 14 Z"/></svg></i><b>1</b></a><a class="mk" data-go="r1" style="left:53.1%;top:85.7%;--r:180deg;--d:0.62s"><i class="cone"><svg viewBox="-40 -40 80 80"><path d="M0 0 L36 -14 A38 38 0 0 1 36 14 Z"/></svg></i><b>2</b></a><a class="mk" data-go="r2" style="left:20.3%;top:39.6%;--r:90deg;--d:0.74s"><i class="cone"><svg viewBox="-40 -40 80 80"><path d="M0 0 L36 -14 A38 38 0 0 1 36 14 Z"/></svg></i><b>3</b></a><a class="mk" data-go="r3" style="left:29.4%;top:7.1%;--r:180deg;--d:0.86s"><i class="cone"><svg viewBox="-40 -40 80 80"><path d="M0 0 L36 -14 A38 38 0 0 1 36 14 Z"/></svg></i><b>4</b></a><a class="mk" data-go="r4" style="left:67.2%;top:50.5%;--r:270deg;--d:0.98s"><i class="cone"><svg viewBox="-40 -40 80 80"><path d="M0 0 L36 -14 A38 38 0 0 1 36 14 Z"/></svg></i><b>5</b></a>
+      <span class="ing" style="left:38.2%;top:16.6%">Ingreso</span>
+    </div></div>
+    <div class="side rv" style="--d:.3s"><div class="z">Zonas</div><h3>Vistas del modelado</h3>
+      <ol class="zl"><li><a data-go="r0"><b>1</b>Dormitorio</a></li><li><a data-go="r1"><b>2</b>Escritorio y rack TV</a></li><li><a data-go="r2"><b>3</b>Living</a></li><li><a data-go="r3"><b>4</b>Coffee station</a></li><li><a data-go="r4"><b>5</b>Vanity</a></li></ol>
+    </div>
   </div></div>
   <div class="num"></div>
 </section>

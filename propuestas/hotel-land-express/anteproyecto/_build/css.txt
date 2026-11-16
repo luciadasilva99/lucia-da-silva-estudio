@@ -56,3 +56,20 @@
   .rnd .frame .pic { position: relative; width: 100%; max-width: calc(584px * var(--ar)); aspect-ratio: var(--ar); }
   .rnd .frame .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   html.mobile .rnd .frame.has { height: auto; }
+
+  /* Planta general con zonas */
+  .plg .pic img { object-fit: contain; }
+  .plg .mk { position: absolute; width: 0; height: 0; cursor: pointer; z-index: 2; }
+  .plg .mk .cone { position: absolute; left: -40px; top: -40px; width: 80px; height: 80px; transform: rotate(var(--r)) scale(0); transform-origin: 50% 50%; transition: transform .7s cubic-bezier(.2,.7,.2,1) var(--d); }
+  .plg .mk .cone svg { width: 100%; height: 100%; display: block; }
+  .plg .mk .cone path { fill: rgba(160,88,58,.22); stroke: var(--tc); stroke-width: 1; }
+  .slide.on .plg .mk .cone { transform: rotate(var(--r)) scale(1); }
+  .plg .mk b { position: absolute; left: -12px; top: -12px; width: 24px; height: 24px; border-radius: 50%; background: var(--tc); color: #fff; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px #fff; transform: scale(0); transition: transform .5s cubic-bezier(.2,.7,.2,1) var(--d); }
+  .slide.on .plg .mk b { transform: scale(1); }
+  .plg .mk:hover b { background: #111; }
+  .plg .ing { position: absolute; transform: translate(-50%, -50%); font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: var(--tc); background: #fff; padding: 2px 6px; }
+  .plg .zl { list-style: none; }
+  .plg .zl a { display: flex; align-items: center; gap: 12px; padding: 9px 0; font-size: 13.5px; color: #333; border-bottom: 1px solid rgba(17,17,17,.10); cursor: pointer; text-decoration: none; transition: color .3s, padding .3s; }
+  .plg .zl a:hover { color: var(--tc); padding-left: 4px; }
+  .plg .zl b { width: 22px; height: 22px; border-radius: 50%; background: var(--tc); color: #fff; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
+  .plg .side li { padding: 0; border: 0; } .plg .side li::before { display: none; }

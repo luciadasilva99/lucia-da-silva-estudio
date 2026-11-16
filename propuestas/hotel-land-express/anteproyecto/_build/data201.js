@@ -7,6 +7,14 @@ module.exports = {
     ["Optimizar la distribución y el uso del espacio.", "", 4],
     ["Seleccionar materiales y paleta de colores a modo referencial.", "", 6]
   ],
+  planta: { img: "planta_general.png", ar: 1.2, ingreso: { x: 38.2, y: 16.6 },
+    zonas: [
+      { t: "Dormitorio", go: "r0", x: 57.6, y: 65.4, dir: 0 },
+      { t: "Escritorio y rack TV", go: "r1", x: 53.1, y: 85.7, dir: 180 },
+      { t: "Living", go: "r2", x: 20.3, y: 39.6, dir: 90 },
+      { t: "Coffee station", go: "r3", x: 29.4, y: 7.1, dir: 180 },
+      { t: "Vanity", go: "r4", x: 67.2, y: 50.5, dir: 270 }
+    ] },
   layout: [
     { t: 'Dormitorio', img: 'layout_dormitorio.png', d: 'Cama con respaldo pared a pared, mesas de luz flotantes, escritorio y mueble TV integrados.' },
     { t: 'Living', img: 'layout_living.png', d: 'Sofá, dos mesas ratonas redondas y lámpara de pie.' }

@@ -88,6 +88,21 @@ const pinsScript = `<script>
 </script>`;
 
 const D = require(path.join(__dirname, `data${room}.js`));
+
+// Planta general dibujada a lápiz, con un número por zona y un cono que indica hacia dónde mira cada vista.
+// dir: 0 = derecha, 90 = abajo, 180 = izquierda, 270 = arriba. Click en la zona lleva a su lámina de modelado 3D.
+function plantaGeneral(P) {
+  const cone = `<svg viewBox="-40 -40 80 80"><path d="M0 0 L36 -14 A38 38 0 0 1 36 14 Z"/></svg>`;
+  return `<div class="rnd plg">
+    <div class="frame has rv" style="--d:.1s"><div class="pic" style="--ar:${P.ar}"><img src="img/${P.img}" alt="Planta general">
+      ${P.zonas.map((z, k) => `<a class="mk" data-go="${z.go}" style="left:${z.x}%;top:${z.y}%;--r:${z.dir}deg;--d:${(.5 + k * .12).toFixed(2)}s"><i class="cone">${cone}</i><b>${k + 1}</b></a>`).join('')}
+      ${P.ingreso ? `<span class="ing" style="left:${P.ingreso.x}%;top:${P.ingreso.y}%">Ingreso</span>` : ''}
+    </div></div>
+    <div class="side rv" style="--d:.3s"><div class="z">Zonas</div><h3>Vistas del modelado</h3>
+      <ol class="zl">${P.zonas.map((z, k) => `<li><a data-go="${z.go}"><b>${k + 1}</b>${z.t}</a></li>`).join('')}</ol>
+    </div>
+  </div>`;
+}
 const icons = [
   '<rect pathLength="1" x="3" y="6" width="24" height="15" rx="1"/><line pathLength="1" x1="15" y1="21" x2="15" y2="26"/><line pathLength="1" x1="9" y1="26" x2="21" y2="26"/>',
   '<path pathLength="1" d="M4 24 V10 H26 V24 M4 18 H26"/><path pathLength="1" d="M8 10 V6 H22 V10"/>',
@@ -155,10 +170,10 @@ ${objetivos}
 <!-- LAYOUT -->
 <section class="slide" id="layout" data-sec="Layout">
   ${by}
-  <div class="t rv"><h1>Layout <span>· Habitación ${room}</span></h1><div class="s">Distribución en planta</div></div>
-  <div class="pad"><div class="lay">
+  <div class="t rv"><h1>Layout <span>· Habitación ${room}</span></h1><div class="s">${D.planta ? 'Planta general · desde dónde mira cada vista' : 'Distribución en planta'}</div></div>
+  <div class="pad">${D.planta ? plantaGeneral(D.planta) : `<div class="lay">
 ${layout}
-  </div></div>
+  </div>`}</div>
   <div class="num"></div>
 </section>
 

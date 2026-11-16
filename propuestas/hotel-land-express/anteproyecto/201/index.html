@@ -583,6 +583,10 @@
   html.mobile .sw i { width: 84px; height: 84px; }
   .sw > div > span { display: block; height: 4.6em; }
   html.mobile .sw > div > span { height: auto; }
+  /* v7: varias opciones de armario */
+  .pic .altimg.show { clip-path: inset(0 0 0 0); }
+  .pic.alt-on .altimg:not(.show) { clip-path: inset(0 0 0 100%); }
+  .sw.n9 { --w: 96px; gap: 16px; }
 </style>
 </head>
 <body>
@@ -669,15 +673,16 @@
   <div class="t rv"><h1>Materiales <span>a utilizar</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="matg">
     <p class="disc rv">Las terminaciones de la suite. Los tonos finales los confirmamos con muestras físicas.</p>
-    <div class="sw n8">
+    <div class="sw n9">
       <div class="rv" style="--d:0.10s"><i class="img" style="background-image:url('img/m_dakar.jpg')"></i><span>Melamina Roble Dakar<br>(Faplac)</span></div>
       <div class="rv" style="--d:0.18s"><i class="img" style="background-image:url('img/m_sahara.jpg')"></i><span>Melamina Sahara<br>(Faplac)</span></div>
       <div class="rv" style="--d:0.26s"><i class="img" style="background-image:url('img/m_safari.jpg')"></i><span>Melamina Safari<br>(Faplac) · opción</span></div>
-      <div class="rv" style="--d:0.34s"><i class="img" style="background-image:url('img/m_marmol_verde.jpg')"></i><span>Piedra<br>verde oscura</span></div>
-      <div class="rv" style="--d:0.42s"><i class="img" style="background-image:url('img/m_roble.jpg')"></i><span>Piso roble natural<br>existente</span></div>
-      <div class="rv" style="--d:0.50s"><i style="background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)"></i><span>Pintura<br>blanco crudo</span></div>
-      <div class="rv" style="--d:0.58s"><i class="img" style="background-image:url('img/m_simil_lino.jpg')"></i><span>Empapelado símil lino<br>blanco crudo</span></div>
-      <div class="rv" style="--d:0.66s"><i class="img" style="background-image:url('img/t_bronce.jpg')"></i><span>Metal<br>dorado</span></div>
+      <div class="rv" style="--d:0.34s"><i class="img" style="background-image:url('img/m_nature.jpg')"></i><span>Melamina Blanco Nature<br>(Faplac) · opción</span></div>
+      <div class="rv" style="--d:0.42s"><i class="img" style="background-image:url('img/m_marmol_verde.jpg')"></i><span>Piedra<br>verde oscura</span></div>
+      <div class="rv" style="--d:0.50s"><i class="img" style="background-image:url('img/m_roble.jpg')"></i><span>Piso roble natural<br>existente</span></div>
+      <div class="rv" style="--d:0.58s"><i style="background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)"></i><span>Pintura<br>blanco crudo</span></div>
+      <div class="rv" style="--d:0.66s"><i class="img" style="background-image:url('img/m_simil_lino.jpg')"></i><span>Empapelado símil lino<br>blanco crudo</span></div>
+      <div class="rv" style="--d:0.74s"><i class="img" style="background-image:url('img/t_bronce.jpg')"></i><span>Metal<br>dorado</span></div>
     </div>
   </div></div>
   <div class="num"></div>
@@ -699,7 +704,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="rnd full">
-    <div class="frame has"><div class="pic" style="--ar:2.127"><img src="img/v_dormitorio.jpg" alt="Modelado 3D Dormitorio"><img class="altimg" src="img/v_dormitorio_safari.jpg" alt="Modelado 3D Dormitorio · opción Safari"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>alternativa</small></button></div></div></div>
+    <div class="frame has"><div class="pic" style="--ar:2.127"><img src="img/v_dormitorio.jpg" alt="Modelado 3D Dormitorio"><img class="altimg" data-o="1" src="img/v_dormitorio_safari.jpg" alt="Modelado 3D Dormitorio · opción Safari"><img class="altimg" data-o="2" src="img/v_dormitorio_nature.jpg" alt="Modelado 3D Dormitorio · opción Blanco Nature"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>opción</small></button><button data-o="2">Blanco Nature<small>opción</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -709,7 +714,7 @@
   <div class="t"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Detalles · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:2.127"><img src="img/v_dormitorio.jpg" alt="Modelado 3D Dormitorio"><i class="pin" data-k="0" style="left:64.9%;top:24%;--d:0.50s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-60)"/></svg><b>1</b></i><i class="pin" data-k="1" style="left:49.6%;top:36%;--d:0.62s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-13)"/></svg><b>2</b></i><i class="pin" data-k="2" style="left:19.4%;top:51%;--d:0.74s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(34)"/></svg><b>3</b></i><i class="pin" data-k="3" style="left:34.9%;top:57.5%;--d:0.86s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(81)"/></svg><b>4</b></i><i class="pin" data-k="4" style="left:72.4%;top:56%;--d:0.98s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(128)"/></svg><b>5</b></i><i class="pin" data-k="5" style="left:63.6%;top:63.9%;--d:1.10s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(175)"/></svg><b>6</b></i><i class="pin" data-k="6" style="left:49.5%;top:80.6%;--d:1.22s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(222)"/></svg><b>7</b></i><i class="pin" data-k="7" style="left:30%;top:43.5%;--d:1.34s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(269)"/></svg><b>8</b></i><i class="pin" data-k="8" style="left:88%;top:30%;--d:1.46s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(316)"/></svg><b>9</b></i></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs many"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/m_simil_lino.jpg')"></div><figcaption><b>1</b>Empapelado símil lino blanco crudo</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_cuadro.jpg')"></div><figcaption><b>2</b>Cuadro de paisaje neuquino en blanco y negro, marco negro fino</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_armario.jpg')"></div><figcaption><b>3</b>Frente de armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_aplique.jpg')"></div><figcaption><b>4</b>Aplique dorado de luz cálida</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/o_respaldo.jpg')"></div><figcaption><b>5</b>Respaldo de madera con mesas flotantes</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/o_toma.jpg')"></div><figcaption><b>6</b>Tomacorriente integrado al respaldo</figcaption></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/o_banco.jpg')"></div><figcaption><b>7</b>Banco de madera al pie de la cama</figcaption></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/o_led.jpg')"></div><figcaption><b>8</b>Tira LED de luz cálida por detrás del respaldo, en todo su ancho</figcaption></figure><figure class="rv" data-k="8" style="--d:1.26s"><div class="ph" style="background-image:url('img/o_cortinas.jpg')"></div><figcaption><b>9</b>Cortinas blackout más gasa de hilo, de piso a techo</figcaption></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs many"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/m_simil_lino.jpg')"></div><figcaption><b>1</b>Empapelado símil lino blanco crudo</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_cuadro.jpg')"></div><figcaption><b>2</b>Cuadro de paisaje neuquino en blanco y negro, marco negro fino</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_armario.jpg')"></div><figcaption><b>3</b>Frente de armario en melamina Sahara (Faplac), con tiradores largos de embutir · opciones Safari o Blanco Nature (Faplac)</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_aplique.jpg')"></div><figcaption><b>4</b>Aplique dorado de luz cálida</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/o_respaldo.jpg')"></div><figcaption><b>5</b>Respaldo de madera con mesas flotantes</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/o_toma.jpg')"></div><figcaption><b>6</b>Tomacorriente integrado al respaldo</figcaption></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/o_banco.jpg')"></div><figcaption><b>7</b>Banco de madera al pie de la cama</figcaption></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/o_led.jpg')"></div><figcaption><b>8</b>Tira LED de luz cálida por detrás del respaldo, en todo su ancho</figcaption></figure><figure class="rv" data-k="8" style="--d:1.26s"><div class="ph" style="background-image:url('img/o_cortinas.jpg')"></div><figcaption><b>9</b>Cortinas blackout más gasa de hilo, de piso a techo</figcaption></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -779,7 +784,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Vanity</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="rnd full">
-    <div class="frame has"><div class="pic" style="--ar:1.773"><img src="img/v_vanity.jpg" alt="Modelado 3D Vanity"><img class="altimg" src="img/v_vanity_safari.jpg" alt="Modelado 3D Vanity · opción Safari"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>alternativa</small></button></div></div></div>
+    <div class="frame has"><div class="pic" style="--ar:1.773"><img src="img/v_vanity.jpg" alt="Modelado 3D Vanity"><img class="altimg" data-o="1" src="img/v_vanity_safari.jpg" alt="Modelado 3D Vanity · opción Safari"><img class="altimg" data-o="2" src="img/v_vanity_nature.jpg" alt="Modelado 3D Vanity · opción Blanco Nature"><div class="opt"><span>Armario</span><button class="on" data-o="0">Sahara<small>principal</small></button><button data-o="1">Safari<small>opción</small></button><button data-o="2">Blanco Nature<small>opción</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -789,7 +794,7 @@
   <div class="t"><h1>Modelado 3D <span>· Vanity</span></h1><div class="s">Detalles · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:1.773"><img src="img/v_vanity.jpg" alt="Modelado 3D Vanity"><i class="pin" data-k="0" style="left:11.3%;top:16.8%;--d:0.50s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-60)"/></svg><b>1</b></i><i class="pin" data-k="1" style="left:54.1%;top:29.5%;--d:0.62s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(-13)"/></svg><b>2</b></i><i class="pin" data-k="2" style="left:82.5%;top:48.6%;--d:0.74s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(34)"/></svg><b>3</b></i><i class="pin" data-k="3" style="left:58.7%;top:71.6%;--d:0.86s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(81)"/></svg><b>4</b></i><i class="pin" data-k="4" style="left:47.6%;top:79.1%;--d:0.98s"><svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(128)"/></svg><b>5</b></i></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/m_simil_lino.jpg')"></div><figcaption><b>1</b>Empapelado símil lino blanco crudo</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_espejo.jpg')"></div><figcaption><b>2</b>Espejo redondo, con spots de luz cálida</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_armario.jpg')"></div><figcaption><b>3</b>Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_mesada.jpg')"></div><figcaption><b>4</b>Mesada flotante de madera con hueco abierto, de muy poca profundidad</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/o_silla_oslo.jpg')"></div><figcaption><b>5</b>Silla Oslo · Antequera Muebles, la misma del escritorio</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/silla-oslo/" target="_blank" rel="noopener">Ver producto ↗</a></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Detalles</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/m_simil_lino.jpg')"></div><figcaption><b>1</b>Empapelado símil lino blanco crudo</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_espejo.jpg')"></div><figcaption><b>2</b>Espejo redondo, con spots de luz cálida</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_armario.jpg')"></div><figcaption><b>3</b>Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opciones Safari o Blanco Nature (Faplac)</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_mesada.jpg')"></div><figcaption><b>4</b>Mesada flotante de madera con hueco abierto, de muy poca profundidad</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/o_silla_oslo.jpg')"></div><figcaption><b>5</b>Silla Oslo · Antequera Muebles, la misma del escritorio</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/silla-oslo/" target="_blank" rel="noopener">Ver producto ↗</a></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -942,13 +947,20 @@
       el.addEventListener("mouseleave", function () { hl(el.dataset.k, false); });
     });
   });
-  // Opción de armario: desliza la alternativa sobre la principal
+  // Opciones de armario: la elegida se desliza por encima; las anteriores se esconden recién cuando quedan tapadas
+  function hideNow(i) { i.style.transition = "none"; i.classList.remove("show"); void i.offsetWidth; i.style.transition = ""; }
+  function setOpt(pic, o, instant) {
+    pic.dataset.o = o; pic.classList.toggle("alt-on", o !== "0");
+    pic.querySelectorAll(".opt button").forEach(function (b) { b.classList.toggle("on", b.dataset.o === o); });
+    var imgs = pic.querySelectorAll(".altimg");
+    if (o === "0") { imgs.forEach(function (i) { instant ? hideNow(i) : i.classList.remove("show"); }); return; }
+    var t = pic.querySelector(".altimg[data-o='" + o + "']");
+    imgs.forEach(function (i) { i.style.zIndex = i === t ? 2 : 1; });
+    t.classList.add("show");
+    setTimeout(function () { if (pic.dataset.o === o) imgs.forEach(function (i) { if (i !== t) hideNow(i); }); }, 1050);
+  }
   document.querySelectorAll(".pic .opt button").forEach(function (bt) {
-    bt.addEventListener("click", function (e) {
-      e.stopPropagation(); var pic = bt.closest(".pic");
-      pic.classList.toggle("alt-on", bt.dataset.o === "1");
-      pic.querySelectorAll(".opt button").forEach(function (o) { o.classList.toggle("on", o === bt); });
-    });
+    bt.addEventListener("click", function (e) { e.stopPropagation(); setOpt(bt.closest(".pic"), bt.dataset.o); });
   });
   // Ampliar: foto de detalle grande al pasar el mouse, clic para verla en pantalla completa.
   // Lupa sobre el modelado 3D al pasar el mouse, clic para verlo grande.
@@ -975,7 +987,7 @@
   var Z = 2.5;
   document.querySelectorAll(".rnd:not(.plg) .pic").forEach(function (pic) {
     var lens = document.createElement("div"); lens.className = "lens"; pic.appendChild(lens);
-    function cur() { var a = pic.querySelector(".altimg"); return (a && pic.classList.contains("alt-on")) ? a.getAttribute("src") : pic.querySelector("img").getAttribute("src"); }
+    function cur() { var o = pic.dataset.o, a = o && o !== "0" && pic.querySelector(".altimg[data-o='" + o + "']"); return a ? a.getAttribute("src") : pic.querySelector("img").getAttribute("src"); }
     pic.addEventListener("mousemove", function (e) {
       if (document.documentElement.classList.contains("mobile") || e.target.closest(".opt")) { lens.classList.remove("on"); return; }
       var r = pic.getBoundingClientRect(), k = r.width / pic.offsetWidth, w = pic.offsetWidth, h = pic.offsetHeight;
@@ -1002,7 +1014,7 @@
     });
     sw.addEventListener("mouseleave", function () { its.forEach(function (d) { d.style.setProperty("--m", 1); }); });
   });
-  function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
+  function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { setOpt(p, "0", true); }); }, 800); }
   // Vista (A, grande y sin lateral) y detalles (B, achicada con fotos): la imagen no se funde,
   // se agranda o se achica desde donde estaba hasta su lugar nuevo.
   function morph(from, to, i) {

@@ -26,6 +26,7 @@ module.exports = {
     { n: "Melamina Roble Dakar<br>(Faplac)", img: "m_dakar.jpg" },
     { n: "Melamina Sahara<br>(Faplac)", img: "m_sahara.jpg" },
     { n: "Melamina Safari<br>(Faplac) · opción", img: "m_safari.jpg" },
+    { n: "Melamina Blanco Nature<br>(Faplac) · opción", img: "m_nature.jpg" },
     { n: "Piedra<br>verde oscura", img: "m_marmol_verde.jpg" },
     { n: "Piso roble natural<br>existente", img: "m_roble.jpg" },
     { n: "Pintura<br>blanco crudo", css: "background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)" },
@@ -33,11 +34,11 @@ module.exports = {
     { n: "Metal<br>dorado", img: "t_bronce.jpg" }
   ],
   renders: [
-    { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.127, alt: { img: "v_dormitorio_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Tira LED de luz cálida por detrás del respaldo, a lo largo de todo su ancho.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama.", "Armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opción en Safari (Faplac).", "Cuadro de paisaje neuquino en blanco y negro.", "Cortinas de piso a techo: blackout más gasa de hilo."],
+    { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.127, alt: { a: "Sahara", opts: [{ img: "v_dormitorio_safari.jpg", n: "Safari" }, { img: "v_dormitorio_nature.jpg", n: "Blanco Nature" }] }, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Tira LED de luz cálida por detrás del respaldo, a lo largo de todo su ancho.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama.", "Armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opciones en Safari (Faplac) o Blanco Nature (Faplac), este último con vetas.", "Cuadro de paisaje neuquino en blanco y negro.", "Cortinas de piso a techo: blackout más gasa de hilo."],
       pins: [
         { x: 64.9, y: 24, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
         { x: 49.6, y: 36, img: "o_cuadro.jpg", t: "Cuadro de paisaje neuquino en blanco y negro, marco negro fino" },
-        { x: 19.4, y: 51, img: "o_armario.jpg", t: "Frente de armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)" },
+        { x: 19.4, y: 51, img: "o_armario.jpg", t: "Frente de armario en melamina Sahara (Faplac), con tiradores largos de embutir · opciones Safari o Blanco Nature (Faplac)" },
         { x: 34.9, y: 57.5, img: "o_aplique.jpg", t: "Aplique dorado de luz cálida" },
         { x: 72.4, y: 56, img: "o_respaldo.jpg", t: "Respaldo de madera con mesas flotantes" },
         { x: 63.6, y: 63.9, img: "o_toma.jpg", t: "Tomacorriente integrado al respaldo" },
@@ -67,11 +68,11 @@ module.exports = {
         { x: 48.5, y: 43.8, img: "o_cafetera.jpg", t: "Espacio para cafetera y microondas · la cafetera es lo único que va por delante de las térmicas, que quedan accesibles" },
         { x: 48.5, y: 76.7, img: "o_frente.jpg", t: "Frigobar bajo mesada con frente de madera" }
       ] },
-    { zona: "Vanity", img: "v_vanity.jpg", ar: 1.773, alt: { img: "v_vanity_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Mesada flotante de madera con hueco abierto, de muy poca profundidad (sin cajón).", "Espejo redondo.", "Silla Oslo (Antequera Muebles), la misma del escritorio.", "Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opción en Safari (Faplac).", "Spots de luz cálida."],
+    { zona: "Vanity", img: "v_vanity.jpg", ar: 1.773, alt: { a: "Sahara", opts: [{ img: "v_vanity_safari.jpg", n: "Safari" }, { img: "v_vanity_nature.jpg", n: "Blanco Nature" }] }, items: ["Mesada flotante de madera con hueco abierto, de muy poca profundidad (sin cajón).", "Espejo redondo.", "Silla Oslo (Antequera Muebles), la misma del escritorio.", "Propuesta de modificación de frentes de puertas del armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opciones en Safari (Faplac) o Blanco Nature (Faplac), este último con vetas.", "Spots de luz cálida."],
       pins: [
         { x: 11.3, y: 16.8, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
         { x: 54.1, y: 29.5, img: "o_espejo.jpg", t: "Espejo redondo, con spots de luz cálida" },
-        { x: 82.5, y: 48.6, img: "o_armario.jpg", t: "Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opción Safari (Faplac)" },
+        { x: 82.5, y: 48.6, img: "o_armario.jpg", t: "Frentes del armario en melamina Sahara (Faplac), con tiradores largos de embutir · opciones Safari o Blanco Nature (Faplac)" },
         { x: 58.7, y: 71.6, img: "o_mesada.jpg", t: "Mesada flotante de madera con hueco abierto, de muy poca profundidad" },
         { x: 47.6, y: 79.1, img: "o_silla_oslo.jpg", t: "Silla Oslo · Antequera Muebles, la misma del escritorio", url: "https://antequeramuebles.com.ar/productos/silla-oslo/" }
       ] }

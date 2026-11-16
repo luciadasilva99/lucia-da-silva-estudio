@@ -167,3 +167,7 @@
   html.mobile .sw i { width: 84px; height: 84px; }
   .sw > div > span { display: block; height: 4.6em; }
   html.mobile .sw > div > span { height: auto; }
+  /* v7: varias opciones de armario */
+  .pic .altimg.show { clip-path: inset(0 0 0 0); }
+  .pic.alt-on .altimg:not(.show) { clip-path: inset(0 0 0 100%); }
+  .sw.n9 { --w: 96px; gap: 16px; }

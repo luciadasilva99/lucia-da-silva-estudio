@@ -36,7 +36,9 @@ function sk(k) {
 }
 function vista(id, r) {
   const pic = (inner) => `<div class="pic" style="--ar:${r.ar || 1.6}"><img src="img/${r.img}" alt="Modelado 3D ${r.zona}">${inner || ''}</div>`;
-  const altLayer = r.alt ? `<img class="altimg" src="img/${r.alt.img}" alt="Modelado 3D ${r.zona} · opción ${r.alt.b}"><div class="opt"><span>Armario</span><button class="on" data-o="0">${r.alt.a}<small>principal</small></button><button data-o="1">${r.alt.b}<small>alternativa</small></button></div>` : '';
+  // Opciones de material (ej. armario): la principal es la vista base; cada opción es otra imagen que se desliza encima
+  const altLayer = r.alt ? r.alt.opts.map((o, k) => `<img class="altimg" data-o="${k + 1}" src="img/${o.img}" alt="Modelado 3D ${r.zona} · opción ${o.n}">`).join('') +
+    `<div class="opt"><span>${r.alt.t || 'Armario'}</span><button class="on" data-o="0">${r.alt.a}<small>principal</small></button>${r.alt.opts.map((o, k) => `<button data-o="${k + 1}">${o.n}<small>opción</small></button>`).join('')}</div>` : '';
   const fr = r.img ? pic(altLayer) : cam;
   const pair = !!(r.img && r.pins && r.pins.length);
   let out = `
@@ -81,13 +83,20 @@ const pinsScript = `<script>
       el.addEventListener("mouseleave", function () { hl(el.dataset.k, false); });
     });
   });
-  // Opción de armario: desliza la alternativa sobre la principal
+  // Opciones de armario: la elegida se desliza por encima; las anteriores se esconden recién cuando quedan tapadas
+  function hideNow(i) { i.style.transition = "none"; i.classList.remove("show"); void i.offsetWidth; i.style.transition = ""; }
+  function setOpt(pic, o, instant) {
+    pic.dataset.o = o; pic.classList.toggle("alt-on", o !== "0");
+    pic.querySelectorAll(".opt button").forEach(function (b) { b.classList.toggle("on", b.dataset.o === o); });
+    var imgs = pic.querySelectorAll(".altimg");
+    if (o === "0") { imgs.forEach(function (i) { instant ? hideNow(i) : i.classList.remove("show"); }); return; }
+    var t = pic.querySelector(".altimg[data-o='" + o + "']");
+    imgs.forEach(function (i) { i.style.zIndex = i === t ? 2 : 1; });
+    t.classList.add("show");
+    setTimeout(function () { if (pic.dataset.o === o) imgs.forEach(function (i) { if (i !== t) hideNow(i); }); }, 1050);
+  }
   document.querySelectorAll(".pic .opt button").forEach(function (bt) {
-    bt.addEventListener("click", function (e) {
-      e.stopPropagation(); var pic = bt.closest(".pic");
-      pic.classList.toggle("alt-on", bt.dataset.o === "1");
-      pic.querySelectorAll(".opt button").forEach(function (o) { o.classList.toggle("on", o === bt); });
-    });
+    bt.addEventListener("click", function (e) { e.stopPropagation(); setOpt(bt.closest(".pic"), bt.dataset.o); });
   });
   // Ampliar: foto de detalle grande al pasar el mouse, clic para verla en pantalla completa.
   // Lupa sobre el modelado 3D al pasar el mouse, clic para verlo grande.
@@ -114,7 +123,7 @@ const pinsScript = `<script>
   var Z = 2.5;
   document.querySelectorAll(".rnd:not(.plg) .pic").forEach(function (pic) {
     var lens = document.createElement("div"); lens.className = "lens"; pic.appendChild(lens);
-    function cur() { var a = pic.querySelector(".altimg"); return (a && pic.classList.contains("alt-on")) ? a.getAttribute("src") : pic.querySelector("img").getAttribute("src"); }
+    function cur() { var o = pic.dataset.o, a = o && o !== "0" && pic.querySelector(".altimg[data-o='" + o + "']"); return a ? a.getAttribute("src") : pic.querySelector("img").getAttribute("src"); }
     pic.addEventListener("mousemove", function (e) {
       if (document.documentElement.classList.contains("mobile") || e.target.closest(".opt")) { lens.classList.remove("on"); return; }
       var r = pic.getBoundingClientRect(), k = r.width / pic.offsetWidth, w = pic.offsetWidth, h = pic.offsetHeight;
@@ -141,7 +150,7 @@ const pinsScript = `<script>
     });
     sw.addEventListener("mouseleave", function () { its.forEach(function (d) { d.style.setProperty("--m", 1); }); });
   });
-  function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
+  function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { setOpt(p, "0", true); }); }, 800); }
   // Vista (A, grande y sin lateral) y detalles (B, achicada con fotos): la imagen no se funde,
   // se agranda o se achica desde donde estaba hasta su lugar nuevo.
   function morph(from, to, i) {

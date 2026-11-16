@@ -31,12 +31,8 @@ const cam = `<svg viewBox="0 0 46 46" fill="none" stroke="#a0583a" stroke-width=
 // con la MISMA vista en el mismo lugar (queda fija al pasar), y solo cambia el lateral:
 // desaparece el texto, aparecen las fotos de los detalles y se dibujan flechas a lápiz por fuera de la imagen.
 function sk(k) {
-  const pts = [], n = 48, rx = 17 + (k % 3), ry = 15 + ((k + 1) % 3);
-  for (let i = 0; i <= n + 5; i++) {
-    const t = (i / n) * Math.PI * 2 + k * 0.9, w = 1 + Math.sin(i * 1.7 + k) * 0.07;
-    pts.push([(Math.cos(t) * rx * w).toFixed(1), (Math.sin(t) * ry * w + (i > n ? (i - n) * 0.7 : 0)).toFixed(1)]);
-  }
-  return `<svg viewBox="-24 -24 48 48"><path d="M${pts.map(p => p.join(" ")).join(" L")}"/></svg>`;
+  // círculo blanco, liso y finito
+  return `<svg viewBox="-24 -24 48 48"><path d="M15 0 A15 15 0 1 1 -15 0 A15 15 0 1 1 15 0" transform="rotate(${-60 + k * 47})"/></svg>`;
 }
 function vista(id, r) {
   const pic = (inner) => `<div class="pic" style="--ar:${r.ar || 1.6}"><img src="img/${r.img}" alt="Modelado 3D ${r.zona}">${inner || ''}</div>`;
@@ -90,6 +86,44 @@ const pinsScript = `<script>
       pic.classList.toggle("alt-on", bt.dataset.o === "1");
       pic.querySelectorAll(".opt button").forEach(function (o) { o.classList.toggle("on", o === bt); });
     });
+  });
+  // Ampliar: foto de detalle grande al pasar el mouse, clic para verla en pantalla completa.
+  // Lupa sobre el modelado 3D al pasar el mouse, clic para verlo grande.
+  var lbx = document.createElement("div"); lbx.className = "lbx";
+  lbx.innerHTML = '<span class="x">×</span><img alt=""><div class="cap"></div>';
+  document.body.appendChild(lbx);
+  function openL(src, cap) { lbx.querySelector("img").src = src; lbx.querySelector(".cap").textContent = cap || ""; lbx.classList.add("on"); }
+  function closeL() { lbx.classList.remove("on"); }
+  lbx.addEventListener("click", function (e) { e.stopPropagation(); closeL(); });
+  function block(e) { if (!lbx.classList.contains("on")) return; e.stopImmediatePropagation(); if (e.type === "keydown" && e.key === "Escape") closeL(); if (e.type === "wheel") e.preventDefault(); }
+  window.addEventListener("keydown", block, true); window.addEventListener("wheel", block, { capture: true, passive: false });
+  function srcOf(el) { var m = (el.style.backgroundImage || "").replace(/url|[()"']/g, ""); return m; }
+  document.querySelectorAll(".rnd.pins").forEach(function (box) {
+    var pk = document.createElement("div"); pk.className = "peek"; pk.appendChild(document.createElement("img")); box.appendChild(pk);
+    box.querySelectorAll(".objs figure").forEach(function (f) {
+      var src = srcOf(f.querySelector(".ph")), cap = f.querySelector("figcaption").lastChild.textContent;
+      var pin = box.querySelector(".pin[data-k='" + f.dataset.k + "']");
+      f.addEventListener("mouseenter", function () { pk.querySelector("img").src = src; pk.classList.toggle("l", !!pin && parseFloat(pin.style.left) > 50); pk.classList.add("on"); });
+      f.addEventListener("mouseleave", function () { pk.classList.remove("on"); });
+      f.addEventListener("click", function (e) { e.stopPropagation(); pk.classList.remove("on"); openL(src, cap); });
+    });
+  });
+  var Z = 2.5;
+  document.querySelectorAll(".rnd:not(.plg) .pic").forEach(function (pic) {
+    var lens = document.createElement("div"); lens.className = "lens"; pic.appendChild(lens);
+    function cur() { var a = pic.querySelector(".altimg"); return (a && pic.classList.contains("alt-on")) ? a.getAttribute("src") : pic.querySelector("img").getAttribute("src"); }
+    pic.addEventListener("mousemove", function (e) {
+      if (document.documentElement.classList.contains("mobile") || e.target.closest(".opt")) { lens.classList.remove("on"); return; }
+      var r = pic.getBoundingClientRect(), k = r.width / pic.offsetWidth, w = pic.offsetWidth, h = pic.offsetHeight;
+      var x = (e.clientX - r.left) / k, y = (e.clientY - r.top) / k;
+      lens.style.left = x + "px"; lens.style.top = y + "px";
+      lens.style.backgroundImage = "url('" + cur() + "')";
+      lens.style.backgroundSize = (w * Z) + "px " + (h * Z) + "px";
+      lens.style.backgroundPosition = (95 - x * Z) + "px " + (95 - y * Z) + "px";
+      lens.classList.add("on");
+    });
+    pic.addEventListener("mouseleave", function () { lens.classList.remove("on"); });
+    pic.addEventListener("click", function (e) { if (e.target.closest(".opt")) return; e.stopPropagation(); lens.classList.remove("on"); openL(cur(), ""); });
   });
   function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
   // Imagen fija entre la vista (A) y sus detalles (B)

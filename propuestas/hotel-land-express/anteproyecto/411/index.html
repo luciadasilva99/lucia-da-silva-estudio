@@ -534,6 +534,31 @@
   .pic .opt button:hover { border-color: var(--tc); }
   .pic .opt button.on { background: var(--tc); border-color: var(--tc); color: #fff; }
   .sw.n8 { grid-template-columns: repeat(8, 106px); gap: 18px; }
+
+  /* v4: círculos blancos lisos y finitos + ampliar detalles y lupa sobre el modelado */
+  .rnd.pins .pin path { stroke: #fff; stroke-width: 1.2; stroke-dasharray: 100; stroke-dashoffset: 100; filter: drop-shadow(0 0 1.6px rgba(0,0,0,.55)); }
+  .rnd.pins .pin b { left: 9px; top: -25px; width: 16px; height: 16px; background: #fff; color: #222; font-weight: 600; box-shadow: 0 1px 4px rgba(0,0,0,.28); }
+  .rnd.pins .pin.hi b { background: #111; color: #fff; }
+  .rnd.pins .objs figcaption b { background: #fff; color: #222; font-weight: 600; box-shadow: inset 0 0 0 1px rgba(17,17,17,.35); }
+  .rnd.pins .objs figure.hi figcaption b { background: #111; color: #fff; box-shadow: none; }
+  .rnd.pins .objs figure { cursor: zoom-in; }
+  .rnd .peek { position: absolute; right: 322px; top: 50%; width: 440px; height: 340px; background: #fff; box-shadow: 0 18px 50px rgba(0,0,0,.28); padding: 10px; z-index: 6; pointer-events: none; opacity: 0; transform: translateY(-50%) scale(.94); transition: opacity .25s, transform .3s cubic-bezier(.2,.7,.2,1); }
+  .rnd .peek.on { opacity: 1; transform: translateY(-50%) scale(1); }
+  .rnd .peek img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .rnd .peek small { position: absolute; left: 0; right: 0; bottom: -24px; text-align: center; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: #8a7d70; }
+  .rnd:not(.plg) .pic { cursor: zoom-in; }
+  .rnd:not(.plg) .pic .opt { cursor: default; }
+  .pic .lens { position: absolute; width: 190px; height: 190px; margin: -95px 0 0 -95px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 8px 26px rgba(0,0,0,.35); background-repeat: no-repeat; background-color: #fff; pointer-events: none; z-index: 5; opacity: 0; transform: scale(.6); transition: opacity .2s, transform .25s; }
+  .pic .lens.on { opacity: 1; transform: none; }
+  .lbx { position: fixed; inset: 0; z-index: 99999; background: rgba(22,20,18,.93); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; cursor: zoom-out; }
+  .lbx.on { opacity: 1; pointer-events: auto; }
+  .lbx img { max-width: 94vw; max-height: 90vh; object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,.5); background: #fff; }
+  .lbx .x { position: absolute; top: 18px; right: 24px; color: #fff; font-size: 30px; line-height: 1; font-weight: 300; cursor: pointer; opacity: .8; }
+  .lbx .cap { position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; color: rgba(255,255,255,.75); font-size: 13px; letter-spacing: .04em; padding: 0 20px; }
+  html.mobile .rnd .peek, html.mobile .pic .lens { display: none; }
+  .rnd .peek.l { right: auto; left: 0; }
+  .lbx img { max-height: 84vh; }
+  .lbx .cap { bottom: 2.5vh; text-transform: none; letter-spacing: .02em; font-size: 14px; }
 </style>
 </head>
 <body>
@@ -839,6 +864,44 @@
       pic.classList.toggle("alt-on", bt.dataset.o === "1");
       pic.querySelectorAll(".opt button").forEach(function (o) { o.classList.toggle("on", o === bt); });
     });
+  });
+  // Ampliar: foto de detalle grande al pasar el mouse, clic para verla en pantalla completa.
+  // Lupa sobre el modelado 3D al pasar el mouse, clic para verlo grande.
+  var lbx = document.createElement("div"); lbx.className = "lbx";
+  lbx.innerHTML = '<span class="x">×</span><img alt=""><div class="cap"></div>';
+  document.body.appendChild(lbx);
+  function openL(src, cap) { lbx.querySelector("img").src = src; lbx.querySelector(".cap").textContent = cap || ""; lbx.classList.add("on"); }
+  function closeL() { lbx.classList.remove("on"); }
+  lbx.addEventListener("click", function (e) { e.stopPropagation(); closeL(); });
+  function block(e) { if (!lbx.classList.contains("on")) return; e.stopImmediatePropagation(); if (e.type === "keydown" && e.key === "Escape") closeL(); if (e.type === "wheel") e.preventDefault(); }
+  window.addEventListener("keydown", block, true); window.addEventListener("wheel", block, { capture: true, passive: false });
+  function srcOf(el) { var m = (el.style.backgroundImage || "").replace(/url|[()"']/g, ""); return m; }
+  document.querySelectorAll(".rnd.pins").forEach(function (box) {
+    var pk = document.createElement("div"); pk.className = "peek"; pk.appendChild(document.createElement("img")); box.appendChild(pk);
+    box.querySelectorAll(".objs figure").forEach(function (f) {
+      var src = srcOf(f.querySelector(".ph")), cap = f.querySelector("figcaption").lastChild.textContent;
+      var pin = box.querySelector(".pin[data-k='" + f.dataset.k + "']");
+      f.addEventListener("mouseenter", function () { pk.querySelector("img").src = src; pk.classList.toggle("l", !!pin && parseFloat(pin.style.left) > 50); pk.classList.add("on"); });
+      f.addEventListener("mouseleave", function () { pk.classList.remove("on"); });
+      f.addEventListener("click", function (e) { e.stopPropagation(); pk.classList.remove("on"); openL(src, cap); });
+    });
+  });
+  var Z = 2.5;
+  document.querySelectorAll(".rnd:not(.plg) .pic").forEach(function (pic) {
+    var lens = document.createElement("div"); lens.className = "lens"; pic.appendChild(lens);
+    function cur() { var a = pic.querySelector(".altimg"); return (a && pic.classList.contains("alt-on")) ? a.getAttribute("src") : pic.querySelector("img").getAttribute("src"); }
+    pic.addEventListener("mousemove", function (e) {
+      if (document.documentElement.classList.contains("mobile") || e.target.closest(".opt")) { lens.classList.remove("on"); return; }
+      var r = pic.getBoundingClientRect(), k = r.width / pic.offsetWidth, w = pic.offsetWidth, h = pic.offsetHeight;
+      var x = (e.clientX - r.left) / k, y = (e.clientY - r.top) / k;
+      lens.style.left = x + "px"; lens.style.top = y + "px";
+      lens.style.backgroundImage = "url('" + cur() + "')";
+      lens.style.backgroundSize = (w * Z) + "px " + (h * Z) + "px";
+      lens.style.backgroundPosition = (95 - x * Z) + "px " + (95 - y * Z) + "px";
+      lens.classList.add("on");
+    });
+    pic.addEventListener("mouseleave", function () { lens.classList.remove("on"); });
+    pic.addEventListener("click", function (e) { if (e.target.closest(".opt")) return; e.stopPropagation(); lens.classList.remove("on"); openL(cur(), ""); });
   });
   function resetAlt() { setTimeout(function () { document.querySelectorAll(".slide:not(.on) .pic.alt-on").forEach(function (p) { p.classList.remove("alt-on"); p.querySelectorAll(".opt button").forEach(function (o, n) { o.classList.toggle("on", n === 0); }); }); }, 800); }
   // Imagen fija entre la vista (A) y sus detalles (B)

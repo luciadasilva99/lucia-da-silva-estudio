@@ -57,7 +57,7 @@ const objetivos = D.objetivos.map((o, k) =>
   `    <p class="rv" style="--d:${delays[k]}s"><svg class="draw" style="--d:${(k * .15).toFixed(2)}s" viewBox="0 0 30 30" fill="none" stroke="#a0583a" stroke-width="1.4">${icons[o[2] != null ? o[2] : k % icons.length]}</svg><b>/ ${o[0]}</b>${o[1] ? `<br>${o[1]}` : ``}</p>`).join('\n');
 
 const layout = D.layout.map((f, k) =>
-  `    <figure class="rv" style="--d:${(.15 + k * .15).toFixed(2)}s"><div class="ph cad">${f.img ? `<img src="img/${f.img}" alt="Planta ${f.t}">` : `<div class="frame" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#8a7d70;font-size:11px;letter-spacing:.24em;text-transform:uppercase;">Planta en proceso</div>`}</div><figcaption>${f.t}<small>${f.d}</small></figcaption></figure>`).join('\n');
+  `    <figure class="rv" style="--d:${(.15 + k * .15).toFixed(2)}s"><div class="ph cad">${f.img ? `<img src="img/${f.img}" alt="Planta ${f.t}">` : `<div class="frame" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#8a7d70;font-size:11px;letter-spacing:.24em;text-transform:uppercase;">Planta en proceso</div>`}</div>${f.t ? `<figcaption>${f.t}<small>${f.d}</small></figcaption>` : ``}</figure>`).join('\n');
 
 const mats = D.materiales.map((m, k) =>
   `      <div class="rv" style="--d:${(.1 + k * .08).toFixed(2)}s"><i ${m.img ? `class="img" style="background-image:url('img/${m.img}')"` : `style="${m.css}"`}></i><span>${m.n}</span></div>`).join('\n');
@@ -122,7 +122,7 @@ ${layout}
   ${by}
   <div class="t rv"><h1>Inspiración</h1><div class="s">Habitación ${room}</div></div>
   <div class="pad"><div class="insp">
-${D.inspiracion.map((f, k) => `    <figure class="rv" style="--d:${(.1 + k * .12).toFixed(2)}s"><div class="img" style="background-image:url('img/${f.img}')"></div><figcaption>${f.t}<small>${f.d}</small></figcaption></figure>`).join('\n')}
+${D.inspiracion.map((f, k) => `    <figure class="rv" style="--d:${(.1 + k * .12).toFixed(2)}s"><div class="img" style="background-image:url('img/${f.img}')"></div>${f.t ? `<figcaption>${f.t}<small>${f.d}</small></figcaption>` : ``}</figure>`).join('\n')}
   </div></div>
   <div class="num"></div>
 </section>
@@ -133,7 +133,7 @@ ${D.inspiracion.map((f, k) => `    <figure class="rv" style="--d:${(.1 + k * .12
   <div class="t rv"><h1>Materiales <span>a utilizar</span></h1><div class="s">Habitación ${room}</div></div>
   <div class="pad"><div class="matg">
     <p class="disc rv">Las terminaciones de la suite. Los tonos finales los confirmamos con muestras físicas.</p>
-    <div class="sw">
+    <div class="sw${D.materiales.length > 6 ? " n7" : ""}">
 ${mats}
     </div>
   </div></div>

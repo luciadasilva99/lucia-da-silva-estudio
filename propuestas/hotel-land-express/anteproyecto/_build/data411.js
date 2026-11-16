@@ -12,18 +12,16 @@ module.exports = {
     { t: 'Living y cocina', d: 'En desarrollo.' }
   ],
   inspiracion: [
-    { img: "t_lampara.jpg", t: "Luz cálida", d: "Ambientes que invitan a quedarse." },
-    { img: "t_tejido.jpg", t: "Tejidos", d: "Lana y texturas suaves para el confort." },
-    { img: "n_basalto.jpg", t: "La piedra", d: "Texturas de la piedra volcánica neuquina." },
-    { img: "n_lenga.jpg", t: "El bosque", d: "Los ocres y las maderas de las lengas." }
+    { img: "i_1.jpg" }, { img: "i_2.jpg" }, { img: "i_3.jpg" }, { img: "i_4.jpg" }
   ],
   materiales: [
-    { n: 'Melamina Faplac<br>Roble Dakar', img: 'm_dakar.jpg' },
-    { n: 'Piso roble<br>natural', img: 'm_roble.jpg' },
-    { n: 'Pintura<br>blanco crudo', css: 'background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)' },
-    { n: 'Lino<br>natural', img: 'm_lino.jpg' },
-    { n: 'Tejido<br>de lana', img: 't_lana2.jpg' },
-    { n: 'Bronce<br>cepillado', img: 't_bronce.jpg' }
+    { n: "Melamina Faplac<br>Roble Dakar", img: "m_dakar.jpg" },
+    { n: "Melamina Faplac<br>Sahara", img: "m_sahara.jpg" },
+    { n: "Mármol<br>verde oscuro", img: "m_marmol_verde.jpg" },
+    { n: "Piso roble natural<br>existente", img: "m_roble.jpg" },
+    { n: "Pintura<br>blanco crudo", css: "background:#efe9df; box-shadow: inset 0 0 0 1px rgba(17,17,17,.08)" },
+    { n: "Empapelado símil lino<br>blanco crudo", img: "m_simil_lino.jpg" },
+    { n: "Apliques<br>dorados", img: "t_bronce.jpg" }
   ],
   renders: [
     { zona: 'Dormitorio', items: ['En desarrollo.'] },

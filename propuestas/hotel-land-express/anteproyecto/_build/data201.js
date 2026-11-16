@@ -33,7 +33,7 @@ module.exports = {
     { n: "Metal<br>dorado", img: "t_bronce.jpg" }
   ],
   renders: [
-    { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.127, alt: { img: "v_dormitorio_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama.", "Armario en melamina Sahara (Faplac), con opción en Safari (Faplac).", "Cuadro de paisaje neuquino en blanco y negro."],
+    { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.127, alt: { img: "v_dormitorio_safari.jpg", a: "Sahara", b: "Safari" }, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Tira LED de luz cálida por detrás del respaldo, a lo largo de todo su ancho.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama.", "Armario en melamina Sahara (Faplac), con opción en Safari (Faplac).", "Cuadro de paisaje neuquino en blanco y negro."],
       pins: [
         { x: 64.9, y: 24, img: "m_simil_lino.jpg", t: "Empapelado símil lino blanco crudo" },
         { x: 49.6, y: 36, img: "o_cuadro.jpg", t: "Cuadro de paisaje neuquino en blanco y negro, marco negro fino" },
@@ -41,7 +41,8 @@ module.exports = {
         { x: 34.9, y: 57.5, img: "o_aplique.jpg", t: "Aplique dorado de luz cálida" },
         { x: 72.4, y: 56, img: "o_respaldo.jpg", t: "Respaldo de madera con mesas flotantes" },
         { x: 63.6, y: 63.9, img: "o_toma.jpg", t: "Tomacorriente integrado al respaldo" },
-        { x: 49.5, y: 80.6, img: "o_banco.jpg", t: "Banco de madera al pie de la cama" }
+        { x: 49.5, y: 80.6, img: "o_banco.jpg", t: "Banco de madera al pie de la cama" },
+        { x: 30, y: 43.5, img: "o_led.jpg", t: "Tira LED de luz cálida por detrás del respaldo, en todo su ancho" }
       ] },
     { zona: "Escritorio y rack TV", img: "v_escritorio.jpg", ar: 1.658, items: ["Escritorio de madera con pie cilíndrico.", "Rack TV bajo en melamina Roble Dakar (Faplac), con estante abierto. La placa donde apoya la TV es giratoria y se orienta hacia el living.", "Silla de madera.", "Colgantes Rain (Indigo Lumieres) de luz cálida sobre el escritorio.", "Tomacorrientes e interruptor sobre el escritorio."],
       pins: [

@@ -244,8 +244,9 @@ const body = `
         <a data-go="layout"><b>02 / Layout</b><br><span>${D.layoutTxt}</span></a>
         <a data-go="insp"><b>03 / Inspiración</b><br><span>Las imágenes que guían el diseño.</span></a>
         <a data-go="mat"><b>04 / Materiales</b><br><span>Terminaciones a utilizar.</span></a>
-        <a data-go="modelado"><b>05 / Modelado 3D</b><br><span>${zonas.charAt(0).toUpperCase() + zonas.slice(1)}.</span></a>
-        <a data-go="pasos"><b>06 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
+${D.alcance ? `        <a data-go="alcance"><b>05 / Alcance general</b><br><span>Todo lo que incluye la propuesta.</span></a>
+` : ''}        <a data-go="modelado"><b>${D.alcance ? '06' : '05'} / Modelado 3D</b><br><span>${zonas.charAt(0).toUpperCase() + zonas.slice(1)}.</span></a>
+        <a data-go="pasos"><b>${D.alcance ? '07' : '06'} / Próximos pasos</b><br><span>Lo que sigue.</span></a>
       </div>
     </div>
   </div>
@@ -294,6 +295,19 @@ ${mats}
   </div></div>
   <div class="num"></div>
 </section>
+${D.alcance ? `
+<!-- ALCANCE GENERAL: todo lo que se hace, también lo que no se ve en los modelados -->
+<section class="slide" id="alcance" data-sec="Alcance">
+  ${by}
+  <div class="t rv"><h1>Habitación ${room} <span>· Alcance general</span></h1><div class="s">${D.alcance.s}</div></div>
+  <div class="pad"><div class="gen">
+    <div class="cols c${D.alcance.cols.length}">
+${D.alcance.cols.map((c, k) => `      <div class="col rv" style="--d:${(.1 + k * .1).toFixed(1)}s"><h3>${c.t}</h3><ul>${c.items.map(i => `<li>${i}</li>`).join('')}</ul></div>`).join('\n')}
+    </div>
+    <p class="next rv" style="--d:.55s">${D.alcance.next} <a data-go="modelado" style="cursor:pointer"><b>Ver el modelado 3D →</b></a></p>
+  </div></div>
+  <div class="num"></div>
+</section>` : ''}
 
 <!-- CARÁTULA MODELADO 3D -->
 <section class="slide" id="modelado" data-sec="Modelado 3D">

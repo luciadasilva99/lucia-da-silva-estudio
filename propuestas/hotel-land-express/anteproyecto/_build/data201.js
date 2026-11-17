@@ -33,6 +33,42 @@ module.exports = {
     { n: "Empapelado símil lino<br>blanco crudo", img: "m_simil_lino.jpg" },
     { n: "Metal<br>dorado", img: "t_bronce.jpg" }
   ],
+  alcance: {
+    s: "Todo lo que incluye la propuesta, también lo que no se ve en los modelados",
+    next: "A continuación, cada zona en modelado 3D con sus detalles.",
+    cols: [
+      { t: "Techo y luz", items: [
+        "<b>Cielorraso continuo de junta tomada</b>, con garganta para las cortinas. <span class=\"pr\">Prioridad</span>",
+        "<b>Bocas de luz nuevas con spots de embutir</b>, bien distribuidas, de luz cálida. <span class=\"pr\">Prioridad</span>",
+        "Pintura general del cielorraso.",
+        "Tira LED de luz cálida detrás del respaldo.",
+        "Apliques dorados en el respaldo y colgantes Rain sobre el escritorio.",
+        "Cortinas blackout más gasa de hilo, de piso a techo."
+      ] },
+      { t: "Paredes y arte", items: [
+        "<b>Empapelado símil lino blanco crudo</b> detrás de la cama y en el vanity.",
+        "Respaldo de madera de pared a pared, con mesas de luz flotantes.",
+        "Tomacorrientes e interruptor sobre el escritorio y en el respaldo.",
+        "Módulos eléctricos Cambre Siglo XXII.",
+        "Pintura de detalles y marcos de puertas.",
+        "Cuadro de paisaje neuquino en blanco y negro sobre la cama."
+      ] },
+      { t: "Baño", items: [
+        "<b>Renovación de la piedra de la bañadera</b>: revestimiento cerámico o pulido.",
+        "Flor de ducha nueva, de mayor tamaño.",
+        "Nuevo caño para la cortina de ducha.",
+        "Placas del cielorraso pintadas."
+      ] },
+      { t: "Mobiliario", items: [
+        "<b>Escritorio y rack TV integrados</b>, con placa giratoria entre dormitorio y living. <span class=\"pr\">Prioridad</span>",
+        "<b>Coffee station</b> en el nicho de ingreso, con frigobar bajo mesada.",
+        "Frentes del armario en melamina Sahara (Faplac), con opciones.",
+        "Vanity con mesada flotante y espejo redondo.",
+        "Sofá curvo y mesas ratonas en madera y piedra verde oscura.",
+        "Sillas Oslo (Antequera Muebles) en escritorio y vanity."
+      ] }
+    ]
+  },
   renders: [
     { zona: "Dormitorio", img: "v_dormitorio.jpg", ar: 2.127, alt: { a: "Sahara", opts: [{ img: "v_dormitorio_safari.jpg", n: "Safari" }, { img: "v_dormitorio_nature.jpg", n: "Blanco Nature" }] }, items: ["Respaldo de madera de pared a pared, con mesas de luz flotantes.", "Tira LED de luz cálida por detrás del respaldo, a lo largo de todo su ancho.", "Empapelado símil lino blanco crudo en la parte superior.", "Apliques redondos dorados, de luz cálida.", "Tomacorrientes y llaves integrados al respaldo.", "Banco de madera al pie de la cama.", "Armario en melamina Sahara (Faplac) con tiradores largos de embutir, con opciones en Safari (Faplac) o Blanco Nature (Faplac), este último con vetas.", "Cuadro de paisaje neuquino en blanco y negro.", "Cortinas de piso a techo: blackout más gasa de hilo."],
       pins: [

@@ -37,36 +37,44 @@ module.exports = {
     s: "Todo lo que incluye la propuesta, también lo que no se ve en los modelados",
     next: "A continuación, cada zona en modelado 3D con sus detalles.",
     cols: [
-      { t: "Techo y luz", items: [
-        "<b>Cielorraso continuo de junta tomada</b>, con garganta para las cortinas. <span class=\"pr\">Prioridad</span>",
-        "<b>Bocas de luz nuevas con spots de embutir</b>, bien distribuidas, de luz cálida. <span class=\"pr\">Prioridad</span>",
-        "Pintura general del cielorraso.",
-        "Tira LED de luz cálida detrás del respaldo.",
-        "Apliques dorados en el respaldo y colgantes Rain sobre el escritorio.",
-        "Cortinas blackout más gasa de hilo, de piso a techo."
-      ] },
-      { t: "Paredes y arte", items: [
-        "<b>Empapelado símil lino blanco crudo</b> detrás de la cama y en el vanity.",
-        "Respaldo de madera de pared a pared, con mesas de luz flotantes.",
-        "Tomacorrientes e interruptor sobre el escritorio y en el respaldo.",
-        "Módulos eléctricos Cambre Siglo XXII.",
-        "Pintura de detalles y marcos de puertas.",
-        "Cuadro de paisaje neuquino en blanco y negro sobre la cama."
-      ] },
-      { t: "Baño", items: [
-        "<b>Renovación de la piedra de la bañadera</b>: revestimiento cerámico o pulido.",
-        "Flor de ducha nueva, de mayor tamaño.",
-        "Nuevo caño para la cortina de ducha.",
-        "Placas del cielorraso pintadas."
-      ] },
-      { t: "Mobiliario", items: [
-        "<b>Escritorio y rack TV integrados</b>, con placa giratoria entre dormitorio y living. <span class=\"pr\">Prioridad</span>",
-        "<b>Coffee station</b> en el nicho de ingreso, con frigobar bajo mesada.",
-        "Frentes del armario en melamina Sahara (Faplac), con opciones.",
-        "Vanity con mesada flotante y espejo redondo.",
-        "Sofá curvo y mesas ratonas en madera y piedra verde oscura.",
-        "Sillas Oslo (Antequera Muebles) en escritorio y vanity."
-      ] }
+      {
+        "t": "Cielorraso / Iluminación / Ventanas",
+        "items": [
+          "<b>Desmontar cielorraso existente / Armado de cielorraso continuo junta tomada</b>, con garganta para cortinas. <span class=\"pr\">Prioridad</span>",
+          "<b>Añadir bocas de luz distribuidas por zonas</b>, para posterior colocación de spots de embutir (luz cálida). <span class=\"pr\">Prioridad</span>",
+          "Pintura general del cielorraso (ALBA, Blanco Gatito).",
+          "Cortinas a evaluar posible cambio (Black out + Gasa de hilo).",
+          "Cambio de apliques de cama."
+        ]
+      },
+      {
+        "t": "Paredes y arte",
+        "items": [
+          "<b>Empapelado símil lino</b> (evaluar si en totalidad de habitación o solo pared detrás de cama).",
+          "Cambio de módulos eléctricos a Cambre Siglo XXII + ubicación de ciertos módulos.",
+          "Pintura de detalles y marcos de puertas.",
+          "Cuadros: permanece cuadro encima de la cama y encima de sofá, posibilidad evaluar cambio de láminas junto con marcos (paisaje natural de la provincia de Neuquén), referencia en el 3D."
+        ]
+      },
+      {
+        "t": "Baño",
+        "items": [
+          "<b>Renovación de la piedra de la bañadera</b>: revestimiento nuevo o pulido de piedra existente.",
+          "Cambio de Flor de ducha, de mayor tamaño y tecnología.",
+          "Cambio de caño de ducha.",
+          "Pintar placas desmontables del cielorraso existentes."
+        ]
+      },
+      {
+        "t": "Mobiliario",
+        "items": [
+          "<b>Escritorio y mueble TV giratorio integrados</b> (sin cajones ni puertas). <span class=\"pr\">Prioridad</span>",
+          "<b>Coffee station</b> en el nicho de ingreso (para conservar heladera, microondas y añadir cafetera nueva).",
+          "Cambio de mesita ratona (evaluar modelo estandarizado de mercado).",
+          "Cambio de sillas para escritorio y vanity (evaluar modelo estandarizado de mercado, o retapizar existentes).",
+          "Cambio de sofá (evaluar modelo estandarizado de mercado)."
+        ]
+      }
     ]
   },
   renders: [

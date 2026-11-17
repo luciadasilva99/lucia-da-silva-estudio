@@ -171,3 +171,4 @@
   .pic .altimg.show { clip-path: inset(0 0 0 0); }
   .pic.alt-on .altimg:not(.show) { clip-path: inset(0 0 0 100%); }
   .sw.n9 { --w: 96px; gap: 16px; }
+  #alcance .col h3 { min-height: 3.3em; }

@@ -40,8 +40,8 @@ module.exports = {
       {
         "t": "Cielorraso / Iluminación / Ventanas",
         "items": [
-          "<b>Desmontar cielorraso existente / Armado de cielorraso continuo junta tomada</b>, con garganta para cortinas. <span class=\"pr\">Prioridad</span>",
-          "<b>Añadir bocas de luz distribuidas por zonas</b>, para posterior colocación de spots de embutir (luz cálida). <span class=\"pr\">Prioridad</span>",
+          "<b>Desmontar cielorraso existente / Armado de cielorraso continuo junta tomada</b>, con garganta para cortinas.",
+          "<b>Añadir bocas de luz distribuidas por zonas</b>, para posterior colocación de spots de embutir (luz cálida).",
           "Pintura general del cielorraso (ALBA, Blanco Gatito).",
           "Cortinas a evaluar posible cambio (Black out + Gasa de hilo).",
           "Cambio de apliques de cama."
@@ -68,7 +68,7 @@ module.exports = {
       {
         "t": "Mobiliario",
         "items": [
-          "<b>Escritorio y mueble TV giratorio integrados</b> (sin cajones ni puertas). <span class=\"pr\">Prioridad</span>",
+          "<b>Escritorio y mueble TV giratorio integrados</b> (sin cajones ni puertas).",
           "<b>Coffee station</b> en el nicho de ingreso (para conservar heladera, microondas y añadir cafetera nueva).",
           "Cambio de mesita ratona (evaluar modelo estandarizado de mercado).",
           "Cambio de sillas para escritorio y vanity (evaluar modelo estandarizado de mercado, o retapizar existentes).",

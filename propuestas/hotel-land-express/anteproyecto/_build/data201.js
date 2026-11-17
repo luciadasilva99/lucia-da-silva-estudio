@@ -7,7 +7,7 @@ module.exports = {
     ["Optimizar la distribución y el uso del espacio.", "", 4],
     ["Seleccionar materiales y paleta de colores a modo referencial.", "", 6]
   ],
-  planta: { img: "planta_general.png", ar: 1.2, ingreso: { x: 38.2, y: 16.6 },
+  planta: { img: "planta_general.png", ar: 1.2, ingreso: { x: 7.8, y: 2.2 },
     zonas: [
       { t: "Dormitorio", go: "r0", x: 80.8, y: 66.1 },
       { t: "Escritorio y rack TV", go: "r1", x: 38.6, y: 72.2 },

@@ -55,6 +55,7 @@ module.exports = {
         { img: 'tx_riviera.jpg', t: 'Esencial · Papel Muresco Riviera Maison 219954, verde salvia claro, textura tipo lino, en la pared de la cama' },
         { img: 'sw_pared_b.jpg', t: 'Esencial · Resto de las paredes pintadas en tono acorde al papel (no blanco). Todo lo que es pared va pintado; molduras y cielo raso en blanco tiznado' },
         { img: 'c_mesa_luz.jpg', t: 'Las dos · Mesas de luz Hanoi: base en melamina lisa Sahara, más cálida que el blanco y sin vetas' },
+        { img: 'o_calvin.jpg', t: 'Las dos, opción 2 · Mesa de luz Calvin II (C-Home), 0,70 × 0,45 × h 0,70, laqueada (color a elección) con estructura de metal', url: 'https://www.c-home.com.ar/productos/mesa-de-luz-cattelan-p7w51/' },
         { img: 'c_cuadros.jpg', t: 'Las dos · Set de 4 cuadros de Neuquén en blanco y negro (Bardas, Río Limay, Villa La Angostura y Lanín) en la pared lateral, alineados arriba con el placard' },
         { img: 'c_colgantes_luz.jpg', t: 'Esencial · Colgantes Milan sobre las mesas de luz, los mismos del escritorio, a 1,65 m del piso, fuera del alcance' },
         { img: 'c_pie_cama.jpg', t: 'Esencial · Pie de cama en panne verde inglés, 0,50 de ancho, cae a los costados' },
@@ -91,6 +92,7 @@ module.exports = {
         { img: 'o_nina.webp', t: 'Las dos · Mesas ratonas Nina (Antequera) en negro mate, para dar contraste (referencia: Faplac Negro Extreme Matt): 1,05 × 0,90 × h 0,40 y 0,59 × 0,65 × h 0,46', url: 'https://antequeramuebles.com.ar/productos/mesa-centro-nina-15i0t/' },
         { img: 'o_italian.webp', t: 'Las dos, opción 2 · Mesas Italian (Antequera) en dorado: Ø 0,50 × h 0,50 y Ø 0,40 × h 0,65', url: 'https://antequeramuebles.com.ar/productos/2026-mesa-italian-zf1m6/' },
         { img: 'c_almohadones.jpg', t: 'Completa · Almohadones en panne verde inglés y lima en el sofá, y uno lima en cada sillón' },
+        { img: 'c_cuadros_living.jpg', t: 'Las dos · Dos cuadros grandes de paisajes de Neuquén sobre el sofá, en blanco y negro con marco dorado' },
         { img: 'o_cortinas.jpg', t: 'Las dos · Voile Trevira CS traslúcido: liviano, lavable, ignífugo (apto hotel) y resistente. Deja ver el balcón' },
         { img: 'c_persiana.jpg', t: 'Las dos · Persiana exterior de aluminio con cajón visto, en ventana y puerta balcón, para oscurecer del todo. A confirmar con el consorcio por la fachada' }
       ],
@@ -118,6 +120,9 @@ module.exports = {
 
   // variantes dentro de cada opción (botones sobre la imagen)
   variantes: {
+    'Dormitorio': {
+      A: { t: 'Ver', a: 'Mesas Hanoi', as: 'Sahara', opts: [{ img: 'A_dorm_calvin.jpg', n: 'Calvin II', s: 'C-Home' }] },
+      B: { t: 'Ver', a: 'Mesas Hanoi', as: 'Sahara', opts: [{ img: 'B_dorm_calvin.jpg', n: 'Calvin II', s: 'C-Home' }] } },
     'Escritorio y rack TV': {
       A: { t: 'Ver', a: 'Silla 687', as: 'a medida', opts: [{ img: 'A_esc_oslo.jpg', n: 'Silla Oslo', s: 'variante' }, { img: 'A_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }] },
       B: { t: 'Ver', a: 'Silla 687', as: 'a medida', opts: [{ img: 'B_esc_oslo.jpg', n: 'Silla Oslo', s: 'variante' }, { img: 'B_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }] } },

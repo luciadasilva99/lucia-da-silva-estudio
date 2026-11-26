@@ -100,10 +100,11 @@ module.exports = {
       ] },
 
     { zona: 'Vanity, antebaño y coffee', img: 'A_vanity.jpg', ar: R, alt: AB('A_vanity.jpg', 'B_vanity.jpg'), zt: 'Qué cambia', st: 'Vanity y antebaño',
-      items: ['En las dos: vinilo con marco dorado finito en los espejos del vanity y del antebaño.', 'Banqueta a medida de 0,70, a la medida del nicho del vanity (0,85).', 'Coffee station en melamina Lino Chiaro (Faplac).'],
+      items: ['En las dos: vinilo con marco dorado finito en los espejos del vanity y del antebaño.', 'Banqueta a medida de 0,70 o puff Iron (Dellacasa), los dos entran en el nicho del vanity (0,85).', 'Coffee station en melamina Lino Chiaro (Faplac).'],
       pins: [
         { img: 'o_vinilo.jpg', t: 'Las dos · Vinilo marco dorado de 12 mm sobre los espejos del vanity y del antebaño' },
         { img: 'c_banqueta.jpg', t: 'Las dos · Banqueta a medida de 0,70 de ancho, tapizada (Tucson Sand en A, Tucson Beige en B). Entra en el nicho del vanity, que mide 0,85' },
+        { img: 'o_puff_iron.jpg', t: 'Las dos, opción estandarizada · Puff Iron (Dellacasa), Ø 0,45 × h 0,44, patas de hierro negro', url: 'https://dellacasa.com.ar/producto/living/puff/puff-iron/' },
         { img: 'c_apliques.jpg', t: 'Las dos · Apliques verticales tubo opal con base dorada, Ø 0,06 × 0,21, luz cálida' },
         { img: 'c_coffee.jpg', t: 'Las dos · Coffee station completa en melamina Lino Chiaro (Faplac), con spot de luz cálida' }
       ],
@@ -122,7 +123,10 @@ module.exports = {
       B: { t: 'Ver', a: 'Silla 687', as: 'a medida', opts: [{ img: 'B_esc_oslo.jpg', n: 'Silla Oslo', s: 'variante' }, { img: 'B_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }] } },
     'Living': {
       A: { t: 'Ver', a: 'Bold + Napoli', as: 'mesas Nina', opts: [{ img: 'A_liv_curvey.jpg', n: 'Sofá Curvey', s: 'variante' }, { img: 'A_liv_blau.jpg', n: 'Sillones Blau', s: 'variante' }, { img: 'A_liv_italian.jpg', n: 'Mesas Italian', s: 'variante' }] },
-      B: { t: 'Ver', a: 'Mesas Nina', as: 'negro mate', opts: [{ img: 'B_liv_italian.jpg', n: 'Mesas Italian', s: 'variante' }] } }
+      B: { t: 'Ver', a: 'Mesas Nina', as: 'negro mate', opts: [{ img: 'B_liv_italian.jpg', n: 'Mesas Italian', s: 'variante' }] } },
+    'Vanity, antebaño y coffee': {
+      A: { t: 'Ver', a: 'A medida', as: 'banqueta', opts: [{ img: 'A_vanity_iron.jpg', n: 'Puff Iron', s: 'Dellacasa' }] },
+      B: { t: 'Ver', a: 'A medida', as: 'banqueta', opts: [{ img: 'B_vanity_iron.jpg', n: 'Puff Iron', s: 'Dellacasa' }] } }
   },
 
   plantas: { zona: 'Plantas', h: 'Plantas con medidas', s: 'Completa y esencial, antes de recorrer los modelados', img: 'A_planta.jpg', ar: 1.467, alt: AB('A_planta.jpg', 'B_planta.jpg'), zt: 'Medidas', st: 'Planta de mobiliario',

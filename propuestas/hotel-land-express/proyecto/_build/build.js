@@ -8,7 +8,7 @@ const css = fs.readFileSync(path.join(__dirname, '..', '..', 'anteproyecto', '_b
 
 // cabecera: todo hasta </style> (sin incluirlo), con meta y título propios
 let head = src.slice(0, src.indexOf('</style>')).join('\n');
-const t = `Proyecto de interiorismo · Habitación ${room} · Opción simple y elaborada · Hotel Land Express`;
+const t = `Anteproyecto de interiorismo · Modelado 3D · Habitación ${room} · Opción completa y esencial · Hotel Land Express`;
 head = head
   .replace(/<title>.*<\/title>/, `<title>${t}</title>`)
   .replace(/(name="description" content=")[^"]*/, `$1${t} · Lucía Da Silva Estudio`)

@@ -1,6 +1,6 @@
-// Cuerpo de la presentación de proyecto (modelado 3D, opción simple y elaborada).
+// Cuerpo de la presentación de anteproyecto con modelado 3D (opción completa y opción esencial).
+// Orden: portada, contenido, dos opciones, plantas, modelado por zona, vista de conjunto, pasos, gracias.
 module.exports = function ({ D, room, by, vista }) {
-  const sw = (s) => s.img ? `<i class="img" style="background-image:url('img/${s.img}')"></i>` : `<i style="background:${s.c}"></i>`;
   const zonasTxt = D.zonas.map(z => z.zona.toLowerCase()).join(', ').replace(/, ([^,]*)$/, ' y $1');
 
   const dos = `<div class="dos">
@@ -11,15 +11,10 @@ ${D.opciones.map((o, k) => `    <div class="op rv" style="--d:${(.15 + k * .15).
     </div>`).join('\n')}
   </div>`;
 
-  const pal = `<div class="pal6">
-${D.paleta.map((p, k) => `    <div class="pcol rv" style="--d:${(.15 + k * .15).toFixed(2)}s">
-      <div class="pn">${p.n}<span>%</span></div><h3>${p.t}</h3><p>${p.p}</p>
-      <div class="pw">${p.sw.map(s => `<div>${sw(s)}<span>${s.n}</span></div>`).join('')}</div>
-    </div>`).join('\n')}
-  </div>`;
-
-  const col = `<div class="cg">
-${D.conjunto.map((c, k) => `    <figure class="rv${c.big ? ' big' : ''}" style="--d:${(.08 + k * .07).toFixed(2)}s" data-src="img/${c.img}"><div class="ph" style="background-image:url('img/${c.img}')"></div><figcaption><b>${c.o}</b>${c.t}</figcaption></figure>`).join('\n')}
+  const C = D.conjunto;
+  const col = `<div class="cg2">
+    <div></div>${C.cols.map((c, k) => `<div class="ch rv" style="--d:${(.05 + k * .05).toFixed(2)}s">${c}</div>`).join('')}
+${C.rows.map((r, i) => `    <div class="rh rv" style="--d:${(.1 + i * .1).toFixed(2)}s"><span>${r.o}</span></div>${r.imgs.map((im, k) => `<figure class="rv" style="--d:${(.15 + i * .12 + k * .06).toFixed(2)}s" data-src="img/${im}" data-cap="${r.o} · ${C.cols[k]}"><div class="ph" style="background-image:url('img/${im}')"></div></figure>`).join('')}`).join('\n')}
   </div>`;
 
   let n = 0;
@@ -34,9 +29,9 @@ ${D.conjunto.map((c, k) => `    <figure class="rv${c.big ? ' big' : ''}" style="
 <section class="slide" id="inicio" data-sec="Inicio">
   <div class="date">Noviembre 2026</div>
   <div class="cover">
-    <h1 class="rv" style="--d:.2s">PROYECTO DE INTERIORISMO</h1>
+    <h1 class="rv" style="--d:.2s">ANTEPROYECTO DE INTERIORISMO</h1>
     <div class="sub rv" style="--d:.5s">HABITACIÓN ${room} &nbsp;·&nbsp; ${D.tipo}<span class="dsk"> &nbsp;—&nbsp; </span><br class="mob">HOTEL LAND EXPRESS</div>
-    <div class="city rv" style="--d:.7s">Modelado 3D &nbsp;·&nbsp; Opción simple y opción elaborada</div>
+    <div class="city rv" style="--d:.7s">Modelado 3D &nbsp;·&nbsp; Opción completa y opción esencial</div>
   </div>
   <div class="by rv" style="--d:1s">Arquitecta <b>Clara Tacco Carulli</b> &nbsp;·&nbsp; Diseñadora de interiores <b>Lucía Da Silva</b></div>
 </section>
@@ -48,14 +43,13 @@ ${D.conjunto.map((c, k) => `    <figure class="rv${c.big ? ' big' : ''}" style="
   <div class="fr ondark">Cliente · Hotel Land Express</div>
   <div class="card rv" style="--d:.15s">
     <div class="idx">
-      <div class="l"><b>CONTENIDO</b><span>PROYECTO<br>DE INTERIORISMO<br>HABITACIÓN ${room}</span></div>
+      <div class="l"><b>CONTENIDO</b><span>ANTEPROYECTO<br>DE INTERIORISMO<br>HABITACIÓN ${room}</span></div>
       <div class="r">
-        <a data-go="opciones"><b>01 / Dos opciones</b><br><span>Simple y elaborada, en qué se diferencian.</span></a>
-        <a data-go="paleta"><b>02 / Paleta 60 · 30 · 10</b><br><span>Cómo se reparten los colores.</span></a>
-        <a data-go="conjunto"><b>03 / Vista de conjunto</b><br><span>Toda la suite de un vistazo.</span></a>
-        <a data-go="modelado"><b>04 / Modelado 3D por zona</b><br><span>${zonasTxt.charAt(0).toUpperCase() + zonasTxt.slice(1)}.</span></a>
-        <a data-go="plantas"><b>05 / Plantas con medidas</b><br><span>Mobiliario con sus medidas reales.</span></a>
-        <a data-go="pasos"><b>06 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
+        <a data-go="opciones"><b>01 / Dos opciones</b><br><span>Completa y esencial, en qué se diferencian.</span></a>
+        <a data-go="plantas"><b>02 / Plantas</b><br><span>Las dos opciones con sus medidas, para orientarse.</span></a>
+        <a data-go="modelado"><b>03 / Modelado 3D por zona</b><br><span>${zonasTxt.charAt(0).toUpperCase() + zonasTxt.slice(1)}.</span></a>
+        <a data-go="conjunto"><b>04 / Vista de conjunto</b><br><span>Toda la suite junta, opción por opción.</span></a>
+        <a data-go="pasos"><b>05 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
       </div>
     </div>
   </div>
@@ -65,41 +59,33 @@ ${D.conjunto.map((c, k) => `    <figure class="rv${c.big ? ' big' : ''}" style="
 <!-- DOS OPCIONES -->
 <section class="slide" id="opciones" data-sec="Opciones">
   ${by}
-  <div class="t rv"><h1>Dos opciones <span>· Habitación ${room}</span></h1><div class="s">La misma suite, dos niveles de intervención</div></div>
+  <div class="t rv"><h1>Dos opciones <span>· Habitación ${room}</span></h1><div class="s">La misma suite, dos niveles de detalle</div></div>
   <div class="pad">${dos}</div>
   <div class="num"></div>
 </section>
 
-<!-- PALETA -->
-<section class="slide" id="paleta" data-sec="Paleta">
-  ${by}
-  <div class="t rv"><h1>Paleta <span>60 · 30 · 10</span></h1><div class="s">El verde queda como acento, no como protagonista</div></div>
-  <div class="pad">${pal}</div>
-  <div class="num"></div>
-</section>
-
-<!-- VISTA DE CONJUNTO -->
-<section class="slide" id="conjunto" data-sec="Conjunto">
-  ${by}
-  <div class="t rv"><h1>Vista de conjunto</h1><div class="s">Opción elaborada y opción simple, todas las zonas juntas</div></div>
-  <div class="pad">${col}</div>
-  <div class="num"></div>
-</section>
+<!-- PLANTAS -->
+${vista('plantas', D.plantas).replace('<section class="slide', '<section data-sec="Plantas" class="slide')}
 
 <!-- CARÁTULA MODELADO 3D -->
 <section class="slide" id="modelado" data-sec="Modelado 3D">
   <div class="cv-txt cv-c">
     <div class="n rv">${room}</div>
     <div class="h rv" style="--d:.15s">MODELADO 3D</div>
-    <div class="k rv" style="--d:.25s">SIMPLE Y ELABORADA</div>
+    <div class="k rv" style="--d:.25s">COMPLETA Y ESENCIAL</div>
     <p class="rv" style="--d:.4s">En cada vista, los botones de la imagen cambian entre opciones. Después de cada vista, ítem por ítem.</p>
   </div>
   <div class="num"></div>
 </section>
 ${zonas}
 
-<!-- PLANTAS -->
-${vista('plantas', D.plantas).replace('<section class="slide', '<section data-sec="Plantas" class="slide')}
+<!-- VISTA DE CONJUNTO -->
+<section class="slide" id="conjunto" data-sec="Conjunto">
+  ${by}
+  <div class="t rv"><h1>Vista de conjunto</h1><div class="s">Cada zona, en las dos opciones</div></div>
+  <div class="pad">${col}</div>
+  <div class="num"></div>
+</section>
 
 <!-- PRÓXIMOS PASOS -->
 <section class="slide" id="pasos" data-sec="Pasos">
@@ -133,8 +119,8 @@ ${D.pasos.map((p, k) => `    <div class="rv" style="--d:${(.1 + k * .15).toFixed
   function close() { o.classList.remove("on"); }
   o.addEventListener("click", function (e) { e.stopPropagation(); close(); });
   window.addEventListener("keydown", function (e) { if (o.classList.contains("on")) { e.stopImmediatePropagation(); if (e.key === "Escape") close(); } }, true);
-  document.querySelectorAll(".cg figure").forEach(function (f) {
-    f.addEventListener("click", function (e) { e.stopPropagation(); o.querySelector("img").src = f.dataset.src; o.querySelector(".cap").textContent = f.querySelector("figcaption").textContent; o.classList.add("on"); });
+  document.querySelectorAll(".cg2 figure").forEach(function (f) {
+    f.addEventListener("click", function (e) { e.stopPropagation(); o.querySelector("img").src = f.dataset.src; o.querySelector(".cap").textContent = f.dataset.cap; o.classList.add("on"); });
   });
 })();
 </script>

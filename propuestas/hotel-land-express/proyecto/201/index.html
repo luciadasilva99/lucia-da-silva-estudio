@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Proyecto de interiorismo · Habitación 201 · Opción simple y elaborada · Hotel Land Express · Lucía Da Silva Estudio">
+<meta name="description" content="Anteproyecto de interiorismo · Modelado 3D · Habitación 201 · Opción completa y esencial · Hotel Land Express · Lucía Da Silva Estudio">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Proyecto de interiorismo · Habitación 201 · Opción simple y elaborada · Hotel Land Express">
+<meta property="og:title" content="Anteproyecto de interiorismo · Modelado 3D · Habitación 201 · Opción completa y esencial · Hotel Land Express">
 <meta property="og:description" content="Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva · Lucía Da Silva Estudio">
 <meta property="og:image" content="https://luciadasilvaestudio.com.ar/propuestas/hotel-land-express/proyecto/201/img/A_dorm.jpg">
 <meta property="og:url" content="https://luciadasilvaestudio.com.ar/propuestas/hotel-land-express/proyecto/201/">
@@ -21,7 +21,7 @@
   // link personalizado (?c=codigo o ?de=nombre) para saber quién la miró
   (function(){ var q = new URLSearchParams(location.search), v = q.get("c") || q.get("de"); if (v) clarity("set", "visitante", v.toLowerCase()); })();
 </script>
-<title>Proyecto de interiorismo · Habitación 201 · Opción simple y elaborada · Hotel Land Express</title>
+<title>Anteproyecto de interiorismo · Modelado 3D · Habitación 201 · Opción completa y esencial · Hotel Land Express</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 <script>
@@ -638,6 +638,18 @@
   html:not(.mobile) .rnd.pins .objs .ph { height: 46px; }
   html:not(.mobile) .rnd.pins .objs figcaption { font-size: 11.5px; line-height: 1.3; }
   html:not(.mobile) .rnd.pins .side { max-height: 100%; overflow-y: auto; scrollbar-width: thin; }
+
+  /* ===== Vista de conjunto ordenada: zonas en columnas, opciones en filas ===== */
+  .cg2 { display: grid; grid-template-columns: 34px repeat(4, 1fr); grid-template-rows: 26px 1fr 1fr; gap: 12px 14px; height: 100%; }
+  .cg2 .ch { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: #111; border-bottom: 1px solid #111; padding-bottom: 6px; align-self: end; }
+  .cg2 .rh { display: flex; align-items: center; justify-content: center; border-right: 1px solid #111; }
+  .cg2 .rh span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--tc); }
+  .cg2 figure { position: relative; min-height: 0; overflow: hidden; cursor: zoom-in; }
+  .cg2 .ph { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform .8s cubic-bezier(.2,.7,.2,1); }
+  .cg2 figure:hover .ph { transform: scale(1.04); }
+  html.mobile .cg2 { grid-template-columns: 26px 1fr 1fr; grid-template-rows: none; grid-auto-rows: 18vh; height: auto; }
+  html.mobile .cg2 .ch, html.mobile .cg2 > div:first-child { display: none; }
+  html.mobile .cg2 .rh { grid-row: span 2; }
 </style>
 </head>
 <body>
@@ -648,28 +660,27 @@
 <section class="slide" id="inicio" data-sec="Inicio">
   <div class="date">Noviembre 2026</div>
   <div class="cover">
-    <h1 class="rv" style="--d:.2s">PROYECTO DE INTERIORISMO</h1>
+    <h1 class="rv" style="--d:.2s">ANTEPROYECTO DE INTERIORISMO</h1>
     <div class="sub rv" style="--d:.5s">HABITACIÓN 201 &nbsp;·&nbsp; SUITE<span class="dsk"> &nbsp;—&nbsp; </span><br class="mob">HOTEL LAND EXPRESS</div>
-    <div class="city rv" style="--d:.7s">Modelado 3D &nbsp;·&nbsp; Opción simple y opción elaborada</div>
+    <div class="city rv" style="--d:.7s">Modelado 3D &nbsp;·&nbsp; Opción completa y opción esencial</div>
   </div>
   <div class="by rv" style="--d:1s">Arquitecta <b>Clara Tacco Carulli</b> &nbsp;·&nbsp; Diseñadora de interiores <b>Lucía Da Silva</b></div>
 </section>
 
 <!-- CONTENIDO -->
 <section class="slide" id="contenido">
-  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/A_dorm.jpg');"></div>
+  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/fondo_pana.jpg');"></div>
   <div class="fl ondark">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div>
   <div class="fr ondark">Cliente · Hotel Land Express</div>
   <div class="card rv" style="--d:.15s">
     <div class="idx">
-      <div class="l"><b>CONTENIDO</b><span>PROYECTO<br>DE INTERIORISMO<br>HABITACIÓN 201</span></div>
+      <div class="l"><b>CONTENIDO</b><span>ANTEPROYECTO<br>DE INTERIORISMO<br>HABITACIÓN 201</span></div>
       <div class="r">
-        <a data-go="opciones"><b>01 / Dos opciones</b><br><span>Simple y elaborada, en qué se diferencian.</span></a>
-        <a data-go="paleta"><b>02 / Paleta 60 · 30 · 10</b><br><span>Cómo se reparten los colores.</span></a>
-        <a data-go="conjunto"><b>03 / Vista de conjunto</b><br><span>Toda la suite de un vistazo.</span></a>
-        <a data-go="modelado"><b>04 / Modelado 3D por zona</b><br><span>Dormitorio, escritorio y rack tv, living, vanity y antebaño y coffee.</span></a>
-        <a data-go="plantas"><b>05 / Plantas con medidas</b><br><span>Mobiliario con sus medidas reales.</span></a>
-        <a data-go="pasos"><b>06 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
+        <a data-go="opciones"><b>01 / Dos opciones</b><br><span>Completa y esencial, en qué se diferencian.</span></a>
+        <a data-go="plantas"><b>02 / Plantas</b><br><span>Las dos opciones con sus medidas, para orientarse.</span></a>
+        <a data-go="modelado"><b>03 / Modelado 3D por zona</b><br><span>Dormitorio, escritorio y rack tv, living, vanity y antebaño y coffee.</span></a>
+        <a data-go="conjunto"><b>04 / Vista de conjunto</b><br><span>Toda la suite junta, opción por opción.</span></a>
+        <a data-go="pasos"><b>05 / Próximos pasos</b><br><span>Lo que sigue.</span></a>
       </div>
     </div>
   </div>
@@ -679,62 +690,31 @@
 <!-- DOS OPCIONES -->
 <section class="slide" id="opciones" data-sec="Opciones">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Dos opciones <span>· Habitación 201</span></h1><div class="s">La misma suite, dos niveles de intervención</div></div>
+  <div class="t rv"><h1>Dos opciones <span>· Habitación 201</span></h1><div class="s">La misma suite, dos niveles de detalle</div></div>
   <div class="pad"><div class="dos">
     <div class="op rv" style="--d:0.15s">
       <div class="ph" style="background-image:url('img/A_dorm.jpg')"></div>
-      <div class="z">Opción A</div><h3>Elaborada</h3><p>Renovamos la suite completa: respaldo nuevo, varillado de madera, luz indirecta y mobiliario nuevo en el living.</p>
-      <ul><li>Respaldo alto tapizado en panne verde inglés, con varillado en melamina Sándalo (Faplac).</li><li>Gargantas LED de luz cálida en la pared de la cama, en las cortinas y en el pasillo de ingreso.</li><li>Rack TV giratorio con varillado, que separa dormitorio y living.</li><li>Sofá y sillones individuales nuevos, en tonos neutros.</li><li>Escritorio a medida (tapa Lino Chiaro, pata cilindro Sándalo), con opción de modelo estandarizado.</li><li>Blackout en el dormitorio; en el living, voile traslúcido y persiana exterior de aluminio.</li></ul>
+      <div class="z">Opción A</div><h3>Completa</h3><p>Renovamos la suite completa: respaldo nuevo, varillado de madera, luz indirecta y mobiliario nuevo en el living.</p>
+      <ul><li>Respaldo alto tapizado en panne verde inglés, con varillado en melamina Sándalo (Faplac).</li><li>Gargantas LED de luz cálida en la pared de la cama, en las cortinas y en el pasillo de ingreso.</li><li>Rack TV giratorio con varillado en Sahara, que separa dormitorio y living.</li><li>Sofá y sillones individuales nuevos, en tonos neutros.</li><li>Escritorio a medida con varillado sobre la pared, en diálogo con el rack.</li><li>Blackout en el dormitorio; en el living, voile traslúcido y persiana exterior de aluminio.</li></ul>
     </div>
     <div class="op rv" style="--d:0.30s">
       <div class="ph" style="background-image:url('img/B_dorm.jpg')"></div>
-      <div class="z">Opción B</div><h3>Simple</h3><p>Conservamos la estructura existente y la renovamos con papel, pintura, tapizados y piezas puntuales.</p>
-      <ul><li>Papel Muresco Riviera Maison 219954, verde salvia claro, en la pared de la cama y el resto de las paredes pintadas en un tono acorde.</li><li>Cielo raso en blanco tiznado y trío de cuadros de Neuquén sobre el respaldo existente.</li><li>Rack TV bajo en Lino Chiaro (Faplac), a la altura del escritorio, con la placa recortada al contorno del TV.</li><li>Sillones existentes retapizados en Tucson Beige.</li><li>El mismo escritorio que la elaborada: a medida o Ravello. Mismas cortinas y persiana.</li></ul>
+      <div class="z">Opción B</div><h3>Esencial</h3><p>Conservamos la estructura existente y la renovamos con papel, pintura, tapizados y piezas puntuales.</p>
+      <ul><li>Papel Muresco Riviera Maison 219954, verde salvia claro, en la pared de la cama y el resto de las paredes pintadas en un tono acorde.</li><li>Cielo raso en blanco tiznado y trío de cuadros de Neuquén sobre el respaldo existente.</li><li>Rack TV bajo en Sahara, a la altura del escritorio, con la placa recortada al contorno del TV.</li><li>Sillones existentes retapizados en Tucson Beige.</li><li>El mismo escritorio (a medida o Ravello), las mismas cortinas y la persiana.</li></ul>
     </div>
   </div></div>
   <div class="num"></div>
 </section>
 
-<!-- PALETA -->
-<section class="slide" id="paleta" data-sec="Paleta">
-  <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Paleta <span>60 · 30 · 10</span></h1><div class="s">El verde queda como acento, no como protagonista</div></div>
-  <div class="pad"><div class="pal6">
-    <div class="pcol rv" style="--d:0.15s">
-      <div class="pn">60<span>%</span></div><h3>Base</h3><p>Paredes y cielo raso en tonos cálidos y claros. Es el fondo de toda la suite.</p>
-      <div class="pw"><div><i class="img" style="background-image:url('img/sw_crema.jpg')"></i><span>Paredes A<br>crema</span></div><div><i class="img" style="background-image:url('img/sw_pared_b.jpg')"></i><span>Paredes B<br>tono Riviera</span></div><div><i class="img" style="background-image:url('img/sw_tiznado.jpg')"></i><span>Cielo raso<br>blanco tiznado</span></div><div><i class="img" style="background-image:url('img/tx_riviera.jpg')"></i><span>Papel Riviera<br>219954 (B)</span></div></div>
-    </div>
-    <div class="pcol rv" style="--d:0.30s">
-      <div class="pn">30<span>%</span></div><h3>Maderas y textiles neutros</h3><p>Lino Chiaro y Sándalo en los muebles, tapizados Tucson y blackout arena. Dan calidez sin cargar.</p>
-      <div class="pw"><div><i class="img" style="background-image:url('img/m_sandalo.jpg')"></i><span>Sándalo<br>(Faplac)</span></div><div><i class="img" style="background-image:url('img/m_lino_chiaro.jpg')"></i><span>Lino Chiaro<br>(Faplac)</span></div><div><i class="img" style="background-image:url('img/tx_t5.jpg')"></i><span>Tucson<br>Beige</span></div><div><i class="img" style="background-image:url('img/tx_t4.jpg')"></i><span>Tucson<br>Sand</span></div><div><i class="img" style="background-image:url('img/sw_blackout.jpg')"></i><span>Blackout<br>arena</span></div></div>
-    </div>
-    <div class="pcol rv" style="--d:0.45s">
-      <div class="pn">10<span>%</span></div><h3>Acentos</h3><p>El verde, el lima y el dorado aparecen en pocos lugares: respaldo, cubrecama, almohadones y metales.</p>
-      <div class="pw"><div><i class="img" style="background-image:url('img/tx_t3.jpg')"></i><span>Panne<br>verde inglés</span></div><div><i class="img" style="background-image:url('img/tx_t2.jpg')"></i><span>Panne lima<br>almohadones</span></div><div><i class="img" style="background-image:url('img/tx_t0.jpg')"></i><span>Cubrecama<br>jacquard</span></div><div><i class="img" style="background-image:url('img/sw_dorado.jpg')"></i><span>Dorado<br>mate</span></div><div><i class="img" style="background-image:url('img/sw_cobre.jpg')"></i><span>Cobre<br>(colgantes)</span></div></div>
-    </div>
-  </div></div>
-  <div class="num"></div>
-</section>
+<!-- PLANTAS -->
 
-<!-- VISTA DE CONJUNTO -->
-<section class="slide" id="conjunto" data-sec="Conjunto">
+<!-- MODELADO 3D PLANTAS -->
+<section data-sec="Plantas" class="slide" id="plantas">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Vista de conjunto</h1><div class="s">Opción elaborada y opción simple, todas las zonas juntas</div></div>
-  <div class="pad"><div class="cg">
-    <figure class="rv big" style="--d:0.08s" data-src="img/A_aerea.jpg"><div class="ph" style="background-image:url('img/A_aerea.jpg')"></div><figcaption><b>Elaborada</b>Vista aérea</figcaption></figure>
-    <figure class="rv big" style="--d:0.15s" data-src="img/B_aerea.jpg"><div class="ph" style="background-image:url('img/B_aerea.jpg')"></div><figcaption><b>Simple</b>Vista aérea</figcaption></figure>
-    <figure class="rv" style="--d:0.22s" data-src="img/A_dorm.jpg"><div class="ph" style="background-image:url('img/A_dorm.jpg')"></div><figcaption><b>Elaborada</b>Dormitorio</figcaption></figure>
-    <figure class="rv" style="--d:0.29s" data-src="img/B_dorm.jpg"><div class="ph" style="background-image:url('img/B_dorm.jpg')"></div><figcaption><b>Simple</b>Dormitorio</figcaption></figure>
-    <figure class="rv" style="--d:0.36s" data-src="img/A_esc.jpg"><div class="ph" style="background-image:url('img/A_esc.jpg')"></div><figcaption><b>Elaborada</b>Escritorio y rack</figcaption></figure>
-    <figure class="rv" style="--d:0.43s" data-src="img/B_esc.jpg"><div class="ph" style="background-image:url('img/B_esc.jpg')"></div><figcaption><b>Simple</b>Escritorio y rack</figcaption></figure>
-    <figure class="rv" style="--d:0.50s" data-src="img/A_ingreso.jpg"><div class="ph" style="background-image:url('img/A_ingreso.jpg')"></div><figcaption><b>Elaborada</b>Desde el ingreso</figcaption></figure>
-    <figure class="rv" style="--d:0.57s" data-src="img/B_ingreso.jpg"><div class="ph" style="background-image:url('img/B_ingreso.jpg')"></div><figcaption><b>Simple</b>Desde el ingreso</figcaption></figure>
-    <figure class="rv" style="--d:0.64s" data-src="img/A_liv3.jpg"><div class="ph" style="background-image:url('img/A_liv3.jpg')"></div><figcaption><b>Elaborada</b>Living hacia el rack</figcaption></figure>
-    <figure class="rv" style="--d:0.71s" data-src="img/B_liv3.jpg"><div class="ph" style="background-image:url('img/B_liv3.jpg')"></div><figcaption><b>Simple</b>Living hacia el rack</figcaption></figure>
-    <figure class="rv" style="--d:0.78s" data-src="img/A_vanity.jpg"><div class="ph" style="background-image:url('img/A_vanity.jpg')"></div><figcaption><b>Elaborada</b>Vanity</figcaption></figure>
-    <figure class="rv" style="--d:0.85s" data-src="img/B_antebano.jpg"><div class="ph" style="background-image:url('img/B_antebano.jpg')"></div><figcaption><b>Simple</b>Antebaño</figcaption></figure>
-    <figure class="rv" style="--d:0.92s" data-src="img/A_coffee.jpg"><div class="ph" style="background-image:url('img/A_coffee.jpg')"></div><figcaption><b>Elaborada</b>Coffee station</figcaption></figure>
-    <figure class="rv" style="--d:0.99s" data-src="img/B_coffee.jpg"><div class="ph" style="background-image:url('img/B_coffee.jpg')"></div><figcaption><b>Simple</b>Coffee station</figcaption></figure>
+  <div class="t rv"><h1>Plantas con medidas <span>· Plantas</span></h1><div class="s">Completa y esencial, antes de recorrer los modelados</div></div>
+  <div class="pad"><div class="rnd">
+    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.467"><img src="img/A_planta.jpg" alt="Modelado 3D Plantas"><img class="altimg" data-o="1" src="img/B_planta.jpg" alt="Modelado 3D Plantas · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
+    <div class="side rv" style="--d:.3s"><div class="z">Medidas</div><h3>Planta de mobiliario</h3><ul><li>Cada mueble estandarizado está modelado con las medidas reales de la marca; las cotas muestran ancho y fondo.</li><li><b>Paleta 60 · 30 · 10:</b> 60 % base clara (paredes y cielo raso), 30 % maderas y textiles neutros (Sahara, Sándalo, Tucson), 10 % acentos (verde, lima, dorado y negro).</li><li>La misma regla vale para todas las variantes de cada opción.</li></ul></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -744,7 +724,7 @@
   <div class="cv-txt cv-c">
     <div class="n rv">201</div>
     <div class="h rv" style="--d:.15s">MODELADO 3D</div>
-    <div class="k rv" style="--d:.25s">SIMPLE Y ELABORADA</div>
+    <div class="k rv" style="--d:.25s">COMPLETA Y ESENCIAL</div>
     <p class="rv" style="--d:.4s">En cada vista, los botones de la imagen cambian entre opciones. Después de cada vista, ítem por ítem.</p>
   </div>
   <div class="num"></div>
@@ -757,7 +737,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="rnd full">
-    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_dorm.jpg" alt="Modelado 3D Dormitorio"><img class="altimg" data-o="1" src="img/B_dorm.jpg" alt="Modelado 3D Dormitorio · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
+    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_dorm.jpg" alt="Modelado 3D Dormitorio"><img class="altimg" data-o="1" src="img/B_dorm.jpg" alt="Modelado 3D Dormitorio · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -767,7 +747,7 @@
   <div class="t"><h1>Modelado 3D <span>· Dormitorio</span></h1><div class="s">Ítem por ítem · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_dorm.jpg" alt="Modelado 3D Dormitorio"></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Qué lleva</h3><div class="objs many"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/c_respaldo_a.jpg')"></div><figcaption><b>1</b>Elaborada · Respaldo alto tapizado en panne verde inglés, con faldón</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/m_sandalo.jpg')"></div><figcaption><b>2</b>Elaborada · Varillado del respaldo en melamina Sándalo (Faplac)</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/c_led.jpg')"></div><figcaption><b>3</b>Elaborada · Gargantas LED de luz cálida: pared de la cama, cortinas y pasillo de ingreso</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/tx_riviera.jpg')"></div><figcaption><b>4</b>Simple · Papel Muresco Riviera Maison 219954, verde salvia claro, textura tipo lino, en la pared de la cama</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/sw_pared_b.jpg')"></div><figcaption><b>5</b>Simple · Resto de las paredes pintadas en tono acorde al papel (no blanco). Todo lo que es pared va pintado; molduras y cielo raso en blanco tiznado</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/c_cuadros.jpg')"></div><figcaption><b>6</b>Simple · Trío de cuadros de Neuquén: Bardas, Río Limay y Villa La Angostura, con passepartout y marco blancos</figcaption></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/c_respaldo_b.jpg')"></div><figcaption><b>7</b>Simple · Respaldo de cuero existente, se conserva</figcaption></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/tx_t0.jpg')"></div><figcaption><b>8</b>Las dos · Cubrecama jacquard en verde grisáceo</figcaption></figure><figure class="rv" data-k="8" style="--d:1.26s"><div class="ph" style="background-image:url('img/c_blackout.jpg')"></div><figcaption><b>9</b>Las dos · Cortina blackout textil color arena, en riel doble con el voile: de noche no entra luz</figcaption></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Qué lleva</h3><div class="objs many"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/c_respaldo_a.jpg')"></div><figcaption><b>1</b>Completa · Respaldo alto tapizado en panne verde inglés, con faldón</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/m_sandalo.jpg')"></div><figcaption><b>2</b>Completa · Varillado del respaldo en melamina Sándalo (Faplac)</figcaption></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/c_led.jpg')"></div><figcaption><b>3</b>Completa · Gargantas LED de luz cálida: pared de la cama, cortinas y pasillo de ingreso</figcaption></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/tx_riviera.jpg')"></div><figcaption><b>4</b>Esencial · Papel Muresco Riviera Maison 219954, verde salvia claro, textura tipo lino, en la pared de la cama</figcaption></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/sw_pared_b.jpg')"></div><figcaption><b>5</b>Esencial · Resto de las paredes pintadas en tono acorde al papel (no blanco). Todo lo que es pared va pintado; molduras y cielo raso en blanco tiznado</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/c_mesa_luz.jpg')"></div><figcaption><b>6</b>Las dos · Mesas de luz Hanoi: base en melamina lisa Sahara, más cálida que el blanco y sin vetas</figcaption></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/c_cuadros.jpg')"></div><figcaption><b>7</b>Esencial · Trío de cuadros de Neuquén: Bardas, Río Limay y Villa La Angostura, con passepartout y marco blancos</figcaption></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/c_respaldo_b.jpg')"></div><figcaption><b>8</b>Esencial · Respaldo de cuero existente, se conserva</figcaption></figure><figure class="rv" data-k="8" style="--d:1.26s"><div class="ph" style="background-image:url('img/tx_t0.jpg')"></div><figcaption><b>9</b>Las dos · Cubrecama jacquard en verde grisáceo</figcaption></figure><figure class="rv" data-k="9" style="--d:1.38s"><div class="ph" style="background-image:url('img/c_blackout.jpg')"></div><figcaption><b>10</b>Las dos · Cortina blackout textil color arena, en riel doble con el voile: de noche no entra luz</figcaption></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -779,7 +759,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Escritorio y rack TV</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="rnd full">
-    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_esc.jpg" alt="Modelado 3D Escritorio y rack TV"><img class="altimg" data-o="1" src="img/B_esc.jpg" alt="Modelado 3D Escritorio y rack TV · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
+    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_esc.jpg" alt="Modelado 3D Escritorio y rack TV"><img class="altimg" data-o="1" src="img/B_esc.jpg" alt="Modelado 3D Escritorio y rack TV · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -789,7 +769,7 @@
   <div class="t"><h1>Modelado 3D <span>· Escritorio y rack TV</span></h1><div class="s">Ítem por ítem · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_esc.jpg" alt="Modelado 3D Escritorio y rack TV"></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Qué lleva</h3><div class="objs"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_milan.jpg')"></div><figcaption><b>1</b>Las dos · Colgantes Milan (Kolor Iluminación), Ø 0,12 × 0,18, negro con detalles cobre. Dos unidades a distinta altura</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_colgante.jpg')"></div><figcaption><b>2</b>Alternativa · Colgante Rain (Indigo Lumières) en dorado, el de la propuesta anterior</figcaption><a class="lnk" href="https://indigolumieres.com/productos/rain/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_687.webp')"></div><figcaption><b>3</b>Las dos · Silla Simet 687, 0,52 × 0,59 × h 0,765, estructura dorada, tapizado Pana Donn antimancha color arena</figcaption><a class="lnk" href="https://simet.com.ar/silla687/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_oslo.webp')"></div><figcaption><b>4</b>Las dos, opción 2 · Silla Oslo (Antequera), 0,48 × 0,48 × h 0,78, lenga lustrada y asiento tapizado</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/silla-oslo/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/c_escritorio_a.jpg')"></div><figcaption><b>5</b>Las dos · Escritorio a medida: tapa en melamina Lino Chiaro y pata cilindro en Sándalo (Faplac)</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/o_ravello.jpg')"></div><figcaption><b>6</b>Las dos, opción estandarizada · Escritorio Ravello (Dellacasa), 1,40 × 0,50 × h 0,75, petiribí</figcaption><a class="lnk" href="https://dellacasa.com.ar/producto/office/escritorios/escritorio-ravello/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/c_rack_a.jpg')"></div><figcaption><b>7</b>Elaborada · Rack TV giratorio con varillado, entre dormitorio y living</figcaption></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/c_rack_b.jpg')"></div><figcaption><b>8</b>Simple · Rack bajo en melamina Lino Chiaro (Faplac): a la altura del escritorio, estante a cada lado con división central (por ahí sube el caño del giro) y placa recortada al contorno del TV</figcaption></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Qué lleva</h3><div class="objs many"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_milan.jpg')"></div><figcaption><b>1</b>Las dos · Colgantes Milan (Kolor Iluminación), Ø 0,12 × 0,18, negro con detalles cobre. Dos unidades a distinta altura</figcaption></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_colgante.jpg')"></div><figcaption><b>2</b>Alternativa · Colgante Rain (Indigo Lumières) en dorado, el de la propuesta anterior</figcaption><a class="lnk" href="https://indigolumieres.com/productos/rain/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_687.webp')"></div><figcaption><b>3</b>Las dos · Silla Simet 687, 0,52 × 0,59 × h 0,765, estructura dorada, tapizado Pana Donn antimancha color arena</figcaption><a class="lnk" href="https://simet.com.ar/silla687/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_oslo.webp')"></div><figcaption><b>4</b>Las dos, opción 2 · Silla Oslo (Antequera), 0,48 × 0,48 × h 0,78, lenga lustrada y asiento tapizado</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/silla-oslo/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/c_escritorio_a.jpg')"></div><figcaption><b>5</b>Las dos · Escritorio a medida: tapa en melamina lisa Sahara y pata cilindro en Sándalo (Faplac)</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/c_varillado_esc.jpg')"></div><figcaption><b>6</b>Completa · Varillado Sahara sobre la pared del escritorio, desde la tapa hacia arriba: continúa el del rack. El cuadro que estaba ahí se reubica en otra pared</figcaption></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/o_ravello.jpg')"></div><figcaption><b>7</b>Las dos, opción estandarizada · Escritorio Ravello (Dellacasa), 1,40 × 0,50 × h 0,75. Viene en petiribí: consultar a Dellacasa un lustre más claro, tipo Sándalo, como en el modelado</figcaption><a class="lnk" href="https://dellacasa.com.ar/producto/office/escritorios/escritorio-ravello/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/c_rack_a.jpg')"></div><figcaption><b>8</b>Completa · Rack TV giratorio con varillado, marco sobre la viga y laterales en melamina lisa Sahara</figcaption></figure><figure class="rv" data-k="8" style="--d:1.26s"><div class="ph" style="background-image:url('img/c_rack_b.jpg')"></div><figcaption><b>9</b>Esencial · Rack bajo en melamina lisa Sahara: a la altura del escritorio, estante a cada lado con división central (por ahí sube el caño del giro) y placa recortada al contorno del TV</figcaption></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -799,7 +779,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Alternativas <span>· Escritorio y rack TV</span></h1><div class="s">Silla y escritorio, para las dos opciones</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_esc.jpg" alt="Modelado 3D Escritorio y rack TV"><img class="altimg" data-o="1" src="img/A_esc_oslo.jpg" alt="Modelado 3D Escritorio y rack TV · opción Silla Oslo"><img class="altimg" data-o="2" src="img/A_esc_ravello.jpg" alt="Modelado 3D Escritorio y rack TV · opción Ravello"><img class="altimg" data-o="3" src="img/B_esc_ravello.jpg" alt="Modelado 3D Escritorio y rack TV · opción Ravello"><div class="opt"><span>Ver</span><button class="on" data-o="0">Simet 687<small>a medida</small></button><button data-o="1">Silla Oslo<small>opción</small></button><button data-o="2">Ravello<small>escritorio</small></button><button data-o="3">Ravello<small>en la simple</small></button></div></div></div>
+    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_esc.jpg" alt="Modelado 3D Escritorio y rack TV"><img class="altimg" data-o="1" src="img/A_esc_oslo.jpg" alt="Modelado 3D Escritorio y rack TV · opción Silla Oslo"><img class="altimg" data-o="2" src="img/A_esc_ravello.jpg" alt="Modelado 3D Escritorio y rack TV · opción Ravello"><img class="altimg" data-o="3" src="img/B_esc_ravello.jpg" alt="Modelado 3D Escritorio y rack TV · opción Ravello"><div class="opt"><span>Ver</span><button class="on" data-o="0">Simet 687<small>a medida</small></button><button data-o="1">Silla Oslo<small>opción</small></button><button data-o="2">Ravello<small>escritorio</small></button><button data-o="3">Ravello<small>en la esencial</small></button></div></div></div>
     <div class="side rv" style="--d:.3s"><div class="z">Para elegir</div><h3>Silla y escritorio</h3><ul><li>Silla Simet 687 o silla Oslo: las dos sirven para las dos opciones.</li><li>Escritorio a medida o escritorio Ravello (Dellacasa): mismo lugar, misma medida.</li><li>Las medidas de cada mueble son las reales de cada marca.</li></ul></div>
   </div></div>
   <div class="num"></div>
@@ -812,7 +792,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Living</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="rnd full">
-    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_liv.jpg" alt="Modelado 3D Living"><img class="altimg" data-o="1" src="img/B_liv.jpg" alt="Modelado 3D Living · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
+    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_liv.jpg" alt="Modelado 3D Living"><img class="altimg" data-o="1" src="img/B_liv.jpg" alt="Modelado 3D Living · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -822,7 +802,7 @@
   <div class="t"><h1>Modelado 3D <span>· Living</span></h1><div class="s">Ítem por ítem · Habitación 201</div></div>
   <div class="pad"><div class="rnd pins">
     <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_liv.jpg" alt="Modelado 3D Living"></div></div>
-    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Qué lleva</h3><div class="objs many"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_bold.webp')"></div><figcaption><b>1</b>Elaborada · Sofá Bold (Antequera), 1,90 × 0,70 × h 0,82, en Tucson Beige</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/sofa-bolt-1o9vi/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_sofa.jpg')"></div><figcaption><b>2</b>Elaborada, opción 2 · Sofá Curvey existente, retapizado en Tucson Beige</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_napoli.jpg')"></div><figcaption><b>3</b>Elaborada · Sillones Napoli (Dellacasa), 0,94 × 0,88 × h 0,73, en Tucson Sand</figcaption><a class="lnk" href="https://dellacasa.com.ar/producto/living/sillones-de-1-cuerpo/sillon-napoli/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_blau.webp')"></div><figcaption><b>4</b>Elaborada, opción 2 · Sillones Blau (Antequera), 0,64 × 0,68 × h 0,85, madera Sándalo y Tucson Sand</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/sillon-de-living-blau-7b5ae/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/c_sillones_b.jpg')"></div><figcaption><b>5</b>Simple · Sillones existentes de 2 y 1 cuerpo, retapizados en Tucson Beige, almohadones en panne verde y lima</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/o_nina.webp')"></div><figcaption><b>6</b>Las dos · Mesas ratonas Nina (Antequera) en Sándalo: 1,05 × 0,90 × h 0,40 y 0,59 × 0,65 × h 0,46</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/mesa-centro-nina-15i0t/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/o_italian.webp')"></div><figcaption><b>7</b>Las dos, opción 2 · Mesas Italian (Antequera) en dorado: Ø 0,50 × h 0,50 y Ø 0,40 × h 0,65</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/2026-mesa-italian-zf1m6/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/c_almohadones.jpg')"></div><figcaption><b>8</b>Elaborada · Almohadones en panne verde inglés y lima en el sofá, y uno lima en cada sillón</figcaption></figure><figure class="rv" data-k="8" style="--d:1.26s"><div class="ph" style="background-image:url('img/o_cortinas.jpg')"></div><figcaption><b>9</b>Las dos · Voile Trevira CS traslúcido: liviano, lavable, ignífugo (apto hotel) y resistente. Deja ver el balcón</figcaption></figure><figure class="rv" data-k="9" style="--d:1.38s"><div class="ph" style="background-image:url('img/c_persiana.jpg')"></div><figcaption><b>10</b>Las dos · Persiana exterior de aluminio con cajón visto, en ventana y puerta balcón, para oscurecer del todo. A confirmar con el consorcio por la fachada</figcaption></figure></div></div>
+    <div class="side"><div class="z rv" style="--d:.15s">Zona</div><h3 class="rv" style="--d:.2s">Qué lleva</h3><div class="objs many"><figure class="rv" data-k="0" style="--d:0.30s"><div class="ph" style="background-image:url('img/o_bold.webp')"></div><figcaption><b>1</b>Completa · Sofá Bold (Antequera), 1,90 × 0,70 × h 0,82, en Tucson Beige</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/sofa-bolt-1o9vi/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="1" style="--d:0.42s"><div class="ph" style="background-image:url('img/o_sofa.jpg')"></div><figcaption><b>2</b>Completa, opción 2 · Sofá Curvey existente, retapizado en Tucson Beige</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="2" style="--d:0.54s"><div class="ph" style="background-image:url('img/o_napoli.jpg')"></div><figcaption><b>3</b>Completa · Sillones Napoli (Dellacasa), 0,94 × 0,88 × h 0,73, en Tucson Sand</figcaption><a class="lnk" href="https://dellacasa.com.ar/producto/living/sillones-de-1-cuerpo/sillon-napoli/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="3" style="--d:0.66s"><div class="ph" style="background-image:url('img/o_blau.webp')"></div><figcaption><b>4</b>Completa, opción 2 · Sillones Blau (Antequera), 0,64 × 0,68 × h 0,85, madera Sándalo y Tucson Sand</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/sillon-de-living-blau-7b5ae/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="4" style="--d:0.78s"><div class="ph" style="background-image:url('img/c_sillones_b.jpg')"></div><figcaption><b>5</b>Esencial · Sillones existentes de 2 y 1 cuerpo, retapizados en Tucson Beige, almohadones en panne verde y lima</figcaption></figure><figure class="rv" data-k="5" style="--d:0.90s"><div class="ph" style="background-image:url('img/o_nina.webp')"></div><figcaption><b>6</b>Las dos · Mesas ratonas Nina (Antequera) en negro mate, para dar contraste (referencia: Faplac Negro Extreme Matt): 1,05 × 0,90 × h 0,40 y 0,59 × 0,65 × h 0,46</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/mesa-centro-nina-15i0t/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="6" style="--d:1.02s"><div class="ph" style="background-image:url('img/o_italian.webp')"></div><figcaption><b>7</b>Las dos, opción 2 · Mesas Italian (Antequera) en dorado: Ø 0,50 × h 0,50 y Ø 0,40 × h 0,65</figcaption><a class="lnk" href="https://antequeramuebles.com.ar/productos/2026-mesa-italian-zf1m6/" target="_blank" rel="noopener">Ver producto ↗</a></figure><figure class="rv" data-k="7" style="--d:1.14s"><div class="ph" style="background-image:url('img/c_almohadones.jpg')"></div><figcaption><b>8</b>Completa · Almohadones en panne verde inglés y lima en el sofá, y uno lima en cada sillón</figcaption></figure><figure class="rv" data-k="8" style="--d:1.26s"><div class="ph" style="background-image:url('img/o_cortinas.jpg')"></div><figcaption><b>9</b>Las dos · Voile Trevira CS traslúcido: liviano, lavable, ignífugo (apto hotel) y resistente. Deja ver el balcón</figcaption></figure><figure class="rv" data-k="9" style="--d:1.38s"><div class="ph" style="background-image:url('img/c_persiana.jpg')"></div><figcaption><b>10</b>Las dos · Persiana exterior de aluminio con cajón visto, en ventana y puerta balcón, para oscurecer del todo. A confirmar con el consorcio por la fachada</figcaption></figure></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -830,10 +810,10 @@
 <!-- MODELADO 3D LIVING -->
 <section class="slide" id="z4">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Alternativas <span>· Living</span></h1><div class="s">Opción elaborada · sofá, sillones y mesas</div></div>
+  <div class="t rv"><h1>Alternativas <span>· Living</span></h1><div class="s">Opción completa · sofá, sillones y mesas</div></div>
   <div class="pad"><div class="rnd">
     <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_liv.jpg" alt="Modelado 3D Living"><img class="altimg" data-o="1" src="img/A_liv_curvey.jpg" alt="Modelado 3D Living · opción Sofá Curvey"><img class="altimg" data-o="2" src="img/A_liv_blau.jpg" alt="Modelado 3D Living · opción Sillones Blau"><img class="altimg" data-o="3" src="img/A_liv_italian.jpg" alt="Modelado 3D Living · opción Mesas Italian"><div class="opt"><span>Ver</span><button class="on" data-o="0">Bold + Napoli<small>Nina</small></button><button data-o="1">Sofá Curvey<small>opción</small></button><button data-o="2">Sillones Blau<small>opción</small></button><button data-o="3">Mesas Italian<small>opción</small></button></div></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Para elegir</div><h3>Sofá, sillones y mesas</h3><ul><li>Sofá Bold (nuevo) o Curvey (existente retapizado).</li><li>Sillones Napoli, envolventes, o Blau, más compactos y con marco de madera. Reacomodados más cerca de la mesa ratona.</li><li>Mesas Nina en Sándalo o Italian en dorado.</li></ul></div>
+    <div class="side rv" style="--d:.3s"><div class="z">Para elegir</div><h3>Sofá, sillones y mesas</h3><ul><li>Sofá Bold (nuevo) o Curvey (existente retapizado).</li><li>Sillones Napoli, envolventes, o Blau, más compactos y con marco de madera. Reacomodados más cerca de la mesa ratona.</li><li>Mesas Nina en negro mate o Italian en dorado.</li></ul></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -843,7 +823,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Otra vista <span>· Living</span></h1><div class="s">Living hacia el balcón</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_liv2.jpg" alt="Modelado 3D Living"><img class="altimg" data-o="1" src="img/B_liv2.jpg" alt="Modelado 3D Living · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
+    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_liv2.jpg" alt="Modelado 3D Living"><img class="altimg" data-o="1" src="img/B_liv2.jpg" alt="Modelado 3D Living · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
     <div class="side rv" style="--d:.3s"><div class="z">Vista</div><h3>Hacia el balcón</h3><ul><li>La lámpara de pie y la luz natural del balcón iluminan el sector de estar.</li><li>Mesas ratonas en el centro, con paso libre hacia el balcón.</li></ul></div>
   </div></div>
   <div class="num"></div>
@@ -856,7 +836,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Modelado 3D <span>· Vanity, antebaño y coffee</span></h1><div class="s">Habitación 201</div></div>
   <div class="pad"><div class="rnd full">
-    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_vanity.jpg" alt="Modelado 3D Vanity, antebaño y coffee"><img class="altimg" data-o="1" src="img/B_vanity.jpg" alt="Modelado 3D Vanity, antebaño y coffee · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
+    <div class="frame has"><div class="pic" style="--ar:1.637"><img src="img/A_vanity.jpg" alt="Modelado 3D Vanity, antebaño y coffee"><img class="altimg" data-o="1" src="img/B_vanity.jpg" alt="Modelado 3D Vanity, antebaño y coffee · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -887,8 +867,8 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Otra vista <span>· Vanity, antebaño y coffee</span></h1><div class="s">Antebaño</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_antebano.jpg" alt="Modelado 3D Vanity, antebaño y coffee"><img class="altimg" data-o="1" src="img/B_antebano.jpg" alt="Modelado 3D Vanity, antebaño y coffee · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Vista</div><h3>Antebaño</h3><ul><li>Espejo con tira LED cálida y vinilo con marco dorado finito.</li><li>En la opción simple, las paredes del antebaño van pintadas como el resto de la suite.</li></ul></div>
+    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_antebano.jpg" alt="Modelado 3D Vanity, antebaño y coffee"><img class="altimg" data-o="1" src="img/B_antebano.jpg" alt="Modelado 3D Vanity, antebaño y coffee · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
+    <div class="side rv" style="--d:.3s"><div class="z">Vista</div><h3>Antebaño</h3><ul><li>Espejo con tira LED cálida y vinilo con marco dorado finito.</li><li>En la opción esencial, las paredes del antebaño van pintadas como el resto de la suite.</li></ul></div>
   </div></div>
   <div class="num"></div>
 </section>
@@ -898,21 +878,20 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv"><h1>Otra vista <span>· Vanity, antebaño y coffee</span></h1><div class="s">Coffee station</div></div>
   <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_coffee.jpg" alt="Modelado 3D Vanity, antebaño y coffee"><img class="altimg" data-o="1" src="img/B_coffee.jpg" alt="Modelado 3D Vanity, antebaño y coffee · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
+    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.637"><img src="img/A_coffee.jpg" alt="Modelado 3D Vanity, antebaño y coffee"><img class="altimg" data-o="1" src="img/B_coffee.jpg" alt="Modelado 3D Vanity, antebaño y coffee · opción Esencial"><div class="opt"><span>Opción</span><button class="on" data-o="0">Completa<small>opción A</small></button><button data-o="1">Esencial<small>opción B</small></button></div></div></div>
     <div class="side rv" style="--d:.3s"><div class="z">Vista</div><h3>Coffee station</h3><ul><li>Nicho de ingreso completo en melamina Lino Chiaro (Faplac).</li><li>Cafetera y microondas en los estantes, frigobar debajo.</li></ul></div>
   </div></div>
   <div class="num"></div>
 </section>
 
-<!-- PLANTAS -->
-
-<!-- MODELADO 3D PLANTAS -->
-<section data-sec="Plantas" class="slide" id="plantas">
+<!-- VISTA DE CONJUNTO -->
+<section class="slide" id="conjunto" data-sec="Conjunto">
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
-  <div class="t rv"><h1>Plantas con medidas <span>· Plantas</span></h1><div class="s">Mobiliario con medidas reales</div></div>
-  <div class="pad"><div class="rnd">
-    <div class="frame has" style="--d:.1s"><div class="pic" style="--ar:1.467"><img src="img/A_planta.jpg" alt="Modelado 3D Plantas"><img class="altimg" data-o="1" src="img/B_planta.jpg" alt="Modelado 3D Plantas · opción Simple"><div class="opt"><span>Opción</span><button class="on" data-o="0">Elaborada<small>opción A</small></button><button data-o="1">Simple<small>opción B</small></button></div></div></div>
-    <div class="side rv" style="--d:.3s"><div class="z">Medidas</div><h3>Planta de mobiliario</h3><ul><li>Cada mueble estandarizado está modelado con las medidas reales de la marca.</li><li>Las cotas muestran ancho y fondo; el texto indica la altura.</li><li>Los sillones individuales y las mesas entran con paso libre hacia el balcón y el ingreso.</li></ul></div>
+  <div class="t rv"><h1>Vista de conjunto</h1><div class="s">Cada zona, en las dos opciones</div></div>
+  <div class="pad"><div class="cg2">
+    <div></div><div class="ch rv" style="--d:0.05s">Dormitorio</div><div class="ch rv" style="--d:0.10s">Escritorio y rack</div><div class="ch rv" style="--d:0.15s">Living</div><div class="ch rv" style="--d:0.20s">Vanity</div>
+    <div class="rh rv" style="--d:0.10s"><span>Completa</span></div><figure class="rv" style="--d:0.15s" data-src="img/A_dorm.jpg" data-cap="Completa · Dormitorio"><div class="ph" style="background-image:url('img/A_dorm.jpg')"></div></figure><figure class="rv" style="--d:0.21s" data-src="img/A_esc.jpg" data-cap="Completa · Escritorio y rack"><div class="ph" style="background-image:url('img/A_esc.jpg')"></div></figure><figure class="rv" style="--d:0.27s" data-src="img/A_liv.jpg" data-cap="Completa · Living"><div class="ph" style="background-image:url('img/A_liv.jpg')"></div></figure><figure class="rv" style="--d:0.33s" data-src="img/A_vanity.jpg" data-cap="Completa · Vanity"><div class="ph" style="background-image:url('img/A_vanity.jpg')"></div></figure>
+    <div class="rh rv" style="--d:0.20s"><span>Esencial</span></div><figure class="rv" style="--d:0.27s" data-src="img/B_dorm.jpg" data-cap="Esencial · Dormitorio"><div class="ph" style="background-image:url('img/B_dorm.jpg')"></div></figure><figure class="rv" style="--d:0.33s" data-src="img/B_esc.jpg" data-cap="Esencial · Escritorio y rack"><div class="ph" style="background-image:url('img/B_esc.jpg')"></div></figure><figure class="rv" style="--d:0.39s" data-src="img/B_liv.jpg" data-cap="Esencial · Living"><div class="ph" style="background-image:url('img/B_liv.jpg')"></div></figure><figure class="rv" style="--d:0.45s" data-src="img/B_vanity.jpg" data-cap="Esencial · Vanity"><div class="ph" style="background-image:url('img/B_vanity.jpg')"></div></figure>
   </div></div>
   <div class="num"></div>
 </section>
@@ -922,7 +901,7 @@
   <div class="fl">Arq. Clara Tacco Carulli &amp; D.I. Lucía Da Silva</div><div class="fr">Cliente · Hotel Land Express</div>
   <div class="t rv" style="top:110px;"><h1 style="font-size:32px;">Próximos <span>pasos</span></h1></div>
   <div class="pad" style="top:200px;"><div class="steps">
-    <div class="rv" style="--d:0.10s"><div class="n">01</div><div class="k">Elegir opción<br>y alternativas</div><p>Definimos simple o elaborada, y en cada zona la alternativa de sofá, sillones, mesas, silla, escritorio y banqueta.</p></div>
+    <div class="rv" style="--d:0.10s"><div class="n">01</div><div class="k">Elegir opción<br>y alternativas</div><p>Definimos esencial o completa, y en cada zona la alternativa de sofá, sillones, mesas, silla, escritorio y banqueta.</p></div>
     <div class="rv" style="--d:0.25s"><div class="n">02</div><div class="k">Renders<br>fotorrealistas</div><p>Con la elección hecha, emitimos los renders de las vistas principales.</p></div>
     <div class="rv" style="--d:0.40s"><div class="n">03</div><div class="k">Presupuestos<br>y compras</div><p>Pedimos precios de lo estandarizado y de lo que se hace a medida, incluido el vinilo de los espejos.</p></div>
     <div class="rv" style="--d:0.55s"><div class="n">04</div><div class="k">Ejecución<br>en obra</div><p>Coordinamos los gremios y supervisamos cada etapa hasta entregar la suite terminada.</p></div>
@@ -932,7 +911,7 @@
 
 <!-- GRACIAS -->
 <section class="slide" id="gracias">
-  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/A_dorm.jpg');"></div>
+  <div class="img bgfull" style="position:absolute; inset:0; background-image:url('img/fondo_pana.jpg');"></div>
   <div class="thx rv" style="--d:.15s">
     <div style="font-weight:700; letter-spacing:.2em; font-size:24px;">¡MUCHAS</div>
     <div style="font-weight:300; letter-spacing:.2em; font-size:24px;">GRACIAS!</div>
@@ -952,8 +931,8 @@
   function close() { o.classList.remove("on"); }
   o.addEventListener("click", function (e) { e.stopPropagation(); close(); });
   window.addEventListener("keydown", function (e) { if (o.classList.contains("on")) { e.stopImmediatePropagation(); if (e.key === "Escape") close(); } }, true);
-  document.querySelectorAll(".cg figure").forEach(function (f) {
-    f.addEventListener("click", function (e) { e.stopPropagation(); o.querySelector("img").src = f.dataset.src; o.querySelector(".cap").textContent = f.querySelector("figcaption").textContent; o.classList.add("on"); });
+  document.querySelectorAll(".cg2 figure").forEach(function (f) {
+    f.addEventListener("click", function (e) { e.stopPropagation(); o.querySelector("img").src = f.dataset.src; o.querySelector(".cap").textContent = f.dataset.cap; o.classList.add("on"); });
   });
 })();
 </script>

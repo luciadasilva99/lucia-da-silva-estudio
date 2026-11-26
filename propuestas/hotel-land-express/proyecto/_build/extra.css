@@ -45,7 +45,7 @@
   /* Detalle ítem por ítem: más compacto (hay zonas con 8-9 ítems) */
   html:not(.mobile) .rnd.pins .objs { gap: 3px; }
   html:not(.mobile) .rnd.pins .objs figure { grid-template-columns: 56px 1fr; gap: 12px; }
-  html:not(.mobile) .rnd.pins .objs .ph { height: 40px; }
+  html:not(.mobile) .rnd.pins .objs .ph { height: 36px; }
   html:not(.mobile) .rnd.pins .objs figcaption { font-size: 11px; line-height: 1.25; }
   html:not(.mobile) .rnd.pins .side { max-height: 100%; overflow-y: auto; scrollbar-width: thin; }
 

@@ -53,10 +53,10 @@ module.exports = {
         { img: 'm_sandalo.jpg', t: 'Completa · Varillado del respaldo en melamina Sándalo (Faplac)' },
         { img: 'c_led.jpg', t: 'Completa · Gargantas LED de luz cálida: pared de la cama, cortinas y pasillo de ingreso' },
         { img: 'tx_riviera.jpg', t: 'Esencial · Papel Muresco Riviera Maison 219954, verde salvia claro, textura tipo lino, en la pared de la cama' },
-        { img: 'sw_pared_b.jpg', t: 'Esencial · Resto de las paredes pintadas en tono acorde al papel (no blanco). Todo lo que es pared va pintado; molduras y cielo raso en blanco tiznado' },
+        { img: 'sw_pared_b.jpg', t: 'Esencial · Resto de las paredes pintadas en un tono acorde al papel; molduras y cielo raso en blanco tiznado' },
         { img: 'c_mesa_luz.jpg', t: 'Las dos · Mesas de luz Hanoi: base en melamina lisa Sahara, más cálida que el blanco y sin vetas' },
         { img: 'o_calvin.jpg', t: 'Las dos, opción 2 · Mesa de luz Calvin II (C-Home), 0,70 × 0,45 × h 0,70, laqueada (color a elección) con estructura de metal', url: 'https://www.c-home.com.ar/productos/mesa-de-luz-cattelan-p7w51/' },
-        { img: 'c_cuadros.jpg', t: 'Las dos · Set de 4 cuadros de Neuquén en blanco y negro (Bardas, Río Limay, Villa La Angostura y Lanín) en la pared lateral, alineados arriba con el placard' },
+        { img: 'c_cuadros.jpg', t: 'Las dos · Set de 4 cuadros de Neuquén en blanco y negro en la pared lateral, alineados con el placard' },
         { img: 'c_colgantes_luz.jpg', t: 'Esencial · Colgantes Milan sobre las mesas de luz, los mismos del escritorio, a 1,65 m del piso, fuera del alcance' },
         { img: 'c_pie_cama.jpg', t: 'Esencial · Pie de cama en panne verde inglés, 0,50 de ancho, cae a los costados' },
         { img: 'c_respaldo_b.jpg', t: 'Esencial · Respaldo de cuero existente, se conserva' },
@@ -89,12 +89,12 @@ module.exports = {
         { img: 'o_napoli.jpg', t: 'Completa · Sillones Napoli (Dellacasa), 0,94 × 0,88 × h 0,73, en Tucson Sand', url: 'https://dellacasa.com.ar/producto/living/sillones-de-1-cuerpo/sillon-napoli/' },
         { img: 'o_blau.webp', t: 'Completa, opción 2 · Sillones Blau (Antequera), 0,64 × 0,68 × h 0,85, madera Sándalo y Tucson Sand', url: 'https://antequeramuebles.com.ar/productos/sillon-de-living-blau-7b5ae/' },
         { img: 'c_sillones_b.jpg', t: 'Esencial · Sillones existentes de 2 y 1 cuerpo, retapizados en Tucson Beige, almohadones en panne verde y lima' },
-        { img: 'o_nina.webp', t: 'Las dos · Mesas ratonas Nina (Antequera) en negro mate, para dar contraste (referencia: Faplac Negro Extreme Matt): 1,05 × 0,90 × h 0,40 y 0,59 × 0,65 × h 0,46', url: 'https://antequeramuebles.com.ar/productos/mesa-centro-nina-15i0t/' },
+        { img: 'o_nina.webp', t: 'Las dos · Mesas ratonas Nina (Antequera) en negro mate, 1,05 × 0,90 y 0,59 × 0,65', url: 'https://antequeramuebles.com.ar/productos/mesa-centro-nina-15i0t/' },
         { img: 'o_italian.webp', t: 'Las dos, opción 2 · Mesas Italian (Antequera) en dorado: Ø 0,50 × h 0,50 y Ø 0,40 × h 0,65', url: 'https://antequeramuebles.com.ar/productos/2026-mesa-italian-zf1m6/' },
         { img: 'c_almohadones.jpg', t: 'Completa · Almohadones en panne verde inglés y lima en el sofá, y uno lima en cada sillón' },
         { img: 'c_cuadros_living.jpg', t: 'Las dos · Dos cuadros grandes de paisajes de Neuquén sobre el sofá, en blanco y negro con marco dorado' },
         { img: 'o_cortinas.jpg', t: 'Las dos · Voile Trevira CS traslúcido: liviano, lavable, ignífugo (apto hotel) y resistente. Deja ver el balcón' },
-        { img: 'c_persiana.jpg', t: 'Las dos · Persiana exterior de aluminio con cajón visto, en ventana y puerta balcón, para oscurecer del todo. A confirmar con el consorcio por la fachada' }
+        { img: 'c_persiana.jpg', t: 'Las dos · Persiana exterior de aluminio en ventana y balcón, para oscurecer del todo (a confirmar con el consorcio)' }
       ],
       alts: [
         { zona: 'Living', h: 'Otra vista', s: 'Living hacia el balcón', img: 'A_liv2.jpg', ar: R, alt: AB('A_liv2.jpg', 'B_liv2.jpg'), zt: 'Vista', st: 'Hacia el balcón',

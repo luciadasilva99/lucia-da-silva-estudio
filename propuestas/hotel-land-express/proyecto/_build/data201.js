@@ -55,7 +55,7 @@ module.exports = {
         { img: 'tx_riviera.jpg', t: 'Esencial · Papel Muresco Riviera Maison 219954, verde salvia claro, textura tipo lino, en la pared de la cama' },
         { img: 'sw_pared_b.jpg', t: 'Esencial · Resto de las paredes pintadas en tono acorde al papel (no blanco). Todo lo que es pared va pintado; molduras y cielo raso en blanco tiznado' },
         { img: 'c_mesa_luz.jpg', t: 'Las dos · Mesas de luz Hanoi: base en melamina lisa Sahara, más cálida que el blanco y sin vetas' },
-        { img: 'c_cuadros.jpg', t: 'Esencial · Trío de cuadros de Neuquén: Bardas, Río Limay y Villa La Angostura, con passepartout y marco blancos' },
+        { img: 'c_cuadros.jpg', t: 'Esencial · Trío de cuadros de Neuquén: Bardas, Río Limay y Villa La Angostura, fotos en blanco y negro con passepartout y marco blancos' },
         { img: 'c_respaldo_b.jpg', t: 'Esencial · Respaldo de cuero existente, se conserva' },
         { img: 'tx_t0.jpg', t: 'Las dos · Cubrecama jacquard en verde grisáceo' },
         { img: 'c_blackout.jpg', t: 'Las dos · Cortina blackout textil color arena, en riel doble con el voile: de noche no entra luz' }

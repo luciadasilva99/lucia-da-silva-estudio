@@ -43,9 +43,9 @@
   html.mobile .cg { grid-template-columns: 1fr 1fr; grid-auto-rows: 20vh; height: auto; }
 
   /* Detalle ítem por ítem: más compacto (hay zonas con 8-9 ítems) */
-  html:not(.mobile) .rnd.pins .objs { gap: 6px; }
-  html:not(.mobile) .rnd.pins .objs figure { grid-template-columns: 62px 1fr; gap: 12px; }
-  html:not(.mobile) .rnd.pins .objs .ph { height: 46px; }
+  html:not(.mobile) .rnd.pins .objs { gap: 3px; }
+  html:not(.mobile) .rnd.pins .objs figure { grid-template-columns: 56px 1fr; gap: 12px; }
+  html:not(.mobile) .rnd.pins .objs .ph { height: 40px; }
   html:not(.mobile) .rnd.pins .objs figcaption { font-size: 11.5px; line-height: 1.3; }
   html:not(.mobile) .rnd.pins .side { max-height: 100%; overflow-y: auto; scrollbar-width: thin; }
 

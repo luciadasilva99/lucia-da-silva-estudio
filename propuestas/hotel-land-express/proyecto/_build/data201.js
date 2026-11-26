@@ -21,7 +21,7 @@ module.exports = {
       p: 'Conservamos la estructura existente y la renovamos con papel, pintura, tapizados y piezas puntuales.',
       items: [
         'Papel Muresco Riviera Maison 219954, verde salvia claro, en la pared de la cama y el resto de las paredes pintadas en un tono acorde.',
-        'Cielo raso en blanco tiznado y trío de cuadros de Neuquén sobre el respaldo existente.',
+        'Cielo raso en blanco tiznado, colgantes Milan sobre las mesas de luz y pie de cama en panne verde inglés.',
         'Rack TV bajo en Sahara, a la altura del escritorio, con la placa recortada al contorno del TV.',
         'Sillones existentes retapizados en Tucson Beige.',
         'El mismo escritorio (a medida o Ravello), las mismas cortinas y la persiana.'
@@ -47,7 +47,7 @@ module.exports = {
 
   zonas: [
     { zona: 'Dormitorio', img: 'A_dorm.jpg', ar: R, alt: AB('A_dorm.jpg', 'B_dorm.jpg'), zt: 'Qué cambia', st: 'Dormitorio',
-      items: ['<b>Completa:</b> respaldo alto en panne verde inglés con varillado Sándalo y gargantas LED cálidas.', '<b>Esencial:</b> papel Riviera Maison 219954 verde salvia claro en la cabecera, paredes en tono acorde y trío de cuadros de Neuquén.', 'En las dos: blackout textil para dormir a oscuras, voile, cielo raso blanco tiznado y spots de luz cálida.'],
+      items: ['<b>Completa:</b> respaldo alto en panne verde inglés con varillado Sándalo y gargantas LED cálidas.', '<b>Esencial:</b> papel Riviera Maison 219954 verde salvia claro en la cabecera, paredes en tono acorde, colgantes Milan sobre las mesas de luz y pie de cama en panne verde inglés.', 'En las dos: set de 4 cuadros de Neuquén en blanco y negro en la pared lateral, blackout textil para dormir a oscuras, voile, cielo raso blanco tiznado y spots de luz cálida.'],
       pins: [
         { img: 'c_respaldo_a.jpg', t: 'Completa · Respaldo alto tapizado en panne verde inglés, con faldón' },
         { img: 'm_sandalo.jpg', t: 'Completa · Varillado del respaldo en melamina Sándalo (Faplac)' },
@@ -55,21 +55,24 @@ module.exports = {
         { img: 'tx_riviera.jpg', t: 'Esencial · Papel Muresco Riviera Maison 219954, verde salvia claro, textura tipo lino, en la pared de la cama' },
         { img: 'sw_pared_b.jpg', t: 'Esencial · Resto de las paredes pintadas en tono acorde al papel (no blanco). Todo lo que es pared va pintado; molduras y cielo raso en blanco tiznado' },
         { img: 'c_mesa_luz.jpg', t: 'Las dos · Mesas de luz Hanoi: base en melamina lisa Sahara, más cálida que el blanco y sin vetas' },
-        { img: 'c_cuadros.jpg', t: 'Esencial · Trío de cuadros de Neuquén: Bardas, Río Limay y Villa La Angostura, fotos en blanco y negro con passepartout y marco blancos' },
+        { img: 'c_cuadros.jpg', t: 'Las dos · Set de 4 cuadros de Neuquén en la pared lateral, 2 arriba y 2 abajo, con el borde superior alineado al placard: Bardas, Río Limay, Villa La Angostura y Lanín, en blanco y negro con passepartout y marco blancos' },
+        { img: 'c_colgantes_luz.jpg', t: 'Esencial · Colgantes Milan sobre las mesas de luz, los mismos del escritorio, a 1,65 m del piso: quedan fuera del alcance al sentarse en la cama' },
+        { img: 'c_pie_cama.jpg', t: 'Esencial · Pie de cama en panne verde inglés, 0,50 de ancho, cae a los costados' },
         { img: 'c_respaldo_b.jpg', t: 'Esencial · Respaldo de cuero existente, se conserva' },
         { img: 'tx_t0.jpg', t: 'Las dos · Cubrecama jacquard en verde grisáceo' },
         { img: 'c_blackout.jpg', t: 'Las dos · Cortina blackout textil color arena, en riel doble con el voile: de noche no entra luz' }
       ] },
 
     { zona: 'Escritorio y rack TV', img: 'A_esc.jpg', ar: R, alt: AB('A_esc.jpg', 'B_esc.jpg'), zt: 'Qué cambia', st: 'Escritorio y rack TV',
-      items: ['<b>Completa:</b> rack giratorio alto con varillado, que sigue sobre la pared del escritorio.', '<b>Esencial:</b> rack bajo en Sahara, a la altura del escritorio, con la placa recortada al contorno del TV.', 'En las dos: el mismo escritorio (a medida o Ravello), dos colgantes Milan a distinta altura y dos opciones de silla.'],
+      items: ['<b>Completa:</b> rack giratorio alto con varillado, que sigue sobre la pared del escritorio.', '<b>Esencial:</b> rack bajo en Sahara, a la altura del escritorio, con la placa recortada al contorno del TV, y columna de 3 cuadritos junto a los colgantes.', 'En las dos: el mismo escritorio (a medida o Ravello), dos colgantes Milan a distinta altura y dos opciones de silla.'],
       pins: [
         { img: 'o_milan.jpg', t: 'Las dos · Colgantes Milan (Kolor Iluminación), Ø 0,12 × 0,18, negro con detalles cobre. Dos unidades a distinta altura' },
         { img: 'o_colgante.jpg', t: 'Alternativa · Colgante Rain (Indigo Lumières) en dorado, el de la propuesta anterior', url: 'https://indigolumieres.com/productos/rain/' },
         { img: 'o_687.webp', t: 'Las dos · Silla Simet 687, 0,52 × 0,59 × h 0,765, estructura dorada, tapizado Pana Donn antimancha color arena', url: 'https://simet.com.ar/silla687/' },
         { img: 'o_oslo.webp', t: 'Las dos, opción 2 · Silla Oslo (Antequera), 0,48 × 0,48 × h 0,78, lenga lustrada y asiento tapizado', url: 'https://antequeramuebles.com.ar/productos/silla-oslo/' },
         { img: 'c_escritorio_a.jpg', t: 'Las dos · Escritorio a medida: tapa en melamina lisa Sahara y pata cilindro en Sándalo (Faplac)' },
-        { img: 'c_varillado_esc.jpg', t: 'Completa · Varillado Sahara sobre la pared del escritorio, desde la tapa hacia arriba: continúa el del rack. El cuadro que estaba ahí se reubica en otra pared' },
+        { img: 'c_varillado_esc.jpg', t: 'Completa · Varillado Sahara sobre la pared del escritorio, desde la tapa hacia arriba: continúa el del rack. El cuadro que estaba ahí se reemplaza por el set de 4 de la pared lateral del dormitorio' },
+        { img: 'c_cuadros_esc.jpg', t: 'Esencial · Columna de 3 cuadritos de 0,22 × 0,26 en blanco y negro (Lago, Bardas y Villa La Angostura), centrada a la altura de los colgantes para equilibrar la pared' },
         { img: 'o_ravello.jpg', t: 'Las dos, opción estandarizada · Escritorio Ravello (Dellacasa), 1,40 × 0,50 × h 0,75. Viene en petiribí: consultar a Dellacasa un lustre más claro, tipo Sándalo, como en el modelado', url: 'https://dellacasa.com.ar/producto/office/escritorios/escritorio-ravello/' },
         { img: 'c_rack_a.jpg', t: 'Completa · Rack TV giratorio con varillado, marco sobre la viga y laterales en melamina lisa Sahara' },
         { img: 'c_rack_b.jpg', t: 'Esencial · Rack bajo en melamina lisa Sahara: a la altura del escritorio, estante a cada lado con división central (por ahí sube el caño del giro) y placa recortada al contorno del TV' }

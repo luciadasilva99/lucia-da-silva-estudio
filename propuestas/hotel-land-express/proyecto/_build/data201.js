@@ -14,26 +14,27 @@ module.exports = {
         'Gargantas LED de luz cálida en la pared de la cama, en las cortinas y en el pasillo de ingreso.',
         'Rack TV giratorio con varillado, que separa dormitorio y living.',
         'Sofá y sillones individuales nuevos, en tonos neutros.',
-        'Escritorio a medida, con opción de modelo estandarizado.'
+        'Escritorio a medida (tapa Lino Chiaro, pata cilindro Sándalo), con opción de modelo estandarizado.',
+        'Blackout en el dormitorio; en el living, voile traslúcido y persiana exterior de aluminio.'
       ] },
     { z: 'Opción B', t: 'Simple', img: 'B_dorm.jpg',
       p: 'Conservamos la estructura existente y la renovamos con papel, pintura, tapizados y piezas puntuales.',
       items: [
-        'Papel Muresco Room 78615 en la pared de la cama y el resto de las paredes pintadas en un tono acorde.',
+        'Papel Muresco Riviera Maison 219954, verde salvia claro, en la pared de la cama y el resto de las paredes pintadas en un tono acorde.',
         'Cielo raso en blanco tiznado y trío de cuadros de Neuquén sobre el respaldo existente.',
-        'Rack TV existente, con la base a la altura del escritorio y la placa recortada al contorno del TV.',
+        'Rack TV bajo en Lino Chiaro (Faplac), a la altura del escritorio, con la placa recortada al contorno del TV.',
         'Sillones existentes retapizados en Tucson Beige.',
-        'Escritorio existente.'
+        'El mismo escritorio que la elaborada: a medida o Ravello. Mismas cortinas y persiana.'
       ] }
   ],
 
   paleta: [
     { n: 60, t: 'Base', p: 'Paredes y cielo raso en tonos cálidos y claros. Es el fondo de toda la suite.',
-      sw: [{ img: 'sw_crema.jpg', n: 'Paredes A<br>crema' }, { img: 'sw_pared_b.jpg', n: 'Paredes B<br>tono Room' }, { img: 'sw_tiznado.jpg', n: 'Cielo raso<br>blanco tiznado' }, { img: 'tx_r78615.jpg', n: 'Papel Room<br>78615 (B)' }] },
-    { n: 30, t: 'Maderas y textiles neutros', p: 'Madera Sándalo, piso existente y tapizados Tucson. Dan calidez sin cargar.',
-      sw: [{ img: 'm_sandalo.jpg', n: 'Sándalo<br>(Faplac)' }, { img: 'm_lino_chiaro.jpg', n: 'Lino Chiaro<br>(Faplac)' }, { img: 'tx_t5.jpg', n: 'Tucson<br>Beige' }, { img: 'tx_t4.jpg', n: 'Tucson<br>Sand' }] },
-    { n: 10, t: 'Acentos', p: 'El verde y el dorado aparecen en pocos lugares: respaldo, cubrecama, almohadones y metales.',
-      sw: [{ img: 'tx_t3.jpg', n: 'Panne<br>verde inglés' }, { img: 'tx_t0.jpg', n: 'Cubrecama<br>jacquard' }, { img: 'sw_dorado.jpg', n: 'Dorado<br>mate' }, { img: 'sw_cobre.jpg', n: 'Cobre<br>(colgantes)' }] }
+      sw: [{ img: 'sw_crema.jpg', n: 'Paredes A<br>crema' }, { img: 'sw_pared_b.jpg', n: 'Paredes B<br>tono Riviera' }, { img: 'sw_tiznado.jpg', n: 'Cielo raso<br>blanco tiznado' }, { img: 'tx_riviera.jpg', n: 'Papel Riviera<br>219954 (B)' }] },
+    { n: 30, t: 'Maderas y textiles neutros', p: 'Lino Chiaro y Sándalo en los muebles, tapizados Tucson y blackout arena. Dan calidez sin cargar.',
+      sw: [{ img: 'm_sandalo.jpg', n: 'Sándalo<br>(Faplac)' }, { img: 'm_lino_chiaro.jpg', n: 'Lino Chiaro<br>(Faplac)' }, { img: 'tx_t5.jpg', n: 'Tucson<br>Beige' }, { img: 'tx_t4.jpg', n: 'Tucson<br>Sand' }, { img: 'sw_blackout.jpg', n: 'Blackout<br>arena' }] },
+    { n: 10, t: 'Acentos', p: 'El verde, el lima y el dorado aparecen en pocos lugares: respaldo, cubrecama, almohadones y metales.',
+      sw: [{ img: 'tx_t3.jpg', n: 'Panne<br>verde inglés' }, { img: 'tx_t2.jpg', n: 'Panne lima<br>almohadones' }, { img: 'tx_t0.jpg', n: 'Cubrecama<br>jacquard' }, { img: 'sw_dorado.jpg', n: 'Dorado<br>mate' }, { img: 'sw_cobre.jpg', n: 'Cobre<br>(colgantes)' }] }
   ],
 
   conjunto: [
@@ -55,39 +56,39 @@ module.exports = {
 
   zonas: [
     { zona: 'Dormitorio', img: 'A_dorm.jpg', ar: R, alt: AB('A_dorm.jpg', 'B_dorm.jpg'), zt: 'Qué cambia', st: 'Dormitorio',
-      items: ['<b>Elaborada:</b> respaldo alto en panne verde inglés con varillado Sándalo y gargantas LED cálidas.', '<b>Simple:</b> papel Room 78615 en la cabecera, paredes en tono acorde y trío de cuadros de Neuquén.', 'En las dos: cielo raso blanco tiznado, spots de luz cálida y cortinas de piso a techo.'],
+      items: ['<b>Elaborada:</b> respaldo alto en panne verde inglés con varillado Sándalo y gargantas LED cálidas.', '<b>Simple:</b> papel Riviera Maison 219954 verde salvia claro en la cabecera, paredes en tono acorde y trío de cuadros de Neuquén.', 'En las dos: blackout textil para dormir a oscuras, voile, cielo raso blanco tiznado y spots de luz cálida.'],
       pins: [
         { img: 'c_respaldo_a.jpg', t: 'Elaborada · Respaldo alto tapizado en panne verde inglés, con faldón' },
         { img: 'm_sandalo.jpg', t: 'Elaborada · Varillado del respaldo en melamina Sándalo (Faplac)' },
         { img: 'c_led.jpg', t: 'Elaborada · Gargantas LED de luz cálida: pared de la cama, cortinas y pasillo de ingreso' },
-        { img: 'tx_r78615.jpg', t: 'Simple · Papel Muresco Room 78615 en la pared de la cama', url: 'https://muresco.com/producto/room-78615/' },
+        { img: 'tx_riviera.jpg', t: 'Simple · Papel Muresco Riviera Maison 219954, verde salvia claro, textura tipo lino, en la pared de la cama' },
         { img: 'sw_pared_b.jpg', t: 'Simple · Resto de las paredes pintadas en tono acorde al papel (no blanco). Todo lo que es pared va pintado; molduras y cielo raso en blanco tiznado' },
         { img: 'c_cuadros.jpg', t: 'Simple · Trío de cuadros de Neuquén: Bardas, Río Limay y Villa La Angostura, con passepartout y marco blancos' },
         { img: 'c_respaldo_b.jpg', t: 'Simple · Respaldo de cuero existente, se conserva' },
         { img: 'tx_t0.jpg', t: 'Las dos · Cubrecama jacquard en verde grisáceo' },
-        { img: 'o_cortinas.jpg', t: 'Las dos · Cortinas de piso a techo: blackout más gasa' }
+        { img: 'c_blackout.jpg', t: 'Las dos · Cortina blackout textil color arena, en riel doble con el voile: de noche no entra luz' }
       ] },
 
     { zona: 'Escritorio y rack TV', img: 'A_esc.jpg', ar: R, alt: AB('A_esc.jpg', 'B_esc.jpg'), zt: 'Qué cambia', st: 'Escritorio y rack TV',
-      items: ['<b>Elaborada:</b> escritorio a medida y rack giratorio con varillado.', '<b>Simple:</b> escritorio existente; rack con la base a la altura del escritorio y la placa recortada al contorno del TV.', 'En las dos: dos colgantes Milan a distinta altura y dos opciones de silla.'],
+      items: ['<b>Elaborada:</b> rack giratorio alto con varillado.', '<b>Simple:</b> rack bajo en Lino Chiaro, a la altura del escritorio, con la placa recortada al contorno del TV.', 'En las dos: el mismo escritorio (a medida o Ravello), dos colgantes Milan a distinta altura y dos opciones de silla.'],
       pins: [
         { img: 'o_milan.jpg', t: 'Las dos · Colgantes Milan (Kolor Iluminación), Ø 0,12 × 0,18, negro con detalles cobre. Dos unidades a distinta altura' },
         { img: 'o_colgante.jpg', t: 'Alternativa · Colgante Rain (Indigo Lumières) en dorado, el de la propuesta anterior', url: 'https://indigolumieres.com/productos/rain/' },
         { img: 'o_687.webp', t: 'Las dos · Silla Simet 687, 0,52 × 0,59 × h 0,765, estructura dorada, tapizado Pana Donn antimancha color arena', url: 'https://simet.com.ar/silla687/' },
         { img: 'o_oslo.webp', t: 'Las dos, opción 2 · Silla Oslo (Antequera), 0,48 × 0,48 × h 0,78, lenga lustrada y asiento tapizado', url: 'https://antequeramuebles.com.ar/productos/silla-oslo/' },
-        { img: 'c_escritorio_a.jpg', t: 'Elaborada · Escritorio a medida' },
-        { img: 'o_ravello.jpg', t: 'Elaborada, opción estandarizada · Escritorio Ravello (Dellacasa), 1,40 × 0,50 × h 0,75, petiribí', url: 'https://dellacasa.com.ar/producto/office/escritorios/escritorio-ravello/' },
+        { img: 'c_escritorio_a.jpg', t: 'Las dos · Escritorio a medida: tapa en melamina Lino Chiaro y pata cilindro en Sándalo (Faplac)' },
+        { img: 'o_ravello.jpg', t: 'Las dos, opción estandarizada · Escritorio Ravello (Dellacasa), 1,40 × 0,50 × h 0,75, petiribí', url: 'https://dellacasa.com.ar/producto/office/escritorios/escritorio-ravello/' },
         { img: 'c_rack_a.jpg', t: 'Elaborada · Rack TV giratorio con varillado, entre dormitorio y living' },
-        { img: 'c_rack_b.jpg', t: 'Simple · Rack existente: base a la altura del escritorio, estante a cada lado con división central (por ahí sube el caño del giro) y placa recortada al contorno del TV' }
+        { img: 'c_rack_b.jpg', t: 'Simple · Rack bajo en melamina Lino Chiaro (Faplac): a la altura del escritorio, estante a cada lado con división central (por ahí sube el caño del giro) y placa recortada al contorno del TV' }
       ],
       alts: [
-        { zona: 'Escritorio y rack TV', h: 'Alternativas', s: 'Opción elaborada · silla y escritorio', img: 'A_esc.jpg', ar: R, zt: 'Para elegir', st: 'Silla y escritorio',
-          alt: { t: 'Ver', a: 'Simet 687', as: 'a medida', opts: [{ img: 'A_esc_oslo.jpg', n: 'Silla Oslo', s: 'opción' }, { img: 'A_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }] },
+        { zona: 'Escritorio y rack TV', h: 'Alternativas', s: 'Silla y escritorio, para las dos opciones', img: 'A_esc.jpg', ar: R, zt: 'Para elegir', st: 'Silla y escritorio',
+          alt: { t: 'Ver', a: 'Simet 687', as: 'a medida', opts: [{ img: 'A_esc_oslo.jpg', n: 'Silla Oslo', s: 'opción' }, { img: 'A_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }, { img: 'B_esc_ravello.jpg', n: 'Ravello', s: 'en la simple' }] },
           items: ['Silla Simet 687 o silla Oslo: las dos sirven para las dos opciones.', 'Escritorio a medida o escritorio Ravello (Dellacasa): mismo lugar, misma medida.', 'Las medidas de cada mueble son las reales de cada marca.'] }
       ] },
 
     { zona: 'Living', img: 'A_liv.jpg', ar: R, alt: AB('A_liv.jpg', 'B_liv.jpg'), zt: 'Qué cambia', st: 'Living',
-      items: ['<b>Elaborada:</b> sofá nuevo y dos sillones individuales, uno a cada lado de la mesa ratona.', '<b>Simple:</b> sillones existentes retapizados en Tucson Beige.', 'En las dos: mesas ratonas Antequera en dos opciones y lámpara de pie existente.'],
+      items: ['<b>Elaborada:</b> sofá nuevo con almohadones verdes y lima, y dos sillones individuales, uno a cada lado de la mesa ratona.', '<b>Simple:</b> sillones existentes retapizados en Tucson Beige.', 'En las dos: mesas ratonas Antequera en dos opciones, voile traslúcido y persiana exterior para oscurecer.'],
       pins: [
         { img: 'o_bold.webp', t: 'Elaborada · Sofá Bold (Antequera), 1,90 × 0,70 × h 0,82, en Tucson Beige', url: 'https://antequeramuebles.com.ar/productos/sofa-bolt-1o9vi/' },
         { img: 'o_sofa.jpg', t: 'Elaborada, opción 2 · Sofá Curvey existente, retapizado en Tucson Beige', url: 'https://antequeramuebles.com.ar/productos/2026-sofa-curvey-eplry/' },
@@ -96,12 +97,14 @@ module.exports = {
         { img: 'c_sillones_b.jpg', t: 'Simple · Sillones existentes de 2 y 1 cuerpo, retapizados en Tucson Beige, almohadones en panne verde y lima' },
         { img: 'o_nina.webp', t: 'Las dos · Mesas ratonas Nina (Antequera) en Sándalo: 1,05 × 0,90 × h 0,40 y 0,59 × 0,65 × h 0,46', url: 'https://antequeramuebles.com.ar/productos/mesa-centro-nina-15i0t/' },
         { img: 'o_italian.webp', t: 'Las dos, opción 2 · Mesas Italian (Antequera) en dorado: Ø 0,50 × h 0,50 y Ø 0,40 × h 0,65', url: 'https://antequeramuebles.com.ar/productos/2026-mesa-italian-zf1m6/' },
-        { img: 'o_lampara_pie.jpg', t: 'Las dos · Lámpara de pie de arco existente, luz cálida' }
+        { img: 'c_almohadones.jpg', t: 'Elaborada · Almohadones en panne verde inglés y lima en el sofá, y uno lima en cada sillón' },
+        { img: 'o_cortinas.jpg', t: 'Las dos · Voile Trevira CS traslúcido: liviano, lavable, ignífugo (apto hotel) y resistente. Deja ver el balcón' },
+        { img: 'c_persiana.jpg', t: 'Las dos · Persiana exterior de aluminio con cajón visto, en ventana y puerta balcón, para oscurecer del todo. A confirmar con el consorcio por la fachada' }
       ],
       alts: [
         { zona: 'Living', h: 'Alternativas', s: 'Opción elaborada · sofá, sillones y mesas', img: 'A_liv.jpg', ar: R, zt: 'Para elegir', st: 'Sofá, sillones y mesas',
           alt: { t: 'Ver', a: 'Bold + Napoli', as: 'Nina', opts: [{ img: 'A_liv_curvey.jpg', n: 'Sofá Curvey', s: 'opción' }, { img: 'A_liv_blau.jpg', n: 'Sillones Blau', s: 'opción' }, { img: 'A_liv_italian.jpg', n: 'Mesas Italian', s: 'opción' }] },
-          items: ['Sofá Bold (nuevo) o Curvey (existente retapizado).', 'Sillones Napoli, envolventes, o Blau, más compactos y con marco de madera. Los dos entran con la mesa ratona en el medio.', 'Mesas Nina en Sándalo o Italian en dorado.'] },
+          items: ['Sofá Bold (nuevo) o Curvey (existente retapizado).', 'Sillones Napoli, envolventes, o Blau, más compactos y con marco de madera. Reacomodados más cerca de la mesa ratona.', 'Mesas Nina en Sándalo o Italian en dorado.'] },
         { zona: 'Living', h: 'Otra vista', s: 'Living hacia el balcón', img: 'A_liv2.jpg', ar: R, alt: AB('A_liv2.jpg', 'B_liv2.jpg'), zt: 'Vista', st: 'Hacia el balcón',
           items: ['La lámpara de pie y la luz natural del balcón iluminan el sector de estar.', 'Mesas ratonas en el centro, con paso libre hacia el balcón.'] }
       ] },
@@ -112,7 +115,7 @@ module.exports = {
         { img: 'o_vinilo.jpg', t: 'Las dos · Vinilo marco dorado de 12 mm sobre los espejos del vanity y del antebaño' },
         { img: 'c_banqueta.jpg', t: 'Las dos · Banqueta a medida, tapizada (Tucson Sand en A, Tucson Beige en B)' },
         { img: 'o_iron.jpg', t: 'Las dos, opción estandarizada · Banqueta Iron (Dellacasa), 1,10 × 0,44 × h 0,46, patas de hierro', url: 'https://dellacasa.com.ar/producto/dormitorio/pie-de-cama/banqueta-iron/' },
-        { img: 'c_apliques.jpg', t: 'Las dos · Apliques dorados con globo opal, luz cálida' },
+        { img: 'c_apliques.jpg', t: 'Las dos · Apliques verticales tubo opal con base dorada, Ø 0,06 × 0,21, luz cálida' },
         { img: 'c_coffee.jpg', t: 'Las dos · Coffee station completa en melamina Lino Chiaro (Faplac), con spot de luz cálida' }
       ],
       alts: [

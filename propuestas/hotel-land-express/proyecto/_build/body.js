@@ -17,10 +17,32 @@ ${D.opciones.map((o, k) => `    <div class="op rv" style="--d:${(.15 + k * .15).
 ${C.rows.map((r, i) => `    <div class="rh rv" style="--d:${(.1 + i * .1).toFixed(2)}s"><span>${r.o}</span></div>${r.imgs.map((im, k) => `<figure class="rv" style="--d:${(.15 + i * .12 + k * .06).toFixed(2)}s" data-src="img/${im}" data-cap="${r.o} · ${C.cols[k]}"><div class="ph" style="background-image:url('img/${im}')"></div></figure>`).join('')}`).join('\n')}
   </div>`;
 
+  // Cada escena se muestra por separado: primero la opción completa con su listado, después la esencial con el suyo.
+  const OP = [{ k: 'A', n: 'Completa', o: 'Esencial' }, { k: 'B', n: 'Esencial', o: 'Completa' }];
+  const cap = t => t.charAt(0).toUpperCase() + t.slice(1);
+  const imgOf = (z, k) => k === 'A' ? z.img : z.alt.opts[0].img;
+  const pinFor = (p, op) => {
+    const i = p.t.indexOf(' · '); if (i < 0) return p;
+    const pre = p.t.slice(0, i), rest = p.t.slice(i + 3);
+    if (pre.startsWith(op.o)) return null;
+    let q = pre.replace(new RegExp('^(' + op.n + '|Las dos)(, )?'), '').replace(/^opción( 2)?/, 'variante');
+    return Object.assign({}, p, { t: q ? cap(q) + ' · ' + rest : rest });
+  };
+  const itemFor = (t, op) => {
+    if (t.startsWith('<b>' + op.o + ':</b>') || /opción (esencial|completa)/.test(t) && !t.includes('opción ' + op.n.toLowerCase())) return null;
+    return cap(t.replace('<b>' + op.n + ':</b> ', '').replace(/^En las dos: /, '').replace(/^En la opción \w+, /, ''));
+  };
   let n = 0;
   const zonas = D.zonas.map(z => {
-    let out = `\n<!-- ZONA ${z.zona.toUpperCase()} -->\n` + vista('z' + (n++), z);
-    (z.alts || []).forEach(a => { out += '\n' + vista('z' + (n++), a); });
+    let out = `\n<!-- ZONA ${z.zona.toUpperCase()} -->\n`;
+    OP.forEach(op => {
+      const v = (D.variantes[z.zona] || {})[op.k];
+      out += vista('z' + (n++), Object.assign({}, z, { img: imgOf(z, op.k), alt: v, s: 'Opción ' + op.n.toLowerCase(), ds: 'Opción ' + op.n.toLowerCase() + ' · ítem por ítem', zt: 'Opción ' + op.n.toLowerCase(),
+        items: z.items.map(t => itemFor(t, op)).filter(Boolean), pins: z.pins.map(p => pinFor(p, op)).filter(Boolean) }));
+    });
+    (z.alts || []).forEach(a => OP.forEach(op => {
+      out += '\n' + vista('z' + (n++), Object.assign({}, a, { img: imgOf(a, op.k), alt: null, s: a.s + ' · opción ' + op.n.toLowerCase(), zt: 'Opción ' + op.n.toLowerCase(), items: a.items.map(t => itemFor(t, op)).filter(Boolean) }));
+    }));
     return out;
   }).join('\n');
 
@@ -73,7 +95,7 @@ ${vista('plantas', D.plantas).replace('<section class="slide', '<section data-se
     <div class="n rv">${room}</div>
     <div class="h rv" style="--d:.15s">MODELADO 3D</div>
     <div class="k rv" style="--d:.25s">COMPLETA Y ESENCIAL</div>
-    <p class="rv" style="--d:.4s">En cada vista, los botones de la imagen cambian entre opciones. Después de cada vista, ítem por ítem.</p>
+    <p class="rv" style="--d:.4s">Cada escena se ve primero en la opción completa y después en la esencial, cada una con lo que lleva. Los botones sobre la imagen muestran sus variantes.</p>
   </div>
   <div class="num"></div>
 </section>

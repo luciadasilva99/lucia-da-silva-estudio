@@ -60,3 +60,6 @@
   html.mobile .cg2 { grid-template-columns: 26px 1fr 1fr; grid-template-rows: none; grid-auto-rows: 18vh; height: auto; }
   html.mobile .cg2 .ch, html.mobile .cg2 > div:first-child { display: none; }
   html.mobile .cg2 .rh { grid-row: span 2; }
+
+  /* Dos opciones: imágenes de igual alto, alineadas arriba y abajo */
+  html:not(.mobile) .dos .ph { flex: none; height: 262px; }

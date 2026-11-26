@@ -75,9 +75,6 @@ module.exports = {
         { img: 'c_rack_b.jpg', t: 'Esencial · Rack bajo en melamina lisa Sahara: a la altura del escritorio, estante a cada lado con división central (por ahí sube el caño del giro) y placa recortada al contorno del TV' }
       ],
       alts: [
-        { zona: 'Escritorio y rack TV', h: 'Alternativas', s: 'Silla y escritorio, para las dos opciones', img: 'A_esc.jpg', ar: R, zt: 'Para elegir', st: 'Silla y escritorio',
-          alt: { t: 'Ver', a: 'Simet 687', as: 'a medida', opts: [{ img: 'A_esc_oslo.jpg', n: 'Silla Oslo', s: 'opción' }, { img: 'A_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }, { img: 'B_esc_ravello.jpg', n: 'Ravello', s: 'en la esencial' }] },
-          items: ['Silla Simet 687 o silla Oslo: las dos sirven para las dos opciones.', 'Escritorio a medida o escritorio Ravello (Dellacasa): mismo lugar, misma medida.', 'Las medidas de cada mueble son las reales de cada marca.'] }
       ] },
 
     { zona: 'Living', img: 'A_liv.jpg', ar: R, alt: AB('A_liv.jpg', 'B_liv.jpg'), zt: 'Qué cambia', st: 'Living',
@@ -95,9 +92,6 @@ module.exports = {
         { img: 'c_persiana.jpg', t: 'Las dos · Persiana exterior de aluminio con cajón visto, en ventana y puerta balcón, para oscurecer del todo. A confirmar con el consorcio por la fachada' }
       ],
       alts: [
-        { zona: 'Living', h: 'Alternativas', s: 'Opción completa · sofá, sillones y mesas', img: 'A_liv.jpg', ar: R, zt: 'Para elegir', st: 'Sofá, sillones y mesas',
-          alt: { t: 'Ver', a: 'Bold + Napoli', as: 'Nina', opts: [{ img: 'A_liv_curvey.jpg', n: 'Sofá Curvey', s: 'opción' }, { img: 'A_liv_blau.jpg', n: 'Sillones Blau', s: 'opción' }, { img: 'A_liv_italian.jpg', n: 'Mesas Italian', s: 'opción' }] },
-          items: ['Sofá Bold (nuevo) o Curvey (existente retapizado).', 'Sillones Napoli, envolventes, o Blau, más compactos y con marco de madera. Reacomodados más cerca de la mesa ratona.', 'Mesas Nina en negro mate o Italian en dorado.'] },
         { zona: 'Living', h: 'Otra vista', s: 'Living hacia el balcón', img: 'A_liv2.jpg', ar: R, alt: AB('A_liv2.jpg', 'B_liv2.jpg'), zt: 'Vista', st: 'Hacia el balcón',
           items: ['La lámpara de pie y la luz natural del balcón iluminan el sector de estar.', 'Mesas ratonas en el centro, con paso libre hacia el balcón.'] }
       ] },
@@ -112,15 +106,25 @@ module.exports = {
         { img: 'c_coffee.jpg', t: 'Las dos · Coffee station completa en melamina Lino Chiaro (Faplac), con spot de luz cálida' }
       ],
       alts: [
-        { zona: 'Vanity, antebaño y coffee', h: 'Alternativas', s: 'Banqueta del vanity', img: 'A_vanity.jpg', ar: R, zt: 'Para elegir', st: 'Banqueta',
-          alt: { t: 'Ver', a: 'A medida', as: 'banqueta', opts: [{ img: 'A_vanity_iron.jpg', n: 'Iron', s: 'Dellacasa' }] },
-          items: ['Banqueta a medida, tapizada, o banqueta Iron de Dellacasa, ya fabricada.', 'Las dos entran debajo de la mesada del vanity.'] },
         { zona: 'Vanity, antebaño y coffee', h: 'Otra vista', s: 'Antebaño', img: 'A_antebano.jpg', ar: R, alt: AB('A_antebano.jpg', 'B_antebano.jpg'), zt: 'Vista', st: 'Antebaño',
           items: ['Espejo con tira LED cálida y vinilo con marco dorado finito.', 'En la opción esencial, las paredes del antebaño van pintadas como el resto de la suite.'] },
         { zona: 'Vanity, antebaño y coffee', h: 'Otra vista', s: 'Coffee station', img: 'A_coffee.jpg', ar: R, alt: AB('A_coffee.jpg', 'B_coffee.jpg'), zt: 'Vista', st: 'Coffee station',
           items: ['Nicho de ingreso completo en melamina Lino Chiaro (Faplac).', 'Cafetera y microondas en los estantes, frigobar debajo.'] }
       ] }
   ],
+
+  // variantes dentro de cada opción (botones sobre la imagen)
+  variantes: {
+    'Escritorio y rack TV': {
+      A: { t: 'Ver', a: 'Silla 687', as: 'a medida', opts: [{ img: 'A_esc_oslo.jpg', n: 'Silla Oslo', s: 'variante' }, { img: 'A_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }] },
+      B: { t: 'Ver', a: 'Silla 687', as: 'a medida', opts: [{ img: 'B_esc_oslo.jpg', n: 'Silla Oslo', s: 'variante' }, { img: 'B_esc_ravello.jpg', n: 'Ravello', s: 'escritorio' }] } },
+    'Living': {
+      A: { t: 'Ver', a: 'Bold + Napoli', as: 'mesas Nina', opts: [{ img: 'A_liv_curvey.jpg', n: 'Sofá Curvey', s: 'variante' }, { img: 'A_liv_blau.jpg', n: 'Sillones Blau', s: 'variante' }, { img: 'A_liv_italian.jpg', n: 'Mesas Italian', s: 'variante' }] },
+      B: { t: 'Ver', a: 'Mesas Nina', as: 'negro mate', opts: [{ img: 'B_liv_italian.jpg', n: 'Mesas Italian', s: 'variante' }] } },
+    'Vanity, antebaño y coffee': {
+      A: { t: 'Ver', a: 'A medida', as: 'banqueta', opts: [{ img: 'A_vanity_iron.jpg', n: 'Iron', s: 'Dellacasa' }] },
+      B: { t: 'Ver', a: 'A medida', as: 'banqueta', opts: [{ img: 'B_vanity_iron.jpg', n: 'Iron', s: 'Dellacasa' }] } }
+  },
 
   plantas: { zona: 'Plantas', h: 'Plantas con medidas', s: 'Completa y esencial, antes de recorrer los modelados', img: 'A_planta.jpg', ar: 1.467, alt: AB('A_planta.jpg', 'B_planta.jpg'), zt: 'Medidas', st: 'Planta de mobiliario',
     items: ['Cada mueble estandarizado está modelado con las medidas reales de la marca; las cotas muestran ancho y fondo.', '<b>Paleta 60 · 30 · 10:</b> 60 % base clara (paredes y cielo raso), 30 % maderas y textiles neutros (Sahara, Sándalo, Tucson), 10 % acentos (verde, lima, dorado y negro).', 'La misma regla vale para todas las variantes de cada opción.'] },
